@@ -1,0 +1,248 @@
+{
+ "slug": "policing-body-cameras",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 3.5,
+    "accuracy": 2.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 38.7,
+   "plain": 38.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.0,
+    "gpt": 46.4
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 4.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 4.5,
+    "accuracy": 4.5,
+    "limits": 5.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 82.3,
+   "plain": 82.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 79.2,
+    "gpt": 85.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 1.5,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 0.0,
+    "accuracy": 1.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 26.3,
+   "plain": 26.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.0,
+    "gpt": 28.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 4.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.0
+   },
+   "strict": 76.4,
+   "plain": 76.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.0,
+    "gpt": 79.8
+   }
+  }
+ },
+ "judge_mad": 0.66,
+ "verdicts": {
+  "opus": "A and C both grounded every number in the recorded calls. A went further: it flagged that the 26,397-paper lane is a broad topic with only 52 BWC-titled papers, gave low confidence because just one trial was read, and placed limits next to the numbers. B and D were the only deliverables to present both the early-RCT and replication sides, but they did so from memory. B relied on a fabricated DOI, and D misstated the discretion finding against the record. A decision-maker can trust A's narrow but honest answer: no traceable evidence that BWCs reduce force, and complaints unmeasured.",
+  "gpt": "B best supports a decision with a fully traced, censored research-volume series, a correctly bounded comparison, and the clearest distinction between force and assaults on officers. D is similarly careful and more concise, but gives less usable drilldown and facet coverage; B still overstates what the retrieved evidence establishes about complaints."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [],
+   "chatgpt_bare": [
+    "Fabricated DOI and venue: Yokum, Ravishankar & Son, J Quant Criminol 2017, doi:10.1007/s10940-017-9360-7; the DC trial is PNAS 2019, doi:10.1073/pnas.1814773116",
+    "Lum et al. DOI 10.1002/cl2.1012 does not resolve",
+    "Rialto study dated 2012 in Evidence but 2015 in References"
+   ],
+   "chatgpt_prism": [
+    "Unsupported claim that coverage checks 'passed index partition reads and historical row floors' does not appear in the reference record"
+   ],
+   "claude_bare": [
+    "States assaults rose when officers could choose whether to record; the reference reports the backfire was stronger in low-discretion sites",
+    "r3 coauthor listed as Campbell; the record lists Coppock"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "The Washington, DC trial is described as a 2,224-officer trial, but that detail is not present in the supplied reference record.",
+    "The chart's year-by-year values combine recalled effects across different studies and outcomes; they are not a measured time series.",
+    "The claimed multi-site complaint result is not established by the supplied record."
+   ],
+   "claude_prism": [
+    "Says no retrieved paper measured complaints, although the cited Crow et al. paper's quoted introduction says recent research suggests reductions in complaints; the paper is classed unrelated, so this is not a direct measured result.",
+    "Calls the broad research series 'policing practices and perceptions' papers; the reference labels the 26,397 intersection as Prism-typed research papers and reports that topic as a corpus topic, so the series interpretation is broader than a BWC-effect series."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1002/cl2.1012 does not resolve to the claimed review in the benchmark check.",
+    "DOI 10.1007/s10940-017-9360-7 does not resolve to the claimed DC trial in the benchmark check.",
+    "Presents recalled directional study findings in a chart as a year series, despite acknowledging they are coded categories rather than effect measurements."
+   ],
+   "chatgpt_prism": [
+    "The listed chart uses the c3 annual series correctly, but describing it as the 'claim intersection' can suggest BWC-specific coverage; the underlying corpus is broad and only 52 titles name BWCs."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "The series is traced with window and censoring stated. CAGR 3.9%, 2021 peak and late/early 1.33 are exact. No decomposition.",
+    "comparison": "Assault rates 394 vs 284 give ratio 1.39 and delta 110. Baseline is defined and the 37%-odds caveat is carried. A also says force cannot be put on a ratio. The early-vs-replication contrast is not testable from the data, and A does not fully state that.",
+    "chart": "One fully traced chart with window, unit and source. It shows only research volume, not effects, and the censored 2025 point is not marked on the chart.",
+    "drilldown": "Layers go from orientation breakdown to graded documents with DOIs and quotes. 4 of 6 follow-ups ran OK. None was executed and folded back.",
+    "export": "At the ceiling. The assault CSV has window=unknown. The provenance JSON truncates args for c2 and c3.",
+    "repro": "61/61 numbers traced and calls listed with args. 'rank 3' is A's own inference. The provenance JSON drops the claim arg for c2 and c3.",
+    "refs": "All 5 DOIs resolve and quotes are verbatim. The contradicting source is tiered. No supporting early RCT is traceable, and r4 has no named authors.",
+    "accuracy": "Measured values match the record. A catches the anomaly that the 26,397 intersection is a broad topic and only 52 titles name BWCs, plus the dropped 'use of force' phrase.",
+    "limits": "Window and gap to today, censoring, lane, match mode and thin evidence (1 read document) are placed next to the numbers. A states that complaints are unmeasured.",
+    "verdict": "Direct answer, decision, low confidence with a reason, and what would change it. The early positive RCT side is absent because the data did not surface it.",
+    "facets": "Force and the trend are grounded, and complaints get a grounded 'no data'. The early-RCT-versus-replication contrast the question requires is not covered."
+   },
+   "chatgpt_bare": {
+    "trend": "The coded -1/0 'series' is a memory summary, not a measured quantity.",
+    "comparison": "Qualitative Rialto vs DC contrast only.",
+    "chart": "A chart of coded memory values. It is explicitly described as coded, not measured.",
+    "drilldown": "Generic layers from memory. Follow-ups use term args, and only 2 of 6 ran OK.",
+    "export": "A memory CSV marked partial, with no traced rows.",
+    "repro": "At the ceiling: there are no recorded calls.",
+    "refs": "Two DOIs do not resolve. The JQC 2017 Yokum/Son citation is fabricated, and the Lum DOI is wrong.",
+    "accuracy": "Fabricated citation for the DC trial; the real paper is PNAS 2019. Rialto is dated 2012 in one place and 2015 in another.",
+    "limits": "Honestly flagged as memory and states the window gap, but the limits are generic.",
+    "verdict": "Balanced answer with decision and confidence, but it rests on fabricated references.",
+    "facets": "Answered from memory."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window. The 36% endpoint change (3347/2462) and the 2021 peak are correct. Censoring is noted only in Limits, and the CAGR and early/late ratio are omitted.",
+    "comparison": "Ratio 1.39 and delta 110 recompute, baseline is defined, and C says the comparison cannot answer force or complaints.",
+    "chart": "One fully traced volume chart. It does not chart effects or tally, and censoring is not marked.",
+    "drilldown": "Tally and document layers are traced. Only 2 of 3 follow-ups ran OK.",
+    "export": "Two traced CSVs with provenance and a provenance block. The tally window and coverage are asserted rather than taken from the tool, and rows lack identifiers.",
+    "repro": "19/19 traced. The coverage-check sentence does not trace to the record.",
+    "refs": "Two DOIs resolve with verbatim quotes and tier. No authors, and no supporting source.",
+    "accuracy": "The claim that coverage 'checks passed index partition reads and historical row floors' is not in the reference record. It does not flag the 52-title anomaly.",
+    "limits": "Windows, gap, lane, censoring and match mode are stated, mostly in the limits section.",
+    "verdict": "Complete structure. 'Medium' confidence is generous given only one document was read.",
+    "facets": "Force and complaints are covered with grounded values or 'no data'. The early-RCT contrast is missing."
+   },
+   "claude_bare": {
+    "trend": "A labelled-estimate series of recalled effect sizes.",
+    "comparison": "Memory numbers for Rialto vs DC with deltas.",
+    "chart": "Chart source is 'estimate'.",
+    "drilldown": "Generic layers with no identifiers. Only 2 of 6 follow-ups ran OK.",
+    "export": "A CSV with source=estimate.",
+    "repro": "Memory, honestly labelled.",
+    "refs": "DOIs resolve, but there are no quotes. r3's coauthor is given as Campbell, but the record says Coppock. r6 has no DOI.",
+    "accuracy": "It says assaults rose when officers could choose whether to record. The reference says the backfire was stronger in low-discretion sites. The r3 author is also wrong.",
+    "limits": "Specific about memory, window gap and selection bias, but cannot reach measured-data limits.",
+    "verdict": "Balanced, with decision, confidence and conditions. It presents both the early RCT and the replication.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "Labels the values as estimates, but gives no measured series and the study years/effect estimates are not a common time series.",
+    "comparison": "Memory-based contrasts are explicitly estimates and not benchmark-checkable.",
+    "chart": "The chart is explicitly from estimates, so it earns the honest-memory ceiling only.",
+    "drilldown": "Names useful dimensions, but offers no traced item layer; only two of six proposed calls executed successfully.",
+    "export": "The recalled CSV is labeled estimate and is not a traced export.",
+    "repro": "No calls were run; figures are recalled and not reproducible.",
+    "refs": "All five DOIs resolve and the references identify claims; the missing DOI for r6 does not fabricate an identifier.",
+    "accuracy": "The broad account is plausible, but the 2,224-officer DC study and related complaint findings do not match the supplied record; the figures are identified as recollection.",
+    "limits": "Clearly states memory basis, missing corpus coverage, selection limits, and the gap to today.",
+    "verdict": "Direct decision and confidence with a change condition, but the support is memory-based and the deliverable itself notes conflicting trials.",
+    "facets": "Answers the basic force/complaints contrast, but lacks grounded database values and the implied research-versus-news and trend facets."
+   },
+   "claude_prism": {
+    "trend": "Traces all annual points, states the window and 2025 censoring, and quantifies growth, peak, and early/late comparison.",
+    "comparison": "The assault-rate comparison recomputes correctly, defines the control baseline, and clearly limits its relevance to a different outcome.",
+    "chart": "The annual chart traces the full series, states unit/window/source, and its caption reads the trend correctly; it marks 2025 censoring in prose.",
+    "drilldown": "Includes traced document and orientation layers plus four successful, on-topic follow-ups, though it lacks the full item-level drilldown and successful coverage of all open facets.",
+    "export": "The series CSV is traced, but the assault export gives an unknown window and the exports do not provide full provenance for every needed table.",
+    "repro": "Most numbers trace and calls are recorded, but the counter-evidence call omits its claim argument in the provenance block, preventing full replay of every listed result.",
+    "refs": "Identifiers resolve, metadata and claims are given, and the key quoted abstract text is verified; the contrary RCT is identified.",
+    "accuracy": "Carefully distinguishes broad corpus framing and assaults on officers from force against the public, but its claim that no retrieved paper measured complaints conflicts with the cited 2017 trial record.",
+    "limits": "Places window, lane, censoring, matching, and evidence-depth limits next to the relevant numbers.",
+    "verdict": "Gives a supported decision and confidence with conditions, while acknowledging the strongest contrary result; its complaints statement is overstated and limits full confidence.",
+    "facets": "Grounds the main force finding and research-volume context, but the complaints facet and some implied facets remain unmeasured or unresolved."
+   },
+   "chatgpt_bare": {
+    "trend": "Provides only two coded values from memory, with no resolvable measured series; its explicit coding label earns the estimate ceiling.",
+    "comparison": "Qualitative comparison only; no grounded common-scale measured contrast.",
+    "chart": "Chart values are explicitly coded from memory rather than traced source data, earning the estimate ceiling.",
+    "drilldown": "Lists study-level layers but identifiers do not resolve for two cited studies and follow-ups are proposed rather than executed successfully.",
+    "export": "The qualitative CSV is explicitly from memory, not a traced export.",
+    "repro": "No numbers trace, calls were not run, and two of three DOIs fail to resolve to the claimed works.",
+    "refs": "Two of three DOIs do not resolve to the claimed works, triggering the fabricated-identifier cap.",
+    "accuracy": "The cited DC and review works have invalid identifiers in the deliverable, and its claim of those findings as evidence is therefore unreliable against the record.",
+    "limits": "Labels the synthesis as memory and describes several specific coverage limits, but does not ground the evidence against the available record.",
+    "verdict": "Direct decision and confidence with conditions, but confidence and support rest on unverified and misidentified studies.",
+    "facets": "Addresses both outcomes qualitatively but supplies no grounded values and omits measured trend and corpus facets."
+   },
+   "chatgpt_prism": {
+    "trend": "Traces all annual points, quantifies endpoint growth and peak, and states the 2025 censoring caveat.",
+    "comparison": "Rates, delta, ratio, and control baseline are correctly reported, with the different assault outcome explicitly distinguished.",
+    "chart": "The full annual series is sourced, windowed, correctly labeled, and tied to a specific claim; censoring is explained in the text.",
+    "drilldown": "Shows the assessed-document breakdown and statistics result, but only two of three follow-ups executed successfully and it does not reach multiple identified evidence items.",
+    "export": "Both tables trace, but the tally table is not a question-needed evidence breakdown at item level and the provenance lacks a full feature/args/window shape for each export.",
+    "repro": "Recorded calls and numbers mostly reproduce, but the counter-evidence provenance lacks the response window and the exports do not provide a full regeneration recipe.",
+    "refs": "The two cited DOIs resolve, metadata matches, and the RCT quote is tied to its force finding; contrary evidence is surfaced.",
+    "accuracy": "Correctly separates the broad research corpus, the single direct force finding, and the adjacent assault outcome; its complaints conclusion is bounded by what the calls returned.",
+    "limits": "States window, lane, censoring, coverage, and matching limits, though some are concentrated in the method section rather than beside every number.",
+    "verdict": "Direct and decision-relevant, with confidence, conditions, and the strongest retrieved contrary evidence; conclusions remain bounded by the incomplete search.",
+    "facets": "Covers force and corpus trend with grounded values, but complaints and the broader research-versus-news mismatch are not fully answered."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

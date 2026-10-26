@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 0
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 2,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 1,
+    "chart": 2,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Cross-study points from memory, not a series; A admits it is not a clean time series.",
+    "comparison": "Within-study model deltas are from memory; ratios recompute (55/18=3.1, 91.4/28.6=3.2), but nothing can be checked.",
+    "chart": "Chart of cited public figures that cannot be verified; it is on the edge of being a non-series.",
+    "drilldown": "Model, task and error-type breakdown is from memory; 0/6 follow-ups ran ok.",
+    "export": "CSV values are from memory, labelled only through the source note.",
+    "repro": "Ceiling 0; nothing traces to a call.",
+    "refs": "3 DOIs resolve and each reference is tied to a claim, but r4 has no DOI, r5 and r6 have no URL, and there are no quotes.",
+    "accuracy": "Recalled figures (Walters & Wilder 55/18, Chelli 39.6/28.6/91.4, Bhattacharyya 47/46/7) match the public record and nothing contradicts the reference; the GPTZero, tracker and Tow figures are unverified but labelled est.",
+    "limits": "Specific about the memory basis, the gap to today, and that each study defines 'fabricated' differently; still a plain-model answer.",
+    "verdict": "Ceiling 0: the verdict carries an untagged 5% figure.",
+    "facets": "Facets answered from memory."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "Empty chart.",
+    "drilldown": "Generic follow-ups only, and none executed ok.",
+    "export": "CSV has headers only, no data.",
+    "repro": "No numbers to trace.",
+    "refs": "None given.",
+    "accuracy": "Refusal; no contradictions.",
+    "limits": "Generic statements of inability rather than specific limits.",
+    "verdict": "Gives a decision but no numbers, and the user asked for numbers.",
+    "facets": "No facet answered."
+   },
+   "C": {
+    "trend": "Traced research series with window and CAGR 17.6%, plus news peak 46 in 2022-01 and late/early 2.77; but it is a field-volume proxy, not the asked quantity.",
+    "comparison": "Traced late-vs-early news ratio; the fabrication-rate contrast is memory est.",
+    "chart": "Traced chart with window, unit and source, but of an irrelevant proxy, and the censored 2025 point is not marked.",
+    "drilldown": "One traced layer (corpus volumes); 1/6 follow-ups executed ok.",
+    "export": "Traced volumes CSV with provenance JSON; one table only.",
+    "repro": "38/39 traced; calls listed with args; memory figures labelled est.",
+    "refs": "3 DOIs resolve, tier and venue given, one verbatim quote; each correctly marked unrelated.",
+    "accuracy": "Traced figures are correct; 'intersection lane was null' is not in the record; it misses that 2025 is plotted despite censored_at=2025.",
+    "limits": "Window gaps to today, lane, title match mode, censoring and what the counts are not are all stated next to the numbers.",
+    "verdict": "Honest that the run did not measure a rate, gives a decision, low confidence with reason, and what would change it; bounded memory ranges labelled est.",
+    "facets": "Grounded no-data on the rate, plus labelled estimates."
+   },
+   "D": {
+    "trend": "Traced series, 3.65x is correct, censoring noted; it is a proxy, not a fabrication series.",
+    "comparison": "Research-vs-news 375x mixes corpora and windows and is irrelevant to the question, though the mixing is stated.",
+    "chart": "Traced chart of a proxy with an irrelevant facet.",
+    "drilldown": "Ceiling 1.",
+    "export": "Traced series CSV with provenance; one table.",
+    "repro": "21/23 traced; calls with args.",
+    "refs": "3 DOIs resolve with tier and claim; quote fragments match.",
+    "accuracy": "Correct values; the 375x 'same unit' framing is misleading but caveated.",
+    "limits": "Ceiling 3; specific window gaps and lane are stated.",
+    "verdict": "Clear 'cannot measure' with a decision, but gives no numbers to a question that asked for them.",
+    "facets": "Grounded no-data on the rate."
+   }
+  },
+  "errors": {
+   "A": [
+    "Untagged 5% threshold in the verdict",
+    "GPTZero/NeurIPS and Tow Center figures unverified (labelled est.)"
+   ],
+   "B": [],
+   "C": [
+    "'Intersection lane was null' is not supported by the reference",
+    "Censored 2025 point plotted without a mark"
+   ],
+   "D": [
+    "Research-vs-news 375x ratio combines different corpora and windows as 'same unit'"
+   ]
+  },
+  "best": "C",
+  "verdict": "C separated measured from remembered: it traced every tool number and reported that the corpus held no fabrication-rate evidence. It still gave clearly labelled estimate ranges and a usable decision. A had the most useful real-world figures, and they appear correct, but none trace and its verdict rests on untagged numbers. D was rigorous but answered 'give numbers' with none, and B gave nothing."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 2,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 1,
+   "chart": 2,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

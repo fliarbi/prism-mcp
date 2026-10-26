@@ -1,0 +1,637 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 619,
+  "charts": [
+   {
+    "id": "attention-index",
+    "title": "Relative news attention to drone warfare (index, 2022=100, estimate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Attention index (est.)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "attention_index_estimate.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which critical stories on drone warfare appeared most recently, with date, publisher and url?",
+    "args": {
+     "term": "drone warfare",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.0,
+    "sample": "{\"articles\": [{\"target_id\": \"6a0efae32c33d6ff9835ca16\", \"url\": \"https://econotimes.com/Russia-Downs-Over-3100-Ukrainian-Drones-in-One-Week-Amid-Escalating-Attacks-1741910\", \"title\": \"Russia Downs Over 3,100 Ukrainian Drones in One Week Amid Escalating Attacks - EconoTimes\", \"excerpt\": \"Russia claimed it intercepted and destroyed at least 3,124 Ukrainian drones over the past week, according to data released by the country’s Defence Ministry and reported by the state-run RIA news agency. The reported surge in drone warfare highlights the growing intensity of the conflict between Rus\", \"publisher\": \"econotimes.com\", \"published\": \"2026-05-18 01:49:42\", \"partition\": \"from_2020_to_now\", \"datetime\""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How has sentiment moved month by month?",
+    "args": {
+     "term": "drone warfare",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does Ukraine coverage compare with Middle East coverage?",
+    "args": {
+     "term": "drone warfare",
+     "groups": [
+      "Ukraine",
+      "Middle East"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...raine', 'Middle East']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drone warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroups\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Ukraine', 'Middle East'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which outlets supply the largest share of stories?",
+    "args": {
+     "term": "drone warfare",
+     "by": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Where is coverage of counter-drone defence growing?",
+    "args": {
+     "term": "counter-drone",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 3,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "100 — The chart is an illustrative estimate of relative attention, scaled so 2022 is 100. It is ",
+    "10 — - Windows: none were queried. The latest date in scope would be 2026-10-22, but the memory"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1105,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning drone warfare",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "drone_warfare_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "drone_warfare_places.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 20,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "What drove the Sept 2025 spike (111 articles, ratio 1.92)?",
+    "args": {
+     "term": "drone warfare",
+     "from": "2025-09-01",
+     "to": "2025-10-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-09-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What drove the March 2026 jump to 200 articles?",
+    "args": {
+     "term": "drone warfare",
+     "from": "2026-02-01",
+     "to": "2026-04-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does coverage change with central rather than mention matching?",
+    "args": {
+     "terms": [
+      "drone warfare",
+      "drones"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.5,
+    "sample": "{\"terms\": [\"drone warfare\", \"drones\"], \"rows\": [{\"term\": \"drone warfare\", \"articles\": 1431, \"share_pct\": 1.1, \"critical\": 1258, \"direction\": \"rising\", \"growth\": 3.49, \"tone_ratio\": 1.2, \"vs_baseline\": 2.07, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 27, \"critical\": 23, \"negative\": 9, \"positive\": 17, \"mean_priority\": 7.19, \"critical_pct\": 85.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 14, \"critical\": 13, \"negative\": 8, \"positive\": 6, \"mean_priority\": 7.36, \"critical_pct\": 92.9, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 22, \"critical\": 19, \"negative\": 8, \"positive\": 13, \"mean_priority\": 7.32, \"critical_pct\": 86.4, \"partial_period\": false}, {\"peri"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries lead by month, and does India–Pakistan coverage (Operation Sindoor) peak separately?",
+    "args": {
+     "term": "drone warfare",
+     "level": "country",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"ukraine\", \"articles\": 535, \"share_pct\": 16.1, \"lift\": 33.6}, {\"label\": \"united states\", \"articles\": 481, \"share_pct\": 14.5, \"lift\": 0.6}, {\"label\": \"russia\", \"articles\": 470, \"share_pct\": 14.1, \"lift\": 17.0}, {\"label\": \"china\", \"articles\": 156, \"share_pct\": 4.7, \"lift\": 0.9}, {\"label\": \"iran\", \"articles\": 143, \"share_pct\": 4.3, \"lift\": 1.4}, {\"label\": \"india\", \"articles\": 135, \"share_pct\": 4.1, \"lift\": 0.6}, {\"label\": \"united kingdom\", \"articles\": 129, \"share_pct\": 3.9, \"lift\": 0.8}, {\"label\": \"israel\", \"articles\": 102, \"share_pct\": 3.1, \"lift\": 2.4}, {\"label\": \"pakistan\", \"articles\": 87, \"share_pct\": 2.6, \"lift\": 2.5}, {\"label\": \"germany\", \"articles\""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What does the tone look like for Western procurement stories versus battlefield stories?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2025-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.4,
+    "sample": "{\"points\": [{\"period\": \"2025-06-01\", \"negative\": 28, \"positive\": 21, \"neutral\": 0, \"ratio\": 1.33}, {\"period\": \"2025-07-01\", \"negative\": 38, \"positive\": 30, \"neutral\": 4, \"ratio\": 1.27}, {\"period\": \"2025-08-01\", \"negative\": 20, \"positive\": 21, \"neutral\": 1, \"ratio\": 0.95}, {\"period\": \"2025-09-01\", \"negative\": 73, \"positive\": 38, \"neutral\": 0, \"ratio\": 1.92}, {\"period\": \"2025-10-01\", \"negative\": 17, \"positive\": 27, \"neutral\": 2, \"ratio\": 0.63}, {\"period\": \"2025-11-01\", \"negative\": 20, \"positive\": 9, \"neutral\": 0, \"ratio\": 2.22}, {\"period\": \"2025-12-01\", \"negative\": 17, \"positive\": 23, \"neutral\": 3, \"ratio\": 0.74}, {\"period\": \"2026-01-01\", \"negative\": 14, \"positive\": 26, \"neutral\": 0, \"ratio\": "
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Has coverage continued or fallen back after May 2026?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2026-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.7,
+    "sample": "{\"points\": [{\"period\": \"2026-05-01\", \"articles\": 200, \"critical\": 190, \"negative\": 117, \"positive\": 82, \"mean_priority\": 7.36, \"critical_pct\": 95.0, \"partial_period\": false}], \"total\": 200, \"critical_total\": 190, \"trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"critical_trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"growth_note\": \"Zero-count periods included; partial boundary buckets excluded from growth.\", \"country\": null}"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 123,
+   "traced": 123,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 140,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 304,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many drone-warfare news articles appeared each month, and how did volume change over the chosen window?",
+    "args": {
+     "term": "drone warfare",
+     "window": "Specify date range and outlets"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does drone-warfare coverage volume compare with a defined baseline corpus?",
+    "args": {
+     "term": "drone warfare",
+     "baseline": "Specify comparison topic or corpus",
+     "window": "Specify date range and outlets"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ate range and outlets'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drone warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify comparison topic or corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What themes, organisations and people are most prominent in drone-warfare coverage?",
+    "args": {
+     "term": "drone warfare",
+     "window": "Specify date range and outlets"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are mentioned or mapped in coverage, and what share of stories could be placed?",
+    "args": {
+     "term": "drone warfare",
+     "window": "Specify date range and outlets"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is the coverage sentiment relative to the corpus baseline?",
+    "args": {
+     "term": "drone warfare",
+     "baseline": "Full corpus",
+     "window": "Specify date range and outlets"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Full corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which critical drone-warfare headlines merit review, with dates, publishers and URLs?",
+    "args": {
+     "term": "drone warfare",
+     "window": "Specify date range and outlets",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.overview",
+    "question": "Which publishers account for the largest share of drone-warfare coverage?",
+    "args": {
+     "term": "drone warfare",
+     "breakdown": "publisher",
+     "window": "Specify date range and outlets"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify date range and outlets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": false,
+   "words": 93,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 808,
+  "charts": [
+   {
+    "id": "drone-warfare-monthly-volume",
+    "title": "Monthly news articles matching “drone warfare”",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Matching articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "drone_warfare_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which outlets account for drone-warfare coverage across the full window, rather than the recent sample?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-06-01",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drone warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How do sentiment and volume differ by month against a time-matched corpus baseline?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 9, \"positive\": 17, \"neutral\": 1, \"ratio\": 0.53}, {\"period\": \"2024-07-01\", \"negative\": 8, \"positive\": 6, \"neutral\": 0, \"ratio\": 1.33}, {\"period\": \"2024-08-01\", \"negative\": 8, \"positive\": 13, \"neutral\": 1, \"ratio\": 0.62}, {\"period\": \"2024-09-01\", \"negative\": 14, \"positive\": 13, \"neutral\": 0, \"ratio\": 1.08}, {\"period\": \"2024-10-01\", \"negative\": 7, \"positive\": 11, \"neutral\": 1, \"ratio\": 0.64}, {\"period\": \"2024-11-01\", \"negative\": 20, \"positive\": 19, \"neutral\": 0, \"ratio\": 1.05}, {\"period\": \"2024-12-01\", \"negative\": 22, \"positive\": 14, \"neutral\": 1, \"ratio\": 1.57}, {\"period\": \"2025-01-01\", \"negative\": 14, \"positive\": 9, \"neutral\": 2, \"ratio\": 1.56}"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical drone-warfare headlines appeared in each month, with publisher and URL?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries or regions gained or lost attention over time?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-06-01",
+     "level": "country",
+     "granularity": "monthly"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\ngranularity\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='monthly', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Which themes drove the largest monthly volume changes?",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-06-01",
+     "granularity": "monthly",
+     "group_by": "category"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='category', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 49,
+   "traced": 48,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

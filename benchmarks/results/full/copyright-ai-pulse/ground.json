@@ -1,0 +1,720 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 580,
+  "charts": [
+   {
+    "id": "cum_filings",
+    "title": "Approx. cumulative US AI copyright suits filed",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Cumulative filings (est.)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "filings_est.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Monthly volume of news coverage of AI copyright lawsuits, 2023 to now?",
+    "args": {
+     "term": "AI copyright lawsuit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 1, \"critical\": 1, \"negative\": 1, \"positive\": 0, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 4, \"critical\": 4, \"negative\": 4, \"positive\": 0, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, "
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "Tone of coverage vs corpus baseline?",
+    "args": {
+     "term": "AI copyright lawsuit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2024-09-01\", \"negative\": 4, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-01-01\", \"negative\": 2, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-02-01\", \"negative\": 2, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-03-01\", \"negative\": 4, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-06-01\", \"negative\": 6, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-08-01\", \"negative\": 1, \"positive\": 1, \"neutral\": 0, \"ratio\": 1.0}, {\"period\": \"2025-09-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical headlines, with date and publisher?",
+    "args": {
+     "term": "AI copyright lawsuit",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'AI copyright lawsuit'",
+    "seconds": 0.3,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries cover it, and what share is placed?",
+    "args": {
+     "term": "AI copyright lawsuit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.3,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 15, \"share_pct\": 48.4, \"lift\": 2.1}, {\"label\": \"colombia\", \"articles\": 8, \"share_pct\": 25.8, \"lift\": 53.2}, {\"label\": \"canada\", \"articles\": 2, \"share_pct\": 6.5, \"lift\": 1.9}, {\"label\": \"france\", \"articles\": 2, \"share_pct\": 6.5, \"lift\": 3.7}, {\"label\": \"scotland\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 11.2}, {\"label\": \"china\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"united kingdom\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"switzerland\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 7.1}], \"placed_articles\": 18, \"matched_articles\": 26, \"placed_pct\": 69.2, \"what\": \"the place an article is ABOUT"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which outlets dominate coverage?",
+    "args": {
+     "term": "AI copyright lawsuit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 25.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"AI copyright lawsuit\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 0, \"entity_labelled_articles\": 19, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 29, \"critical_articles\": 28, \"first_seen\": \"2024-06-25 09:31:18\", \"last_seen\": \"2026-05-08 10:06:41\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with "
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What does research say on fair use for training?",
+    "args": {
+     "term": "fair use generative AI training"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...enerative AI training'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='fair use generative AI training', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.compare",
+    "question": "How do OpenAI and Meta coverage compare?",
+    "args": {
+     "terms": [
+      "OpenAI copyright",
+      "Meta copyright"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.9,
+    "sample": "{\"terms\": [\"OpenAI copyright\", \"Meta copyright\"], \"rows\": [{\"term\": \"OpenAI copyright\", \"articles\": 1, \"share_pct\": 16.7, \"critical\": 1, \"direction\": \"falling\", \"growth\": 0.0, \"tone_ratio\": 0.0, \"vs_baseline\": null, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"20"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 17,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 10,
+   "untagged_examples": [
+    "3,000 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "750 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "150,000 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "17 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "504 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "3,000 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "750 — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o",
+    "2% — Baseline: the Anthropic settlement per work (~$3,000, est.) against US statutory damages o"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 127,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1315,
+  "charts": [
+   {
+    "id": "monthly-ai-copyright",
+    "title": "Monthly articles mentioning 'ai copyright' and critical subset",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "critical",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_ai_copyright.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "tone_by_month.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What does coverage look like for lawsuits specifically, without the Feb 2026 cluster?",
+    "args": {
+     "term": "ai copyright lawsuit",
+     "since": "2024-06-01",
+     "match_mode": "central"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nmatch_mode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='central', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "Which critical headlines, with date, publisher and url, drove 2025 peaks?",
+    "args": {
+     "term": "ai copyright",
+     "since": "2025-03-01",
+     "until": "2025-07-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-07-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What is in the Feb 2026 cluster of 161 articles?",
+    "args": {
+     "term": "ai copyright",
+     "since": "2026-02-01",
+     "until": "2026-03-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Is coverage of OpenAI suits more negative than coverage of Meta or Google suits?",
+    "args": {
+     "terms": [
+      "openai copyright lawsuit",
+      "meta copyright lawsuit",
+      "google copyright lawsuit"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.3,
+    "sample": "{\"terms\": [\"openai copyright lawsuit\", \"meta copyright lawsuit\", \"google copyright lawsuit\"], \"rows\": [{\"term\": \"openai copyright lawsuit\", \"articles\": null, \"share_pct\": 0.0, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"meta copyright lawsuit\", \"articles\": 3, \"share_pct\": 100.0, \"critical\": 3, \"direction\": \"rising\", \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\":"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which publishers carry the coverage, and how concentrated is it?",
+    "args": {
+     "term": "ai copyright lawsuit",
+     "since": "2024-06-01",
+     "panel": "sources"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\npanel\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sources', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Where is litigation coverage placed, once Colombia is excluded?",
+    "args": {
+     "term": "ai copyright lawsuit",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 15, \"share_pct\": 48.4, \"lift\": 2.1}, {\"label\": \"colombia\", \"articles\": 8, \"share_pct\": 25.8, \"lift\": 53.2}, {\"label\": \"canada\", \"articles\": 2, \"share_pct\": 6.5, \"lift\": 1.9}, {\"label\": \"france\", \"articles\": 2, \"share_pct\": 6.5, \"lift\": 3.7}, {\"label\": \"scotland\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 11.2}, {\"label\": \"china\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"united kingdom\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"switzerland\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 7.1}], \"placed_articles\": 18, \"matched_articles\": 26, \"placed_pct\": 69.2, \"what\": \"the place an article is ABOUT"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 98,
+   "traced": 98,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 444,
+  "charts": [
+   {
+    "id": "lawsuit-monthly-trend",
+    "title": "Copyright lawsuits against AI companies: monthly case coverage",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "No verified observations",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "lawsuit_monthly.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many copyright lawsuits against AI companies are recorded by month, and what is the direction over time?",
+    "args": {
+     "query": "copyright lawsuit AI company",
+     "group_by": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...', 'group_by': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does coverage tone compare with the overall corpus baseline?",
+    "args": {
+     "query": "copyright lawsuit AI company",
+     "compare_with": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...ompare_with': 'corpus'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_with\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes are most prominent in coverage?",
+    "args": {
+     "query": "copyright lawsuit AI company"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...ht lawsuit AI company'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which organisations and people appear most often?",
+    "args": {
+     "query": "copyright lawsuit AI company",
+     "dimensions": [
+      "organisations",
+      "people"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...anisations', 'people']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimensions\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['organisations', 'people'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Where are the covered cases or stories located, and what share has a place assigned?",
+    "args": {
+     "query": "copyright lawsuit AI company"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...ht lawsuit AI company'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which critical headlines are relevant, with dates, publishers, and source URLs?",
+    "args": {
+     "query": "copyright lawsuit AI company"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...ht lawsuit AI company'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.compare",
+    "question": "How concentrated is coverage among publishers or sources?",
+    "args": {
+     "query": "copyright lawsuit AI company",
+     "dimension": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ... 'dimension': 'source'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuit AI company', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 708,
+  "charts": [
+   {
+    "id": "ai-copyright-news-monthly",
+    "title": "Monthly news articles mentioning AI copyright",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Matched articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ai_copyright_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "ai_copyright_sentiment.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which reported AI copyright stories specifically concern lawsuits, and what are their filing dates?",
+    "args": {
+     "term": "AI copyright lawsuit",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which organizations and people are named in lawsuit-focused coverage, after article-level relevance checks?",
+    "args": {
+     "terms": [
+      "AI copyright lawsuit"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "give at least two terms",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What are the month-by-month counts for coverage explicitly matching AI copyright lawsuits?",
+    "args": {
+     "term": "AI copyright lawsuit",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 1, \"critical\": 1, \"negative\": 1, \"positive\": 0, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 4, \"critical\": 4, \"negative\": 4, \"positive\": 0, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, "
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which jurisdictions are described in lawsuit-focused coverage, and how many matched articles are placed?",
+    "args": {
+     "term": "AI copyright lawsuit",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 15, \"share_pct\": 48.4, \"lift\": 2.1}, {\"label\": \"colombia\", \"articles\": 8, \"share_pct\": 25.8, \"lift\": 53.2}, {\"label\": \"canada\", \"articles\": 2, \"share_pct\": 6.5, \"lift\": 1.9}, {\"label\": \"france\", \"articles\": 2, \"share_pct\": 6.5, \"lift\": 3.7}, {\"label\": \"scotland\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 11.2}, {\"label\": \"china\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"united kingdom\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"switzerland\", \"articles\": 1, \"share_pct\": 3.2, \"lift\": 7.1}], \"placed_articles\": 18, \"matched_articles\": 26, \"placed_pct\": 69.2, \"what\": \"the place an article is ABOUT"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which outlets account for lawsuit-focused coverage in a representative sample?",
+    "args": {
+     "term": "AI copyright lawsuit",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"AI copyright lawsuit\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 0, \"entity_labelled_articles\": 19, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 29, \"critical_articles\": 28, \"first_seen\": \"2024-06-25 09:31:18\", \"last_seen\": \"2026-05-08 10:06:41\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with "
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What case-level evidence or statistics document copyright lawsuits against AI companies?",
+    "args": {
+     "query": "copyright lawsuits against generative AI companies case count filing dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...se count filing dates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='copyright lawsuits again...case count filing dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 29,
+   "traced": 28,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 89,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

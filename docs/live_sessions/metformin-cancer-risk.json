@@ -1,0 +1,80 @@
+{
+ "slug": "metformin-cancer-risk",
+ "claude_live": {
+  "text": "**Direct answer:** Probably a modest reduction in some cancers, but the evidence is observational and mixed by cancer site. It doesn't establish that metformin causes the reduction. The evidence I retrieved does not include trials of cancer prevention in diabetics.\n\n**What the data shows** (Prism, typed corpus 2017–2025, 338 papers on this exact claim)\n- Framing is mostly favourable. By orientation label, 99 papers are promising and 66 cautionary. By side, 106 support, 84 qualify and 21 contradict (31.1% contested). These labels describe how papers frame their findings. They are not verdicts.\n- The strongest supporting source is a 2024 JNCI meta-analysis (O'Connor et al.). It found a lower overall cancer risk in case-control studies (RR 0.55, 95% CI 0.30–0.80) and in prospective cohorts (RR 0.65, 0.37–0.93). Those intervals are wide.\n- Lung cancer meta-analyses are consistently protective:\n  - Zhang 2014: RR 0.71 (0.55–0.95)\n  - Yao 2019: RR 0.89 (0.83–0.96)\n  - Xiao 2020: HR 0.78 (0.70–0.86)\n  \n  I did not read these abstracts myself. The tool's quote check failed on them, so treat the figures as the tool's extraction.\n\n**What disagrees** (site-specific meta-analyses)\n- Prostate: OR 0.94 (0.79–1.11), 2025; RR 0.97 (0.80–1.16), 2019. Neither is significant.\n- Breast: no significant reduction (2023).\n- Esophageal, in type 2 diabetes: HR 0.88 (0.60–1.28), 2021. Not significant.\n- Endometrial: OR 1.05 (0.82–1.35), 2018, and HR 1.17 (1.09–1.26), 2024. The 2024 result points toward higher incidence.\n- A 22-trial meta-analysis of people who already had cancer (2022) found no effect on cancer mortality. That is a different question from prevention.\n\n**Interpretation (mine)**\n- The pooled \"overall cancer\" benefit is likely inflated by the usual biases in observational drug studies, such as immortal-time bias and comparison with non-users who are sicker. The pattern of lung benefit but null or adverse results elsewhere fits that. I haven't tested this here.\n- The tool's tally was thin: only 1 of 16 documents was read as directly supporting, and 8 were judged unrelated to the claim as worded. Treat the evidence as moderate at best.\n- The wording I'd defend is \"associated with lower risk of some cancers, notably lung, in observational data, with no proven causal effect.\"",
+  "seconds": 511.8,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "find_evidence",
+    "args": {
+     "claim": "Metformin reduces cancer risk in people with type 2 diabetes",
+     "limit": 12
+    },
+    "ok": true,
+    "chars": 23053
+   },
+   {
+    "tool": "find_counter_evidence",
+    "args": {
+     "claim": "Metformin reduces cancer risk in people with type 2 diabetes"
+    },
+    "ok": true,
+    "chars": 5000
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Probably not established.** Metformin is associated with lower cancer incidence in some studies of people with type 2 diabetes, but the evidence does not show reliably that the drug itself prevents cancer.\n\n**What the data shows:** A 2023 systematic-review/meta-analysis abstract reported **31% lower overall cancer incidence** among metformin users (summary RR 0.69; 95% CI 0.52–0.90). Prism’s 2020–2025 paper sample also included contrary findings: a study found **no association** between metformin use and lung cancer risk, while a small Algerian study reported higher risk among users (OR 4.61; 95% CI 1.48–14.37). These studies differ in cancer type and design; the pooled estimate does not specify a common follow-up window. [2023 meta-analysis abstract](https://doi.org/10.1158/1940-6207.c.6544806) · [lung cancer study](https://doi.org/10.1158/1940-6207.c.6544617) · [Algerian study](https://doi.org/10.32113/wcrj_20229_2394)\n\n**My interpretation:** The apparent benefit is suggestive, but not strong causal evidence. Much of this literature is observational, so differences in health, diabetes severity, treatment choice and time exposed to medication can distort comparisons. The contrary studies reinforce that findings vary by cancer and population. I would not treat metformin as a proven cancer-prevention drug; the strongest conclusion is that a preventive effect remains uncertain.",
+  "seconds": 536.7,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "find_evidence",
+    "args": {
+     "claim": "Metformin reduces cancer incidence or cancer mortality in people with type 2 diabetes compared with other glucose-lowering therapies or no metformin",
+     "read": true,
+     "limit": 12
+    },
+    "ok": true,
+    "chars": 52869
+   },
+   {
+    "tool": "research_plan",
+    "args": {
+     "question": "Does metformin reduce cancer risk in people with type 2 diabetes? Need evidence strength and disagreement.",
+     "subject_phrases": [
+      "metformin",
+      "type 2 diabetes"
+     ],
+     "outcome_phrases": [
+      "cancer risk",
+      "cancer incidence",
+      "cancer mortality"
+     ]
+    },
+    "ok": true,
+    "chars": 3453
+   },
+   {
+    "tool": "research_packet",
+    "args": {
+     "claim": "Does metformin reduce cancer risk in people with type 2 diabetes?",
+     "subject_phrases": [
+      "metformin",
+      "type 2 diabetes"
+     ],
+     "outcome_phrases": [
+      "cancer risk",
+      "cancer incidence",
+      "cancer mortality"
+     ],
+     "read": true,
+     "limit": 12
+    },
+    "ok": true,
+    "chars": 21340
+   }
+  ]
+ }
+}

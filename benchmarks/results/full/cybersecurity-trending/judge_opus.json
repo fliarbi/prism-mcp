@@ -1,0 +1,173 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 5,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series is given. The response honestly declines to plot one.",
+    "comparison": "No contrast is made. It only defines a hypothetical baseline.",
+    "chart": "No chart block.",
+    "drilldown": "The planned layers are memory topics. Only 2 of 6 follow-ups executed, and the layering is generic.",
+    "export": "The CSV is labelled estimate and leaves cells empty. That is honest but unmeasured.",
+    "repro": "No call was run. The candidate list is memory and cannot be regenerated.",
+    "accuracy": "No contradictions. The memory candidates are labelled est.",
+    "limits": "It is specific about what is unmeasured and about the gap between its knowledge cutoff and today.",
+    "verdict": "It states an answer, decision, confidence and conditions, but the answer rests only on memory.",
+    "facets": "Facets are answered from memory or not at all."
+   },
+   "B": {
+    "trend": "Both windows are traced, the change is quantified (14.2x, 15.56x, +1.3% for AI) and the dates are stated. Only two points exist, so this is not a true series.",
+    "comparison": "The baseline is defined, and the deltas and ratios recompute (14893/174 ≈ 85.6). The robotics-vs-AI contrast is meaningful.",
+    "chart": "The chart is traced, with unit, window, source and caption, and it overlays AI against robotics. Plotting the windows as temporal points at their end dates is slightly awkward.",
+    "drilldown": "At the ceiling. No follow-up executed and the response exposes no item identifiers.",
+    "export": "The CSV is traced, carries provenance and a JSON block, and keeps the null growth_x for the new topic. It is a single table.",
+    "repro": "87 of 87 numbers trace, derived figures are shown, and a prism-calls block with capture date is included.",
+    "accuracy": "It catches the off-topic labels, the loose category tagging and a possible clustering artifact. Fields are read correctly.",
+    "limits": "The 144-day staleness, top-15 censoring, row-floor coverage caveat, label clustering and what the counts are not all sit next to the numbers. It also says what would close the gap.",
+    "verdict": "The answer is direct and filtered for off-topic labels. It gives a decision and a reasoned low confidence, and names flat AI as contrary evidence.",
+    "facets": "Rising, newly covered, biggest and window staleness are all grounded. It also addresses label mismatch and the AI-vs-robotics comparison."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups are generic and 0 of 3 executed.",
+    "export": "No export.",
+    "repro": "Nothing to reproduce.",
+    "accuracy": "It makes no claims, so there is nothing to contradict.",
+    "limits": "It lists unknowns but none tied to actual data. Marking today's date as est. is odd.",
+    "verdict": "It refuses to answer and attaches high confidence to the refusal.",
+    "facets": "No facet is answered, even with a grounded no-data."
+   },
+   "D": {
+    "trend": "At the ceiling. Only two-window growth for two topics is given.",
+    "comparison": "The deltas are exact (43-article difference). The comparison is between two near-identical robotics labels, not a decision-relevant contrast.",
+    "chart": "The chart is traced and captioned but shows only robotics. Biggest topics and new topics are not charted.",
+    "drilldown": "It names the response layers. Only 2 of 5 follow-ups executed and no item identifiers are given.",
+    "export": "A single traced CSV, but labelled coverage=partial while the prose says the coverage read was non-partial. That is an inconsistency.",
+    "repro": "23 of 26 numbers trace and a calls block is present. The 144-day figure is oddly labelled est.",
+    "accuracy": "It catches the off-topic labels. The coverage flag is mislabelled in the CSV.",
+    "limits": "At the ceiling. It covers window, staleness, coverage, match mode and that counts are not adoption.",
+    "verdict": "The answer is direct, with decision, low confidence and what would change it. It gives less contrary evidence than B.",
+    "facets": "Rising, new and biggest are each addressed with grounded values. The response notes no technology topic is newly covered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": [
+    "CSV provenance says coverage=partial, but the prose and the tool metadata report a non-partial read",
+    "The 144-day date difference is computed from the tool's dates but labelled (est.)"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both read the one recorded call and filtered out off-topic labels. Only B set robotics' 14-16x rise against flat AI (1.01x) and the other big topics, and it tied every limit (144-day staleness, top-15 censoring, loose category tagging) to the numbers with a reproducible export. D was correct but narrower and had a coverage-flag inconsistency. A and C measured nothing: A offered labelled memory guesses, and C gave a bare refusal."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 5,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 1,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

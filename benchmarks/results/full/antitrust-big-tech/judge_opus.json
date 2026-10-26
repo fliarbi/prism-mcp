@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full 24-month series traced with its window. Gives the peak (15, 2024-08), early vs late thirds (55 vs 7, ratio 0.13), the May and Sep 2025 bumps and a critical-share aside. Censoring is stated in limits, not beside the chart.",
+    "comparison": "Baseline 0.58 is defined, 3.04 vs 5.24x traces, and the tool's caveat is carried. Adds an over-time ratio contrast. Search vs ad tech is not measured.",
+    "chart": "One fully traced volume chart with caption. Tone and critical share were available in the data but not charted.",
+    "drilldown": "Theme, entity and headline layers carry URLs. Only 2 of 6 follow-ups executed ok.",
+    "export": "At ceiling. Monthly CSV traces with provenance JSON, but there is no row identifier beyond period and no sentiment or headline table.",
+    "repro": "65/65 numbers traced; prism-calls block and capture date present. Attributing the Aug 2024 liability narrative to [c1] is a stretch.",
+    "refs": "Capped at 1 by the script.",
+    "accuracy": "No contradictions. Flags Colombia and South Korea as possible label collisions, incidental people labels and enrichment lag. 'Fell to 1 to 2 per month' glosses over the zero months.",
+    "limits": "Window, 5-month gap, match modes, censoring, enrichment lag, the thin 8-article sample and the unmeasured ad tech facet are all stated. Says what would close the gap.",
+    "verdict": "Direct answer with decision, low confidence and its reason, and a change condition. Bounded by the window.",
+    "facets": "Volume, tone, themes, entities, places, headlines and sources are grounded. Ad tech gets an explicit grounded 'effectively unmeasured'."
+   },
+   "B": {
+    "trend": "Traced series with peak, early vs late thirds and zero months noted. Censoring is stated in limits.",
+    "comparison": "Baseline traced, and the caveat that it is not a matched set is stated.",
+    "chart": "Volume chart only, no tone chart.",
+    "drilldown": "Headlines with URLs and an entity layer. 2 of 4 follow-ups ok.",
+    "export": "Two CSVs with provenance, but sentiment.csv mixes ratios into the 'count' column (hygiene error).",
+    "repro": "28/28 traced, calls listed, the 144-day gap is correct.",
+    "refs": "At the ceiling of 2. Three headlines carry date, publisher and URL.",
+    "accuracy": "No contradictions. Does not catch the Colombia anomaly.",
+    "limits": "Gap, censoring, lane conflation, match mode, enrichment and sample size are stated, mostly in the limits section.",
+    "verdict": "Clear answer with decision, medium confidence and its reason, a change condition, and the ad tech limit acknowledged.",
+    "facets": "Most facets are grounded; ad tech gets a grounded 'not separable'."
+   },
+   "C": {
+    "trend": "Only a milestone count labelled estimate.",
+    "comparison": "DOJ ask vs ruling from memory, with no ratio.",
+    "chart": "Memory chart honestly labelled estimate.",
+    "drilldown": "Layers are from memory; follow-ups only 2 of 6 ok.",
+    "export": "Milestone CSV labelled estimate.",
+    "repro": "Memory, labelled.",
+    "refs": "Court opinions named without resolvable identifiers.",
+    "accuracy": "Case milestones are broadly correct. The EU fine date in the CSV (Sept 12) is likely off; it was announced Sept 5.",
+    "limits": "Specific about what is unmeasured and about the knowledge cutoff.",
+    "verdict": "At ceiling. Substantive answer from memory with a decision, low confidence and a change condition.",
+    "facets": "Case facts from memory only; no news measurements."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "Empty chart block.",
+    "drilldown": "Follow-up calls are generic and mostly failed (1 of 6 ok).",
+    "export": "None.",
+    "repro": "No numbers; honest about it.",
+    "refs": "None.",
+    "accuracy": "No contradictions; the content is mostly empty.",
+    "limits": "Specific about what cannot be measured.",
+    "verdict": "Vague answer with low confidence and no grounding.",
+    "facets": "None answered."
+   }
+  },
+  "errors": {
+   "A": [
+    "Prose says coverage 'fell to 1 to 2 per month in 2026' while Jan and Apr 2026 were 0 (caption says 0-2)"
+   ],
+   "B": [
+    "sentiment.csv stores ratios in a 'count' column"
+   ],
+   "C": [
+    "EU ad tech fine dated 2025-09-12 in CSV; the decision was announced 2025-09-05 (labelled estimate)"
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A and B both read the measured corpus correctly: a 103-article volume that peaked in August 2024 and faded, with tone 5.24x more negative than baseline. A edges ahead with richer decomposition (critical share, secondary bumps) and by flagging label anomalies such as Colombia and incidental people. Both are honest that ad tech is effectively unmeasured and that the five months before today are missing. C gives useful case milestones from memory, but nothing about what the news measured; D offers almost nothing."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

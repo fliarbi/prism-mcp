@@ -1,0 +1,669 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 594,
+  "charts": [],
+  "tables": [
+   {
+    "name": "coverage_template.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the 12-month vs prior 12-month growth for each term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone of coverage per term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries cover each term most?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "How many articles match more than one term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "match": "all",
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmatch\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which articles are the most critical per term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'murder'], 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 5,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 5,
+   "untagged_examples": [
+    "12 — The chart spec asks for a temporal series. I have no sourced values, so I draw no chart ra",
+    "12 — The chart spec asks for a temporal series. I have no sourced values, so I draw no chart ra",
+    "24 — - Baseline: the fraud monthly average over the 24-month window, set to 1.0.",
+    "1.0 — - Baseline: the fraud monthly average over the 24-month window, set to 1.0.",
+    "24 — - Month level (c1): the 24 monthly counts."
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 945,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "murder",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "fraud",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "robbery",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "coverage_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.geography",
+    "question": "Which countries drive the 2026-04 spike in murder coverage?",
+    "args": {
+     "term": "murder",
+     "since": "2026-02-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.9,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 19520, \"share_pct\": 35.5, \"lift\": 1.6}, {\"label\": \"india\", \"articles\": 8704, \"share_pct\": 15.8, \"lift\": 2.4}, {\"label\": \"united kingdom\", \"articles\": 4523, \"share_pct\": 8.2, \"lift\": 1.7}, {\"label\": \"australia\", \"articles\": 2201, \"share_pct\": 4.0, \"lift\": 0.8}, {\"label\": \"canada\", \"articles\": 1567, \"share_pct\": 2.8, \"lift\": 0.8}, {\"label\": \"iran\", \"articles\": 1068, \"share_pct\": 1.9, \"lift\": 0.6}, {\"label\": \"israel\", \"articles\": 908, \"share_pct\": 1.7, \"lift\": 1.3}, {\"label\": \"france\", \"articles\": 819, \"share_pct\": 1.5, \"lift\": 0.9}, {\"label\": \"italy\", \"articles\": 708, \"share_pct\": 1.3, \"lift\": 1.0}, {\"label\": \"south africa\", "
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "What share of 'fraud' articles are about financial crime rather than figurative use?",
+    "args": {
+     "term": "fraud",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 65.4,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"fraud\", \"type\": \"topic\", \"type_evidence\": {\"person\": 10, \"organization\": 560, \"place\": 0, \"tagged_articles\": 270276, \"entity_labelled_articles\": 208765, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 351112, \"critical_articles\": 287954, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:42:52\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series "
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which stories dominate critical coverage of robbery in 2026-04?",
+    "args": {
+     "term": "robbery",
+     "since": "2026-04-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "Why did mean priority dip in 2025-07 across all three terms?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "since": "2025-05-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2025-05-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "How does sentiment on fraud differ from murder over time?",
+    "args": {
+     "terms": [
+      "fraud",
+      "murder"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "Is the 2026 rise persistent or a one-off?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "since": "2022-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2022-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 94,
+   "traced": 87,
+   "derived": 20,
+   "untagged_untraced": 6,
+   "untagged_examples": [
+    "276,562 — - Computed first 12 months (2024-06 to 2025-05) against last 12 months (2025-06 to 2026-05",
+    "266,457 — - Computed first 12 months (2024-06 to 2025-05) against last 12 months (2025-06 to 2026-05",
+    "173,575 — - Computed first 12 months (2024-06 to 2025-05) against last 12 months (2025-06 to 2026-05",
+    "177,537 — - Computed first 12 months (2024-06 to 2025-05) against last 12 months (2025-06 to 2026-05",
+    "27,553 — - Computed first 12 months (2024-06 to 2025-05) against last 12 months (2025-06 to 2026-05",
+    "29 — - Computed first 12 months (2024-06 to 2025-05) against last 12 months (2025-06 to 2026-05"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 119,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 370,
+  "charts": [
+   {
+    "id": "coverage-trend",
+    "title": "Monthly news coverage of fraud, robbery and murder",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Fraud",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Robbery",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Murder",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "coverage.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the monthly article counts for fraud, robbery and murder in the selected outlets and geography?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "window": "last_24_months",
+     "group_by": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='last_24_months', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "What share of unique articles mentions each term, and how many mention multiple terms?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "window": "last_24_months",
+     "measure": "unique_articles_and_overlap"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='last_24_months', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='unique_articles_and_overlap', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does article tone for each term vary over time under a stated sentiment definition?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "window": "last_24_months",
+     "group_by": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'group_by': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='last_24_months', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries or regions account for coverage of each term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "window": "last_24_months"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...dow': 'last_24_months'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='last_24_months', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 96,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 612,
+  "charts": [
+   {
+    "malformed": true
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_coverage.csv",
+    "how": "call",
+    "rows": 72,
+    "numeric_cells": 66,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.geography",
+    "question": "Which publishers and outlets account for each term’s coverage?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ..., 'robbery', 'murder']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which stories and events drove the monthly peaks for each term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does article sentiment compare by term and month, with the sentiment definition?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How much do the article sets overlap, and what counts remain after deduplication?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "since": "2024-06-01",
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "What are the country-level coverage patterns for each term?",
+    "args": {
+     "terms": [
+      "fraud",
+      "robbery",
+      "murder"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['fraud', 'robbery', 'murder'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 22,
+   "traced": 19,
+   "derived": 5,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "144 — The call covers monthly data from 2024-06-01 through 2026-05-31 [c1], with an exclusive en"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 3,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,213 @@
+{
+ "slug": "library-gaps-ai-ethics",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 3.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 1.5
+   },
+   "strict": 45.1,
+   "plain": 45.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 41.4,
+    "gpt": 48.7
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 69.2,
+   "plain": 69.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 74.0,
+    "gpt": 64.3
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 1.0
+   },
+   "strict": 40.7,
+   "plain": 40.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 34.9,
+    "gpt": 46.5
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 3.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 61.7,
+   "plain": 61.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 54.7,
+    "gpt": 68.7
+   }
+  }
+ },
+ "judge_mad": 0.56,
+ "verdicts": {
+  "opus": "A was the only deliverable that used the gap scan correctly. It read the theme counts by their definition, filtered the off-topic computer-vision 'highly cited missing' rows, and flagged the citation anomalies. It then turned the ethics-relevant recent items into concrete additions with DOIs and separated them from memory-based gaps. C used the same data but misread covered themes as gaps. B and D gave sensible but unmeasured, memory-only topic lists.",
+  "gpt": "C best supports a decision-maker by separating corpus-grounded themes and leads from the question of whether they are truly ethics-relevant, while preserving traceable exports and explicit limits. D is more elaborate, but its misreading of the theme counts and unsupported date make its comparisons less dependable; A and B are honest memory-based suggestions without corpus-grounded coverage."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "States the window as 2026-10-22..2026-10-22 although the call returned an empty window.",
+    "Says 'raw top 11' when the highly-cited list has 12 entries."
+   ],
+   "claude_bare": [],
+   "chatgpt_prism": [
+    "Treats in-library themes (adversarial robustness, ethics and social impacts) as candidate gaps.",
+    "Theme export omits the Blockchain row without a note."
+   ],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [],
+   "chatgpt_prism": [
+    "Says the scan resolved all four input items, but the reference record reports only resolved: 200 and of_items: 4; it does not explicitly say all four resolved."
+   ],
+   "claude_prism": [
+    "Describes the theme values as counts of resolved works carrying each theme, but the reference labels them in_library.",
+    "Asserts the call ran on 2026-10-22 and assigns that date as the chart and export window, while the recorded response has window: {}."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "chart": "One fully traced theme hbar with unit, source, caption and supported claim. The highly-cited and recent missing facets are not charted.",
+    "drilldown": "Goes theme, then item, then DOI with traced values. Only 3 of 6 follow-ups executed ok, and none was folded back into the report.",
+    "export": "Two traced CSVs plus a provenance JSON, referenced from the prose, using the tool field names. The window 2026-10-22 is asserted although the call returned no window.",
+    "repro": "All 26 of 26 numbers trace and a prism-calls block is given. The stated window is not the call's window.",
+    "refs": "All DOIs resolve and each is tied to a claim. Venue is missing for some, and there are no abstract quotes (stated honestly).",
+    "accuracy": "Catches the anomalies: the Dagstuhl paper's 13,138 citations, the 2023 GAN reprint, and the off-topic computer-vision rows. Minor miscount: says 'raw top 11' when the list has 12.",
+    "limits": "Says counts describe the 200 resolved works, not the 4-item list, and places that next to the numbers. Covers lane, match mode and the missing window. Says a topic-filtered re-run would close the gap.",
+    "verdict": "Gives answer, decision, confidence with reason and what would change it, and separates measured from background knowledge. It cannot be bounded by a window because none exists.",
+    "facets": "Themes, highly cited missing and recent missing are all answered with grounded values and a relevance filter."
+   },
+   "claude_bare": {
+    "chart": "No chart.",
+    "drilldown": "Layers are named generically with no traced breakdown. Follow-ups are specific, but only 3 of 6 executed ok.",
+    "export": "The CSV is labelled as an estimate.",
+    "repro": "Openly memory-only with no numbers.",
+    "refs": "Real works with year, venue, tier and the claim each supports. No quotes.",
+    "accuracy": "No contradictions, and nothing is presented as measured.",
+    "limits": "Specific about what is unmeasured, including the knowledge cutoff.",
+    "verdict": "Gives a direct answer, decision, confidence with reason and what would change it. It is reasonable from memory.",
+    "facets": "Answered from memory. The highly cited and recent facets are not grounded."
+   },
+   "chatgpt_prism": {
+    "chart": "No chart.",
+    "drilldown": "Theme layer and lead items with DOIs. Only 2 of 3 follow-ups executed ok.",
+    "export": "Two traced CSVs with provenance, referenced in the prose. The 'topic' field is renamed to 'theme' without documentation, and the blockchain row is dropped.",
+    "repro": "All 6 of 6 numbers trace, with a calls block and a provenance block.",
+    "refs": "DOIs resolve and are tied to claims. No venue and no quotes.",
+    "accuracy": "Reads 'adversarial robustness' and 'ethics and social impacts' as candidate gaps, but they are themes the library already carries (in_library). That misreads the field.",
+    "limits": "Window absence, unscreened relevance and the meaning of the counts are stated next to the numbers.",
+    "verdict": "Has a decision and confidence, but the answer rests on the misread themes. It also misses the obvious gaps (governance, LLM risks) that its own recent rows point to.",
+    "facets": "All three facets are touched with data, but the gap reading is weak."
+   },
+   "chatgpt_bare": {
+    "chart": "No chart.",
+    "drilldown": "Conceptual layers from memory. Only 2 of 5 follow-ups executed ok.",
+    "export": "No export.",
+    "repro": "No traced numbers.",
+    "refs": "Real frameworks and papers with URLs and DOIs, tied to claims. No quotes.",
+    "accuracy": "No contradictions.",
+    "limits": "Honest and specific about what was not measured.",
+    "verdict": "Gives a direct answer, decision, confidence and what would change it, from established knowledge.",
+    "facets": "Memory only. The highly cited and recent facets are explicitly unmeasured."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "chart": "No chart.",
+    "drilldown": "Topic layers are a qualitative synthesis; the proposed calls are generic and only two of five executed successfully.",
+    "export": "No CSV export.",
+    "repro": "No measured numbers or reproducible calls.",
+    "refs": "Sources are identifiable and tied to claims, but no verbatim supporting quotes are provided.",
+    "accuracy": "Makes no measured claims and clearly labels the topic mapping as judgment.",
+    "limits": "States the absent search, window, coverage, match mode, and what cannot be measured alongside the conclusions.",
+    "verdict": "Gives an answer, decision, confidence, and conditions, but no contrary evidence from its own evidence set.",
+    "facets": "Suggests broad topics from memory but does not ground the missing-topic assessment in the corpus."
+   },
+   "claude_bare": {
+    "chart": "No chart.",
+    "drilldown": "Names layers, but they are not traced breakdowns; three of six proposed calls returned relevant data.",
+    "export": "The table is explicitly an estimate and carries limited provenance.",
+    "repro": "All numeric claims are absent; calls are listed but not reproducible from a captured run.",
+    "refs": "References are tied to claims with years and tiers, but the deliverable itself says details need verification and supplies no quotes.",
+    "accuracy": "No measured specifics are invented; the recommendations are clearly presented as judgment.",
+    "limits": "Clearly states memory-only coverage and the knowledge cutoff, but supplies no measured window, corpus coverage, or matching limits.",
+    "verdict": "Direct recommendation with confidence and conditions; it does not identify contrary evidence in its own evidence.",
+    "facets": "Addresses several broad topic areas, but recommendations and the coverage map are memory judgments."
+   },
+   "chatgpt_prism": {
+    "chart": "No chart.",
+    "drilldown": "Provides traced themes and paper leads with identifiers, plus two successful specific follow-ups; the executed follow-up results are not folded back into the report.",
+    "export": "Both needed CSVs are referenced, trace to the call, and include source, window, unit, and coverage; identifiers are retained but the call has no returned window.",
+    "repro": "All numeric claims trace to the listed library-gap call, and derived readings are explained; no complete renderer recipe is provided.",
+    "refs": "All listed DOIs resolve and are tied to claims, but venue or tier metadata is absent and no abstract quotes are supplied.",
+    "accuracy": "Carefully distinguishes theme counts from list coverage and flags irrelevant ranked results; the claim that the scan resolved all four entries is not shown in the record's resolved field.",
+    "limits": "Places the missing window, uncertain matching, incomplete ingestion, and limits of the counts next to their interpretation.",
+    "verdict": "Direct recommendation with confidence and a condition for change, while acknowledging the scan's irrelevant results; the decision and scope are bounded.",
+    "facets": "Grounds topic coverage and missing-paper leads in the corpus, while explicitly noting the scan cannot establish ethics relevance or list-level coverage."
+   },
+   "claude_prism": {
+    "chart": "The chart is traced, labeled with unit and window, and tied to a prose claim, but it misleadingly labels theme counts as works resolved per theme.",
+    "drilldown": "Shows themes and candidate papers with identifiers, but only three follow-ups executed successfully and none of their results are included.",
+    "export": "Both referenced CSVs mostly trace and include provenance fields, but the export window is asserted despite the source returning no window.",
+    "repro": "The listed source call supports the figures, but its empty window conflicts with the chart and export dates, and no full regeneration recipe is provided.",
+    "refs": "DOIs resolve and items are tied to claims, but the deliverable does not provide abstract quotes for its references.",
+    "accuracy": "It treats theme counts as counts of resolved works and asserts a 2026-10-22 call date that the record does not supply; relevance-filtered papers are recommendations rather than measured ethics gaps.",
+    "limits": "Notes several corpus and relevance limits, but the asserted one-day window and full coverage overstate what the record establishes.",
+    "verdict": "Offers a decision and confidence, but its supporting account contains misread counts and unsupported relevance-filtered gaps; it also omits contrary evidence from the candidate list.",
+    "facets": "Covers several corpus facets, but the core gap recommendations rely partly on background knowledge and the scan does not establish their coverage."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

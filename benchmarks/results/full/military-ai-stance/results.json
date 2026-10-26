@@ -1,0 +1,249 @@
+{
+ "slug": "military-ai-stance",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 33.0,
+   "plain": 33.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.8,
+    "gpt": 34.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 4.0,
+    "export": 1.0,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 73.6,
+   "plain": 73.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 79.2,
+    "gpt": 68.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 1.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 18.2,
+   "plain": 18.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 14.6,
+    "gpt": 21.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 3.5,
+    "refs": 3.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 72.8,
+   "plain": 72.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.2,
+    "gpt": 74.4
+   }
+  }
+ },
+ "judge_mad": 0.39,
+ "verdicts": {
+  "opus": "D was the only deliverable to turn counts into shares on a common denominator. Doing so showed that rising cautionary counts mostly track corpus growth, which directly answers the question. D also caught the data's own anomalies (the 328 vs 753 mismatch and unlabelled early rows). C traced its numbers well but stopped at raw counts and wrongly claimed shares were unavailable. A was honest about using memory, but B offered no answer and likely invalid references.",
+  "gpt": "A is the strongest decision aid: it separates rising critical and cautionary counts from the nearly unchanged contested framing and states what the evidence can support. B adds useful comparisons and drill-down, but its count interpretation and mismatched share presentation weaken confidence; both database-backed answers miss the 328-versus-753 internal anomaly."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_bare": [
+    "DOI 10.15781/T2GJ42J7R not found in the research corpus; possibly fabricated",
+    "'Artificial Intelligence and the Future of Defense...' attributed to RAND; likely HCSS"
+   ],
+   "chatgpt_prism": [
+    "Claims shares cannot be computed despite its own per-year totals",
+    "CSV marked coverage=full while the text says 2025 completeness is unknown"
+   ],
+   "claude_prism": [
+    "Cautionary late/early share ratio stated as 1.27x; recomputes to 1.26x"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Does not flag that the trend response reports 328 papers while its annual totals sum to 753.",
+    "One numeric claim is untagged; the script notes declared calls that were never made."
+   ],
+   "claude_prism": [
+    "Treats 328 as the number carrying yearly orientation tallies, although the annual totals sum to 753; the reported 328-versus-753 discrepancy is not correctly diagnosed.",
+    "The yearly contested-share chart does not align with the cited early-to-late contested-share comparison.",
+    "Export cells and derived tables do not meet the script's traceability ceiling."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.15781/T2GJ42J7R is not found in the research corpus for the cited work."
+   ],
+   "claude_bare": [
+    "Critical-share figures are estimates without a corpus or source calls; policy milestones do not establish a research trend."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Memory series, honestly labelled as an estimate, with no source. Anchor 1.",
+    "comparison": "The 20% to 40% contrast is two labelled guesses, not measured figures. Qualitative value only.",
+    "chart": "Estimate-labelled memory chart. Exactly 1.",
+    "drilldown": "No traced breakdown. Four of six follow-ups executed, but there is no layer under them.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "All numbers are labelled memory/estimate.",
+    "refs": "The policy documents are real, but their URLs are only domain names, so none resolves.",
+    "accuracy": "The recalled policy dates (DoD 2020, Political Declaration 2023, UNGA 2023) are correct. No measured claims are made.",
+    "limits": "Honest and specific about what is unmeasured, including the gap to today.",
+    "verdict": "Leans 'probably yes' on memory alone. Low confidence, no supporting numbers.",
+    "facets": "Facets are answered from estimate."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "One of four follow-ups ran. Uses invented args such as 'supportive' and 'group_by'.",
+    "export": "No export.",
+    "repro": "No numbers to reproduce.",
+    "refs": "The script did not find the TNSR DOI in the corpus. The third reference is likely misattributed to RAND (the title matches an HCSS report).",
+    "accuracy": "Presents a possibly fabricated DOI and a misattributed report as fact.",
+    "limits": "Specific about what cannot be measured.",
+    "verdict": "'Cannot establish' gives no answer to the question.",
+    "facets": "No grounded facets."
+   },
+   "chatgpt_prism": {
+    "trend": "Critical and cautionary counts are traced, the window is stated and the change is quantified (3.2x; early vs late thirds). There is no share decomposition, even though totals were available.",
+    "comparison": "Early vs late ratios (2.38x, 2.67x) are exact and the raw-count caveat is stated. It does not compute shares.",
+    "chart": "The counts chart traces fully, but shares were not charted although the question is about framing shift.",
+    "drilldown": "Two layers: series, then papers with IDs. All five follow-ups executed.",
+    "export": "One traced CSV with provenance. It is marked coverage=full although 2025 censoring is unknown, and it has no documents table.",
+    "repro": "27 of 28 numbers trace. Some declared calls were never made.",
+    "refs": "Three DOIs resolve and each is tied to a claim. There are no quotes and no critical or contrary items.",
+    "accuracy": "Wrongly says shares cannot be computed even though its own CSV has totals. Otherwise accurate.",
+    "limits": "Window, gap (296 days), phrase audit and coverage caveat are placed next to the numbers.",
+    "verdict": "Gives an answer, a decision, confidence and what would change it. Acknowledges the flat contested share.",
+    "facets": "Misses the share facet, which is central to 'more cautionary'."
+   },
+   "claude_prism": {
+    "trend": "Counts and shares are traced and the series is decomposed by label. One ratio has a rounding slip: cautionary is 1.27x vs a recomputed 1.26x.",
+    "comparison": "Early vs late shares on one denominator, with the baseline defined. This directly answers the cautionary-shift question. Minor slip noted under trend.",
+    "chart": "Share and count charts trace and both carry captions. The possibly incomplete 2025 is not visibly marked.",
+    "drilldown": "Facets, then papers with IDs. Five of six follow-ups ran, targeted at the 2025 spike, cautionary papers and broader terms.",
+    "export": "Capped at 1 by the script.",
+    "repro": "77 of 82 numbers trace. Derived shares are labelled and recomputable.",
+    "refs": "Seven DOIs resolve and each is tied to a claim. Notes that tier is absent and that quotes are titles only.",
+    "accuracy": "Catches anomalies: 328 vs 753 labelled papers, unlabelled 2017–18 rows depressing the share, and geochemistry-topic label noise.",
+    "limits": "Window end vs today, unlabelled-row censoring, match mode, lane and discrepancy are placed next to the numbers, with what would close each gap.",
+    "verdict": "A direct 'only weakly' answer with decision, low confidence and reasons, and change conditions. Bounded to the autonomous-weapons slice.",
+    "facets": "Covers shares, counts, phrase audit, cross-call discrepancy and examples. Broader military-AI terms remain unmeasured."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced annual critical and cautionary series with quantified changes and peaks, but omits a fuller orientation-share decomposition.",
+    "comparison": "Early and late counts and ratios are traced, defined, and paired with the flat contested-share reading and its raw-count caveat.",
+    "chart": "Both plotted series trace to the source and support stated claims; the chart omits a visible coverage caveat and broader decomposition.",
+    "drilldown": "Provides traced annual, phrase, and promising-paper layers plus specific executable follow-ups, but does not fold follow-up results into the report.",
+    "export": "The annual CSV is referenced and has source, window, unit, and coverage; it does not provide all useful comparison tables or the full provenance shape.",
+    "repro": "Most claims and calls are traceable, but one number is untagged and the declared-call list includes calls that were never made.",
+    "refs": "All three identifiers resolve and are tied to claims with metadata, but there are no abstract quotes or contrary critical papers.",
+    "accuracy": "Readings are largely sound, but it misses the internal discrepancy between the reported 328 papers and annual totals summing to 753.",
+    "limits": "Places several relevant limits beside the findings, but does not resolve the corpus-count anomaly or establish 2025 completeness.",
+    "verdict": "Direct, supported answer with confidence, decision, conditions, and contrary evidence; it does not fully bound the internal count anomaly.",
+    "facets": "Covers the measured trend, framing distinction, phrase sensitivity, and some contrary evidence, while leaving broader military-AI scope unmeasured."
+   },
+   "claude_prism": {
+    "trend": "Traced annual series and quantified early-to-late changes; the main share chart and prose do not fully reconcile the tool's distinct framing summaries.",
+    "comparison": "Provides same-window comparisons and calculated shares, but the denominators and tool-provided contested measure are not consistently reconciled.",
+    "chart": "Values trace and charts support claims, but the charted yearly contested share does not represent the early/late contested figures cited in the verdict.",
+    "drilldown": "Shows multiple traced facets and specific follow-ups, though one proposed call did not return usable data and results are not folded back.",
+    "export": "The export ceiling is 1; the CSV does not meet the benchmark's traceability requirements.",
+    "repro": "Calls and arguments are listed and most numeric claims trace, with some untraced derived claims and no complete regenerate recipe.",
+    "refs": "Identifiers resolve and entries are tied to claims, but titles are not abstract quotes and tier/strength is not established as the tool states it.",
+    "accuracy": "It misreads the trend-call paper count: 328 is reported by the tool, while the annual totals sum to 753; its claimed discrepancy is therefore mischaracterized.",
+    "limits": "Specific window, corpus, match, and label limits are stated near the findings, though the conflicting totals remain unresolved.",
+    "verdict": "Gives a direct, cautious answer, decision, confidence, and conditions; its support is weakened by unresolved and misread counts.",
+    "facets": "Addresses orientation, volume, phrase overlap, seasonality-like annual variation, and research-versus-news limits with grounded findings or explicit gaps."
+   },
+   "chatgpt_bare": {
+    "trend": "No sourced time series; appropriately states that it cannot measure one.",
+    "comparison": "No comparable sourced counts or measured contrast.",
+    "chart": "No chart provided.",
+    "drilldown": "Names unavailable breakdowns and follow-up calls, but the calls are mostly invalid or fail to return useful data.",
+    "export": "No export.",
+    "repro": "Memory-only answer with no reproducible numeric evidence.",
+    "refs": "One DOI fails to resolve to the claimed work, capping references at 1.",
+    "accuracy": "Presents a specific DOI as fact that the corpus does not find; other examples are explicitly unverified.",
+    "limits": "Clearly distinguishes qualitative examples from a measured trend and states the main missing evidence.",
+    "verdict": "Direct answer, decision, confidence, and what would change it are present and consistent with the stated lack of data.",
+    "facets": "Grounds only the existence of illustrative arguments; measured trend, comparison, and corpus facets remain unanswered."
+   },
+   "claude_bare": {
+    "trend": "The series is explicitly an estimate, which earns the estimate anchor only.",
+    "comparison": "Numeric comparison is explicitly estimated and unsourced.",
+    "chart": "The chart is an honestly labelled estimate, not a traced series.",
+    "drilldown": "Names possible layers and some follow-ups, but calls are generic, fail, or are not executed into findings.",
+    "export": "Estimated CSV, with no source call or measured provenance.",
+    "repro": "Numbers are labelled estimates and no reproducible calls are supplied.",
+    "refs": "References are unverified policy sources without resolvable URLs or linked research claims.",
+    "accuracy": "The estimate is clearly labelled and the deliverable distinguishes policy activity from research tone; no reference-record contradiction is established.",
+    "limits": "States that no calls were run and notes key missing measurement limits, but remains generic on coverage and censoring.",
+    "verdict": "Gives a direct, low-confidence hypothesis and conditions, but it is not supported by measured research evidence.",
+    "facets": "Most facets are acknowledged as unknown rather than answered with grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {
+   "chatgpt_bare": [
+    "refs 1->0"
+   ]
+  }
+ }
+}

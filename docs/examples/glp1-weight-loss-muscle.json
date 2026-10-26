@@ -1,0 +1,1177 @@
+{
+ "slug": "glp1-weight-loss-muscle",
+ "captured_at": "2026-10-23T00:24:10+0530",
+ "calls": [
+  {
+   "tool": "find_evidence",
+   "feature": "research.evidence",
+   "args": {
+    "claim": "Semaglutide causes loss of lean muscle mass",
+    "limit": 10
+   },
+   "seconds": 90.4,
+   "response": {
+    "ok": true,
+    "feature": "research.evidence",
+    "subject": {
+     "claim": "Semaglutide causes loss of lean muscle mass"
+    },
+    "data": {
+     "volumes": {
+      "research": {
+       "n": 30,
+       "window": "2017-2025",
+       "lane": "intersection",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 0,
+       "window": "1990-2025",
+       "lane": "intersection",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 0,
+       "window": "1990-2025",
+       "lane": "intersection",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 0,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "intersection",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 0,
+       "window": "2005-2024",
+       "lane": "intersection",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 0,
+       "window": "2005-2025",
+       "lane": "intersection",
+       "what": "preprints"
+      }
+     },
+     "corpus_stance": {
+      "available": true,
+      "papers": 30,
+      "window": "2017-2025",
+      "lane": "intersection",
+      "orientation": {
+       "descriptive": 10,
+       "promising": 8,
+       "cautionary": 6,
+       "problem_identifying": 4,
+       "comparative": 1,
+       "critical": 1
+      },
+      "contribution": {
+       "empirical": 19,
+       "review": 6,
+       "position": 3,
+       "theoretical": 1,
+       "methodological": 1
+      },
+      "sides": {
+       "supporting": 8,
+       "qualifying": 10,
+       "contradicting": 1,
+       "neutral": 11
+      },
+      "contested_pct": 36.7,
+      "mean_stance": 0.073,
+      "reading": "mostly positive framing, with a substantial cautionary minority",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "documents": [
+      {
+       "id": "prism:W4410589793",
+       "source": "research",
+       "title": "Nutrition support whilst on glucagon-like peptide-1 based therapy. Is it necessary?",
+       "abstract": null,
+       "authors": [
+        "Alvaro M. Chavez",
+        "R. Mauricio Barría",
+        "M. León‐Sanz"
+       ],
+       "venue": "Current Opinion in Clinical Nutrition & Metabolic Care",
+       "year": 2025,
+       "doi": "10.1097/mco.0000000000001130",
+       "cited_by": 6,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.1097/mco.0000000000001130",
+       "institutions": [
+        "Research Institute Hospital 12 de Octubre"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "newest",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Studies have shown that while GLP-1 RA are effective in reducing fat mass, up to 40% of the total weight loss can come from FFM.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Indicates GLP-[n] RA (including semaglutide) cause loss of fat‑free (lean) mass.",
+       "confidence": "high",
+       "proposed_stance": "supports",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "Discusses GLP-1 RA class, not semaglutide specifically; no direct evidence on lean mass loss."
+       }
+      },
+      {
+       "id": "prism:W4417427210",
+       "source": "research",
+       "title": "Glucagon Like Peptide-1 Receptor Agonists for Sarcopenia and Muscle Wasting Disorders: A Systematic Review of Efficacy and Mechanisms",
+       "abstract": null,
+       "authors": [
+        "Abudureheman Maihemuti",
+        "Can Cui",
+        "Qianjin Wang",
+        "Reziwanguli Amuti",
+        "Wai‐Wang Chau",
+        "Senlin Chai",
+        "Ning Zhang",
+        "Ronald Man Yeung Wong",
+        "Ho Ko",
+        "Timothy Kwok",
+        "Wing‐Hoi Cheung"
+       ],
+       "venue": "Aging and Disease",
+       "year": 2025,
+       "doi": "10.14336/ad.2025.1165",
+       "cited_by": 1,
+       "type": "article",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.14336/ad.2025.1165",
+       "institutions": [
+        "Chinese University of Hong Kong",
+        "Shenzhen Pingle Orthopedic Hospital"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "review",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "limited clinical studies showed body weight reduction accompanied by a decline in lean mass following GLP-1RA treatment.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Reports lean mass decline with GLP-[n]RA therapy, supporting claim for semaglutide.",
+       "confidence": "high",
+       "proposed_stance": "supports",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "Reviews GLP-1 RA class, not semaglutide; outcome not tied to semaglutide."
+       }
+      },
+      {
+       "id": "prism:W4390755114",
+       "source": "research",
+       "title": "Antibody blockade of activin type II receptors preserves skeletal muscle mass and enhances fat loss during GLP-1 receptor agonism",
+       "abstract": null,
+       "authors": [
+        "Elizabeth de Fougerolles Nunn",
+        "Natasha Jaiswal",
+        "Matthew Gavin",
+        "Kahealani Uehara",
+        "Megan Stefkovich",
+        "Karima Drareni",
+        "Ryan Calhoun",
+        "Michelle Lee",
+        "Corey D. Holman",
+        "Joseph A. Baur",
+        "Patrick Seale",
+        "Paul M. Titchenell"
+       ],
+       "venue": "Molecular Metabolism",
+       "year": 2024,
+       "doi": "10.1016/j.molmet.2024.101880",
+       "cited_by": 106,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1016/j.molmet.2024.101880",
+       "institutions": [
+        "University of Pennsylvania"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "landmark",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Daily treatment of obese mice with semaglutide potently decreased body weight; this included a significant decrease in both muscle and fat mass.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Directly reports semaglutide causing loss of muscle (lean) mass.",
+       "confidence": "high",
+       "proposed_stance": "supports",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "Animal (mouse) study, not human population; however quote shows semaglutide reduces muscle mass."
+       }
+      },
+      {
+       "id": "prism:W1907290811",
+       "source": "research",
+       "title": "Long-term pharmacotherapy for obesity and overweight",
+       "abstract": null,
+       "authors": [
+        "Raj Padwal",
+        "Diana Rucker",
+        "Stephanie K Li",
+        "Cíntia Chaves Curioni",
+        "David C.W. Lau"
+       ],
+       "venue": "Cochrane Database of Systematic Reviews",
+       "year": 2003,
+       "doi": "10.1002/14651858.cd004094.pub2",
+       "cited_by": 380,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.1002/14651858.cd004094.pub2",
+       "institutions": [
+        "Universidade do Estado do Rio de Janeiro",
+        "University of Alberta",
+        "University of Alberta Hospital",
+        "University of Calgary"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "landmark",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Studies evaluating the long-term efficacy of anti-obesity agents are limited to orlistat and sibutramine.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Abstract discusses other drugs, no mention of semaglutide or lean mass.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2154704030",
+       "source": "research",
+       "title": "A systematic review and mixed treatment comparison of pharmacological interventions for the treatment of obesity",
+       "abstract": null,
+       "authors": [
+        "Laura J. Gray",
+        "Nicola J. Cooper",
+        "Alison Dunkley",
+        "Fiona C Warren",
+        "Roberta Ara",
+        "Keith R. Abrams",
+        "Melanie J. Davies",
+        "Kamlesh Khunti",
+        "Alex J. Sutton"
+       ],
+       "venue": "Obesity Reviews",
+       "year": 2012,
+       "doi": "10.1111/j.1467-789x.2011.00981.x",
+       "cited_by": 49,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.1111/j.1467-789x.2011.00981.x",
+       "institutions": [
+        "University of Leicester",
+        "University of Sheffield"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "review",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "The active drugs were all effective at reducing weight and BMI.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Focuses on weight/BMI, not semaglutide or lean muscle outcomes.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2015882180",
+       "source": "research",
+       "title": "Incretin Effect After Oral Amino Acid Ingestion in Humans",
+       "abstract": null,
+       "authors": [
+        "Ola Lindgren",
+        "Giovanni Pacini",
+        "Andrea Tura",
+        "Jens J. Holst",
+        "Carolyn F. Deacon",
+        "Bo Åhrén"
+       ],
+       "venue": "The Journal of Clinical Endocrinology & Metabolism",
+       "year": 2014,
+       "doi": "10.1210/jc.2014-3865",
+       "cited_by": 77,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1210/jc.2014-3865",
+       "institutions": [
+        "Lund University",
+        "National Academies of Sciences, Engineering, and Medicine",
+        "Novo Nordisk Foundation",
+        "Novo Nordisk Foundation Center for Basic Metabolic Research",
+        "University of Copenhagen"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "landmark",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "The objective of the study was to explore insulin secretion and incretin hormones after oral and iv amino acid administration at matched total amino acid concentrations in healthy subjects.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Intervention is amino acid administration, not semaglutide.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W4306816571",
+       "source": "research",
+       "title": "Effects of GLP-1 Infusion Upon Whole-body Glucose Uptake and Skeletal Muscle Perfusion During Fed-state in Older Men",
+       "abstract": null,
+       "authors": [
+        "Haitham Abdulla",
+        "Bethan E. Phillips",
+        "Daniel J. Wilkinson",
+        "Amanda Gates",
+        "Marie C. Limb",
+        "Tereza Jandova",
+        "Joseph J. Bass",
+        "Johnathan Lewis",
+        "John P. Williams",
+        "Kenneth Smith",
+        "Iskandar Idris",
+        "Philip J. Atherton"
+       ],
+       "venue": "The Journal of Clinical Endocrinology & Metabolism",
+       "year": 2022,
+       "doi": "10.1210/clinem/dgac613",
+       "cited_by": 27,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1210/clinem/dgac613",
+       "institutions": [
+        "Arthritis UK",
+        "Charles University",
+        "Heartlands Hospital",
+        "Nottingham Biomedical Research Centre",
+        "Royal Derby Hospital"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "current",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "We thus hypothesized exogenous GLP-1 infusions would enhance muscle perfusion and positively affect glucose metabolism during fed-state clamps in older people.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Intervention is GLP-[n] infusion, not semaglutide.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W4385623415",
+       "source": "research",
+       "title": "Dulaglutide Protects Mice against Diabetic Sarcopenia-Mediated Muscle Injury by Inhibiting Inflammation and Regulating the Differentiation of Myoblasts",
+       "abstract": null,
+       "authors": [
+        "Fengyi Deng",
+        "Wenyan Wu",
+        "Xingyu Fan",
+        "Xing Zhong",
+        "Nuojin Wang",
+        "Yue Wang",
+        "Tianrong Pan",
+        "Yijun Du"
+       ],
+       "venue": "International Journal of Endocrinology",
+       "year": 2023,
+       "doi": "10.1155/2023/9926462",
+       "cited_by": 26,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1155/2023/9926462",
+       "institutions": [
+        "Anhui Medical University",
+        "Second Affiliated Hospital of Anhui Medical University"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "current",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Here, we aimed to determine whether the GLP-1 receptor agonist (GLP-1RA) dulaglutide (Dul) affects the progression of diabetic sarcopenia.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Intervention is dulaglutide, not semaglutide.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W4380077443",
+       "source": "research",
+       "title": "Blockade of glucagon increases muscle mass and alters fiber type composition in mice deficient in proglucagon‐derived peptides",
+       "abstract": null,
+       "authors": [
+        "Shinji Ueno",
+        "Yusuke Seino",
+        "Shihomi Hidaka",
+        "Masashi Nakatani",
+        "Keisuke Hitachi",
+        "Naoya Murao",
+        "Yasuhiro Maeda",
+        "Haruki Fujisawa",
+        "Megumi Shibata",
+        "Takeshi TAKAYANAGI",
+        "Katsumi Iizuka",
+        "Daisuke Yabe"
+       ],
+       "venue": "Journal of Diabetes Investigation",
+       "year": 2023,
+       "doi": "10.1111/jdi.14032",
+       "cited_by": 26,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1111/jdi.14032",
+       "institutions": [
+        "Fujita Health University",
+        "Gifu University",
+        "Kansai Electric Power (Japan)",
+        "Kobe University",
+        "Nagoya University"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "current",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Aims/Introduction: Glucagon is secreted from pancreatic α-cells and plays an important role in amino acid metabolism in liver.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Intervention is glucagon blockade, not semaglutide.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2940891820",
+       "source": "research",
+       "title": "Amelioration of muscle wasting by glucagon‐like peptide‐1 receptor agonist in muscle atrophy",
+       "abstract": null,
+       "authors": [
+        "Yeonhee Hong",
+        "Jong Han Lee",
+        "Kwang Won Jeong",
+        "Cheol Soo Choi",
+        "Hee‐Sook Jun"
+       ],
+       "venue": "Journal of Cachexia Sarcopenia and Muscle",
+       "year": 2019,
+       "doi": "10.1002/jcsm.12434",
+       "cited_by": 179,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1002/jcsm.12434",
+       "institutions": [
+        "Deleted Institution",
+        "Gachon University",
+        "Gachon University Gil Hospital",
+        "Gachon University Gil Medical Center"
+       ],
+       "country": null,
+       "read_expanded": true,
+       "lane": "landmark",
+       "stance": "unread",
+       "claimed_stance": "contradicts",
+       "quote": null,
+       "claimed_quote": "treatment with a long-acting GLP-1R agonist, dulaglutide, recovered muscle mass and function.",
+       "grounded": false,
+       "quote_verified": false,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Shows GLP-[n]R agonists increase, not decrease, muscle mass.",
+       "confidence": "high"
+      }
+     ],
+     "tally": {
+      "counts": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 9,
+       "unread": 1
+      },
+      "tier_weighted": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 0,
+      "ungrounded": 1
+     },
+     "health_evidence": {
+      "available": false,
+      "reason": "no extracted factor claims match this"
+     },
+     "read_note": null,
+     "query": {
+      "subject": "Semaglutide",
+      "domain": "health",
+      "claim_type": "causal",
+      "assertion": "strong",
+      "poles": {
+       "subject": {
+        "phrases": [
+         "semaglutide treatment",
+         "semaglutide therapy"
+        ],
+        "terms": [
+         "diabetes treatment and management"
+        ],
+        "mesh": [
+         "Semaglutide"
+        ]
+       },
+       "outcome": {
+        "phrases": [],
+        "terms": [
+         "muscle metabolism and nutrition",
+         "muscle physiology and disorders"
+        ],
+        "mesh": [
+         "Body Dissatisfaction"
+        ]
+       }
+      },
+      "lane": "intersection",
+      "lane_counts": {
+       "subject": 71506,
+       "outcome": 81900,
+       "intersection": 30
+      },
+      "lane_note": "30 papers cover both sides of the claim, out of 71,506 on the subject and 81,900 on the outcome",
+      "phrase_audit": [
+       {
+        "phrase": "muscle metabolism and nutrition",
+        "n": 44845
+       },
+       {
+        "phrase": "muscle physiology and disorders",
+        "n": 40122
+       },
+       {
+        "phrase": "semaglutide treatment",
+        "n": 66
+       },
+       {
+        "phrase": "semaglutide therapy",
+        "n": 22
+       },
+       {
+        "phrase": "reduction in lean body mass",
+        "n": 2
+       },
+       {
+        "phrase": "lean muscle mass loss",
+        "n": 1
+       }
+      ],
+      "dropped": [
+       {
+        "phrase": "lean muscle mass loss",
+        "n": 1,
+        "kind": "phrase",
+        "why": "no paper title contains this phrase"
+       },
+       {
+        "phrase": "reduction in lean body mass",
+        "n": 2,
+        "kind": "phrase",
+        "why": "no paper title contains this phrase"
+       },
+       {
+        "phrase": "semaglutide treatment",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       },
+       {
+        "phrase": "semaglutide therapy",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       }
+      ],
+      "corpus_topics": [
+       {
+        "topic": "Diabetes Treatment and Management",
+        "papers": 30
+       },
+       {
+        "topic": "Muscle metabolism and nutrition",
+        "papers": 25
+       },
+       {
+        "topic": "Pharmacology and Obesity Treatment",
+        "papers": 9
+       },
+       {
+        "topic": "Metabolism, Diabetes, and Cancer",
+        "papers": 5
+       },
+       {
+        "topic": "Muscle Physiology and Disorders",
+        "papers": 5
+       },
+       {
+        "topic": "Diet and metabolism studies",
+        "papers": 3
+       },
+       {
+        "topic": "Regulation of Appetite and Obesity",
+        "papers": 3
+       },
+       {
+        "topic": "Nutrition and Health in Aging",
+        "papers": 2
+       },
+       {
+        "topic": "Adipose Tissue and Metabolism",
+        "papers": 2
+       },
+       {
+        "topic": "Food composition and properties",
+        "papers": 1
+       },
+       {
+        "topic": "Growth Hormone and Insulin-like Growth Factors",
+        "papers": 1
+       },
+       {
+        "topic": "GDF15 and Related Biomarkers",
+        "papers": 1
+       }
+      ]
+     }
+    },
+    "window": {
+     "period": {
+      "corpora": {
+       "research": "2017-2025",
+       "readable_papers": "1990-2025",
+       "pubmed": "1990-2025",
+       "news": "2019-01-01..2026-06-01",
+       "patents": "2005-2024",
+       "arxiv": "2005-2025"
+      }
+     }
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792695243.61416,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792695243.6133544,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.5988665,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "disease_factors": {
+        "corpus": "disease_factors",
+        "rows": 55545265,
+        "expected": 55545265,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.804826,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792695243.6166866,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.610919,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.6104167,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "intersection",
+     "lane_note": "30 papers cover both sides of the claim, out of 71,506 on the subject and 81,900 on the outcome",
+     "seconds": 90.4
+    }
+   }
+  },
+  {
+   "tool": "find_counter_evidence",
+   "feature": "research.counter_evidence",
+   "args": {
+    "claim": "Semaglutide causes loss of lean muscle mass",
+    "limit": 8
+   },
+   "seconds": 4.0,
+   "response": {
+    "ok": true,
+    "feature": "research.counter_evidence",
+    "subject": {
+     "claim": "Semaglutide causes loss of lean muscle mass"
+    },
+    "data": {
+     "supporting": [],
+     "contradicting": [],
+     "tally": {
+      "counts": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 5,
+       "unread": 1
+      },
+      "tier_weighted": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 0,
+      "ungrounded": 1
+     },
+     "corpus_mix": {
+      "available": true,
+      "papers": 30,
+      "window": "2017-2025",
+      "lane": "intersection",
+      "orientation": {
+       "descriptive": 10,
+       "promising": 8,
+       "cautionary": 6,
+       "problem_identifying": 4,
+       "comparative": 1,
+       "critical": 1
+      },
+      "contribution": {
+       "empirical": 19,
+       "review": 6,
+       "position": 3,
+       "theoretical": 1,
+       "methodological": 1
+      },
+      "sides": {
+       "supporting": 8,
+       "qualifying": 10,
+       "contradicting": 1,
+       "neutral": 11
+      },
+      "contested_pct": 36.7,
+      "mean_stance": 0.073,
+      "reading": "mostly positive framing, with a substantial cautionary minority",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "health_evidence": {
+      "available": false,
+      "reason": "no extracted factor claims match this"
+     },
+     "recommendation": "No verified document verdict supports a wording recommendation for this claim."
+    },
+    "window": {},
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792695243.61416,
+        "age_seconds": 4.23,
+        "expires_in_seconds": 25.77,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792695243.6133544,
+        "age_seconds": 4.24,
+        "expires_in_seconds": 25.76,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.5988665,
+        "age_seconds": 4.25,
+        "expires_in_seconds": 25.75,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "disease_factors": {
+        "corpus": "disease_factors",
+        "rows": 55545265,
+        "expected": 55545265,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.804826,
+        "age_seconds": 4.05,
+        "expires_in_seconds": 25.95,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792695243.6166866,
+        "age_seconds": 4.24,
+        "expires_in_seconds": 25.76,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.610919,
+        "age_seconds": 4.24,
+        "expires_in_seconds": 25.76,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792695243.6104167,
+        "age_seconds": 4.24,
+        "expires_in_seconds": 25.76,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "intersection",
+     "lane_note": "30 papers cover both sides of the claim, out of 71,506 on the subject and 81,900 on the outcome",
+     "seconds": 4.0
+    }
+   }
+  },
+  {
+   "tool": "find_statistics",
+   "feature": "research.statistics",
+   "args": {
+    "claim": "Semaglutide causes loss of lean muscle mass",
+    "limit": 6
+   },
+   "seconds": 2.7,
+   "response": {
+    "ok": true,
+    "feature": "research.statistics",
+    "subject": {},
+    "data": {
+     "stats": [
+      {
+       "value": "40%",
+       "measures": "proportion of total weight loss from fat free mass",
+       "population": null,
+       "period": null,
+       "caveat": "up to",
+       "sentence": "RECENT FINDINGS: Studies have shown that while GLP-1 RA are effective in reducing fat mass, up to 40% of the total weight loss can come from FFM.",
+       "source": {
+        "id": "prism:W4410589793",
+        "title": "Nutrition support whilst on glucagon-like peptide-1 based therapy. Is it necessary?",
+        "year": 2025,
+        "venue": "Current Opinion in Clinical Nutrition & Metabolic Care",
+        "tier": "review",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1097/mco.0000000000001130",
+        "doi": "10.1097/mco.0000000000001130"
+       }
+      },
+      {
+       "value": "∼10 %",
+       "measures": "increase in lean mass",
+       "population": "obese mice",
+       "period": null,
+       "caveat": "∼ indicates an approximate estimate",
+       "sentence": "RESULTS: Treatment of obese mice with bimagrumab induced a ∼10 % increase in lean mass while simultaneously decreasing fat mass.",
+       "source": {
+        "id": "prism:W4390755114",
+        "title": "Antibody blockade of activin type II receptors preserves skeletal muscle mass and enhances fat loss during GLP-1 receptor agonism",
+        "year": 2024,
+        "venue": "Molecular Metabolism",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1016/j.molmet.2024.101880",
+        "doi": "10.1016/j.molmet.2024.101880"
+       }
+      }
+     ],
+     "rejected": [],
+     "candidate_sentences": 16,
+     "research_series": {
+      "available": true,
+      "corpus": "research_typed",
+      "unit": "year",
+      "window": "2017-2025",
+      "lane": "intersection",
+      "points": [
+       {
+        "period": "2017",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2018",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2019",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2021",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2022",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2023",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2024",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2025",
+        "n": 8,
+        "partial_period": false
+       }
+      ],
+      "total": 30,
+      "trend": {
+       "available": true,
+       "from": "2017",
+       "to": "2025",
+       "first": 1,
+       "last": 8,
+       "peak": 8,
+       "peak_period": "2024",
+       "early_third": 6,
+       "late_third": 17,
+       "elapsed_years": 8.0,
+       "multiple": 8.0,
+       "direction": "rising",
+       "late_vs_early": 2.83
+      },
+      "censored_at": "2025",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "research_typed": {
+         "corpus": "research_typed",
+         "rows": 105553750,
+         "expected": 98602364,
+         "pct": 107.0,
+         "partial": false,
+         "checked_at": 1792695243.61416,
+         "age_seconds": 6.79,
+         "expires_in_seconds": 23.21,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "news_series": {
+      "available": false,
+      "reason": "nothing in this corpus matches"
+     },
+     "volumes": {
+      "research": {
+       "n": 30,
+       "window": "2017-2025",
+       "lane": "intersection",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 0,
+       "window": "1990-2025",
+       "lane": "intersection",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 0,
+       "window": "1990-2025",
+       "lane": "intersection",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 0,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "intersection",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 0,
+       "window": "2005-2024",
+       "lane": "intersection",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 0,
+       "window": "2005-2025",
+       "lane": "intersection",
+       "what": "preprints"
+      }
+     },
+     "context_deferred": false
+    },
+    "window": {},
+    "meta": {
+     "lane": "intersection",
+     "note": "every figure is copied from the source sentence shown and verified against the abstract it came from",
+     "seconds": 2.7
+    }
+   }
+  }
+ ]
+}

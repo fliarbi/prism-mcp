@@ -1,0 +1,606 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 812,
+  "charts": [
+   {
+    "id": "crit-share",
+    "title": "Illustrative share of mindfulness papers with critical orientation",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "critical share (rough guess)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "critical_share_est.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly critical share of mindfulness papers?",
+    "args": {
+     "term": "mindfulness",
+     "from": 2000,
+     "to": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2000, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which critical papers drove the post-2015 rise?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 665, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 5, \"papers\": [{\"id\": \"W7164501160\", \"title\": \"Suicide and Euthanasia in the Light of Buddhist Moral Teachings\", \"authors\": [\"Rejaul Karim\"], \"venue\": \"Research Review Journal of Interdisciplinary Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31305/rrjis.2025.v1.n3.013\", \"url\": \"https://doi.org/10.31305/rrjis.2025.v1.n3.013\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Indian and Buddhist Studies\", \"M"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence exists to the headline benefits?",
+    "args": {
+     "term": "mindfulness"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'mindfulness'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mindfulness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which years are too thin to read?",
+    "args": {
+     "term": "mindfulness",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...fulness', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mindfulness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "Does widening the phrase to meditation change the trend?",
+    "args": {
+     "term": "mindfulness OR meditation"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"meditation practice\", \"mindful awareness\", \"meditative techniques\"], \"points\": [{\"year\": 2017, \"total\": 19, \"orientation\": {\"problem_identifying\": 1, \"cautionary\": 1, \"promising\": 5, \"descriptive\": 1, \"critical\": 1}, \"stance_score\": null, \"positive\": 5, \"contested\": 3, \"positive_pct\": 26.3, \"contested_pct\": 15.8}, {\"year\": 2018, \"total\": 40, \"orientation\": {\"descriptive\": 6, \"comparative\": 1, \"breakthrough\": 1, \"promising\": 7, \"problem_identifying\": 2, \"critical\": 1, \"cautionary\": 2}, \"stance_score\": null, \"positive\": 8, \"contested\": 5, \"positive_pct\": 20.0, \"contested_pct\": 12.5}, {\"year\": 2019, \"total\": 30, \"orientation\": {\"descriptive\": 4, \"b"
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Is news coverage more critical than research?",
+    "args": {
+     "term": "mindfulness"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 31.5,
+    "sample": "{\"articles\": [{\"target_id\": \"69bc8129e45e977351810740\", \"url\": \"https://www.mashable.com/article/how-teens-use-ai-homework-help-fun-research-emotional-support\", \"title\": \"Teens admit their true feelings about AI chatbots\", \"excerpt\": \"Rebecca Ruiz is a Senior Reporter at Mashable. She frequently covers mental health, digital culture, and technology. Her areas of expertise include suicide prevention, screen use and mental health, parenting, youth well-being, and meditation and mindfulness. Rebecca's experience prior to Mashable in\", \"publisher\": \"mashable.com\", \"published\": \"2026-02-24 15:00:00\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-02-24 15:00:00\", \"priority\": 8, \"polarity\": \"p"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "4% — Baseline: critical share in 2005–2010 (about 3–4%, est.) against 2020–2025 (about 12–14%, ",
+    "12 — Baseline: critical share in 2005–2010 (about 3–4%, est.) against 2020–2025 (about 12–14%, ",
+    "14% — Baseline: critical share in 2005–2010 (about 3–4%, est.) against 2020–2025 (about 12–14%, ",
+    "10 — - Windows: 2005–2025 in the chart; the last point is 2025-12-31, about 10 months before to"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 122,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 934,
+  "charts": [
+   {
+    "id": "contested-share",
+    "title": "Contested share of mindfulness papers by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "contested_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "critical-count",
+    "title": "Critical-orientation mindfulness papers per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "critical",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "mindfulness_stance_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 53,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are the critical-framed ones, most cited?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "critical",
+     "sort": "cited",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 665, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W2808500840\", \"title\": \"Integrative Therapies During and After Breast Cancer Treatment: ASCO Endorsement of the SIO Clinical Practice Guideline\", \"authors\": [\"Gary H. Lyman\", \"Heather Greenlee\", \"Kari Bohlke\", \"Ting Bao\", \"Angela DeMichele\", \"Gary Deng\", \"Judith M. Fouladbakhsh\", \"B. Gil\"], \"venue\": \"Journal of Clinical Oncology\", \"year\": 2018, \"date\": \"2018-06-11\", \"doi\": \"10.1200/jco.2018.79.2721\", \"url\": \"https://doi.org/10.1200/jco.2018.79.2721"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "What do cautionary papers in 2025 flag?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "cautionary",
+     "sort": "recent",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2216, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7117768290\", \"title\": \"Self-Transcendent Perceptual Dynamics and the Effects of Dispositional Mindfulness on Altered States of Consciousness: A Prospective Longitudinal Observational Study of a Naturalistic Psychedelic Retreat\", \"authors\": [\"Sebastian Ehmann\", \"Nikoloz Mosahvili\", \"Angela White\", \"John Cuzzupe\", \"Brooke Tompkins\", \"Jodi B. A. McKibben\", \"John J. B. Allen\", \"Michael J. Gawrysiak\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-12-31\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Is there counter-evidence to the benefit claims?",
+    "args": {
+     "term": "mindfulness"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'mindfulness'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mindfulness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Do narrow phrases (mindfulness-based interventions) differ from the broad term?",
+    "args": {
+     "term": "mindfulness-based interventions"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"mindfulness-based interventions\", \"mindfulness interventions\", \"mindfulness training\", \"mindfulness programs\", \"mindfulness therapy\"], \"points\": [{\"year\": 2017, \"total\": 120, \"orientation\": {\"breakthrough\": 5, \"cautionary\": 11, \"comparative\": 1, \"problem_identifying\": 8, \"descriptive\": 15, \"promising\": 35}, \"stance_score\": null, \"positive\": 40, \"contested\": 19, \"positive_pct\": 33.3, \"contested_pct\": 15.8}, {\"year\": 2018, \"total\": 158, \"orientation\": {\"breakthrough\": 4, \"descriptive\": 7, \"critical\": 2, \"comparative\": 2, \"promising\": 38, \"cautionary\": 5, \"problem_identifying\": 6}, \"stance_score\": null, \"positive\": 42, \"contested\": 13, \"positive_pc"
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "Does expanding to the concept cluster change the shares?",
+    "args": {
+     "term": "mindfulness",
+     "expand": true,
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 32.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 154283, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7124133676\", \"title\": \"Clinical applications of the Defense Mechanisms Rating Scale-Self-Report-30: a systematic review of the first five years\", \"authors\": [\"Gabriella Di Martino\", \"Orlando Silvestro\", \"Emanuele Maria Merlo\", \"Carmelo M. Vicario\", \"Alessandro Meduri\", \"Gianluca Lo Coco\"], \"venue\": \"Research in Psychotherapy Psychopathology Process and Outcome\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.4081/ripppo.2025.881\", \"url\": \"https"
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Does news coverage get more critical?",
+    "args": {
+     "term": "mindfulness"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.5,
+    "sample": "{\"articles\": [{\"target_id\": \"69bc8129e45e977351810740\", \"url\": \"https://www.mashable.com/article/how-teens-use-ai-homework-help-fun-research-emotional-support\", \"title\": \"Teens admit their true feelings about AI chatbots\", \"excerpt\": \"Rebecca Ruiz is a Senior Reporter at Mashable. She frequently covers mental health, digital culture, and technology. Her areas of expertise include suicide prevention, screen use and mental health, parenting, youth well-being, and meditation and mindfulness. Rebecca's experience prior to Mashable in\", \"publisher\": \"mashable.com\", \"published\": \"2026-02-24 15:00:00\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-02-24 15:00:00\", \"priority\": 8, \"polarity\": \"p"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 78,
+   "traced": 76,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 287,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What are the yearly counts by research orientation under a consistent search and coding scheme?",
+    "args": {
+     "term": "mindfulness",
+     "period": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nperiod\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers provide promising examples, and what claims do they make?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "positive",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 41378, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7164501160\", \"title\": \"Suicide and Euthanasia in the Light of Buddhist Moral Teachings\", \"authors\": [\"Rejaul Karim\"], \"venue\": \"Research Review Journal of Interdisciplinary Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31305/rrjis.2025.v1.n3.013\", \"url\": \"https://doi.org/10.31305/rrjis.2025.v1.n3.013\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Indian and Buddhist Studies\", "
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers provide critical examples, and what claims do they make?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 665, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 5, \"papers\": [{\"id\": \"W7164501160\", \"title\": \"Suicide and Euthanasia in the Light of Buddhist Moral Teachings\", \"authors\": [\"Rejaul Karim\"], \"venue\": \"Research Review Journal of Interdisciplinary Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31305/rrjis.2025.v1.n3.013\", \"url\": \"https://doi.org/10.31305/rrjis.2025.v1.n3.013\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Indian and Buddhist Studies\", \"M"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "How do early and late periods compare when papers are coded for critical framing?",
+    "args": {
+     "term": "mindfulness",
+     "compare_periods": true,
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ientation': 'critical'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mindfulness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_periods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "Which years have thin coverage, and how do results change when related mindfulness phrases are included?",
+    "args": {
+     "term": "mindfulness",
+     "include_phrase_expansion": true,
+     "period": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...True, 'period': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mindfulness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_phrase_expansion\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nperiod\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 83,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 683,
+  "charts": [
+   {
+    "id": "mindfulness-critical-count",
+    "title": "Annual critical-orientation papers on mindfulness",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Critical orientation",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "mindfulness_trend.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 62,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which critical papers drove the annual peaks?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 665, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 5, \"papers\": [{\"id\": \"W7164501160\", \"title\": \"Suicide and Euthanasia in the Light of Buddhist Moral Teachings\", \"authors\": [\"Rejaul Karim\"], \"venue\": \"Research Review Journal of Interdisciplinary Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31305/rrjis.2025.v1.n3.013\", \"url\": \"https://doi.org/10.31305/rrjis.2025.v1.n3.013\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Indian and Buddhist Studies\", \"M"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "What are annual critical shares alongside annual paper totals?",
+    "args": {
+     "term": "mindfulness"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"mindfulness\", \"mindfulness-based interventions\", \"mindful awareness\", \"mindfulness training\", \"mindfulness meditation\"], \"points\": [{\"year\": 2017, \"total\": 2742, \"orientation\": {\"critical\": 34, \"cautionary\": 60, \"problem_identifying\": 122, \"promising\": 798, \"breakthrough\": 32, \"descriptive\": 343, \"comparative\": 60}, \"stance_score\": null, \"positive\": 830, \"contested\": 216, \"positive_pct\": 30.3, \"contested_pct\": 7.9}, {\"year\": 2018, \"total\": 3021, \"orientation\": {\"comparative\": 41, \"problem_identifying\": 154, \"promising\": 906, \"descriptive\": 365, \"cautionary\": 92, \"breakthrough\": 43, \"critical\": 32}, \"stance_score\": null, \"positive\": 949, \"contest"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "How does the trend change when the concept cluster is expanded?",
+    "args": {
+     "term": "mindfulness",
+     "expand": true,
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 25.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 4236, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7164501160\", \"title\": \"Suicide and Euthanasia in the Light of Buddhist Moral Teachings\", \"authors\": [\"Rejaul Karim\"], \"venue\": \"Research Review Journal of Interdisciplinary Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31305/rrjis.2025.v1.n3.013\", \"url\": \"https://doi.org/10.31305/rrjis.2025.v1.n3.013\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Indian and Buddhist Studies\", \""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which promising papers are representative across early and late years?",
+    "args": {
+     "term": "mindfulness",
+     "orientation": "promising",
+     "sort": "oldest",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 23165, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W2581977873\", \"title\": \"La meditazione orientata alla mindfulness (mom) nella ricerca psicologica\", \"authors\": [\"Franco Fabbro\", \"Cristiano Crescentini\"], \"venue\": \"RICERCHE DI PSICOLOGIA\", \"year\": 2017, \"date\": \"2017-01-01\", \"doi\": \"10.3280/rip2016-004001\", \"url\": \"https://doi.org/10.3280/rip2016-004001\", \"cited_by\": 8, \"orientation\": \"promising\", \"contribution\": \"methodological\", \"stance_score\": 0.6, \"topics\": [\"Mindfulness and Compassion Inter"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 19,
+   "traced": 19,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

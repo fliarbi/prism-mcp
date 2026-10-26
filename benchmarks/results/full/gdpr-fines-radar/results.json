@@ -1,0 +1,245 @@
+{
+ "slug": "gdpr-fines-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 2.0,
+    "facets": 1.5
+   },
+   "strict": 33.9,
+   "plain": 33.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.8,
+    "gpt": 36.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 3.0,
+    "chart": 3.0,
+    "drilldown": 2.0,
+    "export": 0.0,
+    "repro": 3.0,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 60.0,
+   "plain": 60.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 61.0,
+    "gpt": 59.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 24.5,
+   "plain": 24.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 21.8,
+    "gpt": 27.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 3.5,
+    "chart": 3.0,
+    "drilldown": 2.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 4.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 68.9,
+   "plain": 68.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 66.2,
+    "gpt": 71.6
+   }
+  }
+ },
+ "judge_mad": 0.23,
+ "verdicts": {
+  "opus": "A and B both grounded their answers in the same 10-paper radar list and correctly declined to read it as a field trend. B's fully traced, provenance-tagged export gave it the edge. A had stronger placed limits, but it carried untraced coverage figures and an export that contradicts its prose. C and D answered from memory: C honestly said almost nothing, and D substituted estimated fine totals for the research question that was asked.",
+  "gpt": "D is the strongest decision aid: it answers what the recent selected papers cover, quantifies a carefully bounded comparison, and preserves the distinction between a radar shortlist and field-wide trends. A is also careful but has weaker reproducibility and export, while B and C lack traced evidence; C’s estimated fine series is especially easy to mistake for a measured trend."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Coverage figures of 107.0% and 107.1% and several null-field claims are not present in the recorded c1 response.",
+    "The CSV says coverage=partial while the prose says coverage is complete."
+   ],
+   "chatgpt_prism": [
+    "The 'reachability/historical row floor' caveat is not visible in the recorded response.",
+    "Confidence 'medium' is inconsistent with its stated inability to measure trends."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Answers mostly about fine amounts rather than research; every figure is from memory (labelled as estimates)."
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "The chart labels its window through 2026-10-23 although the radar response supplies no end date.",
+    "The claimed 107.0% and 107.1% coverage figures are absent from the supplied reference record."
+   ],
+   "chatgpt_bare": [
+    "The proposed shift from counting fines toward procedural and effectiveness questions is presented as a memory lead, not supported by references or measured evidence."
+   ],
+   "claude_bare": [
+    "The cumulative fine total, annual fine series, and fine-count claims are unverified estimates and cannot support the apparent trend.",
+    "The claim that the GDPR Procedural Regulation was agreed in 2025 is not substantiated in the deliverable."
+   ],
+   "chatgpt_prism": [
+    "The chart/export window ends 2025-12-31, but the radar response specifies only since 2022 and provides no end date.",
+    "The coverage and historical-row-floor details are not present in the supplied reference record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Year counts 4/3/2/1 trace to c1, the window is stated and the drop is quantified. A explains that citation-ranked selection censors recent years and so is not a volume trend.",
+    "comparison": "Mean citations by orientation recompute exactly (5.3 vs 0.6, 8.9x, +4.7) and the baseline is defined. This is at the ceiling; the contrast is minor and does not address what is new.",
+    "chart": "The single chart traces and carries window, unit and caption. It shows bare levels of a sample property, with no decomposition.",
+    "drilldown": "One traced layer reaches items with DOIs. Only 2 of 6 follow-ups returned data.",
+    "export": "Ceiling is 0. The CSV is marked coverage=partial while the prose claims coverage is complete at 107%, so export and prose disagree.",
+    "repro": "16 of 19 numbers trace (ceiling 3). The 107.0% and 107.1% coverage figures are not in the reference record.",
+    "refs": "All 10 DOIs resolve and each is tied to a claim. Tier is not provided and the quotes are titles, not abstract text.",
+    "accuracy": "The computed figures are all correct. However, it asserts coverage percentages and null fields (research_trend, news_trend, geography) that do not appear in the recorded c1 response.",
+    "limits": "Limits sit next to the numbers they bound: unknown window end, match mode, citation censoring, and what the counts are not.",
+    "verdict": "Direct answer, decision, low confidence with reason, and what would change it. It is consistent with the data and under 150 words.",
+    "facets": "New-work facet is grounded; framing shift is a grounded 'no data'. The other nulls are asserted but not all shown in the record."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window and a 75% drop. The censoring mechanism (citation ranking favours older papers) is only vaguely stated.",
+    "comparison": "2022 vs 2023 mean citations recompute exactly (4.25 vs 1). Paper age confounds the contrast, and it does not address what is new.",
+    "chart": "Traced, with window, unit and caption. A line chart of a selection artefact, showing levels only.",
+    "drilldown": "Items carry DOIs. Only 1 of 5 follow-ups returned data.",
+    "export": "Traced CSV with titles, DOIs, window, coverage and a provenance block. There is no reason column for missing venues.",
+    "repro": "21 of 23 numbers trace, the calls are listed with args, and the provenance block carries the capture date.",
+    "refs": "All 10 DOIs resolve, with claims tied for some entries. No quotes and no tier.",
+    "accuracy": "Figures are correct. The 'reachability and historical row floor' phrasing is not visible in the record.",
+    "limits": "Limits are specific but gathered mostly in the closing methods section.",
+    "verdict": "Clear answer and decision. 'Medium' confidence is inconsistent with its own statement that the scan cannot establish trends, and it names no contrary evidence.",
+    "facets": "New work and its themes are grounded; framing, under-covered topics and news are flagged as grounded 'no data'."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Proposes follow-ups only, with no breakdown layer.",
+    "export": "No export.",
+    "repro": "No numbers; the framing claim is labelled memory.",
+    "refs": "No references.",
+    "accuracy": "No contradictions, but it says almost nothing.",
+    "limits": "Honest and specific about what was not measured.",
+    "verdict": "The memory-based framing-shift answer is unsupported by any data in the deliverable.",
+    "facets": "Facets are covered from memory only."
+   },
+   "claude_bare": {
+    "trend": "Annual fines series is from memory, labelled as an estimate. It also measures fines, not research.",
+    "comparison": "The memory ratio (largest fine vs median) is explicitly illustrative.",
+    "chart": "Chart is labelled as an estimate and sourced to memory.",
+    "drilldown": "Breakdown layers are named from memory.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Memory figures, not reproducible.",
+    "refs": "References are generic and unverified, with no identifiers.",
+    "accuracy": "The recalled fine figures are plausible and labelled as estimates. It answers the fines question rather than the research question.",
+    "limits": "Labels its knowledge-cutoff gap and states it queried no lanes.",
+    "verdict": "Rests on estimated figures and drifts to a compliance decision outside the question.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "The selected-list counts are traced and the 4-to-1 drop is quantified, but the chart extends to today despite the source giving no end date; this is not field-wide output.",
+    "comparison": "The orientation means and 8.9x comparison are derived from the listed papers, but answer only a limited contrast within a small selected sample.",
+    "chart": "The plotted values trace to the radar list and the caption limits their interpretation, but the chart window is unsupported and it omits the available orientation breakdown.",
+    "drilldown": "Orientation and year breakdowns are present, but only two of six proposed follow-ups executed successfully.",
+    "export": "The script ceiling is zero: the export does not meet traceability requirements.",
+    "repro": "The radar call is specified, but only 16 of 19 numeric claims trace and several claims depend on data not present in the supplied record.",
+    "refs": "DOIs resolve, but the entries are not supported with abstract quotes; titles are used in place of evidence quotes.",
+    "accuracy": "The main list and orientation counts match the record. The stated coverage percentages and null fields are not in the supplied reference record, and the chart endpoint overstates the source window.",
+    "limits": "Clearly distinguishes a selected, title-matched list from field-wide output and explains citation and coverage limits; some caveats rely on data outside the supplied record.",
+    "verdict": "Direct, appropriately cautious answer with a use decision, confidence, and conditions that would change it; it does not identify contrary evidence within its own list.",
+    "facets": "Covers themes, orientation, citations, the absence of trend data, and the limits of what the scan can say about fines."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Proposes specific calls, but only two executed successfully and there is no traced breakdown.",
+    "export": "No dataset or CSV export.",
+    "repro": "Memory-based claims are honestly marked as unverified, but they cannot be regenerated.",
+    "refs": "No verified references.",
+    "accuracy": "No concrete contradiction with the reference record, though the memory-based research-shift claim is unsupported.",
+    "limits": "States that no window or lane was queried and separates memory interpretation from findings, but does not give data-specific limits.",
+    "verdict": "Has a clear decision and low confidence, but the answer rests on an ungrounded remembered shift and omits a supported finding.",
+    "facets": "Most requested facets lack grounded values or grounded no-data results."
+   },
+   "claude_bare": {
+    "trend": "The series is explicitly an estimate from memory, which earns only the estimate anchor.",
+    "comparison": "The largest-versus-typical-fine contrast is labelled illustrative, but its figures are unverified and the median is not measured.",
+    "chart": "The chart is an honest estimate, not a traced series.",
+    "drilldown": "Lists possible layers and specific follow-ups, but has no traced breakdown and only two successful calls.",
+    "export": "The CSV is explicitly an estimate and has no recorded source call.",
+    "repro": "The figures and claims are from memory and cannot be reproduced.",
+    "refs": "References are explicitly unverified; no resolvable DOI or supporting quote is supplied.",
+    "accuracy": "Estimates are labelled, but claims about the 2025 procedural regulation and fine totals are not supported by the supplied record.",
+    "limits": "Clearly labels the memory estimates and identifies the recall gap and unqueried lanes, though these do not make the claims verifiable.",
+    "verdict": "Gives a decision and confidence, but the recommendation rests on unverified fine figures and lacks contrary evidence.",
+    "facets": "Addresses some fine amounts and enforcement themes, but research novelty and trend facets are mostly ungrounded."
+   },
+   "chatgpt_prism": {
+    "trend": "The selected-list series is traced and its change quantified, but the stated 2025 endpoint is not supplied by the radar window, which has no end date.",
+    "comparison": "The 2022 versus 2023 mean-citation comparison uses one scale and window, defines its basis, and carries the selected-list caveat.",
+    "chart": "The plotted values trace to the selected list and support a claim, but the chart gives an unsupported end date and does not chart the orientation facet.",
+    "drilldown": "Provides a traced paper list but no successful follow-up result folded into it; only one of five proposed calls succeeded.",
+    "export": "The CSV is traceable, carries provenance and identifiers, and is referenced in the prose; it is a selected-work table rather than a broader figures export.",
+    "repro": "The main call and window are specified and most numeric claims trace, but two of 23 do not, so it falls short of complete regeneration.",
+    "refs": "All DOIs resolve and are tied to themes, but there are no abstract quotes and no contrary sources with equivalent traceability.",
+    "accuracy": "The paper list, counts, years, and orientations match the record; the interpretation is bounded. Some asserted coverage detail is not verifiable from the supplied record.",
+    "limits": "Explains selection, partial coverage, missing endpoint, and the distinction between listed papers and field-wide output near the findings.",
+    "verdict": "Direct answer, decision, confidence, and change conditions are stated and consistent with the evidence; it names the key limitation but does not explicitly confront contrary evidence in the list.",
+    "facets": "Covers the listed research themes, selection limits, missing trends, and the inability to infer fine outcomes, but leaves several implied facets unresolved."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

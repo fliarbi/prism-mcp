@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Claude + Prism</title><style>
+:root{--bg:#ffffff;--ink:#14161a;--ink2:#4b5160;--ink3:#8a8f9c;--line:#e3e5ea;--card:#f6f7f9;--accent:#2a78d6;--bad:#c4321d;--good:#1a8f62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 32px 40px}
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:18px}
+.bar .who{font-weight:700;font-size:20px}.bar .q{color:var(--ink2);font-size:13px;max-width:560px;text-align:right}
+h2{font-size:18px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+table{border-collapse:collapse;margin:10px 0;font-size:13px;width:100%}th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}code{background:var(--card);padding:1px 4px;border-radius:3px;font-size:12.5px}
+.chart{margin:12px 0}.chart img,.chart svg{max-width:100%}.cap{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:9px;border:1px solid var(--line);color:var(--ink2);margin-left:6px}
+.tag.inv{color:var(--bad);border-color:var(--bad)}.tag.ok{color:var(--good);border-color:var(--good)}
+.csvh{font-size:12px;color:var(--ink2);margin-top:12px}details{margin:8px 0;font-size:12.5px}pre{white-space:pre-wrap;background:var(--card);padding:8px;border-radius:4px;font-size:11.5px}
+</style></head><body><div class='wrap'><div class='bar'><div class='who'>Claude + Prism</div><div class='q'>Does universal basic income reduce poverty without reducing work? What does the evidence say?</div></div><h2>Verdict</h2>
+<ul>
+<li>Answer: The Prism evidence set cannot confirm that UBI reduces poverty without reducing work. Verified documents show only conditional poverty reductions that rise with benefit generosity [r1] and reduced hardship from a one-time cash transfer [c3]. No retrieved document tests work effects directly.</li>
+<li>Decision: Treat the claim as plausible but unproven. Fund or design a pilot with pre-registered poverty and employment outcomes rather than relying on this evidence set. Pull the pilot and RCT literature (e.g. the OpenResearch and Finnish trials) before committing.</li>
+<li>Confidence: low - of 10 documents read, 1 qualifies the claim, 8 are unrelated and 1 is unread [c1]; none addresses employment.</li>
+<li>What would change it: Verified results from multi-year, universal-design trials that report both poverty and hours worked.</li>
+</ul>
+<h2>What the data shows</h2>
+<ul>
+<li>Volumes (lane: intersection): 36,874 typed research papers, 2017-2025 [c1]. Only 355 carry a real abstract, 1990-2025 [c1]. the health literature index, patents and arXiv each show 0 [c1]. News shows 6 articles, 2019-01 to 2026-06 [c1].</li>
+<li>Stance labels over the 36,874 papers: supporting 7,229, qualifying 11,823, contradicting 3,310, neutral 14,512; contested share 41.0% [c1]. These label each paper's framing, not a verdict on the claim [c1]. The lane is broad: the topic "Income, Poverty, and Inequality" alone has 36,729 papers [c1], so these counts mostly reflect general poverty research, not UBI. Only 661 papers have "universal basic income" in the title [c1].</li>
+<li>Tally of the 10 documents checked: supports 0, contradicts 0, qualifies 1, unrelated 8, unread 1 [c1]. Tier-weighted: qualifies 3, others 0 [c1]. Read 1, ungrounded 1 [c1]. The counter-evidence call returned no supporting or contradicting documents [c2].</li>
+<li>Effect size: material hardship fell by 0.17 standard deviations among families with under $500 of earnings in the prior month, roughly the bottom half of monthly earnings in the sample [c3]. This was a one-time unconditional transfer to SNAP-receiving families in 12 states, from pre-specified exploratory analyses [c3]. It is not universal, not recurring, and not a work outcome.</li>
+<li>Qualifying finding: poverty reduction increases with benefit generosity in both countries studied, in normal times and in crisis [c1].</li>
+<li>Model-based, unread: an $11,400 UBI replacing non-medical programs and unemployment benefits improves welfare, especially for less-educated people [c1]. The tool marked this unverified and ungrounded, so treat it as a claim only.</li>
+<li>Work effects: not measurable from this data. No retrieved document reports employment or hours.</li>
+</ul>
+<h2>Trend</h2>
+<p>Research volume in the lane is roughly flat to rising: 4,037 papers in 2017 to 5,468 in 2025, CAGR 3.9%, late-third vs early-third ratio 1.21 [c3]. The tool labels the direction "flat" [c3]. News is too sparse to read: 6 articles in 90 months [c3].</p>
+<div class='chart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="Typed research papers per year, UBI-poverty intersection lane"><style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a8984;--grid:#e6e5e0;--axis:#c9c8c2;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neu:#b9b8b1;--band:#2a78d633}
+
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.t{font-size:17px;font-weight:600}.st{font-size:12.5px;fill:var(--ink2)}.src{font-size:11px;fill:var(--ink3)}
+.ax{font-size:11px;fill:var(--ink2)}.lb{font-size:12px;fill:var(--ink)}.v{font-size:11.5px;fill:var(--ink2)}
+.g{stroke:var(--grid);stroke-width:1}.a{stroke:var(--axis);stroke-width:1}
+.c1{fill:var(--s1)}.c2{fill:var(--s2)}.c3{fill:var(--s3)}.c4{fill:var(--s4)}.cn{fill:var(--neu)}
+.l1{stroke:var(--s1)}.l2{stroke:var(--s2)}.l3{stroke:var(--s3)}.l4{stroke:var(--s4)}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.bg{fill:var(--bg);stroke:var(--grid)}
+</style><rect class="bg" x="0.5" y="0.5" width="759" height="329" rx="10"/><text class="t" x="24" y="34">Typed research papers per year, UBI-poverty intersection lane</text><text class="st" x="24" y="54">papers · window {&quot;from&quot;: &quot;2017-01-01&quot;, &quot;to&quot;: &quot;2025-12-31&quot;}</text><line class="a" x1="64" x2="736" y1="272.0" y2="272.0"/><text class="ax" x="56" y="276.0" text-anchor="end">0</text><line class="g" x1="64" x2="736" y1="222.5" y2="222.5"/><text class="ax" x="56" y="226.5" text-anchor="end">1,500</text><line class="g" x1="64" x2="736" y1="173.0" y2="173.0"/><text class="ax" x="56" y="177.0" text-anchor="end">3,000</text><line class="g" x1="64" x2="736" y1="123.5" y2="123.5"/><text class="ax" x="56" y="127.5" text-anchor="end">4,500</text><line class="g" x1="64" x2="736" y1="74.0" y2="74.0"/><text class="ax" x="56" y="78.0" text-anchor="end">6,000</text><text class="ax" x="64.0" y="290" text-anchor="middle">2017</text><text class="ax" x="148.0" y="290" text-anchor="middle">2018</text><text class="ax" x="232.0" y="290" text-anchor="middle">2019</text><text class="ax" x="316.0" y="290" text-anchor="middle">2020</text><text class="ax" x="400.0" y="290" text-anchor="middle">2021</text><text class="ax" x="484.0" y="290" text-anchor="middle">2022</text><text class="ax" x="568.0" y="290" text-anchor="middle">2023</text><text class="ax" x="652.0" y="290" text-anchor="middle">2024</text><text class="ax" x="736.0" y="290" text-anchor="middle">2025</text><path class="ln l1" d="M64.0,138.8 L148.0,145.4 L232.0,148.7 L316.0,141.8 L400.0,143.2 L484.0,159.6 L568.0,147.8 L652.0,114.3 L736.0,91.6"/><circle class="c1" cx="736.0" cy="91.6" r="4.5" stroke="var(--bg)" stroke-width="2"/><text class="v" x="736.0" y="81.6" text-anchor="middle">5,468</text><text class="src" x="24" y="316">source: call:research.statistics#1</text></svg><div class='cap'>Volume dipped to 3,407 in 2022 and reached 5,468 in 2025, a 21% late-vs-early rise.<span class='tag ok'>traced to corpus: 100% of points</span></div></div>
+<h2>Comparison</h2>
+<p>Baseline: the 36,874-paper lane [c1]. Share by stance label, computed from [c1] counts: supporting 19.6% (est. from 7,229/36,874), qualifying 32.1% (est.), contradicting 9.0% (est.), neutral 39.4% (est.). Supporting-to-contradicting ratio: 2.18 (est. from 7,229/3,310). Caveat: these are framing labels on a broad poverty corpus, not tests of UBI.</p>
+<h2>Evidence</h2>
+<p>Tier labels are Prism's.</p>
+<ul>
+<li>Qualifies: Nichelatti, Jouste, Rattenhuber, 2025, book chapter, tier article [r1]. Quote: "In normal times and in times of crisis, poverty reduction increases with the generosity of the UBI benefit amount in both countries."</li>
+<li>Related effect size: COVID Cash Transfer Study, 2023, J. Policy Analysis and Management, tier article [r2]. Quote: "we find significant reductions in material hardship (‐0.17 standard deviations) among families with less than $500 of earnings in the previous month."</li>
+<li>Unread (ungrounded): Santos and Rauh, 2025, no DOI, id prism:W7114821397 [r3]. Claimed: "Replacing non-medical programs and unemployment benefits with an $11,400 UBI improves welfare further..."</li>
+<li>Judged unrelated to poverty: Hanna &amp; Olken 2018 on UBI vs targeted transfers [r4]; Gentilini et al. 2019 World Bank guide [r5]; Wilson &amp; McDaid 2021 on mental health [r6]; Pega et al. 2022 Cochrane on health service use [r7]; Baird et al. 2013 on schooling [r8].</li>
+<li>Contradicting documents: none found [c2].</li>
+</ul>
+<h2>Drill-down</h2>
+<p>Layers: by design (universal vs targeted vs one-time), by country income group, by outcome (poverty, hardship, employment), by tier.</p>
+<details open><summary>Calls and follow-up queries (executable)</summary><pre>[
+{&quot;id&quot;:&quot;c1&quot;,&quot;used_for&quot;:&quot;volumes, stance mix, document tally&quot;,&quot;feature&quot;:&quot;research.evidence&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Universal basic income reduces poverty&quot;,&quot;limit&quot;:10}},
+{&quot;id&quot;:&quot;c2&quot;,&quot;used_for&quot;:&quot;contradicting documents&quot;,&quot;feature&quot;:&quot;research.counter_evidence&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Universal basic income reduces poverty&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;c3&quot;,&quot;used_for&quot;:&quot;effect size, research and news series&quot;,&quot;feature&quot;:&quot;research.statistics&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Universal basic income reduces poverty&quot;,&quot;limit&quot;:6}},
+{&quot;id&quot;:&quot;f1&quot;,&quot;question&quot;:&quot;Does UBI reduce employment or hours worked?&quot;,&quot;feature&quot;:&quot;research.evidence&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Universal basic income does not reduce employment&quot;,&quot;limit&quot;:10}},
+{&quot;id&quot;:&quot;f2&quot;,&quot;question&quot;:&quot;Which papers argue UBI reduces work?&quot;,&quot;feature&quot;:&quot;research.counter_evidence&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Universal basic income does not reduce employment&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f3&quot;,&quot;question&quot;:&quot;What effect sizes exist for employment?&quot;,&quot;feature&quot;:&quot;research.statistics&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Cash transfers effect on employment hours&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f4&quot;,&quot;question&quot;:&quot;Which pilots are in the literature?&quot;,&quot;feature&quot;:&quot;research.browse&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;basic income pilot randomized&quot;,&quot;orientation&quot;:&quot;critical&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f5&quot;,&quot;question&quot;:&quot;How has news coverage of UBI evolved?&quot;,&quot;feature&quot;:&quot;news.trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;universal basic income&quot;}}
+]</pre></details>
+<h2>Exports</h2>
+<div class='csvh'>⬇ <b>research_volume.csv</b> · source call:research.statistics#1 · window 2017..2025 · unit papers<span class='tag ok'>cells traced: 100%</span></div><table><tr><th>year</th><th>papers</th></tr><tr><td>2017</td><td>4037</td></tr><tr><td>2018</td><td>3837</td></tr><tr><td>2019</td><td>3736</td></tr><tr><td>2020</td><td>3944</td></tr><tr><td>2021</td><td>3903</td></tr><tr><td>2022</td><td>3407</td></tr><tr><td>2023</td><td>3763</td></tr><tr><td>2024</td><td>4779</td></tr><tr><td>2025</td><td>5468</td></tr></table>
+<div class='csvh'>⬇ <b>stance_counts.csv</b> · source call:research.evidence#1 · window 2017..2025 · unit papers<span class='tag ok'>cells traced: 100%</span></div><table><tr><th>label</th><th>papers</th></tr><tr><td>supporting</td><td>7229</td></tr><tr><td>qualifying</td><td>11823</td></tr><tr><td>contradicting</td><td>3310</td></tr><tr><td>neutral</td><td>14512</td></tr></table>
+<details open><summary>json</summary><pre>{&quot;exported_at&quot;:&quot;2026-10-23&quot;,&quot;calls&quot;:[{&quot;feature&quot;:&quot;research.evidence&quot;,&quot;args&quot;:{&quot;claim&quot;:&quot;Universal basic income reduces poverty&quot;,&quot;limit&quot;:10},&quot;window&quot;:{&quot;research&quot;:&quot;2017-2025&quot;}},{&quot;feature&quot;:&quot;research.counter_evidence&quot;,&quot;args&quot;:{&quot;limit&quot;:8},&quot;window&quot;:{}},{&quot;feature&quot;:&quot;research.statistics&quot;,&quot;args&quot;:{&quot;limit&quot;:6},&quot;window&quot;:{&quot;news&quot;:&quot;2019-01..2026-06&quot;}}]}</pre></details>
+<h2>Method and limits</h2>
+<ul>
+<li>Windows: research 2017-2025 (ends 2025-12-31, about 10 months before today); news to 2026-06-01 (about 5 months before today) [c1]. Newest periods are censored because ingest lags [c3].</li>
+<li>Lane: intersection (subject AND outcome) [c1]. Match is by topic labels and title phrases, so it is broad.</li>
+<li>Counts are paper counts and framing labels, not studies of UBI or verdicts. Only 10 documents were examined, 1 read in full [c1].</li>
+<li>Not measurable here: effects on work, long-run effects, and results from the major pilot and RCT literature, which the tool did not surface. Only one effect size was found [c3]. The ratios and shares in Comparison are my arithmetic on tool counts (est.).</li>
+<li>Interpretation: the low-confidence verdict and the decision advice are mine.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>[r1] Nichelatti, Jouste, Rattenhuber. The potential of universal basic income schemes to buffer shocks. Oxford University Press, 2025. doi:10.1093/9780198909453.003.0011</li>
+<li>[r2] The COVID Cash Transfer Study. J. Policy Analysis and Management, 2023. doi:10.1002/pam.22464</li>
+<li>[r3] Santos, Rauh. How do transfers and universal basic income impact the labor market and inequality? 2025. prism:W7114821397</li>
+<li>[r4] Hanna, Olken. Universal Basic Incomes versus Targeted Transfers. J. Economic Perspectives, 2018. doi:10.1257/jep.32.4.201</li>
+<li>[r5] Gentilini et al. Exploring Universal Basic Income. World Bank, 2019. doi:10.1596/978-1-4648-1458-7</li>
+<li>[r6] Wilson, McDaid. Mental health effects of a UBI. Social Science &amp; Medicine, 2021. doi:10.1016/j.socscimed.2021.114374</li>
+<li>[r7] Pega et al. Unconditional cash transfers... Cochrane Database of Systematic Reviews, 2022. doi:10.1002/14651858.cd011135.pub3</li>
+<li>[r8] Baird et al. Conditional and Unconditional Cash Transfers for Schooling. Campbell Systematic Reviews, 2013. doi:10.4073/csr.2013.8</li>
+</ul></div></body></html>

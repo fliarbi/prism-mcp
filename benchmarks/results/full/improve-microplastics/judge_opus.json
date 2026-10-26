@@ -1,0 +1,127 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "repro": 2,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "repro": "No calls were run. The numbers are labelled est., which is honest but cannot be reproduced. This is at the ceiling.",
+    "refs": "The Marfella DOI resolves and the metadata matches. The IARC entry has only a generic site url, and r3 is a generic 'reviews' entry with no identifier. No quotes are given.",
+    "accuracy": "The recalled specifics for Marfella (about 300 patients, about 34 months, a cardiovascular outcome) match the published study. Nothing contradicts the record, and memory is clearly labelled.",
+    "limits": "It states the knowledge cutoff and the roughly four-month gap to today. It flags analytic contamination as a measurement limit and separates impression from count. It has no measured limits, as expected for a plain-memory answer.",
+    "verdict": "This is the only rewrite that names the hard part: detection in human tissue plus lab and cell mechanisms, with no human causal evidence. It includes a decision, a reasoned confidence and what would change it. It is not bounded by a data window.",
+    "facets": "It covers the rewrite, the strongest document, the verb tier and the corpus mix. All of these come from memory, and the corpus mix is answered as 'cannot measure'."
+   },
+   "B": {
+    "repro": "There are no numbers and no calls.",
+    "refs": "No references are given where the pattern needs them.",
+    "accuracy": "It makes no claims that could contradict the record.",
+    "limits": "It lists the limits it cannot measure, but only generically.",
+    "verdict": "The rewrite is direct and the decision is clear. It omits that the evidence is mostly animal and cell studies, which is the core of the question.",
+    "facets": "Most facets are left unanswered."
+   },
+   "C": {
+    "repro": "Calls are listed with args, but none of the corpus numbers are reported, so little can be regenerated.",
+    "refs": "It cites only Prism calls and no resolvable documents.",
+    "accuracy": "It attributes content to c2 that c2 does not contain. c2 returned ok:false with null data, yet C says c2 'identifies a subject lane' and that 'none of the documents it read spoke to the claim'.",
+    "limits": "It covers window, lane, match mode and coverage. These are stated as generic absences rather than read against the data.",
+    "verdict": "The rewrite is supported, with a decision and confidence. It omits the animal and cell framing.",
+    "facets": "It covers the evidence card and the lane, but drops the actual corpus-mix values."
+   },
+   "D": {
+    "repro": "12 of 14 numbers trace to c1. The figure of 11 documents read in c2 does not trace.",
+    "refs": "There are no document references; it is honest about the lack of documents.",
+    "accuracy": "It fabricates c2 content ('no_data: 11 documents were read and none speaks to this claim'). c2 returned null data. It then builds a 10-vs-11 discrepancy on that invented figure.",
+    "limits": "Limits are well placed. It warns that the 31,254 'supporting' count is subject-lane and not support for the claim. It also notes the empty window and the six both-sides papers.",
+    "verdict": "The verdict has a good structure and a careful choice of verb. The rewrite never says the evidence is mostly animal and cell studies, and the confidence partly rests on the fabricated c2 detail.",
+    "facets": "It covers rewrite options, the corpus mix with its caveat, the verb tier and the evidence card as an honest none. The c2 reading is invented."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "c2 described as identifying a subject lane and as reading documents, but c2 returned ok:false with null data"
+   ],
+   "D": [
+    "c2 described as returning no_data with 11 documents read, but c2 returned ok:false with null data",
+    "invented 10-vs-11 read-count discrepancy"
+   ]
+  },
+  "best": "A",
+  "verdict": "Only A's rewrite says what the evidence actually is: plastic particles found in human tissue, plausible mechanisms in cell and animal studies, and no human causal evidence. That is the crux of the question. A also introduced no fabrications. D was the best grounded and read the subject-lane corpus mix correctly, but it invented contents for the failed evidence-card call and gave a rewrite that omits the animal and cell basis. C had the same fabrication problem. B was honest but thin."
+ },
+ "scores": {
+  "claude_bare": {
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "repro": 2,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

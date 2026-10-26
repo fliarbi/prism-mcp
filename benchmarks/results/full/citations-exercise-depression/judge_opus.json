@@ -1,0 +1,143 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "export": 1,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "export": 3,
+    "repro": 2,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "export": "The CSV has a window and a partial-coverage flag, and the prose says it comes from memory. It traces to no call and is tagged source=ref:r1, so it cannot score above 1.",
+    "repro": "There are no numbers to trace. The selection is honestly marked as knowledge-only.",
+    "refs": "All 3 DOIs resolve, and each entry is tied to a claim with its tier. The quotes come from memory and cannot be checked against the corpus. No contrary sources are given.",
+    "accuracy": "Nothing contradicts the record. The exact 2024-02-28 date for Noetel is a precise specific that cannot be checked.",
+    "limits": "It states the knowledge-only selection, partial coverage, the gap to today and that no search was run. The limits are grouped in a section rather than placed next to each claim.",
+    "verdict": "A complete verdict: answer, decision, confidence with its reason, and what would change it. It notes the caveat that effects are smaller in higher-quality trials. Memory is adequate for this established literature.",
+    "facets": "The citations, ranking and rationale are all from memory, with no grounded values."
+   },
+   "B": {
+    "export": "The CSV is labelled estimate, which is honest. Its SMD values are unverified recollections.",
+    "repro": "7 numbers are given and none trace. The script ceiling is 0.",
+    "refs": "All 6 DOIs resolve, and entries carry tiers and stances. Choi 2019 is listed as Am J Psychiatry in the table but as JAMA Psychiatry in the references. There are no quotes.",
+    "accuracy": "Several effect-size specifics from memory look wrong, though each is labelled est.: the bias-restricted Cochrane analysis used more than 4 trials, and Schuch 2016 reported a larger SMD. The venue for Choi 2019 is internally inconsistent.",
+    "limits": "The limits are specific and include a list of what the data cannot answer. They are mostly in a footer section.",
+    "verdict": "A complete verdict that names the strongest contrary result, the shrinkage to SMD -0.18 in low-bias trials.",
+    "facets": "All from memory or estimate."
+   },
+   "C": {
+    "export": "The CSV traces to the call, with source, window, unit, coverage flag and DOIs. It includes a provenance JSON block and is referenced from the prose. Blank stance cells have no reason column.",
+    "repro": "5 of 5 numbers trace, and both calls are listed with args. A regenerate block is present. It falls short of 5 on full chart/table rebuild hygiene.",
+    "refs": "All 8 DOIs resolve, each tied to a population and stance, with tiers as the tool states them. The ranking reason comes from the tool's ladder. There are no quotes and no contrary sources.",
+    "accuracy": "Fields are read correctly. It catches that citations returned 1 of the 8 requested entries, that the tier rung is flat, and that cited_by tracks recency. It flags the off-target outcomes (COPD distress, accelerometer association).",
+    "limits": "Limits sit beside the data: no window, the 1-of-8 censoring, missing authors, claim-text matching, and that tier reflects design rather than direction. It names the follow-up calls that would close each gap.",
+    "verdict": "Direct and bounded, with the decision stated. It names the 'qualifies' stance as contrary evidence and avoids sizing an effect it did not measure.",
+    "facets": "It covers citations, ranking, ladder rationale and stance, and gives a grounded 'not retrieved' for effect sizes and authors."
+   },
+   "D": {
+    "export": "The CSV traces to the call and includes DOIs and a provenance JSON block. The window is given as unknown..unknown. The rank order was edited away from the tool's order.",
+    "repro": "Script ceiling is 2. The calls are listed, but the re-ordered ranking cannot be replayed from them.",
+    "refs": "All 8 DOIs resolve, but the tie to claims is weak for r2 to r8. r9 is a non-resolvable pseudo-reference.",
+    "accuracy": "Nothing contradicts the record. It under-reads its own evidence by implying there is no treatment evidence, although the RCT meta-analyses for breast cancer and lung cancer depression are in its own list.",
+    "limits": "It states the missing window, lane, censoring and match mode. These are mostly in a footer, and it does not say how the gaps would change the reading.",
+    "verdict": "Narrows the answer to prevention in older adults and ignores the treatment-like RCT syntheses in its own table.",
+    "facets": "Facets are grounded, but the ranking facet departs from the tool's order and the meta-analyses for other populations are dismissed."
+   }
+  },
+  "errors": {
+   "A": [
+    "Noetel 2024 publication date given as an exact 2024-02-28 from memory"
+   ],
+   "B": [
+    "Cochrane 2013 bias-restricted analysis stated as 4 trials (est.); the actual number is larger",
+    "Schuch 2016 SMD -0.80 (est.) likely understates the reported effect",
+    "Choi 2019 venue given as Am J Psychiatry in the table but JAMA Psychiatry in the references"
+   ],
+   "C": [],
+   "D": [
+    "Verdict implies there is no treatment evidence, yet its own list includes RCT meta-analyses of depressive symptoms",
+    "r9 is a non-resolvable pseudo-citation"
+   ]
+  },
+  "best": "C",
+  "verdict": "C was the only deliverable that grounded every element in the recorded calls. It exported a traced, provenance-complete CSV and read the tool honestly: only 1 of 8 Vancouver entries came back, and the evidence tier was flat across all eight sources. It also bounded its decision to what the data measured. A and B gave clinically sensible memory answers built on landmark reviews, but they are unverifiable, and B's effect sizes contain errors. D was grounded but drew too narrow a verdict from its own evidence and reshuffled the ranking."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_bare": {
+   "export": 1,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "export": 3,
+   "repro": 2,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

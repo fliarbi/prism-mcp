@@ -1,0 +1,142 @@
+{
+ "slug": "gold-price-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 33.1,
+   "plain": 33.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.4,
+    "gpt": 35.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 4.5,
+    "chart": 0.0,
+    "drilldown": 3.0,
+    "export": 5.0,
+    "repro": 4.5,
+    "refs": 2.0,
+    "accuracy": 4.5,
+    "limits": 5.0,
+    "verdict": 3.0,
+    "facets": 4.5
+   },
+   "strict": 73.9,
+   "plain": 73.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 72.6,
+    "gpt": 75.2
+   }
+  }
+ },
+ "judge_mad": 0.41,
+ "verdicts": {
+  "opus": "A delivers a traced 24-month volume, critical and tone series. Its recomputed period comparison shows tone turning above baseline in Feb–May 2026 while volume rose, and it places window and enrichment limits beside each number. B honestly admits it measured nothing and substitutes memory-based price data, so it cannot answer the volume, tone and critical-story question a decision-maker asked. A's main weaknesses are a chart-tracing failure and unverifiable headline references.",
+  "gpt": "A is substantially more useful for a decision-maker because it supplies traced monthly volume and tone, critical-story examples, exports, and reproducible calls, with explicit limits on the missing post-May data. Its tone verdict and critical-headline accounting contain material inconsistencies, while B is candid about its limits but substitutes memory-based gold-price and central-bank figures for the requested news narrative."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "The tone chart's corpus baseline is plotted as a two-point series, which is likely untraced (chart zeroed)",
+    "The critical-headline set includes a mismatched graphite headline (self-flagged)"
+   ],
+   "claude_bare": [
+    "News references lack resolvable URLs",
+    "Price series and baseline tonnage come from memory and are not measured"
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "Verdict says Feb–May 2026 negative/positive ratio was 0.81 against a 0.58 baseline; the recorded monthly counts imply about 0.81, but this is an aggregate not a single-month reading and the baseline comparison should be framed as 1.39x.",
+    "Says one of the five critical headlines is mismatched while listing five; the recorded critical panel includes seven rows, and the headline/excerpt mismatch is specifically an issue with the February graphite headline.",
+    "Claims critical headlines sample is five returned of eight, while the export lists seven rows and the reference record shows seven recent critical rows.",
+    "Treats critical as a story-quality sample without clearly separating the database's critical flag from negative tone."
+   ],
+   "claude_bare": [
+    "Memory-based monthly average price points and reported price milestones do not measure news volume or tone.",
+    "The Reuters references use broad section URLs rather than verified article URLs, and several headlines/dates are unverified.",
+    "Claims coverage was dominated by records and milestones and assigns a rough theme ranking without corpus evidence.",
+    "The central-bank comparison is unrelated to the requested measured news-volume and tone comparison."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full 24-month series traced, window and censoring stated. The change is quantified (1.78x, CAGR 86.2%). Peaks are named with dates. The critical series is decomposed (1.92x, Apr-2025 peak of 663 at 31.6%).",
+    "comparison": "Period split Jun24–Jan26 vs Feb–May26 recomputes exactly (7526/17109, 3496/4335, 0.44 vs 0.81, 1.83x, 1.39x baseline, 1,978 vs 1,245/mo). It carries the caveat that the baseline window is undefined. It misses that critical share fell in 2026 while negative tone rose, which is the 'critical is not negative' contrast the question hints at.",
+    "chart": "Script ceiling is 0, so the counted-chart minimum is zeroed. The likely cause is the two-point baseline series in the tone chart, which does not trace to the monthly array.",
+    "drilldown": "Two traced layers reach headline items with url, date and publisher. Only 2 of 7 follow-ups returned on-topic data, so the ceiling of 3 applies.",
+    "export": "Three CSVs (monthly, entities, critical headlines), all with source, window, unit and coverage. Rows carry period or url identifiers. A provenance JSON block is included, and each file is referenced from the prose.",
+    "repro": "143 of 148 numbers trace. The prism-calls block has args and the capture date is given. The untagged figures are mostly est-labelled background, but they are not all explicitly marked, so 4 rather than 5.",
+    "refs": "The script ceiling is 2. News items carry date, publisher and url, but none could be verified in the corpus.",
+    "accuracy": "All recomputed figures are exact. It catches the reference's own anomalies: 'Fibonacci' and 'Motilal Oswal' mis-typed as people, the [r2] headline/excerpt mismatch, aggregator weight in the critical sample, and the mention vs central match-mode difference.",
+    "limits": "Limits sit next to the numbers they bound: window end with 144 days to today, the enrichment bound at 2026-05-01, placed_pct, match mode, the 219-article publisher sample, and the 5-article critical sample. It states that nothing covers Jun–Oct 2026 and proposes calls that would close the gap.",
+    "verdict": "Gives a direct answer, a decision, confidence with its reason, and what would change it. The script ceiling of 3 applies.",
+    "facets": "Volume, tone, critical stories, themes, entities, geography and sources are all grounded. The critical-vs-negative divergence is not read."
+   },
+   "claude_bare": {
+    "trend": "No news-volume series. The substitute is a memory-based price series labelled estimate, which is not the quantity the question asks about.",
+    "comparison": "Compares central-bank tonnage against a memory baseline. This is not the question's quantity and is not on a measured scale.",
+    "chart": "Memory charts are labelled estimate (score 1). Neither chart plots news volume or tone.",
+    "drilldown": "Layer identifiers are self-invented. None of the follow-ups executed ok.",
+    "export": "Tables are labelled estimate or come from an external reference. Nothing traces to the database.",
+    "repro": "Values are memory or estimates and cannot be regenerated.",
+    "refs": "Reuters and FT links point only to section pages and are marked 'exact URL not verified'. None resolve to the cited items.",
+    "accuracy": "No direct contradiction with the reference, and memory specifics are labelled est. It does not answer from measured data.",
+    "limits": "Specific and honest about what is unmeasured (volume, tone, placed_pct, concentration) and about the gap to today.",
+    "verdict": "Low confidence with a decision stated, but the answer to a measured question rests on memory.",
+    "facets": "Volume, tone and source facets are explicitly unanswered. Themes and entities come from memory."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Traced monthly volume and critical counts; quantifies growth, peaks, and censoring, and includes tone series. However, prose says late-period tone was more negative than baseline, while the stated full-window ratio is below baseline and the recent ratio comparison is misstated.",
+    "comparison": "Recent and prior tone ratios and volume are compared on stated periods, with defined baseline and caveats; arithmetic is supported by the monthly points.",
+    "chart": "Both chart specifications have source lines, but the script found a chart mismatch, so the ceiling is zero.",
+    "drilldown": "Provides traced themes and itemized headlines, but only 2 of 7 proposed follow-ups executed successfully with non-empty results.",
+    "export": "Exports are traced, referenced, and include provenance; monthly and critical-story tables cover the requested quantities.",
+    "repro": "Calls, arguments, windows, and capture date are provided; traced numbers and derived figures are reproducible, with five untagged claims limiting a perfect score.",
+    "refs": "News references include dates, publishers, and URLs, but the critical sample contains a headline/excerpt mismatch and the script ceiling is 2.",
+    "accuracy": "Mostly faithful to the record and flags the mismatched headline, but the verdict's recent tone claim says 0.81 against baseline when the actual Feb–May aggregate is 0.81 and the ratio is 1.39x; it also mischaracterizes overall tone as a late shift beyond the measured evidence.",
+    "limits": "Places window, censoring, lag, match mode, coverage, enrichment limits, and the absent price/research evidence alongside relevant claims.",
+    "verdict": "Direct and decision-oriented with confidence and a change condition, but its central tone conclusion conflicts with the full-window reading and the critical sample is weak evidence; ceiling 3.",
+    "facets": "Grounded coverage of volume, tone, critical stories, themes, source sample, geography, and limits, including explicit unmeasured facets."
+   },
+   "claude_bare": {
+    "trend": "News volume is explicitly unmeasured; the substitute estimated price series does not answer the requested quantity. Ceiling 1.",
+    "comparison": "Central-bank purchases are compared with a stated baseline, but this does not answer the requested news-volume or tone contrast; ceiling 2.",
+    "chart": "The charts are labelled estimates or cite public references, earning the estimate ceiling, but neither charts the requested news volume or tone.",
+    "drilldown": "Narrative layers lack traced items and all proposed calls failed to return usable results; ceiling 1.",
+    "export": "Exports are openly estimates or public-reference figures, not traced news data; ceiling 1.",
+    "repro": "No Prism calls were executed and the key price series is from memory; ceiling 1.",
+    "refs": "News URLs are publisher-section placeholders and unverified, so the cited critical stories lack resolving identifiers; ceiling 1.",
+    "accuracy": "It clearly labels unmeasured facets, but presents unverified headlines and specific estimated prices as a narrative about the period without support in the reference record.",
+    "limits": "Clearly distinguishes memory from measurement and states the knowledge gap, though limits are less tied to individual claims and no measured corpus coverage exists.",
+    "verdict": "Gives a direct, bounded qualitative answer with low confidence and a condition, but the conclusion rests on estimates and does not answer measured volume or tone; ceiling 5.",
+    "facets": "Most requested facets are unmeasured or based on memory; the explicit admission covers limits but not the substantive facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

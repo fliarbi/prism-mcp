@@ -1,0 +1,245 @@
+{
+ "slug": "alzheimers-drugs-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.5,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 1.5
+   },
+   "strict": 39.7,
+   "plain": 39.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 37.4,
+    "gpt": 42.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 2.5,
+    "chart": 3.5,
+    "drilldown": 2.5,
+    "export": 2.5,
+    "repro": 4.5,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 70.2,
+   "plain": 70.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.2,
+    "gpt": 73.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 37.2,
+   "plain": 37.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 29.0,
+    "gpt": 45.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 3.0,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 74.0,
+   "plain": 74.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.6,
+    "gpt": 80.4
+   }
+  }
+ },
+ "judge_mad": 0.59,
+ "verdicts": {
+  "opus": "A and D are the only grounded deliverables and score nearly level. D covers more facets, but it miscounts the orientation labels and mislabels the framing windows. A is cleaner but answers weakly. B gives the most domain-useful account of the lecanemab/donanemab shift, but it is from memory and cannot be reproduced.",
+  "gpt": "B is the strongest decision deliverable: it traces and qualifies the research trend, covers framing and news, and supplies reproducible calls, while being candid about the limits of selected title matches. C covers more facets, but its cross-lane growth comparison and news-rise wording weaken its reading; neither database-backed response directly answers the clinical and regulatory changes highlighted by the question."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "FDA-cleared blood test described as p-tau217 plus Aβ42/40; the cleared test uses a pTau217/Aβ1-42 ratio"
+   ],
+   "chatgpt_bare": [
+    "Lecanemab 'verbatim' quote altered from the abstract",
+    "Provenance JSON lists research.evidence/brief calls as executed despite 'no live Prism calls'"
+   ],
+   "claude_prism": [
+    "'Seven of ten labelled breakthrough or promising' contradicts the record (9 of 10)",
+    "Framing earlier/recent windows presented as early/late thirds in the comparison table and CSV"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [
+    "Treats the cross-trial relative-slowing chart as a charted comparison even though its values do not trace to the benchmark record."
+   ],
+   "chatgpt_prism": [
+    "Calls the research trend window through 2025-12-31 although the record provides years 2017–2025, not explicit calendar-day bounds.",
+    "The framing comparison omits the calendar boundaries of its windows."
+   ],
+   "claude_prism": [
+    "Describes news volume as having risen sharply despite the reported equal first and last monthly values; it does flag the anomaly.",
+    "Compares news and research growth as roughly ten times faster despite different corpus windows and measures."
+   ],
+   "claude_bare": [
+    "The aducanumab, semaglutide, and blood-test specifics are labeled estimates but have no cited sources or reproducible calls.",
+    "Uses estimated trial-effect values in a chart about treatment effects rather than a time series of research activity."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Gives the traced 2017–2025 endpoints, the window and the 11.3% CAGR. The peak is not named explicitly, and the correct 2.35x recomputation is needlessly tagged as an estimate.",
+    "comparison": "The cautionary share of 10.1% vs 12.1% (+2.0 pts) is traced. The tool's caveat is carried, and the missing window boundaries are noted.",
+    "chart": "One traced volume chart with window, unit and source. News and framing are not charted.",
+    "drilldown": "One traced layer: 3 of the 10 new works with DOIs. Only 1 of 5 follow-ups executed.",
+    "export": "One traced CSV with provenance JSON. The new-work and framing tables are not exported.",
+    "repro": "All 19 numbers trace. The calls block lists args and the capture date.",
+    "refs": "Three DOIs resolve and carry year and venue. There are no quotes and tier is marked not supplied.",
+    "accuracy": "Fields are read correctly. It flags the first=last=3 news oddity and the label artefact in the under-coverage panel, but does not identify the last month as partial.",
+    "limits": "Places the window, the 5-month gap, the lane, the selection rule and interpretation next to the numbers.",
+    "verdict": "Has a decision, a confidence level and a change condition. The answer is mostly 'data cannot establish', so it barely answers what changed.",
+    "facets": "Trend, news, framing, new work and a grounded no-data for under-coverage are all addressed."
+   },
+   "claude_bare": {
+    "trend": "No volume series. It plots trial effect sizes by year, which is not the quantity the question asks about.",
+    "comparison": "The placebo-baseline comparison uses memory and reference numbers, so it caps at 2.",
+    "chart": "The chart mixes an estimate-labelled series with reference-sourced points.",
+    "drilldown": "The breakdown is from memory. The DOI table is real but untraced.",
+    "export": "Memory CSV with partial estimate labelling.",
+    "repro": "No calls were run; the ceiling is 0.",
+    "refs": "Real NEJM, JAMA and Lancet DOIs, each tied to a claim with year, venue and tier. No quotes.",
+    "accuracy": "Recalled facts largely correct: 27%, ARIA-E 12.6%, 35%, the approvals, EVOKE, simufilam and Lancet 45%. The blood test is described imprecisely as Aβ42/40; it is a pTau217/Aβ1-42 ratio.",
+    "limits": "Specific about what is unmeasured and gives the knowledge cutoff gap. Limits are mostly in a footer.",
+    "verdict": "Gives the most domain-correct answer about recent change, with a decision, confidence and change condition. It is partly reliant on estimate-labelled claims.",
+    "facets": "Volume, news, framing and under-coverage are all unmeasured."
+   },
+   "chatgpt_bare": {
+    "trend": "No series; the ceiling is 0.",
+    "comparison": "Cross-trial delta from memory and references.",
+    "chart": "Bar chart of reference values, not a trend.",
+    "drilldown": "Memory layers only; 0 of 5 follow-ups executed.",
+    "export": "Memory CSV.",
+    "repro": "Lists c1 and c2 as calls 'used', with provenance JSON, although it states no calls were run.",
+    "refs": "DOIs resolve. The 'verbatim' lecanemab quote is not verbatim.",
+    "accuracy": "The trial figures are correct. However, the quote is presented as verbatim but altered, and the provenance JSON implies calls were executed.",
+    "limits": "States memory-only, but the 'about two years gap' is muddled and the provenance contradicts the limits text.",
+    "verdict": "Gives a reasonable direct answer on anti-amyloid drugs, with a decision and confidence. The change condition is generic.",
+    "facets": "Most facets are explicitly unanswered."
+   },
+   "claude_prism": {
+    "trend": "Traced endpoints with window, CAGR, the 2025 peak, early/late thirds, and the note that 2026 is excluded.",
+    "comparison": "The thirds table mislabels the earlier/recent framing windows as early/late thirds. Research and news lanes are mixed in one table, though the mixing is acknowledged.",
+    "chart": "Only the volume chart is shown. News and framing are not charted.",
+    "drilldown": "Two traced layers: topic-label counts and 10 DOIs. Only 2 of 7 follow-ups executed.",
+    "export": "Three CSVs. window_compare mixes lanes, and framing.csv is labelled coverage=full with the wrong window.",
+    "repro": "All 61 numbers trace and the calls block is present.",
+    "refs": "All ten DOIs resolve, with year, venue and citations. No quotes and no tier.",
+    "accuracy": "Says 'seven of ten are breakthrough or promising'; the record shows nine. It also mislabels the framing windows as thirds.",
+    "limits": "Places the window ends, the gap, the match-mode bias toward preclinical titles, and the label artefact next to the numbers.",
+    "verdict": "Gives a direct answer, a decision, confidence with its reason, and a change condition. It flags that clinical and regulatory events are absent.",
+    "facets": "All five facets are answered with grounded values or a grounded no-data."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured time series; the chart compares trial outcomes.",
+    "comparison": "Cross-trial figures are labeled and caveated, but the source is not reproducible here.",
+    "chart": "The chart is labeled as sourced to references, but its values are not traceable to the supplied record.",
+    "drilldown": "Names evidence layers, but has no traced breakdown or executed useful follow-ups.",
+    "export": "Trial table is labeled partial, but its rows are not backed by the supplied record.",
+    "repro": "No numeric claims trace to recorded calls or resolvable sources in this benchmark.",
+    "refs": "All three DOIs resolve; entries are tied to claims and the lecanemab quote is verbatim.",
+    "accuracy": "Trial effects are plausible and carefully qualified; it omits the key recent regulatory changes.",
+    "limits": "Clearly states the evidence gap, selection limits, and that counts cannot be measured.",
+    "verdict": "Direct, qualified answer and decision with confidence and conditions, but the recent field changes are under-covered.",
+    "facets": "Some clinical and mechanism facets are addressed, but no grounded trend, corpus breakdown, or news comparison."
+   },
+   "chatgpt_prism": {
+    "trend": "Quantifies the research increase and reports news thirds and peak, but does not fully reconcile the anomalous news endpoints.",
+    "comparison": "Cautionary share comparison is traced and caveated; the framing windows lack dates.",
+    "chart": "The chart traces its endpoints and states window, unit, source, and reading; it omits a decomposition available in the record.",
+    "drilldown": "One traced breakdown layer is given; only one of five proposed follow-ups executed with useful data.",
+    "export": "The referenced trend CSV is traced but contains only endpoints; provenance is present but incomplete for full decision-ready export.",
+    "repro": "All numeric claims are tagged to the recorded radar call, with args and window sufficient to regenerate them.",
+    "refs": "DOIs resolve and metadata matches, but no claim-linked verbatim abstract quotes are supplied.",
+    "accuracy": "Reads the radar fields and the news endpoint anomaly carefully, without material contradiction.",
+    "limits": "Places window, corpus, selection, coverage, and interpretation limits next to the findings.",
+    "verdict": "Answers directly with decision, confidence, conditions, and a cautionary framing result; it does not discuss contrary clinical evidence.",
+    "facets": "Covers research/news trends, framing, selected work, and the grounded taxonomy-label caveat; overlap and seasonality are not addressed."
+   },
+   "claude_prism": {
+    "trend": "Quantifies growth and names peak and thirds, but the prose calls news sharply rising despite the anomalous equal first and last values.",
+    "comparison": "The research/news growth comparison combines different windows and corpora, so it is not a clean single-scale contrast.",
+    "chart": "The endpoint chart is traced and labeled; it omits a charted news/framing comparison and does not visibly mark the anomalous news endpoint.",
+    "drilldown": "Provides traced topics and item DOIs, but proposed follow-ups mostly failed and no executed result is folded back in.",
+    "export": "Exports are referenced but lack full provenance and required fields; the window comparison mixes units and windows.",
+    "repro": "Numeric claims trace to the radar call and its args; derived ratios are recomputable.",
+    "refs": "Paper DOIs resolve, but entries are not claim-tied with quotes and tier/strength detail as required.",
+    "accuracy": "Mostly reads the record correctly and flags the endpoint anomaly, but overstates the news trend and compares unlike windows.",
+    "limits": "States the key windows, match mode, and coverage caveats; the research end-to-today gap is approximate and limits are not consistently attached to each number.",
+    "verdict": "Direct answer with decision, confidence, conditions, and limits; its news-trend wording weakens consistency.",
+    "facets": "Grounds the main implied facets: volume, framing, new work, news, under-coverage caveat, and research/news mismatch."
+   },
+   "claude_bare": {
+    "trend": "The chart is explicitly estimated and concerns trial effects rather than research volume; it is not a measured trend in the question’s quantity.",
+    "comparison": "Cross-trial figures are caveated but come from memory, and the semaglutide row is unmeasured.",
+    "chart": "Chart values are a mix of memory and estimates, so it earns only the honest-estimate anchor.",
+    "drilldown": "Lists generic breakdown dimensions and papers, but no measured layers or executed follow-ups.",
+    "export": "The effect-size table is explicitly partial and partly estimated, not traced to recorded responses.",
+    "repro": "No calls were run and the numeric claims cannot be replayed from the listed calls.",
+    "refs": "DOIs resolve, but quotes are absent and the claims are not sufficiently tied to sourced abstracts.",
+    "accuracy": "Memory claims are marked estimated and trial effects qualified, but regulatory and failure specifics remain unverified here.",
+    "limits": "States memory basis and missing measurements, but does not supply data-specific corpus limits for a trend analysis.",
+    "verdict": "Direct answer, decision, confidence, conditions, and contrary failures are included, with the limits of memory acknowledged.",
+    "facets": "Covers clinical examples but lacks grounded measures of research/news trends and other requested facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

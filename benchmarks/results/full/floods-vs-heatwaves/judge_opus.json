@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series and no direction; the chart has empty points.",
+    "comparison": "No comparison.",
+    "chart": "Empty placeholder chart; no values.",
+    "drilldown": "Generic proposed calls; 0 of 5 executed.",
+    "export": "No CSV.",
+    "repro": "No numbers; an honest refusal.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Declines to answer; the decision is only 'get data'.",
+    "facets": "No facet answered."
+   },
+   "B": {
+    "trend": "Traced chart and window, but no change quantified beyond the tool's growth values; spikes named without values; May wrongly treated as censored.",
+    "comparison": "Wildfire vs floods 1.19x, +11,128 and +7.4pp; heatwave 0.39x. All exact, floods baseline defined, overlap caveat carried.",
+    "chart": "One traced volume chart; tone not charted; May dropped for a misread reason.",
+    "drilldown": "Term and month layers only; follow-ups not executable.",
+    "export": "One traced monthly CSV with provenance; no summary table.",
+    "repro": "19/19 numbers traced; call listed with args.",
+    "accuracy": "Misreads censored_at: says the May 2026 values are censored, but May has partial_period:false and only June is excluded.",
+    "limits": "Window, the 144-day gap, lane and coverage are stated, mostly in a footer; the censoring limit is misapplied.",
+    "verdict": "Direct answer with decision and confidence, but ignores the January 2025 single-month dependence visible in its own data.",
+    "facets": "Totals, shares, monthly series and caveats covered; tone dismissed; seasonality only lightly read."
+   },
+   "C": {
+    "trend": "Full traced series; 12 vs 12 month split recomputes exactly (1.03, 1.38, 0.65); peaks dated; tool growth disagreement flagged.",
+    "comparison": "Ratios to heatwave (3.08x, 2.59x) and the ex-January wildfire figure (0.91x floods) are exact; own baseline defined; undefined vs_baseline rejected; states what the data can't test.",
+    "chart": "Traced, with window, unit and caption; volume only, critical share not charted.",
+    "drilldown": "Term, month and tone layers with identifiers; only 2 of 6 follow-ups executed ok.",
+    "export": "Two traced tables using the tool's field names, with a provenance JSON; coverage=full is asserted.",
+    "repro": "74/81 traced; the remaining numbers are calendar arithmetic marked est. or coverage figures.",
+    "accuracy": "Reads censoring correctly; catches combined_articles being a plain sum and the growth vs split inconsistency; derived critical% checked.",
+    "limits": "Window, gap, lane, coverage, match mode and interpretation are stated and placed near the numbers.",
+    "verdict": "Answer, decision, confidence with reason, what would change it, and the contrary January 2025 spike; calling wildfire 'steady' is loose.",
+    "facets": "Totals, shares, monthly series, tone, overlap, common-word effects and seasonality all covered."
+   },
+   "D": {
+    "trend": "Illustrative estimate index, labelled.",
+    "comparison": "Ordinal prior only.",
+    "chart": "Estimate chart, labelled.",
+    "drilldown": "Breakdown layers planned from memory; calls not run.",
+    "export": "Estimate CSV, labelled.",
+    "repro": "Untagged numbers; nothing reproducible.",
+    "accuracy": "Its prior that floods are the largest topic contradicts the reference, where wildfire leads; it is labelled est.",
+    "limits": "Honest about what is unmeasured.",
+    "verdict": "Low-confidence scoping answer only.",
+    "facets": "Facets answered from memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Treats May 2026 as censored and drops it from the chart; the reference marks May partial_period:false and censors only June 2026."
+   ],
+   "C": [
+    "Coverage row counts are not visible in the shown reference record."
+   ],
+   "D": [
+    "Prior that flood coverage is the largest contradicts the reference (wildfire 69,544 vs floods 58,416)."
+   ]
+  },
+  "best": "C",
+  "verdict": "C was the only deliverable to read the data rather than restate it. It showed that wildfire's lead depends on the single January 2025 spike, recomputed a year-on-year split that disagrees with the tool's growth labels, and handled censoring correctly. B was traced and clean on its totals, but it misread the censoring and did not engage with seasonality or the spike. A and D honestly declined to measure, which leaves a decision-maker with nothing to act on."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

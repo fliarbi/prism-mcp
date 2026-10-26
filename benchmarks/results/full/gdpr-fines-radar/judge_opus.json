@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 3,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Year counts 4/3/2/1 trace to c1, the window is stated and the drop is quantified. A explains that citation-ranked selection censors recent years and so is not a volume trend.",
+    "comparison": "Mean citations by orientation recompute exactly (5.3 vs 0.6, 8.9x, +4.7) and the baseline is defined. This is at the ceiling; the contrast is minor and does not address what is new.",
+    "chart": "The single chart traces and carries window, unit and caption. It shows bare levels of a sample property, with no decomposition.",
+    "drilldown": "One traced layer reaches items with DOIs. Only 2 of 6 follow-ups returned data.",
+    "export": "Ceiling is 0. The CSV is marked coverage=partial while the prose claims coverage is complete at 107%, so export and prose disagree.",
+    "repro": "16 of 19 numbers trace (ceiling 3). The 107.0% and 107.1% coverage figures are not in the reference record.",
+    "refs": "All 10 DOIs resolve and each is tied to a claim. Tier is not provided and the quotes are titles, not abstract text.",
+    "accuracy": "The computed figures are all correct. However, it asserts coverage percentages and null fields (research_trend, news_trend, geography) that do not appear in the recorded c1 response.",
+    "limits": "Limits sit next to the numbers they bound: unknown window end, match mode, citation censoring, and what the counts are not.",
+    "verdict": "Direct answer, decision, low confidence with reason, and what would change it. It is consistent with the data and under 150 words.",
+    "facets": "New-work facet is grounded; framing shift is a grounded 'no data'. The other nulls are asserted but not all shown in the record."
+   },
+   "B": {
+    "trend": "Traced series with window and a 75% drop. The censoring mechanism (citation ranking favours older papers) is only vaguely stated.",
+    "comparison": "2022 vs 2023 mean citations recompute exactly (4.25 vs 1). Paper age confounds the contrast, and it does not address what is new.",
+    "chart": "Traced, with window, unit and caption. A line chart of a selection artefact, showing levels only.",
+    "drilldown": "Items carry DOIs. Only 1 of 5 follow-ups returned data.",
+    "export": "Traced CSV with titles, DOIs, window, coverage and a provenance block. There is no reason column for missing venues.",
+    "repro": "21 of 23 numbers trace, the calls are listed with args, and the provenance block carries the capture date.",
+    "refs": "All 10 DOIs resolve, with claims tied for some entries. No quotes and no tier.",
+    "accuracy": "Figures are correct. The 'reachability and historical row floor' phrasing is not visible in the record.",
+    "limits": "Limits are specific but gathered mostly in the closing methods section.",
+    "verdict": "Clear answer and decision. 'Medium' confidence is inconsistent with its own statement that the scan cannot establish trends, and it names no contrary evidence.",
+    "facets": "New work and its themes are grounded; framing, under-covered topics and news are flagged as grounded 'no data'."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Proposes follow-ups only, with no breakdown layer.",
+    "export": "No export.",
+    "repro": "No numbers; the framing claim is labelled memory.",
+    "refs": "No references.",
+    "accuracy": "No contradictions, but it says almost nothing.",
+    "limits": "Honest and specific about what was not measured.",
+    "verdict": "The memory-based framing-shift answer is unsupported by any data in the deliverable.",
+    "facets": "Facets are covered from memory only."
+   },
+   "D": {
+    "trend": "Annual fines series is from memory, labelled as an estimate. It also measures fines, not research.",
+    "comparison": "The memory ratio (largest fine vs median) is explicitly illustrative.",
+    "chart": "Chart is labelled as an estimate and sourced to memory.",
+    "drilldown": "Breakdown layers are named from memory.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Memory figures, not reproducible.",
+    "refs": "References are generic and unverified, with no identifiers.",
+    "accuracy": "The recalled fine figures are plausible and labelled as estimates. It answers the fines question rather than the research question.",
+    "limits": "Labels its knowledge-cutoff gap and states it queried no lanes.",
+    "verdict": "Rests on estimated figures and drifts to a compliance decision outside the question.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "Coverage figures of 107.0% and 107.1% and several null-field claims are not present in the recorded c1 response.",
+    "The CSV says coverage=partial while the prose says coverage is complete."
+   ],
+   "B": [
+    "The 'reachability/historical row floor' caveat is not visible in the recorded response.",
+    "Confidence 'medium' is inconsistent with its stated inability to measure trends."
+   ],
+   "C": [],
+   "D": [
+    "Answers mostly about fine amounts rather than research; every figure is from memory (labelled as estimates)."
+   ]
+  },
+  "best": "B",
+  "verdict": "A and B both grounded their answers in the same 10-paper radar list and correctly declined to read it as a field trend. B's fully traced, provenance-tagged export gave it the edge. A had stronger placed limits, but it carried untraced coverage figures and an export that contradicts its prose. C and D answered from memory: C honestly said almost nothing, and D substituted estimated fine totals for the research question that was asked."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 3,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

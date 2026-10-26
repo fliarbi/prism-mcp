@@ -1,0 +1,177 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Index series is labelled estimate and has no source. The anchor allows 1.",
+    "comparison": "The ratio table uses estimated index values only.",
+    "chart": "The memory chart is honestly labelled estimate.",
+    "drilldown": "Layers are named generically and only 1 of 6 follow-ups executed.",
+    "export": "The estimate CSV is labelled, but it is unmeasured.",
+    "repro": "None of the 14 numbers trace, and the ceiling is 0.",
+    "accuracy": "Its estimated ordering (export controls ≥ TSMC) contradicts the reference: TSMC has 36,563 articles and export controls 7,399. The estimate label softens this but does not remove it.",
+    "limits": "It is specific about what is unmeasured: match mode, window gap, overlap.",
+    "verdict": "An honest non-answer resting on a wrong estimated ordering.",
+    "facets": "Facets are answered from memory only."
+   },
+   "B": {
+    "trend": "Full traced 24-month series with window and censoring. Endpoint changes recompute exactly (+125.6%, +169.5%, +286.3%). The Oct-2025 spike is mentioned but its value is not stated in the prose, and there is no decomposition.",
+    "comparison": "Ratios 0.29× and 0.058× and deltas 91,488 and 120,652 recompute exactly, with the overlap caveat. It does not address the spike-vs-baseline contrast the question poses.",
+    "chart": "The single volume chart is fully traced, but tone and critical share are not charted although the data supports them.",
+    "drilldown": "One monthly layer. Only 1 of 4 follow-ups worked.",
+    "export": "Two traced CSVs with provenance and a JSON block, referenced from the prose.",
+    "repro": "29 of 31 numbers trace. The c1 entry lacks feature and args in the prism-calls block, though they appear in the provenance JSON.",
+    "accuracy": "Figures match the reference and fields are read cautiously. The index partition-check claim is not visible in the record.",
+    "limits": "Window, the 144-day gap and censoring are stated correctly, but mostly in the limits section rather than at the numbers.",
+    "verdict": "Has answer, decision and confidence. It does not name the strongest contrary point: export-control growth is driven by one spike.",
+    "facets": "Volume, share, trend and tone ratios are covered, and overlap is flagged."
+   },
+   "C": {
+    "trend": "Endpoint ratios are exact. Peaks are named with values and dates (Feb-25 9,428; Apr-26 9,935; Oct-25 1,773 against 195 and 341). Critical_pct ranges are traced. The chart samples points rather than plotting the full series.",
+    "comparison": "Its own baseline is defined (TSMC mean 1,523/mo) and the ratios recompute (3.5×, 0.20×, 17×, 1.53×). It carries the overlap and sum caveat.",
+    "chart": "Points trace, but semiconductor is omitted, only subsampled months are plotted, tone is not charted, and the 'supports' field cites a critical_pct claim the chart does not show.",
+    "drilldown": "Term, month and tone layers. 6 of 6 follow-ups are on-topic and executable, but none were run and folded back, and there are no item identifiers.",
+    "export": "The monthly CSV holds only selected months (marked partial). The totals CSV is complete. This is at the ceiling.",
+    "repro": "76 of 81 numbers trace. Derived numbers are recomputable, and calls are listed with args.",
+    "accuracy": "All values match. It catches anomalies: tool growth vs endpoint ratio, undefined critical/tone_ratio/vs_baseline, generic-term over-count, and the combined total being an undeduplicated sum.",
+    "limits": "Limits are specific: censoring, 4.7-month gap, match mode, overlap, export-controls not chip-specific. It states what cannot be answered.",
+    "verdict": "Answer, decision, confidence with reason and a change condition. It names the unexplained spike and is concise.",
+    "facets": "Volume, share, trend, tone/critical, spike and overlap are all grounded."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Generic calls; only 1 of 5 executed.",
+    "export": "No export.",
+    "repro": "No numbers at all.",
+    "accuracy": "No contradictions because nothing is asserted.",
+    "limits": "Honest and specific about what is unmeasurable.",
+    "verdict": "A correct refusal, but it gives no answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [
+    "Estimated ordering (chip export controls ≥ TSMC, ratio ~3:1:1) contradicts the reference: TSMC 36,563 vs export controls 7,399"
+   ],
+   "B": [
+    "Claims the coverage passed index partition-read/row-floor checks; this is not visible in the reference record"
+   ],
+   "C": [
+    "Coverage figure '107.1% of expected row floor' is not visible in the reference record",
+    "Monthly CSV and chart subsample months instead of exporting the full 24-point series"
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "B and C both reported traced figures from the same news.compare call. C went further: it decomposed critical share by term, named the peaks and the October 2025 export-control spike (1,773 vs 195 the month before), and flagged undefined fields and the generic-term over-count. B instead gave cleaner, complete exports. A gave an estimated term ordering that contradicts the measured data, and D gave no answer at all."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

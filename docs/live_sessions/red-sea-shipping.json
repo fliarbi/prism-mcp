@@ -1,0 +1,138 @@
+{
+ "slug": "red-sea-shipping",
+ "claude_live": {
+  "text": "**Direct answer:** Prism has very little coverage under this exact phrase. It found 14 articles between June 2024 and May 2026, and Prism flags anything under 25 articles as too thin to report on. What there is leans negative. I could not retrieve any headlines.\n\n**What the data shows** (window 2024-06 to 2026-05, news corpus):\n- **Volume:** 14 articles in total, spread across only 6 months. July 2024 was the peak with 4. March 2026 had 1 and May 2026 had 3. Prism labels the direction \"falling\" (late third 4 articles against early third 6), but with counts this small that label is weak.\n- **Tone:** 9 of 14 articles were negative (64%) and 5 were positive (36%). That is a negative-to-positive ratio of 1.8 against a corpus baseline of 0.58, so about 3.1 times more negative than ordinary news.\n- **Criticality:** 12 of the 14 articles (86%) were flagged critical. Mean priority was 6–7.5 in the months with coverage.\n- **Places** (only 5 of 11 matched articles were placed, so treat as indicative):\n  - China 4 articles.\n  - United States, Vietnam, Australia, Iran and Singapore 2 each.\n  - UAE, Indonesia, Malaysia, Israel and Thailand 1 each.\n- **Themes and entities:**\n  - Themes were trade, supply chain, maritime freight, oil and insurance.\n  - The organisation most often named was Maersk, in 2 articles, and Louise Rasmussen was the only person named.\n  - AD Ports Group, Xeneta and Temu also appeared.\n  - Entity labels are machine-assigned and unverified.\n- **Critical stories:** The recent-news and critical-news feeds returned nothing for this phrase. A broader \"Red Sea\" search over 2025-04 to 2026-05 also returned no articles after relevance and duplicate filtering. I therefore cannot name specific critical stories.\n\n**Interpretation (mine, not measured):**\n- The corpus appears to hold almost no articles about this topic under these tags. That probably reflects how the topic is labelled or tagged, not the real volume of coverage.\n- Red Sea disruption is likely folded into broader freight, tariff and supply-chain stories. That would fit the \"tariffs\", \"exports\" and \"FY26\" tags.\n- Because the sample is so small, the negative tone and the \"falling\" trend are suggestive only.\n- Place labels, including Iran and Israel, may reflect incidental mentions, not the location of the disruption.\n- News labelling also lags after about April 2026, so the latest months are the least reliable.\n\n**Suggested next step:** Re-run with narrower terms such as \"Houthi\", \"Suez Canal\", \"Maersk rerouting\" or \"container freight rates\" to get a reportable sample.",
+  "seconds": 257.6,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "Red Sea shipping disruption"
+    },
+    "ok": true,
+    "chars": 26037
+   },
+   {
+    "tool": "critical_news",
+    "args": {},
+    "ok": false,
+    "chars": 77
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "Red Sea",
+     "days": 400,
+     "limit": 8
+    },
+    "ok": false,
+    "chars": 1721
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Prism’s Red Sea shipping coverage is strongly negative, centered on Yemen and the wider regional conflict, with top-priority stories focused on US strikes and Houthi attacks.** The figures below use Prism’s news corpus for **1 June 2024–31 May 2026**; it censors coverage after May because newer news ingest is incomplete.\n\n**What the data shows.** Prism resolved **455 articles** for “Red Sea shipping.” Among them, **359 were negative (78.9%)**, **92 positive (20.2%)**, and **4 neutral**. Negative coverage outnumbered positive coverage **3.9 to 1**; Prism’s same-window general-news baseline was **0.58 to 1**. The strongest monthly skew was March 2025: **120 negative vs. 3 positive**.\n\nGeography is available for **339 of 441 matched articles (76.9%)**. Labels overlap: the most frequent were **United States (282)**, **Yemen (256)**, **Israel (233)** and **Iran (211)**. These are places articles were *about*, not where outlets are based.\n\nPrism returned **4 of 10 requested critical-story records**; six were unavailable in its article store. The retrieved top-priority stories include DW’s [report on Trump’s strikes against the Houthis](https://www.dw.com/es/trump-ordena-ataque-decisivo-y-contundente-contra-los-hut%C3%ADes/a-71933637) (15 March 2025), *The Deccan Chronicle*’s [report on US strikes in Yemen](https://www.deccanchronicle.com/world/middle-east/us-strikes-in-yemen-kill-20-as-trump-vows-to-end-houthi-attacks-1867132) and *Hindustan Times’* [report on further US action](https://www.hindustantimes.com/world-news/us-news/us-vows-unrelenting-campaign-to-halt-huthi-ship-attacks-101742142128233.html) (both 16 March 2025).\n\n**Interpretation.** Coverage frames shipping disruption chiefly through military escalation and regional geopolitics, rather than as a standalone logistics story. The March 2025 tone spike aligns with the retrieved strike coverage; it does not establish that those events alone caused the spike.",
+  "seconds": 349.6,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "Red Sea shipping disruption",
+     "since": "2026-07-22",
+     "until": "2026-10-22",
+     "granularity": "week"
+    },
+    "ok": false,
+    "chars": 757
+   },
+   {
+    "tool": "resolve_term",
+    "args": {
+     "term": "Red Sea shipping"
+    },
+    "ok": true,
+    "chars": 3617
+   },
+   {
+    "tool": "news_sentiment",
+    "args": {
+     "term": "Red Sea shipping",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "month"
+    },
+    "ok": false,
+    "chars": 683
+   },
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "Red Sea shipping",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "month"
+    },
+    "ok": true,
+    "chars": 55992
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "Red Sea shipping",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "month",
+     "level": "country",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 5697
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "Red Sea shipping",
+     "days": 730,
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 11587
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "Red Sea shipping",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "level": "country",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 5727
+   },
+   {
+    "tool": "news_sentiment",
+    "args": {
+     "term": "Red Sea shipping",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "chars": 7919
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "Red Sea shipping",
+     "days": 730,
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 11593
+   }
+  ]
+ }
+}

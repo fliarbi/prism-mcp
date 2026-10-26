@@ -1,0 +1,186 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced series with window and censoring. Quantifies the multiples and recomputes ex-Feb (63 vs 34, 1.9x). The claim that critical share 'ranged from 28.6%' is wrong: Jul 2024 is 0% and Feb 2026 is 0.6%.",
+    "comparison": "Tone ratio 5.54 vs a defined baseline of 0.58 (9.55x, delta +4.96). The ex-Feb recomputation is exact. Reads the contrast against what lawsuit coverage can and cannot show.",
+    "chart": "Traced articles and critical series overlaid, with window, unit, source and caption. The Feb anomaly is explained in prose but not marked on the chart.",
+    "drilldown": "Traced theme, entity and place layers with labels. Only 2 of 6 follow-ups executed ok, and there is no item-level url.",
+    "export": "Two traced CSVs with provenance and a JSON block, both referenced from the prose. The tone CSV omits neutral.",
+    "repro": "98/98 numbers traced. Derivations are shown and the prism-calls block includes args.",
+    "refs": "No refs. The single news item is given without a url.",
+    "accuracy": "Catches the Feb 2026 off-topic cluster, the Colombia artefact and the one-article publisher sample. One misstatement on the critical-share range.",
+    "limits": "Window, censoring, the 144-day gap, lane, match-mode differences, enrichment lag and coverage are each placed where used. The limits change the reading.",
+    "verdict": "Concise answer, decision, low confidence with reason, and what would change it. It names the anomaly. The verdict omits the window end.",
+    "facets": "All facets answered with grounded values or a grounded 'cannot', including the critical subset."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "Empty chart with no points.",
+    "drilldown": "Generic calls, none of which executed ok.",
+    "export": "Header-only CSV labelled estimate.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "No contradictions, but empty.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "A refusal that does not address the question's recency.",
+    "facets": "No facets answered."
+   },
+   "C": {
+    "trend": "Traced series with window. Quantifies 6.59x and the peak, and flags that the Feb spike dominates. No decomposition.",
+    "comparison": "Traced tone vs baseline with 9.55x and the caveat. Does not test the attention-vs-litigation contrast numerically.",
+    "chart": "Single traced volume chart. The critical/tone view, which the data supports, is not charted.",
+    "drilldown": "Panel names given as identifiers. 3/6 follow-ups ok. No item layer.",
+    "export": "Two traced CSVs with provenance JSON, referenced from the prose.",
+    "repro": "28/29 traced, and the calls are listed with args.",
+    "refs": "No refs. The recent article is given without a url.",
+    "accuracy": "No contradictions. Flags the spike as possibly a matching effect but misses the Colombia anomaly.",
+    "limits": "Gap, censoring, lane, match mode and coverage stated. Mostly placed in the Method section.",
+    "verdict": "Clear, bounded answer with decision, confidence and conditions.",
+    "facets": "Most facets grounded."
+   },
+   "D": {
+    "trend": "Memory estimate series labelled est.",
+    "comparison": "Memory figure compared against the statute. The arithmetic is correct but the figures are unverifiable.",
+    "chart": "Estimate chart labelled honestly.",
+    "drilldown": "Breakdown from memory. Follow-ups mostly run.",
+    "export": "Estimate table labelled.",
+    "repro": "Ten numbers untagged, none traced.",
+    "refs": "One statute URL resolves. There are no case references.",
+    "accuracy": "Labelled memory facts, broadly correct (Bartz, Kadrey, $1.5B settlement). It measures litigation, not coverage.",
+    "limits": "States the knowledge cutoff and gap. Generic otherwise.",
+    "verdict": "Direct and useful on recency, but it rests on estimates and does not answer the coverage question.",
+    "facets": "Mostly memory. The coverage facets are unmeasured."
+   }
+  },
+  "errors": {
+   "A": [
+    "Critical share stated to range from 28.6% minimum; the series includes 0% (Jul 2024) and 0.6% (Feb 2026)"
+   ],
+   "B": [],
+   "C": [],
+   "D": [
+    "Case-count series (1/15/35/55) is a memory estimate presented as a chart, not measured coverage"
+   ]
+  },
+  "best": "A",
+  "verdict": "A and C both grounded the answer in the traced news series and correctly said it measures topic attention, not lawsuits. A went further: it identified the Feb 2026 spike as an off-topic syndicated cluster (and the Colombia artefact) and recomputed trend and tone without it, making it decision-grade. D supplied the recent litigation facts from labelled memory but measured no coverage, and B declined entirely."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

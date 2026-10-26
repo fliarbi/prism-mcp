@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No time series exists, which is at the ceiling of 0.",
+    "comparison": "It gives memory numbers and then declines to compare them, so the comparison is effectively qualitative.",
+    "chart": "The quartile chart cites 'ref:r3' and is not a trend. Its intermediate points are labelled from memory only in the prose.",
+    "drilldown": "The layers are named generically and all five follow-up calls failed.",
+    "export": "No CSV is provided.",
+    "repro": "The numbers come from memory, and the cited references have no DOIs.",
+    "refs": "No identifiers are given, and the titles and venues look reconstructed rather than real.",
+    "accuracy": "The text contains garbled CI strings ('1. หรือ?', '1._redacted'). It attributes the Yuan 2023 RR 1.21 (1.15–1.27) to an 'AJCN 2021' review, and the cohort titles and venues appear fabricated.",
+    "limits": "It is honest about being memory-only, but the limits are mostly generic.",
+    "verdict": "It answers the question and states a decision, a confidence level and what would change it. It rests on misattributed memory figures.",
+    "facets": "The facets are answered from memory."
+   },
+   "B": {
+    "trend": "The series is honestly labelled as an estimate, which is at the ceiling.",
+    "comparison": "The memory-based numeric comparison table is at the ceiling of 2.",
+    "chart": "The chart is labelled as an estimate, which earns exactly 1.",
+    "drilldown": "Layers are named but not traced, and the follow-up calls failed.",
+    "export": "The CSV is labelled source=estimate.",
+    "repro": "Nothing is reproducible, which is at the ceiling of 0.",
+    "refs": "The papers are real (Schnabel 2019, Rico-Campà 2019, Hall 2019, Lane 2024) but carry no resolvable identifiers.",
+    "accuracy": "The recalled figures (HR 1.14, HR 1.62, the Hall trial results, the Lane evidence classes) are broadly correct and labelled as estimates. Nothing contradicts the reference.",
+    "limits": "It specifically says what is unmeasured and states the gap to today. As a plain model it is capped at 3.",
+    "verdict": "It is direct and well-conditioned, at the ceiling of 3.",
+    "facets": "Facets are covered from memory only."
+   },
+   "C": {
+    "trend": "The series traces fully with its window, CAGR 18.9%, 4.7x late-vs-early growth, the 2023 peak and the censoring note. It is not decomposed.",
+    "comparison": "The pooled ratios share one scale, the 0.06 delta is exact and the baselines are defined. HR and RR are mixed with only light caveating.",
+    "chart": "Two traced charts with captions. The censored period is not visibly marked.",
+    "drilldown": "All six follow-ups failed, which is at the ceiling.",
+    "export": "Two traced CSVs with provenance JSON and blank nulls. The effects table lacks DOI row IDs.",
+    "repro": "Almost everything traces and the calls block is complete. However, the Bonaccio HRs (1.14 and 1.00) and the 'reachability checks' coverage line do not appear in the c1 record.",
+    "refs": "All four DOIs resolve, the quotes are verbatim and the tiers are stated. No contrary sources are traceable.",
+    "accuracy": "The Bonaccio subgroup HRs are presented as coming from [c1] but are absent from the record. The Suksatan quote is mis-tagged to c1 when it comes from c3.",
+    "limits": "Windows, the gaps to today, lane, censoring, match mode and the tally's thinness are all placed beside the numbers they bound.",
+    "verdict": "The answer, decision, confidence with reasons, what would change it and the heterogeneity caveat are all present. It also flags the 16 contradicting-labelled papers.",
+    "facets": "All facets are answered with grounded values or a grounded 'none returned'."
+   },
+   "D": {
+    "trend": "The series is traced and censoring is noted. The delta of 63 and the 2023 peak are exact. It omits the tool's CAGR.",
+    "comparison": "HR 1.15 vs RR 1.21 with the baseline defined and the HR/RR caveat stated. No explicit delta is given.",
+    "chart": "There is one traced research-volume chart. The effect-size facet is not charted.",
+    "drilldown": "All follow-ups failed, which is at the ceiling.",
+    "export": "One CSV with source_id row identifiers, blank nulls and provenance. The research series it charts is not exported.",
+    "repro": "56 of 57 numbers trace, the calls are listed with args, and the 144-day gap recomputes correctly.",
+    "refs": "Three DOIs resolve and the verbatim quotes are found in c2 and c3.",
+    "accuracy": "There are no contradictions, and the fields are read by their definitions.",
+    "limits": "Window gaps, the lane, the selected-sample tally and censoring are all placed beside the numbers.",
+    "verdict": "Complete, but 'what would change it' is vague.",
+    "facets": "All facets are grounded."
+   }
+  },
+  "errors": {
+   "A": [
+    "Garbled confidence intervals ('1. หรือ?', '1._redacted')",
+    "RR 1.21 (1.15–1.27) attributed to an 'AJCN 2021' meta-analysis; the record places it in Yuan 2023, Food & Function",
+    "Cohort titles and venues appear fabricated (the '50,000 adults' AJCN 2020 study; the BMJ 2024 UK Biobank framing)"
+   ],
+   "B": [],
+   "C": [
+    "Bonaccio HR 1.14 (1.05–1.25) and HR 1.00 (0.93–1.07) are attributed to [c1] but do not appear in the record",
+    "'All index tables passed reachability checks' is not in the recorded responses",
+    "The Suksatan quote is tagged to c1 when it comes from c3"
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C and D both ground the answer in the three recorded meta-analyses (HR/RR 1.15–1.21, with I² 83% in the newest) and reach the same calibrated answer: a consistent association that is not proven causal. C goes further, with two charts, two exports and a fuller tally and limits picture, but it slips in untraced Bonaccio subgroup figures; D is narrower but cleaner. A and B rely on memory: B is honestly labelled and largely correct, while A contains garbled and misattributed figures."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

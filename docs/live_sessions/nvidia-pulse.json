@@ -1,0 +1,91 @@
+{
+ "slug": "nvidia-pulse",
+ "claude_live": {
+  "text": "**NVIDIA coverage is large, still growing, and more positive than ordinary news. It centres on AI chips, the US and China, and the other big AI firms.** The window is June 2024 to May 2026, from Prism's news corpus. Prism's cutoff is 1 June 2026, so nothing after that is included.\n\n**What the data shows**\n- **Volume:** 232,502 articles mention NVIDIA. Monthly volume rose from 7,439 in June 2024 to 14,937 in May 2026, and the peak was 15,514 in February 2026. The late third of the window had 1.83 times the early third, which is about 44% annualised growth.\n- **Tone:** Of the articles with a sentiment label, 73.5% are positive and 25.8% are negative. The negative-to-positive ratio is 0.35, against a corpus baseline of 0.58, so NVIDIA coverage is markedly more positive than typical news. The ratio peaked at 0.69 in April 2025.\n- **Criticality:** 164,123 articles (about 71%) are in the high-priority \"critical\" band, which Prism says holds geopolitics, disasters and regulation. That share rose to 80.1% in October 2025 and 76.6% in May 2026. Priority is not the same as negative tone.\n- **Themes (by lift over the corpus norm):**\n  - GPUs, semiconductor industry updates, AI hardware acceleration and earnings.\n  - Gaming and cloud computing.\n  - Stock and market coverage.\n- **Related companies:**\n  - Intel, Microsoft, OpenAI, TSMC, SoftBank, Broadcom, SK Hynix and Supermicro.\n  - AMD, Alphabet and Oracle also appear in the tags.\n- **People:** Jensen Huang appears in about 18% of the entity-labelled articles. Sam Altman, Lip-Bu Tan and Satya Nadella also show up.\n- **Places:** Only 51.6% of articles could be placed. Among those, the US has 30.9%, China 12.1%, then Colombia, the UK, Japan, India, South Korea and Taiwan.\n- **Sources:** A sample of 222 articles came from 107 outlets. The top outlet, Motley Fool, had 13.5%, so no single newsroom dominates.\n\n**Interpretation (mine, not measured)**\n- The coverage reads as NVIDIA being treated as the bellwether of the AI buildout. Stock stories, the OpenAI and Microsoft ties, and US–China chip tensions fit that. I haven't checked individual articles to confirm it.\n- The rising critical share suggests more geopolitical and market-risk framing, not hostile tone, since sentiment stayed positive.\n- Colombia's 5.3% share (lift 10.9) is odd. It may be a place-resolution artefact, which Prism warns about, so I'd distrust it.\n\n**Caveats**\n- Entity and place labels are machine-assigned.\n- Labelling lags for May 2026, with fill rates of about 4%. The entity and place panels therefore use data through April.\n- Only one recent article was returned, and Prism's critical-news panel came back empty.",
+  "seconds": 226.4,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "NVIDIA"
+    },
+    "ok": true,
+    "chars": 33065
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Direct answer:** NVIDIA drew heavy, predominantly positive coverage, centered on AI, GPUs, semiconductors and financial performance. Coverage connected it to major chipmakers, cloud companies and several countries.\n\n**What Prism’s data shows**\n\n- **Volume and tone — April 1–May 31, 2026:** 26,507 articles; 19,826 were marked critical. Sentiment classified 19,652 as positive (74.2%) and 6,572 as negative (24.8%). The negative-to-positive ratio was 0.33, versus a 0.62 news-corpus baseline. May’s volume is flagged partial, so the two-month total is not a clean comparison. *(Prism `news.trends`, `news.sentiment`; NVIDIA mentions.)*\n- **Themes — same window:** technology appeared in 21,145 articles, business in 20,091, and finance in 11,374. Among subcategories, AI advancements appeared in 2,643, semiconductor-industry updates in 1,686, and GPU coverage in 542. Labels can overlap. *(Prism `news.themes`.)*\n- **Related entities and places — April 2026:** company labels included Microsoft (1,860 articles), Intel (1,206), TSMC (541), Broadcom (482) and CoreWeave (238). The most-mentioned countries were the United States (3,900), China (974), Colombia (826) and Iran (811). Entity labels are automated; places mean the country an article is about, not where it was published. *(Prism `news.entities`, `news.geography`; enrichment through May 1.)*\n\n**Interpretation**\n\nCoverage reads as commercially upbeat and tightly tied to the AI infrastructure cycle, while the high “critical” share signals editorial priority, not necessarily negative sentiment. Geography and entity results lagged the article feed, so they describe April rather than the full two-month volume. Prism’s news window is censored at June 1 because later ingestion is incomplete.",
+  "seconds": 137.8,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "news_trends",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-04-01",
+     "until": "2026-05-31",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 4115
+   },
+   {
+    "tool": "news_sentiment",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-04-01",
+     "until": "2026-05-31",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 3963
+   },
+   {
+    "tool": "news_themes",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-04-01",
+     "until": "2026-05-31",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 11731
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-04-01",
+     "until": "2026-05-31",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 5411
+   },
+   {
+    "tool": "news_entities",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-04-01",
+     "until": "2026-05-31",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 10293
+   },
+   {
+    "tool": "news_themes",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-04-01",
+     "until": "2026-05-31",
+     "limit": 6
+    },
+    "ok": true,
+    "chars": 10213
+   }
+  ]
+ }
+}

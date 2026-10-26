@@ -1,0 +1,230 @@
+{
+ "slug": "food-inflation-compare",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 3.5,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 32.0,
+   "plain": 32.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.2,
+    "gpt": 33.7
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 2.0,
+    "drilldown": 3.0,
+    "export": 2.5,
+    "repro": 3.5,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 4.5
+   },
+   "strict": 65.0,
+   "plain": 65.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.8,
+    "gpt": 60.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 3.5,
+    "limits": 2.5,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 24.1,
+   "plain": 24.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.0,
+    "gpt": 30.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 2.0,
+    "export": 4.0,
+    "repro": 4.5,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 2.5,
+    "facets": 3.5
+   },
+   "strict": 70.0,
+   "plain": 70.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 56.7,
+    "gpt": 83.3
+   }
+  }
+ },
+ "judge_mad": 0.68,
+ "verdicts": {
+  "opus": "B and D both grounded every number in the single news.compare call, and A and C produced no measurements. D read the data more carefully: it named the spike months and computed critical shares. It also caught that the tool's direction labels contradict the endpoints, whereas B's verdict misstated the direction of onion coverage. D's weaknesses are a selected-months chart that drops the wheat spike and a verdict that restates the direction labels it had just questioned.",
+  "gpt": "A is the strongest decision aid: it compares all three terms on one traced window, gives a complete monthly series and reproducible ratios, and distinguishes media attention from price movement. B adds useful spike observations but has material window, coverage, and overlap errors; C and D are transparent about missing measurements but do not answer the comparison."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "The verdict says onion coverage fell across endpoints, but its own data shows 19 to 42 (+121.1%).",
+    "7145/442 is rounded to 16.16 instead of 16.17."
+   ],
+   "claude_bare": [],
+   "claude_prism": [
+    "The verdict asserts the wheat rising / onion falling labels while the trend section calls direction unresolved.",
+    "The chart omits the 2025-02 wheat spike of 117.",
+    "The term totals CSV is marked coverage=full despite the censored window."
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Claims c1 reports strict index partition reads and historical row floors, which are not present in the supplied reference record."
+   ],
+   "claude_prism": [
+    "Reports shares as portions of combined articles although c1 does not establish unique-article deduplication.",
+    "States a 107.1% row-floor check absent from the supplied record.",
+    "Misdescribes the censored period: c1 sets the exclusive end at 2026-06-01 and warns that the newest included month, May 2026, may be incomplete.",
+    "Describes the chart as selected months and omits most available monthly points."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "States as an estimate that food inflation very likely out-covers each commodity, but the reference actually measures this comparison; the estimate is unsupported by this deliverable’s evidence."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "The follow-up calls are generic and 0 of 4 executed.",
+    "export": "No CSV.",
+    "repro": "No numbers are given. The refusal is honest but cannot be regenerated.",
+    "accuracy": "No contradictions because nothing is claimed.",
+    "limits": "The limits are generic: no window, coverage unknown.",
+    "verdict": "It answers 'cannot measure' with high confidence and gives no answer to the question.",
+    "facets": "No facet is answered with grounded values."
+   },
+   "chatgpt_prism": {
+    "trend": "It charts all 24 points with the window stated, and the endpoint changes recompute exactly. It names no peaks (onion 99 in 2024-11, wheat 117 in 2025-02) or troughs.",
+    "comparison": "The ratios are on one scale, but 7145/442 = 16.165 is reported as 16.16. Tone ratio and vs_baseline are left undefined.",
+    "chart": "The full monthly series traces, with window, unit and source. There is no tone chart and no decomposition.",
+    "drilldown": "There is one traced layer (term to month). 2 of 4 follow-ups succeeded, and f1 just repeats c1.",
+    "export": "Two full traced CSVs with provenance, referenced from the prose and using the tool's field names.",
+    "repro": "33 of 35 numbers trace, there is a calls block with args and window, and derived numbers are shown.",
+    "accuracy": "The verdict says onion 'fell across the observed endpoints', but its own trend section shows +121.1% (19 to 42).",
+    "limits": "The window, censoring, 144-day gap, overlap and undefined fields are placed next to the numbers they bound.",
+    "verdict": "The verdict contradicts the deliverable's own trend data on onion direction.",
+    "facets": "Totals, shares, series and tone fields are covered. Onion seasonality and the spike months are not read."
+   },
+   "claude_bare": {
+    "trend": "No series, and only labelled estimates.",
+    "comparison": "Qualitative prior only.",
+    "chart": "A placeholder chart of null values labelled estimate.",
+    "drilldown": "There is no traced layer. 3 of 5 proposed calls executed.",
+    "export": "An empty template labelled estimate.",
+    "repro": "Nothing is reproducible, and the ceiling is 0.",
+    "accuracy": "Estimates are honestly labelled and there are no fabrications.",
+    "limits": "It is specific about what is unmeasured, including match mode and overlap.",
+    "verdict": "It gives a labelled-estimate leader with low confidence and conditions, but nothing measured.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "claude_prism": {
+    "trend": "It names peaks and troughs with dates, quantifies endpoint changes exactly, and states censoring. It flags that the tool's direction labels contradict the endpoints.",
+    "comparison": "Ratios and the critical-share delta recompute exactly, and the baseline is defined. The undefined vs_baseline is noted.",
+    "chart": "It plots only 7 selected months and omits the 2025-02 wheat spike of 117, so the chart misrepresents a spiky series its caption describes.",
+    "drilldown": "Term, month and tone layers trace, and the follow-ups are spike-specific (4 of 6 ok). There are no item-level identifiers.",
+    "export": "The totals CSV is complete, but the monthly CSV has only 8 of 24 months, and the totals CSV is flagged coverage=full, inconsistent with the censoring.",
+    "repro": "74 of 74 numbers trace and there is a calls block, but the monthly export is partial.",
+    "accuracy": "It reads the fields correctly and catches the label-versus-endpoint anomaly.",
+    "limits": "Window, censoring, the 145-day gap, lane, overlap, match mode and the common-word risk are placed and read.",
+    "verdict": "It states the tool's direction labels as findings, while its own trend section calls direction unresolved.",
+    "facets": "Totals, shares, spikes, tone and overlap are covered. Onion seasonality and India-specificity are only implied, not grounded."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced full monthly series, exact endpoint changes, and window; it omits the peak/trough dates and the tool’s partial-ingest caveat is not visibly marked on the chart.",
+    "comparison": "Ratios and delta recompute from term totals on the same window; defines the baseline and cautions that counts are attention, not importance, while flagging possible overlap.",
+    "chart": "Full three-term monthly series traces to c1, with unit, window, source, and a relevant caption; the series supports the trend claim.",
+    "drilldown": "Shows term-to-month breakdown but no item-level identifiers; only two of four proposed follow-ups executed successfully.",
+    "export": "Both needed tables are referenced and trace to c1 with provenance; monthly export lacks the full tool fields and row-level identifiers needed for anchor 5.",
+    "repro": "All measured claims trace to c1 or recomputable displayed values; call args, exclusive window, and capture date are provided.",
+    "accuracy": "Mostly faithful, but it says strict index partition reads and historical row floors were reported; those details are absent from the supplied c1 record.",
+    "limits": "Places the window, censoring, lane, overlap, and undefined-field limits near the claims; it does not state the exact freshness/coverage caveats carried by the record.",
+    "verdict": "Direct, supported answer with decision, confidence, and conditions; does not name the strongest contrary evidence in its own series, including the endpoint rise in onion coverage.",
+    "facets": "Covers comparative volume, monthly movement, tone fields, overlap, and limits, but does not ground India-specific onion seasonality or investigate source/article facets."
+   },
+   "claude_prism": {
+    "trend": "The sampled chart omits most available months, and the prose identifies the tool’s direction labels as unresolved after showing contrary endpoint changes; it does not fully quantify the reported trends.",
+    "comparison": "Ratios and critical-share contrast recompute on the same window, but the baseline is inconsistently described and the tool’s overlap caveat is weakened by treating shares as portions of combined articles.",
+    "chart": "The sampled series traces and has labels, but it omits 16 of 24 available months, uses a mismatched inclusive end date, and fails to show the full trend.",
+    "drilldown": "Provides term, month, and tone layers plus four successful on-topic follow-ups, but no item-level article or publisher results are folded into the report.",
+    "export": "The monthly export contains only 8 of 24 months and omits full provenance attributes; the totals CSV also has an incorrect full-coverage claim.",
+    "repro": "Most figures trace, but the report gives a window ending May 31 while the call is exclusive through June 1 and describes June 2026 as censored; the sampled table is incomplete.",
+    "accuracy": "Calls the term shares shares of the combined total despite unresolved overlap, asserts a 107.1% row-floor figure absent from c1, and misstates the censoring description.",
+    "limits": "Notes several relevant limits, but incorrectly presents the row-floor percentage as reported and does not accurately carry the reference’s censoring language.",
+    "verdict": "Answers directly with a decision and confidence, but its direction conclusion is internally conflicted and it omits the strongest contrary evidence from the endpoint figures.",
+    "facets": "Addresses the implied overlap and seasonal/spike pattern, but India-specific seasonality is asserted qualitatively and not grounded in the supplied data."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or source is available.",
+    "comparison": "No measured common-scale comparison is provided.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Names a possible breakdown but proposed calls did not execute successfully.",
+    "export": "No CSV export is provided.",
+    "repro": "No measured claims or reproducible calls; the empty provenance block is explicit.",
+    "accuracy": "Does not contradict the reference or invent measurements, while accurately stating that its own evidence is absent.",
+    "limits": "Clearly states that the window, lane, coverage, censoring, and match mode are unknown, but lacks limits attached to measured figures because none are supplied.",
+    "verdict": "Directly advises against ranking, with confidence and conditions, but offers no measured evidence or contrary finding.",
+    "facets": "Explicitly acknowledges missing counts and overlap, but does not answer the requested coverage facets with grounded values."
+   },
+   "claude_bare": {
+    "trend": "Only an honest estimate/no-data chart and no measured trend; earns the estimate ceiling.",
+    "comparison": "No numeric comparison; proposed baseline is not applied to data.",
+    "chart": "Chart is explicitly an estimate/no-data display, which earns the estimate ceiling.",
+    "drilldown": "Proposed calls are not executed and the breakdown is only a plan; some follow-ups work, but no traced breakdown layer is reported.",
+    "export": "Template is explicitly labelled estimate and contains no data.",
+    "repro": "Two numeric claims are untraced and planned calls have no reproducible result.",
+    "accuracy": "Separates estimates from measurements and does not contradict the reference record.",
+    "limits": "Acknowledges that no data was measured, but its proposed window is not the reference window and it misses the applicable source-record limits.",
+    "verdict": "Gives a cautious decision and confidence, but the ungrounded prior that food inflation likely leads weakens support.",
+    "facets": "Most requested facets remain unmeasured; the qualitative onion seasonality claim is only an estimate."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

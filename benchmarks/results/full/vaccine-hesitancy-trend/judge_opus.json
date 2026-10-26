@@ -1,0 +1,178 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Generic follow-ups; 0/4 executed ok.",
+    "export": "No export.",
+    "repro": "No numbers to trace.",
+    "accuracy": "An honest refusal has no contradictions.",
+    "limits": "Specific about what is unmeasured, but measures nothing.",
+    "verdict": "Gives a decision and what would change it, but does not answer the question.",
+    "facets": "No facet answered with grounded values."
+   },
+   "B": {
+    "trend": "Full traced 2017-2025 series with peak 2022, 20.8x growth and -46.8% decline, all exact; central scenario decomposed with bounds in a table.",
+    "comparison": "2019 pre-pandemic baseline ratios recompute exactly. The no-change vs linear-drift MAE contrast addresses the naive-extrapolation trap.",
+    "chart": "Observed series plus central scenario, fully traced, with a caption. Sensitivity bounds are not plotted.",
+    "drilldown": "Year and scenario layers traced; 4/6 follow-ups ok. No item-level identifiers, and no follow-ups folded back into the report.",
+    "export": "Two traced CSVs with a provenance JSON. The scenario CSV's coverage=partial flag is unexplained.",
+    "repro": "45/49 traced, prism-calls block listed, derived figures marked est. and recomputable.",
+    "accuracy": "Values match the reference. Catches that no-change over-predicted in a falling series. The 104.2% row-floor figure is not in the shown record.",
+    "limits": "Window end, gap to today, title-only match and normalisation are stated, along with what would close the gap. Mostly placed in the limits section.",
+    "verdict": "Direct answer, decision, split confidence with reasons, and change conditions; consistent with charts and tables.",
+    "facets": "Growth, projection range and the extrapolation trap are all grounded."
+   },
+   "C": {
+    "trend": "Memory series labelled est. Magnitudes are about 8x the reference title counts.",
+    "comparison": "Numeric comparison of memory figures only.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Layers named but unmeasured; 2/6 follow-ups ok.",
+    "export": "Estimate-labelled tables.",
+    "repro": "No traced numbers.",
+    "accuracy": "Memory values inconsistent with the reference scale. The verdict range (5,500-9,000) contradicts its own scenario table. The 'gap 0 days' statement is confused.",
+    "limits": "Honest about being unmeasured and specific about the missing backtest.",
+    "verdict": "Rests on estimates and is internally inconsistent.",
+    "facets": "Answered from memory."
+   },
+   "D": {
+    "trend": "Full traced series with peak, deltas and -46.8%, all exact. The scenario is not decomposed in the chart or export.",
+    "comparison": "2017 vs 2025 ratio (11.1x) is exact with the caveat carried. A 2017 baseline is less informative than a pre-pandemic one.",
+    "chart": "Traced history chart only; the projection facet the question asks for is not charted.",
+    "drilldown": "Scenario and backtest layer traced. The f4 history_id is mistyped, and only 1/4 follow-ups ok.",
+    "export": "Only the history CSV; scenarios are not exported. coverage=partial conflicts with the prose.",
+    "repro": "25/27 traced, calls listed with args and window.",
+    "accuracy": "Matches the reference; the 296-day gap is correct.",
+    "limits": "Thorough, but mostly in a footer section.",
+    "verdict": "Answer and confidence given, but the decision is vague and it does not engage the falling-trend implication for the flat central.",
+    "facets": "Growth and projection are both grounded."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "'104.2% of expected row floor' and 'case-insensitive substring' are not in the shown reference record."
+   ],
+   "C": [
+    "Memory counts (e.g. 8,000 in 2022) are presented as plausible but are far from the reference (1,458, title match).",
+    "The verdict range of 5,500-9,000 contradicts its own scenario table."
+   ],
+   "D": [
+    "Follow-up f4 uses a mistyped history_id.",
+    "The CSV coverage=partial flag contradicts the prose saying the coverage checks passed."
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both reproduced the measured rise to the 2022 peak and the decline to 776, along with the flat no-change projection and its widening bounds. B went further: it charted the central scenario, exported the scenario rows, and used a pre-pandemic baseline. It also explained why naive linear extrapolation fails (worse MAE, and no-change over-predicting a falling series), which is exactly the trap this question sets. A honestly declined to answer, while C offered memory estimates on a different scale with an internally inconsistent range."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,655 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 715,
+  "charts": [
+   {
+    "id": "humanoid-papers-yearly",
+    "title": "Estimated annual papers mentioning humanoid robots",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Estimated papers (title/abstract match)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "humanoid_yearly_est.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "humanoid_scenarios_est.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What is the actual yearly count of humanoid robot papers 2015-2026?",
+    "args": {
+     "term": "humanoid robot",
+     "from": "2015",
+     "to": "2026",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...: '2026', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which countries drive the post-2022 rise?",
+    "args": {
+     "term": "humanoid robot",
+     "from": "2022"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...robot', 'from': '2022'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "analysis.scenarios",
+    "question": "How does a trend scenario compare with no-change over a backtest?",
+    "args": {
+     "term": "humanoid robot",
+     "horizon": 3,
+     "backtest": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbacktest\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "analysis.history",
+    "question": "What does the historical record show for publication momentum?",
+    "args": {
+     "term": "humanoid robot"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'humanoid robot'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which recent papers are most cited?",
+    "args": {
+     "term": "humanoid robot",
+     "from": "2023",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...m': '2023', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2023', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "How has news attention moved relative to research?",
+    "args": {
+     "term": "humanoid robot",
+     "from": "2022"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 38,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 10,
+   "untagged_examples": [
+    "1.3 — - Answer: Research output on humanoid robots has grown several-fold over the past decade, ",
+    "1.5 — - Answer: Research output on humanoid robots has grown several-fold over the past decade, ",
+    "25% — - What would change it: A real yearly count from a bibliographic database (fixed query, fi",
+    "+10% — | Year | Low (+10%/yr) | Central (+25%/yr) | High (+40%/yr) |",
+    "+25% — | Year | Low (+10%/yr) | Central (+25%/yr) | High (+40%/yr) |",
+    "+40% — | Year | Low (+10%/yr) | Central (+25%/yr) | High (+40%/yr) |",
+    "12% — The central rate sits between the 12% ten-year rate and the 19% recent rate, with some ext",
+    "19% — The central rate sits between the 12% ten-year rate and the 19% recent rate, with some ext"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 136,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 1.3, 1.5, 25%"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 878,
+  "charts": [
+   {
+    "id": "humanoid-history",
+    "title": "Records with 'humanoid robot' in title, per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Observed",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "humanoid-scenarios",
+    "title": "Scenario projection of title-match records, 2026-2028",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Lower sensitivity",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Central (linear drift)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Upper sensitivity",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "humanoid_history.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "humanoid_scenarios.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drove the 2024-2025 rise?",
+    "args": {
+     "term": "humanoid robot",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 37.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 15924, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7147018448\", \"title\": \"Moderating multi-party conversations with social robots\", \"authors\": [\"Lucrezia Grassi\", \"Carmine Tommaso Recchiuto\", \"Antonio Sgorbissa\"], \"venue\": \"Interaction Studies Social Behaviour and Communication in Biological and Artificial Systems\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.1075/is.25013.gra\", \"url\": \"https://doi.org/10.1075/is.25013.gra\", \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirica"
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which countries produce the growth?",
+    "args": {
+     "term": "humanoid robot"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'humanoid robot'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "analysis.history",
+    "question": "Does the trend hold for the broader term 'humanoid' or 'legged robot'?",
+    "args": {
+     "subject_phrases": [
+      "humanoid",
+      "bipedal robot"
+     ],
+     "outcome_phrases": null
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.7,
+    "sample": "{\"series\": [{\"year\": 2017, \"value\": 817}, {\"year\": 2018, \"value\": 961}, {\"year\": 2019, \"value\": 938}, {\"year\": 2020, \"value\": 784}, {\"year\": 2021, \"value\": 789}, {\"year\": 2022, \"value\": 799}, {\"year\": 2023, \"value\": 835}, {\"year\": 2024, \"value\": 1109}, {\"year\": 2025, \"value\": 1628}], \"scope\": {\"subject_phrases\": [\"humanoid\", \"bipedal robot\"], \"outcome_phrases\": [], \"match_field\": \"title\"}, \"provenance\": {\"kind\": \"live_corpus_query\", \"table\": \"Prism research index\", \"created_at\": \"2026-10-23T09:30:47.401101+00:00\", \"sql\": \"SELECT publication_year, count() FROM Prism research index PREWHERE publication_year BETWEEN 2017 AND 2025 WHERE (multiSearchAnyCaseInsensitive(title, ['humanoid','bipedal "
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "Is news attention to humanoid robots rising in step with research?",
+    "args": {
+     "term": "humanoid robot"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.9,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 220, \"critical\": 125, \"negative\": 1, \"positive\": 219, \"mean_priority\": 6.62, \"critical_pct\": 56.8, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 230, \"critical\": 121, \"negative\": 21, \"positive\": 203, \"mean_priority\": 6.56, \"critical_pct\": 52.6, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 304, \"critical\": 137, \"negative\": 10, \"positive\": 294, \"mean_priority\": 6.39, \"critical_pct\": 45.1, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 123, \"critical\": 67, \"negative\": 3, \"positive\": 120, \"mean_priority\": 6.46, \"critical_pct\": 54.5, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 27"
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What are the main critical findings or limitations in this literature?",
+    "args": {
+     "term": "humanoid robot"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'humanoid robot'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "How are the most-cited papers distributed by year?",
+    "args": {
+     "term": "humanoid robot"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'humanoid robot'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 76,
+   "traced": 68,
+   "derived": 26,
+   "untagged_untraced": 7,
+   "untagged_examples": [
+    "860 — - Decision: Treat the topic as accelerating in 2024–2025 and plan around a central path of",
+    "950 — - Decision: Treat the topic as accelerating in 2024–2025 and plan around a central path of",
+    "+146 — | 2024 | 589 [c1] | 1.33× | +146 |",
+    "+378 — | 2025 | 821 [c1] | 1.85× | +378 |",
+    "+422 — | 2026 central | 864 [c2] | 1.95× | +422 |",
+    "+508 — | 2028 central | 951 [c2] | 2.15× | +508 |",
+    "153.5 — | 2024 | 589 | 148 | 153.5 |"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 142,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 860, 950"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 3,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 436,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many deduplicated papers match a humanoid-robot research query in each year, and which field was searched?",
+    "args": {
+     "term": "humanoid robot",
+     "match_field": "title_abstract_keywords",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...s', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmatch_field\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='title_abstract_keywords', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How do annual counts change under broader and narrower humanoid-robot query terms?",
+    "args": {
+     "term": "humanoid robot",
+     "orientation": "critical",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...l', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "analysis.scenarios",
+    "question": "What central, lower, and upper annual counts do candidate models forecast for the next three years?",
+    "args": {
+     "series": "deduplicated annual humanoid-robot paper counts",
+     "horizon_years": 3
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for trend_scenarios\nseries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deduplicated annual humanoid-robot paper counts', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nhorizon_years\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "analysis.history",
+    "question": "How accurate is the forecast under rolling-origin backtests compared with a no-change baseline?",
+    "args": {
+     "series": "deduplicated annual humanoid-robot paper counts",
+     "metric": "MAE",
+     "baseline": "no_change",
+     "validation": "rolling_origin"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'series':...ion': 'rolling_origin'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nseries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deduplicated annual humanoid-robot paper counts', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='MAE', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='no_change', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nvalidation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='rolling_origin', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 102,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 640,
+  "charts": [
+   {
+    "id": "humanoid-title-records",
+    "title": "Prism research records with “humanoid robot” in title",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Title match",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "humanoid_robot_title_records.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "humanoid_robot_scenarios.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How do annual counts change when title and abstract matches are combined?",
+    "args": {
+     "term": "humanoid robot",
+     "match_field": "title and abstract",
+     "year_from": 2017,
+     "year_to": 2025
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 2017, 'year_to': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmatch_field\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='title and abstract', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2025, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which topics within humanoid robotics account for recent growth?",
+    "args": {
+     "term": "humanoid robot",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 193, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4417526156\", \"title\": \"Leven in gemeenschap met de robot. Posthumanistische verkenningen bij Til Brugman, Gerrit Krol en Adriaan van Dis\", \"authors\": [\"Alexa Stoicescu\"], \"venue\": \"Neerlandica Wratislaviensia\", \"year\": 2025, \"date\": \"2025-12-20\", \"doi\": \"10.19195/0860-0716.36.6\", \"url\": \"https://doi.org/10.19195/0860-0716.36.6\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Geographies of "
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "How does the count trend compare across robotics research areas?",
+    "args": {
+     "terms": [
+      "humanoid robot",
+      "legged robot",
+      "service robot"
+     ],
+     "year_from": 2017,
+     "year_to": 2025
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 2017, 'year_to': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 2017, 'year_to': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['humanoid robot', 'legge...robot', 'service robot'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2025, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "How much does deduplicating works change the annual series?",
+    "args": {
+     "term": "humanoid robot",
+     "deduplicate": true,
+     "year_from": 2017,
+     "year_to": 2025
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 2017, 'year_to': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='humanoid robot', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2025, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 41,
+   "traced": 40,
+   "derived": 6,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "296 — The observed window is 2017–2025 [c1], ending 2025-12-31 [c1]; it ends 296 days before the"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

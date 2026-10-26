@@ -1,0 +1,548 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 561,
+  "charts": [],
+  "tables": [
+   {
+    "name": "geography_hypothesis.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries have the most authorship rows on drug trafficking?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'drug trafficking'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How many publications per year, and in which fields?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'drug trafficking'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries get the most news coverage and what is placed_pct?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.9,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 20577, \"share_pct\": 24.8, \"lift\": 1.1}, {\"label\": \"mexico\", \"articles\": 6127, \"share_pct\": 7.4, \"lift\": 12.3}, {\"label\": \"venezuela\", \"articles\": 5282, \"share_pct\": 6.4, \"lift\": 30.4}, {\"label\": \"india\", \"articles\": 4304, \"share_pct\": 5.2, \"lift\": 0.8}, {\"label\": \"canada\", \"articles\": 3158, \"share_pct\": 3.8, \"lift\": 1.1}, {\"label\": \"colombia\", \"articles\": 3086, \"share_pct\": 3.7, \"lift\": 7.7}, {\"label\": \"china\", \"articles\": 2899, \"share_pct\": 3.5, \"lift\": 0.7}, {\"label\": \"united kingdom\", \"articles\": 2449, \"share_pct\": 3.0, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 2184, \"share_pct\": 2.6, \"lift\": 1.5}, {\"label\": \"brazil\""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does news share compare with research share by country?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'drug trafficking'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Has coverage changed over time?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.7,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 1894, \"critical\": 1658, \"negative\": 1688, \"positive\": 145, \"mean_priority\": 7.01, \"critical_pct\": 87.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 2043, \"critical\": 1848, \"negative\": 1854, \"positive\": 142, \"mean_priority\": 7.06, \"critical_pct\": 90.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2341, \"critical\": 2129, \"negative\": 2146, \"positive\": 144, \"mean_priority\": 7.16, \"critical_pct\": 90.9, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 2036, \"critical\": 1777, \"negative\": 1846, \"positive\": 146, \"mean_priority\": 6.98, \"critical_pct\": 87.3, \"partial_period\": false}, {\"period\": \"2024-10-"
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "Which papers are most cited?",
+    "args": {
+     "term": "drug trafficking",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...afficking', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 842,
+  "charts": [
+   {
+    "id": "news_share",
+    "title": "Share of placed news articles about each country, drug trafficking",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "share_pct",
+      "how": "call",
+      "points": 8,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 8,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "research_geography.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "How many papers exist on drug trafficking, and what do their authorship countries show with a broader query?",
+    "args": {
+     "claim": "drug trafficking cocaine fentanyl smuggling"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.5,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"Brazil\", \"papers\": 1}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"united states\", \"articles\": 354}, {\"country\": \"france\", \"articles\": 49}, {\"country\": \"belgium\", \"articles\": 37}, {\"country\": \"canada\", \"articles\": 36}, {\"country\": \"united kingdom\", \"articles\": 20}, {\"country\": \"spain\", \"articles\": 18}, {\"country\": \"india\", \"articles\": 16}, {\"country\": \"switzerland\", \"articles\": 14}, {\"country\": \"brazil\", \"articles\": 13}, {\"country\": \"nigeria\", \"articles\": 11}, {\"country\": \"australia\", \"art"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How has news attention to Mexico changed month by month?",
+    "args": {
+     "term": "drug trafficking Mexico"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.7,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does reporting on the US compare with reporting on Venezuela?",
+    "args": {
+     "terms": [
+      "drug trafficking United States",
+      "drug trafficking Venezuela"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 41.0,
+    "sample": "{\"terms\": [\"drug trafficking United States\", \"drug trafficking Venezuela\"], \"rows\": [{\"term\": \"drug trafficking United States\", \"articles\": null, \"share_pct\": 0.0, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"drug trafficking Venezuela\", \"articles\": 5, \"share_pct\": 100.0, \"critical\": 3, \"direction\": \"rising\", \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"pos"
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "What is the tone of coverage in Colombia and Ecuador?",
+    "args": {
+     "term": "drug trafficking Colombia Ecuador"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 5.7,
+    "sample": "{\"points\": [], \"totals\": {}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which studies are most cited?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'drug trafficking'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What does the research evidence say about interdiction effectiveness?",
+    "args": {
+     "claim": "interdiction reduces drug trafficking"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 47.8,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 3321, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 16, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 1, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 4, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"c"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 47,
+   "traced": 47,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 330,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Where are drug trafficking research authors affiliated, and how many authorship rows are covered?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'drug trafficking'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Where are publications about drug trafficking geographically attributed, and how many publication rows are covered?",
+    "args": {
+     "term": "drug trafficking",
+     "group_by": "publication_origin"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...: 'publication_origin'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publication_origin', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Where is drug trafficking reported in news, and what share of coverage has a placed location?",
+    "args": {
+     "term": "drug trafficking"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 20577, \"share_pct\": 24.8, \"lift\": 1.1}, {\"label\": \"mexico\", \"articles\": 6127, \"share_pct\": 7.4, \"lift\": 12.3}, {\"label\": \"venezuela\", \"articles\": 5282, \"share_pct\": 6.4, \"lift\": 30.4}, {\"label\": \"india\", \"articles\": 4304, \"share_pct\": 5.2, \"lift\": 0.8}, {\"label\": \"canada\", \"articles\": 3158, \"share_pct\": 3.8, \"lift\": 1.1}, {\"label\": \"colombia\", \"articles\": 3086, \"share_pct\": 3.7, \"lift\": 7.7}, {\"label\": \"china\", \"articles\": 2899, \"share_pct\": 3.5, \"lift\": 0.7}, {\"label\": \"united kingdom\", \"articles\": 2449, \"share_pct\": 3.0, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 2184, \"share_pct\": 2.6, \"lift\": 1.5}, {\"label\": \"brazil\""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which countries or jurisdictions are origins in drug trafficking patent records?",
+    "args": {
+     "term": "drug trafficking",
+     "measure": "patent_origin"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sure': 'patent_origin'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='patent_origin', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How do research locations and reported locations differ over the same time window?",
+    "args": {
+     "term": "drug trafficking",
+     "compare_with": "research.geography"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...: 'research.geography'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_with\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='research.geography', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 80,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 809,
+  "charts": [],
+  "tables": [
+   {
+    "name": "research_geography.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 44,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are included in the drug-trafficking research geography result?",
+    "args": {
+     "term": "drug trafficking",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 251, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7125367130\", \"title\": \"Gu Yooxi’ (🌹), Gu Juk (🌲), gio gu Gu Jun (🌽)\", \"authors\": [\"Selene Galindo Cumplido\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-12-29\", \"doi\": \"10.1093/oso/9780197776179.003.0008\", \"url\": \"https://doi.org/10.1093/oso/9780197776179.003.0008\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Politics and Society in Latin America\", \"Crime, Illicit Activities, and Governa"
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "Where are the study sites in the research papers, distinct from author affiliations?",
+    "args": {
+     "term": "drug trafficking",
+     "fields": [
+      "title",
+      "year",
+      "study_location",
+      "first_author_affiliation"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...t_author_affiliation']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...t_author_affiliation']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='drug trafficking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfields\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['title', 'year', 'study_...rst_author_affiliation'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How does news subject geography vary by year over the available window?",
+    "args": {
+     "term": "drug trafficking",
+     "dimension": "geography",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='geography', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What explains the low resolved-place share, and which article types are unplaced?",
+    "args": {
+     "term": "drug trafficking",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 15,
+   "traced": 15,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 157,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 3,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

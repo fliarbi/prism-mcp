@@ -1,0 +1,237 @@
+{
+ "slug": "microplastics-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 3.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 38.7,
+   "plain": 38.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 38.4,
+    "gpt": 39.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 2.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 73.4,
+   "plain": 73.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 70.4,
+    "gpt": 76.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 24.4,
+   "plain": 24.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.0,
+    "gpt": 29.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 70.6,
+   "plain": 70.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 65.6,
+    "gpt": 75.6
+   }
+  }
+ },
+ "judge_mad": 0.57,
+ "verdicts": {
+  "opus": "B and C both traced the full monthly series, the 2025-03 peak and the 1.5x negativity versus baseline. C went further with the critical-versus-total decomposition, news items with URLs, and caught anomalies such as noisy entity labels and the undefined 'critical' flag, though it mis-stated what the March outlier inflates. A was an honest memory answer with real DOIs but measured nothing, and D was an honest blank.",
+  "gpt": "C and D provide the only fully traced movement series and baseline tone comparison, so they support a decision about how coverage moved rather than offering a memory-based narrative. D is the stronger decision brief because it defines the tone baseline, explains the data limits, and treats the empty critical-headline result as contrary evidence; its main weakness is calling the final month complete."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "Claims the 2025-03 outlier inflates CAGR and the late/early ratio. It sits in the middle third and is not an endpoint, so it affects neither."
+   ],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "The claimed 2015 'first major policy peak in coverage' is not measured or supported by the stated recalled milestone.",
+    "The environmental-to-health coverage shift is presented as a working hypothesis from memory, not a measured time series."
+   ],
+   "claude_prism": [
+    "The place-panel placed share uses 3,103 of 12,526 matched articles; calling it a share of 12,920 would change the denominator.",
+    "May 2026 is the highest reported monthly negative/positive ratio, but the prose does not establish it as the most negative month across the full series; August 2024 is also above 1."
+   ],
+   "chatgpt_prism": [
+    "The monthly counts include May 2026, but the response labels the first and last months 'complete'; the database warns the newest month is a fraction of normal coverage and censors at 2026-06-01.",
+    "The supplied overview record does not show the claimed historical-row-floor/reachability result."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Index from memory, honestly labelled as an estimate.",
+    "comparison": "Expected tone direction only, with no measurement.",
+    "chart": "Chart labelled as an estimate, so it earns exactly 1.",
+    "drilldown": "No breakdown layer. Only 2 of 6 follow-ups executed.",
+    "export": "Milestones table labelled as an estimate.",
+    "repro": "Every number is labelled memory or estimate.",
+    "refs": "3 DOIs resolve and each is tied to a claim with year and venue. No quotes.",
+    "accuracy": "Recalled facts are correct (77% of 22 donors, NEJM 2024, Nature Medicine 2025, INC talks). Nothing is presented as measured.",
+    "limits": "Specific about what is unmeasured and about the gap to today.",
+    "verdict": "Full structure with an honest low confidence, but the answer is unmeasured.",
+    "facets": "Facets are answered from memory or marked unanswerable."
+   },
+   "chatgpt_prism": {
+    "trend": "Full series with window. Peak 1,547 in 2025-03, CAGR 2.3% and 1.27x are stated. No critical/total decomposition.",
+    "comparison": "Ratio 0.87 vs 0.58, delta 0.29, 1.5x, with the baseline caveated.",
+    "chart": "Volume chart traces fully, but tone is not charted although it was asked.",
+    "drilldown": "Panels are listed as one layer with no items. Only 2 of 4 follow-ups executed.",
+    "export": "Monthly and sentiment CSVs with provenance block. No critical column and no row identifiers beyond period.",
+    "repro": "33 of 33 numbers traced. The call is listed with args, window and capture date.",
+    "refs": "No news items or documents are cited.",
+    "accuracy": "No contradictions. The 144-day gap is correct.",
+    "limits": "Window, censoring, gap, enrichment bound, match mode and sampled publishers are covered, mostly in the limits section.",
+    "verdict": "Answer, decision, confidence and what would change it are all present and consistent. The cause of the spike goes unaddressed.",
+    "facets": "Most facets are grounded, including empty critical headlines. The spike driver and human-tissue link are not explored."
+   },
+   "claude_prism": {
+    "trend": "Full series with critical decomposition (8.8% CAGR, 1.29x, critical share 78.5% to 88.3%). However, the claim that the March 2025 outlier 'inflates both' is wrong: the peak sits in the middle third and is not an endpoint.",
+    "comparison": "Delta +0.29, 1.5x, baseline defined.",
+    "chart": "Volume chart traces fully. Tone and critical split appear only in the CSV, not in a chart.",
+    "drilldown": "One traced layer plus two news items with URLs. Only 1 of 6 follow-ups executed.",
+    "export": "Monthly CSV with critical, negative and positive columns plus provenance. Single table.",
+    "repro": "67 of 67 numbers traced. Call and window are listed.",
+    "refs": "News items carry date, publisher and URL. No research DOIs.",
+    "accuracy": "Catches entity noise (Carl Linnaeus, 'technical support'), the undefined 'critical' flag and the enrichment lag. One misreading about what the outlier inflates.",
+    "limits": "Window, 145-day gap, match modes, May 4% labelled, syndication and the undefined critical flag are stated and read.",
+    "verdict": "Direct, bounded and consistent, and it names what would change it.",
+    "facets": "Most facets are grounded. The cause of the spike is honestly marked unanswerable."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups carry placeholder args. None of 6 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, no contradictions.",
+    "limits": "Says what it cannot measure, but generically.",
+    "verdict": "Qualitative answer with no support.",
+    "facets": "Nothing grounded."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "Explicitly says it cannot measure a trend; ceiling is 0.",
+    "comparison": "No measured baseline comparison.",
+    "chart": "No chart.",
+    "drilldown": "Calls are generic and use placeholder arguments; no executed data breakdown.",
+    "export": "No data export.",
+    "repro": "No measurement calls or reproducible figures.",
+    "refs": "No sources consulted.",
+    "accuracy": "Avoids invented measured claims, but its general characterization is interpretation rather than sourced evidence.",
+    "limits": "Clearly states that no measurement window, lane, coverage, censoring, or match mode is available; the knowledge limits are explicit.",
+    "verdict": "Direct answer with confidence and a decision, but no contrary evidence and little evidence for the topic framing.",
+    "facets": "Most requested facets are explicitly unavailable, but none are grounded in the database record."
+   },
+   "claude_bare": {
+    "trend": "The chart is explicitly an estimate, giving the estimate-only ceiling of 1.",
+    "comparison": "Only a qualitative, memory-based expectation; no measured contrast.",
+    "chart": "Honest estimate chart, so it earns the estimate-only anchor.",
+    "drilldown": "Names possible breakdown layers but provides no traced breakdown; some follow-up calls executed, but do not establish the required layers and question-specific results.",
+    "export": "Milestones export is explicitly from memory/estimate, so it earns the estimate-only anchor.",
+    "repro": "No executed calls; claims and estimates cannot be regenerated from listed calls.",
+    "refs": "All three DOIs resolve and are tied to study claims, but no verbatim abstract quotes are supplied.",
+    "accuracy": "The cited study milestones broadly align, but the asserted first major policy peak and timeline are unsupported as measured claims and the health-shift account is recalled interpretation.",
+    "limits": "Clearly labels memory, missing measurements, and unknown window/corpus limits; explains the gap to today is not quantified.",
+    "verdict": "Gives a tentative decision and confidence, but the proposed change condition is not well specified and there is no contrary evidence weighed.",
+    "facets": "Coverage movement is only a memory-based hypothesis; the key measured facets are left unanswered."
+   },
+   "claude_prism": {
+    "trend": "All monthly points trace; it quantifies late/early change, CAGR, peak, and critical-series change, with window and censoring stated.",
+    "comparison": "Negative/positive ratio is compared with the defined corpus baseline on the same window, with delta and ratio.",
+    "chart": "Traced monthly chart and caption support the trend claim; it marks the censored boundary in the window, though not visually as a partial bucket.",
+    "drilldown": "One overview call exposes several breakdown panels, but follow-ups mostly failed and the returned item examples do not establish two traced layers to an identified headline.",
+    "export": "Monthly CSV is traced and referenced, but it omits provenance coverage details required for full credit and does not export the sentiment figures as a separate needed table.",
+    "repro": "All numeric claims trace to the recorded overview and the call plus window are listed; derived ratios can be recomputed. No complete renderer recipe for every chart and table.",
+    "refs": "The source call is identified, but there are no resolvable DOI-backed studies or adequately tied article references with source quotes.",
+    "accuracy": "Mostly matches the record, but describes May 2026 as the most negative month even though August 2024's ratio is 1.28 and May is 1.56; labels the latter correctly as most negative, but the earlier comparison is not exhaustive. It also calls the place share 24.8% of matched articles while the record's denominator is 12,526, not total 12,920.",
+    "limits": "States window, match modes, enrichment lag, sample limits, and interpretation; however, the window end is described as 2026-05-31 although the record's exclusive end is 2026-06-01, and the partial newest-month caveat is not placed consistently.",
+    "verdict": "Direct supported answer and confidence, but the decision is broad and it does not acknowledge the strongest contrary evidence in its own data, including positive polarity exceeding negative overall.",
+    "facets": "Grounded values cover trend, tone, themes, entities, places, publisher sample, and spike/headline availability, and the special implied facets are substantially addressed."
+   },
+   "chatgpt_prism": {
+    "trend": "Monthly series traces; reports peak and annualized/late-third growth with stated window and censoring.",
+    "comparison": "Defines the ordinary-news baseline and gives recomputable ratio and delta on one scale.",
+    "chart": "The chart traces values and supports the trend, but its caption does not visibly mark the censored boundary and it omits the available critical-series decomposition.",
+    "drilldown": "Overview panels provide one breakdown layer, but follow-ups were only partly successful and no identified headline/paper layer is delivered.",
+    "export": "Monthly export traces and is referenced, but required breakdown figures such as themes and publisher sample are not exported; provenance is not complete for every needed table.",
+    "repro": "Numbers trace to the overview call, with arguments and window; no full regenerate recipe for every delivered table/chart.",
+    "refs": "No external document or news-item references are supplied; the source-call citation does not meet document reference criteria.",
+    "accuracy": "The main measured claims align with the record, but says the 2026-05 month is complete and describes the source result as a reachable news table above its historical row floor, which is not shown in the supplied response.",
+    "limits": "Covers window, censoring, lanes, match mode, enrichment lag, and coverage caveats; the incomplete last-month caveat is contradicted by calling 2026-05 a complete month.",
+    "verdict": "Direct answer, decision, confidence, change conditions, limits, and contrary empty critical-headlines panel are included; verdict remains under 150 words.",
+    "facets": "Addresses trend, tone comparison, themes, entities, places, publisher sample, critical-headline availability, and special measurement limits with grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

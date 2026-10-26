@@ -1,0 +1,147 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "export": 3,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 0,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "export": "Traced CSV with source, window, unit and coverage, plus a provenance JSON, but capped at 3 by the script ceiling. Columns are renamed (ref, doi_or_url) without documentation.",
+    "repro": "Ceiling 3. Calls are listed with args and most numbers trace to c1/c2. One number is untagged and the 'subject' lane claim does not trace.",
+    "refs": "All identifiers resolve and each is tied to its stance. The ranking reason and the contrary sources are shown. No quotes are given (honestly stated), so this stops at 4.",
+    "accuracy": "Catches real anomalies: by_tier totals 15 against 8 listed, off-topic policy rows, and SSRN labelled peer-reviewed. Docked for asserting a 'subject' lane and coverage details that the record does not show.",
+    "limits": "States the missing window, the 2024-to-today gap, truncation to 3 of 8, claim-text match mode, automated stances and what is unanswered. Mostly placed in the method section rather than beside every number.",
+    "verdict": "Direct answer with a decision, low confidence with a reason, a condition that would change it, and the contrary entries named. Not explicitly bounded by window inside the verdict.",
+    "facets": "APA citations, a ranking by weight and stance are all given with grounded values. The off-topic rows in c2 are read rather than pasted."
+   },
+   "B": {
+    "export": "The CSV is labelled estimate, which is honest but unmeasured.",
+    "repro": "All figures are labelled from memory, with no recorded calls.",
+    "refs": "The DOIs given resolve. The table metadata conflicts with the reference list: r4 is 2021 in the table and 2019 in the list; r5 is 2020 and about sugar reformulation in the table, but 2023 and about obesity prevalence in the list.",
+    "accuracy": "The 9.7% figure for 2015 comes from the Health Affairs follow-up, not the cited BMJ paper. There are internal year and venue mismatches. Figures are labelled est.",
+    "limits": "Specific about memory sourcing, purchases versus consumption, selection bias and gap to today. No data limits apply.",
+    "verdict": "A substantive answer with decision, confidence and change conditions. It rests on unverified recalled figures.",
+    "facets": "Facets are answered from memory."
+   },
+   "C": {
+    "export": "The CSV contains fabricated DOIs, one with a corrupted character. It is sourced 'ref:r1' and not labelled estimate.",
+    "repro": "No calls were made. Sources are remembered, and there are no numeric claims to trace.",
+    "refs": "3 of 5 DOIs do not resolve (the Andreyeva and Colchero DOIs are wrong, one is corrupted). One fabricated identifier caps this at 0 under the ceiling.",
+    "accuracy": "Multiple fabricated identifiers are presented as real citations.",
+    "limits": "Honest about having no search, partial coverage, and purchases versus intake.",
+    "verdict": "A reasonable answer in substance, but it rests on citations with fabricated identifiers.",
+    "facets": "All facets are answered from memory."
+   },
+   "D": {
+    "export": "A fully traced CSV using the tool's citation strings, an honest 'unknown' window, and a provenance block. Some column names (authors_year) are undocumented renames, and c2 is missing from provenance.",
+    "repro": "All numbers trace to c1/c2, and a prism-calls block is included. The provenance JSON omits c2.",
+    "refs": "All identifiers resolve, each is tied to a stance with tier and strength as Prism states them, and contrary sources are included. No quotes, which is stated honestly. Two entries drop the year from its APA position.",
+    "accuracy": "Faithful to the record, with stances correctly framed as Prism labels. It misses the by_tier 15-vs-8 anomaly, and its coverage-metadata claim does not appear in the shown record.",
+    "limits": "Ceiling 3. States the absent window, match mode, unverified labels and what cannot be answered. Limits mostly sit in a method section.",
+    "verdict": "Direct answer, decision, low confidence with a reason, a condition that would change it, and the contrary entries acknowledged.",
+    "facets": "APA citations, a provisional ranking and stance are all grounded. The review in c2 is handled with an explicit grounded 'stance not stated'."
+   }
+  },
+  "errors": {
+   "A": [
+    "Asserts the source-ranking call ran in the 'subject' lane and quotes coverage-flag wording that does not appear in the recorded responses."
+   ],
+   "B": [
+    "Attributes the 9.7% 2015 Mexico reduction to the 2016 BMJ paper, which covered 2014 only.",
+    "The table gives r4 as 2021 while the reference list gives 2019.",
+    "The table gives r5 as a 2020 study of sugar reformulation, but the reference is Rogers et al. 2023 on obesity prevalence."
+   ],
+   "C": [
+    "Fabricated DOI 10.1001/jamanetworkopen.2022.1046 for Andreyeva et al. 2022.",
+    "Fabricated DOI 10.1377/hlthaff.2016.0434 for Colchero et al. 2016.",
+    "The CSV carries a corrupted DOI 10.1377/hlthaff.2016.043飲.",
+    "The CSV is presented as sourced ('ref:r1') without an estimate label."
+   ],
+   "D": [
+    "Claims both calls' metadata say coverage is not proof of ingest completeness, which is not visible in the recorded responses."
+   ]
+  },
+  "best": "D",
+  "verdict": "A and D both built their citation lists from the recorded corpus, traced their rows, and honestly concluded the three-entry set (one supporting, two contradicting, all moderate-strength articles) cannot establish the claim. D edges ahead on export and reproducibility hygiene, while A was sharper on anomalies such as the by_tier totals and the off-topic rows. B gave a useful but unverified memory-based answer with internal metadata mismatches. C invented DOIs, which disqualifies it for a citation request."
+ },
+ "scores": {
+  "claude_prism": {
+   "export": 3,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 0,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

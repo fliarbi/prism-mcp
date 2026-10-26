@@ -1,0 +1,639 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 673,
+  "charts": [
+   {
+    "id": "critical-share",
+    "title": "Estimated share of military-AI research that is critical/cautionary",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Critical share (estimate)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "estimated_critical_share.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly orientation series for military AI research?",
+    "args": {
+     "term": "military artificial intelligence"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"military artificial intelligence\", \"autonomous weapons systems\", \"ai-enabled warfare\"], \"points\": [{\"year\": 2017, \"total\": 9, \"orientation\": {\"problem_identifying\": 4, \"critical\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 5, \"positive_pct\": 0.0, \"contested_pct\": 55.6}, {\"year\": 2018, \"total\": 15, \"orientation\": {\"critical\": 2, \"descriptive\": 1, \"problem_identifying\": 4}, \"stance_score\": null, \"positive\": 0, \"contested\": 6, \"positive_pct\": 0.0, \"contested_pct\": 40.0}, {\"year\": 2019, \"total\": 21, \"orientation\": {\"problem_identifying\": 10, \"critical\": 3, \"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 13, \"positive_pc"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which critical papers are most cited?",
+    "args": {
+     "term": "military artificial intelligence",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 37, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4416100424\", \"title\": \"Lowest Common Denominator: Explaining Multilateral Bargaining Over Lethal Autonomous Weapons Systems Regulation\", \"authors\": [\"Johannes Geith\"], \"venue\": \"Global Policy\", \"year\": 2025, \"date\": \"2025-11-10\", \"doi\": \"10.1111/1758-5899.70101\", \"url\": \"https://doi.org/10.1111/1758-5899.70101\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Ethics and Social Impacts of AI\","
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which promising papers are most cited?",
+    "args": {
+     "term": "military artificial intelligence",
+     "orientation": "promising",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 8, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W4411872021\", \"title\": \"ARTIFICIAL INTELLIGENCE AND AUTONOMOUS WEAPONS SYSTEMS: A NEW ERA OF MILITARY OPERATIONS\", \"authors\": [\"Viktoriia Hmyria\", \"L. Romanovska\", \"T. Fitsailo\", \"Anna Nikitchenko\"], \"venue\": \"Наукові праці Державного науково-дослідного інституту випробувань і сертифікації озброєння та військової техніки\", \"year\": 2025, \"date\": \"2025-06-30\", \"doi\": \"10.37701/dndivsovt.24.2025.01\", \"url\": \"https://doi.org/10.37701/dndivsovt.24.2025.01"
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which years are thin in coverage?",
+    "args": {
+     "term": "military artificial intelligence",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ligence', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='military artificial intelligence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "Does the trend hold with expanded phrases?",
+    "args": {
+     "term": "autonomous weapons OR AI-enabled targeting OR AI nuclear command",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...command', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='autonomous weapons OR AI...g OR AI nuclear command', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "Does news coverage show the same shift?",
+    "args": {
+     "term": "military AI"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.3,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 350, \"positive\": 92, \"neutral\": 36, \"ratio\": 3.8}, {\"period\": \"2024-07-01\", \"negative\": 324, \"positive\": 116, \"neutral\": 43, \"ratio\": 2.79}, {\"period\": \"2024-08-01\", \"negative\": 433, \"positive\": 84, \"neutral\": 22, \"ratio\": 5.15}, {\"period\": \"2024-09-01\", \"negative\": 362, \"positive\": 119, \"neutral\": 15, \"ratio\": 3.04}, {\"period\": \"2024-10-01\", \"negative\": 513, \"positive\": 176, \"neutral\": 25, \"ratio\": 2.91}, {\"period\": \"2024-11-01\", \"negative\": 276, \"positive\": 93, \"neutral\": 32, \"ratio\": 2.97}, {\"period\": \"2024-12-01\", \"negative\": 547, \"positive\": 109, \"neutral\": 19, \"ratio\": 5.02}, {\"period\": \"2025-01-01\", \"negative\": 605, \"positive\": 126, \"ne"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 9,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "10 — - Windows: 2018–2025 (illustrative). The gap to today (2026-10-23) is about 10 months beyo"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 116,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1644,
+  "charts": [
+   {
+    "id": "contested_share",
+    "title": "Share of papers framed cautionary, critical or problem-identifying, by year (autonomous weapons)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Contested share (%)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Positive share (%)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "caut_crit_counts",
+    "title": "Papers labelled cautionary and critical per year (autonomous weapons)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Cautionary",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Critical",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "autonomous_weapons_yearly.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 61,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "autonomous_weapons_period_shares.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 10,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drove the 2025 critical spike (16)?",
+    "args": {
+     "term": "autonomous weapons",
+     "orientation": "critical",
+     "sort": "recent",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 115, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7125645246\", \"title\": \"Autonomous Weapons and the Law of Armed Conflict: Revisiting International Humanitarian Law in the Age of AI\", \"authors\": [\"Muhidul Islam Julkan\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-29\", \"doi\": \"10.5281/zenodo.18199445\", \"url\": \"https://doi.org/10.5281/zenodo.18199445\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4,"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which cautionary papers exist, and which are most cited?",
+    "args": {
+     "term": "autonomous weapons",
+     "orientation": "cautionary",
+     "sort": "cited",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 54, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W2742653893\", \"title\": \"The evolution of targeted killing practices: Autonomous weapons, future conflict, and the international order\", \"authors\": [\"Michael Haas\", \"Sophie‐Charlotte Fischer\"], \"venue\": \"Contemporary Security Policy\", \"year\": 2017, \"date\": \"2017-05-04\", \"doi\": \"10.1080/13523260.2017.1336407\", \"url\": \"https://doi.org/10.1080/13523260.2017.1336407\", \"cited_by\": 35, \"orientation\": \"cautionary\", \"contribution\": \"position\", \"stance_score\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Does the trend hold for broader military AI terms?",
+    "args": {
+     "term": "military artificial intelligence"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"military artificial intelligence\", \"autonomous weapons systems\", \"ai-enabled warfare\"], \"points\": [{\"year\": 2017, \"total\": 9, \"orientation\": {\"critical\": 1, \"problem_identifying\": 3}, \"stance_score\": null, \"positive\": 0, \"contested\": 4, \"positive_pct\": 0.0, \"contested_pct\": 44.4}, {\"year\": 2018, \"total\": 15, \"orientation\": {\"problem_identifying\": 5, \"critical\": 2, \"descriptive\": 2}, \"stance_score\": null, \"positive\": 0, \"contested\": 7, \"positive_pct\": 0.0, \"contested_pct\": 46.7}, {\"year\": 2019, \"total\": 21, \"orientation\": {\"critical\": 3, \"promising\": 1, \"problem_identifying\": 13}, \"stance_score\": null, \"positive\": 1, \"contested\": 16, \"positive_pc"
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Does phrase expansion change the shares?",
+    "args": {
+     "term": "autonomous weapons",
+     "expand": true,
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 26.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2731, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7124268872\", \"title\": \"Autonomous Weapon Systems and Individual Criminal Liability under the Rome Statute\", \"authors\": [\"Zhaohang Tong\"], \"venue\": \"Scientific and Social Research\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.26689/ssr.v7i12.13384\", \"url\": \"https://doi.org/10.26689/ssr.v7i12.13384\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"position\", \"stance_score\": -0.3, \"topics\": [\"Ethics and Social Impacts of AI\""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "Which counter-evidence contradicts a cautionary shift?",
+    "args": {
+     "term": "autonomous weapons"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'autonomous weapons'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='autonomous weapons', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Does news coverage show the same direction?",
+    "args": {
+     "term": "autonomous weapons"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 45, \"critical\": 36, \"negative\": 37, \"positive\": 8, \"mean_priority\": 6.89, \"critical_pct\": 80.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 29, \"critical\": 26, \"negative\": 25, \"positive\": 4, \"mean_priority\": 7.07, \"critical_pct\": 89.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 24, \"critical\": 18, \"negative\": 13, \"positive\": 10, \"mean_priority\": 7.04, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 25, \"critical\": 18, \"negative\": 11, \"positive\": 14, \"mean_priority\": 6.68, \"critical_pct\": 72.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 9, \"critical\""
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 82,
+   "traced": 77,
+   "derived": 19,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 138,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 1,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 601,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly orientation distribution in a defined military-AI research corpus?",
+    "args": {
+     "term": "military artificial intelligence",
+     "orientation": "all",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers support or challenge a shift toward more cautionary framing?",
+    "args": {
+     "term": "military artificial intelligence",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...critical', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='military artificial intelligence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers argue for promising or beneficial military AI applications?",
+    "args": {
+     "term": "military artificial intelligence",
+     "orientation": "supportive",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 259, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7116630334\", \"title\": \"A STUDY TO ANALYSIS THE NEED OF DIFFERENTIATION AND SEGREGATION OF LETHAL AUTONOMOUS WEAPON SYSTEMS (LAWS) FROM GENERALIZED PERSPECTIVE OF AUTONOMOUS WEAPONS SYSTEMS (AWS)\", \"authors\": [\"K INBATHAMIZHAN\"], \"venue\": \"Indian Journal of Legal Review\", \"year\": 2025, \"date\": \"2025-12-21\", \"doi\": \"10.65393/ywbf4779\", \"url\": \"https://doi.org/10.65393/ywbf4779\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \""
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "How do cautionary and supportive framings differ between the early and late periods?",
+    "args": {
+     "term": "military artificial intelligence",
+     "group_by": "period",
+     "compare": [
+      "early",
+      "late"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...re': ['early', 'late']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...re': ['early', 'late']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='military artificial intelligence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='period', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['early', 'late'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 0,
+   "not_found": [
+    "10.15781/t2gj42j7r"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 0,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 938,
+  "charts": [
+   {
+    "id": "critical-cautionary-counts",
+    "title": "Autonomous-weapons research by framing",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Critical",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Cautionary",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "orientation_trend.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 27,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers account for the critical orientation in 2025?",
+    "args": {
+     "term": "autonomous weapons",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 115, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7125645246\", \"title\": \"Autonomous Weapons and the Law of Armed Conflict: Revisiting International Humanitarian Law in the Age of AI\", \"authors\": [\"Muhidul Islam Julkan\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-29\", \"doi\": \"10.5281/zenodo.18199445\", \"url\": \"https://doi.org/10.5281/zenodo.18199445\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "What are the abstracts and claims of the 2024–2025 promising legal-review papers?",
+    "args": {
+     "term": "autonomous weapons",
+     "orientation": "promising",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 26, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 18, \"papers\": [{\"id\": \"W7111070625\", \"title\": \"Penerapan Prinsip Pembedaan dan Proposionalitas dalam Hukum Humaniter Internasional terhadap Penggunaan Senjata Otonom (Autonomous Weapons System)\", \"authors\": [\"Gusti Rizki Ramadhan\", \"Raden Nandityo Arya Aptabagaskara\", \"Dwi Imroatus Sholikah\"], \"venue\": \"Jurnal Cendekia Hukum Indonesia\", \"year\": 2025, \"date\": \"2025-10-30\", \"doi\": \"10.71417/jchi.v1i2.77\", \"url\": \"https://doi.org/10.71417/jchi.v1i2.77\", \"cited_by\": 0, \"orie"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How do annual orientation shares change when normalized by all matched papers each year?",
+    "args": {
+     "term": "autonomous weapons"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"autonomous weapons\", \"autonomous weapon systems\", \"lethal autonomous weapons\", \"killer robots\"], \"points\": [{\"year\": 2017, \"total\": 40, \"orientation\": {\"cautionary\": 3, \"problem_identifying\": 23, \"critical\": 8, \"descriptive\": 6}, \"stance_score\": null, \"positive\": 0, \"contested\": 34, \"positive_pct\": 0.0, \"contested_pct\": 85.0}, {\"year\": 2018, \"total\": 47, \"orientation\": {\"cautionary\": 2, \"critical\": 11, \"problem_identifying\": 26, \"promising\": 2, \"descriptive\": 6}, \"stance_score\": null, \"positive\": 2, \"contested\": 39, \"positive_pct\": 4.3, \"contested_pct\": 83.0}, {\"year\": 2019, \"total\": 66, \"orientation\": {\"descriptive\": 6, \"problem_identifying\": 3"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Does expanding the concept cluster change the apparent framing trend?",
+    "args": {
+     "term": "military artificial intelligence",
+     "expand": true
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"military artificial intelligence\", \"autonomous weapons systems\", \"ai-enabled warfare\"], \"points\": [{\"year\": 2017, \"total\": 123, \"orientation\": {\"cautionary\": 5, \"descriptive\": 10, \"critical\": 6, \"problem_identifying\": 21, \"promising\": 10, \"breakthrough\": 2, \"comparative\": 1}, \"stance_score\": null, \"positive\": 12, \"contested\": 32, \"positive_pct\": 9.8, \"contested_pct\": 26.0}, {\"year\": 2018, \"total\": 133, \"orientation\": {\"cautionary\": 3, \"problem_identifying\": 23, \"descriptive\": 10, \"comparative\": 1, \"breakthrough\": 5, \"promising\": 14, \"critical\": 7}, \"stance_score\": null, \"positive\": 19, \"contested\": 33, \"positive_pct\": 14.3, \"contested_pct\": 24.8"
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "Which papers use newer phrases such as AI-enabled weapons or autonomous lethal systems?",
+    "args": {
+     "term": "AI-enabled weapons",
+     "limit": 20,
+     "expand": true
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 46.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 367, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7124268872\", \"title\": \"Autonomous Weapon Systems and Individual Criminal Liability under the Rome Statute\", \"authors\": [\"Zhaohang Tong\"], \"venue\": \"Scientific and Social Research\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.26689/ssr.v7i12.13384\", \"url\": \"https://doi.org/10.26689/ssr.v7i12.13384\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"position\", \"stance_score\": -0.3, \"topics\": [\"Ethics and Social Impacts of AI\""
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 28,
+   "traced": 27,
+   "derived": 2,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "296 — The calls cover [c1] 2017–2025 and report the latest year as [c1] 2025; today is 2026-10-2"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 141,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None, None]"
+  ],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 4,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

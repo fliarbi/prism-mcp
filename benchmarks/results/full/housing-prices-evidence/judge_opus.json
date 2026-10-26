@@ -1,0 +1,195 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 3,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Mortgage-rate and Case-Shiller series are from memory and labelled estimate.",
+    "comparison": "The cross-country peak-to-trough figures are memory numbers labelled est.",
+    "chart": "The only chart is labelled estimate, which earns 1.",
+    "drilldown": "All six follow-up calls failed when executed.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "Every number is from memory.",
+    "refs": "No identifiers are given. r1 is garbled, and r3's authors differ between Evidence and References.",
+    "accuracy": "The estimates are labelled and plausible. It says both windows end more than 2 years before today, but the chart window ends 2024-12, less than 2 years ago.",
+    "limits": "Limits are specific about what was not measured but sit in a footer. The window-gap claim is partly wrong.",
+    "verdict": "Complete structure, but it rests on memory; capped at 3.",
+    "facets": "Facets are answered from memory."
+   },
+   "B": {
+    "trend": "Research series traced, with window, censoring, 5.5x multiple and the 2024 peak. The news series is exported but not read in the trend.",
+    "comparison": "2025 vs 2017 is traced, but it repeats the trend multiple, uses a censored endpoint and is not a substantive contrast.",
+    "chart": "One traced chart with window, unit and caption. The news facet is not charted.",
+    "drilldown": "The follow-ups failed, and the declared calls were never made.",
+    "export": "Two traced CSVs with source, window, unit and coverage, plus a provenance block. The news CSV is barely read in the prose.",
+    "repro": "11 of 13 numbers traced, with calls listed. The 298-day gap is a slip (actual 296).",
+    "refs": "One reference with a URL and a verified quote; thin.",
+    "accuracy": "Fields are read correctly and lanes kept separate. It misses the c1/c2 discrepancy in the unrelated count.",
+    "limits": "Lane, intersection of 9, windows, gap to today and censoring are all placed next to the numbers.",
+    "verdict": "Low confidence with reason, plus decision and what would change it, bounded by the corpus.",
+    "facets": "Volumes, tally, series, documents and the effect-size no-data are covered."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "No comparison is computed.",
+    "chart": "No chart.",
+    "drilldown": "The follow-ups failed.",
+    "export": "An estimate-labelled evidence map.",
+    "repro": "No traced numbers.",
+    "refs": "Both DOIs resolve, but there are no quotes or tiers. Bernanke-Gertler is called QJE in Evidence and JEP in References.",
+    "accuracy": "The venue is inconsistent; otherwise sound.",
+    "limits": "An honest, specific account of what was not measured.",
+    "verdict": "Reasonable expert answer with no contrary evidence acknowledged; memory-based.",
+    "facets": "Facets are largely unaddressed or from memory."
+   },
+   "D": {
+    "trend": "Research series traced with censoring, the 5.5 multiple and the 2024 peak. News peak (1,143 in 2022-12) and last month (257 in 2026-05) are named.",
+    "comparison": "The yearly news sums contain arithmetic slips: 2022 is 9,525, not 6,806, and 2024 is 1,650, not 1,093. The 4.18 and 6.16 ratios trace.",
+    "chart": "One traced research chart with caption. News is not charted.",
+    "drilldown": "One document layer with identifiers, but only 1 of 6 follow-ups returned.",
+    "export": "Two CSVs. The provenance JSON omits the claim argument, and coverage is set to 'full' despite censoring.",
+    "repro": "Calls are listed with args, but several derived sums do not recompute.",
+    "refs": "Three references resolve, with a verified quote and tier, each tied to a claim; they are not fully ranked.",
+    "accuracy": "Catches the c1/c2 unrelated-count anomaly, but presents materially wrong derived sums (and a 17x ratio that should be about 24x).",
+    "limits": "Window gaps, lane, coverage, censoring and thin evidence are placed next to the numbers, and it says what would close the gap.",
+    "verdict": "Low confidence with reason, plus decision and what would change it; under 150 words.",
+    "facets": "Volumes, stance mix, tally, both series, documents and the effect-size no-data are covered."
+   }
+  },
+  "errors": {
+   "A": [
+    "States that both windows end more than 2 years before today, but the chart window ends 2024-12-31",
+    "r3's author list is inconsistent between Evidence and References",
+    "r1's title is garbled and unverified"
+   ],
+   "B": [
+    "Research endpoint gap given as 298 days; actual is 296"
+   ],
+   "C": [
+    "Bernanke and Gertler 1995 is attributed to QJE in Evidence but to JEP in References"
+   ],
+   "D": [
+    "2022 news sum given as 6,806; the c3 points sum to 9,525",
+    "2024 news sum given as 1,093; the c3 points sum to 1,650",
+    "The 17x ratio over the 2019 baseline is wrong; it should be about 24x",
+    "research_by_year.csv is flagged coverage=full although 2025 is censored"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both read the database honestly: thin evidence, only 9 papers in the intersection lane, one supporting Swedish paper and no measured effect size. Both give low-confidence verdicts bounded by those limits. D had richer references and caught the c1/c2 anomaly, but its derived news comparison is materially miscalculated. B's cleaner exports and arithmetic edge it ahead. A and C answer from memory: A gives labelled estimates with no identifiers, and C cites real DOIs but has no measured content."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 3,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

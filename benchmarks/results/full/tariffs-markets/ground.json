@@ -1,0 +1,695 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 523,
+  "charts": [
+   {
+    "id": "trend_relative",
+    "title": "Illustrative relative news attention index (est.), selected years",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "tariffs",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     },
+     {
+      "name": "trade war",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     },
+     {
+      "name": "stock market crash",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "relative_index_estimate.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 18,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which term has the most articles and what is each share?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "metric": "totals"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='totals', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How do monthly series compare on one scale?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What is the tone of each term?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'stock market crash']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "How many unique articles mention any term, and how many mention all?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "mode": "union_and_intersection"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nion_and_intersection'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='union_and_intersection', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which countries cover each term most?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'stock market crash']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What critical coverage exists on tariffs?",
+    "args": {
+     "term": "tariffs",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.4,
+    "sample": "{\"articles\": [{\"target_id\": \"6a2e493bbf10c43d296b62e4\", \"url\": \"https://www.yahoo.com/news/articles/trump-says-32-000-people-200600845.html\", \"title\": \"Trump says 32,000 people were killed in Iran's crackdown on protesters\", \"excerpt\": \"President Trump said in a news briefing Friday that 32,000 people were killed during the recent protests in Iran, a far higher death toll than has previously been reported. Mr. Trump, who made the remarks while addressing the Supreme Court's ruling striking down his sweeping tariffs, did not offer a\", \"publisher\": \"yahoo.com\", \"published\": \"2026-02-20 20:06:00\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-02-20 20:06:00\", \"priority\": 9, \"polarity\": \"ne"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 9,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "100 — The chart shows an illustrative relative-attention index (est.), not counts. Values are my",
+    "1.0 — Baseline: \"stock market crash\" in 2025, set to 1.0x. On the estimate scale above, tariffs ",
+    "296 — - Windows: the illustrative window ends 2025-12-31, 296 days before today (2026-10-23). Pl"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 107,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1176,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "tariffs",
+      "how": "call",
+      "points": 16,
+      "traced_share": 1.0
+     },
+     {
+      "name": "trade war",
+      "how": "call",
+      "points": 16,
+      "traced_share": 1.0
+     },
+     {
+      "name": "stock market crash",
+      "how": "call",
+      "points": 16,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_selected.csv",
+    "how": "call",
+    "rows": 16,
+    "numeric_cells": 47,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which outlets drove the April 2025 tariffs peak?",
+    "args": {
+     "term": "tariffs",
+     "since": "2025-04-01",
+     "until": "2025-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 31.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"tariffs\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 84110, \"entity_labelled_articles\": 67293, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 93515, \"critical_articles\": 73739, \"first_seen\": \"2025-04-01 00:00:00\", \"last_seen\": \"2025-04-30 23:58:14\", \"window\": {\"from\": \"2025-04-01\", \"to\": \"2025-05-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with "
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries produce most tariffs coverage?",
+    "args": {
+     "term": "tariffs",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.4,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 265812, \"share_pct\": 24.6, \"lift\": 1.1}, {\"label\": \"china\", \"articles\": 138491, \"share_pct\": 12.8, \"lift\": 2.5}, {\"label\": \"canada\", \"articles\": 73837, \"share_pct\": 6.8, \"lift\": 2.0}, {\"label\": \"india\", \"articles\": 64898, \"share_pct\": 6.0, \"lift\": 0.9}, {\"label\": \"mexico\", \"articles\": 55982, \"share_pct\": 5.2, \"lift\": 8.6}, {\"label\": \"united kingdom\", \"articles\": 39396, \"share_pct\": 3.6, \"lift\": 0.7}, {\"label\": \"japan\", \"articles\": 35913, \"share_pct\": 3.3, \"lift\": 2.2}, {\"label\": \"russia\", \"articles\": 27459, \"share_pct\": 2.5, \"lift\": 3.1}, {\"label\": \"australia\", \"articles\": 20435, \"share_pct\": 1.9, \"lift\": 0.4}, {\"label\": \"s"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What are the most critical articles on trade war in May 2026?",
+    "args": {
+     "term": "trade war",
+     "since": "2026-05-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-05-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is sentiment on stock market crash defined and distributed?",
+    "args": {
+     "term": "stock market crash",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 37, \"positive\": 9, \"neutral\": 0, \"ratio\": 4.11}, {\"period\": \"2024-07-01\", \"negative\": 15, \"positive\": 6, \"neutral\": 0, \"ratio\": 2.5}, {\"period\": \"2024-08-01\", \"negative\": 95, \"positive\": 28, \"neutral\": 0, \"ratio\": 3.39}, {\"period\": \"2024-09-01\", \"negative\": 18, \"positive\": 6, \"neutral\": 1, \"ratio\": 3.0}, {\"period\": \"2024-10-01\", \"negative\": 63, \"positive\": 6, \"neutral\": 1, \"ratio\": 10.5}, {\"period\": \"2024-11-01\", \"negative\": 51, \"positive\": 17, \"neutral\": 0, \"ratio\": 3.0}, {\"period\": \"2024-12-01\", \"negative\": 37, \"positive\": 8, \"neutral\": 0, \"ratio\": 4.62}, {\"period\": \"2025-01-01\", \"negative\": 67, \"positive\": 14, \"neutral\": 0, \"ratio\": 4.79}, "
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What drove the March 2026 stock market crash bump?",
+    "args": {
+     "term": "stock market crash",
+     "since": "2026-02-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.7,
+    "sample": "{\"points\": [{\"period\": \"2026-02-01\", \"articles\": 61, \"critical\": 43, \"negative\": 49, \"positive\": 12, \"mean_priority\": 7.1, \"critical_pct\": 70.5, \"partial_period\": false}, {\"period\": \"2026-03-01\", \"articles\": 133, \"critical\": 97, \"negative\": 127, \"positive\": 6, \"mean_priority\": 7.14, \"critical_pct\": 72.9, \"partial_period\": false}, {\"period\": \"2026-04-01\", \"articles\": 51, \"critical\": 36, \"negative\": 42, \"positive\": 8, \"mean_priority\": 7.12, \"critical_pct\": 70.6, \"partial_period\": false}, {\"period\": \"2026-05-01\", \"articles\": 54, \"critical\": 34, \"negative\": 41, \"positive\": 13, \"mean_priority\": 6.96, \"critical_pct\": 63.0, \"partial_period\": false}], \"total\": 299, \"critical_total\": 210, \"trend\": {\""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How much do the three terms overlap in the same articles?",
+    "args": {
+     "terms": [
+      "tariffs AND trade war",
+      "tariffs AND stock market crash"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.8,
+    "sample": "{\"terms\": [\"tariffs AND trade war\", \"tariffs AND stock market crash\"], \"rows\": [{\"term\": \"tariffs AND trade war\", \"articles\": 170, \"share_pct\": 100.0, \"critical\": 123, \"direction\": \"rising\", \"growth\": 1.63, \"tone_ratio\": 2.17, \"vs_baseline\": 3.74, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1, \"critical\": 0, \"negative\": 0, \"positive\": 1, \"mean_priority\": 6.0, \"critical_pct\": 0.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1, \"critical\": 0, \"negative\": 1, \"positive\": 0, \"mean_priority\": 6.0, \"critical_pct\": 0.0, \"parti"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 82,
+   "traced": 79,
+   "derived": 11,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "76.4% — Critical share (critical / articles, computed from [c1]): trade war 78.7%, tariffs 76.4%, ",
+    "145 — - Window: 2024-06-01 to 2026-05-31, monthly. The data is deliberately censored at 2026-06-"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 126,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 391,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the total articles and share for each term in the same corpus and window, with deduplication?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What is the monthly article series for each term on one scale?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...], 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does the source define tone, and what is the tone distribution for each term?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'stock market crash']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which stories match multiple terms, and what common words may affect the comparison?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "include_overlap": true,
+     "include_query_diagnostics": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\ninclude_overlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_query_diagnostics\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 97,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 629,
+  "charts": [
+   {
+    "id": "monthly-coverage",
+    "title": "Monthly news articles matching each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "tariffs",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "trade war",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "stock market crash",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "coverage.csv",
+    "how": "call",
+    "rows": 72,
+    "numeric_cells": 71,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "summary.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 21,
+    "traced_share": 0.7142857142857143,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which publishers contribute most to each term’s coverage, and how many matching articles does each contribute?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which individual articles are the most-covered or most prominent for each term?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "since": "2024-06-01",
+     "sort": "articles"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nsort\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='articles', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How much do the terms overlap in the same articles, and what are deduplicated combined counts?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "since": "2024-06-01",
+     "overlap": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\noverlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "What sentiment labels and scoring method produce the negative and positive counts for each term?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What does growth measure, and what baseline interval is used for each term?",
+    "args": {
+     "terms": [
+      "tariffs",
+      "trade war",
+      "stock market crash"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tariffs', 'trade war', 'stock market crash'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 24,
+   "traced": 21,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 94,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 3,
+   "comparison": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

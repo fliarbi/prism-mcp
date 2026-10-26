@@ -1,0 +1,249 @@
+{
+ "slug": "ashwagandha-evidence",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 25.8,
+   "plain": 25.8,
+   "invented": true,
+   "by_judge": {
+    "opus": 27.0,
+    "gpt": 24.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 4.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 75.1,
+   "plain": 75.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.6,
+    "gpt": 78.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 3.5,
+    "facets": 2.0
+   },
+   "strict": 27.2,
+   "plain": 27.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.2,
+    "gpt": 35.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 3.5,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 4.0,
+    "repro": 3.0,
+    "refs": 4.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 74.4,
+   "plain": 74.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 70.8,
+    "gpt": 78.0
+   }
+  }
+ },
+ "judge_mad": 0.52,
+ "verdicts": {
+  "opus": "B and D both grounded the answer in the recorded evidence: the meta-analysis SMD −1.75 with I² 83.1%, an RCT and a zero-contradiction tally. Both stated that the corpus intersection is empty. B went further by catching the off-topic Morinda cluster and quantifying the trends and contrasts, while D had cleaner references and exports. A was honest memory with no measurement, and C was undermined by a fabricated DOI and by presenting calls as run when none were.",
+  "gpt": "B is the strongest decision deliverable: it combines reproducible research and news trends, quantified contrasts, and a direct conclusion bounded by the empty claim-intersection lane and a selected read sample. C is close and has cleaner paper citations and exports, but its incomplete regenerate calls and omitted trend decomposition weaken auditability; both leave the funding and bias question unresolved in the supplied evidence."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "Untagged number in the verdict flagged by the script"
+   ],
+   "claude_prism": [
+    "[r6] quote presented without verification in the corpus",
+    "'tier ranks 5 and 4' not in the record"
+   ],
+   "chatgpt_bare": [
+    "Fabricated or corrupted DOI 10.1089/acm.2013.017эс",
+    "prism-calls present c1/c2 as used though no calls were run",
+    "Unverified quote attributed to Pratte 2014"
+   ],
+   "chatgpt_prism": [
+    "prism-calls entries c1–c3 lack feature and args"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [
+    "Malformed DOI: 10.1089/acm.2013.017эс.",
+    "Calls use term instead of the recorded claim argument and do not reproduce the cited evidence."
+   ],
+   "claude_prism": [
+    "Labels the research-series endpoint without clearly identifying it as censored in the trend paragraph.",
+    "Presents tier ranks and some source details not contained in the supplied record."
+   ],
+   "chatgpt_prism": [
+    "Claims strict index partition-read and historical-row-floor checks that are absent from the supplied record.",
+    "Declared calls omit args, so the report cannot be regenerated from that block."
+   ],
+   "claude_bare": [
+    "Untagged verdict numbers (12, 500, 12) are presented as facts.",
+    "Trial counts and estimated effects are explicitly memory-based and lack traceable sources."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Estimate-labelled cumulative RCT series with no named source; capped at 1.",
+    "comparison": "Placebo-vs-treatment deltas from memory, labelled est.; max 2.",
+    "chart": "Single chart labelled estimate; honest but unmeasured.",
+    "drilldown": "Layers are named without values; only 2 of 6 follow-ups ran.",
+    "export": "CSV is labelled estimate.",
+    "repro": "All numbers are memory, labelled honestly.",
+    "refs": "Real papers, but no DOIs or quotes, so none resolve.",
+    "accuracy": "Memory figures are labelled est. and are broadly plausible; no contradictions with the record.",
+    "limits": "Specific about what is unmeasured and about the gap to today; plain-model cap.",
+    "verdict": "Script flags an untagged number in the verdict (12, 500, 12); ceiling 0.",
+    "facets": "Facets answered mostly from memory."
+   },
+   "claude_prism": {
+    "trend": "Traced research series with window, CAGR 11.9%, late/early 1.85, and news peak Jan 2024; no decomposition.",
+    "comparison": "Traced early-vs-late thirds for research and news with ratios; delta 2,513 recomputes. Contrasts volume, not promising vs cautious.",
+    "chart": "One fully traced research chart; the news series is not charted.",
+    "drilldown": "Lanes, tiers, read status and documents carry DOIs/ids; 4 of 6 follow-ups ran; none folded back.",
+    "export": "Three traced CSVs plus a provenance JSON; capped at 3.",
+    "repro": "65/65 numbers traced and calls listed with args. 'Tier ranks 5 and 4' is not grounded in the record.",
+    "refs": "Ceiling 1: [r6] gives a 'claimed' quote that is not verified in the corpus.",
+    "accuracy": "Catches the Morinda citrifolia off-topic cluster and the zero intersection, and flags the cortisol figure as coming from an exercise review. Minor ungrounded 'tier ranks' and coverage statement.",
+    "limits": "Window gaps, lane, match mode and the intersection limit are mostly placed next to the numbers.",
+    "verdict": "Direct answer, decision, confidence with reasons and what would change it; slightly long.",
+    "facets": "Volumes, stance, tally, effect sizes, counter-evidence and series are all grounded."
+   },
+   "chatgpt_bare": {
+    "trend": "No series (ceiling 0).",
+    "comparison": "Qualitative only.",
+    "chart": "No chart.",
+    "drilldown": "Generic; 0 of 5 follow-ups ran.",
+    "export": "No export.",
+    "repro": "Memory only; lists c1/c2 as used although no calls were made.",
+    "refs": "Corrupted, fabricated-looking DOI (…017эс); ceiling 0.",
+    "accuracy": "Fabricated identifier presented as a reference; the quote is unverified.",
+    "limits": "Honest about what is unmeasured, but misrepresents calls as executed.",
+    "verdict": "Clear and cautious, with decision and confidence; memory-based and names no contrary item.",
+    "facets": "Mostly memory or 'cannot measure'."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window and delta/% (145.5% exact); no CAGR, inflection or late/early reading.",
+    "comparison": "SMD against a defined zero baseline, traced, but no between-period or between-comparator contrast.",
+    "chart": "One traced chart; the news series is exported but not charted.",
+    "drilldown": "Documents with DOIs and quotes; follow-ups 3/6 ok; the breakdown is mostly descriptive.",
+    "export": "Research and full news monthly CSVs, traced (sum 25), with provenance JSON and prose references.",
+    "repro": "Numbers trace, but prism-calls c1–c3 lack feature/args (calls declared but never made); args only appear in the export JSON.",
+    "refs": "Two DOIs resolve, quotes are verbatim, tiers stated; no contrary sources.",
+    "accuracy": "Faithful to the record, with the zero intersection noted; misses the Morinda off-topic cluster.",
+    "limits": "Window end vs today, censoring, lane, match mode and coverage caveat are all placed.",
+    "verdict": "Concise, with decision, medium confidence and conditions; medium is slightly generous given the zero intersection.",
+    "facets": "All main facets grounded."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured series; it explicitly says none is available.",
+    "comparison": "Qualitative placebo comparison, without a measured common-scale contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Names evidence layers but supplies no traceable breakdown or successful follow-up calls.",
+    "export": "No CSV export.",
+    "repro": "Calls use incorrect argument names and do not reproduce the reported material.",
+    "refs": "One DOI is malformed and the other is unverified; neither meets the reference ceiling.",
+    "accuracy": "Cautious answer and no measured claims contradict the supplied record.",
+    "limits": "Specific limits are stated, but the answer lacks a defined corpus window and match mode.",
+    "verdict": "Direct, bounded decision and confidence with a condition that would change it; no contrary result is discussed.",
+    "facets": "Covers the clinical answer and key uncertainty, but omits grounded corpus and trend facets."
+   },
+   "claude_prism": {
+    "trend": "Annual series is traced, censored, and quantified with CAGR, early/late ratio, and peak; prose reads the rise correctly.",
+    "comparison": "Research and news early/late contrasts are traced, quantified, and their different scales and small news base are acknowledged.",
+    "chart": "Both traced series have units, windows, source lines and readings; charts are decompositions over time.",
+    "drilldown": "Multiple traced layers reach identified papers, and four specific follow-up calls returned on-topic data; no executed follow-up result is folded back in.",
+    "export": "CSV rows trace, but tables have incomplete or inconsistent provenance and do not include the needed provenance JSON shape.",
+    "repro": "Core recorded calls and series reproduce, but listed follow-up calls and some claimed details are not fully supported by the recorded calls.",
+    "refs": "The Auddy entry lacks DOI and venue, and Leonard is explicitly ungrounded; the reference ceiling is 1.",
+    "accuracy": "Mostly faithful, but it calls the research series the last year reported without carrying the explicit censoring explanation there, and some tier ranks are unsupported by the record.",
+    "limits": "Specific windows, lanes, censoring, matching, and extraction limits are discussed near the relevant counts; some coverage limitations could be more precise.",
+    "verdict": "Direct and actionable, with confidence and change conditions; it names heterogeneity and sampling limits but does not squarely address the strongest contrary signal, minimal extracted evidence and zero high-tier share.",
+    "facets": "Addresses evidence quality, trend, comparisons, lanes, overlap, matching, and missing anxiety-specific evidence."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced annual series and delta are given, but CAGR/early-late change and decisive points such as the peak are omitted despite being available.",
+    "comparison": "The pooled estimate is compared with zero and its heterogeneity is stated, but this is not a full measured contrast addressing the evidence-quality question.",
+    "chart": "The annual chart traces and supports a claim; the monthly chart traces all supplied points with window, unit and source, and marks the exclusive endpoint in prose.",
+    "drilldown": "Shows aggregates and selected papers, but follow-up calls are missing args in the declared-call block and breakdown items are not consistently linkable.",
+    "export": "Both series exports trace with source, window, unit and coverage; provenance is present, though row-level hygiene and schema do not fully meet anchor 5.",
+    "repro": "Recorded calls are named but their args are absent from the call block, preventing full regeneration.",
+    "refs": "All cited DOIs resolve per script; claim ties, metadata, tiers and verbatim verified quotes are supplied, with a contrary sample noted.",
+    "accuracy": "Mostly matches the record; it overstates coverage checks as strict index partition and row-floor checks not present in the supplied response and calls the 2025 research period possibly incomplete where the series marks it censored.",
+    "limits": "Window, lane, empty intersection, censoring, coverage, match mode and the limits of news and extracted claims are stated near the relevant results.",
+    "verdict": "Answers directly with a decision, confidence and change condition, and notes heterogeneity and the empty claim intersection; it could more explicitly weigh the minimal claim extraction against supportive selected studies.",
+    "facets": "Covers the clinical question, evidence tiers, trend, lane mismatch, overlap, seasonality/monthly series, and research-news distinction."
+   },
+   "claude_bare": {
+    "trend": "The estimate is labelled, but the claimed tenfold rise is not a traced measured series.",
+    "comparison": "Comparison uses memory estimates and does not establish a checkable same-scale result.",
+    "chart": "Chart is explicitly an estimate, earning the estimate ceiling only.",
+    "drilldown": "Names possible breakdowns and includes follow-up calls, but no traced item layer is provided.",
+    "export": "CSV is explicitly an estimate, with no recorded source response.",
+    "repro": "No calls were run; effect sizes and other figures are estimates from memory.",
+    "refs": "References lack resolving identifiers and the cited specifics are unverified.",
+    "accuracy": "Presents precise-looking trial counts and effect estimates from memory, including claims not supported by the reference record.",
+    "limits": "Clearly labels memory and states unknown coverage, but several decision claims remain ungrounded.",
+    "verdict": "Ceiling is zero: script identifies untagged numbers in the verdict, and the claims are not supported by the record.",
+    "facets": "Most requested measurable facets are either absent or estimated rather than grounded."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

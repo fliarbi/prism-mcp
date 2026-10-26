@@ -1,0 +1,246 @@
+{
+ "slug": "green-hydrogen-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 27.9,
+   "plain": 27.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.4,
+    "gpt": 25.4
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 2.0,
+    "chart": 4.0,
+    "drilldown": 3.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 66.0,
+   "plain": 66.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.2,
+    "gpt": 60.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 22.2,
+   "plain": 22.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.2,
+    "gpt": 20.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 3.5,
+    "chart": 3.0,
+    "drilldown": 1.5,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.0
+   },
+   "strict": 63.8,
+   "plain": 63.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 61.8,
+    "gpt": 65.8
+   }
+  }
+ },
+ "judge_mad": 0.57,
+ "verdicts": {
+  "opus": "A turned the single radar call into a traced trend, framing and new-work picture. It quantified the change, placed limits next to the numbers and listed 10 resolvable DOIs, with only a minor counting slip. C used the same data more thinly and misread the tool's caveats. B and D were honest about having no measurements, and only D engaged the policy-versus-technology split the question raises.",
+  "gpt": "A is the strongest decision aid: it gives a cautious, reproducible research-volume trend and useful new-work examples while distinguishing indexed attention from technical or commercial progress. B is broader, but its miscounted paper list and invalid cross-window growth comparison weaken its conclusions; C and D lack grounded measurements."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Counts '9 most-cited papers' when 10 are listed",
+    "Claims geography is null in c1 although the radar has no geography field"
+   ],
+   "chatgpt_bare": [
+    "Lists call c1 as used for candidate examples although no call was run; reference metadata unverified"
+   ],
+   "chatgpt_prism": [
+    "Misreads the under_covered taxonomy caveat as undermining the news trend's topic specificity",
+    "Asserts the framing comparison does not isolate green hydrogen, which is unsupported"
+   ],
+   "claude_bare": []
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The news-trend description implies the count fell from the 2025 peak to the 2026-05 endpoint, although the record does not establish the peak's position relative to that endpoint."
+   ],
+   "claude_prism": [
+    "Says there are 9 most-cited papers, but the radar returns 10.",
+    "Orientation counts are incorrect: among the ten listed works, 7 are problem_identifying, 1 promising, and 2 breakthroughs.",
+    "Compares late/early research and news ratios despite different windows, making the claim that news grew faster than research unsupported.",
+    "The 2025 partial-year explanation is speculation, not a recorded caveat."
+   ],
+   "chatgpt_bare": [
+    "Candidate titles and DOIs are unverified and do not match the reference record's listed new work; they are not usable as evidence."
+   ],
+   "claude_bare": [
+    "The estimated publication index and capacity figures are not supported by recorded calls.",
+    "The stated research and policy shifts, cost expectations and technology themes are not established by the reference record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Traced first, peak and last values with the window. Gives the CAGR, the 2.46 late-vs-early ratio and the post-peak -16.2% decline. Flags 2025 as possibly partial.",
+    "comparison": "Sets research ratio 2.46 against news ratio 3.43 across different windows and lanes. States the mixing as 'indicative only' but does not resolve it. The framing delta sits in prose, not in the comparison.",
+    "chart": "One fully traced chart with window, unit, source and caption. There is no framing or new-work view, though the data supports both.",
+    "drilldown": "Goes from orientation to papers with DOIs. 4 of 7 follow-ups executed. No follow-up result is folded back into the report.",
+    "export": "Two traced CSVs and a provenance JSON. The trend CSV is barely referenced in the prose. Capped at 3.",
+    "repro": "55 of 55 numbers traced. Calls are listed with args, and derived figures can be recomputed.",
+    "refs": "All 10 DOIs resolve, with year, venue and orientation, and each is tied to a claim. No quotes, and the call returned none.",
+    "accuracy": "Says '9 most-cited papers' when the list has 10. Calls geography 'null in [c1]' although the radar has no geography field.",
+    "limits": "Window gaps, coverage, match mode and censoring sit next to the numbers they bound. States what cannot be answered.",
+    "verdict": "Gives an answer, decision, reasoned confidence and what would change it, consistent with the chart. Does not address the cost-versus-policy split or the +3.6pp cautionary rise as contrary evidence.",
+    "facets": "Covers research trend, news trend, framing, new work and under-covered topics, all grounded."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Topic layers are generic. 0 of 5 follow-ups worked.",
+    "export": "Gap-record CSV only.",
+    "repro": "Lists c1 as used although no call was run. Nothing traces.",
+    "refs": "The DOIs resolve, but the author says the titles and metadata are unverified. Titles look generic, and no claims are tied.",
+    "accuracy": "No measured claims. The listed-but-unrun call is a misrepresentation.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "A qualitative answer with no support.",
+    "facets": "Facets are mostly answered with 'cannot measure' plus memory."
+   },
+   "chatgpt_prism": {
+    "trend": "Endpoints and peak in prose, but the chart omits the available peak point. CAGR is given.",
+    "comparison": "Framing delta is traced and its caveat carried. Adds an unsupported claim that the comparison 'does not isolate green hydrogen'.",
+    "chart": "Traced, but plots only two points and leaves out the peak. Single facet.",
+    "drilldown": "One document layer with DOIs. Only 1 of 6 follow-ups worked.",
+    "export": "Endpoints-only CSV that misses available points. Provenance is present.",
+    "repro": "26 of 27 traced, with the call block given.",
+    "refs": "5 DOIs resolve, each tied to a claim with venue and year.",
+    "accuracy": "Misapplies the under_covered taxonomy caveat to the news trend, saying it is not topic-specific. Also asserts the framing windows are not green-hydrogen specific.",
+    "limits": "Gives the news gap (175 days, correct) and notes coverage and selection caveats, placed next to the numbers.",
+    "verdict": "Supported, but the 'broadened toward' reading is not measured. No contrary evidence is named.",
+    "facets": "Under-covered topics and news are dismissed through misreadings."
+   },
+   "claude_bare": {
+    "trend": "Estimate-labelled memory series.",
+    "comparison": "Memory IEA figures, with the ratio given only qualitatively.",
+    "chart": "Estimate-labelled chart.",
+    "drilldown": "Memory layers. Follow-ups are partly ok.",
+    "export": "Estimate CSV.",
+    "repro": "Memory only.",
+    "refs": "No DOIs. The IEA report and Xie 2022 are recalled and unverified.",
+    "accuracy": "Recalled IEA figures are broadly correct. Everything is labelled est.",
+    "limits": "Honest about being memory-only, with specific gaps listed.",
+    "verdict": "Addresses the policy-versus-technology split with a decision, but rests on memory at low confidence.",
+    "facets": "Facets come mostly from memory."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced trend, window, CAGR and peak; chart and export omit the available late/early decomposition and full points.",
+    "comparison": "Recent and earlier cautionary shares and their delta are traced; it correctly says this comparison is not specific to green-hydrogen papers.",
+    "chart": "The single chart traces its plotted values and supports the trend claim, but shows only endpoints despite the available peak and decomposition.",
+    "drilldown": "It names follow-up questions, but only one of six calls executed successfully with on-topic data and no item-level layer is exposed.",
+    "export": "The two-point trend CSV omits available values, and there is no export of the framing comparison needed to substantiate the prose.",
+    "repro": "Core numbers trace and the main call is reproducible, but follow-up calls lack successful reproduction and the export does not rebuild all reported evidence.",
+    "refs": "DOIs resolve and claims are tied to works, but no supporting abstract quotes are supplied.",
+    "accuracy": "Core figures and limits are sound; however, the news endpoint value is presented as though it follows the May 2025 peak, although the record reports a 2025 peak and a May 2026 endpoint.",
+    "limits": "Window, lane, coverage caveat, matching and the gap to today are described; some limits appear in a general methods section rather than alongside every figure.",
+    "verdict": "Direct and decision-relevant, with medium confidence and a change condition; it does not identify a contrary finding from its evidence.",
+    "facets": "Covers research, selected themes, framing and some news limits, but does not provide a grounded electrolyser-cost versus policy contrast or validated topic split."
+   },
+   "claude_prism": {
+    "trend": "The chart and prose quantify growth, peak and decline, and include the late/early split; trend claims are not all direction-consistent because the prose says 2017–2025 rose while the chart caption claims about 3.4x to the peak and the displayed points show the 2025 fall.",
+    "comparison": "The early/late ratios are traced but research and news have different windows and are explicitly acknowledged as indicative; that does not give a valid same-scale comparison.",
+    "chart": "The research chart traces all plotted values, labels window and unit, and compares endpoints with peak; the question-specific cost-versus-policy facet is not charted.",
+    "drilldown": "It gives orientation and topic layers but no paper-level identifier breakdown, and only four of seven proposed follow-ups returned on-topic data.",
+    "export": "CSV rows trace, but provenance is incomplete and the question needs a full trend series plus usable paper metadata; exports are not decision-ready.",
+    "repro": "Most numbers trace and the source call is listed with args, but some derived claims and the news/research comparison mix different windows, and there is no complete regeneration recipe for every output.",
+    "refs": "Identifiers resolve, but entries are not tied to verbatim abstract quotes or full claim support as required for higher anchors.",
+    "accuracy": "It misstates the number of selected works as nine while listing ten, miscounts their orientations, and treats unlike research/news windows as a growth comparison.",
+    "limits": "It mentions partial 2025, gaps, lanes and matching, but the caveats do not resolve the mixed-window comparison and are not consistently placed with the claims.",
+    "verdict": "The verdict overstates the evidence as fast growth since 2022, lacks a confidence reason tied to the decision, and does not name the contrary evidence of the 2025 decline in a balanced conclusion.",
+    "facets": "It covers volume, framing, new-work themes and a qualified under-covered panel, but not the key distinction between electrolyser cost research and policy research."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series is provided.",
+    "comparison": "No sourced baseline comparison is provided.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Illustrative topic layers are unmeasured and follow-up calls failed to return on-topic data.",
+    "export": "The CSV is an evidence-gap assessment rather than an export of the research evidence needed.",
+    "repro": "No numeric claims trace to executed calls or a reproducible source.",
+    "refs": "The four references are explicitly unverified candidate examples and cannot substantiate the claims.",
+    "accuracy": "The deliverable avoids measured claims, but presents specific candidate titles and DOIs that do not match the reference record's selected works.",
+    "limits": "It clearly says no corpus was queried and distinguishes interpretation from measurement, but the limitations are generic to the absence of data.",
+    "verdict": "It gives a decision and low confidence, but the answer is an unsupported qualitative summary and omits a grounded condition tied to evidence.",
+    "facets": "It does not ground the requested research changes, trends, or cost-versus-policy distinction."
+   },
+   "claude_bare": {
+    "trend": "Only an explicitly labelled estimate chart is supplied; no measured series.",
+    "comparison": "The comparison is an unverified memory estimate and not a traceable same-window comparison.",
+    "chart": "The chart is explicitly illustrative, so it earns the honest estimate anchor only.",
+    "drilldown": "It offers generic topic layers and follow-ups, with no traced evidence breakdown.",
+    "export": "The CSV is an explicitly labelled estimate, not a traced export.",
+    "repro": "No executed calls or reproducible numeric sources support the figures.",
+    "refs": "The recalled report and paper lack verifiable identifiers and metadata support.",
+    "accuracy": "It presents unsupported specifics about research and policy shifts; these are not established by the reference record and some are stated as directional facts.",
+    "limits": "It labels estimates and discloses the lack of calls, but does not give source-specific limits for the recollected figures.",
+    "verdict": "It proposes a decision but the answer rests on estimates, with no evidence-based confidence or contrary finding.",
+    "facets": "The answer is mostly qualitative and estimated, without grounded research or policy evidence."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

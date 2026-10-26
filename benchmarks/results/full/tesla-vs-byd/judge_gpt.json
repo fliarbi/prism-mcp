@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 0,
+    "facets": 5
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 5,
+    "facets": 5
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; only an explicitly unverified memory assertion.",
+    "comparison": "No measured contrast or ratio is available.",
+    "chart": "No chart is supplied.",
+    "drilldown": "Lists proposed calls, but none executed and no traced breakdown is provided.",
+    "export": "No data rows or usable CSV export.",
+    "repro": "No recorded call or sourced numeric claims to replay.",
+    "accuracy": "Clearly distinguishes unavailable measurements from recollection and does not invent counts.",
+    "limits": "Specific about absent measurement, matching, overlap, and the planned window; some limits remain generic.",
+    "verdict": "Directly says it cannot measure and gives a decision and confidence, but the belief about Tesla coverage is only a prior.",
+    "facets": "Identifies the relevant facets but provides grounded values for none."
+   },
+   "B": {
+    "trend": "Traced 24-month series, exact endpoint changes, peaks, and decomposition of critical and positive/negative counts; direction claims are consistent.",
+    "comparison": "Same-window counts, shares, ratios and deltas are grounded, with overlap and undefined-baseline caveats; directly addresses attention versus sales only incompletely.",
+    "chart": "Both terms are charted with all monthly values, window, unit, source and a prose-linked reading.",
+    "drilldown": "Provides term, month and measure breakdowns, but its follow-up calls do not execute with non-empty results in the script.",
+    "export": "Monthly and summary CSVs carry provenance, trace to the response and are referenced in the report.",
+    "repro": "Nearly all numeric claims trace, but the verdict includes the untagged number 145 and prevents a higher score.",
+    "accuracy": "Core figures and field distinctions are sound, but the verdict's unexplained 145 days conflicts with its own roughly 145-day gap only as a precision/provenance issue.",
+    "limits": "Covers cutoff, censoring, corpus coverage, match mode and interpretation near the relevant figures; some tool caveats are summarized.",
+    "verdict": "The script ceiling is zero because the verdict contains an untagged number, triggering the invention gate.",
+    "facets": "Addresses volume, time trend, tone fields, overlap, ambiguity and the sales-attention distinction with grounded values or explicit limits."
+   },
+   "C": {
+    "trend": "Traced monthly series with exact endpoint changes, dated peaks and critical-count decomposition; direction is read consistently.",
+    "comparison": "Same-window ratio, difference and shares recompute, and it distinguishes summed term counts from unique-story totals.",
+    "chart": "Fully traced two-term monthly chart with window, unit, source and a claim-linked caption.",
+    "drilldown": "Gives a traced monthly breakdown, but only one proposed follow-up call executed successfully.",
+    "export": "Monthly and summary CSVs trace to the response and include provenance, identifiers and null-preserving structure where applicable.",
+    "repro": "Calls and window are listed and derived figures are recomputable; one numeric claim is untraced, so it falls short of full traceability.",
+    "accuracy": "Measured values and field meanings are handled carefully; it does not catch all possible source anomalies.",
+    "limits": "States window, cutoff gap, censoring, lane, coverage and match limits beside the relevant claims, though not every caveat is fully unpacked.",
+    "verdict": "Gives a bounded answer, decision, confidence, contrary tone evidence and conditions that would change the conclusion.",
+    "facets": "Covers the implied sales-attention contrast, overlap, seasonality/trends, tone limits and term-matching caveats with grounded values or explicit no-data."
+   },
+   "D": {
+    "trend": "No measured series; only states that the trend cannot be quantified.",
+    "comparison": "No measured ratio or delta is supplied.",
+    "chart": "No chart is supplied.",
+    "drilldown": "Proposed calls are unexecuted and do not provide a traced breakdown.",
+    "export": "No data export is provided.",
+    "repro": "Calls are listed, but their arguments do not reproduce recorded results and no numeric evidence is supplied.",
+    "accuracy": "Makes no unsupported measured claims and accurately marks the absence of data.",
+    "limits": "Explains the absent corpus and relevant methodological limits, but does not measure or report the applicable data-specific cutoff and censoring.",
+    "verdict": "States inability to measure, a decision and confidence, but cannot answer the comparison from evidence.",
+    "facets": "Names the requested facets but grounds none in measured values."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Verdict includes the untagged number 145, which the script flags as invented.",
+    "Describes the returned coverage as full despite the reference noting that row-floor checks do not prove ingest completeness."
+   ],
+   "C": [
+    "Calls the returned series complete; the reference warns that the newest month can be incomplete due to ingest lag and that row-floor checks do not prove ingestion completeness."
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C is the strongest decision deliverable: it compares Tesla and BYD on the same traced monthly scale, quantifies their relative attention and growth, and bounds its conclusion by the corpus and window. B has similarly rich evidence and exports, but its invented verdict number fails the script gate; both reports still need executed follow-ups to explain the observed spikes."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 0,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 5,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

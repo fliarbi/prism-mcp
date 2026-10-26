@@ -1,0 +1,244 @@
+{
+ "slug": "carbon-capture-brief",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.0
+   },
+   "strict": 36.5,
+   "plain": 36.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 34.8,
+    "gpt": 38.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 78.3,
+   "plain": 78.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.8,
+    "gpt": 82.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 0.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 30.1,
+   "plain": 30.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.6,
+    "gpt": 29.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 2.5,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 3.5,
+    "refs": 4.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 3.0
+   },
+   "strict": 65.0,
+   "plain": 65.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 54.8,
+    "gpt": 75.2
+   }
+  }
+ },
+ "judge_mad": 0.57,
+ "verdicts": {
+  "opus": "C was the only deliverable that grounded volumes, stance mix, both trend windows and three-lens geography in traced numbers. It also caught the 1,515 vs 10,735 news-count anomaly and placed its limits next to the numbers. D was clean and well referenced, but it misread the tool's 2.2x thirds ratio as endpoint growth and left the available geography data unused. A and B were honest memory briefs with estimate labels that a decision-maker could not verify. None of the four seriously developed the patents-vs-research contrast the question flagged.",
+  "gpt": "D is the strongest decision brief: it shows the research and patent corpus alongside traced research growth and a recent, slightly declining news series, while keeping the different windows distinct. Its partial monthly export and limited interpretation of what patent counts mean are the main gaps; B is more cautious but has no executed drill-down and less complete chart coverage."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "claude_bare": [],
+   "claude_prism": [
+    "news_monthly.csv is a 7-of-24-month excerpt but is labelled coverage=full",
+    "Institution list skips China University of Petroleum, East China (rank 3 by lift)"
+   ],
+   "chatgpt_prism": [
+    "States research rose '2.2x' from 8,225 to 23,935; 2.2 is the tool's late_vs_early ratio, and the endpoint ratio is 2.91x",
+    "prism-calls entries c1 and c2 have no feature or args"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Operating capacity, emissions, project costs, policy credits, and scenario figures are unverified estimates, not measurements.",
+    "The capacity chart and export are memory estimates, not a traced series."
+   ],
+   "chatgpt_prism": [
+    "The deliverable calls the research series a trend but charts only its endpoints.",
+    "The two untraced numeric claims and undeclared calls reduce reproducibility."
+   ],
+   "chatgpt_bare": [
+    "The charted scenario series is an approximate estimate, not an observed deployment trend.",
+    "The scenario endpoints and storage-capacity quote are not traceable to the benchmark record."
+   ],
+   "claude_prism": [
+    "The monthly news export includes only 7 of 24 months while declaring coverage full.",
+    "The typed research count is described as papers, though the record labels it typed research records."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "Only series is an IEA scenario read from memory and labelled estimate; there is no measured series.",
+    "comparison": "Explicitly declines to compare; no ratio or delta is given.",
+    "chart": "Single chart of memory values labelled estimate.",
+    "drilldown": "Layers named generically; none of the 5 follow-up calls returned data.",
+    "export": "Estimate CSV only; provenance JSON lists no calls.",
+    "repro": "No traced numbers.",
+    "refs": "IPCC and IEA URLs are real, but there are no DOIs and only one quote.",
+    "accuracy": "No contradiction of the record. The scenario points are approximate and honestly labelled (the 2030 value looks low versus NZE).",
+    "limits": "Honest and specific about what was not measured, but cannot place window or lane limits next to numbers.",
+    "verdict": "Direct answer with decision and confidence, but it is not grounded and ignores the research-vs-patent framing.",
+    "facets": "No grounded facets: volumes, stance, trend, geography and patents are all unanswered."
+   },
+   "claude_bare": {
+    "trend": "Capacity series is from memory and labelled estimate.",
+    "comparison": "Numeric comparison table (pipeline and scenarios vs baseline) built entirely from memory.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Breakdown layers come from memory; 4 of 7 follow-up calls executed with data, but nothing was folded back into the report.",
+    "export": "Estimate CSV only.",
+    "repro": "0 of 27 numbers traced.",
+    "refs": "One DOI (IPCC AR6) resolves; the others are generic URLs with no quotes.",
+    "accuracy": "Memory figures are broadly plausible (about 50 Mt operating, 45Q at $85/t); no contradiction of the record.",
+    "limits": "States knowledge cutoff, chart window gap and absence of lanes, but the limits are not tied to measured numbers.",
+    "verdict": "Opinionated and useful decision with a low-medium confidence and its reason, but it rests on unverified numbers.",
+    "facets": "All facets answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Full 24-month news series traced; peak 638 in Oct-2024, CAGR -15.7% and 0.87x stated; research CAGR 14.3% stated; censoring noted in limits. Critical share is described but not charted as a decomposition.",
+    "comparison": "Early vs late thirds across three series, all traced, with the warning not to mix windows. It does not contrast patents against research.",
+    "chart": "One fully traced chart tied to a claim. The research trend and critical share are not charted.",
+    "drilldown": "Traced stance, country and institution layers; 3 of 6 follow-up calls returned data.",
+    "export": "Two traced CSVs plus provenance JSON. The news CSV is a 7-of-24-month excerpt, which is disclosed in prose but flagged coverage=full in the CSV.",
+    "repro": "69 of 69 numbers traced; prism-calls block lists c1 and c2 with args.",
+    "refs": "All 6 DOIs resolve; quotes match key_numbers sentences verbatim; tiers stated.",
+    "accuracy": "Stated as the reference has it. Contested share of 12.5% recomputes correctly. Catches the 1,515 vs 10,735 news mismatch, the 32 blank patent assignees and the undefined 'critical' label.",
+    "limits": "Window ends with gap to today, censoring, mention match mode, the health literature index thinness, title-only patents and counts-as-documents are each placed near their numbers.",
+    "verdict": "Bounded answer with decision, confidence and reason, and what would change it; it barely uses the patent lane.",
+    "facets": "Volumes, stance, trends, geography and institutions are grounded; the patent-vs-research story the question highlights is not developed."
+   },
+   "chatgpt_prism": {
+    "trend": "Research series given only as endpoints. The '2.2x increase' is misattributed: 2.2 is late_vs_early thirds, while the endpoints give 2.91x. The news peak is not named.",
+    "comparison": "News early vs late third, with the 476 delta correct and the baseline defined; there is only one comparison and no patent contrast.",
+    "chart": "One two-point research chart whose caption repeats the 2.2x misreading; the news series is not charted.",
+    "drilldown": "Ceiling is 1; none of the follow-up calls returned data.",
+    "export": "Full 24-month traced CSV with a provenance block, referenced from the prose; only one table.",
+    "repro": "Calls c1 and c2 are declared without feature or args.",
+    "refs": "All 7 DOIs resolve; quote is verbatim; tiers stated.",
+    "accuracy": "Misreads late_vs_early (2.2) as the endpoint growth factor; otherwise faithful.",
+    "limits": "Specific limits: censoring, 144-day gap (correct), mention matching, overlapping labels, lane distinctions.",
+    "verdict": "Bounded, but the decision is thin and does not engage the contrary or patent evidence.",
+    "facets": "Skips available geography and institution data; patents appear only as a count."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "The capacity series is explicitly an estimate from memory, capped at 1.",
+    "comparison": "The capacity, pipeline, and scenario comparison is labeled estimated but cannot be verified on one traced scale.",
+    "chart": "Estimated capacity chart earns the estimate anchor only.",
+    "drilldown": "Capture and storage categories are generic; no traced breakdown or returned follow-up results are included.",
+    "export": "The CSV is an honest estimate, with no recorded source call.",
+    "repro": "Ceiling 0: no calls or numeric claims trace to recorded sources.",
+    "refs": "Sources are remembered and incompletely identified; the script ceiling is 5, but references do not resolve claims with checkable identifiers and quotes.",
+    "accuracy": "The response clearly labels its unmeasured figures as estimates and does not contradict the reference record.",
+    "limits": "It says no corpus calls were run and identifies the unmeasured corpus facets and stale windows.",
+    "verdict": "Direct recommendation, low-medium confidence, and conditions for changing it; evidence is explicitly estimated.",
+    "facets": "It does not ground the research-versus-patent story or corpus trends."
+   },
+   "chatgpt_prism": {
+    "trend": "Research endpoints and the news early/late comparison are quantified; the research chart omits intermediate values, and no news trend chart is provided.",
+    "comparison": "The news comparison uses one defined window and exact early/late totals; its different-call scope caveat is stated.",
+    "chart": "Research chart is traced and supports a claim, but the supported news trend facet is not charted and research is shown only at endpoints.",
+    "drilldown": "The listed follow-ups did not execute successfully, and no traced item-level breakdown is supplied.",
+    "export": "Monthly news rows trace and provenance is present, but no research series export accompanies the reported research trend.",
+    "repro": "Most figures trace and the used news call is replayable, but two numeric claims are untraced and two declared calls were never made.",
+    "refs": "DOIs resolve and works are tied to claims, but the excerpts are incomplete and do not provide verbatim abstract quotes for every item.",
+    "accuracy": "The distinctions between lanes and historical scenario evidence are sound; minor imprecision remains in treating the broad research count as the literature generally.",
+    "limits": "Specific windows, censoring, ingest lag, match meaning, and what the counts cannot establish are stated near the claims.",
+    "verdict": "A bounded direct answer with a diligence decision and conditions, though it does not name contrary evidence beyond the stance caveat.",
+    "facets": "It covers research, news, stance, selected evidence, and grounded absences, but gives little on the patent lane or its relation to research."
+   },
+   "chatgpt_bare": {
+    "trend": "Scenario values are expressly approximate estimates, not a traced observed series; no measured corpus trend is given.",
+    "comparison": "It explains why the available quantities cannot be compared, but supplies no measured contrast.",
+    "chart": "The chart is an estimate and does not trace to a recorded source call.",
+    "drilldown": "Named research targets are not traced breakdowns, and follow-ups failed.",
+    "export": "The CSV contains approximate scenario estimates without recorded-call provenance.",
+    "repro": "No recorded calls reproduce the reported figures.",
+    "refs": "The reference ceiling is 2; the brief lacks corpus-resolving identifiers and complete claim-linked metadata and quotes.",
+    "accuracy": "The answer avoids inventing corpus results, but presents specific storage and scenario figures without a recorded trace.",
+    "limits": "It distinguishes scenario from observation and states the missing corpus and deployment evidence, though lacks corpus-specific limits.",
+    "verdict": "It offers a direct conditional recommendation, but confidence and decision support are not well grounded in the measured evidence.",
+    "facets": "It does not measure research or patent trends, corpus stance, or the research-patent contrast."
+   },
+   "claude_prism": {
+    "trend": "Research growth and recent news decline are quantified; all 24 monthly news points are plotted, with the peak and censor caveat correctly handled.",
+    "comparison": "Defined early/late ratios are reported within their respective windows, with the differing news windows kept separate.",
+    "chart": "The news chart traces all monthly values, states window, unit and source, and its caption reads the peak and movement; it does not chart the research series.",
+    "drilldown": "It exposes several numerical breakdown layers and identifiers, and three follow-up calls returned on-topic data, but results are not folded back into the report and some breakdown items lack identifiers.",
+    "export": "The monthly export contains only 7 of 24 rows despite being labeled full; corpus rows are present, but the needed complete monthly series is missing.",
+    "repro": "The used calls, arguments and capture date are present, and all 69 numeric claims trace within the script ceiling.",
+    "refs": "DOIs resolve and references support claims, but some entries lack quotes or complete claim-specific support details.",
+    "accuracy": "The main counts and directions agree with the record; calling typed records papers and the news monthly CSV coverage full are imprecisions.",
+    "limits": "It states the relevant windows, censoring, lane, mention matching and missing deployment data, though the limits are partly collected in a method section.",
+    "verdict": "Direct and bounded, with confidence and change conditions; it acknowledges publication-bias caveat but not the strongest contrary research papers as evidence.",
+    "facets": "It grounds research, patents, news, stance, geography and research-news divergence, but does not fully interpret what the patent count adds to the comparison."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

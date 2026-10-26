@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 2,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 2,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Every series point is traced and the window is stated. It gives CAGR 3.9% and the late/early ratio of 1.21, names the 2022 trough and the 2025 peak, and carries the tool's 'flat' label. The censored 2025 point is not marked on the series itself.",
+    "comparison": "The stance shares recompute exactly (19.6/32.1/9.0/39.4%) and the support:contradict ratio of 2.18 is correct. The baseline is defined and the framing caveat is carried. It does not resolve the poverty-vs-work contrast.",
+    "chart": "Fully traced with window, unit, source and caption. It charts volume only and does not visibly mark the censored period.",
+    "drilldown": "Goes from volumes to the tally to documents with DOIs and verbatim quotes. 4 of 5 follow-ups executed ok, and they target the missing labour facet. None was run and folded back into the report.",
+    "export": "Two traced CSVs plus a provenance JSON. This is at the ceiling of 3.",
+    "repro": "34 of 36 numbers traced and the calls are listed with args. The $11,400 figure has no trace. The provenance JSON drops the 'claim' argument for c2 and c3.",
+    "refs": "All 7 DOIs resolve, the quotes are verbatim, the tiers are the tool's own, and each reference is tied to a claim. No contrary source exists in the data.",
+    "accuracy": "Measured values match the record. It catches the anomaly that the lane is dominated by the general poverty topic, and flags the Santos document as unread. The $11,400 specific is not in the record, but it is labelled unverified.",
+    "limits": "Gives each window's end, the gap to today, censoring, lane, broad match mode and thin evidence, and states that work effects are unmeasured. Most of this sits in the limits section.",
+    "verdict": "Direct, low confidence with a reason, a stated decision and what would change it, and bounded by the data. It points to the pilot literature rather than restating it.",
+    "facets": "Poverty is answered with grounded values. Work is answered with a grounded 'not measurable'. The counter-evidence call is reported."
+   },
+   "B": {
+    "trend": "No series. This is at the ceiling of 0.",
+    "comparison": "Gives a 4.25 ratio between memory-based Seattle-Denver subgroup estimates whose values are dubious.",
+    "chart": "Memory values cited to r2 and not labelled as estimates.",
+    "drilldown": "Layers are generic and no follow-ups executed (0 of 5).",
+    "export": "A study index from prior knowledge, labelled partial.",
+    "repro": "Nothing traces.",
+    "refs": "The Alaska DOI 10.1257/pol.20170044 is not found in the corpus. The r4 quote is garbled. The Haushofer quote contradicts the claim it is cited for.",
+    "accuracy": "Several errors. The Haushofer journal is inconsistent (AEJ in the text, QJE in the references). Alaska is labelled an RCT. The Haushofer quote is fabricated and inconsistent. The r4 quote is corrupted.",
+    "limits": "Honest and specific that no retrieval was done and that the selection is partial.",
+    "verdict": "Direct, with a decision, confidence and what would change it. It rests on flawed evidence.",
+    "facets": "All answered from memory."
+   },
+   "C": {
+    "trend": "Traced, with the window and the censoring caveat. It quantifies only the endpoint change (+1,431, 35%), omits the 2022 trough and CAGR, and says 'rose' where the tool says 'flat'.",
+    "comparison": "No ratio or delta. It only states that a comparison cannot be computed.",
+    "chart": "Traced with window, unit, source and caption. Volume only.",
+    "drilldown": "One traced breakdown layer. Only 2 of 5 follow-ups executed ok.",
+    "export": "The ceiling is 0 because the declared calls were never made.",
+    "repro": "23 of 23 numbers trace. The prism-calls block lists c1 to c3 without feature or args; the provenance block partly repairs this.",
+    "refs": "Both DOIs resolve, the quote is verbatim and the tiers are given. The set is minimal.",
+    "accuracy": "The 'coverage checks passed strict index partition reads and historical row floors' statement is not in the record. It also misreads the 'flat' direction as rising.",
+    "limits": "Windows with the gap to today, censoring, lane and match mode. At the ceiling of 3.",
+    "verdict": "Direct, with a decision, confidence and reason, and what would change it. It is bounded by the data.",
+    "facets": "Poverty is grounded and work is a grounded 'no data'."
+   },
+   "D": {
+    "trend": "The SPM child-poverty series is cited to Census and cannot be verified. Partly from memory.",
+    "comparison": "Memory comparison of work effects on a percentage-point scale. It addresses the question's contrast.",
+    "chart": "Memory chart with a cited source.",
+    "drilldown": "Generic layers and 0 follow-ups executed.",
+    "export": "Memory CSVs, partly labelled as estimates.",
+    "repro": "Memory only.",
+    "refs": "The 3 DOIs resolve and the others are flagged as unverified. No quotes. Tiered, with contrary sources included.",
+    "accuracy": "The specifics recalled (OpenResearch, Finland, Stockton, SPM) are accurate and uncertain values are labelled est.",
+    "limits": "Specific about the knowledge window, trial duration and what was not measured.",
+    "verdict": "Direct, with a decision, confidence and reason, what would change it, and OpenResearch named as the contrary evidence.",
+    "facets": "Answered from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "The $11,400 UBI figure is not in the reference record (it is labelled ungrounded)."
+   ],
+   "B": [
+    "DOI 10.1257/pol.20170044 is not found in the corpus.",
+    "The Haushofer quote contradicts the finding it is cited for, and the journal is inconsistent (AEJ in the text vs QJE in the references).",
+    "The r4 quote is garbled ('We find a 4. ಕಟ್ಟ').",
+    "Alaska PFD is labelled a randomized controlled trial."
+   ],
+   "C": [
+    "The coverage-check claim ('strict index partition reads, row floors') is not in the record.",
+    "Describes research volume as 'rose' where the tool reports direction 'flat'."
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A was the only deliverable that grounded every facet in traced data and exported it with provenance. It reported the thin evidence honestly (1 of 10 documents read, no work evidence), caught that the lane is dominated by general poverty research, and gave a low-confidence, bounded verdict. D was the most substantively informative on labour supply, but it is entirely from memory. B contains a fabricated DOI and corrupted quotes, and C is accurate but thin, with broken call declarations."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 2,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 2,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

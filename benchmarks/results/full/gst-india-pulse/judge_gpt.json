@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 5
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced monthly series, quantified decline and late/early comparison, with peak and censoring stated.",
+    "comparison": "Exact, defined corpus sentiment baseline and early/late volume comparisons; caveats are carried.",
+    "chart": "The traced monthly chart has window, unit, source, and supports the stated attention claim; relevant tone facets are covered in prose and trend decomposition.",
+    "drilldown": "Provides traced theme/entity/place layers and identifiers, with four of six follow-ups returning useful results; not all headline details are independently traceable here.",
+    "export": "Monthly CSV traces and has provenance, but lacks all needed summary/detail tables and complete export hygiene.",
+    "repro": "Lists the used call with arguments and capture date; numeric claims trace and derived values can be recomputed.",
+    "refs": "No external references; the supplied news headlines have dates and publishers but are not fully evidenced as resolving items.",
+    "accuracy": "Measured claims largely match the record and criticality is distinguished from polarity; the Cameroon explanation and the supposed 40% rate evidence are not established by the supplied call.",
+    "limits": "Places window, censoring, gap, match modes, enrichment lag, and measurement limits alongside the claims.",
+    "verdict": "Direct, bounded answer with confidence and conditions, but does not name contrary evidence from its own positive overall polarity versus late negative months."
+   },
+   "B": {
+    "trend": "Traced monthly series and quantified endpoints, but omits the tool's late/early and critical-series decomposition despite those being available.",
+    "comparison": "Same-window, same-scale September-to-June contrast with recomputable ratio and delta and a clear attention caveat.",
+    "chart": "Monthly chart is traced and relevant, but it does not chart the tone facet the deliverable discusses.",
+    "drilldown": "Headline examples and named panels give some detail, but follow-up execution yielded only two useful calls and the breakdown does not reach fully identified items.",
+    "export": "Monthly CSV is traced and provenance is present, but the question needs more than this one export table.",
+    "repro": "Most numeric claims trace and the principal call is replayable, though one of 30 claims does not trace and the full regenerate recipe is incomplete.",
+    "refs": "Only a Prism result is cited; there are no verified, claim-linked news references with resolving URLs in the supplied record.",
+    "accuracy": "No major contradiction; it correctly separates mentions from decisions and states the polarity measure's limits.",
+    "limits": "Censoring, gap, match mode, and label/sample limitations are explained, though some are consolidated rather than placed at every affected number.",
+    "verdict": "Answers directly with decision, confidence, and a condition, but does not explicitly weigh the strongest contrary evidence in its own results."
+   },
+   "C": {
+    "trend": "The plotted series is explicitly an estimate of collections, not the news quantity asked about.",
+    "comparison": "Slab comparison is memory-based and does not measure news coverage on a checkable scale.",
+    "chart": "Honest estimate label earns the memory-chart anchor; it charts collections rather than news coverage.",
+    "drilldown": "Names layers but supplies no traced breakdown; proposed calls are largely generic or fail to return useful data.",
+    "export": "The event CSV is explicitly recalled and estimated, not a traced export.",
+    "repro": "Numbers are honestly labelled estimates, but calls are not a reproducible measurement recipe.",
+    "refs": "No external references or resolving identifiers are supplied.",
+    "accuracy": "Major event and rate details are unverified and some are presented as factual specifics despite estimate labels; the answer also substitutes collections for news coverage.",
+    "limits": "Clearly states memory-only status, cutoff gap, and which requested measures cannot be measured.",
+    "verdict": "Gives an orientation answer and confidence, but the substantive answer rests on unverified event claims and does not support a decision beyond verification.",
+    "facets": "Only limited event context is addressed from memory; key coverage, tone, trend, and source facets lack grounded values."
+   },
+   "D": {
+    "trend": "No series; the chart is empty.",
+    "comparison": "No measured comparison is made.",
+    "chart": "The chart contains no plotted values.",
+    "drilldown": "No breakdown or executed follow-up; the calls are proposals only.",
+    "export": "No CSV export is provided.",
+    "repro": "No numeric claims to reproduce and no calls were run; the corpus is named only generically as unavailable.",
+    "refs": "No verified references are supplied.",
+    "accuracy": "It avoids unsupported factual claims and accurately states that no corpus was queried.",
+    "limits": "It identifies the missing corpus and several unassessed limits, but cannot state applicable window, censoring, matching, or coverage specifics from a source.",
+    "verdict": "Clear refusal to make unsupported claims, but offers no evidence-based answer or decision beyond obtaining a corpus.",
+    "facets": "It names the missing facets but provides no grounded values or data-backed no-data results."
+   }
+  },
+  "errors": {
+   "A": [
+    "The supplied c1 overview does not establish that the September 2025 spike was caused by GST 2.0 rate rationalisation; A labels this background inference as needing verification.",
+    "The cited headline examples are not shown as resolved article records in the supplied material."
+   ],
+   "B": [
+    "The stated 144-day gap is arithmetically incorrect: 2026-06-01 to 2026-10-23 is 144 days only when counting the interval from the exclusive cutoff; the prose otherwise describes the boundary imprecisely. The reference does not support the claimed specific May 27 headline details in the excerpt provided."
+   ],
+   "C": [
+    "The 56th meeting, slab changes, effective date, insurance exemption, and collections figures are memory estimates rather than verified news-corpus findings; the answer substitutes an economic collection series for the requested news trend."
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it traces the full monthly news series, quantifies attention and tone against a defined baseline, and gives unusually specific limits and follow-up paths. B is cleaner but leaves out available trend decomposition and tone charting; C offers unverified recollection, while D is candid but supplies almost no measured answer."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {
+  "claude_bare": [
+   "repro 1->0"
+  ]
+ }
+}

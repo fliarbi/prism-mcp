@@ -1,0 +1,178 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "A qualitative table only. It explicitly declines to give a ratio.",
+    "chart": "No chart.",
+    "drilldown": "The design-lane breakdown is from memory. None of the 4 follow-ups returned data.",
+    "export": "No CSV.",
+    "repro": "No calls were run. Sources are from memory and the claims are not reproducible.",
+    "refs": "2 of 3 DOIs were not found. The Swiger and Haag citations carry the wrong venue, year and DOI.",
+    "accuracy": "Fabricated-looking citation specifics are presented as fact.",
+    "limits": "Specific about being memory-only, with no window or counts. Most limits sit in the footer.",
+    "verdict": "The answer, decision, confidence and what would change it are clinically sound. However, the verdict leans on mis-cited references.",
+    "facets": "No grounded volumes or tallies. Everything is from memory."
+   },
+   "B": {
+    "comparison": "The RR contrast uses memory numbers labelled est.",
+    "chart": "No chart.",
+    "drilldown": "Generic layers are named. Only 1 of 6 follow-ups returned data.",
+    "export": "A CSV labelled estimate.",
+    "repro": "0 of 13 numbers traced.",
+    "refs": "No identifiers are given. The named works are real but unresolvable here.",
+    "accuracy": "No contradictions, and figures are honestly labelled est.",
+    "limits": "States the gap to today, trial censoring and memory status, but no data-specific limits.",
+    "verdict": "A sound clinical verdict, at the ceiling.",
+    "facets": "Memory-only. No grounded tallies."
+   },
+   "C": {
+    "comparison": "The 5.7:1 ratio and the 85,745 delta recompute correctly. It carries the caveat that volume is not strength.",
+    "chart": "No chart.",
+    "drilldown": "None of the 3 follow-ups returned data, so it is at the ceiling.",
+    "export": "A traced tally CSV with provenance JSON and a blank kept for the null. Window and coverage are unknown, and there is only one table.",
+    "repro": "30 of 37 traced. Memory effect sizes (OR 0.80, 36 studies) are mixed in under [r] tags.",
+    "refs": "4 of 8 DOIs not found per the script (the misses may be parse artifacts). At the ceiling; quotes are unverified.",
+    "accuracy": "Misreads the strongest-source field: the observational meta-analysis is claim B's source, while claim A's is an off-topic depression paper. It misses that anomaly.",
+    "limits": "States that no window was returned and that counts are not cases, with limits placed reasonably.",
+    "verdict": "Direct and sound, with decision, confidence and conditions.",
+    "facets": "Both claims' volumes, lanes and tallies are grounded. The off-topic anomaly is missed."
+   },
+   "D": {
+    "comparison": "Ratios of 5.7, 5.6 and 4.0 and the +0.8pt delta recompute against the B baseline. It carries the 'more evidence is not more true' caveat and says what the data cannot test.",
+    "chart": "The single chart traces but shows bare volume levels. The stance or read tallies are not charted, and the window is mislabelled as the capture date.",
+    "drilldown": "One traced stance layer. Only 1 of 6 follow-ups returned data.",
+    "export": "Two traced CSVs with provenance JSON. The window field uses the capture date although the tool returned none.",
+    "repro": "34 of 35 traced, the call is listed with args, and derived numbers are recomputable.",
+    "refs": "Both DOIs resolve, are tied to claims and have tiers stated. No quotes are given.",
+    "accuracy": "Catches the off-topic strongest source for claim A, the subject-lane meaning and the tiny read sample. The minor flaw is the window mislabel.",
+    "limits": "Limits are placed with the numbers: the tiny read sample, the subject lane and the 17 both-poles papers. It also states what would close the gap.",
+    "verdict": "Low confidence with reason, decision and what would change it, bounded by the data. It lacks the trial-level balance an expert would add.",
+    "facets": "All measured facets are grounded and anomalies flagged. The tier-weighting is thin."
+   }
+  },
+  "errors": {
+   "A": [
+    "Swiger KJ meta-analysis cited as Archives of Internal Medicine 2012 with a non-resolving DOI; it was published in Mayo Clinic Proceedings in 2013.",
+    "Haag MDM Rotterdam statin study cited as Neurology 2013 with a non-resolving DOI; it was published in J Neurol Neurosurg Psychiatry in 2009."
+   ],
+   "B": [],
+   "C": [
+    "Attributes the observational meta-analysis as the strongest-source context for the 'reduce dementia risk' claim. In the record it is claim B's strongest source; claim A's is an off-topic depression paper.",
+    "Effect sizes from memory are presented with reference tags rather than marked as estimates."
+   ],
+   "D": [
+    "Chart and CSV window given as 2026-10-23..2026-10-23 although the tool returned an empty window."
+   ]
+  },
+  "best": "D",
+  "verdict": "D traced nearly every number to the single comparison call and computed exact ratios. It also flagged the record's own anomaly: the off-topic depression paper returned as claim A's strongest source. C traced the same tallies but misread that field and mixed memory effect sizes into the measured layer. A and B gave reasonable clinical verdicts from memory but no measured balance, and A's citations contain fabricated venue and DOI details."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

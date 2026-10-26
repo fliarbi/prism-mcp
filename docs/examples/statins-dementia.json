@@ -1,0 +1,88 @@
+{
+ "slug": "statins-dementia",
+ "captured_at": "2026-10-22T23:50:34+0530",
+ "calls": [
+  {
+   "tool": "compare_claims",
+   "feature": "research.compare",
+   "args": {
+    "claim_a": "Statins reduce dementia risk",
+    "claim_b": "Statins impair cognitive function"
+   },
+   "seconds": 260.5,
+   "response": {
+    "ok": true,
+    "feature": "research.compare",
+    "subject": {},
+    "data": {
+     "a": {
+      "claim": "Statins reduce dementia risk",
+      "available": true,
+      "lane": "subject",
+      "lane_note": null,
+      "papers_both_poles": null,
+      "papers_subject": 104164,
+      "documents_read": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 11,
+       "unread": 2
+      },
+      "corpus_mix": {
+       "supporting": 38686,
+       "qualifying": 21088,
+       "contradicting": 1439,
+       "neutral": 42951
+      },
+      "contested_pct": 21.6,
+      "top_tier": 6,
+      "strongest_source": {
+       "title": "Dementia risk estimates associated with measures of depression: a systematic review and meta-analysis",
+       "tier": "meta_analysis",
+       "year": 2015,
+       "url": "https://doi.org/10.1136/bmjopen-2015-008853",
+       "stance": "unrelated"
+      }
+     },
+     "b": {
+      "claim": "Statins impair cognitive function",
+      "available": true,
+      "lane": "subject",
+      "lane_note": "only 17 papers cover both sides of this claim, so the evidence below is about statin therapy, statin use alone and does not establish the connection the claim asserts",
+      "papers_both_poles": 17,
+      "papers_subject": 18419,
+      "documents_read": {
+       "supports": 0,
+       "contradicts": 2,
+       "qualifies": 0,
+       "unrelated": 10,
+       "unread": 2
+      },
+      "corpus_mix": {
+       "supporting": 6930,
+       "qualifying": 3481,
+       "contradicting": 356,
+       "neutral": 7652
+      },
+      "contested_pct": 20.8,
+      "top_tier": 6,
+      "strongest_source": {
+       "title": "Statin use and risk of dementia or Alzheimer’s disease: a systematic review and meta-analysis of observational studies",
+       "tier": "meta_analysis",
+       "year": 2021,
+       "url": "https://doi.org/10.1093/eurjpc/zwab208",
+       "stance": "contradicts"
+      }
+     },
+     "verdict": "the first claim has more evidence behind it"
+    },
+    "window": {},
+    "meta": {
+     "caveat": "more evidence is not the same as more true — a heavily studied claim can be heavily contested, which is what the contested share is for",
+     "seconds": 260.5
+    }
+   }
+  }
+ ]
+}

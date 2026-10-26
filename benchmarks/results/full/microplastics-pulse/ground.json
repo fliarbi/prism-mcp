@@ -1,0 +1,608 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 712,
+  "charts": [
+   {
+    "id": "trend-index",
+    "title": "Illustrative relative intensity of microplastics news coverage (peak year = 100)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Estimated coverage intensity",
+      "how": "estimate",
+      "points": 7,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "milestones.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly volume of microplastics news over the last 36 months?",
+    "args": {
+     "term": "microplastics",
+     "window": "36m",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='36m', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does microplastics tone compare with the corpus baseline?",
+    "args": {
+     "term": "microplastics",
+     "metric": "sentiment",
+     "baseline": "all"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...nt', 'baseline': 'all'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sentiment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical headlines exist, with date, publisher and url?",
+    "args": {
+     "term": "microplastics",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 18.1,
+    "sample": "{\"articles\": [], \"returned\": 0, \"requested\": 8, \"unresolved\": 8, \"relevance_or_duplicate_rejections\": 0, \"entity_identity_verified\": false, \"identity_note\": \"Visible term matching does not disambiguate homonyms such as Apple; inspect article context.\", \"unresolved_note\": \"some ids no longer have a record in the article store — rotated out, not an error\"}"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries are covered, and what is placed_pct?",
+    "args": {
+     "term": "microplastics"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.5,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 2138, \"share_pct\": 33.1, \"lift\": 1.4}, {\"label\": \"united kingdom\", \"articles\": 567, \"share_pct\": 8.8, \"lift\": 1.8}, {\"label\": \"france\", \"articles\": 416, \"share_pct\": 6.4, \"lift\": 3.7}, {\"label\": \"china\", \"articles\": 255, \"share_pct\": 3.9, \"lift\": 0.8}, {\"label\": \"canada\", \"articles\": 252, \"share_pct\": 3.9, \"lift\": 1.1}, {\"label\": \"india\", \"articles\": 215, \"share_pct\": 3.3, \"lift\": 0.5}, {\"label\": \"new zealand\", \"articles\": 206, \"share_pct\": 3.2, \"lift\": 5.1}, {\"label\": \"australia\", \"articles\": 198, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"germany\", \"articles\": 159, \"share_pct\": 2.5, \"lift\": 2.0}, {\"label\": \"spain\", \"artic"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which organisations, people and themes dominate?",
+    "args": {
+     "term": "microplastics"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 37.5,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"microplastics\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 4966, \"entity_labelled_articles\": 4496, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 12920, \"critical_articles\": 11179, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 20:46:35\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage across publishers?",
+    "args": {
+     "term": "microplastics",
+     "breakdown": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 6,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 136,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 878,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly microplastics articles (mention match)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_microplastics.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove the March 2025 spike?",
+    "args": {
+     "term": "microplastics",
+     "from": "2025-03-01",
+     "to": "2025-04-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "Which critical headlines ran in 2026?",
+    "args": {
+     "term": "microplastics",
+     "since": "2026-01-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What happened after 2026-05-31?",
+    "args": {
+     "term": "microplastics",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'microplastics' in this window",
+    "seconds": 0.2,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "Is tone different in the US vs UK?",
+    "args": {
+     "term": "microplastics",
+     "country": "united states"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='united states', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does microplastics compare with nanoplastics?",
+    "args": {
+     "terms": [
+      "microplastics",
+      "nanoplastics"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.6,
+    "sample": "{\"terms\": [\"microplastics\", \"nanoplastics\"], \"rows\": [{\"term\": \"microplastics\", \"articles\": 12920, \"share_pct\": 79.9, \"critical\": 11179, \"direction\": \"rising\", \"growth\": 1.27, \"tone_ratio\": 0.87, \"vs_baseline\": 1.5, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 377, \"critical\": 296, \"negative\": 148, \"positive\": 206, \"mean_priority\": 6.65, \"critical_pct\": 78.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 317, \"critical\": 272, \"negative\": 145, \"positive\": 163, \"mean_priority\": 6.94, \"critical_pct\": 85.8, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 388, \"critical\": 327, \"negative\": 212, \"positive\": 166, \"mean_priority\": 6.85, \"critical_pct\": 84.3, \"partia"
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What does research say about health effects?",
+    "args": {
+     "term": "microplastics health"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'microplastics health'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics health', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 67,
+   "traced": 67,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 110,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 316,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How did monthly microplastics news volume change across a defined window?",
+    "args": {
+     "term": "microplastics",
+     "window": "define dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does its volume compare with a stated news corpus baseline?",
+    "args": {
+     "term": "microplastics",
+     "baseline": "define corpus",
+     "window": "define dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...indow': 'define dates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What themes, organisations, and people appear in the coverage?",
+    "args": {
+     "term": "microplastics",
+     "window": "define dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are mentioned, and what share of articles have place data?",
+    "args": {
+     "term": "microplastics",
+     "window": "define dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is the coverage sentiment relative to the corpus baseline?",
+    "args": {
+     "term": "microplastics",
+     "window": "define dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which critical headlines appeared, on what dates, and in which outlets?",
+    "args": {
+     "term": "microplastics",
+     "window": "define dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='define dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": false,
+   "words": 107,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 800,
+  "charts": [
+   {
+    "id": "microplastics-monthly-volume",
+    "title": "Monthly news articles mentioning microplastics",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "microplastics_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "microplastics_sentiment.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which critical microplastics headlines, with dates and publishers, are available in a refreshed article sample?",
+    "args": {
+     "term": "microplastics",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 17.6,
+    "sample": "{\"articles\": [], \"returned\": 0, \"requested\": 8, \"unresolved\": 8, \"relevance_or_duplicate_rejections\": 0, \"entity_identity_verified\": false, \"identity_note\": \"Visible term matching does not disambiguate homonyms such as Apple; inspect article context.\", \"unresolved_note\": \"some ids no longer have a record in the article store — rotated out, not an error\"}"
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which publishers account for the most microplastics coverage in a larger sample?",
+    "args": {
+     "term": "microplastics",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.5,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"microplastics\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 4966, \"entity_labelled_articles\": 4496, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 12920, \"critical_articles\": 11179, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 20:46:35\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does microplastics sentiment compare with other environmental topics over the same window?",
+    "args": {
+     "terms": [
+      "microplastics",
+      "plastic pollution"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 20.5,
+    "sample": "{\"terms\": [\"microplastics\", \"plastic pollution\"], \"rows\": [{\"term\": \"microplastics\", \"articles\": 12920, \"share_pct\": 58.8, \"critical\": 11179, \"direction\": \"rising\", \"growth\": 1.27, \"tone_ratio\": 0.87, \"vs_baseline\": 1.5, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 377, \"critical\": 296, \"negative\": 148, \"positive\": 206, \"mean_priority\": 6.65, \"critical_pct\": 78.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 317, \"critical\": 272, \"negative\": 145, \"positive\": 163, \"mean_priority\": 6.94, \"critical_pct\": 85.8, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 388, \"critical\": 327, \"negative\": 212, \"positive\": 166, \"mean_priority\": 6.85, \"critical_pct\": 84.3, \"p"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What stories drove the March 2025 volume spike?",
+    "args": {
+     "term": "microplastics",
+     "since": "2025-03-01",
+     "until": "2025-04-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 33,
+   "traced": 33,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 119,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

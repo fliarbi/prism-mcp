@@ -1,0 +1,669 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 815,
+  "charts": [
+   {
+    "id": "tone-landmarks",
+    "title": "Interpretive tone score of landmark IF publications (est.)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Tone of landmark item (est.)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "landmark_tone.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly orientation series for intermittent fasting, 2012–2026?",
+    "args": {
+     "term": "intermittent fasting"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"intermittent fasting\", \"time-restricted feeding\", \"alternate day fasting\", \"periodic fasting\", \"fasting interventions\"], \"points\": [{\"year\": 2017, \"total\": 91, \"orientation\": {\"breakthrough\": 3, \"descriptive\": 3, \"comparative\": 2, \"cautionary\": 9, \"critical\": 2, \"promising\": 16, \"problem_identifying\": 2}, \"stance_score\": null, \"positive\": 19, \"contested\": 13, \"positive_pct\": 20.9, \"contested_pct\": 14.3}, {\"year\": 2018, \"total\": 123, \"orientation\": {\"critical\": 2, \"descriptive\": 14, \"promising\": 30, \"breakthrough\": 1, \"cautionary\": 7, \"comparative\": 5, \"problem_identifying\": 2}, \"stance_score\": null, \"positive\": 31, \"contested\": 11, \"positive_pct"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers are the critical examples?",
+    "args": {
+     "term": "intermittent fasting",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...t fasting', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers are the promising examples?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "promising",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1544, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7124227324\", \"title\": \"Reactivity of Isolated Arteries After 5-Week-Lasting Period of Intermittent Fasting Followed by the Return to Ad Libitum Regimen in Healthy Rats Fed With Normal and High-Fat Diet.\", \"authors\": [\"Anna Zemančíková\", \"J Török\", \"M Kvandová\", \"M Olos\", \"P Bališ\"], \"venue\": \"the health literature index\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": null, \"url\": null, \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_score"
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which years are thin?",
+    "args": {
+     "term": "intermittent fasting",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...fasting', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "Does adding 'time-restricted eating' change the trend?",
+    "args": {
+     "term": "time-restricted eating"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"time-restricted eating\", \"intermittent fasting\", \"time-restricted feeding\", \"early time-restricted feeding\", \"circadian eating pattern\"], \"points\": [{\"year\": 2017, \"total\": 90, \"orientation\": {\"problem_identifying\": 3, \"descriptive\": 8, \"promising\": 19, \"breakthrough\": 3, \"critical\": 3, \"cautionary\": 13, \"comparative\": 5}, \"stance_score\": null, \"positive\": 22, \"contested\": 19, \"positive_pct\": 24.4, \"contested_pct\": 21.1}, {\"year\": 2018, \"total\": 124, \"orientation\": {\"descriptive\": 15, \"comparative\": 4, \"promising\": 37, \"problem_identifying\": 2, \"breakthrough\": 1, \"cautionary\": 14, \"critical\": 2}, \"stance_score\": null, \"positive\": 38, \"contested\""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How did news framing compare with research?",
+    "args": {
+     "term": "intermittent fasting"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'intermittent fasting'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 16,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "+1 — The chart is an illustrative, hand-coded ordinal score of tone for the landmark items abov",
+    "-1 — The chart is an illustrative, hand-coded ordinal score of tone for the landmark items abov"
+   ]
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 126,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 916,
+  "charts": [
+   {
+    "id": "if-stance-share",
+    "title": "Share of IF papers framed positive vs contested, by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "positive_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "contested_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "if_stance_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are the critical ones, and when were they published?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 56, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117129335\", \"title\": \"Psychological and Psychiatric Consequences of Prolonged Fasting: Neurobiological, Clinical, and Therapeutic Perspectives\", \"authors\": [\"Vincenzo Bonaccorsi\", \"Vincenzo Maria Romeo\"], \"venue\": \"Nutrients\", \"year\": 2025, \"date\": \"2025-12-24\", \"doi\": \"10.3390/nu18010060\", \"url\": \"https://doi.org/10.3390/nu18010060\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"review\", \"stance_score\": -0.4, \"topics\": [\"Dietary Effe"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which cautionary papers drove the 2020 and 2023 bumps?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "cautionary",
+     "sort": "cited",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 457, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W3036735910\", \"title\": \"Calorie Restriction and Aging in Humans\", \"authors\": [\"Emily W. Flanagan\", \"Jasper Most\", \"Jacob T. Mey\", \"Leanne M. Redman\"], \"venue\": \"Annual Review of Nutrition\", \"year\": 2020, \"date\": \"2020-06-19\", \"doi\": \"10.1146/annurev-nutr-122319-034601\", \"url\": \"https://doi.org/10.1146/annurev-nutr-122319-034601\", \"cited_by\": 224, \"orientation\": \"cautionary\", \"contribution\": \"review\", \"stance_score\": -0.2, \"topics\": [\"Dietary Effect"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What does the counter-evidence look like for weight loss claims?",
+    "args": {
+     "term": "intermittent fasting"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'intermittent fasting'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "What do randomized trials alone show?",
+    "args": {
+     "term": "intermittent fasting",
+     "contribution": "empirical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2031, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7124227324\", \"title\": \"Reactivity of Isolated Arteries After 5-Week-Lasting Period of Intermittent Fasting Followed by the Return to Ad Libitum Regimen in Healthy Rats Fed With Normal and High-Fat Diet.\", \"authors\": [\"Anna Zemančíková\", \"J Török\", \"M Kvandová\", \"M Olos\", \"P Bališ\"], \"venue\": \"the health literature index\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": null, \"url\": null, \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_score"
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "Do news tone and research tone diverge?",
+    "args": {
+     "term": "intermittent fasting"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'intermittent fasting'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.stance_trends",
+    "question": "Is the trend different for time-restricted feeding alone?",
+    "args": {
+     "term": "time-restricted feeding"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"time-restricted feeding\", \"intermittent fasting\", \"circadian feeding\"], \"points\": [{\"year\": 2017, \"total\": 90, \"orientation\": {\"comparative\": 5, \"critical\": 2, \"problem_identifying\": 3, \"descriptive\": 9, \"breakthrough\": 3, \"cautionary\": 13, \"promising\": 18}, \"stance_score\": null, \"positive\": 21, \"contested\": 18, \"positive_pct\": 23.3, \"contested_pct\": 20.0}, {\"year\": 2018, \"total\": 121, \"orientation\": {\"descriptive\": 6, \"comparative\": 5, \"promising\": 37, \"problem_identifying\": 2, \"cautionary\": 14, \"critical\": 2, \"breakthrough\": 1}, \"stance_score\": null, \"positive\": 38, \"contested\": 18, \"positive_pct\": 31.4, \"contested_pct\": 14.9}, {\"year\": 2019, "
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 71,
+   "traced": 71,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 127,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 804,
+  "charts": [
+   {
+    "id": "orientation-examples",
+    "title": "Selected research framing examples on intermittent fasting",
+    "kind": "hbar",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Potential metabolic benefit tested",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "No clear advantage over daily restriction",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Little or no weight-loss difference; evidence uncertain",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "selected_examples.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the annual distribution of positive, neutral, and critical research findings on intermittent fasting?",
+    "args": {
+     "term": "intermittent fasting",
+     "start_year": 2010,
+     "end_year": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nstart_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2010, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nend_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which studies drove positive conclusions in the early period?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "promising",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1544, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7124227324\", \"title\": \"Reactivity of Isolated Arteries After 5-Week-Lasting Period of Intermittent Fasting Followed by the Return to Ad Libitum Regimen in Healthy Rats Fed With Normal and High-Fat Diet.\", \"authors\": [\"Anna Zemančíková\", \"J Török\", \"M Kvandová\", \"M Olos\", \"P Bališ\"], \"venue\": \"the health literature index\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": null, \"url\": null, \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_score"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which studies drove critical conclusions in the later period?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 56, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 9, \"papers\": [{\"id\": \"W7117129335\", \"title\": \"Psychological and Psychiatric Consequences of Prolonged Fasting: Neurobiological, Clinical, and Therapeutic Perspectives\", \"authors\": [\"Vincenzo Bonaccorsi\", \"Vincenzo Maria Romeo\"], \"venue\": \"Nutrients\", \"year\": 2025, \"date\": \"2025-12-24\", \"doi\": \"10.3390/nu18010060\", \"url\": \"https://doi.org/10.3390/nu18010060\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"review\", \"stance_score\": -0.4, \"topics\": [\"Dietary Effe"
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "How do findings differ by outcome, including weight, cardiometabolic markers, and adherence?",
+    "args": {
+     "term": "intermittent fasting",
+     "group_by": "outcome",
+     "compare_periods": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...compare_periods': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...compare_periods': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='outcome', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_periods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "How sensitive is the trend to including time-restricted eating and alternate-day fasting as search terms?",
+    "args": {
+     "terms": [
+      "intermittent fasting",
+      "time-restricted eating",
+      "alternate-day fasting"
+     ],
+     "compare_terms": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'compare_terms': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['intermittent fasting', ...'alternate-day fasting'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_terms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.statistics",
+    "question": "Which years have sparse coverage in the relevant evidence corpus?",
+    "args": {
+     "term": "intermittent fasting",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...g', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": [
+    "10.1002/14651858.cd013496.pub2"
+   ]
+  },
+  "verdict_structure": {
+   "four_lines": false,
+   "words": 132,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 861,
+  "charts": [
+   {
+    "id": "orientation-counts",
+    "title": "Papers framed as promising or cautionary, intermittent fasting research",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Promising",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Cautionary",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "orientation-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 72,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "period-summary.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which critical papers drove the late-period counts, and what outcomes did they report?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "critical",
+     "sort": "recent",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 56, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117129335\", \"title\": \"Psychological and Psychiatric Consequences of Prolonged Fasting: Neurobiological, Clinical, and Therapeutic Perspectives\", \"authors\": [\"Vincenzo Bonaccorsi\", \"Vincenzo Maria Romeo\"], \"venue\": \"Nutrients\", \"year\": 2025, \"date\": \"2025-12-24\", \"doi\": \"10.3390/nu18010060\", \"url\": \"https://doi.org/10.3390/nu18010060\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"review\", \"stance_score\": -0.4, \"topics\": [\"Dietary Effe"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which promising papers drove the 2025 increase, by study design and outcome?",
+    "args": {
+     "term": "intermittent fasting",
+     "orientation": "promising",
+     "sort": "recent",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1544, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 18, \"papers\": [{\"id\": \"W7124227324\", \"title\": \"Reactivity of Isolated Arteries After 5-Week-Lasting Period of Intermittent Fasting Followed by the Return to Ad Libitum Regimen in Healthy Rats Fed With Normal and High-Fat Diet.\", \"authors\": [\"Anna Zemančíková\", \"J Török\", \"M Kvandová\", \"M Olos\", \"P Bališ\"], \"venue\": \"the health literature index\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": null, \"url\": null, \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_scor"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How do yearly orientation shares change when papers are restricted to the exact phrase intermittent fasting?",
+    "args": {
+     "term": "intermittent fasting",
+     "expand": false
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"intermittent fasting\", \"time-restricted feeding\", \"alternate day fasting\", \"periodic fasting\", \"fasting interventions\"], \"points\": [{\"year\": 2017, \"total\": 91, \"orientation\": {\"descriptive\": 3, \"comparative\": 5, \"promising\": 18, \"breakthrough\": 2, \"problem_identifying\": 4, \"critical\": 3, \"cautionary\": 13}, \"stance_score\": null, \"positive\": 20, \"contested\": 20, \"positive_pct\": 22.0, \"contested_pct\": 22.0}, {\"year\": 2018, \"total\": 123, \"orientation\": {\"promising\": 38, \"descriptive\": 6, \"critical\": 2, \"breakthrough\": 1, \"comparative\": 5, \"cautionary\": 14, \"problem_identifying\": 2}, \"stance_score\": null, \"positive\": 39, \"contested\": 18, \"positive_pc"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "What do randomized clinical trials show about benefits and harms by fasting protocol?",
+    "args": {
+     "term": "intermittent fasting",
+     "contribution": "empirical",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mpirical', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='intermittent fasting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncontribution\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='empirical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 19,
+   "traced": 18,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

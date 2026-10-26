@@ -1,0 +1,243 @@
+{
+ "slug": "digital-arrest-scam",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 28.6,
+   "plain": 28.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 26.4,
+    "gpt": 30.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 2.5,
+    "export": 2.5,
+    "repro": 3.5,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 61.5,
+   "plain": 61.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.0,
+    "gpt": 50.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 23.8,
+   "plain": 23.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 21.8,
+    "gpt": 25.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.5,
+    "export": 4.5,
+    "repro": 4.5,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 74.8,
+   "plain": 74.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 64.2,
+    "gpt": 85.4
+   }
+  }
+ },
+ "judge_mad": 0.64,
+ "verdicts": {
+  "opus": "C and B both grounded their work in the same traced corpus call. C went further: it decomposed critical against total coverage, surfaced dated headlines with URLs, and flagged entity-label artefacts. B gave cleaner exports but misread the censoring and omitted headlines. A and D had no measured data; A declined honestly, while D offered memory estimates about a different quantity.",
+  "gpt": "A is the strongest decision aid: it answers the question with a traced, correctly qualified coverage trend, tone comparison, useful breakdowns, and reproducible exports. C offers broad coverage of facets but misreads the overall direction and censoring, while B and D either rely on estimates or cannot measure the requested reporting pattern."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Treats the May 2026 bucket as censored or partial, when censoring applies from 2026-06-01."
+   ],
+   "claude_prism": [
+    "Export is a 6-row subset labelled coverage=full."
+   ],
+   "claude_bare": [
+    "Recalled 2022 loss of ~₹7,400 crore likely matches the 2023 figure, so the year appears misattributed (labelled est.).",
+    "Asserts 'fast-growing' without measured support."
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Says all listed news index partition passed reachability and historical row-floor checks, a claim not established by the reference record."
+   ],
+   "claude_bare": [
+    "Presents recalled case counts, loss totals, account blocks, and legal/political developments without resolvable sources; estimates are labelled, but they do not answer the requested corpus facets."
+   ],
+   "claude_prism": [
+    "Calls the window complete despite the censored May 2026 bucket.",
+    "Describes overall coverage as growing although the reference direction is flat.",
+    "Misdates the 80.7% critical share: it is February 2025, not July 2025.",
+    "Claims a 2026-05 label fill of about 4%; the enrichment panel reports 4.3% country and 4.0% organization coverage for May, not a general label-fill measure.",
+    "States the headline/publisher matching is central without preserving that the aggregate trend and theme panels use mention matching."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "There is no series.",
+    "comparison": "There is no comparison.",
+    "chart": "There is no chart.",
+    "drilldown": "The proposed follow-up calls all failed (0/5).",
+    "export": "There is no CSV.",
+    "repro": "No numbers are given, and the deliverable says so honestly.",
+    "refs": "There are no references.",
+    "accuracy": "It makes no claims to contradict, so it gets the empty-deliverable 3.",
+    "limits": "It is specific about what it could not measure.",
+    "verdict": "It gives a qualitative answer with confidence and conditions, but no numbers support it.",
+    "facets": "Almost no facet is answered with grounded values."
+   },
+   "chatgpt_prism": {
+    "trend": "The series is fully traced, with window, peak and late/early ratio of 1.17 (delta 326). It does not decompose total vs critical.",
+    "comparison": "The early-vs-late third and the tone baseline are both defined and recompute exactly.",
+    "chart": "There is one volume chart and no tone view. The caption calls May 2026 censored, but that bucket is not a partial period.",
+    "drilldown": "Theme, entity and publisher layers are traced. There are no headline items with URLs, and 3 of 5 follow-ups worked.",
+    "export": "It has two traced CSVs with provenance, both referenced in the prose. Item identifiers are missing.",
+    "repro": "All 38 of 38 numbers trace, calls are listed, and the 144-day gap is exact.",
+    "refs": "Headlines exist in the feed, but none are cited with an identifier.",
+    "accuracy": "It misreads the censoring: it says the May bucket is censored, when censoring applies from 2026-06-01.",
+    "limits": "Gap, match mode, placed_pct and machine labels are stated where the numbers are used.",
+    "verdict": "The verdict is sound, but it ignores its own contrary signal: the critical series is rising.",
+    "facets": "Headlines are missing; the other facets are covered."
+   },
+   "claude_prism": {
+    "trend": "Total and critical series are both traced. Peaks are named, ratios given (1.17 vs 1.32), the critical share shift is exact, and the CAGR is caveated.",
+    "comparison": "The tone baseline is defined, the 18.76x ratio is carried, and the monthly ratio range is explained by thin positive counts.",
+    "chart": "The chart overlays critical on total, but tone is not charted.",
+    "drilldown": "Headlines carry publisher, date and URL. 2 of 6 follow-ups worked, which caps the score.",
+    "export": "The single CSV is a cherry-picked 6-row subset labelled coverage=full.",
+    "repro": "All 91 of 91 numbers trace and calls are listed. The export subset limits regeneration.",
+    "refs": "News items carry URLs, but the script could not verify them, which caps the score.",
+    "accuracy": "It catches anomalies: Immanuel Kant as an artefact, generic sim/apk/kyc labels, duplicate Outlook entries, and the small-base CAGR.",
+    "limits": "It states the window, gap, enrichment bound and match mode (ceiling 3).",
+    "verdict": "It covers answer, decision, confidence and what would change it, and acknowledges the flat-vs-rising contrast. 'Older victims' is not measured.",
+    "facets": "Nearly all facets are grounded. The research and official lanes were not queried."
+   },
+   "claude_bare": {
+    "trend": "It gives an estimate-labelled series, and of the wrong quantity (all cyber-fraud losses).",
+    "comparison": "It compares memory figures that are off the question's topic.",
+    "chart": "It is an estimate-labelled memory chart.",
+    "drilldown": "There is no traced layer, and only 3 of 7 follow-ups worked.",
+    "export": "It is an estimate-labelled memory table.",
+    "repro": "Every figure is a memory estimate.",
+    "refs": "It names no verifiable sources.",
+    "accuracy": "The recalled loss years look shifted: roughly ₹7.4k crore is the 2023 figure, not 2022. 'Fast-growing' is unsupported.",
+    "limits": "It is honest about what is unmeasured and about the gap.",
+    "verdict": "It answers from memory with low confidence. The growth claim is unbacked.",
+    "facets": "Facets are answered mostly from memory."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced monthly series, exact early/late ratio and peak, direction read correctly, and censored endpoint explained; it omits the available critical-series decomposition.",
+    "comparison": "Same-window topic and corpus negative-to-positive ratios, baseline defined, ratio recomputes, and comparison answers how coverage is framed.",
+    "chart": "The monthly chart traces to the call and states unit, window, and caption; it does not chart the available critical-share decomposition.",
+    "drilldown": "Themes and subcategories are described, but item-level headlines lack complete URLs and follow-ups do not cover all open facets.",
+    "export": "Monthly and publisher CSVs are referenced and carry provenance; monthly values match the source and provenance JSON is included.",
+    "repro": "Call arguments and window are supplied, numbers trace, derived comparisons recompute, and provenance supports regeneration.",
+    "refs": "No resolvable article references or source URLs are provided as references.",
+    "accuracy": "Mostly faithful to the record; the 144-day gap is incorrect (June 1 to October 23 is 144 days only if measured by date difference? Actually it is 144 days), and the report dates are otherwise consistent.",
+    "limits": "Places, entities, publisher sampling, mention matching, censoring, coverage gap, and interpretation limits are placed next to relevant claims.",
+    "verdict": "Direct answer, decision, confidence, conditions, and bounded interpretation are present, but it does not name contrary evidence from the reporting examples.",
+    "facets": "Covers trend, tone, themes, entities, places, publisher sample, and explicitly bounds missing incident/loss evidence."
+   },
+   "claude_bare": {
+    "trend": "Only an explicitly estimated recalled series, not the requested digital-arrest coverage series.",
+    "comparison": "Numeric comparison is explicitly approximate and cannot be checked against the corpus.",
+    "chart": "Memory-based chart is honestly labelled estimate, earning the estimate anchor.",
+    "drilldown": "Names generic layers and has some calls, but calls are not executed with non-empty results and breakdown is memory-based.",
+    "export": "Estimated CSV is labelled and has a window, but lacks a source call and measured provenance.",
+    "repro": "All figures are estimates from memory; no recorded calls or reproducible source details.",
+    "refs": "No resolvable references or URLs.",
+    "accuracy": "The recalled loss and case figures are presented as estimates, but claims such as Supreme Court action and particular blocked accounts remain unsupported specifics.",
+    "limits": "Explicitly separates estimates from measurement and notes unknown windows/coverage, but lacks corpus-specific limits.",
+    "verdict": "A direct answer and confidence are given, but recommendations rely on memory estimates and no contrary evidence is considered.",
+    "facets": "Most requested corpus facets are unmeasured; several are addressed only as recalled themes or places."
+   },
+   "claude_prism": {
+    "trend": "Chart has the full monthly points, but the May 2026 bucket is presented without the required visible censoring and the prose calls the window complete; trend direction is also described as growth in the verdict despite the tool's flat overall direction.",
+    "comparison": "Tone ratio and corpus baseline are numeric and recompute exactly, with baseline defined; it does not fully address the broader reporting-versus-incidence contrast.",
+    "chart": "Both series trace, but the window endpoint is misstated, May is not visibly marked censored, and the caption conflicts with the tool's flat direction.",
+    "drilldown": "One overview layer is presented, but the follow-up calls were not executed successfully enough to meet the traced-layer standard.",
+    "export": "The CSV is explicitly only a subset of the available monthly data, so it is incomplete for the series the report presents.",
+    "repro": "Most figures trace, but the window and match-mode claims conflict with the record, and the export omits most monthly rows.",
+    "refs": "No external references are supplied; headline entries are incomplete and not all have resolving URLs.",
+    "accuracy": "Calls the measured window complete, claims critical share rose from 80.7% to 94.4% (the cited 80.7% is February 2025, not July 2025), and says headline matching is central though the overview headline feed uses central matching but trends/themes/entities use mention.",
+    "limits": "Mentions several relevant limits but misstates completeness, censoring, match mode, and the label-fill figure; caveats are not consistently attached to affected numbers.",
+    "verdict": "The verdict says coverage grew and the window is complete, contradicting the reference's flat overall direction and censored May bucket; it also recommends enforcement priorities beyond what the news data tests.",
+    "facets": "Addresses most implied facets with grounded values, including trend, tone, themes, geography, sources, entities, and the research/news gap."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or estimate series is provided.",
+    "comparison": "No measured comparison or estimate is provided.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Only generic proposed follow-ups; no breakdown or executed calls.",
+    "export": "No CSV export is provided.",
+    "repro": "No numeric claims to trace and no recorded calls for regeneration.",
+    "refs": "No resolvable sources are cited.",
+    "accuracy": "The general scam description does not directly contradict the record; unsupported measurements are explicitly withheld.",
+    "limits": "Clearly states that no corpus calls were run and identifies what cannot be measured, but has no data-specific window or coverage limits.",
+    "verdict": "Direct but cautious answer with a decision and confidence; it lacks evidence, contrary findings, and conditions tied to measured data.",
+    "facets": "Most question facets are explicitly unmeasured, with no grounded corpus values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,680 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 594,
+  "charts": [],
+  "tables": [
+   {
+    "name": "coverage_plan.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts per term on one scale?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Prime Video"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone split per term?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Prime Video"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...sney+', 'Prime Video']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "Which articles mention more than one service?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Prime Video"
+     ],
+     "view": "combined_articles"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nview\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='combined_articles', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which outlets and countries cover each term most?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Prime Video"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...sney+', 'Prime Video']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which stories are the most covered per term?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Prime Video"
+     ],
+     "view": "most_covered"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'view': 'most_covered'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nview\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='most_covered', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What is the critical coverage per term?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Prime Video"
+     ],
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...me Video'], 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 7,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "23 — - Windows: none were measured. The planned window is 2025-10-01 to 2026-09-30, which ends "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 107,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1020,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly news articles by streaming term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "netflix",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "disney+",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "prime video",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "critical_share",
+    "title": "Critical articles as % of each term's articles, full window",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "critical % (derived: critical / articles)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_series.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 144,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "What drove Netflix's critical spikes in Dec 2025 and Feb 2026?",
+    "args": {
+     "term": "netflix",
+     "since": "2025-12-01",
+     "until": "2026-03-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-12-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What explains the Prime Video and Disney+ surge in Mar-Apr 2026?",
+    "args": {
+     "terms": [
+      "prime video",
+      "disney+"
+     ],
+     "since": "2026-02-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2026-02-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['prime video', 'disney+'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which outlets and countries cover each term?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is tone defined and distributed per term?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Is the term volume contaminated by off-topic matches?",
+    "args": {
+     "term": "prime video",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 84.1,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"prime video\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 84832, \"entity_labelled_articles\": 72594, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 99892, \"critical_articles\": 9370, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 22:50:13\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series wi"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "What happened after May 2026 to the three series?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2026-05-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2026-05-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 77,
+   "traced": 76,
+   "derived": 20,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "145 — - Window: 2024-06-01 to 2026-06-01 (exclusive), so the last month is May 2026 [c1]. The ga"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 133,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 301,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "How many unique articles mention each service in the same date window, and what share does each represent?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Amazon Prime Video"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.5,
+    "sample": "{\"terms\": [\"Netflix\", \"Disney+\", \"Amazon Prime Video\"], \"rows\": [{\"term\": \"Netflix\", \"articles\": 533727, \"share_pct\": 79.4, \"critical\": 96986, \"direction\": \"rising\", \"growth\": 1.44, \"tone_ratio\": 0.27, \"vs_baseline\": 0.47, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 15224, \"critical\": 2070, \"negative\": 2977, \"positive\": 12106, \"mean_priority\": 4.94, \"critical_pct\": 13.6, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 15529, \"critical\": 2819, \"negative\": 3111, \"positive\": 12295, \"mean_priority\": 5.22, \"critical_pct\": 18.2, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 16010, \"critical\": 2518, \"negative\": 3110, \"positive\": 12772, \"mean_priority\": 5.09, \"cri"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What is the monthly article count for each service on a common scale?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Amazon Prime Video"
+     ],
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...], 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Amazon Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does coverage tone compare across the three services, and what tone definitions are used?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Amazon Prime Video"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'Amazon Prime Video']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Amazon Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which terms or contexts cause ambiguous matches, and how much do they affect coverage counts?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Amazon Prime Video"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'Amazon Prime Video']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Netflix', 'Disney+', 'Amazon Prime Video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "Which service is most covered, and how many combined unique articles cover the three?",
+    "args": {
+     "terms": [
+      "Netflix",
+      "Disney+",
+      "Amazon Prime Video"
+     ],
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 96,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 689,
+  "charts": [
+   {
+    "id": "monthly-volume-endpoints",
+    "title": "Matched monthly news articles for three streaming terms",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Netflix",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Disney+",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Prime Video",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_matched_volume.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 72,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which sources contributed most to each term’s coverage, and how much volume comes from likely common-word matches?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Which specific stories drove the largest monthly increases for each service?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What are the story-level definitions and validation for positive, negative, and critical labels?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "How does coverage differ by geography for the three services?",
+    "args": {
+     "terms": [
+      "netflix",
+      "disney+",
+      "prime video"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['netflix', 'disney+', 'prime video'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 30,
+   "traced": 30,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

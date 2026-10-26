@@ -1,0 +1,176 @@
+{
+ "slug": "improve-microplastics",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 2.0
+   },
+   "strict": 49.7,
+   "plain": 49.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 55.2,
+    "gpt": 44.1
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "repro": 3.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 59.3,
+   "plain": 59.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 51.0,
+    "gpt": 67.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 44.5,
+   "plain": 44.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 36.6,
+    "gpt": 52.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "repro": 2.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 53.4,
+   "plain": 53.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 42.1,
+    "gpt": 64.8
+   }
+  }
+ },
+ "judge_mad": 0.75,
+ "verdicts": {
+  "opus": "Only A's rewrite says what the evidence actually is: plastic particles found in human tissue, plausible mechanisms in cell and animal studies, and no human causal evidence. That is the crux of the question. A also introduced no fabrications. D was the best grounded and read the subject-lane corpus mix correctly, but it invented contents for the failed evidence-card call and gave a rewrite that omits the animal and cell basis. C had the same fabrication problem. B was honest but thin.",
+  "gpt": "D best equips a decision-maker with a cautious rewrite, a clear policy boundary, and the relevant distinction between broad topic counts and evidence directly testing human cancer causation. Its c2 document-count error and unsupported background account keep it below a clean result; A is the more internally consistent alternative but is less complete about the evidence facets."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "c2 described as identifying a subject lane and as reading documents, but c2 returned ok:false with null data"
+   ],
+   "claude_prism": [
+    "c2 described as returning no_data with 11 documents read, but c2 returned ok:false with null data",
+    "invented 10-vs-11 read-count discrepancy"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Claims from memory that no human cancer study shows causation and that cancer epidemiology is very sparse without a verified source.",
+    "Recommends precautionary exposure-reduction and research-funding policy without grounded evidence in this deliverable."
+   ],
+   "claude_prism": [
+    "States that c2 read 11 documents; the reference record says the evidence-card call returned no data."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "repro": "No calls were run. The numbers are labelled est., which is honest but cannot be reproduced. This is at the ceiling.",
+    "refs": "The Marfella DOI resolves and the metadata matches. The IARC entry has only a generic site url, and r3 is a generic 'reviews' entry with no identifier. No quotes are given.",
+    "accuracy": "The recalled specifics for Marfella (about 300 patients, about 34 months, a cardiovascular outcome) match the published study. Nothing contradicts the record, and memory is clearly labelled.",
+    "limits": "It states the knowledge cutoff and the roughly four-month gap to today. It flags analytic contamination as a measurement limit and separates impression from count. It has no measured limits, as expected for a plain-memory answer.",
+    "verdict": "This is the only rewrite that names the hard part: detection in human tissue plus lab and cell mechanisms, with no human causal evidence. It includes a decision, a reasoned confidence and what would change it. It is not bounded by a data window.",
+    "facets": "It covers the rewrite, the strongest document, the verb tier and the corpus mix. All of these come from memory, and the corpus mix is answered as 'cannot measure'."
+   },
+   "chatgpt_bare": {
+    "repro": "There are no numbers and no calls.",
+    "refs": "No references are given where the pattern needs them.",
+    "accuracy": "It makes no claims that could contradict the record.",
+    "limits": "It lists the limits it cannot measure, but only generically.",
+    "verdict": "The rewrite is direct and the decision is clear. It omits that the evidence is mostly animal and cell studies, which is the core of the question.",
+    "facets": "Most facets are left unanswered."
+   },
+   "chatgpt_prism": {
+    "repro": "Calls are listed with args, but none of the corpus numbers are reported, so little can be regenerated.",
+    "refs": "It cites only Prism calls and no resolvable documents.",
+    "accuracy": "It attributes content to c2 that c2 does not contain. c2 returned ok:false with null data, yet C says c2 'identifies a subject lane' and that 'none of the documents it read spoke to the claim'.",
+    "limits": "It covers window, lane, match mode and coverage. These are stated as generic absences rather than read against the data.",
+    "verdict": "The rewrite is supported, with a decision and confidence. It omits the animal and cell framing.",
+    "facets": "It covers the evidence card and the lane, but drops the actual corpus-mix values."
+   },
+   "claude_prism": {
+    "repro": "12 of 14 numbers trace to c1. The figure of 11 documents read in c2 does not trace.",
+    "refs": "There are no document references; it is honest about the lack of documents.",
+    "accuracy": "It fabricates c2 content ('no_data: 11 documents were read and none speaks to this claim'). c2 returned null data. It then builds a 10-vs-11 discrepancy on that invented figure.",
+    "limits": "Limits are well placed. It warns that the 31,254 'supporting' count is subject-lane and not support for the claim. It also notes the empty window and the six both-sides papers.",
+    "verdict": "The verdict has a good structure and a careful choice of verb. The rewrite never says the evidence is mostly animal and cell studies, and the confidence partly rests on the fabricated c2 detail.",
+    "facets": "It covers rewrite options, the corpus mix with its caveat, the verb tier and the evidence card as an honest none. The c2 reading is invented."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "repro": "No numeric claims need tracing; calls and arguments are listed, but follow-up replay succeeded for only 2 of 3 and no regenerate recipe rebuilds a result.",
+    "refs": "No source documents or resolvable study identifiers are provided; Prism call IDs are not document references.",
+    "accuracy": "Faithfully reports the assessment, unrelated and unread counts, subject lane, and the limits of the corpus mix without inventing human cancer findings.",
+    "limits": "Notes the empty time window, lane, unread documents, and unspecified match method, but omits the applicable months-to-today gap as an explicit limit.",
+    "verdict": "Gives a direct rewrite, decision, medium confidence and reason, and what would change it; it is bounded by the review, though it does not name contrary evidence from its own results.",
+    "facets": "Covers the claim review, corpus mix, lane, coverage and missing evidence card; it does not address the animal and cell evidence the question specifically highlights."
+   },
+   "chatgpt_bare": {
+    "repro": "No measured numbers or calls; the answer openly states it is memory-based and has no regenerate recipe.",
+    "refs": "No verified references are supplied.",
+    "accuracy": "Does not contradict the record or present invented specifics; clearly distinguishes its cautious rewrite from a measured review.",
+    "limits": "Specifically says no corpus search or window was run, but provides only general limits and does not discuss the animal and cell evidence.",
+    "verdict": "Direct rewrite, decision, confidence and a condition that would change it; lacks a grounded review and contrary evidence, so support is limited.",
+    "facets": "Addresses the human-causation claim and explicitly says corpus evidence is unavailable, but omits the animal and cell evidence and related evidence distinction."
+   },
+   "claude_bare": {
+    "repro": "No database calls were run, and the two numeric estimates are explicitly estimates; no regeneration recipe is given.",
+    "refs": "The NEJM DOI is real, but the IARC URL and generic review references do not provide claim-tied, verifiable support; quotes are absent.",
+    "accuracy": "Adds unsupported specifics that no cancer study exists and prescribes a regulatory posture; its recalled examples do not establish the claim, and it does not ground the animal and cell evidence.",
+    "limits": "Clearly labels memory and estimates and states its knowledge gap, but the applicable source and evidence limits are not tied to verified material.",
+    "verdict": "Provides a direct answer, decision, confidence and conditions, but the recommendation and supporting account rest on unverified recollection and do not establish the requested evidence basis.",
+    "facets": "Discusses human evidence and study types from memory, without grounded values or a grounded no-data result for the implied evidence facets."
+   },
+   "claude_prism": {
+    "repro": "Most numeric claims trace to c1, but the c2 description of 11 documents conflicts with the reference, and only 2 of 5 follow-ups replayed successfully.",
+    "refs": "No research documents with resolvable identifiers or claim-linked source metadata are cited; Prism call IDs are not document references.",
+    "accuracy": "Accurately distinguishes topic-level corpus counts from direct claim evidence, but says c2 read 11 documents when the reference returns no data and no document count.",
+    "limits": "Places the empty window, subject lane, six-paper coverage note, censoring and match-mode gaps alongside the relevant claims; identifies what the corpus cannot answer.",
+    "verdict": "Gives a direct rewrite, decision, confidence and reason, and what would change it; the answer is consistent with the assessment and appropriately bounded, though no contrary document is named.",
+    "facets": "Covers the claim assessment, broader corpus mix, lane and coverage limits, while acknowledging that animal and cell evidence is only background and uncited."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

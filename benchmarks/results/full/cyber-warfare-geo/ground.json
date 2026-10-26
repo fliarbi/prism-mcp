@@ -1,0 +1,579 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 680,
+  "charts": [],
+  "tables": [
+   {
+    "name": "source_map.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries produce the most cyber warfare research authorships?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How have research publications on cyber warfare trended by year?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries' outlets cover cyber warfare, and what is placed_pct?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.6,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 545, \"share_pct\": 17.5, \"lift\": 0.8}, {\"label\": \"russia\", \"articles\": 240, \"share_pct\": 7.7, \"lift\": 9.3}, {\"label\": \"china\", \"articles\": 231, \"share_pct\": 7.4, \"lift\": 1.5}, {\"label\": \"iran\", \"articles\": 183, \"share_pct\": 5.9, \"lift\": 1.9}, {\"label\": \"india\", \"articles\": 168, \"share_pct\": 5.4, \"lift\": 0.8}, {\"label\": \"united kingdom\", \"articles\": 155, \"share_pct\": 5.0, \"lift\": 1.0}, {\"label\": \"ukraine\", \"articles\": 151, \"share_pct\": 4.9, \"lift\": 10.2}, {\"label\": \"israel\", \"articles\": 140, \"share_pct\": 4.5, \"lift\": 3.5}, {\"label\": \"australia\", \"articles\": 82, \"share_pct\": 2.6, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 6"
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does news coverage compare with research share by country?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which papers are most cited?",
+    "args": {
+     "term": "cyber warfare",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...r warfare', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Is there critical coverage or research on attribution?",
+    "args": {
+     "term": "cyber warfare attribution"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'cyber warfare attribution'",
+    "seconds": 7.8,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.trends",
+    "question": "How has news volume changed over time?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.9,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 20, \"critical\": 12, \"negative\": 4, \"positive\": 13, \"mean_priority\": 6.3, \"critical_pct\": 60.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 50, \"critical\": 47, \"negative\": 36, \"positive\": 12, \"mean_priority\": 7.5, \"critical_pct\": 94.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 21, \"critical\": 17, \"negative\": 7, \"positive\": 14, \"mean_priority\": 6.9, \"critical_pct\": 81.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 48, \"critical\": 43, \"negative\": 28, \"positive\": 19, \"mean_priority\": 7.48, \"critical_pct\": 89.6, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 52, \"critical\": "
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 121,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1185,
+  "charts": [
+   {
+    "id": "news-country-articles",
+    "title": "News articles about each country, query 'cyber warfare'",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "research_patent_geography.csv",
+    "how": "call",
+    "rows": 8,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers exist on cyber warfare and what do they argue?",
+    "args": {
+     "term": "cyber warfare",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3389, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7126118841\", \"title\": \"Applying Machine Learning Techniques for Early Detection of Cyber Attacks on IoT Devices\", \"authors\": [\"Noor Adnan Allamy\"], \"venue\": \"مجلة كلية الاسراء الجامعة للعلوم والهندسة.\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.70080/2790-7732.1075\", \"url\": \"https://doi.org/10.70080/2790-7732.1075\", \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"methodological\", \"stance_score\": 0.6, \"topics\": [\"Network Security "
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How has research volume on cyber warfare changed by year?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has news coverage of cyber warfare changed over time?",
+    "args": {
+     "term": "cyber warfare",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 20, \"critical\": 12, \"negative\": 4, \"positive\": 13, \"mean_priority\": 6.3, \"critical_pct\": 60.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 50, \"critical\": 47, \"negative\": 36, \"positive\": 12, \"mean_priority\": 7.5, \"critical_pct\": 94.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 21, \"critical\": 17, \"negative\": 7, \"positive\": 14, \"mean_priority\": 6.9, \"critical_pct\": 81.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 48, \"critical\": 43, \"negative\": 28, \"positive\": 19, \"mean_priority\": 7.48, \"critical_pct\": 89.6, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 52, \"critical\": "
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which articles are critical of cyber warfare framing?",
+    "args": {
+     "term": "cyber warfare",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.4,
+    "sample": "{\"articles\": [{\"target_id\": \"6a2a69535cefb83fe8ff0135\", \"url\": \"https://www.binalyze.com/blog/handalas-kill-list-tracking-the-victims-of-irans-most-destructive-cyber-unit\", \"title\": \"Handala's Kill List: Tracking the Victims of Iran's Most Destructive Cyber Unit\", \"excerpt\": \"A follow-up to: \\\"Handala and the New Face of Iranian Cyber Warfare\\\" If you read the last post, you already know where I land on Handala. I don't buy the idea that this is just a loose hacktivist crew freelancing online. It looks a lot more like a state-backed Iranian operation wearing a hacktivist m\", \"publisher\": \"binalyze.com\", \"published\": \"2026-05-20 08:00:00\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-05"
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which sources cite the leading studies?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How do the research and news pictures compare for the same period?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 63,
+   "traced": 61,
+   "derived": 9,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "175 — - **Windows:** The news window runs 2024-06-01 to 2026-05-01 (end exclusive), so the last "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 153,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 414,
+  "charts": [],
+  "tables": [
+   {
+    "name": "geography.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which locations have research authorship rows for cyber warfare, and how are affiliations assigned?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "Which locations have research publication rows, by publication year and venue?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which locations have news coverage rows, including placed_pct, and what is the placement denominator?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 545, \"share_pct\": 17.5, \"lift\": 0.8}, {\"label\": \"russia\", \"articles\": 240, \"share_pct\": 7.7, \"lift\": 9.3}, {\"label\": \"china\", \"articles\": 231, \"share_pct\": 7.4, \"lift\": 1.5}, {\"label\": \"iran\", \"articles\": 183, \"share_pct\": 5.9, \"lift\": 1.9}, {\"label\": \"india\", \"articles\": 168, \"share_pct\": 5.4, \"lift\": 0.8}, {\"label\": \"united kingdom\", \"articles\": 155, \"share_pct\": 5.0, \"lift\": 1.0}, {\"label\": \"ukraine\", \"articles\": 151, \"share_pct\": 4.9, \"lift\": 10.2}, {\"label\": \"israel\", \"articles\": 140, \"share_pct\": 4.5, \"lift\": 3.5}, {\"label\": \"australia\", \"articles\": 82, \"share_pct\": 2.6, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 6"
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Are there patent origin rows for cyber warfare, and what query and date coverage produced them?",
+    "args": {
+     "term": "cyber warfare patents",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'cyber warfare patents' — try expand=true, or a broader phrase",
+    "seconds": 11.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "On a shared, documented geographic scale, where does research activity differ from news reporting?",
+    "args": {
+     "term": "cyber warfare"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cyber warfare'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cyber warfare', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 86,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 751,
+  "charts": [],
+  "tables": [
+   {
+    "name": "research_geography.csv",
+    "how": "call",
+    "rows": 20,
+    "numeric_cells": 20,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers account for the country-level research authorship rows?",
+    "args": {
+     "term": "cyber warfare",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 116, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W4417449827\", \"title\": \"Weaponising the mind: AI, cyberspace and the future of psychological operations\", \"authors\": [\"Maurice Dawson\", \"Abdul Hadi Khan\", \"Cedric Nartey\"], \"venue\": \"Journal of Military Studies\", \"year\": 2025, \"date\": \"2025-12-18\", \"doi\": \"10.2478/jms-2025-0011\", \"url\": \"https://doi.org/10.2478/jms-2025-0011\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Misinformation and "
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "How does research authorship geography vary over time?",
+    "args": {
+     "claim": "Cyber warfare by publication year"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 82.0,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"China\", \"papers\": 16}, {\"country\": \"India\", \"papers\": 11}, {\"country\": \"Iran\", \"papers\": 4}, {\"country\": \"United States\", \"papers\": 3}, {\"country\": \"Egypt\", \"papers\": 2}, {\"country\": \"Bangladesh\", \"papers\": 1}, {\"country\": \"Canada\", \"papers\": 1}, {\"country\": \"United Kingdom\", \"papers\": 1}, {\"country\": \"Saudi Arabia\", \"papers\": 1}, {\"country\": \"Italy\", \"papers\": 1}, {\"country\": \"Ireland\", \"papers\": 1}, {\"country\": \"Finland\", \"papers\": 1}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"united s"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "Which countries’ news coverage rose most over the dated window?",
+    "args": {
+     "term": "cyber warfare",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 20, \"critical\": 12, \"negative\": 4, \"positive\": 13, \"mean_priority\": 6.3, \"critical_pct\": 60.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 50, \"critical\": 47, \"negative\": 36, \"positive\": 12, \"mean_priority\": 7.5, \"critical_pct\": 94.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 21, \"critical\": 17, \"negative\": 7, \"positive\": 14, \"mean_priority\": 6.9, \"critical_pct\": 81.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 48, \"critical\": 43, \"negative\": 28, \"positive\": 19, \"mean_priority\": 7.48, \"critical_pct\": 89.6, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 52, \"critical\": "
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "What countries were not placed in the dated news geography results?",
+    "args": {
+     "term": "cyber warfare",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 523, \"share_pct\": 17.6, \"lift\": 0.8}, {\"label\": \"russia\", \"articles\": 233, \"share_pct\": 7.9, \"lift\": 9.4}, {\"label\": \"china\", \"articles\": 216, \"share_pct\": 7.3, \"lift\": 1.4}, {\"label\": \"iran\", \"articles\": 180, \"share_pct\": 6.1, \"lift\": 2.0}, {\"label\": \"india\", \"articles\": 158, \"share_pct\": 5.3, \"lift\": 0.8}, {\"label\": \"ukraine\", \"articles\": 146, \"share_pct\": 4.9, \"lift\": 10.3}, {\"label\": \"united kingdom\", \"articles\": 144, \"share_pct\": 4.9, \"lift\": 1.0}, {\"label\": \"israel\", \"articles\": 138, \"share_pct\": 4.7, \"lift\": 3.7}, {\"label\": \"australia\", \"articles\": 71, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"france\", \"articles\": 6"
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "What is the patent origin breakdown for cyber warfare patents?",
+    "args": {
+     "claim": "Cyber warfare patents"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.2,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": []}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"united states\", \"articles\": 6}, {\"country\": \"india\", \"articles\": 1}, {\"country\": \"canada\", \"articles\": 1}, {\"country\": \"indonesia\", \"articles\": 1}]}, \"research_publication\": {\"what\": \"country of the publishing journal (the health literature index) — not where the study was done\", \"rows\": []}, \"patent_origin\": {\"what\": \"assignee country\", \"rows\": []}}"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 52,
+   "traced": 52,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

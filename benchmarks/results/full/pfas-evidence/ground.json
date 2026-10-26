@@ -1,0 +1,631 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 985,
+  "charts": [
+   {
+    "id": "pfos_trend",
+    "title": "US median serum PFOS, NHANES (approximate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Median serum PFOS",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "pfos_serum.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "limits.csv",
+    "how": "ref",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many research papers on PFAS health effects per year since 2000?",
+    "args": {
+     "term": "PFAS health effects"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"pfas health effects\"], \"points\": [{\"year\": 2018, \"total\": 1, \"orientation\": {\"cautionary\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2019, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}], \"totals\": {\"cautionary\": 1, \"problem_identifying\": 1}, \"papers\": 2, \"per_orientation_trend\": {\"cautionary\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three periods\"}}, \"framing_shift\": {\"early_contested_pc"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies contradict a PFAS–birth weight link?",
+    "args": {
+     "term": "PFAS birth weight"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PFAS birth weight'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS birth weight', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "Effect sizes for PFAS and vaccine response?",
+    "args": {
+     "term": "PFAS antibody vaccine"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PFAS antibody vaccine'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS antibody vaccine', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "News volume on PFAS drinking-water rules?",
+    "args": {
+     "term": "PFAS drinking water"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 1, \"critical\": 1, \"negative\": 0, \"positive\": 1, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"po"
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Where is PFAS research concentrated?",
+    "args": {
+     "term": "PFAS"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PFAS'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How do news and research sentiment compare?",
+    "args": {
+     "term": "PFAS"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PFAS'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 17,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "4.0 — | EPA MCL 2024, PFOA or PFOS [r5] | 4.0 | 1× |",
+    "70 — | EPA 2016 advisory, combined [r9] | 70 | 17.5× |",
+    "17.5 — | EPA 2016 advisory, combined [r9] | 70 | 17.5× |",
+    "135 — | [r1] | 2023, IARC Monographs vol. 135, authoritative review | PFOA Group 1; PFOS Group 2"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 145,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1279,
+  "charts": [
+   {
+    "id": "pfas-cancer-papers",
+    "title": "PFAS-cancer research papers per year (intersection lane)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Prism-typed papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "pfas_papers_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "pfas_volumes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What is the evidence for PFOA and kidney cancer?",
+    "args": {
+     "claim": "PFOA exposure increases kidney cancer risk",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 80.0,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 15703, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 201, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 1459, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 558, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 2, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"availa"
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "Do PFAS raise serum cholesterol?",
+    "args": {
+     "claim": "PFAS exposure raises serum cholesterol",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 120.2,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 15692, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 161, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 73553, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 533, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 2, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"avail"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "Do PFAS reduce vaccine antibody response in children?",
+    "args": {
+     "claim": "PFAS exposure reduces vaccine antibody response",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 75.7,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 15692, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 161, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 73553, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 533, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 2, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"avail"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Is PFAS linked to lower birth weight?",
+    "args": {
+     "claim": "PFAS exposure reduces birth weight",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 84.7,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 23017, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 125, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 13135, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 490, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 2, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"avail"
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "Which cancer-site papers are most critical?",
+    "args": {
+     "term": "PFAS cancer",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'PFAS cancer' — try expand=true, or a broader phrase",
+    "seconds": 7.7,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "How has news framing of PFAS health risk changed?",
+    "args": {
+     "term": "PFAS health risk"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.4,
+    "sample": "{\"points\": [{\"period\": \"2024-11-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2025-05-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2026-04-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}], \"totals\": {\"neg\": 2, \"pos\": 1, \"neutral\": 0, \"n\": 3, \"neg_pct\": 66.7, \"pos_pct\": 33.3, \"ratio\": 2.0}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": 3.45, \"reading\": \"markedly more negative than ordinary news coverage\"}"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 56,
+   "traced": 56,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 148,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 809,
+  "charts": [],
+  "tables": [
+   {
+    "name": "pfas_health_evidence.csv",
+    "how": "ref",
+    "rows": 1,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Which human studies support associations between specific PFAS and each health outcome, and what effect sizes and populations do they report?",
+    "args": {
+     "term": "PFAS human health outcomes PFOA PFOS effect size population",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...pulation', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS human health outcom... effect size population', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which human studies report null or inverse findings for PFAS health outcomes, and how do their exposure measures compare?",
+    "args": {
+     "term": "PFAS human health outcomes null findings",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...findings', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS human health outcomes null findings', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How many supporting and contradicting documents are in the research corpus by evidence tier, and how many have been read?",
+    "args": {
+     "term": "PFAS human health"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PFAS human health'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS human health', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How did research publication volume and stance on PFAS health effects change over time?",
+    "args": {
+     "term": "PFAS human health",
+     "window": "all"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How did news coverage of PFAS human health change over time, and what was its geographic distribution?",
+    "args": {
+     "term": "PFAS human health"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'PFAS human health' in this window",
+    "seconds": 5.9,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "1.0 — A large pooled analysis of PFOA-exposed workers reported a kidney-cancer mortality standar"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 1105,
+  "charts": [
+   {
+    "id": "pfas-research-volume",
+    "title": "PFAS–cancer intersection typed research papers by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "corpus-volumes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which human studies quantify PFAS-related outcomes beyond cancer, by compound and exposure level?",
+    "args": {
+     "term": "human PFAS exposure health outcomes effect estimates",
+     "orientation": "supportive",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'human PFAS exposure health outcomes effect estimates' — try expand=true, or a broader phrase",
+    "seconds": 5.6,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which high-tier studies find no association or lower risk for PFAS health outcomes?",
+    "args": {
+     "term": "PFAS exposure human health null inverse association",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'PFAS exposure human health null inverse association' — try expand=true, or a broader phrase",
+    "seconds": 6.7,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "What pooled effect estimates and confidence intervals exist for PFAS and specific cancers?",
+    "args": {
+     "claim": "PFAS exposure cancer site-specific risk pooled estimates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...risk pooled estimates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...risk pooled estimates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PFAS exposure cancer sit...c risk pooled estimates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which papers account for the rise in indexed PFAS–cancer research?",
+    "args": {
+     "term": "PFAS cancer risk",
+     "orientation": "descriptive",
+     "limit": 15
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'PFAS cancer risk' — try expand=true, or a broader phrase",
+    "seconds": 10.2,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which news stories make up the PFAS health news series, and what do they report?",
+    "args": {
+     "term": "PFAS human health cancer",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 35,
+   "traced": 35,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

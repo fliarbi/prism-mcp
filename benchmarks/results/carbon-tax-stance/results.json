@@ -1,0 +1,241 @@
+{
+ "slug": "carbon-tax-stance",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 0.5,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 31.9,
+   "plain": 31.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 26.0,
+    "gpt": 37.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 5.0,
+    "chart": 4.5,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 4.5
+   },
+   "strict": 78.5,
+   "plain": 78.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.8,
+    "gpt": 81.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 0.5,
+    "chart": 0.5,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 27.2,
+   "plain": 27.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.2,
+    "gpt": 36.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 4.5,
+    "repro": 4.5,
+    "refs": 3.5,
+    "accuracy": 4.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 82.0,
+   "plain": 82.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.0,
+    "gpt": 89.0
+   }
+  }
+ },
+ "judge_mad": 0.73,
+ "verdicts": {
+  "opus": "B and D both grounded their answers in the recorded stance series and avoided invention. A and C could not measure stance at all, and C filled the gap with misremembered memory figures about an off-question quantity. B edges D because it decomposes positive vs contested shares with exact ratios and catches the corpus's off-topic matching (the 'carbon fibers' keyword). D's verdict is cleaner and better reconciles the result with the tool's 'broadly unchanged' reading, but its chart shows only the promising counts.",
+  "gpt": "A gives the clearest decision-grade answer: promising-framed counts rise sharply, critical counts are roughly flat, and the tool’s contested framing balance is broadly unchanged. B offers a stronger overlaid chart and broader grounded facets, but its headline interpretation overstates the contested-share evidence and adds an unsupported reversal threshold; C and D are appropriately cautious but lack measured trend evidence."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "States critical papers stayed at 15–28 a year; actual 2017–2025 range is 10–28 (2022 = 10)",
+    "r2 title paraphrased rather than the record's title"
+   ],
+   "claude_bare": [
+    "Green (2021) ex-post range '5–21%' misstated",
+    "Andersson Sweden effect 'few percent to ~6%' misstated (≈11% in transport)",
+    "Chart and export are of an off-question quantity"
+   ],
+   "chatgpt_prism": [
+    "Cites off-topic methodological paper (r3) as a carbon-tax example without flagging it"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "Calls positive framing clearly rising while the tool's framing_shift summary says the early-to-late contested balance is broadly unchanged; the prose acknowledges that caveat but its headline risks conflating positive and contested shifts.",
+    "States that the 2025 positive-share peak may reflect corpus or phrase effects without establishing those effects from the supplied calls.",
+    "Suggests a threshold of below roughly 19% as a verdict-changing condition without grounding that cutoff in the reference series."
+   ],
+   "claude_bare": [
+    "Uses estimated carbon-pricing adoption and memory-based literature claims as context, not as measured answers to the research-orientation question; these claims do not establish the trend."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series and no direction stated. The chart block is empty.",
+    "comparison": "Says explicitly that no comparison is possible.",
+    "chart": "The chart has empty points, so it carries no content and supports no claim.",
+    "drilldown": "Lists follow-up calls but no breakdown; only 2 of 6 calls ran ok.",
+    "export": "No export.",
+    "repro": "No numbers to reproduce. The refusal is honest.",
+    "refs": "No references.",
+    "accuracy": "Says nothing, so nothing contradicts the record. Default 3.",
+    "limits": "Specific about what it cannot measure and why. Notes that coding rules for 'favourable' and 'critical' are needed.",
+    "verdict": "Answers 'unestablished', which is effectively a non-answer.",
+    "facets": "No facet answered with values."
+   },
+   "claude_prism": {
+    "trend": "Traced share series for 2017–2025 with the window stated. Deltas and ratios recompute exactly, and the series is split into positive and contested. One prose slip: critical is said to range 15–28 a year when the actual range is 10–28.",
+    "comparison": "The 2017 vs 2025 table recomputes exactly: 1.94, 0.68, 3.31, 0.51→1.44. The baseline is defined, the tool's framing_shift numbers are carried, and it explicitly refuses to mix cumulative and yearly bases.",
+    "chart": "Fully traced overlay of positive vs contested share that supports the verdict. There is no volume chart beside it.",
+    "drilldown": "Gives orientation×year, facets, phrase audit, and examples with Prism research index ids and DOIs. 3 of 6 follow-ups ran ok, but none was folded back into the report.",
+    "export": "One fully traced CSV with full provenance. A per-orientation count table is missing.",
+    "repro": "88 of 88 numbers traced, with the calls and a provenance block. Interpretation is labelled as such.",
+    "refs": "All 4 DOIs resolve and are tied to claims with venue and tier. r2's title is paraphrased rather than exact, and there are no quotes.",
+    "accuracy": "Catches the 'carbon fibers' keyword contamination and the off-topic promising rows. Fails anchor 5 because of the 15–28 range misstatement.",
+    "limits": "Covers the window end and the 10-month gap, the research lane, coverage caveats, phrase expansion and loose matching. The limits sit mostly in the Method section, though some appear in the verdict.",
+    "verdict": "Ceiling 3. 'More favourable' is supported by the shares but leans against the tool's own 'broadly unchanged' reading. That tension is acknowledged in the body, not resolved in the verdict.",
+    "facets": "Favourable vs critical trend, shares, counts and phrase effects are all grounded. The distributional-critique angle is not addressed directly."
+   },
+   "claude_bare": {
+    "trend": "Gives a qualitative direction only. The single series is off-question (pricing instruments, not research stance).",
+    "comparison": "The early-vs-late table is qualitative and labelled estimate.",
+    "chart": "An estimate chart of an irrelevant quantity, which does not address the question.",
+    "drilldown": "Breakdown named generically; only 2 of 6 follow-ups ran ok.",
+    "export": "A labelled-estimate CSV of an off-question quantity.",
+    "repro": "All figures are labelled memory estimates.",
+    "refs": "Mostly real works, but none carries an identifier that resolves.",
+    "accuracy": "Memory specifics are mis-stated even though labelled est. Green (2021) found much smaller average effects than '5–21%', and Andersson's Swedish transport estimate is about 11%, not 'a few to 6%'.",
+    "limits": "Honest and fairly specific about what is unmeasured.",
+    "verdict": "Gives a direct but unmeasured 'more nuanced' answer with low confidence. It is not grounded in the stance data.",
+    "facets": "Facets are answered from memory only."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced promising series with the window stated and the change quantified (+181 papers, 6.5x). The prose is consistent. The chart shows a single bare level rather than a decomposition.",
+    "comparison": "Promising vs critical ratios (2.1x→14.3x) recompute correctly, with a caveat that counts are not shares. Framing_shift numbers are carried.",
+    "chart": "Traced and captioned, but it charts only promising when the question asks favourable vs critical.",
+    "drilldown": "Gives the orientation table and papers with DOIs. Only 2 of 5 follow-ups ran ok.",
+    "export": "The full orientation-by-year CSV traces with provenance and is referenced from the prose. There is no share table.",
+    "repro": "27 of 27 numbers traced, with the calls, window and provenance JSON listed.",
+    "refs": "All 3 DOIs resolve with exact titles. No quotes or tier. The off-topic r3 is cited without being flagged.",
+    "accuracy": "No errors, and the gap to today is computed correctly. It misses the off-topic and carbon-fibers anomalies.",
+    "limits": "The window end and gap, coverage-not-proof, match mode, phrase combination and non-representative examples are each stated next to the numbers they bound.",
+    "verdict": "Concise, and reconciles promising-up with critical-flat and the tool's 'broadly unchanged' reading. Includes a decision, a confidence with its reason, and what would change it.",
+    "facets": "Main facets are grounded. The distributional angle is not addressed."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced 2017–2025 annual counts and shares, quantifies the promising rise, names the critical peak, and reads the broadly unchanged contested balance correctly.",
+    "comparison": "Uses traced annual counts on one window and correctly distinguishes count ratios from shares; it does not overstate the comparison.",
+    "chart": "The annual promising series is fully traced, labeled, sourced, and supports a specific claim; the supplied rubric asks for supported views, and the prose supplies the critical and share contrasts.",
+    "drilldown": "Provides phrase-audit breakdown and identifiers for examples, but only two of five proposed follow-ups executed successfully; no traced paper-level critical layer is returned.",
+    "export": "Annual orientation CSV is fully traced with source, window, unit, coverage, date, and provenance JSON; it includes the needed series and is referenced.",
+    "repro": "All stated quantities trace to calls with arguments and window; listed values support the derived ratios and the regenerate block includes both calls and capture date.",
+    "refs": "All three DOI records resolve and are tied to claims, but no quotes are available, so it falls short of the quote requirement.",
+    "accuracy": "Correctly separates promising counts, critical counts, and contested share, and notes that framing is not a verdict on truth.",
+    "limits": "Specific window, end-date gap, phrase matching, coverage caveat, and sample limits are placed near relevant claims; it does not explicitly flag the 2025 series as a potentially incomplete calendar year.",
+    "verdict": "Direct and supported answer with decision, confidence, conditions, and contrary evidence; it omits the late-year limitation from the verdict itself.",
+    "facets": "Covers direction, critical framing, volume, phrase overlap, and research-lane limits, but leaves seasonality and the precise meaning of critical framing unresolved."
+   },
+   "claude_prism": {
+    "trend": "Traced annual volume and orientation shares with changes and decisive years; accurately notes the 2025 jump and the tool's broadly unchanged early/late framing reading.",
+    "comparison": "Provides defined 2017–2025 comparisons on annual counts and shares with recomputable deltas and ratios, while keeping cumulative browse figures separate.",
+    "chart": "The positive and contested share chart is fully traced, labeled, sourced, and shows the key decomposition over time.",
+    "drilldown": "Has traced orientation, topic/contribution, and phrase-audit layers with identifiers and specific follow-ups, but only three of six calls executed successfully and no result is folded back from them.",
+    "export": "CSV is traced and referenced, but it omits orientation counts and does not carry all required provenance attributes such as a coverage flag definition and counted/captured date in the CSV block.",
+    "repro": "Numeric claims trace to the listed calls and their arguments; derived comparisons are recomputable and the provenance block gives the capture date.",
+    "refs": "DOIs and work identifiers resolve and claims are linked, but the references provide no abstract quotes; tier is often unavailable or not the tool's tier.",
+    "accuracy": "The verdict calls the contested share falling, while c1's early-to-late framing shift is only −2.2 points and explicitly described as broadly unchanged; it also treats 2025 as a positive-share high without resolving whether that final year is a complete calendar year.",
+    "limits": "Covers the window gap, lane, coverage, phrase matching, and interpretation caveats; the 2025 partial-period status is not established or carried into the trend reading.",
+    "verdict": "Direct answer and confidence are present, but the proposed threshold for reversal is not grounded in the series, and the verdict overstates the contested evidence.",
+    "facets": "Addresses trend, distributional/critical framing, phrase overlap, corpus lane, and the research-versus-outcomes distinction, though no news comparison is available."
+   },
+   "claude_bare": {
+    "trend": "Provides no series for research orientation; the chart is an explicitly estimated policy-instrument series, not the quantity asked about.",
+    "comparison": "Offers only a qualitative, memory-based contrast and no measured one-scale comparison.",
+    "chart": "The estimate chart is honestly labeled but charts policy adoption rather than research orientation; estimate charts score 1 under the rubric.",
+    "drilldown": "Lists proposed calls and breakdown categories, but no traced breakdown is present and the calls were not run by the respondent.",
+    "export": "CSV is explicitly marked as an estimate, so it is honest but does not export the research series the question needs.",
+    "repro": "No executed calls or reproducible research counts; claims are described as estimates or memory-based.",
+    "refs": "References are named but lack resolvable identifiers, supporting quotes, and checked metadata; the rubric caps this at 1.",
+    "accuracy": "Does not present memory figures as measured research counts and clearly says the orientation trend cannot be measured from its evidence.",
+    "limits": "Clearly states the missing corpus, incomplete memory coverage, and limits of its estimates, but generic source-specific caveats are unavailable.",
+    "verdict": "Gives a direct but low-confidence qualitative answer, decision, and condition for change; it lacks measured support and a clear contrary finding within its evidence.",
+    "facets": "Addresses distributional and acceptability concerns qualitatively, but lacks grounded trend values, comparisons, and corpus facets."
+   },
+   "chatgpt_bare": {
+    "trend": "No research series; the empty chart does not measure the requested trend and is labeled as an estimate.",
+    "comparison": "Explicitly says a measured comparison is unavailable and supplies no numeric contrast.",
+    "chart": "The chart has no plotted values and no sourced research series; under the rubric it earns only the honest estimate ceiling.",
+    "drilldown": "Names useful breakdowns and proposed calls but provides no traced breakdown layer; its empty calls were not executed by the respondent.",
+    "export": "No CSV export is supplied.",
+    "repro": "No calls were executed and there are no numeric research claims to regenerate.",
+    "refs": "No references or resolvable identifiers are supplied.",
+    "accuracy": "Carefully distinguishes absence of evidence from evidence of a balanced trend and makes no fabricated measured claims.",
+    "limits": "States that corpus, windows, lanes, coverage, and match mode are undefined, but does not provide source-specific limits for measured data because none was gathered.",
+    "verdict": "Makes a bounded, direct decision under uncertainty with low confidence and states what evidence would change it, but offers no measured support.",
+    "facets": "Identifies the needed facets and explicitly says they are unmeasured, but provides no grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

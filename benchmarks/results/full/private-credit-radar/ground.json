@@ -1,0 +1,686 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 636,
+  "charts": [
+   {
+    "id": "pc_aum",
+    "title": "Global private credit AUM (rough, from memory)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Global private credit AUM",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "aum_estimate.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many papers on private credit per year since 2022?",
+    "args": {
+     "term": "private credit",
+     "from": "2022"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...redit', 'from': '2022'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.citations",
+    "question": "Which papers are most cited?",
+    "args": {
+     "term": "private credit",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e credit', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Has the stance turned more critical?",
+    "args": {
+     "term": "private credit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"private credit\", \"private debt\", \"non-bank lending\", \"direct lending\"], \"points\": [{\"year\": 2017, \"total\": 36, \"orientation\": {\"promising\": 3, \"critical\": 2, \"problem_identifying\": 4, \"cautionary\": 1, \"comparative\": 2, \"descriptive\": 3, \"breakthrough\": 2}, \"stance_score\": null, \"positive\": 5, \"contested\": 7, \"positive_pct\": 13.9, \"contested_pct\": 19.4}, {\"year\": 2018, \"total\": 35, \"orientation\": {\"comparative\": 1, \"critical\": 2, \"breakthrough\": 1, \"problem_identifying\": 4, \"cautionary\": 3, \"descriptive\": 2, \"promising\": 8}, \"stance_score\": null, \"positive\": 9, \"contested\": 9, \"positive_pct\": 25.7, \"contested_pct\": 25.7}, {\"year\": 2019, \"total\": "
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Which critical papers exist on valuation?",
+    "args": {
+     "term": "private credit valuation"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...vate credit valuation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit valuation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news volume changed?",
+    "args": {
+     "term": "private credit",
+     "from": "2022"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.table",
+    "question": "Which topics are under-covered, such as retail?",
+    "args": {
+     "term": "private credit retail evergreen"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...edit retail evergreen'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...edit retail evergreen'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit retail evergreen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 9,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "22 — - Window: 2022-01 to 2024-12 for the figures, which is about 22 months before today (2026-"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 108,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1235,
+  "charts": [
+   {
+    "id": "research_trend",
+    "title": "Typed papers per year on private credit (endpoints only)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "news_trend",
+    "title": "Monthly news items on private credit (selected points)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "news items",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "late_vs_early",
+    "title": "Late-third vs early-third volume ratio",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "late/early ratio",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "new_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "trend_points.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which direct-lending / non-bank papers drove the rise?",
+    "args": {
+     "term": "direct lending",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 126, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117748623\", \"title\": \"Bibliometric Analysis of Private Credit\", \"authors\": [\"Loso Judijanto\"], \"venue\": \"West Science Social and Humanities Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.58812/wsshs.v3i12.2517\", \"url\": \"https://doi.org/10.58812/wsshs.v3i12.2517\", \"cited_by\": 0, \"orientation\": \"descriptive\", \"contribution\": \"review\", \"stance_score\": 0.0, \"topics\": [\"FinTech, Crowdfunding, Digital Finance\", \"Working Capital and Financial "
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers are critical of private credit risk?",
+    "args": {
+     "term": "private credit risk"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'private credit risk'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit risk', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has the stance mix moved by year?",
+    "args": {
+     "term": "private credit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"private credit\", \"private debt\", \"non-bank lending\", \"direct lending\"], \"points\": [{\"year\": 2017, \"total\": 36, \"orientation\": {\"cautionary\": 1, \"problem_identifying\": 9, \"promising\": 5, \"critical\": 6, \"breakthrough\": 2, \"comparative\": 3, \"descriptive\": 10}, \"stance_score\": null, \"positive\": 7, \"contested\": 16, \"positive_pct\": 19.4, \"contested_pct\": 44.4}, {\"year\": 2018, \"total\": 35, \"orientation\": {\"breakthrough\": 1, \"cautionary\": 3, \"promising\": 11, \"comparative\": 3, \"critical\": 4, \"descriptive\": 7, \"problem_identifying\": 6}, \"stance_score\": null, \"positive\": 12, \"contested\": 13, \"positive_pct\": 34.3, \"contested_pct\": 37.1}, {\"year\": 2019, \"tot"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What drove the March 2026 news peak and the May 2026 fall?",
+    "args": {
+     "term": "private credit",
+     "from": "2025-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries publish this research?",
+    "args": {
+     "term": "private credit"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'private credit'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "How negative is news coverage?",
+    "args": {
+     "term": "private credit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.9,
+    "sample": "{\"articles\": [{\"target_id\": \"6a2a6d2a5cefb83fe800bc08\", \"url\": \"https://alternativecreditinvestor.com/2026/05/21/australian-regulator-says-private-credit-risks-contained-but-could-spill-over/\", \"title\": \"Australian regulator says private credit risks contained but 'could spill over'\", \"excerpt\": \"The Australian Prudential Regulator, APRA, has said it believes private credit risks are currently “contained domestically” but could spill over to Australia from abroad. In a release today, APRA said domestic private credit is estimated to currently be worth around AUD$200bn (£106bn) – roughly thre\", \"publisher\": \"alternativecreditinvestor.com\", \"published\": \"2026-05-21 14:26:12\", \"partition\": \"fro"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 30,
+   "traced": 28,
+   "derived": 1,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "296 — - Windows: research 2017 to 2025, so the gap to today (2026-10-23) is about 296 days from ",
+    "175 — - Windows: research 2017 to 2025, so the gap to today (2026-10-23) is about 296 days from "
+   ]
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 152,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 698,
+  "charts": [
+   {
+    "id": "research-trend-limit",
+    "title": "Measured private credit research output",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Annual publication count",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "evidence.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which studies on private credit and bank connections appeared each year, and how were they oriented?",
+    "args": {
+     "term": "private credit bank connections financial stability",
+     "orientation": "all",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'private credit bank connections financial stability' — try expand=true, or a broader phrase",
+    "seconds": 16.2,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.citations",
+    "question": "What are annual publication and citation counts for private credit research since 2022?",
+    "args": {
+     "term": "private credit markets",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit markets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has research framing shifted between firm financing and systemic risk?",
+    "args": {
+     "term": "private credit markets",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.radar",
+    "question": "Which private-credit topics receive the least research coverage?",
+    "args": {
+     "term": "private credit markets",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit markets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of private credit changed over time?",
+    "args": {
+     "term": "private credit markets",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "10.1111 — - **[2023][r3] — *Private Equity and Employment*, Journal of Finance, academic empirical s"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 1,
+   "not_found": [
+    "10.1111/jofi.13267.**"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 117,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 990,
+  "charts": [
+   {
+    "id": "research_trend",
+    "title": "Prism research trend for private credit",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research trend",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "selected_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers and annual counts support the post-2022 research trend, with abstracts and DOI?",
+    "args": {
+     "term": "private credit markets",
+     "since_year": 2022,
+     "orientation": "any",
+     "limit": 50
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for browse_research\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.radar",
+    "question": "What topics and methods are under-covered in private credit research since 2022?",
+    "args": {
+     "topic": "private credit markets",
+     "since_year": 2022
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.9,
+    "sample": "{\"new_work\": [{\"title\": \"The Expansion of U.S Private Credit Markets Post 2008: Implications for Socioeconomic Demographics Since the Great Financial Crisis\", \"year\": 2023, \"venue\": null, \"cited_by\": 0, \"orientation\": \"descriptive\", \"url\": \"https://doi.org/10.52295/dcc.5072\"}], \"new_work_how\": \"the most-cited typed papers published since the start year whose title carries one of the subject's own phrases\", \"research_trend\": {\"available\": true, \"from\": \"2017\", \"to\": \"2025\", \"first\": 2036, \"last\": 2974, \"peak\": 2974, \"peak_period\": \"2025\", \"early_third\": 6066, \"late_third\": 7043, \"elapsed_years\": 8.0, \"cagr_pct\": 4.9, \"rate_unit\": \"annual\", \"direction\": \"flat\", \"late_vs_early\": 1.16}, \"news_tr"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has the research framing by orientation changed year by year since 2022?",
+    "args": {
+     "term": "private credit",
+     "since_year": 2022
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "What are the strongest counter-evidence papers on private credit market risks and benefits?",
+    "args": {
+     "term": "private credit markets",
+     "since_year": 2022
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...s', 'since_year': 2022}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit markets', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of private credit changed year by year since 2022, and what events drove it?",
+    "args": {
+     "term": "private credit",
+     "since": "2022-01-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.8,
+    "sample": "{\"points\": [{\"period\": \"2022-01-01\", \"articles\": 55, \"critical\": 21, \"negative\": 2, \"positive\": 50, \"mean_priority\": 5.64, \"critical_pct\": 38.2, \"partial_period\": false}, {\"period\": \"2022-02-01\", \"articles\": 80, \"critical\": 29, \"negative\": 3, \"positive\": 72, \"mean_priority\": 5.51, \"critical_pct\": 36.2, \"partial_period\": false}, {\"period\": \"2022-03-01\", \"articles\": 63, \"critical\": 20, \"negative\": 6, \"positive\": 54, \"mean_priority\": 5.56, \"critical_pct\": 31.7, \"partial_period\": false}, {\"period\": \"2022-04-01\", \"articles\": 91, \"critical\": 31, \"negative\": 6, \"positive\": 77, \"mean_priority\": 5.42, \"critical_pct\": 34.1, \"partial_period\": false}, {\"period\": \"2022-05-01\", \"articles\": 96, \"critical\":"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which dated news items explain the latest private credit coverage spike?",
+    "args": {
+     "term": "private credit",
+     "from": "2026-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='private credit', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 29,
+   "traced": 29,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

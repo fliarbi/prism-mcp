@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 2,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 2,
+    "refs": 3,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Correctly declines to compare null rows, but offers no comparison at all, so anchor 0 applies.",
+    "chart": "No chart block.",
+    "drilldown": "Breakdown is only the five rows; none of the three follow-ups returned data.",
+    "export": "Per-row CSV keeps nulls as empty cells with a reason column, carries DOIs and has a provenance JSON. Window is unknown and the LFP row has no url.",
+    "repro": "Capped at 2. The call is listed with args, but the empty window limits replay.",
+    "refs": "All 4 DOIs resolve, each tied to a row with year/venue/tier. No quotes are given.",
+    "accuracy": "Reads every row as the reference does. It claims a zero-day gap to today, which the empty window cannot support, and it misses the solid-state 0-papers/top-source anomaly.",
+    "limits": "Placed limits cover lanes, abstract-only matching, cell vs pack, and null vs zero. The window/currency claim is weak.",
+    "verdict": "Direct answer, decision, high confidence with its reason, and what would change it. It does not name the 350 Wh/kg title as the nearest contrary item.",
+    "facets": "All five rows carry a grounded null with the tool's reason."
+   },
+   "B": {
+    "comparison": "Ratios to the LFP midpoint are memory estimates, labelled and recomputing correctly (1.5, 0.8, 2.2). Anti-gaming caps this at 2.",
+    "chart": "No chart.",
+    "drilldown": "Layers are named, but 0 of 6 follow-ups executed ok.",
+    "export": "Capped at 1 because one CSV is a memory estimate. The coverage CSV preserves nulls.",
+    "repro": "Traced counts come from c1 and the estimates are labelled. Capped at 2.",
+    "refs": "4 DOIs resolve, each tied to a claim with tier. The 350 Wh/kg number is correctly sourced from the [r3] title. No quotes.",
+    "accuracy": "Catches the reference's anomalies: the solid-state row reports 0 papers yet lists a top source, and the LFP news item is off-topic recycling. Memory figures are clearly separated from corpus results.",
+    "limits": "Gives the window as empty, newest item 146 days old (recomputes), lane split, abstract-only censoring and loose matching. Says full-text extraction would close the gap.",
+    "verdict": "Answer, decision, low confidence with its reason, and what would change it. It names the 350 Wh/kg design target. It mixes in memory ranges but labels them.",
+    "facets": "All rows grounded as null with reasons; memory estimates sit apart from them."
+   },
+   "C": {
+    "comparison": "Memory ratios with midpoint slips: 350–500 gives 425, not 400; LFP gives 172.5 and sodium-ion 137.5.",
+    "chart": "Chart is labelled estimate, which earns 1. Its window of 2026-01..2026-10 is invented for memory data.",
+    "drilldown": "Generic breakdown; only 1 of 6 follow-ups ok.",
+    "export": "CSV labelled estimate.",
+    "repro": "Memory only, labelled.",
+    "refs": "No references.",
+    "accuracy": "Ranges are plausible and nothing contradicts the reference. Midpoints are inconsistent with the stated ranges, and the chart window is spurious.",
+    "limits": "Honest memory labelling with a specific list of what it cannot answer. No corpus limits.",
+    "verdict": "Direct ordering with decision and confidence, but it rests on memory.",
+    "facets": "Answered from memory; does not address the asked rows as corpus rows."
+   },
+   "D": {
+    "comparison": "Qualitative ordering only.",
+    "chart": "None.",
+    "drilldown": "Generic layers; 0 of 5 follow-ups ok.",
+    "export": "No export.",
+    "repro": "Memory estimates, labelled.",
+    "refs": "No references.",
+    "accuracy": "No contradictions and estimates are labelled.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "General answer with decision and confidence, from memory.",
+    "facets": "Memory only."
+   }
+  },
+  "errors": {
+   "A": [
+    "Claims a zero-day gap between data and today although the call returned no window"
+   ],
+   "B": [],
+   "C": [
+    "Midpoints inconsistent with stated ranges (Li-metal 400 vs 425; LFP 170 vs 172.5)",
+    "Chart and CSV carry an invented 2026-01-01..2026-10-23 window for memory figures"
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "A and B both report the corpus honestly: 0 of 5 rows have a stated energy-density figure. B goes further for a decision-maker. It catches the solid-state 0-papers anomaly and the off-topic LFP news row, quantifies the 146-day staleness, and keeps clearly labelled memory ranges apart from corpus results. C and D answer only from memory with no traceable sources; C also has midpoint slips and a fabricated chart window."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 2,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 2,
+   "refs": 3,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

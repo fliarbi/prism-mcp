@@ -1,0 +1,108 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The recalled estimate series is explicitly labeled, but has no verifiable source trace; ceiling 1.",
+    "comparison": "Numeric payout comparison is labeled estimate and mixes populations and periods; caveat is stated, ceiling 2.",
+    "chart": "The plotted series is from memory and labeled estimate; ceiling 1.",
+    "drilldown": "Provides a memory-based breakdown and follow-up calls, but only 2 of 7 executed successfully; ceiling 2.",
+    "export": "Both exports are explicitly estimates, ceiling 1.",
+    "repro": "No calls were run and numeric claims are mostly untraced; ceiling 1.",
+    "refs": "All three listed DOIs resolve; however, several claims rely on sources without resolvable identifiers or verified quotes, so below ceiling 5.",
+    "accuracy": "The synthesis is cautious and does not conflict with the record, but unsupported claims about causal evidence and recalled figures limit confidence.",
+    "limits": "Clearly labels estimates, windows, selection, and interpretation; misses specific limitations of the cited evidence and verification.",
+    "verdict": "Direct answer, decision, confidence, condition for change, and contrary evidence are present; conclusion is bounded by the stated limits.",
+    "facets": "Addresses causality and selection qualitatively, but lacks grounded evidence counts, effect sizes, or a traced trend."
+   },
+   "B": {
+    "trend": "Both series trace to the recorded response, state windows and censoring, quantify change, and interpret research as flat and news as rising; ceiling 5.",
+    "comparison": "Provides traced same-window stance contrasts and ratios, defines framing versus read-document baselines, and preserves the labels caveat; slightly short of ceiling 5 because the comparison only partly tests causal effect.",
+    "chart": "Charts trace to recorded series with window, unit, source, captions, and visible partial 2026 news period; ceiling 5.",
+    "drilldown": "Includes traced topic and lane breakdowns plus specific follow-ups, but only 3 of 6 executed successfully and the shown layers do not reach identified papers with item-level follow-up results.",
+    "export": "Exports are traced and include provenance, windows, units and coverage; some fields are renamed/aggregated and the stance table does not preserve nulls with reason, so below ceiling 5.",
+    "repro": "Lists calls and arguments and most numeric claims trace; a few claims are untagged and the regenerate block is not sufficient to rebuild every chart and table exactly.",
+    "refs": "All cited DOIs resolve, and retrieved quotes are tied to claims; background references lack verified identifiers or verbatim quotes, so below ceiling 5.",
+    "accuracy": "Mostly aligns with the record, but says the statistics call returned no_data although the call returned ok:false with candidate sentences and series; also treats the 2025 point cautiously despite it not being flagged partial.",
+    "limits": "Places window, censoring, lane, match and coverage limits near the numbers; some retrieval and evidence-strength limits remain generalized.",
+    "verdict": "Gives an answer, decision, confidence and conditions, but the low confidence reason leans on thin retrieval and the verdict does not squarely acknowledge the strongest contrary evidence in its own material.",
+    "facets": "Grounds trend, comparison, corpus counts and limitations, but leaves news content and effect sizes unanswered and does not fully resolve the selection-versus-causation question."
+   }
+  },
+  "errors": {
+   "A": [
+    "S&P 500 buyback values and payout figures are explicitly recalled estimates, not checked measurements; the trend and comparison cannot establish an investment effect.",
+    "The asserted causal and aggregate findings are not grounded in the supplied record, which does not retrieve those studies or verify their claims."
+   ],
+   "B": [
+    "The text says research.statistics returned no_data, but the recorded response is ok:false and includes candidate sentences plus research and news series.",
+    "The claimed news peak in 2026-02 is not verifiable from the supplied monthly points, which are truncated after 2021-06; the recorded trend summary names 2025-04 as the peak.",
+    "The statement that phrases matched 0 titles misreads the record: zero matches apply to specific repurchase phrases, while 'share buybacks' has 39 phrase matches.",
+    "The claim that all counts are in the intersection lane overgeneralizes: readable papers, the health literature index, news, patents and arXiv have separately stated windows and definitions."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is substantially more useful for a decision-maker because its charts, trend, and exports mostly trace to the recorded database, while A’s central figures are estimates from memory. B still overstates what the retrieval proves and contains specific misreadings, so its conclusion should be treated as provisional rather than evidence that buybacks do or do not cause long-term underinvestment."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

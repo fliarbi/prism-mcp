@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 0,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "export": 1,
+    "drilldown": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 5,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Five of six follow-ups executed, but there is no traced breakdown layer and the calls are broad.",
+    "export": "Empty provenance and no rows.",
+    "repro": "There are no numbers, so nothing can be regenerated.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Says what is unmeasured, but the limits are generic rather than tied to any data.",
+    "verdict": "An honest non-answer: it hedges to nothing usable.",
+    "facets": "No facet is answered."
+   },
+   "B": {
+    "trend": "Traced 24-month series with a stated window, the peak with its date, a 3.36x late-vs-early ratio and the CAGR. No critical or negative decomposition.",
+    "comparison": "Early third vs late third is traced, with the delta 5,902 and ratio 3.36. Tone is also compared against a defined corpus baseline.",
+    "chart": "One fully traced volume chart. The geography facet the question asks for is not charted.",
+    "drilldown": "Traced country, theme and entity layers, but no item-level headlines with URLs. Three of five follow-ups executed.",
+    "export": "Monthly CSV with provenance. There is no places table, although 'where' is a core facet.",
+    "repro": "45 of 45 numbers traced, a calls block is listed, and a provenance block is included. The 144-day gap recomputes.",
+    "refs": "No headline items, dates or URLs, where the pattern needs them.",
+    "accuracy": "Everything matches the reference. It does not flag the Georgia collision or the entity mislabels.",
+    "limits": "Window gap, censoring, mention matching, enrichment lag, the sampled publisher panel and placed_pct are all placed next to the numbers they bound.",
+    "verdict": "The verdict mostly restates the headline count. 'Where' and trend values are missing from the verdict itself.",
+    "facets": "Volume, trend, geography split and tone are covered with grounded values."
+   },
+   "C": {
+    "trend": "Series is memory case counts, not coverage. It is labelled estimate.",
+    "comparison": "Memory figures for cases, the wrong quantity for this question.",
+    "chart": "An estimate-labelled chart of cases, not coverage.",
+    "export": "Estimate-labelled CSV of cases.",
+    "drilldown": "Only 2 of 7 follow-ups executed. The layer description is generic.",
+    "repro": "Memory numbers; the sources are generic landing pages.",
+    "refs": "Generic CDC and WHO landing pages, with no specific documents.",
+    "accuracy": "The memory case facts are plausible and labelled. Nothing contradicts the reference.",
+    "limits": "Specific about what is unmeasured and separates interpretation.",
+    "verdict": "Answers a proxy question about cases, not coverage, at low confidence.",
+    "facets": "Coverage facets are unanswered; what is offered is outbreak proxies from memory."
+   },
+   "D": {
+    "trend": "Traced series with window, peak and second surge. It quantifies 3.36x total and 3.65x critical. Recomputed figures are exact: 4.6x, 36%, 12.7x.",
+    "comparison": "Early vs late, tone vs a defined baseline, and peak vs trough, all recomputing exactly. The global geography contrast is described, not ratioed.",
+    "chart": "Only a volume chart. The places table and the critical decomposition are in CSVs but not charted.",
+    "drilldown": "Month and country layers lead to dated headlines with publisher and URL. Three of six follow-ups executed; none were folded back into the report.",
+    "export": "Monthly CSV with the decomposition plus a places CSV, provenance and a JSON block.",
+    "repro": "109 of 109 traced, a calls block and a provenance block.",
+    "refs": "Script ceiling of 1; news items carry dates, publishers and URLs.",
+    "accuracy": "Catches the 'cult of the dead cow' mislabel, 'the who' typed as a person, the Georgia collision, enrichment lag hiding the Bangladesh surge, and the recent-sample bias.",
+    "limits": "Strong and placed next to the numbers, but capped by the ceiling.",
+    "verdict": "Direct, quantified and geographic, with decision, confidence, conditions and the window bound stated.",
+    "facets": "All facets are covered, including the US-vs-global split and the Bangladesh under-labelling."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "The trend, chart and export use outbreak case counts as a stand-in for coverage."
+   ],
+   "D": []
+  },
+  "best": "D",
+  "verdict": "D and B both reproduce the measured series exactly, but D also splits the geography, flags the entity and place anomalies, and shows the enrichment lag that under-counts the 2026 Bangladesh surge. D also reaches item-level headlines with URLs, which B never does. A and C measure nothing about coverage; C substitutes memory case counts, which a decision-maker could misread as a coverage series."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 0,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 5,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

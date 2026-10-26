@@ -1,0 +1,249 @@
+{
+ "slug": "private-credit-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 32.4,
+   "plain": 32.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 32.8,
+    "gpt": 32.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 2.5,
+    "chart": 2.5,
+    "drilldown": 3.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 5.0
+   },
+   "strict": 71.5,
+   "plain": 71.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 76.4,
+    "gpt": 66.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 1.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 29.4,
+   "plain": 29.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 25.6,
+    "gpt": 33.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 3.5,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 2.5,
+    "repro": 4.5,
+    "refs": 3.0,
+    "accuracy": 4.5,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 71.3,
+   "plain": 71.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.4,
+    "gpt": 74.2
+   }
+  }
+ },
+ "judge_mad": 0.39,
+ "verdicts": {
+  "opus": "B and D both grounded their answers in the radar call. Only B noticed that half of the 'private credit' papers concern bank credit to the private sector rather than private credit markets, which shows how thin the real literature is. B also quantified the gap between research and news. D was faithful to the data but had a shallower trend and only one chart. A and C answered from memory: C was honestly labelled but answered with AUM rather than research measures, and A cited unresolvable identifiers.",
+  "gpt": "A is the strongest decision aid: it treats the literature as a selected, thin map, quantifies the framing shift, and clearly bounds what the data can establish. B adds useful comparisons and exports, but mislabels an unspecified trend unit and overstates a cross-window research/news comparison; C and D are candid about memory limits but provide little grounded measurement."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "DOI 10.1111/jofi.13267 not found in the corpus",
+    "'Private Credit and the Rise of the Middle Market' (NBER 2024) is unverified and looks fabricated"
+   ],
+   "claude_prism": [
+    "The verdict cites 2017-2025 endpoints under a 'since 2022' framing",
+    "The '8.54 ratio points' delta compares ratios taken over different windows"
+   ],
+   "claude_bare": [
+    "It answers with market AUM estimates instead of research measures"
+   ],
+   "chatgpt_prism": [
+    "It treats country bank-credit papers as private-credit-market topics without flagging the mismatch"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Research trend count unit is unspecified in the reference, so it cannot be presented as a verified count of papers.",
+    "The supplied record does not define the framing comparison window dates."
+   ],
+   "claude_prism": [
+    "The research trend is described and charted as papers, although the reference does not specify its count unit.",
+    "The research-versus-news ratio comparison combines different windows and units into a headline comparison.",
+    "The news endpoint at May 2026 is discussed as a possible decline without a grounded partial-period status."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1111/jofi.13267 is not found in the corpus as supplied.",
+    "The NBER paper identifier/URL is unverified, and the evidence CSV presents remembered records without traced source calls."
+   ],
+   "claude_bare": [
+    "AUM figures and the 2025 event claims are explicitly estimates from memory, not measured research on the question.",
+    "The listed evidence has no verified DOIs or URLs."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series. The direction is asserted, and A honestly states that the trend is unmeasured.",
+    "comparison": "Qualitative contrast between earlier and newer framing only.",
+    "chart": "The chart has empty points and is labelled estimate. It is honest but measures nothing.",
+    "drilldown": "All follow-ups failed (0/5). The breakdown layers are illustrative and come from memory.",
+    "export": "The CSV comes from memory and is labelled partial. One of its DOIs is not found.",
+    "repro": "Ceiling is 0. No calls were run.",
+    "refs": "The jofi.13267 DOI was not found in the corpus. The NBER title is unverified and possibly invented.",
+    "accuracy": "It presents two specific papers whose identifiers do not resolve or are unverified; they look fabricated.",
+    "limits": "It is specific about what is unmeasured: no corpus, no news, memory selection.",
+    "verdict": "The verdict has all four parts, but rests on memory. It does not report how thin the literature is.",
+    "facets": "The facets are answered from memory or declared unmeasured."
+   },
+   "claude_prism": {
+    "trend": "Endpoints are traced. The CAGR of 13.7% and the thirds ratio of 2.25x are given, the news peak is named, and possible partial-month censoring is flagged. The series is not decomposed.",
+    "comparison": "Research vs news late/early ratios come from different windows. B states the mismatch but does not resolve it, and the '8.54 ratio points' figure is not meaningful. The framing comparison is sound.",
+    "chart": "The charts trace, with window, unit and source. The two-point lines are thin, and the ratio bar chart mixes windows.",
+    "drilldown": "There is one traced paper layer with DOIs, and 3 of 6 follow-ups returned data.",
+    "export": "Two traced CSVs with DOIs, empty venue kept blank rather than zeroed, and a provenance JSON. The unit label on new_work.csv is odd.",
+    "repro": "28 of 30 numbers trace, and the single call is listed with args.",
+    "refs": "All 10 DOIs resolve and each is tied to a claim. Tier is labelled as interpretation, and B notes that no quotes were returned.",
+    "accuracy": "It catches the reference's off-topic rows: bank credit to the private sector vs direct lending. It also flags the possibly partial last news month.",
+    "limits": "Window gaps to today are quantified. B covers match mode, citation lag, censoring, and what would close the gap. Some of these are in the footer.",
+    "verdict": "Ceiling is 3. The verdict mixes the 2017 endpoint into a 'since 2022' claim.",
+    "facets": "All facets are covered, plus the research-vs-news mismatch and the ambiguity of the term."
+   },
+   "claude_bare": {
+    "trend": "The AUM series is labelled estimate and is not the quantity the question asks about.",
+    "comparison": "The comparison is between estimated AUM figures. These are memory numbers, off-question.",
+    "chart": "The memory chart is labelled estimate.",
+    "drilldown": "Only 1 of 6 follow-ups returned data. The layers are generic.",
+    "export": "The CSV is an estimate, labelled as such.",
+    "repro": "All figures are labelled estimates.",
+    "refs": "The works are real, but no identifier is resolvable.",
+    "accuracy": "No contradictions. The recalled specifics are plausible and labelled est.",
+    "limits": "States the window gap to today and that it used memory only.",
+    "verdict": "The verdict is complete in form, but low-grounded and off-quantity.",
+    "facets": "The facets are answered from memory."
+   },
+   "chatgpt_prism": {
+    "trend": "Endpoints and CAGR are traced, and the news peak is named. There is no thirds ratio, and the possibly partial last month is not flagged.",
+    "comparison": "Framing 40.0% vs 41.9%: -1.9pp, 0.95x, with the caveat carried. There is no research-vs-news contrast.",
+    "chart": "There is a single traced research chart. The news trend and framing are not charted.",
+    "drilldown": "There is one traced layer with DOIs, but only 2 of 6 follow-ups returned data.",
+    "export": "One traced CSV with provenance.",
+    "repro": "29 of 29 numbers trace, and the call is listed.",
+    "refs": "The DOIs resolve inline, but the References section collapses into a single entry, and the link between papers and claims is weak.",
+    "accuracy": "Faithful to the record, but it does not flag the off-topic country bank-credit rows. It calls the trend unit unspecified.",
+    "limits": "States the windows, coverage and that the corpus is not a census. The limits are mostly in the footer.",
+    "verdict": "The answer, decision, confidence and conditions are coherent, and the unchanged framing is named as the contrary finding.",
+    "facets": "The main facets are grounded, including a grounded 'no data' for under-covered topics."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Quantifies the reported 2017–2025 research rise and CAGR, but omits the available early/late comparison and does not name the peak value and date in the prose.",
+    "comparison": "The cautionary-share change and ratio are stated, but the comparison windows are undefined in the supplied record.",
+    "chart": "The chart traces its plotted points and states a window, unit, and source; the trend facet is only endpoint levels, with no decomposition.",
+    "drilldown": "Lists selected papers as a breakdown, but only two of six proposed follow-ups executed successfully and no follow-up result is folded in.",
+    "export": "The selected-work CSV is traced and referenced, but the question also needs the trend values in an export; no trend CSV is supplied.",
+    "repro": "Lists the call with arguments and capture date; its stated call reproduces the reported figures and export.",
+    "refs": "DOIs resolve, but there are no verbatim abstract quotes and the reference section does not map individual documents to claims with the full requested metadata.",
+    "accuracy": "Correctly distinguishes selected title-matched work from a census and framing labels from truth; no contradiction with the record.",
+    "limits": "Covers selection, ingestion, and time limits, but the framing-window dates remain unstated and some limits are separated from the numbers they qualify.",
+    "verdict": "Directly answers with a decision, confidence, and what would change it; the strongest contrary evidence is not explicitly named.",
+    "facets": "Covers themes, volume, framing, and the research/news distinction, while noting missing geography and under-covered-topic data."
+   },
+   "claude_prism": {
+    "trend": "Quantifies research growth and news peak, but the news series’ late endpoint is treated as a possible decline without the record’s fuller trend context and the final-month caveat is unresolved.",
+    "comparison": "The early/late ratios are numeric, but compare different windows and units; naming that mismatch does not make them one-scale comparable.",
+    "chart": "The research chart calls an unspecified Prism count ‘papers’; the chart set also lacks a chart of the framing comparison requested by the data.",
+    "drilldown": "Provides paper-level identifiers and proposed specific calls, with three of six follow-ups succeeding; it does not fold an executed follow-up result into the report.",
+    "export": "Provides paper and trend CSVs with provenance and identifiers, but some titles are abbreviated and the trend export is a selected-points dump rather than the full available summary.",
+    "repro": "Most numeric claims trace, but two remain untraced and the calls do not fully reproduce every chart/export detail.",
+    "refs": "DOIs resolve and entries are tied to claims, but no verbatim quotes are supplied and venue tiers are partly interpretation.",
+    "accuracy": "Misstates the research trend unit as papers and treats differing research/news windows as a comparative growth-rate headline; the final news point’s status is unresolved.",
+    "limits": "States window gaps, match-mode breadth, coverage limits, and citation lag near the claims, but does not resolve whether the final month is partial.",
+    "verdict": "Gives a direct answer, decision, confidence, and condition, but the verdict ceiling is limited by its support and comparison issues.",
+    "facets": "Addresses volume, themes, framing, term overlap, coverage gaps, and research-versus-news, with grounded caveats."
+   },
+   "chatgpt_bare": {
+    "trend": "Explicitly says the trend is unmeasured; no grounded series is provided.",
+    "comparison": "Only a qualitative, unmeasured framing contrast is offered.",
+    "chart": "Chart records no data and is not a measured chart for the requested research trend.",
+    "drilldown": "Breakdown is illustrative and proposed calls were not executed.",
+    "export": "The evidence CSV is memory-selected and lacks traced provenance.",
+    "repro": "No recorded call or reproducible numeric claim.",
+    "refs": "One DOI is fabricated or malformed and another work has no verified URL; this triggers the reference ceiling.",
+    "accuracy": "The deliverable avoids measured trend claims, but presents a failed DOI and an unverified remembered paper as evidence.",
+    "limits": "Clearly labels memory, partial coverage, recall selection, and the unmeasured trend and news facets.",
+    "verdict": "Answers the question with a decision, confidence, and what would change it, bounded by the stated lack of measurement.",
+    "facets": "Several themes are discussed, but most requested facets have no grounded values and the reference set is unreliable."
+   },
+   "claude_bare": {
+    "trend": "AUM is explicitly labelled an estimate from memory, which earns the estimate anchor only.",
+    "comparison": "The numeric comparison is an estimate from memory, not a traced comparison.",
+    "chart": "The chart is explicitly an estimate from memory, so it earns the estimate anchor only.",
+    "drilldown": "Offers generic proposed calls and an unsupported topic breakdown; only one follow-up succeeded.",
+    "export": "The AUM CSV is labelled estimate, with no recorded source call.",
+    "repro": "Numbers are candidly labelled estimates, but there is no reproducible call recipe.",
+    "refs": "References are unverified and lack resolvable identifiers; no claim-linked, verified evidence is provided.",
+    "accuracy": "Market-size and event claims are explicitly estimates, but the stated research framing and recalled specifics are not independently supported.",
+    "limits": "States memory-only method, absent lane coverage, and time gap, though limits do not turn the estimates into measured evidence.",
+    "verdict": "Provides a decision and confidence, but its answer rests on estimates and lacks a strong contrary finding.",
+    "facets": "Most facets requested by the question, including research trend and new work, remain unmeasured."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

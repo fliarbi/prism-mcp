@@ -1,0 +1,250 @@
+{
+ "slug": "glp1-weight-loss-muscle",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 2.5,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 4.0,
+    "facets": 1.5
+   },
+   "strict": 40.4,
+   "plain": 40.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 36.6,
+    "gpt": 44.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 1.5,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 67.7,
+   "plain": 67.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.8,
+    "gpt": 61.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 31.6,
+   "plain": 31.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 29.8,
+    "gpt": 33.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 2.5,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 65.9,
+   "plain": 65.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 64.2,
+    "gpt": 67.6
+   }
+  }
+ },
+ "judge_mad": 0.5,
+ "verdicts": {
+  "opus": "D and B both grounded their answers in the recorded calls and reached the same calibrated conclusion: lean-mass loss is plausible at class level, but there is no human semaglutide effect size. D went further than B. It quantified the trend, exported the tally, and caught the corpus's own anomalies, including the mismatched subject headings term, the off-topic documents and the source-fit failures. A and C were honest memory syntheses; C gives the more expert-recognisable picture, but neither can be traced or reproduced.",
+  "gpt": "B is the strongest decision aid: it answers directly, separates class-level human evidence from a mouse finding, and traces its annual series and citations. Its 2025 censoring treatment and incomplete exports and limits keep it short of a fully reproducible, decision-grade deliverable; C is similarly well sourced but weakens its answer with an ungrounded diet comparison."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "The provenance block lists research.evidence and counter_evidence calls with args that were never executed, presented as provenance.",
+    "The DOI 10.1007/s13679-017-0255-2 was not found."
+   ],
+   "chatgpt_prism": [
+    "Claims Prism reported 'strict index partition reads' / reachability; this is not in the record.",
+    "States 'two supporting' candidate excerpts; the record shows three proposed_stance supports.",
+    "The Hong 2019 'claimed quote' text is not in the record."
+   ],
+   "claude_bare": [
+    "Heymsfield 2014 is attributed to Obesity; it was published in Current Obesity Reports.",
+    "The 'tier-weighted tally (est.)' is invented structure."
+   ],
+   "claude_prism": [
+    "'Coverage checks passed on all tables' is not supported by the reference record.",
+    "The Hong 2019 quote is not in the record (flagged as unverified)."
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [
+    "The 2017 review DOI is not found in the corpus.",
+    "STEP 1 chart and comparison values are not traceable to the supplied research record."
+   ],
+   "chatgpt_prism": [
+    "The 2025 annual count is plotted while the prose says the newest period is censored; the supplied series note says ingest lag affects that period."
+   ],
+   "claude_prism": [
+    "The diet-induced 25% baseline and resulting 1.6x comparison are explicitly from memory, not traced evidence.",
+    "The 2025 point is included in the chart while its censoring caveat is not reconciled."
+   ],
+   "claude_bare": [
+    "The STEP 1 DOI cited is for the main trial, not the described DXA substudy.",
+    "The numeric comparisons and trend chart are unverified memory estimates."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series. It says honestly that it cannot measure a trend. The ceiling is 0.",
+    "comparison": "Memory numbers for fat vs lean relative change (19% vs 10%). They are roughly right but cannot be checked.",
+    "chart": "The STEP 1 bars are labelled as estimates. The window is a degenerate 2021-01-01..2021-01-01.",
+    "drilldown": "The layers are generic and 0 of 5 follow-ups ran successfully.",
+    "export": "A CSV of memory values labelled as estimates.",
+    "repro": "No traced numbers. The provenance block lists calls that were never run.",
+    "refs": "One DOI was not found in the corpus, which caps this at 1. The quote is unverifiable.",
+    "accuracy": "No clear contradictions. The STEP 1 figures are approximately correct. However, the provenance block implies that unrun calls were executed.",
+    "limits": "Says it is knowledge-only and states the window gap. The limits are fairly specific.",
+    "verdict": "Clear answer, decision, confidence and what would change it. It does not name any contrary evidence.",
+    "facets": "Answered mostly from memory."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window, censoring caveat and the eightfold multiple. The 2.83 late-vs-early ratio and an explicit peak reading are not given.",
+    "comparison": "Explicitly declines to give a numeric contrast. The 30 vs 71,506 lane counts are not framed as a comparison.",
+    "chart": "One fully traced volume chart. No chart of the stance or tally facets.",
+    "drilldown": "One contribution-type breakdown. Follow-ups failed (0 of 3).",
+    "export": "One traced CSV with provenance; this is at the ceiling.",
+    "repro": "12 of 13 numbers traced. Calls are listed with args.",
+    "refs": "All 3 resolve and two quotes are verified. Contrary evidence is included. The Hong 2019 quote does not appear in the record.",
+    "accuracy": "Claims 'strict index partition reads' and 'two supporting' candidate excerpts. Neither is in the record, and the record has three proposed-supports.",
+    "limits": "Gives windows and the 144-day news gap. Capped at 3.",
+    "verdict": "Direct answer, decision, medium confidence with reason, and change conditions. It notes the contrary paper.",
+    "facets": "Effect size, corpus, tally and trend are covered. News is only mentioned as a window."
+   },
+   "claude_bare": {
+    "trend": "A two-point cross-trial series labelled as estimates. It is not a trend of the quantity asked about.",
+    "comparison": "The 39 vs 25 vs 25 comparison table comes from memory.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Generic layers. Follow-ups failed (0 of 6).",
+    "export": "Memory CSV labelled as estimates.",
+    "repro": "All numbers are from memory, honestly labelled.",
+    "refs": "Only 1 of 5 resolvable identifiers; the rest are 'doi not recalled'. Heymsfield 2014 is attributed to Obesity, but it is in Current Obesity Reports.",
+    "accuracy": "Recalled figures are broadly plausible. It has a venue error and a contrived 'tier-weighted tally (est.)'.",
+    "limits": "Specific about what is unmeasured and about the window gap.",
+    "verdict": "Expert-like answer with a decision, confidence and conditions. It names the contrary tirzepatide data.",
+    "facets": "Answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Traced series with window and censoring. Reports early third 6 vs late third 17, ratio 2.83, and the 2024 peak.",
+    "comparison": "Traced early-vs-late ratio (2.83). The diet baseline is a labelled estimate from memory.",
+    "chart": "One fully traced chart. Tally and stance are not charted.",
+    "drilldown": "Traced layers covering corpus, tier and stance. Only 1 of 5 follow-ups ran successfully.",
+    "export": "Two traced CSVs. Provenance args are incomplete for c2 and c3. coverage=full is questionable.",
+    "repro": "27 of 27 numbers traced, with calls and args listed.",
+    "refs": "All 4 resolve. Three quotes are verified, the source-fit failures are explained, and the contrary paper is flagged as unverified.",
+    "accuracy": "Catches the 'Body Dissatisfaction' subject headings mismatch, the off-topic documents and the source-fit failures. 'Coverage checks passed' is not in the record.",
+    "limits": "Limits are placed next to the numbers. Covers window gaps, censoring, match mode, dropped phrases and what would close the gaps.",
+    "verdict": "Direct, bounded answer with low confidence and its reason, a decision and change conditions.",
+    "facets": "Most facets are grounded. The news facet gets an explicit 'no data'."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No research or media time series; the chart is a trial before-and-after estimate.",
+    "comparison": "Compares rounded estimates from one cited study, but they are not traceable to the record.",
+    "chart": "Estimate-labelled chart, but the source values are not in the supplied record.",
+    "drilldown": "Names evidence layers, but follow-up calls failed and no linked item-level breakdown is established.",
+    "export": "Estimate-labelled CSV; no recorded response traces its rows.",
+    "repro": "No numeric claims trace to a replayable recorded call.",
+    "refs": "One DOI is not found in the corpus, capping the score at 1.",
+    "accuracy": "The distinction between lean mass and muscle is sound, but specific STEP figures are not verified here.",
+    "limits": "Clearly labels knowledge-only evidence and several relevant limits; some data-specific limits cannot be measured.",
+    "verdict": "Direct, bounded answer with confidence, decision, and what evidence would change it.",
+    "facets": "Addresses clinical significance and measurement limits, but lacks grounded corpus and comparison facets."
+   },
+   "chatgpt_prism": {
+    "trend": "Annual series and eightfold change are reported, but the 2025 censoring caveat is not reconciled with plotting 2025 as a full point.",
+    "comparison": "Uses a common conceptual scale and explains the class-level versus mouse evidence, but gives no numeric contrast or defined baseline.",
+    "chart": "The annual chart traces to the recorded series and supports a stated claim; its censoring treatment is incomplete.",
+    "drilldown": "Script found none of the proposed follow-up calls returned usable data; contribution-type breakdown is one layer.",
+    "export": "Annual CSV traces, but omits the full series field names/provenance and other needed tables.",
+    "repro": "Most numeric claims trace and calls include args; the trend’s 2025 treatment weakens exact replay fidelity.",
+    "refs": "All three identifiers resolve and claims/quotes are tied to sources, but the unread contrary item’s quote is unverified.",
+    "accuracy": "Most fields are read correctly; the annual-series censoring is presented inconsistently with the plotted endpoint.",
+    "limits": "States windows, lanes and limits, but misses or misplaces some caveats alongside the affected values.",
+    "verdict": "Direct and appropriately cautious, with decision, confidence and conditions; bounded evidence does not establish clinical significance.",
+    "facets": "Covers research volume, evidence types, class versus semaglutide, and uncertainty; no usable follow-up results."
+   },
+   "claude_prism": {
+    "trend": "Quantifies the rise and early/late ratio, but does not resolve the source’s warning about the censored 2025 point.",
+    "comparison": "The numeric diet comparison relies on an explicitly unverified memory estimate, so it is not a traced comparison.",
+    "chart": "Series values trace and are labelled, but the censoring caveat is not visibly marked in the chart.",
+    "drilldown": "Provides one traced breakdown layer and calls, but only one of five follow-ups executed successfully.",
+    "export": "Exports trace in part, but provenance is incomplete and the tally omits the tool’s sides/stance fields.",
+    "repro": "Recorded calls and most numeric claims are traceable, with args; some exported/call windows are incomplete.",
+    "refs": "Identifiers resolve and quotes are tied to claims, but one contrary quote is explicitly unverified.",
+    "accuracy": "Mostly faithful to the record, but treats the 2025 series point ambiguously and adds an ungrounded diet comparison.",
+    "limits": "Specific window, lane, coverage, match-mode and noisy-match limits appear near the claims; some censoring language conflicts with the series.",
+    "verdict": "Direct answer and confidence are given, but the stated confidence and monitoring recommendation outrun the corpus’s lack of verified human evidence.",
+    "facets": "Covers key evidence, trend and no-data facets, but the diet comparison is ungrounded and follow-up coverage is thin."
+   },
+   "claude_bare": {
+    "trend": "Two cross-trial estimates are explicitly labelled; they are not a research time series.",
+    "comparison": "Numeric estimates are presented on a common scale and labelled memory, but cannot be checked against the record.",
+    "chart": "Estimate-labelled chart earns the memory-chart anchor only.",
+    "drilldown": "Provides proposed calls but no traced breakdown and none executed successfully.",
+    "export": "Estimate-labelled CSV is not traced to a recorded response.",
+    "repro": "Numbers are explicitly memory estimates and no replayable calls are provided.",
+    "refs": "The cited DOI resolves, but quotes and claim-support details are absent and other references lack identifiers.",
+    "accuracy": "Memory estimates are clearly disclosed, but the STEP DOI identifies the main trial rather than the stated DXA substudy.",
+    "limits": "Clearly identifies memory basis, unmeasured outcomes and the gap to today; limits are specific.",
+    "verdict": "Direct answer, decision, confidence and conditions are stated, though the quantified basis is unverified.",
+    "facets": "Discusses clinical significance and limits, but has no grounded corpus, trend or follow-up facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

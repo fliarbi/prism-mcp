@@ -1,0 +1,529 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 902,
+  "charts": [],
+  "tables": [
+   {
+    "name": "claims.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What effect size do recent meta-analyses report for coffee and cardiovascular disease?",
+    "args": {
+     "term": "coffee cardiovascular risk"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e cardiovascular risk'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coffee cardiovascular risk', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Is there counter-evidence on coffee and Parkinson's?",
+    "args": {
+     "term": "coffee Parkinson's disease"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': \"...e Parkinson's disease\"}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=\"coffee Parkinson's disease\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "Do any trials show coffee improves glycemic control in diabetics?",
+    "args": {
+     "term": "coffee type 2 diabetes trial"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...type 2 diabetes trial'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coffee type 2 diabetes trial', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "How is coffee and health coverage in the news framed?",
+    "args": {
+     "term": "coffee health claims"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'coffee health claims'",
+    "seconds": 19.7,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "How has the stance of research changed over time?",
+    "args": {
+     "term": "coffee health"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"coffee health\"], \"points\": [{\"year\": 2019, \"total\": 2, \"orientation\": {\"promising\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 50.0, \"contested_pct\": 0.0}, {\"year\": 2025, \"total\": 1, \"orientation\": {\"cautionary\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}], \"totals\": {\"promising\": 1, \"descriptive\": 1, \"cautionary\": 1}, \"papers\": 3, \"per_orientation_trend\": {\"promising\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"descriptive\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"cautionary\": {\"available\": false, \"re"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 4,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "50 — - Answer: The draft is not publishable as written. Of 5 claims, 1 is supported (caffeine r"
+   ]
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 3,
+   "not_found": [
+    "10.2337/dc13-2487",
+    "10.3945/ajcn.110.008060"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 119,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 50"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1241,
+  "charts": [],
+  "tables": [
+   {
+    "name": "claims_audit.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What do trials and reviews say about caffeine and short-term blood pressure?",
+    "args": {
+     "claim": "Caffeine raises blood pressure in the short term"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 86.2,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 976, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 1362, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 18621, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 938, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 1, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"availa"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What is the best pooled estimate for coffee and heart disease by dose?",
+    "args": {
+     "term": "coffee cardiovascular disease dose-response"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...disease dose-response'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coffee cardiovascular disease dose-response', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which papers argue against a protective effect on heart disease?",
+    "args": {
+     "claim": "Coffee lowers heart disease risk"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 102.9,
+    "sample": "{\"supporting\": [{\"id\": \"prism:W2771044916\", \"title\": \"Coffee consumption and health: umbrella review of meta-analyses of multiple health outcomes\", \"year\": 2017, \"venue\": \"BMJ\", \"tier\": \"meta_analysis\", \"strength\": \"very_high\", \"stance\": \"supports\", \"quote\": \"There was evidence of a non-linear association between consumption and some outcomes, with summary estimates indicating largest relative risk reduction at intakes of three to four cups a day versus none, including all cause mortality (relative risk 0.83 (95% confidence interval 0.79 to 0.88), cardiovascular mortality (0.81, 0.72 to 0.90), and cardiovascular disease (0.85, 0.80 to 0.90).\", \"grounded\": true, \"why\": \"Reports lower risk of "
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Is the literature on coffee and Parkinson's shifting over time?",
+    "args": {
+     "term": "coffee Parkinson's disease"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'coffee Parkinson's disease'",
+    "seconds": 13.3,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "Is there any evidence coffee cures type 2 diabetes?",
+    "args": {
+     "claim": "Coffee cures type 2 diabetes"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 83.8,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 34, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 2, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 309, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 0, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"co"
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "How is coffee-health coverage framed in news?",
+    "args": {
+     "term": "coffee health claims"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'coffee health claims'",
+    "seconds": 0.2,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 28,
+   "traced": 23,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "12 — - Censoring: deep reads covered 3 claims, with 5 to 12 documents each, so they are samples"
+   ]
+  },
+  "dois": {
+   "cited": 9,
+   "found_in_corpus": 9,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 121,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 3,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 801,
+  "charts": [],
+  "tables": [
+   {
+    "name": "claim_audit.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What evidence supports or contradicts a 50% reduction in heart disease risk from three cups of coffee daily?",
+    "args": {
+     "term": "three cups coffee daily 50% heart disease risk",
+     "orientation": "supportive",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...upportive', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='three cups coffee daily 50% heart disease risk', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='supportive', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "Which studies test whether coffee prevents Parkinson’s disease, and what are their limitations?",
+    "args": {
+     "term": "coffee caffeine Parkinson disease prevention",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'critical', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coffee caffeine Parkinson disease prevention', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Is there evidence that coffee cures or treats existing type 2 diabetes?",
+    "args": {
+     "term": "coffee cure treatment existing type 2 diabetes",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... diabetes', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coffee cure treatment existing type 2 diabetes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.brief",
+    "question": "What is the acute effect of caffeine on blood pressure, and how long does it last?",
+    "args": {
+     "term": "acute caffeine blood pressure duration",
+     "orientation": "balanced"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ientation': 'balanced'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='acute caffeine blood pressure duration', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='balanced', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "How many claims in this draft have citations, and what citation problems are present?",
+    "args": {
+     "text": "Coffee is one of the healthiest drinks in the world. Drinking three cups a day lowers the risk of heart disease by 50 percent. Coffee also prevents Parkinson's disease and cures type 2 diabetes. However, caffeine raises blood pressure in the short term."
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'text': \"...re in the short term.\"}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntext\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=\"Coffee is one of the hea...sure in the short term.\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 4,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "50% — The draft contains **five [est.] research-checkable claims**: coffee is “one of the health",
+    "50% — | Three cups a day lower heart-disease risk by 50% | Unsupported as written. Observational",
+    "50 — - **Coffee and cardiovascular health.** Umbrella review, *BMJ*, 2017, tier: evidence synth",
+    "50 — The available material supports a qualitative claim-by-claim review, but it does not provi"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 99,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 1063,
+  "charts": [],
+  "tables": [
+   {
+    "name": "claim-audit.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What directly relevant human studies test acute caffeine exposure and blood pressure, and what effects do they report?",
+    "args": {
+     "claim": "Short-term caffeine intake raises blood pressure",
+     "orientation": "balanced"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for find_evidence\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='balanced', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What evidence tests whether three cups of coffee per day changes heart-disease risk, and does any source support a 50% reduction?",
+    "args": {
+     "claim": "Three cups of coffee per day lowers heart disease risk by 50 percent",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for find_evidence\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What evidence distinguishes coffee’s association with Parkinson’s incidence from a causal preventive effect?",
+    "args": {
+     "claim": "Coffee prevents Parkinson's disease",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for find_evidence\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Do clinical studies show coffee cures type 2 diabetes, rather than associating coffee intake with later disease risk?",
+    "args": {
+     "claim": "Coffee cures type 2 diabetes",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for find_evidence\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "What outcome measures and comparison basis would be needed to define and substantiate coffee as one of the healthiest drinks?",
+    "args": {
+     "term": "coffee health outcomes comparative beverage health ranking",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'coffee health outcomes comparative beverage health ranking' — try expand=true, or a broader phrase",
+    "seconds": 11.0,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 25,
+   "traced": 25,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 107,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

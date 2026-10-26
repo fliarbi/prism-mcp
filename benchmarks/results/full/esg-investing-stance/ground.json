@@ -1,0 +1,579 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 622,
+  "charts": [
+   {
+    "id": "critical-share",
+    "title": "Illustrative share of ESG papers with critical orientation (guess)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Critical share, estimate",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "critical_share_estimate.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly count of ESG papers by orientation?",
+    "args": {
+     "term": "ESG investing",
+     "from": "2010",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which critical papers drove recent years?",
+    "args": {
+     "term": "ESG investing",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 140, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4417325327\", \"title\": \"Banking against sustainable finance: the effect of the European central bank on green bonds\", \"authors\": [\"Julio Galindo-Gutiérrez\"], \"venue\": \"Review of International Political Economy\", \"year\": 2025, \"date\": \"2025-12-15\", \"doi\": \"10.1080/09692290.2025.2599249\", \"url\": \"https://doi.org/10.1080/09692290.2025.2599249\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Sus"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "Which promising papers remain influential?",
+    "args": {
+     "term": "ESG investing",
+     "orientation": "promising"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...entation': 'promising'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ESG investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='promising', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which years are thin and distort shares?",
+    "args": {
+     "term": "ESG investing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'ESG investing'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ESG investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "Does phrase expansion (sustainable investing, SRI) change the trend?",
+    "args": {
+     "term": "ESG OR sustainable investing OR SRI"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"environmental, social, and governance investing\", \"sustainable investing\", \"socially responsible investing\", \"esg integration\"], \"points\": [{\"year\": 2017, \"total\": 35, \"orientation\": {\"descriptive\": 3, \"breakthrough\": 1, \"comparative\": 1, \"critical\": 3, \"promising\": 2, \"cautionary\": 1, \"problem_identifying\": 5}, \"stance_score\": null, \"positive\": 3, \"contested\": 9, \"positive_pct\": 8.6, \"contested_pct\": 25.7}, {\"year\": 2018, \"total\": 45, \"orientation\": {\"descriptive\": 2, \"comparative\": 4, \"problem_identifying\": 3, \"breakthrough\": 1, \"critical\": 3, \"cautionary\": 5, \"promising\": 5}, \"stance_score\": null, \"positive\": 6, \"contested\": 11, \"positive_pct"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Is news coverage becoming more critical too?",
+    "args": {
+     "term": "ESG investing"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 10, \"critical\": 9, \"negative\": 4, \"positive\": 6, \"mean_priority\": 7.0, \"critical_pct\": 90.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 9, \"critical\": 8, \"negative\": 1, \"positive\": 8, \"mean_priority\": 6.89, \"critical_pct\": 88.9, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 5, \"critical\": 5, \"negative\": 1, \"positive\": 4, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 8, \"critical\": 4, \"negative\": 1, \"positive\": 7, \"mean_priority\": 6.5, \"critical_pct\": 50.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 8, \"critical\": 3, \"negative\""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 9,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 951,
+  "charts": [
+   {
+    "id": "contested_share",
+    "title": "Share of papers framed as contested, by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "contested_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "positive_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "stance_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are the critical-labelled ones in 2025?",
+    "args": {
+     "term": "esg investing",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 140, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4417325327\", \"title\": \"Banking against sustainable finance: the effect of the European central bank on green bonds\", \"authors\": [\"Julio Galindo-Gutiérrez\"], \"venue\": \"Review of International Political Economy\", \"year\": 2025, \"date\": \"2025-12-15\", \"doi\": \"10.1080/09692290.2025.2599249\", \"url\": \"https://doi.org/10.1080/09692290.2025.2599249\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Sus"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers drove the 2025 problem-identifying surge?",
+    "args": {
+     "term": "esg investing",
+     "orientation": "problem_identifying",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 795, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7118166312\", \"title\": \"Bibliometric Analysis on Sustainable Finance and Technological Innovation for Climate Change Mitigation\", \"authors\": [\"Loso Judijanto\"], \"venue\": \"West Science Nature and Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.58812/wsnt.v3i04.2555\", \"url\": \"https://doi.org/10.58812/wsnt.v3i04.2555\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"review\", \"stance_score\": -0.3, \"topics\": [\"Sustainab"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What does counter-evidence look like for ESG outperformance?",
+    "args": {
+     "term": "esg investing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'esg investing'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='esg investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Does a narrower phrase 'ESG' only change the trend?",
+    "args": {
+     "term": "esg"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"esg\", \"environmental social governance\", \"sustainability performance\", \"corporate sustainability\", \"non-financial disclosure\"], \"points\": [{\"year\": 2017, \"total\": 930, \"orientation\": {\"critical\": 13, \"descriptive\": 88, \"promising\": 72, \"breakthrough\": 194, \"cautionary\": 7, \"comparative\": 17, \"problem_identifying\": 86}, \"stance_score\": null, \"positive\": 266, \"contested\": 106, \"positive_pct\": 28.6, \"contested_pct\": 11.4}, {\"year\": 2018, \"total\": 1023, \"orientation\": {\"problem_identifying\": 107, \"breakthrough\": 127, \"promising\": 97, \"descriptive\": 87, \"cautionary\": 21, \"critical\": 17, \"comparative\": 22}, \"stance_score\": null, \"positive\": 224, \"cont"
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "Which cautionary papers are most cited?",
+    "args": {
+     "term": "esg investing",
+     "orientation": "cautionary",
+     "sort": "cited",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 212, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W3124171854\", \"title\": \"What Do We Mean by Sustainable Finance? Assessing Existing Frameworks and Policy Risks\", \"authors\": [\"Marco Migliorelli\"], \"venue\": \"Sustainability\", \"year\": 2021, \"date\": \"2021-01-19\", \"doi\": \"10.3390/su13020975\", \"url\": \"https://doi.org/10.3390/su13020975\", \"cited_by\": 203, \"orientation\": \"cautionary\", \"contribution\": \"position\", \"stance_score\": -0.2, \"topics\": [\"Sustainable Finance and Green Bonds\", \"Corporate Social Resp"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 71,
+   "traced": 71,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 133,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 323,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly distribution of supportive, critical, and mixed academic research on ESG investing?",
+    "args": {
+     "topic": "ESG investing",
+     "granularity": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ... 'granularity': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ESG investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngranularity\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How does the framing of ESG investing differ between early and late periods?",
+    "args": {
+     "topic": "ESG investing",
+     "compare_periods": true,
+     "include_claims": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...'include_claims': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ESG investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_periods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_claims\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers are promising or critical examples, and what claims do they make?",
+    "args": {
+     "term": "ESG investing",
+     "orientation": "both",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2823, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7123613548\", \"title\": \"Driving Low-Carbon Growth: The Role of Institutional Quality Between Technological Progress, Sustainable Finance and Carbon Intensity\", \"authors\": [\"Shakeel Ahmad\", \"Xuepin Wu\", \"Asad Ullah\", \"Atta ur Rahman\"], \"venue\": \"Journal of Environmental Science and Management\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.47125/jesam/2026_1/03\", \"url\": \"https://doi.org/10.47125/jesam/2026_1/03\", \"cited_by\": 0, \"orientation\": \"pro"
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Are apparent changes robust to thin years, expanded terminology, and changes in corpus coverage?",
+    "args": {
+     "topic": "ESG investing",
+     "check_year_coverage": true,
+     "check_phrase_expansion": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...hrase_expansion': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ESG investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncheck_year_coverage\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncheck_phrase_expansion\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 90,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 782,
+  "charts": [
+   {
+    "id": "orientation-trend",
+    "title": "Annual counts of critical- and promising-framed ESG investing papers",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Critical",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Promising",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "esg_orientation_counts.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 27,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which critical-framed papers drove the 2025 count, and what claims do they make?",
+    "args": {
+     "term": "esg investing",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 140, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 20, \"papers\": [{\"id\": \"W4417325327\", \"title\": \"Banking against sustainable finance: the effect of the European central bank on green bonds\", \"authors\": [\"Julio Galindo-Gutiérrez\"], \"venue\": \"Review of International Political Economy\", \"year\": 2025, \"date\": \"2025-12-15\", \"doi\": \"10.1080/09692290.2025.2599249\", \"url\": \"https://doi.org/10.1080/09692290.2025.2599249\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Su"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "What are the critical and promising shares by year, using a fixed denominator?",
+    "args": {
+     "term": "esg investing"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"esg investing\", \"environmental, social, and governance investing\", \"sustainable finance\", \"responsible investment\", \"socially responsible investing\"], \"points\": [{\"year\": 2017, \"total\": 108, \"orientation\": {\"problem_identifying\": 26, \"comparative\": 8, \"critical\": 5, \"cautionary\": 5, \"breakthrough\": 1, \"descriptive\": 14, \"promising\": 5}, \"stance_score\": null, \"positive\": 6, \"contested\": 36, \"positive_pct\": 5.6, \"contested_pct\": 33.3}, {\"year\": 2018, \"total\": 114, \"orientation\": {\"breakthrough\": 3, \"critical\": 9, \"promising\": 9, \"cautionary\": 1, \"problem_identifying\": 10, \"descriptive\": 13, \"comparative\": 8}, \"stance_score\": null, \"positive\": 12, "
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "How does the annual trend change when terminology expansion is disabled or varied?",
+    "args": {
+     "term": "esg investing",
+     "expand": false,
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 140, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 20, \"papers\": [{\"id\": \"W4417325327\", \"title\": \"Banking against sustainable finance: the effect of the European central bank on green bonds\", \"authors\": [\"Julio Galindo-Gutiérrez\"], \"venue\": \"Review of International Political Economy\", \"year\": 2025, \"date\": \"2025-12-15\", \"doi\": \"10.1080/09692290.2025.2599249\", \"url\": \"https://doi.org/10.1080/09692290.2025.2599249\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Su"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Which papers support the early and late framing comparison, including abstracts and identifiers?",
+    "args": {
+     "term": "esg investing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'esg investing'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='esg investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "Are there independent critical and counter-evidence examples in the same years?",
+    "args": {
+     "term": "esg investing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'esg investing'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='esg investing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 16,
+   "traced": 15,
+   "derived": 2,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "296 — The analysis window is 2017–2025 [c1], ending on 2025-12-31; the gap to today, 2026-10-23,"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 117,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

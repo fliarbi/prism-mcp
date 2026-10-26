@@ -1,0 +1,284 @@
+{
+ "slug": "cyber-warfare-geo",
+ "captured_at": "2026-10-22T23:59:11+0530",
+ "calls": [
+  {
+   "tool": "global_comparison",
+   "feature": "research.geography",
+   "args": {
+    "claim": "Cyber warfare"
+   },
+   "seconds": 71.9,
+   "response": {
+    "ok": true,
+    "feature": "research.geography",
+    "subject": {},
+    "data": {
+     "research_authorship": {
+      "what": "country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says",
+      "rows": [
+       {
+        "country": "Norway",
+        "papers": 1
+       },
+       {
+        "country": "China",
+        "papers": 1
+       },
+       {
+        "country": "Italy",
+        "papers": 1
+       }
+      ]
+     },
+     "news_coverage": {
+      "what": "country an article is about",
+      "rows": [
+       {
+        "country": "united states",
+        "articles": 331
+       },
+       {
+        "country": "united kingdom",
+        "articles": 64
+       },
+       {
+        "country": "ukraine",
+        "articles": 54
+       },
+       {
+        "country": "china",
+        "articles": 50
+       },
+       {
+        "country": "russia",
+        "articles": 49
+       },
+       {
+        "country": "india",
+        "articles": 46
+       },
+       {
+        "country": "australia",
+        "articles": 20
+       },
+       {
+        "country": "israel",
+        "articles": 18
+       },
+       {
+        "country": "iran",
+        "articles": 18
+       },
+       {
+        "country": "pakistan",
+        "articles": 18
+       },
+       {
+        "country": "nigeria",
+        "articles": 11
+       },
+       {
+        "country": "north korea",
+        "articles": 10
+       }
+      ]
+     },
+     "research_publication": {
+      "what": "country of the publishing journal (the health literature index) — not where the study was done",
+      "rows": [
+       {
+        "country": "Switzerland",
+        "papers": 2
+       },
+       {
+        "country": "England",
+        "papers": 2
+       },
+       {
+        "country": "United States",
+        "papers": 1
+       }
+      ]
+     },
+     "patent_origin": {
+      "what": "assignee country",
+      "rows": [
+       {
+        "country": "KR",
+        "patents": 5
+       },
+       {
+        "country": "US",
+        "patents": 2
+       }
+      ]
+     }
+    },
+    "window": {},
+    "meta": {
+     "note": "three different questions; do not add them together",
+     "seconds": 71.9
+    }
+   }
+  },
+  {
+   "tool": "news_geography",
+   "feature": "news.geography",
+   "args": {
+    "term": "cyber warfare",
+    "since": "2024-06-01"
+   },
+   "seconds": 14.3,
+   "response": {
+    "ok": true,
+    "feature": "news.geography",
+    "subject": {
+     "term": "cyber warfare"
+    },
+    "data": {
+     "level": "country",
+     "rows": [
+      {
+       "label": "united states",
+       "articles": 523,
+       "share_pct": 17.6,
+       "lift": 0.8
+      },
+      {
+       "label": "russia",
+       "articles": 233,
+       "share_pct": 7.9,
+       "lift": 9.4
+      },
+      {
+       "label": "china",
+       "articles": 216,
+       "share_pct": 7.3,
+       "lift": 1.4
+      },
+      {
+       "label": "iran",
+       "articles": 180,
+       "share_pct": 6.1,
+       "lift": 2.0
+      },
+      {
+       "label": "india",
+       "articles": 158,
+       "share_pct": 5.3,
+       "lift": 0.8
+      },
+      {
+       "label": "ukraine",
+       "articles": 146,
+       "share_pct": 4.9,
+       "lift": 10.3
+      },
+      {
+       "label": "united kingdom",
+       "articles": 144,
+       "share_pct": 4.9,
+       "lift": 1.0
+      },
+      {
+       "label": "israel",
+       "articles": 138,
+       "share_pct": 4.7,
+       "lift": 3.7
+      },
+      {
+       "label": "australia",
+       "articles": 71,
+       "share_pct": 2.4,
+       "lift": 0.5
+      },
+      {
+       "label": "france",
+       "articles": 63,
+       "share_pct": 2.1,
+       "lift": 1.2
+      },
+      {
+       "label": "pakistan",
+       "articles": 61,
+       "share_pct": 2.1,
+       "lift": 2.0
+      },
+      {
+       "label": "north korea",
+       "articles": 57,
+       "share_pct": 1.9,
+       "lift": 10.6
+      },
+      {
+       "label": "japan",
+       "articles": 50,
+       "share_pct": 1.7,
+       "lift": 1.1
+      },
+      {
+       "label": "germany",
+       "articles": 49,
+       "share_pct": 1.7,
+       "lift": 1.3
+      },
+      {
+       "label": "saudi arabia",
+       "articles": 42,
+       "share_pct": 1.4,
+       "lift": 3.0
+      }
+     ],
+     "placed_articles": 748,
+     "matched_articles": 1083,
+     "placed_pct": 69.1,
+     "what": "the place an article is ABOUT, as resolved by the pipeline — not where it was published"
+    },
+    "window": {
+     "censored_at": "2026-06-01",
+     "why_censored": "news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a collapse that did not happen",
+     "from": "2024-06-01",
+     "to": "2026-05-01",
+     "to_is_exclusive": true,
+     "enrichment": {
+      "bound": "2026-05-01",
+      "note": "geography and entity labels are written by a pipeline that runs behind the crawler; months past this bound are ingested but not yet labelled, and reading them as low coverage is reading the pipeline, not the world"
+     },
+     "freshness": {
+      "available": true,
+      "checked_at": 1792688329.0925612,
+      "age_seconds": 5423,
+      "default_until": "2026-06-01",
+      "cutoff_review_needed": false,
+      "note": "Measured ingest volumes. A calendar month being over does not prove its ingestion is complete. The report cutoff remains an explicit policy."
+     },
+     "past_default_cutoff": false
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693751.754156,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "caveat": "place resolution has acronym collisions — an EV query returns Central African Republic on articles about cars. Rows far down the list with a high lift and a low count are the ones to distrust",
+     "ranked_by": "article count; `lift` is on each row for comparison",
+     "seconds": 14.3
+    }
+   }
+  }
+ ]
+}

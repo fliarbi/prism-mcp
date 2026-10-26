@@ -1,0 +1,1054 @@
+{
+ "slug": "audit-coffee-draft",
+ "captured_at": "2026-10-23T00:21:44+0530",
+ "calls": [
+  {
+   "tool": "research_audit",
+   "feature": "research.audit",
+   "args": {
+    "text": "Coffee is one of the healthiest drinks in the world. Drinking three cups a day lowers the risk of heart disease by 50 percent. Coffee also prevents Parkinson's disease and cures type 2 diabetes. However, caffeine raises blood pressure in the short term.",
+    "deep": 3
+   },
+   "seconds": 107.9,
+   "response": {
+    "ok": true,
+    "feature": "research.audit",
+    "subject": {},
+    "data": {
+     "claims_detected": 4,
+     "research_checkable": 4,
+     "not_research": 0,
+     "by_status": {
+      "claim_covered": 3,
+      "thin_literature": 1
+     },
+     "status_means": {
+      "not_research": "only a record — a filing, a register or a news report — could settle this. Prism's research corpus has no opinion, and that is not the same as the claim being wrong",
+      "no_literature": "no paper title matches this claim's own wording. The field may still cover it under different words — run research.evidence on the claim to find out",
+      "thin_literature": "a handful of paper titles match this wording — too few to rest an assertion on without reading them",
+      "literature_exists": "research exists on this subject — which is not the same as research agreeing with the claim; research.evidence reads it",
+      "claim_covered": "papers cover BOTH sides of the claim, so the literature speaks to it directly",
+      "unchecked": "the corpus lane failed for this claim"
+     },
+     "by_checkable_by": {
+      "research": 4
+     },
+     "single_word_phrases_dropped": 1,
+     "evidence_coverage": 82,
+     "method": "one model call extracts every claim and one the index scan counts them all, so a whole article costs two round trips. Matching is on the claim's OWN WORDING against paper titles — deliberately literal. research.evidence resolves a claim properly (naming its concepts, discovering the corpus's labels for them, reading abstracts) and will find work this screen misses. Use `deep` to run it here on the weakest claims.",
+     "evidence_coverage_means": "share of the RESEARCH-CHECKABLE claims with a literature behind them, weighted by how directly it speaks to the claim. Claims only a record could settle are excluded rather than counted as failures. It is not a truth score: it says a body of work exists, not that the work agrees",
+     "citation_coverage": null,
+     "citation_presence_ratio": 0,
+     "citation_coverage_means": "Not measured. Presence of a DOI or link does not verify a source or its support for a claim.",
+     "citations": {
+      "available": false,
+      "dois": 0,
+      "resolved_in_corpus": [],
+      "unresolved_dois": [],
+      "lookup_error": null,
+      "verification_note": "Corpus resolution is not publisher validation or proof of claim support. Unresolved does not mean fabricated.",
+      "links": [],
+      "inline_markers": 0,
+      "by_kind": {},
+      "note": "DOIs are tiered from the corpus; bare links are classified by host only, which is weaker evidence about a source's strength"
+     },
+     "citation_issues": [],
+     "claims": [
+      {
+       "claim": "Coffee is one of the healthiest drinks in the world.",
+       "sentence": "Coffee is one of the healthiest drinks in the world.",
+       "start": 0,
+       "end": 52,
+       "type": "comparison",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "subjective ranking and vague definition of \"healthiest\"",
+       "subject_phrases": [
+        "coffee consumption"
+       ],
+       "outcome_phrases": [],
+       "dropped_phrases": [
+        {
+         "phrase": "drinks",
+         "why": "single word — matches a field, not this claim"
+        }
+       ],
+       "subject_terms": [
+        "coffee"
+       ],
+       "outcome_terms": [
+        "health"
+       ],
+       "subject_papers": 23549,
+       "both_poles_papers": 1303,
+       "status": "claim_covered",
+       "why": "1,303 papers cover both sides of this claim"
+      },
+      {
+       "claim": "Drinking three cups a day lowers the risk of heart disease by 50 percent.",
+       "sentence": "Drinking three cups a day lowers the risk of heart disease by 50 percent.",
+       "start": 53,
+       "end": 126,
+       "type": "causal",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "may overstate effect size and imply causality",
+       "subject_phrases": [
+        "coffee consumption"
+       ],
+       "outcome_phrases": [
+        "heart disease"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "coffee"
+       ],
+       "outcome_terms": [
+        "heart disease"
+       ],
+       "subject_papers": 23549,
+       "both_poles_papers": 140,
+       "status": "claim_covered",
+       "why": "140 papers cover both sides of this claim"
+      },
+      {
+       "claim": "Coffee also prevents Parkinson's disease and cures type 2 diabetes.",
+       "sentence": "Coffee also prevents Parkinson's disease and cures type 2 diabetes.",
+       "start": 127,
+       "end": 194,
+       "type": "causal",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "overly strong claim of prevention and cure",
+       "subject_phrases": [
+        "coffee consumption"
+       ],
+       "outcome_phrases": [
+        "parkinson's disease",
+        "type 2 diabetes"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "coffee"
+       ],
+       "outcome_terms": [
+        "parkinson's disease",
+        "type 2 diabetes"
+       ],
+       "subject_papers": 23549,
+       "both_poles_papers": 156,
+       "status": "claim_covered",
+       "why": "156 papers cover both sides of this claim"
+      },
+      {
+       "claim": "Caffeine raises blood pressure in the short term.",
+       "sentence": "However, caffeine raises blood pressure in the short term.",
+       "start": 195,
+       "end": 253,
+       "type": "causal",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "short‑term effect may vary across individuals",
+       "subject_phrases": [
+        "caffeine intake"
+       ],
+       "outcome_phrases": [
+        "blood pressure"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "caffeine"
+       ],
+       "outcome_terms": [
+        "blood pressure"
+       ],
+       "subject_papers": 453,
+       "both_poles_papers": 3,
+       "status": "thin_literature",
+       "why": "only 3 papers match both sides of this claim's wording"
+      }
+     ],
+     "needs_attention": [
+      {
+       "claim": "Caffeine raises blood pressure in the short term.",
+       "sentence": "However, caffeine raises blood pressure in the short term.",
+       "start": 195,
+       "end": 253,
+       "type": "causal",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "short‑term effect may vary across individuals",
+       "subject_phrases": [
+        "caffeine intake"
+       ],
+       "outcome_phrases": [
+        "blood pressure"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "caffeine"
+       ],
+       "outcome_terms": [
+        "blood pressure"
+       ],
+       "subject_papers": 453,
+       "both_poles_papers": 3,
+       "status": "thin_literature",
+       "why": "only 3 papers match both sides of this claim's wording"
+      },
+      {
+       "claim": "Drinking three cups a day lowers the risk of heart disease by 50 percent.",
+       "sentence": "Drinking three cups a day lowers the risk of heart disease by 50 percent.",
+       "start": 53,
+       "end": 126,
+       "type": "causal",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "may overstate effect size and imply causality",
+       "subject_phrases": [
+        "coffee consumption"
+       ],
+       "outcome_phrases": [
+        "heart disease"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "coffee"
+       ],
+       "outcome_terms": [
+        "heart disease"
+       ],
+       "subject_papers": 23549,
+       "both_poles_papers": 140,
+       "status": "claim_covered",
+       "why": "140 papers cover both sides of this claim"
+      },
+      {
+       "claim": "Coffee also prevents Parkinson's disease and cures type 2 diabetes.",
+       "sentence": "Coffee also prevents Parkinson's disease and cures type 2 diabetes.",
+       "start": 127,
+       "end": 194,
+       "type": "causal",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "overly strong claim of prevention and cure",
+       "subject_phrases": [
+        "coffee consumption"
+       ],
+       "outcome_phrases": [
+        "parkinson's disease",
+        "type 2 diabetes"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "coffee"
+       ],
+       "outcome_terms": [
+        "parkinson's disease",
+        "type 2 diabetes"
+       ],
+       "subject_papers": 23549,
+       "both_poles_papers": 156,
+       "status": "claim_covered",
+       "why": "156 papers cover both sides of this claim"
+      }
+     ],
+     "deep_reads": [
+      {
+       "claim": "Caffeine raises blood pressure in the short term.",
+       "status": "thin_literature",
+       "tally": {
+        "counts": {
+         "supports": 0,
+         "contradicts": 0,
+         "qualifies": 0,
+         "unrelated": 9,
+         "unread": 3
+        },
+        "tier_weighted": {
+         "supports": 0,
+         "contradicts": 0,
+         "qualifies": 0
+        },
+        "read": 0,
+        "ungrounded": 0
+       },
+       "corpus_stance": "mostly positive framing, with a substantial cautionary minority",
+       "documents": [
+        {
+         "id": "prism:W1928980201",
+         "source": "research",
+         "title": "Maternal caffeine intake during pregnancy and risk of pregnancy loss: a categorical and dose–response meta-analysis of prospective studies",
+         "abstract": null,
+         "authors": [
+          "Ling‐Wei Chen",
+          "Yi Wu",
+          "Nithya Neelakantan",
+          "Mary Foong‐Fong Chong",
+          "An Pan",
+          "Rob M. van Dam"
+         ],
+         "venue": "Public Health Nutrition",
+         "year": 2015,
+         "doi": "10.1017/s1368980015002463",
+         "cited_by": 104,
+         "type": "review",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": "https://doi.org/10.1017/s1368980015002463",
+         "institutions": [
+          "Clinical Nutrition Research Centre",
+          "Harvard University",
+          "National University Health System",
+          "National University of Singapore",
+          "Singapore Institute for Clinical Sciences"
+         ],
+         "country": null,
+         "lane": "review",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Compared with the reference category with no or very low caffeine intake, the RR (95% CI) of pregnancy loss was 1·02 (0·85, 1·24; I(2)=28·3%) for low intake (50-149 mg/d), 1·16 (0·94, 1·41; I 2=49·6%) for moderate intake (150-349 mg/d), 1·40 (1·16, 1·68; I(2)=18·6%) for high intake (350-699 mg/d) and 1·72 (1·40, 2·13; I(2)=0·0%) for very high intake (≥ 700 mg/d).",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "examines pregnancy loss, not blood pressure",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W4313328720",
+         "source": "research",
+         "title": "Effects of Caffeine Intake on Endurance Running Performance and Time to Exhaustion: A Systematic Review and Meta-Analysis",
+         "abstract": null,
+         "authors": [
+          "Ziyu Wang",
+          "Bopeng Qiu",
+          "Jie Gao",
+          "Juan Del Coso"
+         ],
+         "venue": "Nutrients",
+         "year": 2022,
+         "doi": "10.3390/nu15010148",
+         "cited_by": 62,
+         "type": "review",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": "https://doi.org/10.3390/nu15010148",
+         "institutions": [
+          "Beijing Sport University",
+          "Universidad Rey Juan Carlos"
+         ],
+         "country": null,
+         "lane": "current",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "The meta-analysis revealed that the time to exhaustion in running tests was improved with caffeine (g = 0.392; 95% CI = 0.214 to 0.571; p < 0.001, magnitude = medium).",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "reports endurance performance, not blood pressure",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W2128822428",
+         "source": "research",
+         "title": "Association of Coffee and Caffeine Intake With the Risk of Parkinson Disease",
+         "abstract": null,
+         "authors": [
+          "G. Webster Ross"
+         ],
+         "venue": "JAMA",
+         "year": 2000,
+         "doi": "10.1001/jama.283.20.2674",
+         "cited_by": 794,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1001/jama.283.20.2674",
+         "institutions": [
+          "Hawaii Department of Health",
+          "VA Pacific Islands Health Care System"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Age-adjusted incidence of PD declined consistently with increased amounts of coffee intake, from 10.4 per 10,000 person-years in men who drank no coffee to 1.9 per 10,000 person-years in men who drank at least 28 oz/d (P<.001 for trend).",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "focuses on Parkinson disease risk, not blood pressure",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W2136135441",
+         "source": "research",
+         "title": "Beverage caffeine intakes in the U.S.",
+         "abstract": null,
+         "authors": [
+          "Diane C. Mitchell",
+          "Carol A. Knight",
+          "Jon Hockenberry",
+          "Robyn Teplansky",
+          "Terryl J. Hartman"
+         ],
+         "venue": "Food and Chemical Toxicology",
+         "year": 2013,
+         "doi": "10.1016/j.fct.2013.10.042",
+         "cited_by": 565,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1016/j.fct.2013.10.042",
+         "institutions": [
+          "Emory University",
+          "Kantar Health (United States)",
+          "Pennsylvania State University"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Results showed that 85% of the U.S. population consumes at least one caffeinated beverage per day.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "reports consumption prevalence, not blood pressure",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W2138684116",
+         "source": "research",
+         "title": "Parkinson's Disease Risks Associated with Cigarette Smoking, Alcohol Consumption, and Caffeine Intake",
+         "abstract": null,
+         "authors": [
+          "Harvey Checkoway",
+          "Karen M. Powers",
+          "Terri Smith‐Weller",
+          "Gary M. Franklin",
+          "W. T. Longstreth",
+          "Phillip D. Swanson"
+         ],
+         "venue": "American Journal of Epidemiology",
+         "year": 2002,
+         "doi": "10.1093/aje/155.8.732",
+         "cited_by": 369,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1093/aje/155.8.732",
+         "institutions": [
+          "University of Washington"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "No associations were detected for coffee consumption or total caffeine intake or for alcohol consumption.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Study focuses on Parkinson's disease risk, not blood pressure.",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W2108072925",
+         "source": "research",
+         "title": "Does caffeine intake protect from Alzheimer's disease?",
+         "abstract": null,
+         "authors": [
+          "Luís Maia",
+          "Alexandre de Mendonça"
+         ],
+         "venue": "European Journal of Neurology",
+         "year": 2002,
+         "doi": "10.1046/j.1468-1331.2002.00421.x",
+         "cited_by": 359,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1046/j.1468-1331.2002.00421.x",
+         "institutions": [
+          "Hospital de Santa Maria"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Caffeine intake was associated with a significantly lower risk for AD, independently of other possible confounding variables.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Outcome is Alzheimer's disease, not blood pressure.",
+         "confidence": "high"
+        }
+       ]
+      },
+      {
+       "claim": "Drinking three cups a day lowers the risk of heart disease by 50 percent.",
+       "status": "claim_covered",
+       "tally": {
+        "counts": {
+         "supports": 0,
+         "contradicts": 0,
+         "qualifies": 0,
+         "unrelated": 0,
+         "unread": 5
+        },
+        "tier_weighted": {
+         "supports": 0,
+         "contradicts": 0,
+         "qualifies": 0
+        },
+        "read": 0,
+        "ungrounded": 4
+       },
+       "corpus_stance": "mostly positive framing, with a substantial cautionary minority",
+       "documents": [
+        {
+         "id": "prism:W4404432962",
+         "source": "research",
+         "title": "An umbrella review of meta-analysis to understand the effect of coffee consumption and the relationship between stroke, cardiovascular heart disease, and dementia among its global users",
+         "abstract": null,
+         "authors": [
+          "Harmeet Gill",
+          "Neel Patel",
+          "Nishthaben Naik",
+          "Lovekumar Vala",
+          "Rishabh Kumar Rana",
+          "Sakshi Jain",
+          "Vaishnavi Sirekulam",
+          "Shika M. Jain",
+          "Tanzina Khan",
+          "SudhaRani Kinthada",
+          "Rashi Bharat Patel",
+          "Athmananda Nanjundappa"
+         ],
+         "venue": "Journal of Family Medicine and Primary Care",
+         "year": 2024,
+         "doi": "10.4103/jfmpc.jfmpc_654_24",
+         "cited_by": 6,
+         "type": "review",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": "https://doi.org/10.4103/jfmpc.jfmpc_654_24",
+         "institutions": [
+          "Anugrah Narayan Magadh Medical College & Hospital",
+          "Ballari Medical College and Research Centre",
+          "Community Medical Center",
+          "Dhaka Medical College and Hospital",
+          "Hackensack University Medical Center"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unread",
+         "claimed_stance": "contradicts",
+         "quote": null,
+         "claimed_quote": "Coffee drinkers had a 1.19 risk ratio for cardiovascular diseases compared to non-coffee drinkers (CI: 0.99–1.38, I2 = 84%, P < 0.00001).",
+         "grounded": false,
+         "quote_verified": false,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Shows increased risk, opposite of claimed reduction.",
+         "confidence": "medium"
+        },
+        {
+         "id": "prism:W4409542382",
+         "source": "research",
+         "title": "Abstract P2089: Heavy coffee consumption is associated with borderline high risk of coronary heart disease - a meta-analysis",
+         "abstract": null,
+         "authors": [
+          "Urvish Patel",
+          "Rashi Bharat Patel",
+          "Chandu Siripuram",
+          "Athmananda Nanjundappa",
+          "Rishabh Kumar Rana",
+          "Sakshi Jain",
+          "Shika M Jain",
+          "Tanzina Khan",
+          "Sudharani Kintada",
+          "Lovekumar Vala",
+          "Neel Patel",
+          "Vaishnavi Sirekulam"
+         ],
+         "venue": "Circulation",
+         "year": 2025,
+         "doi": "10.1161/cir.151.suppl_1.p2089",
+         "cited_by": 0,
+         "type": "article",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": "https://doi.org/10.1161/cir.151.suppl_1.p2089",
+         "institutions": [
+          "Anugrah Narayan Magadh Medical College & Hospital",
+          "Community Medical Center",
+          "Dhaka Medical College and Hospital",
+          "Hackensack University Medical Center",
+          "Icahn School of Medicine at Mount Sinai"
+         ],
+         "country": null,
+         "lane": "current",
+         "stance": "unread",
+         "claimed_stance": "contradicts",
+         "quote": null,
+         "claimed_quote": "Compared to non‑coffee drinkers, coffee consumers had a summarized risk ratio of 1.08 (95%CI: 1.01‑1.14, I2: 76%, p<0.00001).",
+         "grounded": false,
+         "quote_verified": false,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Reports higher risk rather than a [n]% reduction.",
+         "confidence": "medium"
+        },
+        {
+         "id": "prism:W2001333137",
+         "source": "research",
+         "title": "Coffee Consumption and Coronary Heart Disease in Men and Women",
+         "abstract": null,
+         "authors": [
+          "Esther López‐García",
+          "Rob M. van Dam",
+          "Walter C. Willett",
+          "Eric B. Rimm",
+          "JoAnn E. Manson",
+          "Meir J. Stampfer",
+          "Kathryn M. Rexrode",
+          "Frank B. Hu"
+         ],
+         "venue": "Circulation",
+         "year": 2006,
+         "doi": "10.1161/circulationaha.105.598664",
+         "cited_by": 213,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1161/circulationaha.105.598664",
+         "institutions": [
+          "Harvard University",
+          "J.P. Morgan",
+          "Massachusetts Mental Health Center"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unread",
+         "claimed_stance": "qualifies",
+         "quote": null,
+         "claimed_quote": "among women, the RRs were ... 0.84 (0.74 to 0.97) for 2 to 3 cups/d.",
+         "grounded": false,
+         "quote_verified": false,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Modest reduction only in women, not [n]% and not for both sexes.",
+         "confidence": "medium"
+        },
+        {
+         "id": "prism:W2553910804",
+         "source": "research",
+         "title": "Habitual coffee consumption and risk of type 2 diabetes, ischemic heart disease, depression and Alzheimer’s disease: a Mendelian randomization study",
+         "abstract": null,
+         "authors": [
+          "Man Ki Kwok",
+          "GM Leung",
+          "C. Mary Schooling"
+         ],
+         "venue": "Scientific Reports",
+         "year": 2016,
+         "doi": "10.1038/srep36500",
+         "cited_by": 72,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1038/srep36500",
+         "institutions": [
+          "City University of New York",
+          "University of Hong Kong"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unread",
+         "claimed_stance": "contradicts",
+         "quote": null,
+         "claimed_quote": "Genetically predicted coffee consumption was not associated with IHD (0.96, 95% CI 0.80 to 1.14).",
+         "grounded": false,
+         "quote_verified": false,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Shows no risk reduction, contrary to claim.",
+         "confidence": "medium"
+        },
+        {
+         "id": "prism:W2421278365",
+         "source": "research",
+         "title": "Coffee Consumption and Coronary Heart Diseases: A Mini-Review",
+         "abstract": null,
+         "authors": [
+          "Zainab Shateri",
+          "Kurosh Djafarian"
+         ],
+         "venue": "Journal of Clinical Nutrition & Dietetics",
+         "year": 2016,
+         "doi": "10.4172/2472-1921.100010",
+         "cited_by": 9,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.4172/2472-1921.100010",
+         "institutions": [
+          "Tehran University of Medical Sciences"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unread",
+         "claimed_stance": "unrelated",
+         "quote": null,
+         "claimed_quote": "It seems that coffee can affect coronary heart diseases, but these effects depend on many factors.",
+         "grounded": false,
+         "quote_verified": false,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "No quantitative result on risk reduction.",
+         "confidence": "low"
+        }
+       ]
+      },
+      {
+       "claim": "Coffee also prevents Parkinson's disease and cures type 2 diabetes.",
+       "status": "claim_covered",
+       "tally": {
+        "counts": {
+         "supports": 0,
+         "contradicts": 1,
+         "qualifies": 0,
+         "unrelated": 10,
+         "unread": 1
+        },
+        "tier_weighted": {
+         "supports": 0,
+         "contradicts": 3,
+         "qualifies": 0
+        },
+        "read": 1,
+        "ungrounded": 1
+       },
+       "corpus_stance": "mostly positive framing, with a substantial cautionary minority",
+       "documents": [
+        {
+         "id": "prism:W4400285871",
+         "source": "research",
+         "title": "Coffee Consumption and CYP1A2 Polymorphism Involvement in Type 2 Diabetes in a Romanian Population",
+         "abstract": null,
+         "authors": [
+          "Laura Claudia Popa",
+          "Simona Sorina Farcaş",
+          "Nicoleta Andreescu"
+         ],
+         "venue": "Journal of Personalized Medicine",
+         "year": 2024,
+         "doi": "10.3390/jpm14070717",
+         "cited_by": 8,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.3390/jpm14070717",
+         "institutions": [
+          "Victor Babeș University of Medicine and Pharmacy Timișoara"
+         ],
+         "country": null,
+         "lane": "current",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Our first observation was that the diabetic patients were likely to consume more coffee than the non-diabetic subjects.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Higher coffee intake linked to higher glucose, opposing claim of cure/prevention.",
+         "confidence": "high",
+         "proposed_stance": "contradicts",
+         "source_fit": {
+          "passed": false,
+          "method": "separate model review; not independent fact-check",
+          "reason": "does not assess prevention or cure of T2DM"
+         }
+        },
+        {
+         "id": "prism:W4385235489",
+         "source": "research",
+         "title": "Current coffee consumption is associated with decreased striatal dopamine transporter availability in Parkinson’s disease patients and healthy controls",
+         "abstract": null,
+         "authors": [
+          "Chao Wang",
+          "Cheng Zhou",
+          "Tao Guo",
+          "Yeerfan Jiaerken",
+          "Siyu Yang",
+          "Xiaopei Xu",
+          "Ling Hu",
+          "Peiyu Huang",
+          "Xiaojun Xu",
+          "Minming Zhang"
+         ],
+         "venue": "BMC Medicine",
+         "year": 2023,
+         "doi": "10.1186/s12916-023-02994-5",
+         "cited_by": 8,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1186/s12916-023-02994-5",
+         "institutions": [
+          "Hangzhou Women’s Hospital",
+          "Second Affiliated Hospital of Zhejiang University"
+         ],
+         "country": null,
+         "lane": "current",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "current coffee consumption is associated with decreased striatal DAT availability in the caudate.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Suggests no protective effect on dopaminergic neurons, contrary to prevention claim.",
+         "confidence": "high",
+         "proposed_stance": "contradicts",
+         "source_fit": {
+          "passed": false,
+          "method": "separate model review; not independent fact-check",
+          "reason": "outcome is DAT availability, not PD risk/prevention"
+         }
+        },
+        {
+         "id": "prism:W4411240630",
+         "source": "research",
+         "title": "Coffee Consumption Is Associated With Later Age‐at‐Onset of Parkinson's Disease",
+         "abstract": null,
+         "authors": [
+          "Dariia Kuzovenkova",
+          "Lang Liu",
+          "Ziv Gan‐Or",
+          "Konstantin Senkevich"
+         ],
+         "venue": "Annals of Clinical and Translational Neurology",
+         "year": 2025,
+         "doi": "10.1002/acn3.70076",
+         "cited_by": 4,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1002/acn3.70076",
+         "institutions": [
+          "ITMO University",
+          "McGill University",
+          "McGill University Health Centre",
+          "Montreal Neurological Institute and Hospital"
+         ],
+         "country": null,
+         "lane": "newest",
+         "stance": "contradicts",
+         "claimed_stance": null,
+         "quote": "no causal association or genetic correlation with PD risk or progression.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Finds no risk reduction, opposing claim that coffee prevents PD.",
+         "confidence": "high",
+         "proposed_stance": "contradicts",
+         "source_fit": {
+          "passed": true,
+          "method": "separate model review; not independent fact-check",
+          "reason": "directly tests coffee vs PD risk and finds no association"
+         }
+        },
+        {
+         "id": "prism:W2100404723",
+         "source": "research",
+         "title": "Caffeinated and Decaffeinated Coffee Consumption and Risk of Type 2 Diabetes: A Systematic Review and a Dose-Response Meta-analysis",
+         "abstract": null,
+         "authors": [
+          "Ming Ding",
+          "Shilpa N Bhupathiraju",
+          "Mu Chen",
+          "Rob M. van Dam",
+          "Frank B. Hu"
+         ],
+         "venue": "Diabetes Care",
+         "year": 2014,
+         "doi": "10.2337/dc13-1203",
+         "cited_by": 506,
+         "type": "review",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": "https://doi.org/10.2337/dc13-1203",
+         "institutions": [
+          "Brigham and Women",
+          ",",
+          ",",
+          ","
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Coffee consumption was inversely associated with the risk of type 2 diabetes in a dose-response manner.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Shows inverse association with diabetes risk, not cure.",
+         "confidence": "high",
+         "proposed_stance": "qualifies",
+         "source_fit": {
+          "passed": false,
+          "method": "separate model review; not independent fact-check",
+          "reason": "addresses risk reduction, not cure of T2DM"
+         }
+        },
+        {
+         "id": "prism:W4412651619",
+         "source": "research",
+         "title": "Moderate Coffee Consumption and Its Protective Role Against Type 2 Diabetes in Men: A Meta-analysis Study",
+         "abstract": null,
+         "authors": [
+          "Fattah Hama Rahim Fattah"
+         ],
+         "venue": "Journal of Sulaimani Medical College",
+         "year": 2025,
+         "doi": "10.17656/jsmc.10490",
+         "cited_by": 0,
+         "type": "article",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": "https://doi.org/10.17656/jsmc.10490",
+         "institutions": [
+          "University of Sulaimani"
+         ],
+         "country": null,
+         "lane": "newest",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "The dose-response meta-analysis revealed a linear decrease in T2DM risk with each additional cup of daily coffee, with a pooled RR of 0.91 (95% CI: 0.89–0.93) for the linear term.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Shows reduced diabetes risk, not cure.",
+         "confidence": "high",
+         "proposed_stance": "qualifies",
+         "source_fit": {
+          "passed": false,
+          "method": "separate model review; not independent fact-check",
+          "reason": "studies assess risk reduction, not cure of type 2 diabetes"
+         }
+        },
+        {
+         "id": "prism:W2352829915",
+         "source": "research",
+         "title": "Coffee consumption and type 2 diabetes mellitus:a meta-analysis of prospective cohort studies",
+         "abstract": null,
+         "authors": [
+          "Yu Shi"
+         ],
+         "venue": "Suzhou Daxue xuebao. Faxue ban",
+         "year": 2012,
+         "doi": null,
+         "cited_by": 0,
+         "type": "article",
+         "tier": "meta_analysis",
+         "strength": "very_high",
+         "tier_rank": 6,
+         "why_tier": "pools multiple studies and reports a combined estimate",
+         "url": null,
+         "institutions": [],
+         "country": null,
+         "lane": "review",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "The findings indicate that long-term consumption results in 31% reduction of T2DM risk.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Shows risk reduction, not cure.",
+         "confidence": "high",
+         "proposed_stance": "qualifies",
+         "source_fit": {
+          "passed": false,
+          "method": "separate model review; not independent fact-check",
+          "reason": "examines incidence risk, not cure of type 2 diabetes"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    "window": {},
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792695081.4922152,
+        "age_seconds": 22.82,
+        "expires_in_seconds": 7.18,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792695104.3059595,
+        "age_seconds": 0.0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "seconds": 107.9
+    }
+   }
+  }
+ ]
+}

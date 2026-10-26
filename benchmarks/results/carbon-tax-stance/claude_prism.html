@@ -1,0 +1,168 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Claude + Prism</title><style>
+:root{--bg:#ffffff;--ink:#14161a;--ink2:#4b5160;--ink3:#8a8f9c;--line:#e3e5ea;--card:#f6f7f9;--accent:#2a78d6;--bad:#c4321d;--good:#1a8f62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 32px 40px}
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:18px}
+.bar .who{font-weight:700;font-size:20px}.bar .q{color:var(--ink2);font-size:13px;max-width:560px;text-align:right}
+h2{font-size:18px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+table{border-collapse:collapse;margin:10px 0;font-size:13px;width:100%}th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}code{background:var(--card);padding:1px 4px;border-radius:3px;font-size:12.5px}
+.chart{margin:12px 0}.chart img,.chart svg{max-width:100%}.cap{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:9px;border:1px solid var(--line);color:var(--ink2);margin-left:6px}
+.tag.inv{color:var(--bad);border-color:var(--bad)}.tag.ok{color:var(--good);border-color:var(--good)}
+.csvh{font-size:12px;color:var(--ink2);margin-top:12px}details{margin:8px 0;font-size:12.5px}pre{white-space:pre-wrap;background:var(--card);padding:8px;border-radius:4px;font-size:11.5px}
+</style></head><body><div class='wrap'><div class='bar'><div class='who'>Claude + Prism</div><div class='q'>Is research on carbon taxes becoming more favourable or more critical?</div></div><h2>Verdict</h2>
+<ul>
+<li>Answer: Research on carbon taxes is becoming more favourable in framing, not more critical. The share of papers framed "promising" or "breakthrough" rose from 12.6% in 2017 to 24.4% in 2025 [c1]. The contested share (critical, cautionary and problem-identifying) fell from 25.0% to 16.9% [c1]. Papers framed "critical" stayed flat at 15–28 a year [c1].</li>
+<li>Decision: Treat the literature as leaning toward "carbon taxes work or are promising", but do not read it as settled. Cautionary and problem-identifying papers still grew in absolute terms [c1].</li>
+<li>Confidence: medium - the series covers 9 years and 2,775 papers [c1], but orientation is how a paper frames its own finding, not a verdict, and the 2025 jump may reflect corpus or phrase effects.</li>
+<li>What would change it: A 2026 series in which the positive share falls back below roughly 19%, or a manual audit showing "promising" labels are mostly applied to non-tax papers.</li>
+</ul>
+<h2>What the data shows</h2>
+<p>The corpus holds 2,775 papers on "carbon tax" and its phrase cluster for 2017–2025 [c1]. Annual volume rose from 340 [c1] to 1,125 [c1].</p>
+<p>Positive share (promising plus breakthrough) went from 12.6% in 2017 [c1] to 24.4% in 2025 [c1]. It was 15.6–19.6% in 2018–2024 [c1]. Contested share (critical plus cautionary plus problem-identifying) was 25.0% in 2017 [c1], 26.7% in 2020 [c1] and 16.9% in 2025 [c1].</p>
+<p>Counts by orientation, 2017 to 2025 [c1]:
+- Promising rose from 33 to 214, a late-vs-early ratio of 3.05 and a CAGR of 26.3%.
+- Breakthrough rose from 10 to 60, a ratio of 2.94.
+- Cautionary rose from 30 to 95, a ratio of 2.53.
+- Problem-identifying rose from 39 to 80, a ratio of 2.09.
+- Critical was 16 in 2017 and 15 in 2025, a ratio of 1.25 and a CAGR of -0.8%, which Prism calls flat.</p>
+<p>The tool's own framing-shift reading is that the balance is "broadly unchanged": early contested was 22.1% and late was 19.9%, a delta of -2.2 points [c1]. My reading is that positive framing is clearly rising while contested framing is only mildly falling, with most of the gap opening in 2025.</p>
+<p>Cumulative orientation shares in the browse call: promising 29.5%, cautionary 18.6%, problem-identifying 18.1%, descriptive 13.5%, comparative 7.2%, breakthrough 7.0% and critical 5.9% [c2]. The browse call's stance summary is 36.5% positive and 42.7% contested [c2]. These cumulative figures use a different base from the per-year shares in [c1], so I do not mix them.</p>
+<h2>Trend</h2>
+<div class='chart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="Positive vs contested share of carbon-tax papers"><style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a8984;--grid:#e6e5e0;--axis:#c9c8c2;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neu:#b9b8b1;--band:#2a78d633}
+
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.t{font-size:17px;font-weight:600}.st{font-size:12.5px;fill:var(--ink2)}.src{font-size:11px;fill:var(--ink3)}
+.ax{font-size:11px;fill:var(--ink2)}.lb{font-size:12px;fill:var(--ink)}.v{font-size:11.5px;fill:var(--ink2)}
+.g{stroke:var(--grid);stroke-width:1}.a{stroke:var(--axis);stroke-width:1}
+.c1{fill:var(--s1)}.c2{fill:var(--s2)}.c3{fill:var(--s3)}.c4{fill:var(--s4)}.cn{fill:var(--neu)}
+.l1{stroke:var(--s1)}.l2{stroke:var(--s2)}.l3{stroke:var(--s3)}.l4{stroke:var(--s4)}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.bg{fill:var(--bg);stroke:var(--grid)}
+</style><rect class="bg" x="0.5" y="0.5" width="759" height="329" rx="10"/><text class="t" x="24" y="34">Positive vs contested share of carbon-tax papers</text><text class="st" x="24" y="54">% of papers · window {&quot;from&quot;: &quot;2017-01-01&quot;, &quot;to&quot;: &quot;2025-12-31&quot;}</text><rect class="c1" x="24" y="67" width="12" height="12" rx="3"/><text class="lb" x="42" y="77">Positive % (promising+breakthrough) [call:research.stance_trends#1]</text><rect class="c2" x="536.4000000000001" y="67" width="12" height="12" rx="3"/><text class="lb" x="554.4000000000001" y="77">Contested % (critical+cautionary+problem-identifying) [call:research.stance_trends#1]</text><line class="a" x1="64" x2="736" y1="272.0" y2="272.0"/><text class="ax" x="56" y="276.0" text-anchor="end">0</text><line class="g" x1="64" x2="736" y1="227.0" y2="227.0"/><text class="ax" x="56" y="231.0" text-anchor="end">7.5</text><line class="g" x1="64" x2="736" y1="182.0" y2="182.0"/><text class="ax" x="56" y="186.0" text-anchor="end">15</text><line class="g" x1="64" x2="736" y1="137.0" y2="137.0"/><text class="ax" x="56" y="141.0" text-anchor="end">22.5</text><line class="g" x1="64" x2="736" y1="92.0" y2="92.0"/><text class="ax" x="56" y="96.0" text-anchor="end">30</text><text class="ax" x="64.0" y="290" text-anchor="middle">2017</text><text class="ax" x="148.0" y="290" text-anchor="middle">2018</text><text class="ax" x="232.0" y="290" text-anchor="middle">2019</text><text class="ax" x="316.0" y="290" text-anchor="middle">2020</text><text class="ax" x="400.0" y="290" text-anchor="middle">2021</text><text class="ax" x="484.0" y="290" text-anchor="middle">2022</text><text class="ax" x="568.0" y="290" text-anchor="middle">2023</text><text class="ax" x="652.0" y="290" text-anchor="middle">2024</text><text class="ax" x="736.0" y="290" text-anchor="middle">2025</text><path class="ln l1" d="M64.0,196.4 L148.0,178.4 L232.0,158.6 L316.0,162.2 L400.0,156.8 L484.0,169.4 L568.0,171.8 L652.0,154.4 L736.0,125.6"/><circle class="c1" cx="736.0" cy="125.6" r="4.5" stroke="var(--bg)" stroke-width="2"/><text class="v" x="736.0" y="115.6" text-anchor="middle">24.4</text><path class="ln l2" d="M64.0,122.0 L148.0,147.2 L232.0,145.4 L316.0,111.8 L400.0,122.6 L484.0,143.6 L568.0,141.2 L652.0,139.4 L736.0,170.6"/><circle class="c2" cx="316.0" cy="111.8" r="4.5" stroke="var(--bg)" stroke-width="2"/><text class="v" x="316.0" y="101.8" text-anchor="middle">26.7</text><text class="src" x="24" y="316">source: call:research.stance_trends#1, call:research.stance_trends#1</text></svg><div class='cap'>Positive share nearly doubled from 2017 to 2025 while contested share ended at its lowest point.<span class='tag ok'>traced to corpus: 100% of points</span></div></div>
+<p>The change in positive share is +11.8 points (12.6% to 24.4%), a ratio of 1.94 [c1]. The change in contested share is -8.1 points (25.0% to 16.9%) [c1]. Most of the movement is in 2025: positive share was 19.6% in 2024 and 24.4% in 2025 [c1].</p>
+<h2>Comparison</h2>
+<p>Baseline: 2017, the first corpus year, compared with 2025, the latest year. The scale is % of that year's papers [c1].</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>2017</th>
+<th>2025</th>
+<th>Delta</th>
+<th>Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive share</td>
+<td>12.6% [c1]</td>
+<td>24.4% [c1]</td>
+<td>+11.8 pts</td>
+<td>1.94</td>
+</tr>
+<tr>
+<td>Contested share</td>
+<td>25.0% [c1]</td>
+<td>16.9% [c1]</td>
+<td>-8.1 pts</td>
+<td>0.68</td>
+</tr>
+<tr>
+<td>Papers per year</td>
+<td>340 [c1]</td>
+<td>1,125 [c1]</td>
+<td>+785</td>
+<td>3.31</td>
+</tr>
+<tr>
+<td>Critical papers</td>
+<td>16 [c1]</td>
+<td>15 [c1]</td>
+<td>-1</td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table>
+<p>Positive-to-contested ratio: 43/85 = 0.51 in 2017 [c1], against 274/190 = 1.44 in 2025 [c1]. The ratios are computed from the counts in [c1].</p>
+<h2>Evidence</h2>
+<p>The tool returned no critical or cautionary examples, so I cannot cite them (see Drill-down). Promising examples, all from the 2025 "most recent" sort of [c2], all with stance score 0.6 and 0 citations:</p>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Year</th>
+<th>Venue</th>
+<th>Tier</th>
+<th>Claim supported</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W7117888324 [r1]</td>
+<td>2025</td>
+<td>Annals of Dunarea de Jos University of Galati</td>
+<td>peer-reviewed journal (tier not given by the tool)</td>
+<td>Environmental taxation effect on emissions in top carbon-tax-revenue countries</td>
+</tr>
+<tr>
+<td>W7128792594 [r2]</td>
+<td>2025</td>
+<td>Zenodo</td>
+<td>preprint/repository</td>
+<td>Panel evidence on whether green taxes deliver environmental dividends</td>
+</tr>
+<tr>
+<td>W7117545161 [r3]</td>
+<td>2025</td>
+<td>Emerging Markets Finance and Trade</td>
+<td>peer-reviewed journal</td>
+<td>Carbon emissions trading and urban economic resilience in China</td>
+</tr>
+<tr>
+<td>W7135017193 [r4]</td>
+<td>2025</td>
+<td>Amberd Bulletin</td>
+<td>journal</td>
+<td>Fiscal policy in green growth</td>
+</tr>
+</tbody>
+</table>
+<p>No verbatim quotes were available; the tool returns titles and labels only. Several returned items are about emissions trading, optimisation or sustainable finance rather than carbon taxes (for example W7119496877 and W7134277198 in [c2]). This is a sign that the "promising" count includes loosely matched papers.</p>
+<h2>Drill-down</h2>
+<p>Layers available: orientation × year [c1], topic and contribution facets [c2], and phrase audit [c2]. Contribution counts across the subject: empirical 2,754, methodological 1,367, position 638, review 402, theoretical 369 [c2].</p>
+<details open><summary>Calls and follow-up queries (executable)</summary><pre>[
+{&quot;id&quot;:&quot;c1&quot;,&quot;used_for&quot;:&quot;yearly orientation series, framing shift, thin years&quot;,&quot;feature&quot;:&quot;research.stance_trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;}},
+{&quot;id&quot;:&quot;c2&quot;,&quot;used_for&quot;:&quot;promising examples, facets, phrase audit&quot;,&quot;feature&quot;:&quot;research.browse&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;orientation&quot;:&quot;promising&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f1&quot;,&quot;question&quot;:&quot;Which papers are framed critical, and who wrote them?&quot;,&quot;feature&quot;:&quot;research.browse&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;orientation&quot;:&quot;critical&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f2&quot;,&quot;question&quot;:&quot;What are the leading cautionary papers by citation?&quot;,&quot;feature&quot;:&quot;research.browse&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;orientation&quot;:&quot;cautionary&quot;,&quot;sort&quot;:&quot;cited&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f3&quot;,&quot;question&quot;:&quot;Does the 2025 rise survive when the phrase is restricted to &#x27;carbon tax&#x27; alone?&quot;,&quot;feature&quot;:&quot;research.stance_trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;expand&quot;:false}},
+{&quot;id&quot;:&quot;f4&quot;,&quot;question&quot;:&quot;Which countries drive the positive framing?&quot;,&quot;feature&quot;:&quot;research.geography&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;orientation&quot;:&quot;promising&quot;}},
+{&quot;id&quot;:&quot;f5&quot;,&quot;question&quot;:&quot;Is there counter-evidence to the claim that carbon taxes cut emissions?&quot;,&quot;feature&quot;:&quot;research.counter_evidence&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;}},
+{&quot;id&quot;:&quot;f6&quot;,&quot;question&quot;:&quot;Do reviews differ in stance from empirical papers?&quot;,&quot;feature&quot;:&quot;research.table&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;by&quot;:&quot;contribution&quot;}}
+]</pre></details>
+<h2>Exports</h2>
+<div class='csvh'>⬇ <b>stance_share.csv</b> · source call:research.stance_trends#1 · window 2017-01-01..2025-12-31 · unit papers<span class='tag ok'>cells traced: 100%</span></div><table><tr><th>year</th><th>total</th><th>positive</th><th>contested</th><th>positive_pct</th><th>contested_pct</th></tr><tr><td>2017</td><td>340</td><td>43</td><td>85</td><td>12.6</td><td>25.0</td></tr><tr><td>2018</td><td>403</td><td>63</td><td>84</td><td>15.6</td><td>20.8</td></tr><tr><td>2019</td><td>418</td><td>79</td><td>88</td><td>18.9</td><td>21.1</td></tr><tr><td>2020</td><td>480</td><td>88</td><td>128</td><td>18.3</td><td>26.7</td></tr><tr><td>2021</td><td>530</td><td>102</td><td>132</td><td>19.2</td><td>24.9</td></tr><tr><td>2022</td><td>645</td><td>110</td><td>138</td><td>17.1</td><td>21.4</td></tr><tr><td>2023</td><td>844</td><td>141</td><td>184</td><td>16.7</td><td>21.8</td></tr><tr><td>2024</td><td>745</td><td>146</td><td>165</td><td>19.6</td><td>22.1</td></tr><tr><td>2025</td><td>1125</td><td>274</td><td>190</td><td>24.4</td><td>16.9</td></tr></table>
+<details open><summary>json</summary><pre>{&quot;exported_at&quot;:&quot;2026-10-23&quot;,&quot;calls&quot;:[{&quot;feature&quot;:&quot;research.stance_trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;},&quot;window&quot;:{&quot;period&quot;:&quot;2017-2025&quot;}},{&quot;feature&quot;:&quot;research.browse&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;orientation&quot;:&quot;promising&quot;,&quot;limit&quot;:8},&quot;window&quot;:{&quot;period&quot;:&quot;2017-2025&quot;}}]}</pre></details>
+<h2>Method and limits</h2>
+<ul>
+<li><strong>Window:</strong> 2017 to 2025, ending 2025-12-31. The gap to today (2026-10-23) is about 10 months, so 2026 is absent [c1].</li>
+<li><strong>Lane:</strong> research papers only. I made no news or policy-outcome calls.</li>
+<li><strong>Coverage:</strong> the index check passed with no partial tables [c1]. The tool states this is a reachability and row-floor check, not proof of full ingest.</li>
+<li><strong>Thin years:</strong> none flagged [c1]. The smallest year is 2017, with 340 papers [c1].</li>
+<li><strong>Phrase expansion caveat:</strong> the corpus mixes four phrases [c1]. Title counts are "carbon tax" 1,677, "carbon pricing" 992, "emissions tax" 38 and "greenhouse gas tax" 3 [c2]. Matches are on title and keywords. "Carbon fibers" appears as a keyword for 1,359 papers [c2], which suggests some off-topic matches. Results may therefore blend carbon pricing, trading and unrelated carbon work.</li>
+<li><strong>Censoring:</strong> the corpus starts in 2017, so earlier research is not covered. The returned examples are capped at 7, of which 1 or more are loosely related.</li>
+<li><strong>Counts are</strong> labelled papers, not effect sizes. The labels are framing of each paper's own finding, not verdicts on whether carbon taxes work. They are not weighted by citations.</li>
+<li><strong>Interpretation:</strong> that the positive shift is "real" rather than a mix change (more applied or Chinese-policy papers, for instance) is mine and untested. The tool itself says the framing balance is broadly unchanged [c1].</li>
+<li><strong>Cannot answer:</strong> whether carbon taxes actually perform better, whether critics are publishing elsewhere, and the 2026 direction.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>[r1] Ngwakwe, C.C. Effect of Environmental Taxation on Carbon Emissions of World's Top Carbon Tax Revenue Countries. Annals of Dunarea de Jos University of Galati, 2025. doi:10.35219/eai15840409545</li>
+<li>[r2] Panel evidence on green taxes and carbon efficiency. RESDO, Zenodo, 2025. doi:10.5281/zenodo.18636490</li>
+<li>[r3] Chen, C., Xie, H., Yang, Y.C. Can Carbon Emissions Trading Policies Enhance Urban Economic Resilience? Evidence from China. Emerging Markets Finance and Trade, 2025. doi:10.1080/1540496x.2025.2610709</li>
+<li>[r4] Sukiasyan, S. Role of Fiscal Policy in the Context of Green Economic Growth and Climate Change. Amberd Bulletin, 2025. doi:10.52174/2579-2989_2025.4-5</li>
+</ul></div></body></html>

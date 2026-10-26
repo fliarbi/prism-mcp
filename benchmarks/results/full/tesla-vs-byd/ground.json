@@ -1,0 +1,665 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 542,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What are the per-term monthly volumes and growth?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone split for each term?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries produce the most coverage of each?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What is the most critical coverage of each?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...a', 'BYD'], 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "What is the overall coverage overview, including most-covered stories?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "How did earlier coverage compare as a baseline?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "from": "2020-01-01",
+     "to": "2024-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...1', 'to': '2024-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "12 — No chart is drawn. A chart with no sourced values would count as invented, and I have no m"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 858,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "tesla",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "byd",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 44,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_totals.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which outlets drove BYD's October 2025 spike?",
+    "args": {
+     "term": "byd",
+     "since": "2025-10-01",
+     "until": "2025-11-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 33.9,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"byd\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 2513, \"place\": 0, \"tagged_articles\": 3348, \"entity_labelled_articles\": 2532, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 3402, \"critical_articles\": 962, \"first_seen\": \"2025-10-01 00:00:00\", \"last_seen\": \"2025-10-31 23:53:25\", \"window\": {\"from\": \"2025-10-01\", \"to\": \"2025-11-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with"
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries cover each company most?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tesla', 'byd'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What are the most critical stories on each term?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2024-06-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...24-06-01', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tesla', 'byd'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is sentiment defined and distributed per term?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tesla', 'byd'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What explains Tesla's March 2025 peak?",
+    "args": {
+     "term": "tesla",
+     "since": "2025-02-01",
+     "until": "2025-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"points\": [{\"period\": \"2025-02-01\", \"articles\": 11655, \"critical\": 7919, \"negative\": 5954, \"positive\": 5486, \"mean_priority\": 6.86, \"critical_pct\": 67.9, \"partial_period\": false}, {\"period\": \"2025-03-01\", \"articles\": 16070, \"critical\": 10893, \"negative\": 10483, \"positive\": 5448, \"mean_priority\": 6.88, \"critical_pct\": 67.8, \"partial_period\": false}, {\"period\": \"2025-04-01\", \"articles\": 13287, \"critical\": 9034, \"negative\": 8033, \"positive\": 5150, \"mean_priority\": 6.83, \"critical_pct\": 68.0, \"partial_period\": false}], \"total\": 41012, \"critical_total\": 27846, \"trend\": {\"available\": true, \"from\": \"2025-02-01\", \"to\": \"2025-04-01\", \"first\": 11655, \"last\": 13287, \"peak\": 16070, \"peak_period\": \"2025"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "What are the figures for the months after May 2026?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"tesla\", \"byd\"], \"rows\": [{\"term\": \"tesla\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"byd\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}], \"combined_articles\": 0, \"most_covered\": null}"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 59,
+   "traced": 56,
+   "derived": 9,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "145 — - Confidence: medium - one tool call with full coverage [c1], but the window ends 2026-06-",
+    "+8.9 — | Critical % | 63.8% (computed from [c1]) | 54.9% (computed from [c1]) | +8.9 pts (compute",
+    "145 — - Window: 2024-06-01 to 2026-05-31, with the end censored at 2026-06-01 [c1]. Today is 202"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 145"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 345,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "How many articles matched Tesla and BYD, and what share did each represent?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "window": {
+      "from": "2024-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2024-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts for Tesla and BYD on the same scale?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "interval": "month",
+     "window": {
+      "from": "2024-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2024-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does coverage tone differ by term, using the feature’s stated definitions?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "window": {
+      "from": "2024-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2024-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which words or topics are common to both companies’ coverage, and could common-word matching inflate overlap?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "include_overlap": true,
+     "window": {
+      "from": "2024-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\ninclude_overlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2024-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which term was most covered, and what was the combined article count after deduplication?",
+    "args": {
+     "terms": [
+      "Tesla",
+      "BYD"
+     ],
+     "deduplicate": true,
+     "window": {
+      "from": "2024-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Tesla', 'BYD'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2024-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 94,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 657,
+  "charts": [
+   {
+    "id": "monthly-coverage",
+    "title": "Monthly news articles mentioning Tesla and BYD",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Tesla",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "BYD",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_coverage.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 44,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term_summary.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "How do Tesla and BYD coverage totals and monthly trends compare through a recent, fully ingested cutoff?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2024-10-23"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.8,
+    "sample": "{\"terms\": [\"tesla\", \"byd\"], \"rows\": [{\"term\": \"tesla\", \"articles\": 182640, \"share_pct\": 81.8, \"critical\": 117636, \"direction\": \"falling\", \"growth\": 0.64, \"tone_ratio\": 0.85, \"vs_baseline\": 1.47, \"points\": [{\"period\": \"2024-10-01\", \"articles\": 3182, \"critical\": 1923, \"negative\": 1317, \"positive\": 1825, \"mean_priority\": 6.72, \"critical_pct\": 60.4, \"partial_period\": true}, {\"period\": \"2024-11-01\", \"articles\": 10004, \"critical\": 6705, \"negative\": 3813, \"positive\": 5965, \"mean_priority\": 6.89, \"critical_pct\": 67.0, \"partial_period\": false}, {\"period\": \"2024-12-01\", \"articles\": 8066, \"critical\": 5149, \"negative\": 3139, \"positive\": 4837, \"mean_priority\": 6.79, \"critical_pct\": 63.8, \"partial_period\""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which source outlets account for Tesla and BYD mentions, and how much might common-word matching affect BYD?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ['tesla', 'byd']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tesla', 'byd'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How are positive, negative, and critical classifications defined and distributed for each company by month?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2024-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['tesla', 'byd'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How many unique articles mention both Tesla and BYD, and how many mention either one after deduplication?",
+    "args": {
+     "terms": [
+      "tesla",
+      "byd"
+     ],
+     "since": "2024-10-23",
+     "match_mode": "article_overlap"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nmatch_mode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='article_overlap', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 23,
+   "traced": 22,
+   "derived": 5,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

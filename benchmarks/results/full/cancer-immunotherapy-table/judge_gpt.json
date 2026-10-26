@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 5,
+    "facets": 4
+   },
+   "B": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 5,
+    "facets": 4
+   },
+   "C": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "D": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Explains why cross-row comparison is invalid, but provides no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are listed, but none returned usable data.",
+    "export": "CSV preserves null reasons and identifiers with provenance JSON; the table matches the recorded rows.",
+    "repro": "Most numbers trace to the table call, but not all numeric claims are tagged and the follow-ups do not replay successfully.",
+    "refs": "All five DOIs resolve and quotes support claims; the references are not ranked with contrary evidence.",
+    "accuracy": "Row values and nulls match the record, and the answer correctly flags that the measures and populations are not comparable.",
+    "limits": "States the unset window, lane, coverage, null meaning, and gap to today; the limitations could more directly specify how to close the data gap.",
+    "verdict": "Gives a supported answer, a practical decision, confidence and reason, a change condition, and the strongest limitation.",
+    "facets": "Covers all six requested rows with grounded values or grounded no-figure results, but not the implied broader comparisons."
+   },
+   "B": {
+    "comparison": "Provides the traced within-bladder arm contrast and explains why cross-cancer deltas would mislead, though the requested cross-cancer comparison remains unavailable.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are specific but none executed successfully.",
+    "export": "The CSV traces, but lacks full per-row provenance and some decision-ready hygiene.",
+    "repro": "Nearly all numeric claims trace and the main call is reproducible; one claim is untagged and the calls block does not fully rebuild every output.",
+    "refs": "Identifiers resolve and quoted evidence supports claims, but the set lacks ranked contrary evidence and complete news metadata.",
+    "accuracy": "Correctly distinguishes the NSCLC risk ratio from a response rate, and flags the colorectal result as not established as immunotherapy in the abstract.",
+    "limits": "States window, lanes, coverage, matching level, and missing values; the limits do not fully explain how fresh evidence would close the gap.",
+    "verdict": "Direct, appropriately cautious answer with decision, confidence, conditions, and contrary or limiting evidence.",
+    "facets": "Grounds all six requested rows, including nulls, but does not resolve the implied broader comparison facets."
+   },
+   "C": {
+    "comparison": "Gives numeric contrasts, but they are recalled estimates and cannot be checked against a common recorded source.",
+    "chart": "No chart block.",
+    "drilldown": "The breakdown is from memory and proposed calls do not provide a usable traced path.",
+    "export": "Export is explicitly an estimate, which is honest but unmeasured.",
+    "repro": "Numbers are memory estimates with no executed calls or regenerate recipe.",
+    "refs": "Trial names are recalled, with no verified identifiers, metadata checks, or verbatim quotes.",
+    "accuracy": "The estimates are disclosed, but the glioblastoma no-benefit statement is a survival endpoint and does not establish a zero response rate.",
+    "limits": "Clearly labels memory estimates and notes coverage and comparability limits, but lacks corpus-specific bounds.",
+    "verdict": "The verdict presents several untagged response-rate claims, so it exceeds its own script ceiling of zero.",
+    "facets": "Many cancer types are listed, but values are memory estimates rather than grounded answers."
+   },
+   "D": {
+    "comparison": "The arithmetic contrast is labelled as an estimate, but the public-source figures are not verified on a shared scale.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are listed but none executed successfully.",
+    "export": "The CSV is based on cited memory figures and is not traced to a recorded response.",
+    "repro": "No database calls or regenerate recipe; figures rely on remembered publications.",
+    "refs": "One DOI fails to resolve to the stated work, which caps this parameter at 1.",
+    "accuracy": "The CheckMate 037 DOI is a fabricated or mismatched identifier for the cited melanoma source.",
+    "limits": "Discloses memory selection, old publication window, and noncomparability, but does not provide specific corpus coverage bounds.",
+    "verdict": "Gives a direct, bounded recommendation with confidence and a condition that would improve comparability.",
+    "facets": "Only a selected subset is covered, and the figures are memory-derived rather than grounded in the supplied record."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "The verdict's 0%, 70%, 40, and 60% values are untagged per the script.",
+    "The glioblastoma claim concerns no survival benefit, which does not establish a zero ORR."
+   ],
+   "D": [
+    "DOI 10.1016/S1470-2045(15)00006-9 does not resolve to the stated CheckMate 037 melanoma paper."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it identifies the four reported rows, distinguishes the NSCLC risk ratio from response proportions, and explains why the figures cannot support a cross-cancer ranking. A has the cleaner export and provenance hygiene, but B’s within-row arm comparison and more explicit interpretation of the colorectal evidence make its answer more useful while remaining consistent with the record."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 5,
+   "facets": 4
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 5,
+   "facets": 4
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 5,
+    "export": 3,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 2,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly series, window and censoring; quantifies first-to-last and late/early change and names peak. Omits tool CAGR and critical-series decomposition.",
+    "comparison": "Negative/positive ratio versus defined corpus baseline is correctly calculated, with the 2.76x contrast and interpretation bounded to article tone.",
+    "chart": "Full traced monthly line, with unit, window, source and caption tied to a claim; chart supports the measured volume facet.",
+    "drilldown": "Provides headline items with dates, publishers and URLs, plus specific calls; 4/5 follow-ups executed successfully, and a follow-up result is folded into the report.",
+    "export": "Monthly rows trace and are referenced, but the CSV omits available fields and provenance lacks the full required JSON shape and coverage details.",
+    "repro": "Lists the overview call with args and window, a capture date, and derivable figures; all reported numbers trace.",
+    "refs": "URLs and metadata are supplied, but the script found no DOIs and the entries are not demonstrated as source-verified support; ceiling is 2.",
+    "accuracy": "Carefully distinguishes broad freight-rate coverage from container-only rates and article tone from price direction. Some overly broad language about the late complete months obscures the stated 2.09x comparison and the actual peak.",
+    "limits": "Places window end, censoring, gap to today, match mode, sampled publishers, label caveats and coverage-check limits near the relevant claims.",
+    "verdict": "Direct, bounded answer with decision, medium confidence and a condition that would change it; it does not identify the strongest contrary evidence in its own headlines."
+   },
+   "B": {
+    "trend": "No measured series; empty chart and no corpus observations.",
+    "comparison": "Explicitly says no common-scale comparison can be made.",
+    "chart": "Chart has no plotted values.",
+    "drilldown": "Lists six proposed calls but none executed; the calls are generic or use unsupported argument shapes.",
+    "export": "No data export.",
+    "repro": "No recorded calls or measurable claims to replay.",
+    "refs": "No sources consulted or verified.",
+    "accuracy": "Avoids unsupported corpus specifics and clearly labels what it cannot establish; the broad historical cycle is presented as context, not a measured corpus finding.",
+    "limits": "States several relevant gaps, but does not give the reference corpus window, censoring, match mode or coverage limits where findings would be used.",
+    "verdict": "Gives a usable general caution and confidence, but no measured answer to what this news corpus said or evidence that could change the conclusion.",
+    "facets": "Only the no-data status is grounded; no corpus volume, tone, themes, geography, headlines or concentration is answered."
+   },
+   "C": {
+    "trend": "Four explicitly estimated index points with named source, but this is a rate-index series rather than a news-coverage series; no measured news trend.",
+    "comparison": "Estimated index-level ratios are given, but they do not compare news coverage and cannot be checked against the record.",
+    "chart": "Memory chart is honestly labelled estimate, earning the estimate-only anchor.",
+    "drilldown": "Calls are concrete and 4/6 returned non-empty data, but there is no traced breakdown layer in the deliverable and the returned results were not incorporated.",
+    "export": "Estimate-labelled CSV only; no traced corpus export.",
+    "repro": "No recorded calls; recalled points are labelled estimates, not reproducible news measurements.",
+    "refs": "No resolvable citations; source publications are named from memory without URLs.",
+    "accuracy": "Honestly labels index figures as recalled estimates and declines to invent corpus data, but substitutes a rate-index narrative for the question about news and speculates about themes and geography.",
+    "limits": "Labels the recalled series and its memory limits, but lacks the actual corpus window, censoring and other applicable measurement bounds.",
+    "verdict": "Offers orientation rather than a supported answer about news; low confidence and next steps are stated, but the conclusion rests on recalled rates.",
+    "facets": "Most requested news facets are explicitly unmeasured; speculative themes do not count as grounded coverage."
+   },
+   "D": {
+    "trend": "Traced points and full CSV support the quantified late/early ratio, CAGR and peak with window and censoring. Chart itself is sparse, but the trend figures are supported by the export.",
+    "comparison": "Correctly compares the measured negative/positive ratio with the defined corpus baseline and gives the exact ratio and delta.",
+    "chart": "The plotted selected months trace, but the chart omits most available points and lacks visible marking of the censored boundary; minimum chart quality is therefore below the fully decomposed anchor.",
+    "drilldown": "Shows multiple breakdown layers and linked headlines; follow-ups are concrete, but only 3/6 executed successfully and results are not folded back in.",
+    "export": "Monthly export traces and is referenced, but omits required provenance details such as a coverage flag and full field set for all needed tables.",
+    "repro": "The overview call, args, window and capture date are provided; reported numbers trace and derived comparisons are reproducible.",
+    "refs": "URLs are included, but script ceiling is 1 due to reference-resolution results; no verified claim-linked quotations.",
+    "accuracy": "Misstates the topic as container-related evidence despite a broad query, presents the single Drewry snapshot as a measured latest snapshot, and calls the pattern roughly doubled despite the tool's 2.09x late/early comparison and separate first-to-last values.",
+    "limits": "Strong, locally placed bounds on window, censoring, match mode, sampled publishers, enrichment lag, geography and what the corpus cannot answer.",
+    "verdict": "Decision language overstates rate risk from media coverage and relies on a questionable container-rate snapshot; confidence and limits do not repair the unsupported conclusion.",
+    "facets": "Covers volume, tone, themes, geography, headlines and sources with grounded values, but does not resolve the central container-only facet or seasonal pattern."
+   }
+  },
+  "errors": {
+   "A": [
+    "The reported 3.29x first-to-last factor is imprecise: 408/124 is about 3.29, but the deliverable does not clearly identify it as a factor alongside the separate 284-article delta.",
+    "References list headline URLs, but source support and verbatim quotations are not established."
+   ],
+   "B": [
+    "No clear contradiction or fabricated specific; the response appropriately reports that it did not measure the corpus."
+   ],
+   "C": [
+    "The WCI index path is not a measure of what news coverage said; the recalled points and derived changes are explicitly estimates, not corpus findings.",
+    "The claim that news attention likely centred on Asia–Europe and transpacific lanes is unsupported and explicitly speculative."
+   ],
+   "D": [
+    "The 2026-05-29 Drewry 3% rise to US$2,800 is presented as a verified article finding, but the reference record supplied here does not contain that item or support it.",
+    "Calling 4,385 articles and the broad freight-rates query evidence of container-rate coverage overstates the scope; the query includes other freight modes.",
+    "The verdict says coverage roughly doubled without specifying the late-third versus early-third comparison; first-to-last is 408/124, while late/early is 2.09x."
+   ]
+  },
+  "best": "A",
+  "verdict": "A best supports a cautious decision: it traces the news-volume and tone findings, distinguishes them from container prices, and states what evidence is missing before acting. D has broader breakdowns, but its container framing and unsupported Drewry snapshot weaken the decision; B and C either offer no measured corpus answer or substitute recalled rate-index estimates."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 5,
+   "export": 3,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 2,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

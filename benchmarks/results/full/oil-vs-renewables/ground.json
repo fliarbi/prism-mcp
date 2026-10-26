@@ -1,0 +1,668 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 653,
+  "charts": [
+   {
+    "id": "proxy-wind-solar-share",
+    "title": "Wind and solar share of global electricity generation (supply proxy, not news coverage)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Wind+solar share of electricity",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "proxy_energy_shares.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.sentiment",
+    "question": "What is tone per term, and how is it defined?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nergy', 'natural gas']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries drive coverage of each term?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nergy', 'natural gas']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What is the critical coverage of each term?",
+    "args": {
+     "term": "natural gas",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.2,
+    "sample": "{\"articles\": [{\"target_id\": \"69e2a70fbd7b10565a393c4d\", \"url\": \"https://www.aninews.in/news/national/general-news/no-dryout-reported-in-lpg-distributor-ships-all-petrol-pumps-operating-normally-govt20260407173811\", \"title\": \"No dryout reported in LPG distributor ships, all petrol pumps operating normally: Govt\", \"excerpt\": \"New Delhi [India], April 7 (ANI): Addressing the recent developments in the West Asia crisis, Sujata Sharma, Joint Secretary in the Ministry of Petroleum & Natural Gas, denied any shortage of LPG in India, asserting that no \\\"dryout\\\" has been reported at petrol pumps across the country. She further n\", \"publisher\": \"aninews.in\", \"published\": \"2026-04-07 12:08:11\", \"parti"
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "How much do the terms overlap in the same articles?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "mode": "combined"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'], 'mode': 'combined'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='combined', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "How does the research literature split across the terms?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nergy', 'natural gas']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 10,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1176,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "crude oil",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "renewable energy",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "natural gas",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "terms_summary.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 71,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Which events and sources drove the March 2026 crude oil surge?",
+    "args": {
+     "term": "crude oil",
+     "since": "2026-02-01",
+     "granularity": "weekly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.1,
+    "sample": "{\"points\": [{\"period\": \"2026-01-26\", \"articles\": 59, \"critical\": 39, \"negative\": 42, \"positive\": 15, \"mean_priority\": 6.88, \"critical_pct\": 66.1, \"partial_period\": true}, {\"period\": \"2026-02-02\", \"articles\": 747, \"critical\": 529, \"negative\": 378, \"positive\": 309, \"mean_priority\": 6.82, \"critical_pct\": 70.8, \"partial_period\": false}, {\"period\": \"2026-02-09\", \"articles\": 710, \"critical\": 535, \"negative\": 427, \"positive\": 258, \"mean_priority\": 6.91, \"critical_pct\": 75.4, \"partial_period\": false}, {\"period\": \"2026-02-16\", \"articles\": 572, \"critical\": 382, \"negative\": 367, \"positive\": 191, \"mean_priority\": 6.9, \"critical_pct\": 66.8, \"partial_period\": false}, {\"period\": \"2026-02-23\", \"articles\": 7"
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "What are the most critical natural gas stories in March 2026?",
+    "args": {
+     "term": "natural gas",
+     "since": "2026-03-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries produce the coverage of each term?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is sentiment per term defined and how does it move month to month?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "How much do the terms overlap in the same articles?",
+    "args": {
+     "term": "crude oil AND natural gas",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 58.1,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"crude oil AND natural gas\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 21, \"entity_labelled_articles\": 323, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 549, \"critical_articles\": 358, \"first_seen\": \"2024-06-03 00:00:00\", \"last_seen\": \"2026-05-30 05:34:21\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every ser"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Is coverage after May 2026 still elevated for crude oil and natural gas?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "natural gas"
+     ],
+     "since": "2026-05-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2026-05-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 83,
+   "traced": 80,
+   "derived": 27,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "10,800 — Crude oil and natural gas jumped in March 2026 while renewable energy stayed within a band",
+    "21,800 — Crude oil and natural gas jumped in March 2026 while renewable energy stayed within a band"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 122,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 341,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the total article counts and shares for each term in the same corpus and window?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "window": "same dates and source set for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same dates and source set for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts for all three terms on one scale, and how did each change over the window?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "interval": "month",
+     "window": "same dates and source set for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...rce set for all terms'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same dates and source set for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What tone categories and per-term tone counts or shares does the corpus support?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "window": "same dates and source set for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...rce set for all terms'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same dates and source set for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "How many distinct articles mention each term and how many mention multiple terms, after deduplication?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "window": "same dates and source set for all terms",
+     "deduplicate_articles": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...licate_articles': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same dates and source set for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndeduplicate_articles\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which outlets and locations account for the coverage of each term?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "window": "same dates and source set for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...rce set for all terms'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same dates and source set for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 91,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 579,
+  "charts": [
+   {
+    "id": "monthly-coverage",
+    "title": "Monthly news articles matching each energy term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Crude oil",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Renewable energy",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Natural gas",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_coverage.csv",
+    "how": "call",
+    "rows": 72,
+    "numeric_cells": 71,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which sources contribute most to each term’s count, and how much coverage is duplicated across sources?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which articles match multiple terms, and what is the pairwise overlap?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 25.4,
+    "sample": "{\"terms\": [\"crude oil\", \"renewable energy\", \"natural gas\"], \"rows\": [{\"term\": \"crude oil\", \"articles\": 70737, \"share_pct\": 13.7, \"critical\": 48625, \"direction\": \"rising\", \"growth\": 2.92, \"tone_ratio\": 2.24, \"vs_baseline\": 3.86, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 1275, \"critical\": 814, \"negative\": 720, \"positive\": 518, \"mean_priority\": 6.72, \"critical_pct\": 63.8, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1586, \"critical\": 1106, \"negative\": 926, \"positive\": 620, \"mean_priority\": 6.84, \"critical_pct\": 69.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1715, \"critical\": 1238, \"negative\": 1049, \"positive\": 630, \"mean_priority\": 6.92, \"critical_p"
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "How does coverage vary by geography for each term?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "What is the documented definition and calibration of the tone_ratio field for each term?",
+    "args": {
+     "terms": [
+      "crude oil",
+      "renewable energy",
+      "natural gas"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['crude oil', 'renewable energy', 'natural gas'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 25,
+   "traced": 23,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 85,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

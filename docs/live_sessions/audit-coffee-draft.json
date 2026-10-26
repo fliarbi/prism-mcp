@@ -1,0 +1,81 @@
+{
+ "slug": "audit-coffee-draft",
+ "claude_live": {
+  "text": "**Verdict: don't publish as written.** Three of the four claims are overstated or unsupported. Only the blood-pressure line holds up.\n\n**What the data shows**\n- **\"Lowers heart disease risk by 50%\": wrong.** The BMJ umbrella review (Poole et al., 2017) found the largest reduction at 3–4 cups a day versus none. For cardiovascular disease the relative risk was 0.85 (95% CI 0.80–0.90), which is about 15%, not 50%. A 2021 dose-response meta-analysis (Di Maso et al., *Advances in Nutrition*) found the same pattern. It saw the largest reduction at 3–4 cups a day and none beyond that. A 2014 meta-analysis (Crippa et al., *Am J Epidemiol*) found a 21% lower CVD *mortality* at 3 cups a day (95% CI 16–26%).\n- **\"Prevents Parkinson's\": overstated.** Ross et al. (JAMA, 2000) found that higher coffee and caffeine intake was associated with a significantly lower incidence of Parkinson's. That is an association in an observational study, not prevention.\n- **\"Cures type 2 diabetes\": no support.** The audit found 53 papers covering coffee together with both Parkinson's and diabetes. I did not retrieve any that show a cure, and I don't know of any. Observational work can show lower risk, but nothing I retrieved shows coffee treating or reversing the disease.\n- **\"Raises blood pressure in the short term\": supported.** Corti et al. (*Circulation*, 2002) found that coffee acutely raises sympathetic nerve activity and blood pressure. The effect was seen in non-habitual drinkers and also occurred with decaffeinated coffee. So \"caffeine\" is slightly too narrow; \"coffee\" is safer.\n- **\"One of the healthiest drinks in the world\": not testable.** It is a ranking claim. The umbrella review's pooled estimates are favourable, but that is not a ranking.\n\n**Interpretation (mine)**\n- The favourable associations come mostly from observational cohorts, so causation isn't established.\n- The benefit appears to plateau at 3–4 cups a day.\n\n**Suggested rewrite:** \"Moderate coffee drinking, about 3–4 cups a day, is associated with roughly 15% lower cardiovascular risk and with lower Parkinson's incidence in observational studies. Coffee can raise blood pressure temporarily.\"\n\n**Limits:** The study windows run from 2000 to 2021. I read only a few abstracts. The audit's literal title matching returned zero papers for the heart-disease and blood-pressure claims as phrased, so those verdicts come from the separate evidence search.",
+  "seconds": 905.2,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "research_audit",
+    "args": {
+     "text": "Coffee is one of the healthiest drinks in the world. Drinking three cups a day lowers the risk of heart disease by 50 percent. Coffee also prevents Parkinson's disease and cures type 2 diabetes. However, caffeine raises blood pressure in the short term.",
+     "deep": 2
+    },
+    "ok": true,
+    "chars": 12155
+   },
+   {
+    "tool": "find_evidence",
+    "args": {
+     "claim": "Drinking three cups of coffee a day lowers the risk of cardiovascular disease",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 18301
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Direct answer: Don’t publish this as written.** The “50 percent” and “cures” claims are unsupported or overstated; the Parkinson’s claim needs to be framed as an association, and “healthiest” is an unsourced ranking.\n\n**What Prism’s evidence shows**\n\n- A 2023 meta-analysis of prospective cohort studies found no significant association between coffee consumption and coronary heart disease risk: RR 1.05 (95% CI 0.97–1.14). It does not support a 50% reduction from three cups a day. The source does not specify one follow-up window for that pooled estimate. [Park et al., 2023](https://doi.org/10.1016/j.amjcard.2022.10.010)\n- A 2000 JAMA study reported lower Parkinson’s incidence among men drinking more coffee: 10.4 versus 1.9 cases per 10,000 person-years, comparing no coffee with at least 28 oz/day. That is an observational association, not proof coffee prevents the disease. [Ross, 2000](https://doi.org/10.1001/jama.283.20.2674)\n- A 2014 meta-analysis found coffee consumption associated with lower *risk* of developing type 2 diabetes; that does not mean coffee cures diabetes. [Ding et al., 2014](https://doi.org/10.2337/dc13-1203)\n- Prism found an acute blood-pressure signal in one 2025 controlled study: mean arterial pressure increased 30 minutes after 200 mg caffeine. That supports a short-term effect, but the retrieved result does not quantify its size or duration. [Vera et al., 2025](https://doi.org/10.1123/ijsnem.2024-0159)\n\n**Interpretation:** Replace “prevents” with “has been associated with lower risk,” remove “cures,” and avoid calling coffee one of the world’s healthiest drinks without a defined comparison and strong supporting evidence.",
+  "seconds": 400.1,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "research_audit",
+    "args": {
+     "text": "Coffee is one of the healthiest drinks in the world. Drinking three cups a day lowers the risk of heart disease by 50 percent. Coffee also prevents Parkinson's disease and cures type 2 diabetes. However, caffeine raises blood pressure in the short term.",
+     "deep": 4,
+     "max_claims": 10
+    },
+    "ok": true,
+    "chars": 46100
+   },
+   {
+    "tool": "evidence_card",
+    "args": {
+     "claim": "Does coffee cure type 2 diabetes, or does caffeine affect glucose control?",
+     "style": "source_card"
+    },
+    "ok": true,
+    "chars": 5259
+   },
+   {
+    "tool": "evidence_card",
+    "args": {
+     "claim": "Does coffee prevent Parkinson's disease in humans? What risk estimate and study period are reported?",
+     "style": "source_card"
+    },
+    "ok": true,
+    "chars": 5269
+   },
+   {
+    "tool": "evidence_card",
+    "args": {
+     "claim": "Does caffeine cause a short-term rise in blood pressure, and by how much/how long?",
+     "style": "source_card"
+    },
+    "ok": true,
+    "chars": 5685
+   },
+   {
+    "tool": "evidence_card",
+    "args": {
+     "claim": "Does drinking three cups of coffee per day reduce risk of coronary heart disease by 50%, and over what follow-up period?",
+     "style": "source_card"
+    },
+    "ok": true,
+    "chars": 5839
+   }
+  ]
+ }
+}

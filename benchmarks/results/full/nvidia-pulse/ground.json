@@ -1,0 +1,664 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 599,
+  "charts": [
+   {
+    "id": "nvda-mcap",
+    "title": "NVIDIA market capitalisation milestones (approximate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Market cap milestone",
+      "how": "estimate",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "nvda_mcap_milestones.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly coverage volume and direction?",
+    "args": {
+     "term": "NVIDIA",
+     "interval": "month",
+     "months": 12
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmonths\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=12, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does tone compare with the corpus baseline?",
+    "args": {
+     "term": "NVIDIA",
+     "baseline": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which companies and people co-occur most?",
+    "args": {
+     "term": "NVIDIA",
+     "facets": [
+      "organisations",
+      "people",
+      "themes"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nfacets\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['organisations', 'people', 'themes'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are covered, and what is placed_pct?",
+    "args": {
+     "term": "NVIDIA"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.5,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 95312, \"share_pct\": 30.9, \"lift\": 1.4}, {\"label\": \"china\", \"articles\": 37299, \"share_pct\": 12.1, \"lift\": 2.4}, {\"label\": \"colombia\", \"articles\": 16336, \"share_pct\": 5.3, \"lift\": 10.9}, {\"label\": \"united kingdom\", \"articles\": 14253, \"share_pct\": 4.6, \"lift\": 0.9}, {\"label\": \"japan\", \"articles\": 13319, \"share_pct\": 4.3, \"lift\": 2.8}, {\"label\": \"india\", \"articles\": 11306, \"share_pct\": 3.7, \"lift\": 0.6}, {\"label\": \"south korea\", \"articles\": 11052, \"share_pct\": 3.6, \"lift\": 4.8}, {\"label\": \"taiwan\", \"articles\": 10744, \"share_pct\": 3.5, \"lift\": 3.8}, {\"label\": \"france\", \"articles\": 7309, \"share_pct\": 2.4, \"lift\": 1.4}, {\"label\": "
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which are the most critical headlines, with date, publisher and URL?",
+    "args": {
+     "term": "NVIDIA",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 10.8,
+    "sample": "{\"articles\": [], \"returned\": 0, \"requested\": 10, \"unresolved\": 4, \"relevance_or_duplicate_rejections\": 6, \"entity_identity_verified\": false, \"identity_note\": \"Visible term matching does not disambiguate homonyms such as Apple; inspect article context.\", \"unresolved_note\": \"some ids no longer have a record in the article store — rotated out, not an error\"}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How does NVIDIA compare with AMD, Intel and Broadcom?",
+    "args": {
+     "terms": [
+      "NVIDIA",
+      "AMD",
+      "Intel",
+      "Broadcom"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 22.6,
+    "sample": "{\"terms\": [\"NVIDIA\", \"AMD\", \"Intel\", \"Broadcom\"], \"rows\": [{\"term\": \"NVIDIA\", \"articles\": 232502, \"share_pct\": 47.8, \"critical\": 164123, \"direction\": \"rising\", \"growth\": 1.83, \"tone_ratio\": 0.35, \"vs_baseline\": 0.6, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 7439, \"critical\": 5155, \"negative\": 1357, \"positive\": 6028, \"mean_priority\": 6.97, \"critical_pct\": 69.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 5643, \"critical\": 3695, \"negative\": 1399, \"positive\": 4219, \"mean_priority\": 6.88, \"critical_pct\": 65.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 6577, \"critical\": 4472, \"negative\": 2110, \"positive\": 4417, \"mean_priority\": 6.94, \"critical_pct\": 6"
+   },
+   {
+    "id": "f7",
+    "feature": "news.overview",
+    "question": "Which publishers hold the largest share of coverage?",
+    "args": {
+     "term": "NVIDIA",
+     "facet": "sources"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nfacet\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sources', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 3,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "12 — - Windows: none measured. The market-cap milestones end October 2025, about 12 months befo"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 105,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 972,
+  "charts": [
+   {
+    "id": "monthly-volume",
+    "title": "Monthly NVIDIA-mentioning articles",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "critical articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "nvidia_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 95,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "nvidia_countries.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 20,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which critical headlines drove the October 2025 peak (80.1% critical)?",
+    "args": {
+     "term": "nvidia",
+     "since": "2025-10-01",
+     "until": "2025-11-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-11-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does NVIDIA's tone compare with AMD and Intel?",
+    "args": {
+     "terms": [
+      "nvidia",
+      "amd",
+      "intel"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"nvidia\", \"amd\", \"intel\"], \"rows\": [{\"term\": \"nvidia\", \"articles\": 232502, \"share_pct\": 50.0, \"critical\": 164123, \"direction\": \"rising\", \"growth\": 1.83, \"tone_ratio\": 0.35, \"vs_baseline\": 0.6, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 7439, \"critical\": 5155, \"negative\": 1357, \"positive\": 6028, \"mean_priority\": 6.97, \"critical_pct\": 69.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 5643, \"critical\": 3695, \"negative\": 1399, \"positive\": 4219, \"mean_priority\": 6.88, \"critical_pct\": 65.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 6577, \"critical\": 4472, \"negative\": 2110, \"positive\": 4417, \"mean_priority\": 6.94, \"critical_pct\": 68.0, \"partia"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What happened to coverage volume from June to October 2026?",
+    "args": {
+     "term": "nvidia",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'nvidia' in this window",
+    "seconds": 0.1,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Is the Colombia share a place-resolution artefact?",
+    "args": {
+     "term": "nvidia",
+     "level": "country",
+     "scope": "colombia"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nscope\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='colombia', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What explains the April 2025 negative spike (ratio 0.69)?",
+    "args": {
+     "term": "nvidia",
+     "since": "2025-04-01",
+     "until": "2025-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"points\": [{\"period\": \"2025-04-01\", \"negative\": 3812, \"positive\": 5512, \"neutral\": 72, \"ratio\": 0.69}], \"totals\": {\"neg\": 3812, \"pos\": 5512, \"neutral\": 72, \"n\": 9396, \"neg_pct\": 40.6, \"pos_pct\": 58.7, \"ratio\": 0.69}, \"corpus_baseline_ratio\": 0.55, \"vs_baseline\": 1.25, \"reading\": \"somewhat more negative than ordinary news coverage\"}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage across the full window, not a 222-article sample?",
+    "args": {
+     "term": "nvidia",
+     "match_mode": "entity_central"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nmatch_mode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='entity_central', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 102,
+   "traced": 102,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 126,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 303,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many NVIDIA news items appear each month in the selected window, and how does that compare with the previous equal-length window?",
+    "args": {
+     "term": "NVIDIA",
+     "window": "Specify dates and corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify dates and corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does NVIDIA coverage tone compare with the corpus baseline over the same window?",
+    "args": {
+     "term": "NVIDIA",
+     "window": "Specify dates and corpus",
+     "include_baseline": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify dates and corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_baseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes, organizations, and people are most associated with NVIDIA coverage?",
+    "args": {
+     "term": "NVIDIA",
+     "window": "Specify dates and corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify dates and corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are mentioned, and what share of records are successfully placed?",
+    "args": {
+     "term": "NVIDIA",
+     "window": "Specify dates and corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify dates and corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical NVIDIA headlines merit review, with date, publisher, and URL?",
+    "args": {
+     "term": "NVIDIA",
+     "window": "Specify dates and corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify dates and corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How concentrated is coverage among publishers, and which publishers lead?",
+    "args": {
+     "term": "NVIDIA",
+     "window": "Specify dates and corpus",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='NVIDIA', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Specify dates and corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 82,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 696,
+  "charts": [
+   {
+    "id": "nvidia-monthly-mentions",
+    "title": "Monthly news articles mentioning NVIDIA",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "nvidia_monthly_mentions.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which NVIDIA headlines were classified as critical, with dates, publishers, and URLs?",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2026-02-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does NVIDIA sentiment compare with a selected peer set over the same complete months?",
+    "args": {
+     "terms": [
+      "NVIDIA",
+      "AMD",
+      "Intel"
+     ],
+     "since": "2024-06-01",
+     "until": "2026-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"NVIDIA\", \"AMD\", \"Intel\"], \"rows\": [{\"term\": \"NVIDIA\", \"articles\": 232502, \"share_pct\": 50.0, \"critical\": 164123, \"direction\": \"rising\", \"growth\": 1.83, \"tone_ratio\": 0.35, \"vs_baseline\": 0.6, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 7439, \"critical\": 5155, \"negative\": 1357, \"positive\": 6028, \"mean_priority\": 6.97, \"critical_pct\": 69.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 5643, \"critical\": 3695, \"negative\": 1399, \"positive\": 4219, \"mean_priority\": 6.88, \"critical_pct\": 65.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 6577, \"critical\": 4472, \"negative\": 2110, \"positive\": 4417, \"mean_priority\": 6.94, \"critical_pct\": 68.0, \"partia"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "Which articles and topics drove NVIDIA's largest monthly volume peaks?",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 7439, \"critical\": 5155, \"negative\": 1357, \"positive\": 6028, \"mean_priority\": 6.97, \"critical_pct\": 69.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 5643, \"critical\": 3695, \"negative\": 1399, \"positive\": 4219, \"mean_priority\": 6.88, \"critical_pct\": 65.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 6577, \"critical\": 4472, \"negative\": 2110, \"positive\": 4417, \"mean_priority\": 6.94, \"critical_pct\": 68.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 5950, \"critical\": 4183, \"negative\": 1632, \"positive\": 4278, \"mean_priority\": 6.98, \"critical_pct\": 70.3, \"partial_period\": false}, {\"period\": \"2024"
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which outlets account for the most NVIDIA coverage in a larger source sample?",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 47.7,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"NVIDIA\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 145943, \"place\": 0, \"tagged_articles\": 218510, \"entity_labelled_articles\": 154920, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 232502, \"critical_articles\": 164123, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:58:56\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close eve"
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which places are most often the subject of NVIDIA-related articles, with placement coverage?",
+    "args": {
+     "term": "NVIDIA",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 92926, \"share_pct\": 30.9, \"lift\": 1.4}, {\"label\": \"china\", \"articles\": 36595, \"share_pct\": 12.2, \"lift\": 2.4}, {\"label\": \"colombia\", \"articles\": 15938, \"share_pct\": 5.3, \"lift\": 10.9}, {\"label\": \"united kingdom\", \"articles\": 13713, \"share_pct\": 4.6, \"lift\": 0.9}, {\"label\": \"japan\", \"articles\": 12864, \"share_pct\": 4.3, \"lift\": 2.8}, {\"label\": \"india\", \"articles\": 10969, \"share_pct\": 3.7, \"lift\": 0.6}, {\"label\": \"south korea\", \"articles\": 10645, \"share_pct\": 3.5, \"lift\": 4.7}, {\"label\": \"taiwan\", \"articles\": 10425, \"share_pct\": 3.5, \"lift\": 3.7}, {\"label\": \"france\", \"articles\": 7116, \"share_pct\": 2.4, \"lift\": 1.4}, {\"label\": "
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 35,
+   "traced": 34,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None]"
+  ],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 4,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

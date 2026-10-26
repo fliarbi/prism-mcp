@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 0
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 5
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured monthly series or quantified change.",
+    "comparison": "No measured comparison or baseline.",
+    "chart": "No chart.",
+    "drilldown": "Lists specific follow-up calls, but gives no traced breakdown layer.",
+    "export": "No data export.",
+    "repro": "No measured values or reproducible calls.",
+    "refs": "No sources or identifiers.",
+    "accuracy": "It clearly says it cannot measure the requested coverage and makes no contradictory measured claims.",
+    "limits": "Names key missing window, lane, corpus, coverage, censoring, and matching details, but has no dataset-specific limits.",
+    "verdict": "Directly advises against a decision based on this response, gives confidence and a condition that would change the answer; no contrary evidence is present.",
+    "facets": "No requested facet is answered with grounded values or a database-grounded no-data result."
+   },
+   "B": {
+    "trend": "The only series is explicitly an estimate of US cases, not coverage.",
+    "comparison": "Numeric case comparison is labeled estimate and uses a named public source, but does not compare coverage.",
+    "chart": "The chart is an openly labeled estimated case series, not coverage.",
+    "drilldown": "Follow-up questions are specific, but only two of seven calls returned usable results and there is no traced breakdown.",
+    "export": "The only CSV is an estimated case series, not the coverage export needed.",
+    "repro": "Most numeric claims are memory estimates or cannot be regenerated from listed calls.",
+    "refs": "Named public references are provided, but they do not give the item-level support and quotes needed for higher scores.",
+    "accuracy": "Separates case activity from media coverage and labels estimates and interpretations; no clear conflict with the reference record.",
+    "limits": "Clearly separates cases from coverage and notes the missing corpus, but omits applicable measured-corpus limits because none was queried.",
+    "verdict": "Gives a decision, confidence, and what would change it, while correctly treating cases as a proxy rather than measured coverage.",
+    "facets": "Most coverage facets remain unmeasured; the outbreak geography and themes are estimates or interpretation."
+   },
+   "C": {
+    "trend": "Full monthly series traces; quantified late-versus-early growth, peak, censoring, and critical-volume decomposition are reported consistently.",
+    "comparison": "The early/late ratio and delta recompute, and the sentiment comparison defines the corpus baseline and caveat.",
+    "chart": "The monthly chart traces every point and supports the trend claim, but geography is not charted.",
+    "drilldown": "Traced panels provide breakdowns, but only three follow-up calls executed successfully and the report does not reach identified headline items.",
+    "export": "The monthly series has full provenance, but the requested geography facet has no corresponding export.",
+    "repro": "The recorded call, arguments, window, and capture date allow the reported numbers and derived comparisons to be regenerated.",
+    "refs": "No external documents with resolvable identifiers and claim-linked quotations are provided.",
+    "accuracy": "Measurements match the record, and the deliverable distinguishes article mentions, sentiment, assigned labels, and placed geography from epidemiology.",
+    "limits": "Places limits next to the relevant counts, including mention matching, censoring, the gap to today, enrichment lag, placement coverage, and panel denominator differences.",
+    "verdict": "Direct answer, decision, confidence, conditions, limits, and the contrary signal of the post-peak decline are all stated within the word limit.",
+    "facets": "Grounded volume, trend, sentiment, themes, entities, geography, placement, and sampled publisher facets are covered, with limits clearly stated."
+   },
+   "D": {
+    "trend": "The series and changes trace, but the report contradicts the source by calling the latest month complete and saying there are no partial months despite the censoring caveat.",
+    "comparison": "The early/late and sentiment ratios and deltas are traced, with the baseline defined and its caveat carried.",
+    "chart": "The monthly values trace and support a trend claim, but the chart does not visibly mark the censored boundary and there is no geography chart.",
+    "drilldown": "There are traced breakdowns, but only three follow-up calls succeeded and the report does not fold an executed follow-up result into the analysis.",
+    "export": "Monthly and country tables trace and are referenced, with provenance; the country table is partial and null-preserving hygiene is not demonstrated.",
+    "repro": "The source call, arguments, window, and capture date support regeneration of the traced values and calculations.",
+    "refs": "No external documents are referenced with claim-linked, resolvable identifiers and supporting quotes.",
+    "accuracy": "It says the newest month is complete and has no partial months, directly contradicting the source's censoring warning about the newest month.",
+    "limits": "Several applicable limits are stated, but the censoring limit is directly misstated and the verdict repeats the completeness error.",
+    "verdict": "It gives a decision and conditions, but its confidence reason contradicts the censoring caveat and the verdict does not bound that error.",
+    "facets": "Covers volume, trend, tone, themes, entities, geography, headlines, and publisher sampling with grounded values, including acknowledged gaps."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": [
+    "States that the series has no partial months and treats May 2026 as complete, despite the reference warning that the newest month is censored and contains only a fraction of a normal month."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is the strongest decision-grade answer: its traced trend, comparisons, and limits stay aligned with the record, though it lacks a geography export and external references. D covers more facets, but its false claim that the latest month is complete undermines its trend reading and confidence."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 5
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

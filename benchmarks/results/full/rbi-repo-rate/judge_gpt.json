@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 2,
+    "comparison": 4,
+    "chart": 2,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traces the monthly series and quantifies the endpoint and early-to-late change, but does not decompose the trend in the chart.",
+    "comparison": "The polarity ratio and corpus baseline are defined and recompute, though the comparison does not isolate RBI decision coverage.",
+    "chart": "The volume chart traces to the call and supports a claim, but it omits the supported tone facet and does not visibly mark the censored final bucket.",
+    "drilldown": "Gives breakdowns and specific follow-up questions, but only one of four proposed calls executed successfully and the item layer is limited.",
+    "export": "The monthly CSV is traced and referenced, but it is the only needed export and does not include all provenance fields in the rows.",
+    "repro": "Lists the source call with arguments and window; the script traced 36 of 37 numeric claims and the recipe is reproducible.",
+    "refs": "The dataset citation and two headline links are supplied, but the document references do not provide complete claim-linked support.",
+    "accuracy": "No material contradiction with the record; it flags the mention-matching scope and distinguishes coverage from RBI decisions.",
+    "limits": "Places window, censoring, match mode, coverage, sample, and enrichment limits alongside the claims they bound.",
+    "verdict": "Answers with a decision, confidence, and conditions, but does not name the strongest contrary evidence from its own results.",
+    "facets": "Covers volume, tone, themes, entities, geography, publishers, and headlines, but leaves the RBI-specific decision chronology unresolved."
+   },
+   "B": {
+    "trend": "The plotted final bucket is the censored month treated as a normal low point; the rubric caps this at 2.",
+    "comparison": "The polarity baseline and ratio are numeric and recompute, with the tool's reading carried through.",
+    "chart": "The chart plots the censored final month as a collapse and does not visibly mark it; this caps the chart score.",
+    "drilldown": "Provides several breakdowns and specific calls, but only three of six follow-ups executed successfully; the item evidence is not developed into two traced layers.",
+    "export": "The monthly CSV is traced and referenced, but it is the only table and its coverage is labelled full despite the cutoff caveat.",
+    "repro": "Lists the overview call with arguments and window; the script traced all numeric claims.",
+    "refs": "Headlines are named but lack resolving URLs, and no references are tied to claims with full metadata.",
+    "accuracy": "Mostly matches the record, but the monthly chart and trend account mishandle the censored final bucket and the claimed meeting-month pattern is interpretation.",
+    "limits": "States key window, lane, and matching limits, but labels coverage full and does not place the censoring caveat clearly with the plotted final value.",
+    "verdict": "Direct answer with decision, confidence, and conditions; the conclusion is bounded, though it underplays the censored endpoint issue.",
+    "facets": "Addresses the main implied facets with grounded figures or explicit limits, including volume, tone, themes, entities, geography, and sources."
+   },
+   "C": {
+    "trend": "The series is explicitly an estimate from memory, which earns the estimate anchor only.",
+    "comparison": "Numeric comparison is explicitly estimated and cannot be checked against a source.",
+    "chart": "The memory chart is labelled estimate, so it earns the estimate anchor only.",
+    "drilldown": "Has multiple specific proposed calls and three executed successfully, but no traced breakdown layer.",
+    "export": "The export is explicitly an estimate from memory.",
+    "repro": "Figures are memory estimates and no reproducible source call is provided.",
+    "refs": "No external references were consulted; the memory claims have no resolvable supporting documents.",
+    "accuracy": "The answer clearly labels its recollection and missing 2026 decisions; no reference-record contradiction is established.",
+    "limits": "Identifies memory, missing corpus measures, and incomplete recall, but does not measure the requested news window.",
+    "verdict": "Gives a bounded qualitative answer and confidence, but the decision is only to treat it as orientation and the evidence is unmeasured.",
+    "facets": "Most requested news facets are explicitly said to be unmeasured; only a qualitative policy recollection is offered."
+   },
+   "D": {
+    "trend": "The chart is explicitly a memory estimate, earning the estimate anchor only.",
+    "comparison": "The remembered rate comparison is explicitly estimated and cannot be checked.",
+    "chart": "The memory chart is labelled estimate, earning the estimate anchor only.",
+    "drilldown": "No breakdown layer or executed follow-up results are provided.",
+    "export": "The export is explicitly an estimate and contains policy-rate values, not news coverage.",
+    "repro": "One untagged measured-looking number appears in the verdict, and no source calls can reproduce the claims.",
+    "refs": "No references were consulted.",
+    "accuracy": "The verdict presents 6.50% without an estimate label, matching the script's identified untagged number.",
+    "limits": "States that the corpus is unavailable, but does not provide measured bounds for the requested news window.",
+    "verdict": "The verdict ceiling is zero because it rests on the untagged 6.50% figure identified as invented by the script.",
+    "facets": "The missing news measures are acknowledged, but the central facets are not answered with grounded values."
+   }
+  },
+  "errors": {
+   "A": [
+    "The chart includes the censored May 2026 count of 77 without visibly marking it as partial.",
+    "Only one of four proposed follow-up calls executed successfully."
+   ],
+   "B": [
+    "The monthly chart plots the censored May 2026 bucket as an ordinary low month, which can imply a collapse.",
+    "Labels export coverage as full despite the source's ingestion and censoring caveat.",
+    "The meeting-month alternation claim is interpretation, not a traced finding."
+   ],
+   "C": [
+    "The remembered policy-rate path and decision dates are estimates, not sourced news findings."
+   ],
+   "D": [
+    "The verdict states 6.50% without an estimate label, as flagged by the script.",
+    "The deliverable does not measure news coverage; its chart and export concern estimated policy rates."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it separates mention-based coverage from RBI decisions, gives a traceable volume and tone read, and places the key data limits beside the findings. B covers more facets, but its chart treats the censored final month as an ordinary low point and its export labels coverage as full, making its trend reading less dependable."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 2,
+   "comparison": 4,
+   "chart": 2,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

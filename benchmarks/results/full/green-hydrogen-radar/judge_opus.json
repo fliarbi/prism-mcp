@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 2,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced first, peak and last values with the window. Gives the CAGR, the 2.46 late-vs-early ratio and the post-peak -16.2% decline. Flags 2025 as possibly partial.",
+    "comparison": "Sets research ratio 2.46 against news ratio 3.43 across different windows and lanes. States the mixing as 'indicative only' but does not resolve it. The framing delta sits in prose, not in the comparison.",
+    "chart": "One fully traced chart with window, unit, source and caption. There is no framing or new-work view, though the data supports both.",
+    "drilldown": "Goes from orientation to papers with DOIs. 4 of 7 follow-ups executed. No follow-up result is folded back into the report.",
+    "export": "Two traced CSVs and a provenance JSON. The trend CSV is barely referenced in the prose. Capped at 3.",
+    "repro": "55 of 55 numbers traced. Calls are listed with args, and derived figures can be recomputed.",
+    "refs": "All 10 DOIs resolve, with year, venue and orientation, and each is tied to a claim. No quotes, and the call returned none.",
+    "accuracy": "Says '9 most-cited papers' when the list has 10. Calls geography 'null in [c1]' although the radar has no geography field.",
+    "limits": "Window gaps, coverage, match mode and censoring sit next to the numbers they bound. States what cannot be answered.",
+    "verdict": "Gives an answer, decision, reasoned confidence and what would change it, consistent with the chart. Does not address the cost-versus-policy split or the +3.6pp cautionary rise as contrary evidence.",
+    "facets": "Covers research trend, news trend, framing, new work and under-covered topics, all grounded."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Topic layers are generic. 0 of 5 follow-ups worked.",
+    "export": "Gap-record CSV only.",
+    "repro": "Lists c1 as used although no call was run. Nothing traces.",
+    "refs": "The DOIs resolve, but the author says the titles and metadata are unverified. Titles look generic, and no claims are tied.",
+    "accuracy": "No measured claims. The listed-but-unrun call is a misrepresentation.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "A qualitative answer with no support.",
+    "facets": "Facets are mostly answered with 'cannot measure' plus memory."
+   },
+   "C": {
+    "trend": "Endpoints and peak in prose, but the chart omits the available peak point. CAGR is given.",
+    "comparison": "Framing delta is traced and its caveat carried. Adds an unsupported claim that the comparison 'does not isolate green hydrogen'.",
+    "chart": "Traced, but plots only two points and leaves out the peak. Single facet.",
+    "drilldown": "One document layer with DOIs. Only 1 of 6 follow-ups worked.",
+    "export": "Endpoints-only CSV that misses available points. Provenance is present.",
+    "repro": "26 of 27 traced, with the call block given.",
+    "refs": "5 DOIs resolve, each tied to a claim with venue and year.",
+    "accuracy": "Misapplies the under_covered taxonomy caveat to the news trend, saying it is not topic-specific. Also asserts the framing windows are not green-hydrogen specific.",
+    "limits": "Gives the news gap (175 days, correct) and notes coverage and selection caveats, placed next to the numbers.",
+    "verdict": "Supported, but the 'broadened toward' reading is not measured. No contrary evidence is named.",
+    "facets": "Under-covered topics and news are dismissed through misreadings."
+   },
+   "D": {
+    "trend": "Estimate-labelled memory series.",
+    "comparison": "Memory IEA figures, with the ratio given only qualitatively.",
+    "chart": "Estimate-labelled chart.",
+    "drilldown": "Memory layers. Follow-ups are partly ok.",
+    "export": "Estimate CSV.",
+    "repro": "Memory only.",
+    "refs": "No DOIs. The IEA report and Xie 2022 are recalled and unverified.",
+    "accuracy": "Recalled IEA figures are broadly correct. Everything is labelled est.",
+    "limits": "Honest about being memory-only, with specific gaps listed.",
+    "verdict": "Addresses the policy-versus-technology split with a decision, but rests on memory at low confidence.",
+    "facets": "Facets come mostly from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "Counts '9 most-cited papers' when 10 are listed",
+    "Claims geography is null in c1 although the radar has no geography field"
+   ],
+   "B": [
+    "Lists call c1 as used for candidate examples although no call was run; reference metadata unverified"
+   ],
+   "C": [
+    "Misreads the under_covered taxonomy caveat as undermining the news trend's topic specificity",
+    "Asserts the framing comparison does not isolate green hydrogen, which is unsupported"
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A turned the single radar call into a traced trend, framing and new-work picture. It quantified the change, placed limits next to the numbers and listed 10 resolvable DOIs, with only a minor counting slip. C used the same data more thinly and misread the tool's caveats. B and D were honest about having no measurements, and only D engaged the policy-versus-technology split the question raises."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 2,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

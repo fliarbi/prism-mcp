@@ -1,0 +1,163 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "No measured figures support a like-for-like contrast.",
+    "chart": "No chart block.",
+    "drilldown": "No traced breakdown; listed follow-ups did not return usable results.",
+    "export": "No export.",
+    "repro": "No measurements to reproduce; calls are listed but do not reproduce results.",
+    "accuracy": "Clearly labels country examples as illustrative rather than measured.",
+    "limits": "States no data and unknown coverage, but omits the patent publication lag.",
+    "verdict": "Cautious answer and decision, but no measured evidence or concrete contrary finding.",
+    "facets": "Grounded no-data answers cover most requested lanes; examples are explicitly unmeasured."
+   },
+   "B": {
+    "comparison": "Numeric patent-share comparison is explicitly memory-based, so it cannot be verified on a common scale.",
+    "chart": "No chart block.",
+    "drilldown": "Memory breakdown and mostly unexecuted calls; no item-level results.",
+    "export": "Estimate table is honestly labelled, earning the estimate anchor.",
+    "repro": "No numbers trace to recorded calls; estimates are labelled as memory.",
+    "accuracy": "No direct conflict with the reference, but specific patent-share estimates are unsupported.",
+    "limits": "Mentions uncertainty and lag, but omits applicable measured-window and coverage limits.",
+    "verdict": "Direct shortlist and conditions with low confidence, but rests on unsupported estimates and does not address contrary evidence.",
+    "facets": "Most facets are answered from memory or left unmeasured."
+   },
+   "C": {
+    "comparison": "US and India news counts are on one traced scale, with a recomputable ratio and placement caveat; it does not establish research or patent leadership.",
+    "chart": "No chart block.",
+    "drilldown": "Traced country breakdown and three successful, on-topic follow-ups, but no item-level layer or returned results folded in.",
+    "export": "News rows trace, but research rows and the empty patent result are not exported; provenance is incomplete for the full question.",
+    "repro": "All reported figures trace and calls have arguments, but the export recipe does not rebuild every requested lane.",
+    "accuracy": "Reads authorship, journal country, news geography and empty patent rows correctly; flags acronym and high-lift caveats.",
+    "limits": "Places most limits with the figures, but omits the roughly 18-month patent publication lag.",
+    "verdict": "Direct bounded answer with decision, confidence and conditions; the news lead is acknowledged but the verdict could state the strongest contrary evidence more directly.",
+    "facets": "Covers research, patents, news and the lane mismatch, but not implied overlap and seasonality facets."
+   },
+   "D": {
+    "comparison": "News-country ratios recompute on one scale; placement coverage is stated, but this comparison answers only the news facet.",
+    "chart": "Traced news chart supports a claim, but omits available research rows and does not visibly mark the censored period.",
+    "drilldown": "Country breakdown plus successful follow-ups, but no item-level results or executed result folded into the report.",
+    "export": "News and research tables trace, but the empty patent result is not preserved as a row with its reason; provenance is incomplete for the requested lanes.",
+    "repro": "Nearly all numbers trace and calls are listed, but one numeric claim is untagged and the recipe does not rebuild every chart and table.",
+    "accuracy": "Mostly faithful, but overstates the Finland lift as evidence of excess coverage and calls the Central African Republic row probably an artifact without confirming it.",
+    "limits": "Specific news and research limits are stated, but patent publication lag is omitted and coverage denominator wording is imprecise.",
+    "verdict": "Clear decision, confidence and conditions, bounded by the sparse research and partial news evidence; does not fully acknowledge the limits of the patent window.",
+    "facets": "Covers research, patents, news and the lane mismatch, but not implied overlap and seasonality facets."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Patent-share estimates and country rankings are unverified memory claims, though labelled estimates."
+   ],
+   "C": [],
+   "D": [
+    "The Central African Republic row is described as probably an artifact; the reference only warns of acronym collisions and high-lift low-count rows.",
+    "The statement that shares are of placed articles is not established by the reference record."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is the strongest decision aid: it separates the thin research evidence, empty patent-origin result and partial news geography, and its reported values trace cleanly. D adds a useful chart and broader exports, but its chart covers only news and it makes a stronger-than-supported claim about the Central African Republic row."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

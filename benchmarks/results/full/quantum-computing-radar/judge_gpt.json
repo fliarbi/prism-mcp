@@ -1,0 +1,195 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 2,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Quantifies the reported endpoint and early/late changes, but does not give the full annual series or all decisive points and censoring caveats.",
+    "comparison": "Early and late research indicators are compared on one scale with a defined baseline and recomputable ratio and delta.",
+    "chart": "The research endpoint chart is traced and labeled, but other supported facets such as news and framing are not charted.",
+    "drilldown": "Provides a selected-paper layer and specific follow-up calls, but only one of five calls executed successfully.",
+    "export": "Exports selected papers and research endpoints with provenance, but omits other needed data such as framing and news series.",
+    "repro": "Nearly all numbers trace and the main call is reproducible; one numeric claim is untraced and some methodology detail is not in the record.",
+    "refs": "DOIs resolve and claims are tied to works, but there are no abstract quotes or tier evidence.",
+    "accuracy": "Adds unsupported coverage-metadata claims and treats some unprovided detail as fact.",
+    "limits": "Places relevant window, selection, matching, and interpretation limits near the findings, though some details are unsupported.",
+    "verdict": "Gives a direct, bounded answer with confidence, a decision, a condition that would change it, and contrary framing evidence.",
+    "facets": "Covers selected developments, trends, framing, and the limits of the under-coverage result, but lacks grounded detail on error-correction milestones."
+   },
+   "B": {
+    "trend": "Quantifies endpoint and early/late changes, names the peak, and notes partial-period uncertainty; the full annual series is unavailable.",
+    "comparison": "Ratios are stated, but the paper and news series use different windows, so the comparison is indicative rather than a resolved same-window contrast.",
+    "chart": "The research chart is traced and supports a claim, but supported news and framing facets are left without charts.",
+    "drilldown": "Lists breakdown dimensions and specific follow-ups, but only one of six calls executed successfully and no item-level layer is shown.",
+    "export": "Exports traced endpoints, but lacks the full series and other decision-relevant tables; provenance is incomplete for the needed exports.",
+    "repro": "Most numeric claims trace to the radar and the call is listed, but one claim is untagged and the deliverable does not fully regenerate its tables and charts.",
+    "refs": "Identifiers resolve, but references lack quotes and fuller evidence metadata, and the citation block is not tied to all claims.",
+    "accuracy": "The core radar values and caveats are read correctly; the differing windows are acknowledged.",
+    "limits": "States window gaps, matching limits, coverage caveats, and that counts do not measure scientific progress.",
+    "verdict": "Direct answer and decision with confidence and change conditions; it acknowledges limits, though the answer does not engage the error-correction milestones emphasized by the prompt.",
+    "facets": "Covers volume, selected work, framing, and the taxonomy-match caveat, but gives little grounded detail on the research developments themselves."
+   },
+   "C": {
+    "trend": "No measured trend; the chart is explicitly an estimate of selected examples.",
+    "comparison": "Declines to compare unlike platforms or metrics, and supplies no measured comparison.",
+    "chart": "The chart is openly labeled as selected examples, not a measured publication series.",
+    "drilldown": "Provides topic groupings but no successful, on-topic executable follow-up results.",
+    "export": "CSV is explicitly a memory-based selection, not a traced literature export.",
+    "repro": "Calls are listed, but none were executed successfully and the numeric claims are not traced.",
+    "refs": "Three of five DOI identifiers fail to match the cited work, triggering the fabricated-identifier cap.",
+    "accuracy": "Several titles are paired with mismatching DOIs and presented as supporting evidence, despite the verification caveat.",
+    "limits": "Clearly states the selection, time, lane, and measurement limits near the claims.",
+    "verdict": "Answers directly with a decision, confidence, and change condition, but the key evidence contains DOI/title mismatches.",
+    "facets": "Addresses error correction and simulation qualitatively, but lacks grounded coverage of trends, framing, and broader research facets."
+   },
+   "D": {
+    "trend": "The series is honestly labeled as a recall-based estimate, earning the estimate-level score only.",
+    "comparison": "Provides an explicitly estimated same-task RSA comparison, but the figures are not reproducible.",
+    "chart": "The logical-qubit chart is honestly labeled as an estimate rather than a measured series.",
+    "drilldown": "Has topic breakdown and two successful follow-ups, but the breakdown is not traced and lacks identified items.",
+    "export": "Exports are memory estimates rather than traced tables.",
+    "repro": "No database calls were run; numeric claims are memory estimates and cannot be regenerated.",
+    "refs": "References are named but identifiers are absent and several entries lack resolvable document links.",
+    "accuracy": "The memory caveats are explicit, but the non-equivalent logical-qubit experiments and uncertain specifics limit confidence in the factual claims.",
+    "limits": "Clearly states the memory window, selection bias, missing lanes, and that the plateau is not evidence of stagnation.",
+    "verdict": "Offers a direct decision and confidence with change conditions, but its central trend is an unverified estimate and contrary evidence is thin.",
+    "facets": "Mentions several post-2023 areas, but most claims are unmeasured and the response does not ground trends or framing."
+   }
+  },
+  "errors": {
+   "A": [
+    "Unsupported claim that coverage metadata passed index partition-read and historical-row-floor checks; this is absent from the reference record.",
+    "The report says 34/35 numbers trace, but one cited or uncited numerical detail is not supported by the supplied record."
+   ],
+   "B": [
+    "The news late endpoint is described as May 2026, while the recorded monthly value 899 is for May; the reported peak is April 2026. The window-end wording risks treating a partial month as complete."
+   ],
+   "C": [
+    "DOI 10.1038/s41586-023-06481-w is paired with a title that does not match the identifier.",
+    "DOI 10.1038/s41586-023-06486-5 is paired with a title that does not match the identifier.",
+    "DOI 10.1038/s41586-024-07248-7 is paired with a title that does not match the identifier.",
+    "The 2025 lattice-gauge-theory item is assigned DOI 10.1038/s41586-024-08449-y, which does not support the stated title and claim."
+   ],
+   "D": [
+    "The recalled largest-logical-qubit series compares non-equivalent experiments and is not a systematic time series.",
+    "The RSA-2048 estimates are labeled as estimates but are not reproducible from the listed evidence."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it traces the broad volume and framing indicators, states their limits, and gives a usable but bounded answer. A is close, but adds unsupported coverage metadata; C and D offer more concrete error-correction claims, yet their evidence is substantially less verifiable."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 2,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

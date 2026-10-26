@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 2,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 2017-2025 series with window and censoring note. The only change quantified is first/last (5.6x, correct). It omits the tool's 24.0% CAGR, the 3.59 late-vs-early ratio and the peak, and the series is tagged c1 when it came from c3.",
+    "comparison": "The 55% underprediction is one study's internal contrast with its baseline described. No ratio is computed between comparators.",
+    "chart": "One fully traced research-volume chart with caption. The censored 2025 point is plotted unmarked as the peak. Nothing is charted for effect size or population, which the data could not support anyway.",
+    "drilldown": "Capped at 1: none of the four follow-up calls executed successfully.",
+    "export": "Two CSVs with source, window, unit and coverage, plus a provenance JSON block, both referenced from the prose. Population and baseline are kept empty rather than zero-filled. There are no row identifiers, and 'count' is an undocumented rename of 'n'.",
+    "repro": "27/27 numbers traced and a calls block with capture date is given. Some citations are misattributed: 6,079 is tagged c2 (counter_evidence), which does not contain it, and the series is tagged c1 instead of c3.",
+    "refs": "Capped at 1: the inline DOI has a stray trailing backtick, so the script did not resolve it. The reference-list link is correct, and the quotes are verbatim and tied to claims.",
+    "accuracy": "No direct contradiction of the record, but the citation misattributions remain. It notes 2025 is censored yet uses 699 as the headline endpoint without reconciling the two.",
+    "limits": "Window ends and the news-to-today gap (4 months 22 days, correct) are placed next to the numbers. It states that stance labels are framing and that no pooled RR or population denominator exists.",
+    "verdict": "Direct answer, decision, medium confidence with a reason, and what would change it. It does not engage the 32 corpus papers labelled contradicting.",
+    "facets": "Evidence strength and numbers are grounded. Population-specific effects get a grounded 'no data', but city variation is not addressed."
+   },
+   "B": {
+    "trend": "Traced series with the tool's CAGR 24.0%, ratio 3.59, window and censoring, and the news series peak (4 in 2022-10) read correctly. The censored 2025 point is not visibly marked.",
+    "comparison": "The 55% baseline is defined. The research-to-news 184:1 ratio recomputes, but it compares different windows; it is labelled est. and not mixed into one total.",
+    "chart": "Single traced chart with caption tied to a claim. The censored point is unmarked and no decomposition is charted.",
+    "drilldown": "Two traced layers: corpus to stance counts to documents with DOIs and quotes. Only 2 of 6 follow-ups executed, short of the three needed for a higher score.",
+    "export": "Ceiling 3. Two traced CSVs with provenance, but coverage=full is asserted even though the series is censored. No row identifiers, and the stance CSV is not referenced from the prose.",
+    "repro": "46/48 numbers traced with correct call tags (6,079 attributed to c3) and a calls block with date. The derived 184:1 ratio is recomputable.",
+    "refs": "All 5 DOIs resolve, quotes are verbatim, and tier and stance are stated as the tool gives them, including the source-fit failures for r4 and r5. The set is not explicitly ranked and has no contrary sources.",
+    "accuracy": "Measured values match the record. It flags that the 6,079 attributes deaths to climate change rather than isolating the heatwave effect, and that 6 of 10 documents were off-topic. The line 'tables passed reachability checks' is not in the record.",
+    "limits": "Windows, gaps, broad lane topics, the counts-are-not-deaths caveat, and a cannot-answer list (pooled RR, harvesting, age and region splits) sit with the numbers.",
+    "verdict": "Direct answer, decision, confidence tied to only 3 read documents, and what would change it, including null studies. It is bounded, but the 32 contradicting-labelled papers are not raised in the verdict.",
+    "facets": "Direction and the available numbers are grounded. Population and city variation are honestly marked unavailable."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None given.",
+    "chart": "No chart.",
+    "drilldown": "Only generic proposed follow-ups, and none executed.",
+    "export": "No export.",
+    "repro": "No numbers to trace.",
+    "refs": "One real paper (Gasparrini 2015 Lancet) with no identifier.",
+    "accuracy": "Nothing contradicts the record. This is an honest refusal of specifics.",
+    "limits": "Specific about what it cannot measure.",
+    "verdict": "Gives a direction, but the question asked for numbers and it provides none.",
+    "facets": "The numeric facets are unanswered."
+   },
+   "D": {
+    "trend": "Event list from memory labelled est. with no traced source, so it is not a measured trend.",
+    "comparison": "Heat-vs-cold comparison from memory. The ratio is internally consistent, but the figures come from Gasparrini 2015 while being attributed to Zhao 2021.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Breakdown dimensions named only. Follow-ups had 2 of 6 succeed, but there is no traced layer.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Figures are labelled est. with named but unverifiable sources.",
+    "refs": "Named papers without DOIs; at least two are misattributed.",
+    "accuracy": "Several figures are real (70,000; 55,000; ~61,600; 619), but the attribution shares are misattributed to Zhao. Barriopedro is a climate paper rather than a mortality source, and the 21% trend is doubtful.",
+    "limits": "Memory status, the 2022 end with the gap to today, and that the figures are modelled rather than counted are all stated. Plain-model cap applies.",
+    "verdict": "Direct answer with numbers, decision, and confidence split, and it raises harvesting as contrary evidence. It rests on partly misattributed memory figures.",
+    "facets": "Answered mostly from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "6,079 and 55% statistics attributed to c2 (counter_evidence), which contains neither",
+    "series attributed to c1 rather than c3",
+    "inline DOI rendered with trailing backtick (artifact, not fabrication)"
+   ],
+   "B": [
+    "'all tables passed reachability checks' and coverage=full are not supported by the record"
+   ],
+   "C": [],
+   "D": [
+    "0.4-0.6% heat and ~7% cold attributable fractions attributed to Zhao 2021 (they are Gasparrini 2015 figures; Zhao reported ~0.9%/8.5%)",
+    "Barriopedro 2011 cited for Russian mortality though it is a temperature-record paper",
+    "'0.37% of deaths' appears conflated with the 37% climate-attribution share (Vicedo-Cabrera 2021)"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and A both grounded their answers in the retrieved record and said plainly that no pooled, population-specific effect size was available. B pulled ahead with correct call tags, the tool's own trend metrics, all references resolving, and a careful reading of the source-fit failures. D gave the decision-relevant magnitudes a reader wants, but from memory with several misattributions. C answered without any numbers, which fails a question that explicitly asked for them."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 2,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

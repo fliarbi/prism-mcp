@@ -1,0 +1,12 @@
+[Unit]
+Description=Prism public API + MCP (radar-api.fliarbi.com/prism, one Fliar API key, metered in credits)
+After=network-online.target
+
+[Service]
+ExecStart=%h/prism-mcp/deploy/run_public.sh
+Restart=always
+RestartSec=5
+Environment=PRISM_PUBLIC_PORT=8795
+
+[Install]
+WantedBy=default.target

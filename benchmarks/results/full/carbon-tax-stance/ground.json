@@ -1,0 +1,621 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 671,
+  "charts": [
+   {
+    "id": "critical_share_est",
+    "title": "Illustrative share of carbon-tax studies with a critical orientation (not measured)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Critical share (guess)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "illustrative_critical_share.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly share of favourable vs critical carbon tax papers?",
+    "args": {
+     "term": "carbon tax",
+     "from": "2010",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers drive the critical orientation in recent years?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 279, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7130946555\", \"title\": \"Carbon Pricing in Islamic Economics: A Normative Analysis of Carbon Tax and Emissions Trading Systems\", \"authors\": [\"Asni Mustika Rani\", \"Eva Fauziah\", \"Atih Rohaeti Dariah\"], \"venue\": \"International Journal of Emerging Issues in Islamic Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31098/ijeiis.v5i2.3582\", \"url\": \"https://doi.org/10.31098/ijeiis.v5i2.3582\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "Which papers are the strongest favourable examples?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "favourable",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...avourable', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='favourable', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which years have too few papers to read?",
+    "args": {
+     "term": "carbon tax",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...bon tax', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "How much does phrase expansion (carbon price, levy) change the series?",
+    "args": {
+     "term": "carbon tax OR carbon price OR carbon levy",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...on levy', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax OR carbon price OR carbon levy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Does news coverage move the same way?",
+    "args": {
+     "term": "carbon tax"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 119, \"critical\": 79, \"negative\": 88, \"positive\": 30, \"mean_priority\": 6.61, \"critical_pct\": 66.4, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 116, \"critical\": 89, \"negative\": 73, \"positive\": 42, \"mean_priority\": 6.84, \"critical_pct\": 76.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 65, \"critical\": 53, \"negative\": 40, \"positive\": 24, \"mean_priority\": 6.94, \"critical_pct\": 81.5, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 178, \"critical\": 79, \"negative\": 126, \"positive\": 47, \"mean_priority\": 6.1, \"critical_pct\": 44.4, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 147, \"cr"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 7,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "35% — Baseline: the 2010 value of the illustrative series above (35%, est.). The 2025 value is 2"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 110,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1201,
+  "charts": [
+   {
+    "id": "stance-share",
+    "title": "Share of carbon-tax papers framed positive vs contested, by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Positive (promising+breakthrough) %",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Contested (critical+cautionary+problem-identifying) %",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "stance_share.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 27,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "orientation_totals.csv",
+    "how": "call",
+    "rows": 7,
+    "numeric_cells": 14,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are labelled critical, and what do they argue?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 279, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7130946555\", \"title\": \"Carbon Pricing in Islamic Economics: A Normative Analysis of Carbon Tax and Emissions Trading Systems\", \"authors\": [\"Asni Mustika Rani\", \"Eva Fauziah\", \"Atih Rohaeti Dariah\"], \"venue\": \"International Journal of Emerging Issues in Islamic Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31098/ijeiis.v5i2.3582\", \"url\": \"https://doi.org/10.31098/ijeiis.v5i2.3582\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which cautionary papers drove the 2025 rise?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "cautionary",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 911, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7124153008\", \"title\": \"Towards a More Equitable Moroccan Green Taxation System: Proposal for a Progressive Taxation Model Based on Sectoral Carbon Footprints.\", \"authors\": [\"Sara KAYOUH\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.5281/zenodo.18246413\", \"url\": \"https://doi.org/10.5281/zenodo.18246413\", \"cited_by\": 0, \"orientation\": \"cautionary\", \"contribution\": \"review\", \"st"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Is the trend the same for the narrow phrase 'carbon tax' alone, excluding carbon pricing?",
+    "args": {
+     "term": "carbon tax",
+     "expand": false
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"carbon tax\", \"greenhouse gas tax\", \"carbon pricing policy\"], \"points\": [{\"year\": 2017, \"total\": 304, \"orientation\": {\"descriptive\": 19, \"cautionary\": 28, \"breakthrough\": 10, \"critical\": 25, \"problem_identifying\": 30, \"promising\": 31, \"comparative\": 8}, \"stance_score\": null, \"positive\": 41, \"contested\": 83, \"positive_pct\": 13.5, \"contested_pct\": 27.3}, {\"year\": 2018, \"total\": 341, \"orientation\": {\"cautionary\": 29, \"problem_identifying\": 36, \"promising\": 46, \"comparative\": 17, \"breakthrough\": 9, \"critical\": 9, \"descriptive\": 20}, \"stance_score\": null, \"positive\": 55, \"contested\": 74, \"positive_pct\": 16.1, \"contested_pct\": 21.7}, {\"year\": 2019, \"to"
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which highly cited papers anchor each side?",
+    "args": {
+     "term": "carbon tax",
+     "sort": "cited",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 34.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 4778, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4224213039\", \"title\": \"Strategies to achieve a carbon neutral society: a review\", \"authors\": [\"Lin Chen\", \"Goodluck Msigwa\", \"Mingyu Yang\", \"Ahmed I. Osman\", \"Samer Fawzy\", \"David W. Rooney\", \"Pow‐Seng Yap\"], \"venue\": \"Environmental Chemistry Letters\", \"year\": 2022, \"date\": \"2022-04-08\", \"doi\": \"10.1007/s10311-022-01435-8\", \"url\": \"https://doi.org/10.1007/s10311-022-01435-8\", \"cited_by\": 1167, \"orientation\": \"problem_identifying\", \"contribution\":"
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Does the pattern differ by country?",
+    "args": {
+     "term": "carbon tax"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'carbon tax'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.table",
+    "question": "Is the shift concentrated in review or empirical papers?",
+    "args": {
+     "term": "carbon tax",
+     "by": "contribution"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '..., 'by': 'contribution'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '..., 'by': 'contribution'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='contribution', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 87,
+   "traced": 87,
+   "derived": 11,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 384,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly count and share of favourable, critical, and mixed or conditional carbon-tax research, with a consistent search and classification method?",
+    "args": {
+     "term": "carbon tax",
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which studies support favourable conclusions about carbon taxes, and what claims do they make?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "favourable",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 4778, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7124153008\", \"title\": \"Towards a More Equitable Moroccan Green Taxation System: Proposal for a Progressive Taxation Model Based on Sectoral Carbon Footprints.\", \"authors\": [\"Sara KAYOUH\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.5281/zenodo.18246413\", \"url\": \"https://doi.org/10.5281/zenodo.18246413\", \"cited_by\": 0, \"orientation\": \"cautionary\", \"contribution\": \"review\", \"s"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which studies support critical conclusions about carbon taxes, and what claims do they make?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 34.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 279, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7130946555\", \"title\": \"Carbon Pricing in Islamic Economics: A Normative Analysis of Carbon Tax and Emissions Trading Systems\", \"authors\": [\"Asni Mustika Rani\", \"Eva Fauziah\", \"Atih Rohaeti Dariah\"], \"venue\": \"International Journal of Emerging Issues in Islamic Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31098/ijeiis.v5i2.3582\", \"url\": \"https://doi.org/10.31098/ijeiis.v5i2.3582\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "How does framing differ between early and late periods when the same search terms and classification rules are applied?",
+    "args": {
+     "term": "carbon tax",
+     "compare_periods": true,
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...010-01-01..2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_periods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "Which years have thin coverage, and how sensitive are yearly results to expanding search phrases from “carbon tax” to “carbon pricing” and related terms?",
+    "args": {
+     "terms": [
+      "carbon tax",
+      "carbon pricing"
+     ],
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...010-01-01..2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['carbon tax', 'carbon pricing'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 94,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 750,
+  "charts": [
+   {
+    "id": "orientation-trend",
+    "title": "Promising and critical carbon-tax research papers by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Promising",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Critical",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "orientation_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 54,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "phrase_audit.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which directly relevant papers were classified as critical in the late period?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 279, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7130946555\", \"title\": \"Carbon Pricing in Islamic Economics: A Normative Analysis of Carbon Tax and Emissions Trading Systems\", \"authors\": [\"Asni Mustika Rani\", \"Eva Fauziah\", \"Atih Rohaeti Dariah\"], \"venue\": \"International Journal of Emerging Issues in Islamic Studies\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.31098/ijeiis.v5i2.3582\", \"url\": \"https://doi.org/10.31098/ijeiis.v5i2.3582\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How does the orientation trend change when matching only the exact phrase carbon tax?",
+    "args": {
+     "term": "carbon tax"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"carbon tax\", \"greenhouse gas tax\", \"carbon pricing policy\"], \"points\": [{\"year\": 2017, \"total\": 304, \"orientation\": {\"critical\": 25, \"descriptive\": 11, \"cautionary\": 35, \"breakthrough\": 8, \"comparative\": 8, \"problem_identifying\": 24, \"promising\": 31}, \"stance_score\": null, \"positive\": 39, \"contested\": 84, \"positive_pct\": 12.8, \"contested_pct\": 27.6}, {\"year\": 2018, \"total\": 341, \"orientation\": {\"promising\": 46, \"breakthrough\": 9, \"cautionary\": 29, \"critical\": 9, \"comparative\": 17, \"problem_identifying\": 29, \"descriptive\": 20}, \"stance_score\": null, \"positive\": 55, \"contested\": 67, \"positive_pct\": 16.1, \"contested_pct\": 19.6}, {\"year\": 2019, \"tot"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers drove the rise in promising framing in 2025?",
+    "args": {
+     "term": "carbon tax",
+     "orientation": "promising",
+     "limit": 20,
+     "sort": "recent"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1458, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7119496877\", \"title\": \"Neutrosophic Profit-based Multi-objective Fixed-charge Emission and Budget Constrained Solid Transportation Problem with Mobile Carbon Capture and Storage Technology\", \"authors\": [\"L Brigith Gladys\", \"J Merline Vinotha\"], \"venue\": \"Indian Journal of Science and Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.17485/ijst/v18i48.1622\", \"url\": \"https://doi.org/10.17485/ijst/v18i48.1622\", \"cited_by\": 0, \"orientation"
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "How do directly relevant carbon-tax evaluations compare by orientation and year?",
+    "args": {
+     "term": "carbon tax",
+     "group_by": "year,orientation"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...y': 'year,orientation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...y': 'year,orientation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon tax', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year,orientation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 25,
+   "traced": 24,
+   "derived": 9,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,239 @@
+{
+ "slug": "supreme-court-india",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 0.5,
+    "chart": 0.5,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 31.8,
+   "plain": 31.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 25.8,
+    "gpt": 37.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.5,
+    "facets": 4.5
+   },
+   "strict": 77.5,
+   "plain": 77.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 83.6,
+    "gpt": 71.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.5,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.0,
+    "facets": 1.5
+   },
+   "strict": 23.6,
+   "plain": 23.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 14.2,
+    "gpt": 33.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 3.5,
+    "chart": 3.5,
+    "drilldown": 2.5,
+    "export": 4.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 72.6,
+   "plain": 72.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 74.2,
+    "gpt": 71.0
+   }
+  }
+ },
+ "judge_mad": 0.7,
+ "verdicts": {
+  "opus": "B and D both traced every number to the overview call. B went further: it read the data critically, flagging the Immanuel Kant, Cameroon and IRS label artefacts, explaining what the 'critical' flag actually marks, and linking headline URLs. A gave honest but unmeasured memory themes, and C declined to answer, so neither supports a decision.",
+  "gpt": "D is the strongest decision aid: it gives a traced answer about dominant themes, a quantified trend, and specific limits on the news data. Its main correction is that the sentiment baseline is cached over 30 days, not measured across the full reporting window; A has richer drill-down but makes unsupported or conflicting claims about censoring and theme coverage."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "claude_prism": [
+    "States the non-February range as up to 645; the source maximum is 644."
+   ],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Says the baseline covers the same reporting window; the source does not state this.",
+    "Lists CBI as a representative organisation and does not flag implausible labels such as the IRS."
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "Says the newest month is not censored, despite the reference’s censoring boundary and warning about incomplete recent ingest.",
+    "Claims subcategory coverage is 59.2% without support in the reference record.",
+    "Infers Cameroon’s likely acronym source from the general collision caveat without article-level confirmation."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Presents a ranked theme hypothesis from memory; it is labelled as an estimate, not a measured finding."
+   ],
+   "chatgpt_prism": [
+    "Describes the corpus baseline ratio as covering the same reporting window; the reference says it is a cached 30-day baseline."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "No series. The chart holds only null placeholders, and no direction is asserted.",
+    "comparison": "The intended contrast is described but nothing is measured.",
+    "chart": "The chart has only null values. It carries no information and supports no claim.",
+    "drilldown": "The layers are generic. The follow-up calls use loose args, and only 2 of 6 executed.",
+    "export": "The theme ranking table is honestly labelled as an estimate from memory.",
+    "repro": "There are no measured numbers. Everything is labelled estimate.",
+    "refs": "No references.",
+    "accuracy": "No contradictions. The memory themes are labelled as estimates.",
+    "limits": "Specific about each unmeasured facet and states the knowledge cutoff. No data window.",
+    "verdict": "Direct memory-based answer with a decision, a low confidence level and what would change it. It is unmeasured.",
+    "facets": "Themes and entities come from memory. Every other facet is marked as not measurable."
+   },
+   "claude_prism": {
+    "trend": "Full traced series with window, peak, CAGR (with a caveat), late/early ratio 1.6, and a critical/negative/positive decomposition in the CSV.",
+    "comparison": "Tone ratio 2.13 vs baseline 0.58 = 3.67x, with the baseline defined. It is a tone contrast, not a theme contrast.",
+    "chart": "One traced volume chart. Themes are the core facet and are not charted.",
+    "drilldown": "Category, subcategory and person layers with counts, plus headlines with URLs. 3 of 6 follow-ups returned ok, and none was folded back into the report.",
+    "export": "Traced CSVs with provenance. The export score is capped at 3 by the script.",
+    "repro": "104 of 104 numbers traced, with a calls block and a capture date.",
+    "refs": "Capped at 1 by the script.",
+    "accuracy": "Catches the Immanuel Kant, Cameroon and IRS label anomalies. Minor slip: 645 should be 644.",
+    "limits": "Window, the 145-day gap, match modes, enrichment fill and placed_pct are stated where the numbers are used, plus what would close the gap.",
+    "verdict": "Concise answer with a decision, a reasoned confidence level, what would change it, and the contrary reading of the critical flag.",
+    "facets": "All facets answered with grounded values, and the anomalies are addressed."
+   },
+   "chatgpt_bare": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic follow-ups only, and 0 of 7 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Refusal: no contradictions.",
+    "limits": "Says it cannot measure, but gives no window or specifics beyond that.",
+    "verdict": "Declines to answer the question.",
+    "facets": "No facets answered."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window, censoring, peak, a correct 3.05x, and 1.60x late vs early. No decomposition.",
+    "comparison": "Tone 3.67x vs baseline, with a polarity caveat.",
+    "chart": "Volume chart only. No theme chart.",
+    "drilldown": "Category and subcategory layers. Headlines have no URLs, and only 1 of 6 follow-ups executed ok.",
+    "export": "Two traced CSVs with a provenance JSON including censored_at, both referenced in the prose.",
+    "repro": "44 of 44 numbers traced, with a calls block.",
+    "refs": "Capped at 1 by the script.",
+    "accuracy": "Accurate, but cites CBI and misses the IRS, Kant and Cameroon anomalies. The claim that the baseline covers the 'same reporting window' is unsupported.",
+    "limits": "Thorough limits placed next to the numbers, but they change the reading less.",
+    "verdict": "Answer, decision, confidence and what would change it. The contrary evidence is only lightly named.",
+    "facets": "All facets are grounded, but the implied anomalies are not addressed."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Series traces and quantifies change, but it says the newest month is not censored and omits the tool’s censoring caveat.",
+    "comparison": "The polarity ratio and defined corpus baseline share a window and recompute to 3.67x.",
+    "chart": "Monthly points trace, with unit, window, source and a supporting claim; censoring is not visibly marked.",
+    "drilldown": "Provides category, subcategory and entity layers with labels, but no executed follow-up result is folded into the report.",
+    "export": "The monthly and category CSVs are referenced and trace, but the export is incomplete for the needed theme breakdown and provenance.",
+    "repro": "Lists the overview call with arguments and capture date; the numeric claims trace and derived ratios are reproducible.",
+    "refs": "No external references; the script ceiling is 1.",
+    "accuracy": "The claim that the newest month is not censored conflicts with the reference’s censoring at 2026-06-01; the Cameroon cause is speculative.",
+    "limits": "Several limits are placed near figures, but the newest-month censoring is misstated and the 59.2% subcategory coverage claim is unsupported by the record.",
+    "verdict": "Direct, supported answer with decision, confidence and conditions; it notes critical-tone ambiguity and the stale window.",
+    "facets": "Covers themes, trend, tone, geography and sources, but omits seasonality and the research-versus-news mismatch."
+   },
+   "chatgpt_bare": {
+    "trend": "No series, as acknowledged; ceiling is 0.",
+    "comparison": "No measured comparison; ceiling is 1, but no qualitative contrast is offered.",
+    "chart": "No chart block; ceiling is 0.",
+    "drilldown": "Follow-ups are proposed but generic or invalid for the tool, and none executed successfully.",
+    "export": "No export; ceiling is 0.",
+    "repro": "No measurements or reproducible calls; the honest no-data response is bounded at 1.",
+    "refs": "No references; ceiling is 1.",
+    "accuracy": "Does not invent measurements or contradict the reference.",
+    "limits": "Clearly states that no corpus or window was measured, though it cannot give corpus-specific limits.",
+    "verdict": "Gives a decision and confidence, but does not answer which themes dominate or identify a contrary finding.",
+    "facets": "Explicitly identifies the requested facets as unmeasured, consistent with its lack of a corpus."
+   },
+   "claude_bare": {
+    "trend": "No measured series; the null placeholder is explicitly unmeasured.",
+    "comparison": "States the intended contrast but has no values; only qualitative coverage is possible.",
+    "chart": "The chart is an honest unmeasured placeholder, which earns the estimate-level ceiling.",
+    "drilldown": "Lists planned layers, but they are not traced and most proposed calls did not execute successfully.",
+    "export": "Theme ranks are explicitly labelled estimates, not traced measurements.",
+    "repro": "No calls were executed; all theme rankings are marked as memory-based estimates.",
+    "refs": "No references; ceiling is 1.",
+    "accuracy": "Clearly labels the rankings as estimates and does not claim measured counts, but the topic ranking is unsupported.",
+    "limits": "States the absent corpus, window limitations and memory cutoff, but not limits tied to measured values because none exist.",
+    "verdict": "Offers a working hypothesis and conditions, but the answer is not grounded in coverage measurements.",
+    "facets": "Several facets are acknowledged as unmeasured, while the theme ranking and expected geography remain memory-based."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window, quantified first-to-last change and peak; it omits the available critical-series decomposition and censoring details.",
+    "comparison": "The baseline is described as same-window, but the reference baseline is a cached 30-day corpus ratio, not a same-window measure.",
+    "chart": "Traced monthly chart with unit, window, source and reading; the censoring boundary is not visibly marked.",
+    "drilldown": "Provides theme layers but no item-level identifiers or successful executed follow-ups folded into the report.",
+    "export": "Both relevant CSVs trace and are referenced; provenance is present, though the exports omit some fields needed for full decision-ready linkage.",
+    "repro": "Lists the overview call with arguments and window; the presented measured numbers trace to it.",
+    "refs": "No external references; the script ceiling is 1.",
+    "accuracy": "The baseline is incorrectly described as measured over the same reporting window; reference says it is a cached 30-day ratio.",
+    "limits": "States the news window, censoring, lane, matching, enrichment and placed share limits near the relevant figures.",
+    "verdict": "Direct answer with decision, confidence and conditions, consistent with the main measurements and caveats.",
+    "facets": "Covers themes, tone, trend, geography and sources, but omits seasonality and research-versus-news comparison."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

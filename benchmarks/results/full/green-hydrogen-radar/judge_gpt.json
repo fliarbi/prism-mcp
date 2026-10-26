@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 2,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 2,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced trend, window, CAGR and peak; chart and export omit the available late/early decomposition and full points.",
+    "comparison": "Recent and earlier cautionary shares and their delta are traced; it correctly says this comparison is not specific to green-hydrogen papers.",
+    "chart": "The single chart traces its plotted values and supports the trend claim, but shows only endpoints despite the available peak and decomposition.",
+    "drilldown": "It names follow-up questions, but only one of six calls executed successfully with on-topic data and no item-level layer is exposed.",
+    "export": "The two-point trend CSV omits available values, and there is no export of the framing comparison needed to substantiate the prose.",
+    "repro": "Core numbers trace and the main call is reproducible, but follow-up calls lack successful reproduction and the export does not rebuild all reported evidence.",
+    "refs": "DOIs resolve and claims are tied to works, but no supporting abstract quotes are supplied.",
+    "accuracy": "Core figures and limits are sound; however, the news endpoint value is presented as though it follows the May 2025 peak, although the record reports a 2025 peak and a May 2026 endpoint.",
+    "limits": "Window, lane, coverage caveat, matching and the gap to today are described; some limits appear in a general methods section rather than alongside every figure.",
+    "verdict": "Direct and decision-relevant, with medium confidence and a change condition; it does not identify a contrary finding from its evidence.",
+    "facets": "Covers research, selected themes, framing and some news limits, but does not provide a grounded electrolyser-cost versus policy contrast or validated topic split."
+   },
+   "B": {
+    "trend": "The chart and prose quantify growth, peak and decline, and include the late/early split; trend claims are not all direction-consistent because the prose says 2017–2025 rose while the chart caption claims about 3.4x to the peak and the displayed points show the 2025 fall.",
+    "comparison": "The early/late ratios are traced but research and news have different windows and are explicitly acknowledged as indicative; that does not give a valid same-scale comparison.",
+    "chart": "The research chart traces all plotted values, labels window and unit, and compares endpoints with peak; the question-specific cost-versus-policy facet is not charted.",
+    "drilldown": "It gives orientation and topic layers but no paper-level identifier breakdown, and only four of seven proposed follow-ups returned on-topic data.",
+    "export": "CSV rows trace, but provenance is incomplete and the question needs a full trend series plus usable paper metadata; exports are not decision-ready.",
+    "repro": "Most numbers trace and the source call is listed with args, but some derived claims and the news/research comparison mix different windows, and there is no complete regeneration recipe for every output.",
+    "refs": "Identifiers resolve, but entries are not tied to verbatim abstract quotes or full claim support as required for higher anchors.",
+    "accuracy": "It misstates the number of selected works as nine while listing ten, miscounts their orientations, and treats unlike research/news windows as a growth comparison.",
+    "limits": "It mentions partial 2025, gaps, lanes and matching, but the caveats do not resolve the mixed-window comparison and are not consistently placed with the claims.",
+    "verdict": "The verdict overstates the evidence as fast growth since 2022, lacks a confidence reason tied to the decision, and does not name the contrary evidence of the 2025 decline in a balanced conclusion.",
+    "facets": "It covers volume, framing, new-work themes and a qualified under-covered panel, but not the key distinction between electrolyser cost research and policy research."
+   },
+   "C": {
+    "trend": "No measured series is provided.",
+    "comparison": "No sourced baseline comparison is provided.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Illustrative topic layers are unmeasured and follow-up calls failed to return on-topic data.",
+    "export": "The CSV is an evidence-gap assessment rather than an export of the research evidence needed.",
+    "repro": "No numeric claims trace to executed calls or a reproducible source.",
+    "refs": "The four references are explicitly unverified candidate examples and cannot substantiate the claims.",
+    "accuracy": "The deliverable avoids measured claims, but presents specific candidate titles and DOIs that do not match the reference record's selected works.",
+    "limits": "It clearly says no corpus was queried and distinguishes interpretation from measurement, but the limitations are generic to the absence of data.",
+    "verdict": "It gives a decision and low confidence, but the answer is an unsupported qualitative summary and omits a grounded condition tied to evidence.",
+    "facets": "It does not ground the requested research changes, trends, or cost-versus-policy distinction."
+   },
+   "D": {
+    "trend": "Only an explicitly labelled estimate chart is supplied; no measured series.",
+    "comparison": "The comparison is an unverified memory estimate and not a traceable same-window comparison.",
+    "chart": "The chart is explicitly illustrative, so it earns the honest estimate anchor only.",
+    "drilldown": "It offers generic topic layers and follow-ups, with no traced evidence breakdown.",
+    "export": "The CSV is an explicitly labelled estimate, not a traced export.",
+    "repro": "No executed calls or reproducible numeric sources support the figures.",
+    "refs": "The recalled report and paper lack verifiable identifiers and metadata support.",
+    "accuracy": "It presents unsupported specifics about research and policy shifts; these are not established by the reference record and some are stated as directional facts.",
+    "limits": "It labels estimates and discloses the lack of calls, but does not give source-specific limits for the recollected figures.",
+    "verdict": "It proposes a decision but the answer rests on estimates, with no evidence-based confidence or contrary finding.",
+    "facets": "The answer is mostly qualitative and estimated, without grounded research or policy evidence."
+   }
+  },
+  "errors": {
+   "A": [
+    "The news-trend description implies the count fell from the 2025 peak to the 2026-05 endpoint, although the record does not establish the peak's position relative to that endpoint."
+   ],
+   "B": [
+    "Says there are 9 most-cited papers, but the radar returns 10.",
+    "Orientation counts are incorrect: among the ten listed works, 7 are problem_identifying, 1 promising, and 2 breakthroughs.",
+    "Compares late/early research and news ratios despite different windows, making the claim that news grew faster than research unsupported.",
+    "The 2025 partial-year explanation is speculation, not a recorded caveat."
+   ],
+   "C": [
+    "Candidate titles and DOIs are unverified and do not match the reference record's listed new work; they are not usable as evidence."
+   ],
+   "D": [
+    "The estimated publication index and capacity figures are not supported by recorded calls.",
+    "The stated research and policy shifts, cost expectations and technology themes are not established by the reference record."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it gives a cautious, reproducible research-volume trend and useful new-work examples while distinguishing indexed attention from technical or commercial progress. B is broader, but its miscounted paper list and invalid cross-window growth comparison weaken its conclusions; C and D lack grounded measurements."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 2,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 2,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

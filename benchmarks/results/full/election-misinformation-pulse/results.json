@@ -1,0 +1,243 @@
+{
+ "slug": "election-misinformation-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 33.2,
+   "plain": 33.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 26.4,
+    "gpt": 40.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 3.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 62.9,
+   "plain": 62.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.6,
+    "gpt": 57.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 0.5
+   },
+   "strict": 24.4,
+   "plain": 24.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.2,
+    "gpt": 30.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 4.0,
+    "repro": 4.5,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 69.3,
+   "plain": 69.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 60.6,
+    "gpt": 78.0
+   }
+  }
+ },
+ "judge_mad": 0.68,
+ "verdicts": {
+  "opus": "A and B both traced the same Prism call. A also reported where coverage sits (US 52%, Colombia 14%) inside its verdict, quantified both spikes including Sept 2025, and flagged label anomalies such as the Georgia collision and theme noise. B dropped the 2025 spike and misread the censored month. C and D honestly declined to measure, so they offer a decision-maker nothing beyond a list of calls to run.",
+  "gpt": "A is the strongest decision aid: it traces volume, trend, geography and tone to a replayable source, quantifies the fall and baseline contrast, and places the key coverage limits near the findings. C provides broader detail but misstates the window and labels a censored export complete; B is candid but offers no measurements, while D is explicitly a scoping estimate."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "States 1–3 articles a month in 2026; Jan and Feb 2026 were 0."
+   ],
+   "chatgpt_prism": [
+    "Treats May 2026 as partial/censored; the tool flags partial_period false and censors June.",
+    "Omits the Sept 2025 peak (44) and says coverage 'tapers'.",
+    "Export note about blank values does not match the table."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Memory claim of US/UK dominance conflicts with the record (Colombia 14%, UK 1.8%), though it is labelled est."
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Calls 2026-05-01 the newest month, while the response says the newest boundary month is censored at 2026-06-01; the May series value is partial.",
+    "Does not state that critical articles are 88.1% of the 236 matches, despite reporting both counts."
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "States the window runs through 2026-05-31, although the recorded window ends 2026-06-01 exclusive and May is a censored partial bucket.",
+    "Calls the monthly export coverage full despite the censored newest month.",
+    "Treats central-match headlines as directly representative of the mention-matched population without resolving the lane distinction."
+   ],
+   "claude_bare": [
+    "Presents US/UK concentration and election-year peak shape as memory-based expectations, not measured findings; the chart and CSV are estimates."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full traced series with window and peak 51 in 2024-10. It quantifies the second peak (44 in 2025-09), early vs late thirds (152 vs 17, 0.11) and the critical decomposition (129 to 17). Censoring is not marked on the chart, and '1–3 a month in 2026' ignores the zero months in Jan and Feb.",
+    "comparison": "The tone ratio of 13.69 against a defined corpus baseline of 0.58 gives 23.6x, which recomputes. Early vs late 8.9x recomputes.",
+    "chart": "Volume chart is fully traced with window, unit and source. Geography ('where') and tone are not charted, even though the data supports them.",
+    "drilldown": "Traced layers include themes, subcategories and headlines with a url. Only 1 of 5 follow-ups executed ok.",
+    "export": "Two traced CSVs and a provenance JSON. The coverage flag is asserted as 'full' for the monthly table.",
+    "repro": "65/65 numbers traced, a prism-calls block and a capture date. The small 2026 range slip keeps it at 4.",
+    "refs": "Script ceiling of 1. Only one headline carries a url; the others lack identifiers.",
+    "accuracy": "Catches the Georgia collision, label noise (employee benefits, metavision) and the polarity oddity in the critical panel. Misses the likely Colombia collision. Minor slip: 1–3 a month in 2026.",
+    "limits": "Window, gap to today, match-mode split and enrichment bound are mostly in the Method section. Script ceiling of 3.",
+    "verdict": "Direct answer covering both how much and where, with a decision, confidence and reason, and what would change it. Consistent with the data.",
+    "facets": "Volume, trend, tone, themes, entities, places, headlines and sources are all grounded."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series and an exact 88.8% decline. The prose names only the 2024 peaks and says the series 'tapers', omitting the equal 44-article spike in Sept 2025.",
+    "comparison": "Baseline is defined, 23.6x is traced, and the caveat about it not being a matched group is stated.",
+    "chart": "Single traced volume chart. No geography chart. Censoring is noted in the caption but not marked on the plot.",
+    "drilldown": "0 of 5 follow-ups executed ok. The layers are named as panel identifiers without values. Script ceiling of 1.",
+    "export": "One traced CSV with provenance. The note about 'blank values' does not match the table, which has no blanks. No geography table.",
+    "repro": "36/36 numbers traced and a calls block. The computed gap is tagged as [c1].",
+    "refs": "Script ceiling of 1; only one url.",
+    "accuracy": "Calls May 2026 partial/censored, but the tool marks partial_period false and censors June. Omits the Sept 2025 spike. Catches no anomalies.",
+    "limits": "Limits sit next to the numbers: mention match, placed denominator, sample size, and the five-month gap.",
+    "verdict": "Answers volume but not 'where'. The decision is vague, and the strongest contrary point (the 2025 spike) is ignored.",
+    "facets": "Most facets are grounded; headlines are thin."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic follow-ups; none executed ok.",
+    "export": "None.",
+    "repro": "No numbers; honest refusal.",
+    "refs": "None.",
+    "accuracy": "No contradictions. Refusal scores 3 per the anti-gaming rule.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "No answer.",
+    "facets": "No facets answered."
+   },
+   "claude_bare": {
+    "trend": "Labelled estimate index only.",
+    "comparison": "Only a qualitative estimate ('3x').",
+    "chart": "Labelled estimate chart.",
+    "drilldown": "No traced layer. Some follow-ups run but none were folded back.",
+    "export": "Labelled estimate template.",
+    "repro": "Script ceiling of 0.",
+    "refs": "None.",
+    "accuracy": "US/UK concentration is labelled est. The reference shows Colombia far above the UK, but this is not presented as fact.",
+    "limits": "Honest and specific about what is unmeasured; a plain model cannot score above 3.",
+    "verdict": "Memory-based, low-confidence scoping answer.",
+    "facets": "Facets are from memory or absent."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced monthly points, quantified early-to-late decline, peak and censoring; chart omits the critical-series decomposition available in the response.",
+    "comparison": "The 13.69-to-0.58 ratio recomputes to 23.6x, defines the corpus baseline, and notes that it is not an election-only comparison.",
+    "chart": "The monthly chart traces all points and supports the trend claim, but does not chart the supported tone or geography facets.",
+    "drilldown": "It names breakdown fields but supplies no executable follow-up calls that returned data.",
+    "export": "Monthly CSV has traced values and provenance JSON with call, window, unit and coverage; it is referenced in prose.",
+    "repro": "The primary call, args and window are listed; reported figures and derived comparisons are reproducible.",
+    "refs": "No DOI or external source references are supplied; the ceiling is 1.",
+    "accuracy": "Most figures match, but it calls May 2026 the newest month even though the response labels the boundary at June 1 and the May point is partial; the 208/236 critical share is also left unstated.",
+    "limits": "Censoring, five-month gap, mention matching, enrichment lag, sample size and classification limits are placed alongside the relevant claims.",
+    "verdict": "Direct and bounded with confidence and conditions, but omits the strongest contrary evidence: the 13.69 negative-to-positive ratio versus 0.58 corpus baseline.",
+    "facets": "Covers volume, trend, tone, themes, entities, geography and publishers; does not clearly resolve the research-versus-news scope or overlap implications."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series is offered.",
+    "comparison": "No measured comparison is offered.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are proposed but none executed successfully; script ceiling is 1.",
+    "export": "No data export.",
+    "repro": "No measurement to reproduce; calls lack the required window and args for reproducibility.",
+    "refs": "No resolvable references.",
+    "accuracy": "It makes no unsupported measured claims and does not contradict the record.",
+    "limits": "It identifies missing window, lane, match mode and censoring, but has no source-specific limits to apply.",
+    "verdict": "It honestly states the absence of data but does not answer the coverage question with a decision-grade measured finding.",
+    "facets": "It explicitly notes most facets are unmeasured, but answers none with grounded values."
+   },
+   "claude_prism": {
+    "trend": "Traced series, quantified early/late ratio and peaks, but misses the censoring caveat in the trend discussion and chart; the plotted May point is treated as a normal endpoint.",
+    "comparison": "The sentiment ratio and early/late comparison are on defined scales and recompute correctly, with the baseline caveat.",
+    "chart": "Monthly chart traces, but the May 2026 endpoint is not visibly marked as censored and supported tone/geography facets are not charted.",
+    "drilldown": "One grounded breakdown layer and one on-topic follow-up executed successfully; other proposed calls did not execute successfully.",
+    "export": "CSV values trace, but monthly export says full coverage and lacks full provenance attributes; country export omits the required null/reason and complete row coverage.",
+    "repro": "The overview call is listed with args and window; values largely trace, but inconsistently stated window boundaries reduce reproducibility.",
+    "refs": "No external identifiers or source references; ceiling is 1.",
+    "accuracy": "It says articles run through May 31, but the recorded window ends June 1 exclusive and the newest May bucket is censored; it also labels the critical-feed items as headlines despite the listed central/mention population distinction.",
+    "limits": "It mentions key limits, but drops the censoring caveat where the chart and trend endpoint are read, and does not state the five-month gap alongside the main totals.",
+    "verdict": "The direct answer is weakened by the incorrect full-period framing and does not identify what evidence would change the conclusion with adequate support.",
+    "facets": "Grounded values cover volume, tone, trend, themes, entities, places and sampled publishers, but the verdict overstates completeness and misses the implied lane mismatch."
+   },
+   "claude_bare": {
+    "trend": "An explicitly labelled estimate earns 1; it is not a measured series.",
+    "comparison": "No measured comparison; proposed baseline is a plan only.",
+    "chart": "The chart is explicitly an estimate from memory, so it earns the estimate anchor only.",
+    "drilldown": "Several specific calls returned non-empty on-topic data, though there are no traced breakdown results folded into the report.",
+    "export": "The estimate CSV is honestly labelled but unmeasured.",
+    "repro": "No measured claims or executed calls can be regenerated.",
+    "refs": "No references are supplied; ceiling is 1.",
+    "accuracy": "Memory-based expectations are labelled as estimates and do not directly contradict the record; they are not grounded findings.",
+    "limits": "Clearly states the absence of measurements and distinguishes estimates from counts, with window and lane limits.",
+    "verdict": "Gives a cautious scoping recommendation and confidence, but its qualitative US/UK concentration answer is unsupported and it lacks a grounded measured conclusion.",
+    "facets": "It names the requested facets but supplies no grounded values; only a few are explicitly identified as unknown."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "slug": "tariffs-markets",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 34.6,
+   "plain": 34.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.3,
+    "gpt": 37.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 2.5,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 75.7,
+   "plain": 75.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 72.0,
+    "gpt": 79.3
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 1.5,
+    "facets": 0.5
+   },
+   "strict": 24.3,
+   "plain": 24.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.8,
+    "gpt": 28.9
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 4.5,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 3.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 62.1,
+   "plain": 62.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 56.3,
+    "gpt": 67.8
+   }
+  }
+ },
+ "judge_mad": 0.47,
+ "verdicts": {
+  "opus": "B and C both traced the measured April 2025 spike: 93,515 tariffs, 19,452 trade war and 329 stock market crash articles. B quantified the rise and decay, defined its baseline and placed the specific limits next to the numbers. C plotted the full series but zero-filled tone columns and misplaced the censoring caveat onto May 2026. A and D answered from memory or not at all: honest, but they give a decision-maker nothing measured.",
+  "gpt": "C is the most decision-ready: it quantifies the shared April 2025 spike, ranks the three terms on a common window, and provides reproducible calls and useful caveats. Its selected-month chart/export and unresolved trend-label tension keep the timing evidence from being fully audit-ready; A has the complete chart but its export contradicts the recorded tone counts."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "claude_prism": [
+    "Fabricated coverage-check claim ('strict index partition reads and historical row floors') attributed to the tool",
+    "Gap stated as 145 days; it is 144"
+   ],
+   "chatgpt_prism": [
+    "summary.csv zero-fills negative and positive counts as 0",
+    "Treats May 2026 as a possibly partial month although partial_period is false",
+    "Asserts tone_ratio is negative/positive without verification"
+   ],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Summary CSV sets negative and positive counts to zero, contradicting c1; these are not zero in the source.",
+    "Claims the newest month is censored, but the returned monthly series ends in May 2026; the cutoff is June 1, 2026.",
+    "The report says the cutoff is 144 days before October 23, though the stated exclusive cutoff is June 1 and the measured series ends May 31."
+   ],
+   "claude_bare": [
+    "The estimated chart and ratios are explicitly memory-based, not measured; the April 2025 peak and relative index are unsupported specifics."
+   ],
+   "claude_prism": [
+    "The monthly chart and CSV omit 8 of the 24 months while describing the monthly series; the export labels the selected rows as partial.",
+    "The window is written as ending May 31, 2026, although the source uses an exclusive June 1 cutoff and does not report May 31 as an included endpoint.",
+    "The explanation that the tool's growth labels are likely based on early and late halves is speculation, not stated by the source."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Memory index, labelled est.",
+    "comparison": "Ratios computed from guessed index values.",
+    "chart": "Memory chart, honestly labelled estimate.",
+    "drilldown": "Follow-ups are mostly generic and 1/6 executed.",
+    "export": "CSV is labelled estimate.",
+    "repro": "No calls were run, so nothing can be regenerated.",
+    "accuracy": "No contradictions; every value is flagged est.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Honest low-confidence plan, but it gives no measured answer.",
+    "facets": "Mostly memory."
+   },
+   "claude_prism": {
+    "trend": "Traced series with window and censoring; 27.8x, 74x, 7.2x and the April 2025 peak recompute correctly; it notes that the 'rising' label sits oddly with the post-peak decline.",
+    "comparison": "Baseline defined; ratios 290.8x, 7.8x, 37.1x and critical-share deltas recompute; overlap caveat carried.",
+    "chart": "Traced, but plots only a 16-month subset, so dips such as Jan 2026 are hidden; volume only, no tone view.",
+    "drilldown": "One traced layer (month); 5/6 follow-ups are specific; none were folded back.",
+    "export": "Traced CSVs with provenance JSON; the monthly table is a subset despite the prose pointing to 'the full series'.",
+    "repro": "79/82 numbers traced; call and provenance listed; small day-count slip (145 vs 144).",
+    "accuracy": "Asserts the tool reported 'strict index partition reads and historical row floors', which is not in the reference; otherwise exact.",
+    "limits": "Censoring, the 144-day gap, match mode, overlap and the undefined tone measure are all placed next to the numbers.",
+    "verdict": "Direct answer with decision, confidence reason and what would change it; does not bound itself by window end inside the verdict.",
+    "facets": "Volume, timing, share and tone are covered; overlap is caveated but not measured."
+   },
+   "chatgpt_prism": {
+    "trend": "Full traced series; peak and endpoints given; but it treats May 2026 as possibly incomplete when the tool marks partial_period false.",
+    "comparison": "Ratios correct; caveats on deduplication and importance carried.",
+    "chart": "Full 24-month traced chart with caption; volume only.",
+    "drilldown": "No breakdown; 0/5 follow-ups executed ok.",
+    "export": "summary.csv zero-fills negative and positive as 0, which are invented values not present in the tool output.",
+    "repro": "21/24 numbers traced; calls listed.",
+    "accuracy": "Zero-filled tone columns; defines tone_ratio as negative/positive without checking it; misreads the censoring as applying to May.",
+    "limits": "Window and the 144-day gap are stated; censoring is misplaced onto May.",
+    "verdict": "Supported, but it gives no numbers and does not name contrary evidence.",
+    "facets": "Volume, timing and share are grounded; tone fields are only partially grounded."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Proposed calls only, all failing.",
+    "export": "None.",
+    "repro": "Contains no numbers.",
+    "accuracy": "No claims, so no errors.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Refusal; 'high confidence' in having no answer is not an answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Full traced monthly series, window and April 2025 peaks are shown; endpoint changes are quantified, though the prose does not resolve the reported rising labels against the post-peak pattern.",
+    "comparison": "Pairwise ratios use reported totals over the same window, with the denominator and overlap caveat stated.",
+    "chart": "All plotted monthly values trace to c1; the line chart has a stated unit, window, source and censoring caption, and supports the peak claim.",
+    "drilldown": "Names useful follow-up questions, but none of the proposed calls executed successfully and no item-level breakdown is given.",
+    "export": "The required export is absent at the ceiling; CSV blocks are present, but their rows do not trace reliably and include zero-filled tone fields.",
+    "repro": "The main call and arguments are listed, but only 21 of 24 numbers trace and the exports conflict with the source on tone fields.",
+    "accuracy": "Core totals, shares and peaks match the record. Calling the 2026-06 cutoff 144 days before 2026-10-23 is inaccurate; it is about 144 days only from June 1, while the measured data end May 31.",
+    "limits": "Window, censoring and common-word risk are discussed, but the coverage flag and specific ingest completeness caveat are not fully carried where the counts appear.",
+    "verdict": "Answers the comparison and gives a decision, confidence and conditions, but does not name the strongest contrary evidence: the dramatic decline after the April 2025 peak despite the tool's rising labels.",
+    "facets": "Covers the requested terms, timing and tone fields, but leaves overlap, term ambiguity and the spike's source breakdown unresolved."
+   },
+   "claude_bare": {
+    "trend": "The series is explicitly an estimate from memory, which earns the estimate anchor; it does not measure the requested monthly 2025 spike.",
+    "comparison": "Numerical ratios are estimated and not checkable against a common measured corpus; the shared-scale caveat is acknowledged.",
+    "chart": "The chart is clearly labelled an estimate, but its values are memory judgments rather than measured coverage.",
+    "drilldown": "Some follow-up calls are proposed, but most are generic or fail execution; only one of six returned on-topic data.",
+    "export": "The table is an openly labelled estimate, which earns the estimate anchor but provides no traced export.",
+    "repro": "No measurement call ran and numeric claims are estimates, so the deliverable cannot be regenerated.",
+    "accuracy": "It avoids claiming measurements, but its specific recollections of the April 2025 ranking and spikes conflict with the recorded monthly results only in part; measured facts are not established.",
+    "limits": "Clearly separates estimates from measurements and states key gaps, omissions, and date limits.",
+    "verdict": "Gives a direct provisional answer, confidence and a condition for revision, but the decision rests on estimates and does not address contrary evidence from measured data.",
+    "facets": "Most requested facets—especially measured monthly timing and comparable totals—are ungrounded; the response explicitly marks them as estimates or unavailable."
+   },
+   "claude_prism": {
+    "trend": "The source series is traced and the April peak and post-peak changes are quantified, but the chart omits months and the prose leaves the tool's rising labels in unresolved tension with the observed decline.",
+    "comparison": "Ratios and critical-share contrasts are computed on the same reported window; the comparison distinguishes attention from importance and carries overlap caveats.",
+    "chart": "The chart has a correct source and window but plots only a subset of months, so it does not trace the full monthly series it presents as the trend view.",
+    "drilldown": "Provides term, month and classification layers plus identifiers and concrete follow-ups; five of six calls executed with non-empty results, but the results are not folded back into the report.",
+    "export": "Exports are traced and referenced, but the monthly table is explicitly selected and incomplete, so it does not provide the full series required for this question.",
+    "repro": "The call, arguments, window and capture date are given; nearly all numeric claims trace and the derived ratios can be recomputed from the displayed values.",
+    "accuracy": "Most reported totals and peaks match. The stated window includes a nonexistent May 31 endpoint, and the report speculates that growth is likely based on early and late halves without source support.",
+    "limits": "Places the window, censoring, lane, coverage, matching, overlap and classification limits near the relevant claims and distinguishes interpretation from measurement.",
+    "verdict": "Directly answers the ranking with a decision and confidence, but it does not name the sharp decline after April 2025 as contrary evidence to its 'rising' characterization.",
+    "facets": "Addresses the ranking, monthly timing, critical/negative/positive measures, overlap, term ambiguity and limits, with unsupported gaps identified."
+   },
+   "chatgpt_bare": {
+    "trend": "No series or quantified trend is provided.",
+    "comparison": "No measured contrast or comparable numbers are available.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Offers proposed calls but no traced breakdown or successful executed follow-up.",
+    "export": "No CSV export is provided.",
+    "repro": "No measurements or recorded calls support reproduction; the no-data stance is honest.",
+    "accuracy": "Makes no unsupported measured claims and clearly distinguishes measurement gaps from zero values.",
+    "limits": "Explains that no window or corpus is available, but cannot state the question's applicable measured-window and censoring limits.",
+    "verdict": "It declines to make a decision-grade comparison; confidence is about data absence, not a supported answer to the coverage question.",
+    "facets": "Identifies the missing facets but supplies no grounded values or database-backed no-data findings."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

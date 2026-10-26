@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 5,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The chart and change figures are explicitly estimates, so they earn the estimate ceiling only.",
+    "comparison": "It gives no numeric comparison; the stated limitation is qualitative.",
+    "chart": "The chart is clearly labeled illustrative estimate, which earns 1.",
+    "drilldown": "It lists possible layers, but only one of six follow-up calls executed successfully and no traced breakdown is shown.",
+    "export": "The CSV is clearly labeled as estimated, not measured.",
+    "repro": "No figures trace to a recorded call or named source, and the calls use arguments that do not reproduce the reference window.",
+    "accuracy": "It does not present measured claims that contradict the reference; its remembered claims are labeled estimates.",
+    "limits": "It clearly states that no source was queried and identifies the unmeasured facets and absent 2026 data.",
+    "verdict": "It directly advises treating the material as a hypothesis, with low confidence and a clear condition that would change the conclusion.",
+    "facets": "It addresses the requested terms qualitatively but provides no grounded coverage findings."
+   },
+   "B": {
+    "trend": "The full monthly series is traced, the window and censored month are stated, and first-to-last complete-month changes are calculated. It omits decisive peak and trough points, keeping it below 5.",
+    "comparison": "Same-window article-count ratios are defined, recompute correctly, and the overlap caveat is carried; it distinguishes broad attention from company-specific scrutiny.",
+    "chart": "The monthly chart traces all points to c1, labels window and unit, flags the censored month, and supports the trend comparison.",
+    "drilldown": "It provides a traced monthly breakdown and specific follow-up questions, but no item-level layer and only one follow-up executed successfully.",
+    "export": "The monthly CSV is traced with source, window, unit, coverage and provenance; it is referenced in the prose. No separate summary export is necessary for the reported monthly-series facet.",
+    "repro": "The call, arguments and window are given; the prose figures derive from the recorded response, and the provenance block supports regeneration.",
+    "accuracy": "Claims align with c1, and it treats critical as a reported label rather than equating it with negative sentiment.",
+    "limits": "It states window, censoring, coverage caveat, lane, possible common-word overcount and missing definitions, but the script ceiling is 3 and not every applicable limit is fully resolved.",
+    "verdict": "The answer, decision, confidence and condition are clear and supported, but it does not name a strongest contrary finding from its own evidence, such as the May Byju’s rebound.",
+    "facets": "It covers the brand, generic and class comparisons, overlap caveat, seasonality/trend, and the news-only scope with grounded values or explicit limits."
+   },
+   "C": {
+    "trend": "No series is offered; its refusal is accurate but does not measure the trend.",
+    "comparison": "No measured contrast or ratio is provided.",
+    "chart": "No chart block is provided.",
+    "drilldown": "The proposed follow-up calls are unexecuted and use unspecified windows and unsupported arguments; no traced breakdown is present.",
+    "export": "No CSV export is provided.",
+    "repro": "There are no measured numbers or executable, fully specified calls to reproduce.",
+    "accuracy": "It makes no measured claims that contradict the reference and does not invent specifics.",
+    "limits": "It clearly explains the missing window, source coverage, censoring, match mode and tone definitions.",
+    "verdict": "It gives a cautious decision and a condition that would change it, but lacks a confidence level with a reason tied to any measured evidence.",
+    "facets": "It identifies the key facets as unmeasured, but supplies no grounded coverage values."
+   },
+   "D": {
+    "trend": "The chart traces the monthly points and it quantifies period comparisons and identifies Byju’s peak and trough. Its broad-level characterization and incomplete decomposition keep it below 5.",
+    "comparison": "The same-window ratios and critical-share contrasts recompute correctly, with overlap and scale limitations discussed.",
+    "chart": "The monthly chart is traced and supports the prose, but its caption says the broad terms hold roughly level across a period with notable variation and a 2,018-article spike; it also does not visibly mark the censored month.",
+    "drilldown": "It shows term-to-month-to-label counts, but no item-level identifiers, and only two of six proposed follow-ups executed successfully.",
+    "export": "Both CSVs trace and have provenance, but the monthly export omits critical, negative, positive and partial-period fields needed to reproduce several chart and trend claims; the script also flags untagged numbers.",
+    "repro": "Most claims trace and the call is replayable, but six untagged numeric claims and unsupported coverage-row figures prevent full reproducibility.",
+    "accuracy": "It calls edtech mostly non-critical despite 59.8% critical, and presents reference-absent index partition-row coverage specifics as fact. Its tone-ratio formula and baseline are also assumptions, though labeled as interpretation.",
+    "limits": "It covers the window, censoring, lane, coverage caveat, matching and missing facets, but the script ceiling is 3 and the unsupported coverage specifics undermine calibration.",
+    "verdict": "It answers directly with a decision and confidence, but the ‘mostly non-critical’ characterization conflicts with its own critical-share table, so the verdict is not internally consistent.",
+    "facets": "It addresses brand versus broad terms, term overlap, monthly variation, and the limits of a news-only comparison with traced values."
+   }
+  },
+  "errors": {
+   "A": [
+    "Presents an estimated Byju’s 2023 peak and 2020/2021 broad-term peaks as recollections, not measured facts; clearly labels them estimates."
+   ],
+   "B": [],
+   "C": [],
+   "D": [
+    "Says edtech is mostly non-critical although its reported critical share is 59.8%.",
+    "Presents index partition-row counts and expected-row totals as measured, but those figures do not appear in the reference record.",
+    "The chart caption characterizes the broad terms as holding roughly level while the series includes a substantial edtech spike and material online-learning variation."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is strongest for a decision-maker: it gives a reproducible, same-window comparison, a complete monthly chart and export, and keeps attention counts distinct from importance and public opinion. D adds useful trend detail, but its unsupported coverage figures and contradiction about edtech being mostly non-critical weaken trust in its conclusion."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 5,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

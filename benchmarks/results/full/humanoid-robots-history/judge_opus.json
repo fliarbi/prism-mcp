@@ -1,0 +1,177 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 0,
+    "facets": 4
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 1,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Sparse 5-point series honestly labelled est. with no named measured source.",
+    "comparison": "Ratios are computed between invented estimates, so nothing is checkable.",
+    "chart": "Chart is an estimate and labelled as such.",
+    "drilldown": "Breakdown layers are only named, not measured; 0/6 follow-ups ran.",
+    "export": "Estimate CSVs are honestly labelled.",
+    "repro": "Ceiling 0; nothing is reproducible.",
+    "accuracy": "Everything is tagged est. and does not directly contradict the reference (different assumed query), but the 25%/yr central path is judgmental.",
+    "limits": "Specific limits are listed (window gap, indexing lag, match mode), but the data is memory-only.",
+    "verdict": "Ceiling 0: untagged numbers in the verdict.",
+    "facets": "Facets are answered only by estimate."
+   },
+   "B": {
+    "trend": "Full traced series with window and the 2018 peak and 2020-23 plateau named. Changes recompute exactly (+33.6%, +39.4%, 1.86x). Scenario is decomposed into central vs bounds.",
+    "comparison": "Plateau baseline (442.75) is defined and every ratio and delta recomputes. Backtest MAE contrast is carried with the no-holdout caveat. It does not address the hype-vs-research contrast the question poses.",
+    "chart": "Two fully traced charts with window, unit and source, including bounds. Observed and projected are not joined on one view.",
+    "drilldown": "Year, scenario and fold layers are traced, and fold errors recompute exactly. Only 3/6 follow-ups ran ok, and no layer reaches item level.",
+    "export": "At ceiling 3. Both tables are traced with provenance JSON, but coverage=full overstates the tool's own 'not proof of complete coverage'.",
+    "repro": "At ceiling 3.",
+    "accuracy": "All arithmetic is verified correct. Minor issue: the coverage=full flag and the 'case-insensitive substring' detail are not in the reference.",
+    "limits": "Window gap, match-mode misses, corpus-growth confound and non-CI bounds are stated. The reading changes ('may understate/overstate'). Most limits sit in the method section.",
+    "verdict": "Ceiling 0: untagged 860–950 in the verdict, even though the content is sound and bounded.",
+    "facets": "Growth, range and backtest are all grounded. The research-vs-news facet is only proposed."
+   },
+   "C": {
+    "trend": "Series is traced with window, but the prose and the chart 'supports' line say 2025 is 73% above 2024. The true figure is 39.4%; 73% is the 2017→2025 change.",
+    "comparison": "2017 vs 2025 (347, 1.73x) is correct and the baseline is defined. The comparison is thin and does not address the hype contrast.",
+    "chart": "One traced chart, but it is tied to a wrong claim. There is no scenario/bounds chart although the question asks for the range.",
+    "drilldown": "Layers are only listed, not broken down; 1/4 follow-ups ran ok.",
+    "export": "Both needed tables are present, traced, referenced and carry provenance JSON. Coverage flags are honest (partial/unknown).",
+    "repro": "Nearly all numbers trace and the calls block is complete, but one derived figure does not recompute.",
+    "accuracy": "A clear arithmetic misstatement (73% vs 39.4% year-on-year) is presented as calculated, twice.",
+    "limits": "296-day gap, title-only match, coverage reachability caveat and non-CI bounds are all stated.",
+    "verdict": "Direct answer with decision, confidence and reason. It omits the strongest contrary evidence (2018 peak, flat 2020-23, marginal backtest advantage).",
+    "facets": "History, range and backtest are grounded."
+   },
+   "D": {
+    "trend": "Direction is asserted with no series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups are generic; 0/4 ran.",
+    "export": "No export.",
+    "repro": "No numbers to reproduce.",
+    "accuracy": "No contradictions because nothing is claimed.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "Essentially declines to answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [
+    "Entire series and scenarios are invented estimates (est.), with an untagged 1.3–1.5x and 25% in the verdict"
+   ],
+   "B": [
+    "CSV coverage=full overstates the reference's 'not proof of complete coverage'",
+    "Untagged 860–950 range in the verdict"
+   ],
+   "C": [
+    "States 2025 is ~73% above 2024; the correct figure is 821/589 = +39.4% (73% is the 2017→2025 change)"
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "B and C both used the measured title-match series (474→821, flat 2020-23, sharp 2024-25 rise) and the scenario range (central 864/908/951, bounds 304–1,598 by 2028). B recomputed every ratio, delta and fold error correctly and read the marginal backtest advantage, though its untagged verdict range zeroes its verdict score. C misreported the 2024→2025 jump as 73% instead of 39%. A offered labelled guesses on a different scale, and D declined to answer, so neither gives a decision-maker a usable range."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 0,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 1,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,141 @@
+{
+ "slug": "buybacks-investment-evidence",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 4.0,
+    "facets": 1.5
+   },
+   "strict": 43.9,
+   "plain": 43.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 39.8,
+    "gpt": 48.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 3.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 78.0,
+   "plain": 78.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 78.2,
+    "gpt": 77.8
+   }
+  }
+ },
+ "judge_mad": 0.5,
+ "verdicts": {
+  "opus": "B grounds its answer in traced retrieval: 0 supporting vs 1 contradicting document read, flat research output, and no extractable effect sizes. It is candid that the corpus is thin and that its subgroup nuance comes from unverified background. A gives the more expert-sounding synthesis of the literature, but every number is a memory estimate that cannot be reproduced. For a decision-maker who needs auditable evidence, B is preferable, while A's reasoning about motive-specific crowd-out is a useful hypothesis to verify.",
+  "gpt": "B is substantially more useful for a decision-maker because its charts, trend, and exports mostly trace to the recorded database, while A’s central figures are estimates from memory. B still overstates what the retrieval proves and contains specific misreadings, so its conclusion should be treated as provisional rather than evidence that buybacks do or do not cause long-term underinvestment."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "The gross (S&P 500, 2003-2012) vs net (all US firms, 2007-2016) payout ratio of about 2.2x is computed across different populations and windows.",
+    "All quantitative series are unverifiable memory estimates."
+   ],
+   "claude_prism": [
+    "The 'sides' chart mixes tier-weighted scores with paper counts on one 'papers' axis.",
+    "The quoted 'no_data' message and index partition-read caveat attributed to [c1]/[c3] are not visible in the reference record.",
+    "The 2026-02 news peak is not checkable from the truncated monthly array."
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "S&P 500 buyback values and payout figures are explicitly recalled estimates, not checked measurements; the trend and comparison cannot establish an investment effect.",
+    "The asserted causal and aggregate findings are not grounded in the supplied record, which does not retrieve those studies or verify their claims."
+   ],
+   "claude_prism": [
+    "The text says research.statistics returned no_data, but the recorded response is ok:false and includes candidate sentences plus research and news series.",
+    "The claimed news peak in 2026-02 is not verifiable from the supplied monthly points, which are truncated after 2021-06; the recorded trend summary names 2025-04 as the peak.",
+    "The statement that phrases matched 0 titles misreads the record: zero matches apply to specific repurchase phrases, while 'share buybacks' has 39 phrase matches.",
+    "The claim that all counts are in the intersection lane overgeneralizes: readable papers, the health literature index, news, patents and arXiv have separately stated windows and definitions."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "S&P 500 buyback series (2015-2024) is recalled and honestly labelled estimate; it is a series of buyback volume, not the investment effect asked about.",
+    "comparison": "Gross vs net payout contrast compares two memory figures from different windows and populations; the mismatch is stated but not resolved.",
+    "chart": "Both charts rest on recalled values labelled estimate, so they are honest but unmeasured.",
+    "drilldown": "The four-layer breakdown is from memory; only 2 of 7 follow-up calls returned data.",
+    "export": "Both CSVs are labelled estimate, which is honest but cannot be traced.",
+    "repro": "0 of 26 numbers trace to a call; all are memory or estimate.",
+    "refs": "Real, well-known papers are tiered with a reason and contrary sources appear, but several DOIs are missing, one URL is generic, and quotes are marked from memory.",
+    "accuracy": "Recalled specifics look plausible and are labelled. The gross-vs-net framing compares unlike populations, and the Almeida quote is unverified.",
+    "limits": "States specific memory limits: knowledge cutoff, 22-month gap to today, purposive coverage. As a plain model it cannot reach 4.",
+    "verdict": "Gives a nuanced answer (subset crowd-out, no aggregate effect), a decision, medium confidence with its reason, and what would change it (the excise-tax natural experiment). It addresses the reverse-causality issue.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "claude_prism": {
+    "trend": "Research series traces (flat, early and late thirds both 11, ratio 1.0). News trend traces (3 to 9, peak 2025-04) and the partial 2026 is marked. The 2026-02 peak cannot be checked against the truncated monthly array.",
+    "comparison": "Framing labels (4 contradicting vs 3 supporting, ratio 0.75) and read documents (0 vs 1) are traced and recompute, with the framing caveat carried. It does not test causality vs selection.",
+    "chart": "All values trace. The 'sides' chart puts tier-weighted scores on the same axis as paper counts (unit mismatch), and the 2026 partial year is noted only in the series name.",
+    "drilldown": "Two traced layers: corpus/topic/lane, then documents with DOIs and quotes. Only 3 of 6 follow-ups executed ok, and none was folded back into the report.",
+    "export": "Three traced CSVs with source, window and unit, nulls left blank, and a provenance JSON. The research CSV's coverage=full is not stated in the record.",
+    "repro": "29 of 32 numbers trace and a prism-calls block lists args. A few quoted tool strings ('no_data' message, index partition-read note) are not visible in the record.",
+    "refs": "Prism documents carry DOIs and verified quotes, and contrary sources are present. Background references use generic hbr.org URLs and an unverified DOI, which is disclosed.",
+    "accuracy": "No contradictions with the record. It catches anomalies: research censored_at 2025 but not flagged partial, and 0 'share repurchase' matches being implausible. Two attributed tool quotes cannot be checked.",
+    "limits": "Limits are placed with the numbers: day gaps to today, lane, match-mode lower bound, framing vs verdict. It says the verdict leans on unretrieved background and names what would close the gaps.",
+    "verdict": "Direct answer, decision, low confidence with a specific reason, and what would change it. Names the Almeida subgroup evidence as the contrary finding. Near the length limit.",
+    "facets": "Grounded on the claim tally, counter-evidence and the absence of effect sizes. Reverse causality is only implicitly grounded, via the surplus-cash quotes."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "The recalled estimate series is explicitly labeled, but has no verifiable source trace; ceiling 1.",
+    "comparison": "Numeric payout comparison is labeled estimate and mixes populations and periods; caveat is stated, ceiling 2.",
+    "chart": "The plotted series is from memory and labeled estimate; ceiling 1.",
+    "drilldown": "Provides a memory-based breakdown and follow-up calls, but only 2 of 7 executed successfully; ceiling 2.",
+    "export": "Both exports are explicitly estimates, ceiling 1.",
+    "repro": "No calls were run and numeric claims are mostly untraced; ceiling 1.",
+    "refs": "All three listed DOIs resolve; however, several claims rely on sources without resolvable identifiers or verified quotes, so below ceiling 5.",
+    "accuracy": "The synthesis is cautious and does not conflict with the record, but unsupported claims about causal evidence and recalled figures limit confidence.",
+    "limits": "Clearly labels estimates, windows, selection, and interpretation; misses specific limitations of the cited evidence and verification.",
+    "verdict": "Direct answer, decision, confidence, condition for change, and contrary evidence are present; conclusion is bounded by the stated limits.",
+    "facets": "Addresses causality and selection qualitatively, but lacks grounded evidence counts, effect sizes, or a traced trend."
+   },
+   "claude_prism": {
+    "trend": "Both series trace to the recorded response, state windows and censoring, quantify change, and interpret research as flat and news as rising; ceiling 5.",
+    "comparison": "Provides traced same-window stance contrasts and ratios, defines framing versus read-document baselines, and preserves the labels caveat; slightly short of ceiling 5 because the comparison only partly tests causal effect.",
+    "chart": "Charts trace to recorded series with window, unit, source, captions, and visible partial 2026 news period; ceiling 5.",
+    "drilldown": "Includes traced topic and lane breakdowns plus specific follow-ups, but only 3 of 6 executed successfully and the shown layers do not reach identified papers with item-level follow-up results.",
+    "export": "Exports are traced and include provenance, windows, units and coverage; some fields are renamed/aggregated and the stance table does not preserve nulls with reason, so below ceiling 5.",
+    "repro": "Lists calls and arguments and most numeric claims trace; a few claims are untagged and the regenerate block is not sufficient to rebuild every chart and table exactly.",
+    "refs": "All cited DOIs resolve, and retrieved quotes are tied to claims; background references lack verified identifiers or verbatim quotes, so below ceiling 5.",
+    "accuracy": "Mostly aligns with the record, but says the statistics call returned no_data although the call returned ok:false with candidate sentences and series; also treats the 2025 point cautiously despite it not being flagged partial.",
+    "limits": "Places window, censoring, lane, match and coverage limits near the numbers; some retrieval and evidence-strength limits remain generalized.",
+    "verdict": "Gives an answer, decision, confidence and conditions, but the low confidence reason leans on thin retrieval and the verdict does not squarely acknowledge the strongest contrary evidence in its own material.",
+    "facets": "Grounds trend, comparison, corpus counts and limitations, but leaves news content and effect sizes unanswered and does not fully resolve the selection-versus-causation question."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

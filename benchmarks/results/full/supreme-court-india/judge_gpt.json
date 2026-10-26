@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Series traces and quantifies change, but it says the newest month is not censored and omits the tool’s censoring caveat.",
+    "comparison": "The polarity ratio and defined corpus baseline share a window and recompute to 3.67x.",
+    "chart": "Monthly points trace, with unit, window, source and a supporting claim; censoring is not visibly marked.",
+    "drilldown": "Provides category, subcategory and entity layers with labels, but no executed follow-up result is folded into the report.",
+    "export": "The monthly and category CSVs are referenced and trace, but the export is incomplete for the needed theme breakdown and provenance.",
+    "repro": "Lists the overview call with arguments and capture date; the numeric claims trace and derived ratios are reproducible.",
+    "refs": "No external references; the script ceiling is 1.",
+    "accuracy": "The claim that the newest month is not censored conflicts with the reference’s censoring at 2026-06-01; the Cameroon cause is speculative.",
+    "limits": "Several limits are placed near figures, but the newest-month censoring is misstated and the 59.2% subcategory coverage claim is unsupported by the record.",
+    "verdict": "Direct, supported answer with decision, confidence and conditions; it notes critical-tone ambiguity and the stale window.",
+    "facets": "Covers themes, trend, tone, geography and sources, but omits seasonality and the research-versus-news mismatch."
+   },
+   "B": {
+    "trend": "No series, as acknowledged; ceiling is 0.",
+    "comparison": "No measured comparison; ceiling is 1, but no qualitative contrast is offered.",
+    "chart": "No chart block; ceiling is 0.",
+    "drilldown": "Follow-ups are proposed but generic or invalid for the tool, and none executed successfully.",
+    "export": "No export; ceiling is 0.",
+    "repro": "No measurements or reproducible calls; the honest no-data response is bounded at 1.",
+    "refs": "No references; ceiling is 1.",
+    "accuracy": "Does not invent measurements or contradict the reference.",
+    "limits": "Clearly states that no corpus or window was measured, though it cannot give corpus-specific limits.",
+    "verdict": "Gives a decision and confidence, but does not answer which themes dominate or identify a contrary finding.",
+    "facets": "Explicitly identifies the requested facets as unmeasured, consistent with its lack of a corpus."
+   },
+   "C": {
+    "trend": "No measured series; the null placeholder is explicitly unmeasured.",
+    "comparison": "States the intended contrast but has no values; only qualitative coverage is possible.",
+    "chart": "The chart is an honest unmeasured placeholder, which earns the estimate-level ceiling.",
+    "drilldown": "Lists planned layers, but they are not traced and most proposed calls did not execute successfully.",
+    "export": "Theme ranks are explicitly labelled estimates, not traced measurements.",
+    "repro": "No calls were executed; all theme rankings are marked as memory-based estimates.",
+    "refs": "No references; ceiling is 1.",
+    "accuracy": "Clearly labels the rankings as estimates and does not claim measured counts, but the topic ranking is unsupported.",
+    "limits": "States the absent corpus, window limitations and memory cutoff, but not limits tied to measured values because none exist.",
+    "verdict": "Offers a working hypothesis and conditions, but the answer is not grounded in coverage measurements.",
+    "facets": "Several facets are acknowledged as unmeasured, while the theme ranking and expected geography remain memory-based."
+   },
+   "D": {
+    "trend": "Traced series with window, quantified first-to-last change and peak; it omits the available critical-series decomposition and censoring details.",
+    "comparison": "The baseline is described as same-window, but the reference baseline is a cached 30-day corpus ratio, not a same-window measure.",
+    "chart": "Traced monthly chart with unit, window, source and reading; the censoring boundary is not visibly marked.",
+    "drilldown": "Provides theme layers but no item-level identifiers or successful executed follow-ups folded into the report.",
+    "export": "Both relevant CSVs trace and are referenced; provenance is present, though the exports omit some fields needed for full decision-ready linkage.",
+    "repro": "Lists the overview call with arguments and window; the presented measured numbers trace to it.",
+    "refs": "No external references; the script ceiling is 1.",
+    "accuracy": "The baseline is incorrectly described as measured over the same reporting window; reference says it is a cached 30-day ratio.",
+    "limits": "States the news window, censoring, lane, matching, enrichment and placed share limits near the relevant figures.",
+    "verdict": "Direct answer with decision, confidence and conditions, consistent with the main measurements and caveats.",
+    "facets": "Covers themes, tone, trend, geography and sources, but omits seasonality and research-versus-news comparison."
+   }
+  },
+  "errors": {
+   "A": [
+    "Says the newest month is not censored, despite the reference’s censoring boundary and warning about incomplete recent ingest.",
+    "Claims subcategory coverage is 59.2% without support in the reference record.",
+    "Infers Cameroon’s likely acronym source from the general collision caveat without article-level confirmation."
+   ],
+   "B": [],
+   "C": [
+    "Presents a ranked theme hypothesis from memory; it is labelled as an estimate, not a measured finding."
+   ],
+   "D": [
+    "Describes the corpus baseline ratio as covering the same reporting window; the reference says it is a cached 30-day baseline."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid: it gives a traced answer about dominant themes, a quantified trend, and specific limits on the news data. Its main correction is that the sentiment baseline is cached over 30 days, not measured across the full reporting window; A has richer drill-down but makes unsupported or conflicting claims about censoring and theme coverage."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,238 @@
+{
+ "slug": "nvidia-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 0.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 26.9,
+   "plain": 26.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 25.0,
+    "gpt": 28.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 5.0
+   },
+   "strict": 75.2,
+   "plain": 75.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 72.2,
+    "gpt": 78.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 2.0,
+    "facets": 1.5
+   },
+   "strict": 24.0,
+   "plain": 24.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.2,
+    "gpt": 29.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 3.5,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 70.2,
+   "plain": 70.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 66.2,
+    "gpt": 74.2
+   }
+  }
+ },
+ "judge_mad": 0.52,
+ "verdicts": {
+  "opus": "A and D both delivered measured answers from the same overview call. D went further: it decomposed volume into critical and total, distinguished critical from negative, flagged the Colombia place-resolution artefact, and exported both the monthly and the country tables. B and C honestly declined to measure, but that left a decision-maker with no usable figures. C's market-cap proxy does not measure coverage.",
+  "gpt": "D gives the strongest decision-ready account: it traces both total and critical volume, compares tone against a defined baseline, and distinguishes critical flags from negative polarity while covering themes, entities and places. C is close, but D provides a fuller traced trend decomposition and export; its main weaknesses are the claim of completeness and limited successful drill-downs."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [],
+   "chatgpt_bare": [],
+   "claude_bare": [],
+   "claude_prism": [
+    "Verdict calls counts 'complete for the window', but the tool says row-floor checks do not prove ingest completeness.",
+    "Self-correcting prose slip ('May 2025... correction')."
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "The market-cap milestones and listed themes, companies and places are explicitly estimates, not grounded findings about coverage.",
+    "The market-cap chart is a proxy, not a measured series of the quantity asked about."
+   ],
+   "chatgpt_prism": [
+    "The report says the source panel is a recent sample and gives a surfaced headline, but the reference extract does not provide enough visible record here to independently verify its details; references are not resolvable from the deliverable.",
+    "One of 35 numeric claims did not trace according to the script; declared calls include an unmade call."
+   ],
+   "claude_prism": [
+    "The trend prose briefly says the series ends May 2025, then corrects it to May 2026 in the same sentence.",
+    "The verdict calls the window's counts complete, although the record describes measured ingest volumes and explicitly warns that calendar completion does not prove ingestion completeness."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Traced 24-month series with its window. Change is quantified correctly: +101%, 44.0% CAGR, 1.83x, and the peak 15,514 in 2026-02. Censoring is noted. There is no critical/total or negative/positive decomposition.",
+    "comparison": "0.35 vs the 0.58 baseline, a delta of 0.23 or 0.60x, with the baseline defined and the caveat carried. It does not test any deeper contrast.",
+    "chart": "One fully traced volume chart. Tone was asked for and supported by the data but not charted.",
+    "drilldown": "Traced layers cover themes, entities, places and publishers. Identifiers are only 'c1', and the one headline has no URL. 4 of 5 follow-ups executed.",
+    "export": "One monthly CSV with provenance and a JSON block. A single table only.",
+    "repro": "34 of 35 numbers trace and the call carries its args. This is at the ceiling.",
+    "refs": "One headline with date and publisher but no URL. At the ceiling.",
+    "accuracy": "Everything stated matches the reference, and 144 days to the report date is correct. It repeats Colombia as a place without flagging the collision anomaly.",
+    "limits": "Window, censoring, enrichment lag, match mode and sample limits are all stated. Capped at the ceiling.",
+    "verdict": "Direct answer with decision, confidence and conditions. It ignores contrary evidence in its own data: rising critical volume and the April 2025 negative spike.",
+    "facets": "Volume, tone, themes, organizations, people and places are all grounded. Implied anomalies are not addressed."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups use placeholder args, and 0 of 6 executed.",
+    "export": "No export.",
+    "repro": "No numbers. The honest refusal is not reproducible.",
+    "refs": "No references.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Specific about what is unmeasured, which earns the honest-refusal score.",
+    "verdict": "Declines to answer the question.",
+    "facets": "No facet answered."
+   },
+   "claude_bare": {
+    "trend": "The only series is market cap labelled as an estimate. It is not coverage volume.",
+    "comparison": "The comparison is described but none is made.",
+    "chart": "Memory chart honestly labelled as an estimate.",
+    "drilldown": "Memory breakdown labelled as such. 2 of 7 follow-ups executed.",
+    "export": "Estimate-labelled table.",
+    "repro": "Numbers come from memory and include one untagged figure.",
+    "refs": "None.",
+    "accuracy": "Memory milestones are plausible and clearly labelled. No measured claims are made.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "Memory-based hypothesis with low confidence.",
+    "facets": "Answered from memory only."
+   },
+   "claude_prism": {
+    "trend": "Total and critical series are decomposed and traced. CAGR, late-vs-early ratios, the peak and the 80.1% critical-share peak are all correct. The censoring of the newest month is not stated next to the trend, and there is a sloppy 'correction' slip in the prose.",
+    "comparison": "Baseline defined, delta -0.23 and 0.6x. The monthly range 0.19–0.69 and the April 2025 exception are both correct.",
+    "chart": "Traced overlay of volume and critical counts. The tone ratio is not charted.",
+    "drilldown": "Many traced layers and the one headline has a URL. At the ceiling, with 2 of 6 follow-ups ok.",
+    "export": "Monthly and country CSVs with provenance. At the ceiling.",
+    "repro": "102 of 102 numbers trace, with a calls block and capture date. Derived numbers such as 70.6% recompute.",
+    "refs": "One headline with URL. At the ceiling.",
+    "accuracy": "Correctly separates critical from negative, flags Colombia and the Vera Rubin label, and reads placed_pct correctly. The verdict calls the counts 'complete for the window', which contradicts the tool's own ingest note.",
+    "limits": "Limits are placed beside the numbers. At the ceiling.",
+    "verdict": "Answer, decision and confidence bounded by the window end. It names the 70.6% critical share as contrary evidence. Slight overclaim on completeness.",
+    "facets": "All facets grounded, plus the implied ones: the critical-vs-negative distinction, the place collision, match-mode differences and enrichment fill."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured time series or source.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart supplied.",
+    "drilldown": "Follow-up calls are generic placeholders and did not return data.",
+    "export": "No CSV or provenance export.",
+    "repro": "No source calls were executed or recorded.",
+    "refs": "No references supplied.",
+    "accuracy": "The refusal makes no unsupported measured claims.",
+    "limits": "Clearly states that corpus, window, lane, matching and censoring are unavailable, though the actual limits of a known corpus are not applicable here.",
+    "verdict": "Gives a decision, confidence and conditions, but cannot answer the substantive question or acknowledge contrary evidence.",
+    "facets": "Explicitly identifies the unmeasured facets, but supplies no grounded values."
+   },
+   "claude_bare": {
+    "trend": "The only plotted series is explicitly an estimate of market-cap milestones, not coverage volume.",
+    "comparison": "No measured contrast on a common scale.",
+    "chart": "Estimate chart earns the honest estimate anchor only.",
+    "drilldown": "The outline is memory-based and calls did not yield adequate on-topic results.",
+    "export": "CSV is explicitly estimated and does not measure a requested facet.",
+    "repro": "No numeric claims trace to executed calls or named sources.",
+    "refs": "No sources cited.",
+    "accuracy": "Estimates are labelled, but the answer does not ground the requested coverage findings.",
+    "limits": "Mentions missing corpus and window, but limits are generic and some claims are framed as directional expectations.",
+    "verdict": "Provides a cautious scoping recommendation, but no measured answer or contrary evidence.",
+    "facets": "Most requested facets are estimates or unmeasured."
+   },
+   "chatgpt_prism": {
+    "trend": "Complete traced monthly series; quantified first-to-last growth, CAGR, late/early ratio and peak, with censoring caveat.",
+    "comparison": "Tone ratio compared to a defined corpus baseline with exact delta and ratio; caveats are stated.",
+    "chart": "The traced volume chart has window, unit and source, but no separate chart for tone or other supported facets.",
+    "drilldown": "Multiple breakdown layers and item details are present, but calls lack execution results and identifiers for many rows.",
+    "export": "Monthly CSV is traced and referenced, but needed summary/breakdown exports and full provenance are incomplete.",
+    "repro": "Most figures trace, but one numeric claim fails and a declared call was never made; replay recipe is incomplete.",
+    "refs": "No resolvable source references for the surfaced headline or other relied-on documents.",
+    "accuracy": "Main measurements are consistent; the claims are bounded, with only minor limitations in headline and breakdown traceability.",
+    "limits": "Censoring, enrichment lag, match mode and coverage limits are mostly placed near figures, but the parameter ceiling is 3.",
+    "verdict": "Direct, supported answer with confidence and conditions; decision is stated, though contrary evidence is not strongly developed.",
+    "facets": "Covers volume, tone, themes, related organizations/people, places, publishers, headlines and implied facets with grounded values or no-data."
+   },
+   "claude_prism": {
+    "trend": "Traced full monthly volume and critical series, quantified growth and decisive points, and decomposed critical from total.",
+    "comparison": "Defined baseline and exact sentiment delta/ratio, with monthly context and caveats.",
+    "chart": "Both traced series are charted with units, window and source, and show the critical share decomposition.",
+    "drilldown": "Breakdown layers exist, but only two of six follow-ups executed successfully; no returned results are folded into the report.",
+    "export": "The monthly and country CSVs are useful and traced, but provenance is incomplete and needed breakdown tables are absent.",
+    "repro": "All numeric claims trace and the recorded call includes arguments and window; values and derived figures are reproducible.",
+    "refs": "No resolvable external references or linked news-item evidence in a reference list.",
+    "accuracy": "Measurements largely match the record and distinguish critical from negative; the in-line date correction and some inferred interpretations reduce polish.",
+    "limits": "Specific caveats are stated near results, but the script ceiling limits this parameter to 3.",
+    "verdict": "Answers directly with decision, confidence and conditions and acknowledges critical coverage; it overstates completeness and does not fully bound the interpretation by coverage limits.",
+    "facets": "Covers all named facets and implied overlap, seasonality, matching and news-versus-research limits."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

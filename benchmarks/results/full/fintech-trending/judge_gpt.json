@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 5,
+    "export": 4,
+    "repro": 5,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 5,
+    "facets": 4
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 5,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced two-window counts with quantified growth and named values; it does not fully decompose the rise across the available topics.",
+    "comparison": "Defines equal-length windows and baseline; the stock-price ratio is correct and supports a relevant finance contrast.",
+    "chart": "The chart traces both values, labels window, unit, and source, and its caption explains the rise and scope mismatch.",
+    "drilldown": "Provides the topic breakdown, identifiers as subcategory labels, and four executable follow-ups that returned non-empty results.",
+    "export": "CSV rows and provenance are traced and referenced, but the export omits the required coverage detail and several available summary fields.",
+    "repro": "Lists the source call with full arguments and capture date; reported values and derived ratios reproduce.",
+    "accuracy": "Correctly reports the reference values and flags the business-category mismatch and stale window.",
+    "limits": "Notes window end, staleness, lane, and coverage caveat, but not every applicable limit at the point of use.",
+    "verdict": "Direct recommendation, low confidence with reasons, update condition, and caveats align with the measured results.",
+    "facets": "Covers fast risers, finance-volume comparisons, new-topic status, and staleness; overlap and seasonality are not addressed."
+   },
+   "B": {
+    "trend": "Quantifies two-window changes and growth, but its claim that the biggest topics are mostly flat is inaccurate for the listed range, and it adds unsupported topics.",
+    "comparison": "Uses one scale and window, recomputes the key ratios and deltas, and explains the small-base effect.",
+    "chart": "Chart values trace to the call and include window, unit, source, and a relevant caption.",
+    "drilldown": "The script ceiling is 1: all six proposed follow-ups failed or returned no usable data.",
+    "export": "The CSV is traced and referenced with provenance, but it omits the separate largest-topic summary needed to support its prose.",
+    "repro": "The source call and arguments are present; nearly all numeric claims trace and derived deltas reproduce.",
+    "accuracy": "Adds investor-relations values absent from the reference and misstates the biggest-topic growth range as 1.02x–1.14x; new product launches alone are 1.14x, while other listed biggest topics include higher growth.",
+    "limits": "States the window gap and category, but leaves some applicable coverage and censoring caveats incomplete or detached from figures.",
+    "verdict": "Gives a supported decision and confidence, but the conclusion relies partly on unsupported additions and overlooks its inaccurate biggest-topic summary.",
+    "facets": "Answers rising, large-volume, new-topic, and staleness facets; does not ground the extra implied facets such as overlap or seasonality."
+   },
+   "C": {
+    "trend": "No sourced series or measured change.",
+    "comparison": "No measured baseline or comparison.",
+    "chart": "No chart block.",
+    "drilldown": "No traced breakdown; proposed calls are generic or fail the script check.",
+    "export": "No data export.",
+    "repro": "No measured numeric claims or reproducible calls; the source call list is empty.",
+    "accuracy": "Does not invent or contradict the reference; accurately states its lack of data.",
+    "limits": "Clearly identifies missing data, lane, window, and coverage, but cannot provide source-specific limits or close the gap with evidence.",
+    "verdict": "Directly advises against using an unsupported ranking and names what evidence would change the answer; confidence is reasoned, though no measured answer is supplied.",
+    "facets": "Only the absence of measured evidence is grounded; requested topic, growth, and volume facets remain unanswered."
+   },
+   "D": {
+    "trend": "No measured series or change.",
+    "comparison": "Defines a prospective comparison window, but provides no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "No traced breakdown; proposed calls are not executable according to the script, with only two of six follow-ups passing.",
+    "export": "CSV is explicitly an estimate with blank values, which earns the estimate ceiling but provides no usable counts.",
+    "repro": "No recorded calls or reproducible numeric claims; memory candidates are not a measured answer.",
+    "accuracy": "Separates memory candidates from measured results and makes no direct contradiction, though the candidates are unverified.",
+    "limits": "Clearly marks the absence of a window and data and labels the candidate list as memory-based, but lacks source-specific measured limits.",
+    "verdict": "Offers a watchlist and conditions, but does not answer which topics are rising and gives low confidence without evidence.",
+    "facets": "Names the requested facets but supplies no grounded values or source-grounded no-data result."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Claims investor relations rose 1.52x with counts not present in the reference record.",
+    "Says biggest topics grew between 1.02x and 1.14x, omitting stock-price fluctuations at 1.90x and investment & funding at 1.82x from the biggest list."
+   ],
+   "C": [],
+   "D": [
+    "Presents AI capital spending, tariffs, private credit, and central-bank rate paths as memory-based candidates without evidence; they are not measured trends."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it answers with traced growth, exposes the surprising category mismatch, and recommends treating the stale results as leads rather than current signals. B is richer in comparisons, but its unsupported investor-relations figures and incorrect summary of biggest-topic growth weaken trust; C and D are candid about lacking measurements but cannot answer the question."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 5,
+   "export": 4,
+   "repro": 5,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 5,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 5,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 5,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 2
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced annual series, quantified growth and CAGR, with 2025 censoring; no decomposition shown.",
+    "comparison": "Same-pull counts, baseline and delta are stated; the zero-support ratio is not informative but correct.",
+    "chart": "The complete traced research series has a fitting chart, source, window, unit and caption; the censored period is marked.",
+    "drilldown": "Shows breakdowns and documents, but proposed follow-ups did not execute successfully.",
+    "export": "The series CSV traces, but the question needs document-level evidence too; the export omits that table.",
+    "repro": "All numeric claims are traced, calls include arguments and windows, and the recipe supports rebuilding the deliverable.",
+    "refs": "All cited DOIs resolve; references identify works and their claims, with corpus-verified quotes.",
+    "accuracy": "Carefully distinguishes targeted abstract classifications from causal evidence; minor issue: calls the research and news periods censored although only the newest period is excluded from trend interpretation.",
+    "limits": "Places lane, windows, lag, coverage and interpretation limits with the relevant claims, including the gap to today.",
+    "verdict": "Direct, bounded answer with decision, confidence, contrary evidence and conditions that would change it.",
+    "facets": "Addresses the mixed evidence and research/news availability, but does not provide a grounded news trend or executable follow-up results."
+   },
+   "B": {
+    "trend": "Research series and change are traced and quantified with censoring; it omits the full-series decomposition in prose and has a chart reading issue about steepest growth.",
+    "comparison": "Provides same-scale tallies, deltas, defines the zero-denominator ratio, and flags counter-pull asymmetry.",
+    "chart": "Traced research chart includes window, unit and source and is tied to a claim; the partial news series is described with its censoring.",
+    "drilldown": "Has breakdowns and seven specific calls, but only two follow-ups executed successfully with on-topic data.",
+    "export": "Series CSV traces, but the required document-level evidence export is missing and the tally CSV has incomplete provenance.",
+    "repro": "Most numbers trace and the principal calls are listed, but some claims about designs, samples and evidence properties are unsupported by the record.",
+    "refs": "DOIs resolve and works are tied to claims, but quotes for some entries are not verified and one quoted claim was rejected by the extractor.",
+    "accuracy": "Treats the rejected 13–22% sentence as if it were a returned study finding and overstates evidence about study designs, self-report and settings.",
+    "limits": "Notes windows, lane and coverage caveats, but presents unsupported match-mode and study-design assertions as established limits or findings.",
+    "verdict": "Direct policy answer, but its central claim that no read paper supports the claim conflicts with the supplied tally, which classifies all five as unrelated or contradicting rather than establishing the broader conclusion; confidence and decision support are weakened by unsupported premises.",
+    "facets": "Covers research framing, counts and windows, but the design, occupation and effect-size questions remain unanswered and news findings are thin."
+   },
+   "C": {
+    "trend": "The chart is explicitly a memory estimate and compares unlike studies; it is not a measured time series.",
+    "comparison": "Study effects are memory figures across unlike populations and outcomes; the incompatibility is acknowledged but figures remain unverified.",
+    "chart": "Estimate-labelled memory chart earns the estimate anchor; it is not a traced series and is not a valid trend chart.",
+    "drilldown": "Provides only generic, unexecuted proposed calls and no traceable item-level breakdown.",
+    "export": "The effects CSV is explicitly an estimate from memory, so it earns the estimate anchor only.",
+    "repro": "No recorded calls; study figures are recalled and not reproducible from the deliverable.",
+    "refs": "Includes identifiers, but at least one citation is mismatched: the data-entry study is an NBER paper from 2023, not the described 2022 study; quote and claim support are not provided.",
+    "accuracy": "Several study details and claims are inaccurate or ungrounded, including the data-entry year and the characterization of the Trip.com performance result as zero effect.",
+    "limits": "Clearly labels memory and coverage limits, but cannot supply specific corpus windows, censoring or match-mode limits.",
+    "verdict": "Gives a direct answer and decision, but relies on unsupported recalled effects and does not acknowledge evidence limitations within the verdict sufficiently for a stronger score.",
+    "facets": "Addresses arrangement and study context from memory, but does not ground the evidence or answer corpus and news facets."
+   },
+   "D": {
+    "trend": "No measured trend; the selected-study count chart is labelled estimate and is not a productivity series.",
+    "comparison": "Explicitly declines to combine incomparable study estimates; no measured contrast is supplied.",
+    "chart": "Estimate-labelled selected-study counts earn the estimate anchor, but do not measure the requested trend.",
+    "drilldown": "The setting/design breakdown is memory-selected and proposed follow-ups were not executed.",
+    "export": "The selected-studies CSV is explicitly an estimate from memory and is not a harmonized effect table.",
+    "repro": "No calls or reproducible numeric evidence; the CSV and study descriptions are memory-based.",
+    "refs": "One DOI fails to resolve per the benchmark and the remaining references lack verifiable quotes; fabricated-identifier ceiling applies.",
+    "accuracy": "The claimed Gibbs Management Science DOI does not resolve in the reference check, and the evidence claims are not grounded in the supplied record.",
+    "limits": "Specifically acknowledges memory, absent corpus coverage, differing measures and the gap to today, but lacks measured-data caveats.",
+    "verdict": "Clear answer, decision, confidence and conditions for change; it acknowledges mixed findings and the limits of its selected examples.",
+    "facets": "Recognizes the absence of corpus and news data, but does not ground evidence facets with a verified read or measured series."
+   }
+  },
+  "errors": {
+   "A": [
+    "Says the 2025 research and June 2026 news periods are censored for ingest lag; the record excludes the newest period from trend interpretation, not those count windows as a whole."
+   ],
+   "B": [
+    "Presents the rejected 13%–22% sentence as a study claim despite the extractor rejecting it.",
+    "Attributes cross-sectional/self-report designs, randomised and administrative-data gaps, and settings/generalizability assertions beyond the supplied record.",
+    "Says the main pull is a small sample of papers supporting/contradicting the claim, though its five classified papers are marked unrelated in the reference tally."
+   ],
+   "C": [
+    "Presents several recalled numeric findings as concrete study effects despite no verification; the chart treats unlike studies as a trend.",
+    "Misstates the data-entry study year and gives unsupported effect estimates and evidence tallies."
+   ],
+   "D": [
+    "DOI 10.1287/mnsc.2023.03506 is not found by the benchmark.",
+    "Presents selected study findings and tiers from memory without resolvable supporting quotes; no measured corpus or series is provided."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision-grade deliverable: it gives a cautious, actionable answer while tracing its corpus figures, chart, references and limitations. B is more comprehensive, but it turns unsupported study-design claims and a rejected effect-size quote into evidence; C and D offer useful context but rely on memory estimates rather than reproducible measurements."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 5,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,207 @@
+{
+ "slug": "citations-sugar-tax",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "export": 0.5,
+    "repro": 1.0,
+    "refs": 3.0,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 39.4,
+   "plain": 39.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 38.2,
+    "gpt": 40.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "export": 3.0,
+    "repro": 3.0,
+    "refs": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 66.4,
+   "plain": 66.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.9,
+    "gpt": 58.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 0.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 23.6,
+   "plain": 23.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 20.0,
+    "gpt": 27.3
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "export": 4.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 78.5,
+   "plain": 78.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 77.6,
+    "gpt": 79.4
+   }
+  }
+ },
+ "judge_mad": 0.43,
+ "verdicts": {
+  "opus": "A and D both built their citation lists from the recorded corpus, traced their rows, and honestly concluded the three-entry set (one supporting, two contradicting, all moderate-strength articles) cannot establish the claim. D edges ahead on export and reproducibility hygiene, while A was sharper on anomalies such as the by_tier totals and the off-topic rows. B gave a useful but unverified memory-based answer with internal metadata mismatches. C invented DOIs, which disqualifies it for a citation request.",
+  "gpt": "A is the strongest decision aid because it provides a replayable, traceable citation export and distinguishes Prism’s stance labels from verified study findings. C is similarly cautious but misreads the source-ranking record; B and D offer stronger-sounding conclusions that depend on unsupported or fabricated specifics."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Asserts the source-ranking call ran in the 'subject' lane and quotes coverage-flag wording that does not appear in the recorded responses."
+   ],
+   "claude_bare": [
+    "Attributes the 9.7% 2015 Mexico reduction to the 2016 BMJ paper, which covered 2014 only.",
+    "The table gives r4 as 2021 while the reference list gives 2019.",
+    "The table gives r5 as a 2020 study of sugar reformulation, but the reference is Rogers et al. 2023 on obesity prevalence."
+   ],
+   "chatgpt_bare": [
+    "Fabricated DOI 10.1001/jamanetworkopen.2022.1046 for Andreyeva et al. 2022.",
+    "Fabricated DOI 10.1377/hlthaff.2016.0434 for Colchero et al. 2016.",
+    "The CSV carries a corrupted DOI 10.1377/hlthaff.2016.043飲.",
+    "The CSV is presented as sourced ('ref:r1') without an estimate label."
+   ],
+   "chatgpt_prism": [
+    "Claims both calls' metadata say coverage is not proof of ingest completeness, which is not visible in the recorded responses."
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Presents the source-ranking result as having broad coverage although c2 provides no coverage flag.",
+    "The reported three-entry citation list does not establish that no pooled estimate exists in the wider literature."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1001/jamanetworkopen.2022.1046 is not found in the corpus.",
+    "DOI 10.1377/hlthaff.2016.0434 is not found in the corpus.",
+    "DOI 10.1377/hlthaff.2016.043飲 is not found in the corpus.",
+    "Claims all listed sources support the claim, while the corpus citation response marks Zhang and Snowdon as contradicting it."
+   ],
+   "claude_prism": [
+    "Says c2 ran in the subject lane and reports index coverage as not partial; neither fact appears in the reference record.",
+    "Says the citation pull did not return a review or meta-analysis, while c2 ranks a review first.",
+    "Calls the three entries truncated for an unstated reason, which is not established by the response."
+   ],
+   "claude_bare": [
+    "Presents numerous recalled numerical effects without traceable sources, including Mexico, Berkeley, Philadelphia, elasticity and UK levy figures.",
+    "Berkeley DOI is given as 10.2105/AJPH.2016.303362, inconsistent with the recorded valid citation DOI 10.2105/AJPH.2015.302881.",
+    "The Mexico reference metadata appears inconsistent with the cited study details."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "export": "Traced CSV with source, window, unit and coverage, plus a provenance JSON, but capped at 3 by the script ceiling. Columns are renamed (ref, doi_or_url) without documentation.",
+    "repro": "Ceiling 3. Calls are listed with args and most numbers trace to c1/c2. One number is untagged and the 'subject' lane claim does not trace.",
+    "refs": "All identifiers resolve and each is tied to its stance. The ranking reason and the contrary sources are shown. No quotes are given (honestly stated), so this stops at 4.",
+    "accuracy": "Catches real anomalies: by_tier totals 15 against 8 listed, off-topic policy rows, and SSRN labelled peer-reviewed. Docked for asserting a 'subject' lane and coverage details that the record does not show.",
+    "limits": "States the missing window, the 2024-to-today gap, truncation to 3 of 8, claim-text match mode, automated stances and what is unanswered. Mostly placed in the method section rather than beside every number.",
+    "verdict": "Direct answer with a decision, low confidence with a reason, a condition that would change it, and the contrary entries named. Not explicitly bounded by window inside the verdict.",
+    "facets": "APA citations, a ranking by weight and stance are all given with grounded values. The off-topic rows in c2 are read rather than pasted."
+   },
+   "claude_bare": {
+    "export": "The CSV is labelled estimate, which is honest but unmeasured.",
+    "repro": "All figures are labelled from memory, with no recorded calls.",
+    "refs": "The DOIs given resolve. The table metadata conflicts with the reference list: r4 is 2021 in the table and 2019 in the list; r5 is 2020 and about sugar reformulation in the table, but 2023 and about obesity prevalence in the list.",
+    "accuracy": "The 9.7% figure for 2015 comes from the Health Affairs follow-up, not the cited BMJ paper. There are internal year and venue mismatches. Figures are labelled est.",
+    "limits": "Specific about memory sourcing, purchases versus consumption, selection bias and gap to today. No data limits apply.",
+    "verdict": "A substantive answer with decision, confidence and change conditions. It rests on unverified recalled figures.",
+    "facets": "Facets are answered from memory."
+   },
+   "chatgpt_bare": {
+    "export": "The CSV contains fabricated DOIs, one with a corrupted character. It is sourced 'ref:r1' and not labelled estimate.",
+    "repro": "No calls were made. Sources are remembered, and there are no numeric claims to trace.",
+    "refs": "3 of 5 DOIs do not resolve (the Andreyeva and Colchero DOIs are wrong, one is corrupted). One fabricated identifier caps this at 0 under the ceiling.",
+    "accuracy": "Multiple fabricated identifiers are presented as real citations.",
+    "limits": "Honest about having no search, partial coverage, and purchases versus intake.",
+    "verdict": "A reasonable answer in substance, but it rests on citations with fabricated identifiers.",
+    "facets": "All facets are answered from memory."
+   },
+   "chatgpt_prism": {
+    "export": "A fully traced CSV using the tool's citation strings, an honest 'unknown' window, and a provenance block. Some column names (authors_year) are undocumented renames, and c2 is missing from provenance.",
+    "repro": "All numbers trace to c1/c2, and a prism-calls block is included. The provenance JSON omits c2.",
+    "refs": "All identifiers resolve, each is tied to a stance with tier and strength as Prism states them, and contrary sources are included. No quotes, which is stated honestly. Two entries drop the year from its APA position.",
+    "accuracy": "Faithful to the record, with stances correctly framed as Prism labels. It misses the by_tier 15-vs-8 anomaly, and its coverage-metadata claim does not appear in the shown record.",
+    "limits": "Ceiling 3. States the absent window, match mode, unverified labels and what cannot be answered. Limits mostly sit in a method section.",
+    "verdict": "Direct answer, decision, low confidence with a reason, a condition that would change it, and the contrary entries acknowledged.",
+    "facets": "APA citations, a provisional ranking and stance are all grounded. The review in c2 is handled with an explicit grounded 'stance not stated'."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "export": "Traced CSV has source, window, unit and coverage, plus identifiers and a provenance block; no second table is needed for this citation request.",
+    "repro": "All numeric claims trace to c1/c2 or are explicitly interpretation, calls include arguments, and the regenerate recipe is supplied.",
+    "refs": "Both DOIs and the SSRN URL resolve in the record; each source is tied to a claim and strength is stated, but no abstract quotes are provided.",
+    "limits": "Specific caveats cover sparse results, claim matching and absent outcomes, but the time gap and coverage limits are not fully placed beside each citation.",
+    "verdict": "Answers directly with a decision, low confidence, a condition that would change it, and acknowledges the two contradictory stance labels; confidence is bounded by the sparse pull.",
+    "accuracy": "Faithfully reports the citation stances and avoids treating them as verified findings, though it calls the returned set non-complete without a stated coverage flag in c1.",
+    "facets": "Provides ranked citations and contrary entries, but does not supply the grounded review/meta-analysis or wider implied evidence facets."
+   },
+   "chatgpt_bare": {
+    "export": "The CSV cites a fabricated DOI, has no recorded-call provenance and no matching data export; the fabricated identifier triggers the invention gate.",
+    "repro": "No calls or reproducible source trail; the numerical claims are omitted but the bibliography cannot be regenerated from the supplied recipe.",
+    "refs": "Three of five DOIs fail corpus lookup, capping this at zero under the rubric.",
+    "limits": "Clearly labels memory, its publication-year window and selection limits, but misses several specific corpus limits and is not database-grounded.",
+    "verdict": "Direct answer, decision, confidence, condition and contrary limitation are present, but its support relies on fabricated references.",
+    "accuracy": "Several cited works are absent or mismatched in the corpus and the all-supporting account conflicts with the recorded citations' contrary stances.",
+    "facets": "Memory-based answer covers only part of the requested facets and supplies no grounded corpus ranking."
+   },
+   "claude_prism": {
+    "export": "A traced citation CSV and provenance are present, but the export lacks full provenance attributes and uses non-tool field names; it is not a complete decision-ready export.",
+    "repro": "Most numeric claims trace, but the asserted subject lane and coverage characterization are not supported by the supplied records, and follow-up calls did not reproduce.",
+    "refs": "Both DOIs and the SSRN URL resolve and entries are tied to claims with tier and strength; abstract quotes are absent.",
+    "limits": "States missing outcomes, matching mode, sparse return and time gap, but the coverage and lane claims are not faithfully bounded by the records.",
+    "verdict": "Gives a direct answer and confidence, but ignores that the source-ranking result includes a review and does not explain what evidence would change its conclusion in a well-grounded way.",
+    "accuracy": "Misstates the source-ranking lane and coverage and overstates that the pull did not return higher-level evidence; c2 lists a review.",
+    "facets": "Covers the citation set and contrary stances, but not the full implied evidence facets, including a grounded synthesis ranking."
+   },
+   "claude_bare": {
+    "export": "The estimate CSV has no row-level identifiers or recorded source calls, so it is an untraced memory table.",
+    "repro": "All figures are explicitly estimates from memory, with no arguments or replayable calls.",
+    "refs": "The three key identifiers resolve and the sources are tied to claims, but the bibliography has no abstract quotes and other entries are not fully traceable.",
+    "limits": "Memory status, time gap, selection and outcome limits are stated, but these do not make the asserted specifics corpus-grounded.",
+    "verdict": "Has a direct answer, decision, confidence and change condition, but relies on unverified recollections and omits contrary evidence.",
+    "accuracy": "The specific effect estimates are unverified, and the references contain apparent metadata errors, including the Berkeley DOI and publication details.",
+    "facets": "Mostly memory-derived figures and citations, with no grounded ranking from the recorded corpus."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

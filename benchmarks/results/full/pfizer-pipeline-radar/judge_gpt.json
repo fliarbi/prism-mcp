@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; the chart is explicitly an empty estimate.",
+    "comparison": "The same-trial hazard ratio contrast is clear, but it is not traceable to the supplied record.",
+    "chart": "Empty estimate chart; no plotted measurements.",
+    "drilldown": "Names areas and follow-ups, but only one follow-up executed successfully and no traced item breakdown is provided.",
+    "export": "Illustrative milestone CSV lacks full provenance and its DOI rows are not validated.",
+    "repro": "Listed calls do not reproduce the numbers; none of the numeric claims trace.",
+    "refs": "None of the three DOIs resolve in the corpus; this caps the score at zero.",
+    "accuracy": "The trial result may be plausible, but its central numeric claim is unsupported here and all three supplied DOIs fail lookup.",
+    "limits": "Specific about date gap, partial coverage, lanes and unmeasured trends; a few caveats are not placed beside every claim.",
+    "verdict": "Direct answer, decision, confidence and conditions are present, with limits acknowledged.",
+    "facets": "Covers several application areas, but has no grounded trend, coverage, or research/news comparison."
+   },
+   "B": {
+    "trend": "The plotted annual counts and growth are explicitly memory estimates, earning the estimate-level score.",
+    "comparison": "The reported trial comparison is numeric but memory-based and not verifiable against the record.",
+    "chart": "Memory estimate chart; no measured series.",
+    "drilldown": "Some follow-up calls return on-topic data, but the breakdown is memory-based and does not reach traced items.",
+    "export": "CSV is labelled estimate and carries no recorded source call.",
+    "repro": "Calls are listed, but do not reproduce the memory figures.",
+    "refs": "References are unverified and have no resolvable identifiers.",
+    "accuracy": "Memory is disclosed and the melanoma result is broadly consistent, but several specific program-status claims are unverified and one cited trial year differs from the stated 2023 readout.",
+    "limits": "States memory status and date gap, but lacks database-specific coverage, match, and censoring limits.",
+    "verdict": "Direct answer, decision, confidence and conditions are given; the support is explicitly memory-based.",
+    "facets": "Broad application facets are covered from memory, but not with grounded values."
+   },
+   "C": {
+    "trend": "Window and direction are right and endpoint growth is quantified, but the reported CAGR and peak are omitted from the trend presentation.",
+    "comparison": "Framing figures and delta are traced and the undefined dates of the windows are disclosed.",
+    "chart": "The traced chart has a stated window, unit, source and claim; it shows endpoints rather than a decomposition.",
+    "drilldown": "Names selected themes and papers, but only two follow-ups succeeded and it does not provide a second traced drilldown layer with executable coverage.",
+    "export": "Trend CSV is traced with basic provenance, but it exports only endpoints and omits other needed summary or document rows.",
+    "repro": "The main measured claims trace to the listed radar call; the news gap calculation is reproducible from the dates.",
+    "refs": "All five DOIs resolve and entries connect to claims, but there are no abstract quotes, limiting the score.",
+    "accuracy": "Correctly distinguishes overall topic volume from non-COVID volume and interprets framing and zero news matches carefully.",
+    "limits": "Places key window, lane, selection and coverage limits near claims; does not fully state the gap between the research window end and today where using that series.",
+    "verdict": "Supported direct answer and confidence, but does not state a concrete decision condition or strongest contrary evidence.",
+    "facets": "Addresses research themes, trend, framing, coverage interpretation and the research/news mismatch with grounded data."
+   },
+   "D": {
+    "trend": "Reports the correct research growth and names peak and decisive news points with dates; the annual chart itself shows only endpoints.",
+    "comparison": "Framing contrast is accurate, but the comparison table combines research and news lanes and then compares their growth rates as if directly comparable.",
+    "chart": "Charts are traced and labelled with window, unit and source, but endpoint-only research points do not show the series shape or a visible partial-period marker.",
+    "drilldown": "Provides topic themes, identified papers and several successful follow-up calls; no follow-up result is executed and folded back into the report.",
+    "export": "Two traced CSVs have partial coverage and basic provenance, but missing values lack reason fields and the export is not fully decision-ready.",
+    "repro": "All numeric claims trace and the regenerate call is specified; the trend summary plus call permits rebuilding the report's numbers.",
+    "refs": "All ten DOIs resolve and metadata supports the claims, but no verbatim abstract quotes are included.",
+    "accuracy": "Most measurements and field meanings are handled correctly; the call does not isolate non-COVID work, which the deliverable explicitly acknowledges.",
+    "limits": "States both windows, query matching, lane and coverage limits; the partial-month explanation is only an assumption, not a returned caveat.",
+    "verdict": "Direct and bounded answer with decision, confidence, conditions and contrary COVID-heavy evidence; the mixed-lane growth comparison weakens support.",
+    "facets": "Covers themes, trend, framing, adjacent under-coverage, and the non-COVID versus COVID limitation with grounded values."
+   }
+  },
+  "errors": {
+   "A": [
+    "All three listed DOIs were not found in the corpus.",
+    "Hazard-ratio and milestone claims are not traceable to the supplied database record."
+   ],
+   "B": [
+    "The charted publication counts and growth are memory estimates, not a measured radar series.",
+    "The melanoma readout is described as 2023 in the body but its reference says 2024."
+   ],
+   "C": [
+    "The trend presentation omits the available reported CAGR and peak year.",
+    "The export contains only two endpoint rows, not a full annual series."
+   ],
+   "D": [
+    "“News is growing slightly faster than research” compares ratios from different lanes and windows.",
+    "The news last-month partial-period caveat is presented as an assumption rather than a recorded fact."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is strongest for a decision-maker: it traces the broad research and news trends, names concrete papers and themes, and clearly warns that COVID-heavy data cannot answer non-COVID momentum. Its mixed-lane growth comparison and endpoint-only chart need care; C is more disciplined about the limits of the evidence but gives a thinner trend and drilldown."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 2
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

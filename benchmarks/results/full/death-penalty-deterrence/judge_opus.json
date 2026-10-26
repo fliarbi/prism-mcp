@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 5,
+    "accuracy": 3,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series; it says honestly that none was measured. It asserts no direction, so 0.",
+    "comparison": "Says explicitly that no comparison is available.",
+    "chart": "An empty chart labelled estimate. Honest but unmeasured.",
+    "drilldown": "Gives specific follow-up calls (3 of 6 executed ok) but no traced breakdown layer.",
+    "export": "An empty CSV labelled estimate, with a provenance block.",
+    "repro": "No measured numbers; it relies on one named review.",
+    "refs": "The NRC DOI resolves, is tied to a claim and has year, venue and tier. The quote differs from the corpus wording, though it matches the real report text.",
+    "accuracy": "No contradictions or fabrications.",
+    "limits": "Specific about what is unmeasured and why. At the ceiling.",
+    "verdict": "Gives a direct answer, decision, confidence and what would change it. It names no concrete contrary study.",
+    "facets": "Most facets are declared unavailable, without grounded values."
+   },
+   "B": {
+    "trend": "A traced 2017-2025 series with CAGR 4.6%, late/early ratio 1.04 and the 2020 peak of 55. The censoring caveat is carried. No decomposition.",
+    "comparison": "Traced, but it calls an 18-per-execution estimate and a moratorium null 'the same scale' when they are not. The mismatch is admitted, not resolved.",
+    "chart": "One fully traced chart with window, unit, source and caption. The stance mix, a facet the data supports, is not charted.",
+    "drilldown": "Traced stance and contribution breakdowns and documents with DOIs. Only 2 of 6 follow-ups executed ok.",
+    "export": "Two traced CSVs plus a provenance JSON. 'coverage=full' is not a tool value. At the ceiling.",
+    "repro": "39 of 39 numbers traced, calls listed with args and windows, and the memory attribution of authors is flagged.",
+    "refs": "All identifiers resolve, verbatim quotes, tiers stated, the meta-analysis ranked highest, and contrary sources included.",
+    "accuracy": "Says 'the two documents read in full agree deterrence is not established', but the documents marked read in c2 include the supporting 2003 study. 'Read in full' also overstates what the tool did.",
+    "limits": "Limits are placed next to the numbers: window gap to today, lane counts, censoring, match mode. It notes that the 2017 corpus start omits the classic literature, which changes the reading.",
+    "verdict": "Direct answer, decision, confidence with reason and what would change it. It names the contrary 2003 estimate. The confidence reason contains a misreading.",
+    "facets": "Volumes, stance, tally, effect sizes and trend are grounded. Jurisdiction-level effects are explicitly marked unavailable."
+   },
+   "C": {
+    "trend": "A memory series of executions labelled estimate, not the question's quantity.",
+    "comparison": "State murder rates from memory, labelled est.",
+    "chart": "A memory chart labelled estimate.",
+    "drilldown": "Breakdown layers are named only generically. Only 1 of 6 follow-ups executed ok.",
+    "export": "Memory tables labelled estimate.",
+    "repro": "All figures come from memory.",
+    "refs": "Only the NRC entry carries a resolvable identifier. Berk's venue and year are inconsistent between the table and the reference list. The NRC 'quote' is a self-flagged paraphrase.",
+    "accuracy": "Contains a garbled range '-18 to +?'. The Berk citation is internally inconsistent. Many memory specifics are presented in tables.",
+    "limits": "Specific about memory sourcing and the date gap.",
+    "verdict": "Ceiling 0: an untagged number appears in the verdict.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "D": {
+    "trend": "Traced series; +13 and +43.3% recompute exactly, with the peak and censoring noted. It says 'rises' while also reporting the tool's 'flat'.",
+    "comparison": "The 1:1 tally is traced and its baseline and caveat are stated. It is trivial and does not test the substantive contrast.",
+    "chart": "One traced chart with full metadata. The stance mix is not charted.",
+    "drilldown": "Volumes, stance and documents with DOIs are traced. 3 of 4 follow-ups ran ok. Nothing was folded back.",
+    "export": "Two traced CSVs, referenced from the prose, with a provenance JSON.",
+    "repro": "18 of 18 traced, and calls are listed with args and windows.",
+    "refs": "Ceiling 1: DOIs flagged as not found (a markdown artefact). The content is otherwise good.",
+    "accuracy": "Attributes to c1 a 'reachability checks' coverage statement that does not appear in the record.",
+    "limits": "Window, lane, a 144-day gap computed correctly, censoring and stance-label meaning are all placed. It misses that the 2017 corpus start excludes the classic literature.",
+    "verdict": "Complete and consistent with its data. It names the supporting study as contrary evidence.",
+    "facets": "Facets are grounded or explicitly marked no-data."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Claims the two read documents agree deterrence is not established; the read set in c2 includes the supporting 2003 study",
+    "Presents per-execution estimate and moratorium null as 'same scale'"
+   ],
+   "C": [
+    "Garbled effect range '-18 to +?'",
+    "Berk citation inconsistent (Criminology & Public Policy 2006 vs JELS 2005)",
+    "Paraphrase placed in quote column for NRC"
+   ],
+   "D": [
+    "Coverage 'reachability checks' statement attributed to c1 but absent from the record"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both grounded their numbers in the database and reached the same calibrated answer: deterrence is unproven rather than disproven. B wins on fully resolvable, tiered references and on limits that change the reading, notably that the corpus starts in 2017 and so omits the classic deterrence literature. A was honest but empty. C filled gaps with memory figures and inconsistent citations, and put an untagged number in its verdict."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 5,
+   "accuracy": 3,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 5,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; it clearly says the trend cannot be measured.",
+    "comparison": "Only a qualitative comparison of proposed school structures; no measured common-scale contrast.",
+    "chart": "No chart included.",
+    "drilldown": "Names possible questions and calls, but has no traced breakdown or executed result.",
+    "export": "No CSV or provenance record.",
+    "repro": "The policy source is named, but no corpus calls or repeatable research measurements are provided.",
+    "refs": "One resolvable official policy reference supports its claims, but the evidence base is very limited.",
+    "accuracy": "Carefully distinguishes policy proposals from achieved outcomes and makes no unsupported measured claims.",
+    "limits": "States the missing corpus, lane, window, coverage and implementation evidence beside the claims.",
+    "verdict": "Gives a decision, confidence, and what evidence would change it, bounded by the lack of implementation data.",
+    "facets": "Covers policy design and targets, but leaves the thin-literature question and measured trends unanswered."
+   },
+   "B": {
+    "trend": "The expenditure chart is explicitly an estimate from memory, earning the estimate-only anchor.",
+    "comparison": "Numeric target-versus-estimate comparisons are stated, but the actuals are unverified.",
+    "chart": "The chart is honestly labelled as an approximate memory estimate.",
+    "drilldown": "Provides generic breakdown layers and follow-up calls; only two of six calls executed successfully.",
+    "export": "The CSV is explicitly estimated and lacks traceable measured rows.",
+    "repro": "Several numeric claims are untagged and no recorded calls reproduce the deliverable.",
+    "refs": "References are generic report links without item-level evidence or supporting quotes.",
+    "accuracy": "Memory claims about implementation and recent developments go beyond the reference record as measured findings.",
+    "limits": "Acknowledges missing corpus data and estimate status, but does not give the specific limits for each claimed figure.",
+    "verdict": "The script flags an untagged 6% figure in the verdict, triggering its zero ceiling.",
+    "facets": "Most coverage, research, and trend facets are memory claims or omitted."
+   },
+   "C": {
+    "trend": "Research change is quantified and the monthly news series is traced, but the chart does not visibly mark the censoring boundary.",
+    "comparison": "The critical-share comparison is numeric and caveated for differing classifiers, though it does not fully answer a like-for-like contrast.",
+    "chart": "The traced monthly chart supports a stated claim, but the censoring caveat is not visibly marked on the chart.",
+    "drilldown": "Includes stance and monthly breakdowns, but only two of seven proposed follow-ups executed successfully.",
+    "export": "Provides traced monthly and stance CSVs, but not every table needed for the stated claims.",
+    "repro": "Recorded calls and arguments support the core measures; some narrative-derived values and the full regeneration recipe fall short of the top anchor.",
+    "refs": "Identifiers resolve and several quotes are supplied, but not every cited item has a verbatim supporting quote.",
+    "accuracy": "Mostly reads fields correctly and separates windows; it does not flag all reference-record anomalies.",
+    "limits": "Places specific windows, censoring, match mode, coverage, classification limits, and the outcome-data gap near the relevant claims.",
+    "verdict": "Direct and bounded, but the script's ceiling reflects a support or consistency limitation in the verdict.",
+    "facets": "Covers most implied facets, but overlap, seasonality, and some research-versus-news implications remain incomplete."
+   },
+   "D": {
+    "trend": "The full monthly series and change are traced, but censoring is explained in the method rather than visibly marked on the chart.",
+    "comparison": "The June 2024 to May 2026 comparison recomputes exactly and is clearly limited to mention volume.",
+    "chart": "The series is fully traced and tied to a claim, but the censoring boundary is not visibly marked.",
+    "drilldown": "No proposed follow-up call executed successfully, and there is no item-level breakdown.",
+    "export": "The monthly CSV is traced and has provenance, but the deliverable omits an export for other needed research figures.",
+    "repro": "Calls, arguments, windows, and provenance support regeneration of the reported measurements.",
+    "refs": "All listed identifiers resolve and are tied to claims; the references do not include the full tiered and contrary-source treatment for the top anchor.",
+    "accuracy": "Claims match the record and distinguish corpus attention from policy outcomes, though it does not catch every anomaly.",
+    "limits": "States the relevant windows, censoring, lane, match mode, and coverage limits; the implications of the gap are only partly developed.",
+    "verdict": "Gives a supported decision, confidence, conditions that would change it, and a bounded reading of the evidence.",
+    "facets": "Addresses evidence thinness and research-news differences, but omits some implied facets such as term overlap and seasonality."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Presents unverified spending, GER, and implementation claims from memory; the script flags an untagged 6% verdict figure."
+   ],
+   "C": [
+    "Calls the recent news pattern flat and reports the 0.94 recent-window ratio; the prose should keep that window distinct from the 1.21 ratio in the longer brief."
+   ],
+   "D": [
+    "The CSV labels coverage as partial but does not explain that the latest plotted month is May 2026 and the censored June bucket is excluded from the series."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision brief: its measured comparisons, repeatable calls, and concise recommendation are well bounded by what the corpus can show. C covers more facets and evidence layers, but has weaker drill-down execution and a less decisive verdict; neither establishes implementation or educational impact."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 2
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 5,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

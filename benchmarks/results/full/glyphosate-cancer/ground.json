@@ -1,0 +1,643 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1049,
+  "charts": [
+   {
+    "id": "nhl-rr-by-study",
+    "title": "Reported relative risk of NHL, selected glyphosate analyses",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "AHS cohort, ever vs never use (2018)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Leon pooled cohorts (2019)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Zhang meta-analysis, highest exposure (2019)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "nhl_rr.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many research papers address glyphosate and cancer, by year and stance?",
+    "args": {
+     "term": "glyphosate cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'glyphosate cancer'",
+    "seconds": 7.4,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers contradict a glyphosate–NHL link?",
+    "args": {
+     "term": "glyphosate non-Hodgkin lymphoma",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... lymphoma', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate non-Hodgkin lymphoma', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What effect sizes are reported, with population?",
+    "args": {
+     "term": "glyphosate NHL relative risk"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ate NHL relative risk'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate NHL relative risk', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of glyphosate and cancer changed?",
+    "args": {
+     "term": "glyphosate cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'glyphosate cancer' in this window",
+    "seconds": 2.9,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How do news outlets compare in framing?",
+    "args": {
+     "term": "glyphosate cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'glyphosate cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "Which studies are most cited?",
+    "args": {
+     "term": "glyphosate carcinogenicity",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ogenicity', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate carcinogenicity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 32,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 13,
+   "untagged_examples": [
+    "0.9 — Quantified change: across 2018–2019, point estimates went from 0.9 to 1.41, a spread of 0.",
+    "1.41 — Quantified change: across 2018–2019, point estimates went from 0.9 to 1.41, a spread of 0.",
+    "0.51 — Quantified change: across 2018–2019, point estimates went from 0.9 to 1.41, a spread of 0.",
+    "1.0 — Baseline: RR = 1.0 means no excess NHL risk versus unexposed people.",
+    "0.9 — | AHS cohort [r6] | 0.9 | −10% |",
+    "10% — | AHS cohort [r6] | 0.9 | −10% |",
+    "1.12 — | Leon pooled cohorts [r7] | 1.12 | +12% |",
+    "+12% — | Leon pooled cohorts [r7] | 1.12 | +12% |"
+   ]
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 133,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1164,
+  "charts": [
+   {
+    "id": "research_by_year",
+    "title": "Glyphosate-lane typed research papers per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "effect_sizes.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 16,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which cohort and case-control studies report glyphosate and NHL risk?",
+    "args": {
+     "term": "glyphosate non-Hodgkin lymphoma cohort",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 2, \"papers\": [{\"id\": \"W4224539935\", \"title\": \"Environmental pesticide exposure and non-Hodgkin lymphoma survival: a population-based study\", \"authors\": [\"Christina Poh\", \"John D. McPherson\", \"Joseph M. Tuscano\", \"Qian Li\", \"Arti Parikh‐Patel\", \"Christoph Franz Adam Vogel\", \"Myles Cockburn\", \"Theresa H.M. Keegan\"], \"venue\": \"BMC Medicine\", \"year\": 2022, \"date\": \"2022-04-26\", \"doi\": \"10.1186/s12916-022-02348-7\", \"url\": \"https://doi.org/10.1186/s12916-022-02348-7\", \"cited_by"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers are critical of the safety evidence?",
+    "args": {
+     "term": "glyphosate carcinogenicity",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'glyphosate carcinogenicity' — try expand=true, or a broader phrase",
+    "seconds": 4.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.citations",
+    "question": "How do citations cluster around the IARC 2015 classification?",
+    "args": {
+     "term": "IARC glyphosate 2015"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'IARC glyphosate 2015'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='IARC glyphosate 2015', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does news framing of glyphosate and cancer differ across outlets?",
+    "args": {
+     "term": "glyphosate cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'glyphosate cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Where is glyphosate-cancer research produced?",
+    "args": {
+     "term": "glyphosate cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'glyphosate cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.stance_trends",
+    "question": "How has stance on glyphosate carcinogenicity shifted over time?",
+    "args": {
+     "term": "glyphosate cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'glyphosate cancer'",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 62,
+   "traced": 62,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 6,
+   "found_in_corpus": 5,
+   "not_found": [
+    "10.3760/cma.j.cn121094-20240422-00174"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 135,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 892,
+  "charts": [
+   {
+    "id": "glyphosate-nhl-cohort",
+    "title": "Non-Hodgkin lymphoma risk by glyphosate exposure group in pesticide applicators",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Rate ratio vs never use",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "glyphosate_nhl_effects.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which human studies drive the disagreement about glyphosate and non-Hodgkin lymphoma?",
+    "args": {
+     "term": "glyphosate non-Hodgkin lymphoma occupational exposure",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'glyphosate non-Hodgkin lymphoma occupational exposure' — try expand=true, or a broader phrase",
+    "seconds": 16.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How have research stances on glyphosate carcinogenicity changed over time?",
+    "args": {
+     "term": "glyphosate cancer",
+     "window": {
+      "from": "2000-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2000-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What are the measured document counts and read/unread counts by corpus and lane?",
+    "args": {
+     "term": "glyphosate cancer",
+     "window": {
+      "from": "2000-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='glyphosate cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2000-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What is the research and news coverage trend for glyphosate and cancer?",
+    "args": {
+     "term": "glyphosate cancer",
+     "window": {
+      "from": "2000-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2000-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 7,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "1.41 — - Human evidence supporting an association in a high-exposure subgroup: Zhang et al., 2019"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 2,
+   "not_found": [
+    "10.1002/14356007.w112.pub2"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 953,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Glyphosate subject-lane typed research papers by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_volume.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "cancer_relative_risks.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which human occupational cohort studies report glyphosate exposure and NHL outcomes, and what are their exposure definitions and effect estimates?",
+    "args": {
+     "term": "glyphosate occupational exposure non-Hodgkin lymphoma cohort",
+     "orientation": "supporting",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'glyphosate occupational exposure non-Hodgkin lymphoma cohort' — try expand=true, or a broader phrase",
+    "seconds": 10.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which evidence reviews or agencies conclude that glyphosate is carcinogenic, and what evidence tiers and exposure contexts do they use?",
+    "args": {
+     "term": "glyphosate carcinogenicity cancer hazard assessment",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'glyphosate carcinogenicity cancer hazard assessment' — try expand=true, or a broader phrase",
+    "seconds": 2.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "What studies or assessments report null or inverse cancer associations for glyphosate, and how do they address bias and confounding?",
+    "args": {
+     "term": "glyphosate cancer null association epidemiology",
+     "orientation": "counter",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'glyphosate cancer null association epidemiology' — try expand=true, or a broader phrase",
+    "seconds": 2.4,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How did news coverage of glyphosate and cancer change over time, and which events drove peaks?",
+    "args": {
+     "term": "glyphosate cancer",
+     "window": "2019-01-01..2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01..2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 31,
+   "traced": 31,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 105,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 2,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Event series is labelled as an estimate, sourced from memory and not traceable. Capped at 1.",
+    "comparison": "Compares the 3rd and 4th events (68% vs 84%) from memory and labels it an estimate. Cannot be checked.",
+    "chart": "Chart is honestly labelled as an estimate, which earns 1.",
+    "drilldown": "No traced breakdown layer. Only 3 of 6 follow-ups executed.",
+    "export": "CSV is labelled as an estimate.",
+    "repro": "All numbers are from memory and labelled as such.",
+    "refs": "The Hughes 2018 DOI is real. The other three references point only to homepage URLs, not specific documents. No quotes.",
+    "accuracy": "The 84%, the April 2024 declaration, the GBR event list and the 2025 tipping-point report are plausible and correct. However, 68% is attributed both to the 3rd event and to the 4th event up to mid-2024, which is an internal inconsistency.",
+    "limits": "Specific about the memory-only basis and the roughly 4-month gap since its knowledge ends. No data limits apply because no data was used.",
+    "verdict": "Has an answer, a decision, low confidence with its reason, and what would change it. It rests on memory.",
+    "facets": "Facets are answered from memory only."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "None given.",
+    "chart": "No chart.",
+    "drilldown": "All five follow-ups failed.",
+    "export": "None.",
+    "repro": "No numbers. Everything is labelled as memory.",
+    "refs": "Three of the four DOIs are not found. The Sully and Skirving metadata appear fabricated.",
+    "accuracy": "Fabricated DOIs and paper metadata are presented as fact.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "Gives a direct answer with medium confidence, but has no data support.",
+    "facets": "The answer is qualitative and from memory."
+   },
+   "C": {
+    "trend": "Gives traced endpoints, the 7.0% CAGR, the peak year, and +71%. It notes that only endpoints were returned. The news point at 0 is flagged as incomplete.",
+    "comparison": "Early vs late third for both papers and news, plus the framing delta. All figures trace and the baseline is defined. It notes that the news window differs from the research window.",
+    "chart": "Chart is traced, with window, unit and source. However, it shows only volume as two endpoint bars. Framing and news are not charted.",
+    "drilldown": "New-work table carries DOIs. 3 of 7 follow-ups returned data. The geography-null claim is not in the record.",
+    "export": "The CSV window (2017–2025) is applied to the news row, but the news data covers 2019–2026. The CSV is not referenced from the prose and only one table is exported.",
+    "repro": "45 of 45 numbers traced. The calls block has args, and there is a provenance JSON.",
+    "refs": "Five DOIs resolve and each is tied to a claim with year and venue. No quotes or tier.",
+    "accuracy": "Fields are read correctly. It catches the anomaly that the zero news counts come from taxonomy labels and flags the incomplete final news month.",
+    "limits": "Window ends, the gap to today, censoring, match mode and lane are all placed next to the relevant numbers.",
+    "verdict": "Concise. Includes a decision, confidence with its reason, and what would change it. Notes the unchanged framing as contrary evidence.",
+    "facets": "Volume, news, framing, new work, and a grounded 'cannot tell' on under-coverage."
+   },
+   "D": {
+    "trend": "Gives traced endpoints, CAGR, +71.2% and the news peak. Notes that no annual series was returned.",
+    "comparison": "The framing ratio 0.97 recomputes correctly, and it states that the window boundaries are undated.",
+    "chart": "Line chart of the two traced endpoints. Volume only.",
+    "drilldown": "Evidence list with DOIs. The c1 call is declared without a feature or args, and only 2 of 5 follow-ups returned data.",
+    "export": "Traced CSV with provenance that the prose references. Only the endpoints table is exported.",
+    "repro": "17 of 21 numbers traced. The c1 call is declared without args.",
+    "refs": "Four DOIs resolve, each tied to a claim with venue and orientation. No quotes.",
+    "accuracy": "The gap is miscalculated: 298 days, against 296 when recomputed. It also does not flag the 0 news endpoint as an incomplete month.",
+    "limits": "Window gaps, lane, coverage and match mode are placed next to the numbers. Explicit about what cannot be measured.",
+    "verdict": "Complete and bounded, and names the small framing shift.",
+    "facets": "All facets are addressed, including a grounded 'no data' on under-coverage."
+   }
+  },
+  "errors": {
+   "A": [
+    "68% is attributed both to the 3rd event and to the 4th event up to mid-2024, an internal inconsistency"
+   ],
+   "B": [
+    "Fabricated DOIs: 10.1038/s41586-019-1729-9, 10.1038/s41558-020-0798-2 and 10.1038/s43017-021-00186-8, with mismatched titles and venues"
+   ],
+   "C": [
+    "Claims the geography field was null, which is not in the reference record",
+    "The CSV window 2017–2025 is applied to the news row, whose data covers 2019–2026"
+   ],
+   "D": [
+    "The gap is given as 298 days, but recomputes to 296",
+    "The c1 call is declared without a feature or args"
+   ]
+  },
+  "best": "C",
+  "verdict": "C and D both grounded their answers in the radar call and read its traps correctly, notably the taxonomy-label zeros. C went further: it exposed the new-work layer with DOIs, compared research and news on early-vs-late thirds, and flagged the incomplete final news month, so it gives a decision-maker the most usable picture. A gave honest, labelled memory about the 4th global event but nothing measured. B fabricated three DOIs."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 2,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

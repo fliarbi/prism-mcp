@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison is made.",
+    "chart": "No chart.",
+    "drilldown": "Follow-up calls use placeholder args. All 7 failed when executed.",
+    "export": "No data exported.",
+    "repro": "No numbers, but it is honest that nothing was measured.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Specific about what is unmeasured and why.",
+    "verdict": "'Cannot measure' does not answer the question.",
+    "facets": "No facet is answered."
+   },
+   "B": {
+    "trend": "Full traced series with window. Change quantified: 7.4x, 3.49x, CAGR 184.8%. Peaks named with dates. Decomposed into critical vs total (8.3x, critical share 85.2% to 95.0%).",
+    "comparison": "Neg/pos ratio 1.20 vs baseline 0.58 (2.07x), with the baseline defined. Monthly range given. The regional contrast the question poses is not measured on one scale.",
+    "chart": "One fully traced volume chart. Tone, places and themes are not charted.",
+    "drilldown": "Breakdowns into themes, entities and places, plus headlines with date, publisher and url. 4 of 6 follow-ups returned data. No follow-up result was folded back into the report.",
+    "export": "Monthly CSV and places CSV are traced, with a provenance JSON block. Capped at 3 by the ceiling.",
+    "repro": "The script traced 123 of 123 numbers. The call is listed with args. 'Afghanistan 41, lift 4.6' does not appear in the geography rows of the record I checked.",
+    "refs": "Ceiling is 1. News items carry date, publisher and url.",
+    "accuracy": "Fields are mostly read correctly: critical is not treated as negative, mislabelled entities are flagged, and the US low lift is explained. One untraceable row (Afghanistan). The sentence on the geography label window is garbled.",
+    "limits": "Capped at 3. States the window end, the 5-month gap to today, match mode, enrichment lag and that critical is undefined.",
+    "verdict": "Gives an answer, a decision, confidence with its reason, and what would change it. Addresses Ukraine-led coverage plus India–Pakistan and Middle East episodes.",
+    "facets": "Covers volume, tone, themes, places, entities, critical headlines and concentration. Sindoor, Iran and Israel are grounded."
+   },
+   "C": {
+    "trend": "Index from memory, labelled as an estimate.",
+    "comparison": "Comparison is only proposed, not made.",
+    "chart": "Chart from memory, labelled as an estimate.",
+    "drilldown": "Follow-ups are generic. 1 of 5 succeeded.",
+    "export": "Estimate CSV, labelled.",
+    "repro": "Ceiling is 0.",
+    "refs": "None, and it honestly declines to give unverifiable headlines.",
+    "accuracy": "Memory claims are labelled. Nothing contradicts the record.",
+    "limits": "Clear about what is unmeasured and about the gap to today.",
+    "verdict": "Gives a direction from memory, with low confidence and a decision.",
+    "facets": "Facets are answered from memory."
+   },
+   "D": {
+    "trend": "Traced series, quantified (3.49x, CAGR 184.8%), peaks named. It wrongly treats May 2026 as censored, although that month is not a partial period. No decomposition.",
+    "comparison": "Ratio vs baseline, with the baseline defined and traced.",
+    "chart": "Only a volume chart.",
+    "drilldown": "One traced layer plus 3 headlines with urls. Only 1 of 5 follow-ups succeeded.",
+    "export": "Only the monthly table, which is marked coverage=partial on a misreading of the censor. Provenance block is present.",
+    "repro": "48 of 49 numbers traced. The call is listed with args.",
+    "refs": "Ceiling is 1.",
+    "accuracy": "Says the last plotted month is censored. The censor cuts at 2026-06-01, so May is complete.",
+    "limits": "Placed limits: window gap, match mode, placed_pct denominator, sample-based publisher shares.",
+    "verdict": "The answer is generic. It ignores the Middle East and South Asia distinction and names no contrary evidence.",
+    "facets": "Themes and places are thin. The Middle East and South Asia stories are not addressed."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Afghanistan 41 articles, lift 4.6 is not in the recorded geography rows",
+    "Garbled sentence: 'Labels cover May 2025–April 2026 data only up to 2026-05-01'"
+   ],
+   "C": [],
+   "D": [
+    "Treats May 2026 as the censored month. The censor is at 2026-06-01 and May has partial_period=false"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both traced the real series, but B went further. It decomposed critical vs total, read lift to separate distinctive places (Ukraine, Russia) from background ones (US), and surfaced the India–Pakistan (Operation Sindoor) and Middle East strands the question hinges on, with dated headlines that carry urls. D was accurate in outline but generic, and it misread the censor as applying to May. A and C were honest that they had no data, so they offer a decision-maker nothing measured."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

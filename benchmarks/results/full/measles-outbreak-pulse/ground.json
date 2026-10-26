@@ -1,0 +1,634 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 585,
+  "charts": [
+   {
+    "id": "us_cases",
+    "title": "US confirmed measles cases per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "US cases",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "us_measles_cases.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Monthly volume of measles outbreak articles, 2023-01 to 2026-10?",
+    "args": {
+     "term": "measles outbreak",
+     "from": "2023-01-01",
+     "to": "2026-10-22",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2023-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Is tone more negative than the corpus baseline?",
+    "args": {
+     "term": "measles outbreak",
+     "baseline": "all news",
+     "metric": "sentiment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'metric': 'sentiment'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='measles outbreak', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sentiment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which places are covered and what is placed_pct?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.2,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 2587, \"share_pct\": 46.1, \"lift\": 2.0}, {\"label\": \"canada\", \"articles\": 470, \"share_pct\": 8.4, \"lift\": 2.5}, {\"label\": \"mexico\", \"articles\": 376, \"share_pct\": 6.7, \"lift\": 11.1}, {\"label\": \"georgia\", \"articles\": 291, \"share_pct\": 5.2, \"lift\": 3.1}, {\"label\": \"united kingdom\", \"articles\": 281, \"share_pct\": 5.0, \"lift\": 1.0}, {\"label\": \"australia\", \"articles\": 120, \"share_pct\": 2.1, \"lift\": 0.4}, {\"label\": \"samoa\", \"articles\": 96, \"share_pct\": 1.7, \"lift\": 194.1}, {\"label\": \"new zealand\", \"articles\": 87, \"share_pct\": 1.5, \"lift\": 2.5}, {\"label\": \"bangladesh\", \"articles\": 68, \"share_pct\": 1.2, \"lift\": 5.9}, {\"label\": \"india\", \""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which critical headlines, with date, publisher and url?",
+    "args": {
+     "term": "measles outbreak",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.7,
+    "sample": "{\"articles\": [{\"target_id\": \"69e29b35bd7b10565a36e3ae\", \"url\": \"https://www.latestly.com/world/measles-outbreak-in-bangladesh-emergency-vaccination-drive-launched-amid-rising-child-deaths-7381617.html\", \"title\": \"Measles Outbreak in Bangladesh: Emergency Vaccination Drive Launched Amid Rising Child Deaths | 🌎 LatestLY\", \"excerpt\": \"Bangladesh has launched an emergency vaccination campaign targeting over one million children as a fast-spreading measles outbreak continues to impact large parts of the country. Health officials have confirmed 17 deaths so far, with more than 7,500 suspected infections and over 100 additional suspe\", \"publisher\": \"latestly.com\", \"published\": \"2026-04-06 11:14:03\""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which outlets dominate (source concentration)?",
+    "args": {
+     "term": "measles outbreak",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which organisations and people are named most?",
+    "args": {
+     "term": "measles outbreak",
+     "group_by": "entity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='entity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.stance_trends",
+    "question": "Has research attention tracked outbreaks?",
+    "args": {
+     "term": "measles vaccination hesitancy"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'measles vaccination hesitancy'",
+    "seconds": 2.1,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 20,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "95% — - Themes probably present in coverage (interpretation, not measured): vaccine hesitancy, M",
+    "10 — - Windows: case data 2023-01-01 to 2025-12-31, so a gap of about 10 months to today (2026-"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 132,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1335,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly measles-mentioning articles",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "measles_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 94,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "measles_places.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 20,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How large was Bangladesh coverage by month in 2026?",
+    "args": {
+     "term": "measles",
+     "country": "bangladesh",
+     "since": "2026-01-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.3,
+    "sample": "{\"points\": [{\"period\": \"2026-01-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2026-02-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2026-03-01\", \"articles\": 18, \"critical\": 18, \"negative\": 14, \"positive\": 4, \"mean_priority\": 8.11, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2026-04-01\", \"articles\": 219, \"critical\": 215, \"negative\": 183, \"positive\": 35, \"mean_priority\": 8.1, \"critical_pct\": 98.2, \"partial_period\": false}, {\"period\": \"2026-05-01\", \"articles\": 31, \"critical\": 31, \"ne"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What happened from June to October 2026, after the censor date?",
+    "args": {
+     "term": "measles",
+     "since": "2026-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.1,
+    "sample": "{\"points\": [{\"period\": \"2026-05-01\", \"articles\": 914, \"critical\": 816, \"negative\": 751, \"positive\": 153, \"mean_priority\": 7.67, \"critical_pct\": 89.3, \"partial_period\": false}], \"total\": 914, \"critical_total\": 816, \"trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"critical_trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"growth_note\": \"Zero-count periods included; partial boundary buckets excluded from growth.\", \"country\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which articles drove the March 2025 peak?",
+    "args": {
+     "term": "measles",
+     "since": "2025-02-01",
+     "until": "2025-05-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-05-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does US coverage compare with non-US coverage over time?",
+    "args": {
+     "term": "measles",
+     "country": "united states",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='measles', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='united states', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which publishers dominate the whole window, not only the recent sample?",
+    "args": {
+     "term": "measles",
+     "level": "country",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.3,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 11109, \"share_pct\": 42.5, \"lift\": 1.9}, {\"label\": \"canada\", \"articles\": 1682, \"share_pct\": 6.4, \"lift\": 1.9}, {\"label\": \"united kingdom\", \"articles\": 1541, \"share_pct\": 5.9, \"lift\": 1.2}, {\"label\": \"mexico\", \"articles\": 1052, \"share_pct\": 4.0, \"lift\": 6.7}, {\"label\": \"georgia\", \"articles\": 816, \"share_pct\": 3.1, \"lift\": 1.9}, {\"label\": \"australia\", \"articles\": 728, \"share_pct\": 2.8, \"lift\": 0.6}, {\"label\": \"new zealand\", \"articles\": 608, \"share_pct\": 2.3, \"lift\": 3.7}, {\"label\": \"india\", \"articles\": 566, \"share_pct\": 2.2, \"lift\": 0.3}, {\"label\": \"samoa\", \"articles\": 348, \"share_pct\": 1.3, \"lift\": 151.2}, {\"label\": \"brazil\","
+   },
+   {
+    "id": "f6",
+    "feature": "research.statistics",
+    "question": "How do official case counts compare with the news series?",
+    "args": {
+     "term": "measles cases",
+     "since": "2024-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='measles cases', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 109,
+   "traced": 109,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 141,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 319,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many measles-outbreak news items appeared each month, and how did monthly volume change?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 15, \"critical\": 14, \"negative\": 12, \"positive\": 2, \"mean_priority\": 7.87, \"critical_pct\": 93.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 9, \"critical\": 9, \"negative\": 7, \"positive\": 2, \"mean_priority\": 7.78, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 29, \"critical\": 28, \"negative\": 18, \"positive\": 10, \"mean_priority\": 7.83, \"critical_pct\": 96.6, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 23, \"critical\": 22, \"negative\": 19, \"positive\": 4, \"mean_priority\": 7.65, \"critical_pct\": 95.7, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 8, \"critical\": 6"
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How did measles-outbreak coverage compare with a defined corpus or topic baseline?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'measles outbreak'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='measles outbreak', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What were the dominant themes and named organisations and people?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 29.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"measles outbreak\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 274, \"entity_labelled_articles\": 2997, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 3978, \"critical_articles\": 3743, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 14:37:17\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Where were stories placed, and what share had an assigned place?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 2587, \"share_pct\": 46.1, \"lift\": 2.0}, {\"label\": \"canada\", \"articles\": 470, \"share_pct\": 8.4, \"lift\": 2.5}, {\"label\": \"mexico\", \"articles\": 376, \"share_pct\": 6.7, \"lift\": 11.1}, {\"label\": \"georgia\", \"articles\": 291, \"share_pct\": 5.2, \"lift\": 3.1}, {\"label\": \"united kingdom\", \"articles\": 281, \"share_pct\": 5.0, \"lift\": 1.0}, {\"label\": \"australia\", \"articles\": 120, \"share_pct\": 2.1, \"lift\": 0.4}, {\"label\": \"samoa\", \"articles\": 96, \"share_pct\": 1.7, \"lift\": 194.1}, {\"label\": \"new zealand\", \"articles\": 87, \"share_pct\": 1.5, \"lift\": 2.5}, {\"label\": \"bangladesh\", \"articles\": 68, \"share_pct\": 1.2, \"lift\": 5.9}, {\"label\": \"india\", \""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical headlines appeared, with publication dates and URLs?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.6,
+    "sample": "{\"articles\": [{\"target_id\": \"69e29b35bd7b10565a36e3ae\", \"url\": \"https://www.latestly.com/world/measles-outbreak-in-bangladesh-emergency-vaccination-drive-launched-amid-rising-child-deaths-7381617.html\", \"title\": \"Measles Outbreak in Bangladesh: Emergency Vaccination Drive Launched Amid Rising Child Deaths | 🌎 LatestLY\", \"excerpt\": \"Bangladesh has launched an emergency vaccination campaign targeting over one million children as a fast-spreading measles outbreak continues to impact large parts of the country. Health officials have confirmed 17 deaths so far, with more than 7,500 suspected infections and over 100 additional suspe\", \"publisher\": \"latestly.com\", \"published\": \"2026-04-06 11:14:03\""
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which publishers contributed the most coverage?",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"measles outbreak\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 274, \"entity_labelled_articles\": 2997, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 3978, \"critical_articles\": 3743, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 14:37:17\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 96,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 813,
+  "charts": [
+   {
+    "id": "measles-monthly-coverage",
+    "title": "Monthly news articles mentioning measles",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "measles_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 23,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.browse",
+    "question": "Which specific outbreak stories and publishers drove the March 2025 coverage peak?",
+    "args": {
+     "term": "measles outbreak",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly trends in outbreak-specific coverage by country?",
+    "args": {
+     "term": "measles outbreak",
+     "country": "United States",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.2,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 6, \"critical\": 6, \"negative\": 6, \"positive\": 0, \"mean_priority\": 8.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 3, \"critical\": 3, \"negative\": 3, \"positive\": 0, \"mean_priority\": 7.67, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 12, \"critical\": 12, \"negative\": 8, \"positive\": 4, \"mean_priority\": 7.83, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 11, \"critical\": 11, \"negative\": 10, \"positive\": 1, \"mean_priority\": 7.73, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 1, \"critical\": 1, \""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does coverage of measles outbreaks compare with other infectious-disease topics over the same period?",
+    "args": {
+     "terms": [
+      "measles outbreak",
+      "polio outbreak"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.7,
+    "sample": "{\"terms\": [\"measles outbreak\", \"polio outbreak\"], \"rows\": [{\"term\": \"measles outbreak\", \"articles\": 3978, \"share_pct\": 97.2, \"critical\": 3743, \"direction\": \"rising\", \"growth\": 8.4, \"tone_ratio\": 11.15, \"vs_baseline\": 19.22, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 15, \"critical\": 14, \"negative\": 12, \"positive\": 2, \"mean_priority\": 7.87, \"critical_pct\": 93.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 9, \"critical\": 9, \"negative\": 7, \"positive\": 2, \"mean_priority\": 7.78, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 29, \"critical\": 28, \"negative\": 18, \"positive\": 10, \"mean_priority\": 7.83, \"critical_pct\": 96.6, \"partial_period"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which critical outbreak headlines were published in the peak month?",
+    "args": {
+     "term": "measles outbreak",
+     "since": "2025-03-01",
+     "until": "2025-04-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "What is the article-level source distribution for outbreak-specific coverage?",
+    "args": {
+     "term": "measles outbreak",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 33.3,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"measles outbreak\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 274, \"entity_labelled_articles\": 2997, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 3978, \"critical_articles\": 3743, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 14:37:17\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 45,
+   "traced": 45,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 91,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

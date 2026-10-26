@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The full 2017-2025 series traces to c1 with the window stated. Every year-on-year change, the 2.485x ratio, the 12.1% CAGR and the 570/yr average gain recompute exactly. The slowdown from 23-24% to 4-13% is read correctly, and the scenario central and bounds are split out as a decomposition.",
+    "comparison": "Compares linear drift with the no-change baseline on one scale (MAE 172.2 vs 586.0; delta -413.8; ratio 29%), all exact. It carries the caveat that selection and scoring used the same folds. The implied 7.5%/6.9%/6.5% central growth links observed to scenario. It does not test the slowdown as a contrast on its own.",
+    "chart": "The single chart traces 100%: observed series plus central and both sensitivity bounds. Window, unit, source and claim are all present. No partial year is plotted.",
+    "drilldown": "Its two 'layers' are just the year axes of c1 and c2, not a breakdown reaching an item. Only 2 of 7 follow-ups executed ok.",
+    "export": "Two traced CSVs with source, window, unit and coverage. Both are referenced in the prose. Year serves as the row identifier. A provenance JSON block is included.",
+    "repro": "A prism-calls block lists both calls with args, and there is a JSON block with the capture date. 65 of 68 numbers trace and derived figures recompute. A few numbers do not trace, so 4.",
+    "accuracy": "No contradictions. Fields are read by their definitions: sensitivity bounds are not CIs, and records are not studies. Interpretation is labelled. It notes the in-sample selection bias but catches no deeper anomaly.",
+    "limits": "Specific limits are stated: the 10-month gap to today, title-only match, no normalization, coverage check as reachability only, and bounds not CIs. It names what would close the gap (abstract matching, normalization). Most limits sit in a section rather than beside each number.",
+    "verdict": "Gives a direct answer, a decision, medium confidence with a reason, and a falsifiable trigger (2026 count outside 7,836-8,570). It does not name the post-2019 deceleration or the 2025 rebound as contrary to the linear assumption inside the verdict.",
+    "facets": "Answers growth, slowdown, the forward range and the backtest with grounded values. Normalization against corpus growth is explicitly flagged as unmeasured."
+   },
+   "B": {
+    "trend": "The series traces with its window. It quantifies only first vs last (148.5%) and never reads the slowdown the question turns on.",
+    "comparison": "The only comparison is 2025/2017 = 2.49x against the 2017 baseline. It is traced but trivial and does not address slowing growth or observed vs scenario.",
+    "chart": "The observed series traces fully, but the scenario range the question asks for is not charted.",
+    "drilldown": "One traced year layer. Only 1 of 4 follow-ups executed.",
+    "export": "Two traced CSVs with provenance JSON. The coverage flags 'partial'/'unknown' are inconsistent with the stated coverage check.",
+    "repro": "Capped at 3. Exact derived values are oddly labelled 'est.'.",
+    "accuracy": "No contradictions. The coverage=partial flag and 'est.' labels on exact computations are minor misstatements.",
+    "limits": "Specific limits: gap to today, title match, no normalization, bounds not CIs.",
+    "verdict": "Gives the 2026 range only. It does not address deceleration, and its 'what would change it' is generic.",
+    "facets": "The slowdown facet and the 2027-2028 range are missing from the reading."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Generic follow-ups with malformed args. 0 of 4 executed.",
+    "export": "No CSV.",
+    "repro": "An honest no-data response, but nothing can be regenerated.",
+    "accuracy": "No contradictions because there are no claims.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Hedges to no answer.",
+    "facets": "No facets are answered with values."
+   },
+   "D": {
+    "trend": "A memory series labelled as an estimate.",
+    "comparison": "A numeric comparison of memory values.",
+    "chart": "The chart is labelled as an estimate.",
+    "drilldown": "Breakdown layers are only named. Only 1 of 5 follow-ups worked.",
+    "export": "The table is labelled as an estimate.",
+    "repro": "All values are memory estimates.",
+    "accuracy": "Internally inconsistent. It says 'a few hundred before 2013' but charts 100 for 2012. It says '15,000-20,000 by early 2020s' but its table has 12,000 for 2021. Its levels sit at a different scale from the reference title counts.",
+    "limits": "Labels memory honestly and states the 10-month gap. Its limits are generic about scope.",
+    "verdict": "Gives an answer and a range from invented-scale estimates and is internally inconsistent.",
+    "facets": "Facets are answered only from memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "coverage=partial/unknown flags in the CSVs conflict with the stated passing coverage check"
+   ],
+   "C": [],
+   "D": [
+    "Verdict says 'a few hundred papers a year before 2013' while the chart plots 100 for 2012",
+    "Verdict says '15,000-20,000 by early 2020s' while the table gives 12,000 for 2021"
+   ]
+  },
+  "best": "A",
+  "verdict": "A turned the traced series into a decision. It reads the slowdown year by year, gives exact CAGR and backtest deltas, charts central and bounds, and sets a falsifiable 2026 trigger. B traced the same data but never addressed the slowing growth that makes this question hard, and charted only the history. C declined to answer, and D offered internally inconsistent memory estimates on a different scale."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

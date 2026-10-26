@@ -1,0 +1,170 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 5,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "C": {
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Same-window news counts yield a recomputable 222-article delta and 1.14 ratio; it correctly says the empty research rows prevent a cross-lane comparison.",
+    "chart": "No chart block.",
+    "drilldown": "It identifies lanes and lists specific calls, but the research follow-ups repeat the empty result and several others do not provide item-level results.",
+    "export": "The country rows trace and include provenance, but the news geography response only supplies 12 rows; the extra rows in the CSV are not supported by the reference.",
+    "repro": "The calls and arguments are listed, the compared counts trace, and derived arithmetic is reproducible.",
+    "accuracy": "The main findings match the record, but the CSV includes unsupported Canada, Japan and Kenya rows, and it calls 4,142/6,646 a placed share although the reference labels it placed_pct.",
+    "limits": "It places the window, censoring, enrichment lag, coverage, lane definitions and acronym-collision caveat next to the relevant findings.",
+    "verdict": "Direct, bounded answer with decision, confidence, conditions and the empty research result; it does not name a contrary finding from its evidence.",
+    "facets": "Grounds news geography and the research-data gap, but does not address implied seasonality or term overlap."
+   },
+   "B": {
+    "comparison": "Only explains why a comparison cannot be made; no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Flat summary; proposed calls are mostly generic or invalid, with only one of five succeeding.",
+    "export": "No CSV or export rows.",
+    "repro": "No measured numbers and no executed source calls; the calls lack usable windows.",
+    "accuracy": "It avoids contradicting the reference and appropriately refuses unsupported measurements, though it says no results were provided despite the benchmark record containing them.",
+    "limits": "It recognizes missing windows and coverage but fails to state the actual applicable window, censoring, and coverage limits in the supplied record.",
+    "verdict": "Gives a decision and confidence, but its claim that no information was provided is unsupported in this benchmark setting and it does not engage the recorded evidence.",
+    "facets": "Addresses the need for research and news geography, but supplies no grounded values and misses implied facets."
+   },
+   "C": {
+    "comparison": "The within-news count comparison recomputes, but it misdefines the lift baseline and infers an unverified COP29 cause; the research-news contrast remains unmeasurable.",
+    "chart": "The single bar chart traces to the source, has a window and unit, and supports a stated claim; it does not chart research-versus-news because research has no rows.",
+    "drilldown": "Provides country-level rows and proposed follow-ups, but no article-level items; several calls fail or return no relevant data.",
+    "export": "The country CSV traces but omits required provenance attributes such as the coverage flag and counted/captured date; no second needed table is included.",
+    "repro": "Listed source calls, arguments, windows and derived figures support the presented numerical claims.",
+    "accuracy": "Most values match, but the lift is read as over-representation against a baseline not defined in the reference, and the COP29 event-driven explanation is not established by the data.",
+    "limits": "States the main window, censoring, placement rate, lane differences and place-resolution caveats, though some limits remain less concrete than the record's specific enrichment bound and freshness policy.",
+    "verdict": "Answers the available news geography and research gap with decision, confidence and conditions, but does not name the strongest contrary evidence, including the small research.geography news block.",
+    "facets": "Covers the main lane mismatch and country geography, but not seasonality or term overlap with grounded evidence."
+   },
+   "D": {
+    "comparison": "No measured contrast; the proposed share comparison is a plan, not a result.",
+    "chart": "No chart block.",
+    "drilldown": "Generic proposed breakdowns and calls; no traced layers or useful executed follow-ups.",
+    "export": "The CSV is explicitly an estimate/status placeholder and earns the memory-table floor.",
+    "repro": "No calls were run and no measured figures can be regenerated.",
+    "accuracy": "Presents unsupported geographic specifics as estimates and incorrectly says patent origin is empty though it was not queried; the recalled policy anchor is not verifiable from the cited URL.",
+    "limits": "Mentions absent windows and unknown coverage but uses generic lag claims and does not state the actual record-specific limits.",
+    "verdict": "Offers a scoping recommendation, but its geographic conclusions are unsupported and it lacks a data-grounded confidence basis.",
+    "facets": "Most requested facets are estimates or unavailable without grounded values."
+   }
+  },
+  "errors": {
+   "A": [
+    "CSV contains Canada, Japan, and Kenya rows absent from the recorded news.geography response; Kenya's lift and count are unsupported by that response."
+   ],
+   "B": [
+    "States underlying results were not provided, although the benchmark reference record contains the research and news geography responses."
+   ],
+   "C": [
+    "Treats Azerbaijan lift 71.2 as about 71 times baseline without a supplied definition of lift.",
+    "Attributes Azerbaijan coverage to COP29 as an event-driven spike without source evidence; labels it estimated, but it is not established by the recorded calls.",
+    "Uses the small research.geography news_coverage block as a separate small sample without an identified comparable window."
+   ],
+   "D": [
+    "States patent origin is empty despite not querying it; the reference has an empty result, but that is not evidence supporting the claim as presented.",
+    "Presents estimated country ordering and Global South coverage patterns without measured support.",
+    "Cites a generic UNFCCC homepage for a recalled policy target and flags the decision number as unverified."
+   ]
+  },
+  "best": "A",
+  "verdict": "A best supports a decision-maker: it quantifies the news geography, states the empty research result, and keeps the two lanes from being mistaken for a measured mismatch. C is more visually complete, but its unsupported CSV rows and interpretation of lift weaken trust; neither deliverable can establish where climate finance is studied from these records."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 5,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

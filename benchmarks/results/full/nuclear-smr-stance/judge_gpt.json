@@ -1,0 +1,197 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 3,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 2017–2025 orientation shares are charted and quantified; it identifies the volatile path and the 2025 rebound.",
+    "comparison": "Uses the same annual corpus scale and reports recomputable early/late and 2017/2025 contrasts.",
+    "chart": "The overlaid positive and contested shares trace to the annual series, with window, units, source, and a reading.",
+    "drilldown": "Shows aggregate layers and identifiers for example papers, but no contrary paper examples or follow-up results are folded in.",
+    "export": "Annual CSV is useful and traced, but it omits needed summary/document exports and provenance is incomplete.",
+    "repro": "Core calls and windows are listed, but one number is untagged and derived comparisons rely on imperfect source counts.",
+    "refs": "Identifiers resolve and claims are tied to records, but quotes are absent and source metadata has issues.",
+    "accuracy": "It misstates the 434-versus-332 mismatch as unreconciled: c2's 332 are filtered matches while its facet counts the broader subject. It also calls 2017-2025 net positive share slightly negative, though its own values show a 5.4-point decline.",
+    "limits": "It gives window, lane, phrase matching, coverage and interpretation limits, but the c2 filter/base distinction is misunderstood and some caveats are detached from the figures.",
+    "verdict": "Direct answer, decision, confidence and conditions are present, but the verdict leans on a misleading c2 count mismatch and underplays the declining positive share.",
+    "facets": "Covers trend, orientation contrast, phrase coverage and limits, but lacks grounded cost-overrun and contrary-paper evidence."
+   },
+   "B": {
+    "trend": "Traced annual promising counts are charted and the endpoint share change is quantified, but the full orientation decomposition and decisive peak detail are not charted.",
+    "comparison": "The 2017-versus-2025 share comparison is traceable and arithmetically sound, though the broader promising-versus-cautious contrast is incomplete.",
+    "chart": "The promising-count series is fully sourced and fits, but it omits the supported tone/share facet the question calls for.",
+    "drilldown": "Provides identified example papers and specific follow-up calls, with three calls passing, but does not reach a contrary paper result.",
+    "export": "Annual and early/late CSVs are traceable, complete for the stated tables, and referenced in prose.",
+    "repro": "Only 16 of 25 numeric claims trace, and two declared calls were never made.",
+    "refs": "The aggregate sources are identified and tied to claims, but lack public identifiers and individual paper references have no quotes.",
+    "accuracy": "It correctly separates increased counts from declining share, and appropriately treats orientation as framing rather than proof.",
+    "limits": "Window, date gap, lane, coverage caveat and phrase matching appear, but censoring/partial-year status is not resolved and limits are not consistently next to the figures.",
+    "verdict": "Gives a bounded direct answer, decision, confidence, change condition, and acknowledges the unchanged framing balance.",
+    "facets": "Addresses annual volume, orientation shares, early/late balance, examples, phrase coverage and data limits; cost-overrun evidence remains absent."
+   },
+   "C": {
+    "trend": "No sourced series or quantified trend.",
+    "comparison": "No measured comparison or common baseline.",
+    "chart": "No chart is provided.",
+    "drilldown": "Only generic proposed calls, which were not executed and do not establish a breakdown.",
+    "export": "No data export.",
+    "repro": "No measured numbers; the proposed calls are not reproducible as evidence and did not run.",
+    "refs": "No sources or document identifiers.",
+    "accuracy": "It does not invent specifics or contradict the reference record.",
+    "limits": "It clearly states that measurement is unavailable, but has no corpus-specific window, coverage, lane or matching limits.",
+    "verdict": "Offers a direct unresolved answer and decision with low confidence, but provides no grounded evidence or contrary finding.",
+    "facets": "It explicitly notes most required facets cannot be measured, but supplies no grounded values."
+   },
+   "D": {
+    "trend": "The series is honestly labelled a memory estimate, earning only the estimate-level score.",
+    "comparison": "The estimated $/MWh comparison is numeric but cannot be checked against a recorded source.",
+    "chart": "Memory-based estimate chart; its honest estimate label limits it to the estimate anchor.",
+    "drilldown": "Lists categories and follow-ups, but no traced breakdown; most calls failed or returned no usable result.",
+    "export": "The CSV is labelled estimated and lacks recorded-source provenance.",
+    "repro": "Numeric claims are memory-based and the listed calls were not executed.",
+    "refs": "References lack resolving URLs and identifiers; no document-level evidence or quotes are supplied.",
+    "accuracy": "Several specifics are presented as memory estimates, and the answer asserts expanding policy framing without measured support. The stated cost caution is not substantiated by the provided record.",
+    "limits": "Clearly labels memory estimates and explains the absence of measured coverage, window and orientation.",
+    "verdict": "Direct and decision-oriented, with confidence and change condition, but the conclusion rests on unmeasured claims.",
+    "facets": "Names relevant facets but provides no grounded trend, orientation split, or verified cost evidence."
+   }
+  },
+  "errors": {
+   "A": [
+    "Calls the c1/c2 totals unreconciled even though c2's 332 is the promising-filter match count and its facet describes a broader subject base.",
+    "Says the net positive-share change is slightly negative, but 47.8% to 42.4% is a 5.4-point decline, not a small one; the prose also calls 2025 the most favorable year since 2018 despite 2017 being higher.",
+    "One numeric claim is untagged, as noted by the script."
+   ],
+   "B": [
+    "No major contradiction with the reference record.",
+    "The 296-day gap is arithmetically incorrect for 2025-12-31 to 2026-10-23 (296 days is the gap from 2025-12-31 to 2026-10-23 only if counting elapsed days; this is consistent)."
+   ],
+   "C": [],
+   "D": [
+    "The answer's chart is explicitly an unmeasured estimate and does not establish a trend in orientation.",
+    "The claim that research is getting more promising in volume is not grounded in the stated estimate as a measured fact.",
+    "The NuScale/UAMPS price and cost claims are labelled estimates and are not validated by the supplied reference record."
+   ]
+  },
+  "best": "B",
+  "verdict": "B best distinguishes rising research volume from the direction of orientation shares, gives a cautious decision with confidence and conditions, and preserves the key limits. A has richer charts and breakdowns but misreads the browse result’s filtered count and overstates the favorable endpoint; C is transparent but cannot answer the measured facets, while D’s cost-caution narrative remains memory-based."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 0,
+   "repro": 3,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {
+  "chatgpt_prism": [
+   "export 4->0"
+  ]
+ }
+}

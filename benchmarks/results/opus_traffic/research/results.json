@@ -1,0 +1,174 @@
+{
+ "tier": "research",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "dimensions": 1.0,
+    "map": 1.0,
+    "forecast": 0.5,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 0.0,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "integrity": 5.0,
+    "verdict": 0.0,
+    "crossdomain": 1.0,
+    "article": 3.0
+   },
+   "strict": 35.4,
+   "plain": 35.4,
+   "invented": true,
+   "by_judge": {
+    "opus": 33.8,
+    "gpt": 37.0
+   },
+   "timing": {
+    "wall_seconds": 344.3,
+    "first_output_seconds": 343.75,
+    "tool_calls": 0,
+    "tool_calls_returned": 0,
+    "tool_seconds_sum": 0,
+    "slowest_call": null,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 3820,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 39673,
+     "output_tokens_details": {
+      "thinking_tokens": 13590
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 3820,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 39673,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 3820,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 3820
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    }
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 3.5,
+    "chart": 0.0,
+    "dimensions": 2.5,
+    "map": 3.5,
+    "forecast": 2.0,
+    "drilldown": 4.5,
+    "export": 0.0,
+    "repro": 4.0,
+    "refs": 4.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "integrity": 5.0,
+    "verdict": 3.5,
+    "crossdomain": 4.5,
+    "article": 3.5
+   },
+   "strict": 67.5,
+   "plain": 67.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 74.0,
+    "gpt": 61.0
+   },
+   "timing": {
+    "wall_seconds": 781.2,
+    "first_output_seconds": 780.52,
+    "tool_calls": 20,
+    "tool_calls_returned": 20,
+    "tool_seconds_sum": 424.1,
+    "slowest_call": "find_counter_evidence",
+    "usage": {
+     "input_tokens": 14,
+     "cache_creation_input_tokens": 114770,
+     "cache_read_input_tokens": 298326,
+     "output_tokens": 73905,
+     "output_tokens_details": {
+      "thinking_tokens": 11031
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 114770,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 30814,
+       "cache_read_input_tokens": 77367,
+       "cache_creation_input_tokens": 37403,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 37403
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    }
+   }
+  }
+ },
+ "judge_mad": 0.53,
+ "verdicts": {
+  "opus": "A ran the database queries across all four corpora, so its trends, maps, forecast and article Results trace and are connected into a quantified studied-versus-reported argument. B was transparently honest but measured nothing: its numbers are recalled and its charts describe only its own reference list. For a researcher whose reviewers will check every number, A is the only usable deliverable, despite its untraced export cells and chart.",
+  "gpt": "B is the stronger decision aid because it reports measured research and news trends, geography, evidence layers, and executable follow-ups, while A is transparent but largely a memory-based literature map. B still needs correction: its chart/export checks fail, and several headline comparisons and evidence tallies overreach or blur the underlying query scopes."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Gap from 2026-06-01 to 2026-10-23 is stated as 145 days (actually 144)",
+    "Patent lag of 18 months attributed to [c1], which does not state it",
+    "England journal-country row treated as United Kingdom without flagging the artefact"
+   ],
+   "claude_bare": [
+    "Effect sizes and TomTom values recalled from memory, not extracted (labelled for verification)"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Claims 10.8% and 11.8% E-ZPass effects, NO₂ risk ratios, congestion deaths, and TomTom city values are recalled and not verified in this task; they are explicitly disclosed as memory, not database measurements.",
+    "The claim that one quasi-experiment is the only congestion-specific causal estimate is based on a purposive memory set, not a comprehensive search."
+   ],
+   "claude_prism": [
+    "The claim that 6 titles cover both congestion and the outcome is not supported by the cited c7 response.",
+    "The statement that 11 documents read were all unrelated conflicts with c7, which includes a partially supporting Lagos study; c8 separately reports read:0, so the tally needs a clearer scope.",
+    "The 126/110,661 intersection comparison is not grounded in the supplied responses; c8 reports 126 intersection papers, while the denominator is not established there.",
+    "The 59.1% priority-7+ share is attributed to c4, whose fields report critical counts and critical_pct; the record does not define critical as priority 7 or higher.",
+    "The first-author versus news country-share ratio compares c10 top-list shares with a separate c11 placed-news query and mismatched windows; it should not be presented as a clean like-for-like ratio.",
+    "The report says all seven corpora passed strict index partition reads, but c1's response does not substantiate that exact coverage claim."
+   ]
+  }
+ }
+}

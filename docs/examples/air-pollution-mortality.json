@@ -1,0 +1,1519 @@
+{
+ "slug": "air-pollution-mortality",
+ "captured_at": "2026-10-22T23:53:45+0530",
+ "calls": [
+  {
+   "tool": "find_evidence",
+   "feature": "research.evidence",
+   "args": {
+    "claim": "PM2.5 air pollution increases mortality",
+    "limit": 10
+   },
+   "seconds": 126.2,
+   "response": {
+    "ok": true,
+    "feature": "research.evidence",
+    "subject": {
+     "claim": "PM2.5 air pollution increases mortality"
+    },
+    "data": {
+     "volumes": {
+      "research": {
+       "n": 115772,
+       "window": "2017-2025",
+       "lane": "subject",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 888,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 811,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 934,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "subject",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 20,
+       "window": "2005-2024",
+       "lane": "subject",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 1,
+       "window": "2005-2025",
+       "lane": "subject",
+       "what": "preprints"
+      }
+     },
+     "corpus_stance": {
+      "available": true,
+      "papers": 115772,
+      "window": "2017-2025",
+      "lane": "subject",
+      "orientation": {
+       "descriptive": 51645,
+       "promising": 25252,
+       "breakthrough": 13929,
+       "cautionary": 10257,
+       "problem_identifying": 7572,
+       "comparative": 5077,
+       "critical": 2040
+      },
+      "contribution": {
+       "empirical": 86780,
+       "methodological": 21500,
+       "review": 4828,
+       "position": 1780,
+       "theoretical": 884
+      },
+      "sides": {
+       "supporting": 39181,
+       "qualifying": 17829,
+       "contradicting": 2040,
+       "neutral": 56722
+      },
+      "contested_pct": 17.2,
+      "mean_stance": 0.204,
+      "reading": "mixed framing with no dominant lean",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "documents": [
+      {
+       "id": "prism:W2617655798",
+       "source": "research",
+       "title": "Long-Term PM2.5 Exposure and Respiratory, Cancer, and Cardiovascular Mortality in Older US Adults",
+       "abstract": null,
+       "authors": [
+        "Vivian C. Pun",
+        "Fatemeh Kazemiparkouhi",
+        "Justin Manjourides",
+        "Helen Suh"
+       ],
+       "venue": "American Journal of Epidemiology",
+       "year": 2017,
+       "doi": "10.1093/aje/kwx166",
+       "cited_by": 530,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1093/aje/kwx166",
+       "institutions": [],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "supports",
+       "claimed_stance": null,
+       "quote": "We found significantly positive associations of 12-month moving average PM2.5 exposures (per 10-μg/m3 increase) with respiratory, chronic obstructive pulmonary disease, and pneumonia mortality, with risk ratios ranging from 1.10 to 1.24.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Reports increased mortality risk with higher PM2.5 exposure.",
+       "confidence": "high",
+       "proposed_stance": "supports",
+       "source_fit": {
+        "passed": true,
+        "method": "separate model review; not independent fact-check",
+        "reason": "direct result linking PM2.5 exposure to higher mortality risk"
+       }
+      },
+      {
+       "id": "prism:W2783348683",
+       "source": "research",
+       "title": "Ambient PM2.5 exposure and expected premature mortality to 2100 in India under climate change scenarios",
+       "abstract": null,
+       "authors": [
+        "Sourangsu Chowdhury",
+        "Sagnik Dey",
+        "Kirk R. Smith"
+       ],
+       "venue": "Nature Communications",
+       "year": 2018,
+       "doi": "10.1038/s41467-017-02755-y",
+       "cited_by": 191,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1038/s41467-017-02755-y",
+       "institutions": [
+        "Collaborative Clean Air Policy Centre",
+        "Indian Institute of Technology Delhi",
+        "University of California, Berkeley"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "supports",
+       "claimed_stance": null,
+       "quote": "Premature mortality burden is expected to be 2.4-4 and 28.5-38.8% higher under RCP8.5 scenario relative to the RCP4.5 scenario in 2031-2040 and 2091-2100, respectively.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Higher PM2.5 scenario predicts higher premature mortality.",
+       "confidence": "high",
+       "proposed_stance": "supports",
+       "source_fit": {
+        "passed": true,
+        "method": "separate model review; not independent fact-check",
+        "reason": "projected higher premature mortality under higher PM2.5 scenario"
+       }
+      },
+      {
+       "id": "prism:W3030103373",
+       "source": "research",
+       "title": "Global Estimates and Long-Term Trends of Fine Particulate Matter Concentrations (1998–2018)",
+       "abstract": null,
+       "authors": [
+        "Melanie S. Hammer",
+        "Aaron van Donkelaar",
+        "Chi Li",
+        "Alexei Lyapustin",
+        "A. M. Sayer",
+        "N. Christina Hsu",
+        "R. C. Levy",
+        "M. J. Garay",
+        "О. В. Калашникова",
+        "Ralph A. Kahn",
+        "Michael Bräuer",
+        "Joshua S. Apte"
+       ],
+       "venue": "Environmental Science & Technology",
+       "year": 2020,
+       "doi": "10.1021/acs.est.0c01764",
+       "cited_by": 805,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1021/acs.est.0c01764",
+       "institutions": [
+        "Center for Astrophysics Harvard & Smithsonian",
+        "Colorado State University",
+        "Cooperative Institute for Research in Environmental Sciences",
+        "Dalhousie University",
+        "Goddard Space Flight Center"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Exposure to outdoor fine particulate matter (PM<sub>2.5</sub>) is a leading risk factor for mortality.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Statement is background, no result linking exposure to increased mortality.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2970265026",
+       "source": "research",
+       "title": "Transition in source contributions of PM2.5 exposure and associated premature mortality in China during 2005–2015",
+       "abstract": null,
+       "authors": [
+        "Haotian Zheng",
+        "Bin Zhao",
+        "Shuxiao Wang",
+        "Tong Wang",
+        "Dian Ding",
+        "Xing Chang",
+        "Kaiyun Liu",
+        "Jia Xing",
+        "Zhaoxin Dong",
+        "Kristin Aunan",
+        "Tonghao Liu",
+        "Xiaomeng Wu"
+       ],
+       "venue": "Environment International",
+       "year": 2019,
+       "doi": "10.1016/j.envint.2019.105111",
+       "cited_by": 172,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1016/j.envint.2019.105111",
+       "institutions": [
+        "CICERO Center for International Climate Research",
+        "China National Environmental Monitoring Center",
+        "Pacific Northwest National Laboratory",
+        "State Key Joint Laboratory of Environment Simulation and Pollution Control",
+        "Tsinghua University"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "From 2005 to 2015, the mortality due to PM<sub>2.5</sub> from ambient air pollution (AAP) decreases from 1.04 (95% confidence interval, 0.84-1.25) million to 0.87 (0.70-1.04) million.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Reports temporal change, not exposure‑mortality relationship.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2911411388",
+       "source": "research",
+       "title": "Estimating mortality burden attributable to short-term PM2.5 exposure: A national observational study in China",
+       "abstract": null,
+       "authors": [
+        "Tiantian Li",
+        "Yuming Guo",
+        "Yang Liu",
+        "Jiaonan Wang",
+        "Qing Wang",
+        "Zhiying Sun",
+        "Mike Z. He",
+        "Xiaoming Shi"
+       ],
+       "venue": "Environment International",
+       "year": 2019,
+       "doi": "10.1016/j.envint.2019.01.073",
+       "cited_by": 153,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1016/j.envint.2019.01.073",
+       "institutions": [
+        "Chinese Center For Disease Control and Prevention",
+        "Columbia University",
+        "Emory University",
+        "Monash University",
+        "National Institute for Occupational Health and Poison Control"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unread",
+       "claimed_stance": "supports",
+       "quote": null,
+       "claimed_quote": "We found an approximately linear increased risk of mortality from 0 to 62 μg/m<sup>3</sup>.",
+       "grounded": false,
+       "quote_verified": false,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Higher short‑term PM2.5 exposure associated with higher mortality.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W3012466815",
+       "source": "research",
+       "title": "The impact of long-term PM2.5 exposure on specific causes of death: exposure-response curves and effect modification among 53 million U.S. Medicare beneficiaries",
+       "abstract": null,
+       "authors": [
+        "Bingyu Wang",
+        "Ki-Do Eum",
+        "Fatemeh Kazemiparkouhi",
+        "Cheng Li",
+        "Justin Manjourides",
+        "Virgil Pavlu",
+        "Helen Suh"
+       ],
+       "venue": "Environmental Health",
+       "year": 2020,
+       "doi": "10.1186/s12940-020-00575-0",
+       "cited_by": 125,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.1186/s12940-020-00575-0",
+       "institutions": [
+        "Northeastern University",
+        "Tufts University"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unread",
+       "claimed_stance": "supports",
+       "quote": null,
+       "claimed_quote": "A 10 μg /m 3 increase in 12-month average PM 2.5 prior to death was associated with a 5% increase in all-cause mortality.",
+       "grounded": false,
+       "quote_verified": false,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Direct positive association between long‑term PM2.5 and mortality.",
+       "confidence": "high"
+      }
+     ],
+     "tally": {
+      "counts": {
+       "supports": 2,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 2,
+       "unread": 2
+      },
+      "tier_weighted": {
+       "supports": 6,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 2,
+      "ungrounded": 2
+     },
+     "health_evidence": null,
+     "read_note": "few titles carry both sides of this claim, so the documents read were chosen by the subject in the title and the outcome in the abstract",
+     "query": {
+      "subject": "PM2.5 air pollution",
+      "domain": "environment",
+      "claim_type": "causal",
+      "assertion": "strong",
+      "poles": {
+       "subject": {
+        "phrases": [
+         "pm2.5 exposure",
+         "fine particulate matter concentration"
+        ],
+        "terms": [
+         "atmospheric chemistry and aerosols"
+        ],
+        "mesh": []
+       },
+       "outcome": {
+        "phrases": [
+         "all-cause mortality"
+        ],
+        "terms": [],
+        "mesh": []
+       }
+      },
+      "lane": "subject",
+      "lane_counts": {
+       "subject": 115772,
+       "outcome": 7557,
+       "intersection": 7
+      },
+      "lane_note": "only 7 papers cover both sides of this claim, so the evidence below is about pm2.5 exposure, fine particulate matter concentration alone and does not establish the connection the claim asserts",
+      "phrase_audit": [
+       {
+        "phrase": "atmospheric chemistry and aerosols",
+        "n": 105593
+       },
+       {
+        "phrase": "all-cause mortality",
+        "n": 7557
+       },
+       {
+        "phrase": "pm2.5 exposure",
+        "n": 774
+       },
+       {
+        "phrase": "fine particulate matter concentration",
+        "n": 73
+       }
+      ],
+      "dropped": [
+       {
+        "phrase": "all-cause mortality",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       }
+      ],
+      "corpus_topics": [
+       {
+        "topic": "Atmospheric chemistry and aerosols",
+        "papers": 105593
+       },
+       {
+        "topic": "Air Quality and Health Impacts",
+        "papers": 33848
+       },
+       {
+        "topic": "Atmospheric Ozone and Climate",
+        "papers": 32935
+       },
+       {
+        "topic": "Atmospheric aerosols and clouds",
+        "papers": 28614
+       },
+       {
+        "topic": "Atmospheric and Environmental Gas Dynamics",
+        "papers": 21717
+       },
+       {
+        "topic": "Air Quality Monitoring and Forecasting",
+        "papers": 18232
+       },
+       {
+        "topic": "Vehicle emissions and performance",
+        "papers": 5573
+       },
+       {
+        "topic": "Toxic Organic Pollutants Impact",
+        "papers": 4346
+       },
+       {
+        "topic": "Plant responses to elevated CO2",
+        "papers": 4253
+       },
+       {
+        "topic": "Climate variability and models",
+        "papers": 3884
+       },
+       {
+        "topic": "Indoor Air Quality and Microbial Exposure",
+        "papers": 3650
+       },
+       {
+        "topic": "Marine and coastal ecosystems",
+        "papers": 3433
+       }
+      ]
+     }
+    },
+    "window": {
+     "period": {
+      "corpora": {
+       "research": "2017-2025",
+       "readable_papers": "1990-2025",
+       "pubmed": "1990-2025",
+       "news": "2019-01-01..2026-06-01",
+       "patents": "2005-2024",
+       "arxiv": "2005-2025"
+      }
+     }
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792693347.5211313,
+        "age_seconds": 16.3,
+        "expires_in_seconds": 13.7,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792693347.5419426,
+        "age_seconds": 16.28,
+        "expires_in_seconds": 13.72,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693347.8228147,
+        "age_seconds": 16.0,
+        "expires_in_seconds": 14.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693347.5196214,
+        "age_seconds": 16.3,
+        "expires_in_seconds": 13.7,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693347.5263333,
+        "age_seconds": 16.3,
+        "expires_in_seconds": 13.7,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693363.8531413,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "subject",
+     "lane_note": "only 7 papers cover both sides of this claim, so the evidence below is about pm2.5 exposure, fine particulate matter concentration alone and does not establish the connection the claim asserts",
+     "seconds": 126.2
+    }
+   }
+  },
+  {
+   "tool": "find_counter_evidence",
+   "feature": "research.counter_evidence",
+   "args": {
+    "claim": "PM2.5 air pollution increases mortality",
+    "limit": 8
+   },
+   "seconds": 30.4,
+   "response": {
+    "ok": true,
+    "feature": "research.counter_evidence",
+    "subject": {
+     "claim": "PM2.5 air pollution increases mortality"
+    },
+    "data": {
+     "supporting": [
+      {
+       "id": "prism:W2617655798",
+       "title": "Long-Term PM2.5 Exposure and Respiratory, Cancer, and Cardiovascular Mortality in Older US Adults",
+       "year": 2017,
+       "venue": "American Journal of Epidemiology",
+       "tier": "article",
+       "strength": "moderate",
+       "stance": "supports",
+       "quote": "We found significantly positive associations of 12-month moving average PM2.5 exposures (per 10-μg/m3 increase) with respiratory, chronic obstructive pulmonary disease, and pneumonia mortality, with risk ratios ranging from 1.10 to 1.24.",
+       "grounded": true,
+       "why": "Reports increased mortality risk with higher PM2.5 exposure.",
+       "url": "https://doi.org/10.1093/aje/kwx166",
+       "cited_by": 530,
+       "doi": "10.1093/aje/kwx166"
+      },
+      {
+       "id": "prism:W2783348683",
+       "title": "Ambient PM2.5 exposure and expected premature mortality to 2100 in India under climate change scenarios",
+       "year": 2018,
+       "venue": "Nature Communications",
+       "tier": "article",
+       "strength": "moderate",
+       "stance": "supports",
+       "quote": "Premature mortality burden is expected to be 2.4-4 and 28.5-38.8% higher under RCP8.5 scenario relative to the RCP4.5 scenario in 2031-2040 and 2091-2100, respectively.",
+       "grounded": true,
+       "why": "Higher PM2.5 scenario predicts higher premature mortality.",
+       "url": "https://doi.org/10.1038/s41467-017-02755-y",
+       "cited_by": 191,
+       "doi": "10.1038/s41467-017-02755-y"
+      }
+     ],
+     "contradicting": [],
+     "tally": {
+      "counts": {
+       "supports": 2,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 2,
+       "unread": 2
+      },
+      "tier_weighted": {
+       "supports": 6,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 2,
+      "ungrounded": 2
+     },
+     "corpus_mix": {
+      "available": true,
+      "papers": 115772,
+      "window": "2017-2025",
+      "lane": "subject",
+      "orientation": {
+       "descriptive": 51645,
+       "promising": 25252,
+       "breakthrough": 13929,
+       "cautionary": 10257,
+       "problem_identifying": 7572,
+       "comparative": 5077,
+       "critical": 2040
+      },
+      "contribution": {
+       "empirical": 86780,
+       "methodological": 21500,
+       "review": 4828,
+       "position": 1780,
+       "theoretical": 884
+      },
+      "sides": {
+       "supporting": 39181,
+       "qualifying": 17829,
+       "contradicting": 2040,
+       "neutral": 56722
+      },
+      "contested_pct": 17.2,
+      "mean_stance": 0.204,
+      "reading": "mixed framing with no dominant lean",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "health_evidence": null,
+     "recommendation": "The documents read support the claim; this selected sample does not establish scientific consensus."
+    },
+    "window": {},
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792693393.8520634,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792693393.8994617,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693394.2849157,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693393.8728325,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693393.880398,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693363.8531413,
+        "age_seconds": 29.95,
+        "expires_in_seconds": 0.05,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "subject",
+     "lane_note": "only 7 papers cover both sides of this claim, so the evidence below is about pm2.5 exposure, fine particulate matter concentration alone and does not establish the connection the claim asserts",
+     "seconds": 30.4
+    }
+   }
+  },
+  {
+   "tool": "find_statistics",
+   "feature": "research.statistics",
+   "args": {
+    "claim": "PM2.5 air pollution increases mortality",
+    "limit": 6
+   },
+   "seconds": 31.2,
+   "response": {
+    "ok": true,
+    "feature": "research.statistics",
+    "subject": {},
+    "data": {
+     "stats": [
+      {
+       "value": "5%",
+       "measures": "increase in all-cause mortality per 10 μg/m3 increase in PM2.5",
+       "population": null,
+       "period": null,
+       "caveat": null,
+       "sentence": "A 10 μg /m 3 increase in 12-month average PM 2.5 prior to death was associated with a 5% increase in all-cause mortality, as well as an 8.8, 5.6, and 2.5% increase in all cardiovascular disease (CVD)-, all respiratory-, and all cancer deaths, respectively, in age, gender, race, ZIP code, and SES-adjusted models.",
+       "source": {
+        "id": "prism:W3012466815",
+        "title": "The impact of long-term PM2.5 exposure on specific causes of death: exposure-response curves and effect modification among 53 million U.S. Medicare beneficiaries",
+        "year": 2020,
+        "venue": "Environmental Health",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1186/s12940-020-00575-0",
+        "doi": "10.1186/s12940-020-00575-0"
+       }
+      },
+      {
+       "value": "8.8%",
+       "measures": "increase in cardiovascular disease deaths per 10 μg/m3 increase in PM2.5",
+       "population": null,
+       "period": null,
+       "caveat": null,
+       "sentence": "A 10 μg /m 3 increase in 12-month average PM 2.5 prior to death was associated with a 5% increase in all-cause mortality, as well as an 8.8, 5.6, and 2.5% increase in all cardiovascular disease (CVD)-, all respiratory-, and all cancer deaths, respectively, in age, gender, race, ZIP code, and SES-adjusted models.",
+       "source": {
+        "id": "prism:W3012466815",
+        "title": "The impact of long-term PM2.5 exposure on specific causes of death: exposure-response curves and effect modification among 53 million U.S. Medicare beneficiaries",
+        "year": 2020,
+        "venue": "Environmental Health",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1186/s12940-020-00575-0",
+        "doi": "10.1186/s12940-020-00575-0"
+       }
+      },
+      {
+       "value": "5.6%",
+       "measures": "increase in respiratory deaths per 10 μg/m3 increase in PM2.5",
+       "population": null,
+       "period": null,
+       "caveat": null,
+       "sentence": "A 10 μg /m 3 increase in 12-month average PM 2.5 prior to death was associated with a 5% increase in all-cause mortality, as well as an 8.8, 5.6, and 2.5% increase in all cardiovascular disease (CVD)-, all respiratory-, and all cancer deaths, respectively, in age, gender, race, ZIP code, and SES-adjusted models.",
+       "source": {
+        "id": "prism:W3012466815",
+        "title": "The impact of long-term PM2.5 exposure on specific causes of death: exposure-response curves and effect modification among 53 million U.S. Medicare beneficiaries",
+        "year": 2020,
+        "venue": "Environmental Health",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1186/s12940-020-00575-0",
+        "doi": "10.1186/s12940-020-00575-0"
+       }
+      },
+      {
+       "value": "2.5%",
+       "measures": "increase in cancer deaths per 10 μg/m3 increase in PM2.5",
+       "population": null,
+       "period": null,
+       "caveat": null,
+       "sentence": "A 10 μg /m 3 increase in 12-month average PM 2.5 prior to death was associated with a 5% increase in all-cause mortality, as well as an 8.8, 5.6, and 2.5% increase in all cardiovascular disease (CVD)-, all respiratory-, and all cancer deaths, respectively, in age, gender, race, ZIP code, and SES-adjusted models.",
+       "source": {
+        "id": "prism:W3012466815",
+        "title": "The impact of long-term PM2.5 exposure on specific causes of death: exposure-response curves and effect modification among 53 million U.S. Medicare beneficiaries",
+        "year": 2020,
+        "venue": "Environmental Health",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1186/s12940-020-00575-0",
+        "doi": "10.1186/s12940-020-00575-0"
+       }
+      },
+      {
+       "value": "10% to 27%",
+       "measures": "effects of PM2.5 on cardiovascular mortality higher than conventional estimates",
+       "population": null,
+       "period": null,
+       "caveat": "may be ... higher than conventional approaches",
+       "sentence": "Using the new approach, we found that the effects of PM<sub>2.5</sub> on AMI incidence and cardiovascular mortality may be 10% to 27% higher than what would be estimated from the conventional approaches examining PM<sub>2.5</sub> alone.",
+       "source": {
+        "id": "prism:W3008426718",
+        "title": "Understanding the Joint Impacts of Fine Particulate Matter Concentration and Composition on the Incidence and Mortality of Cardiovascular Disease: A Component-Adjusted Approach",
+        "year": 2020,
+        "venue": "Environmental Science & Technology",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1021/acs.est.9b06861",
+        "doi": "10.1021/acs.est.9b06861"
+       }
+      },
+      {
+       "value": "32,186 deaths",
+       "measures": "deaths attributable to PM2.5 exposure (linear model estimate)",
+       "population": null,
+       "period": null,
+       "caveat": "estimate is 5.3 times lower than estimates from the non-linear effect model",
+       "sentence": "Models using linear exposure-response functions for the PM<sub>2.5</sub>-mortality association estimated 32,186 deaths attributable to PM<sub>2.5</sub> exposure, which is 5.3 times lower than estimates from the non-linear effect model.",
+       "source": {
+        "id": "prism:W2911411388",
+        "title": "Estimating mortality burden attributable to short-term PM2.5 exposure: A national observational study in China",
+        "year": 2019,
+        "venue": "Environment International",
+        "tier": "article",
+        "strength": "moderate",
+        "url": "https://doi.org/10.1016/j.envint.2019.01.073",
+        "doi": "10.1016/j.envint.2019.01.073"
+       }
+      }
+     ],
+     "rejected": [],
+     "candidate_sentences": 24,
+     "research_series": {
+      "available": true,
+      "corpus": "research_typed",
+      "unit": "year",
+      "window": "2017-2025",
+      "lane": "subject",
+      "points": [
+       {
+        "period": "2017",
+        "n": 8922,
+        "partial_period": false
+       },
+       {
+        "period": "2018",
+        "n": 9937,
+        "partial_period": false
+       },
+       {
+        "period": "2019",
+        "n": 10708,
+        "partial_period": false
+       },
+       {
+        "period": "2020",
+        "n": 12745,
+        "partial_period": false
+       },
+       {
+        "period": "2021",
+        "n": 14846,
+        "partial_period": false
+       },
+       {
+        "period": "2022",
+        "n": 15040,
+        "partial_period": false
+       },
+       {
+        "period": "2023",
+        "n": 15704,
+        "partial_period": false
+       },
+       {
+        "period": "2024",
+        "n": 13020,
+        "partial_period": false
+       },
+       {
+        "period": "2025",
+        "n": 14850,
+        "partial_period": false
+       }
+      ],
+      "total": 115772,
+      "trend": {
+       "available": true,
+       "from": "2017",
+       "to": "2025",
+       "first": 8922,
+       "last": 14850,
+       "peak": 15704,
+       "peak_period": "2023",
+       "early_third": 29567,
+       "late_third": 43574,
+       "elapsed_years": 8.0,
+       "cagr_pct": 6.6,
+       "rate_unit": "annual",
+       "direction": "rising",
+       "late_vs_early": 1.47
+      },
+      "censored_at": "2025",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "research_typed": {
+         "corpus": "research_typed",
+         "rows": 105553750,
+         "expected": 98602364,
+         "pct": 107.0,
+         "partial": false,
+         "checked_at": 1792693393.8520634,
+         "age_seconds": 18.61,
+         "expires_in_seconds": 11.39,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "news_series": {
+      "available": true,
+      "corpus": "news",
+      "unit": "month",
+      "window": "2019-01..2026-06-01 (exclusive)",
+      "lane": "subject",
+      "points": [
+       {
+        "period": "2019-01-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2019-02-01",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2019-03-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2019-04-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2019-05-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2019-06-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2019-07-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2019-08-01",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2019-09-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2019-10-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2019-11-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2019-12-01",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2020-01-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2020-02-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2020-03-01",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2020-04-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-05-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2020-06-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2020-07-01",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2020-08-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2020-09-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2020-10-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2020-11-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2020-12-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2021-01-01",
+        "n": 16,
+        "partial_period": false
+       },
+       {
+        "period": "2021-02-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2021-03-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2021-04-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2021-05-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2021-06-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2021-07-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2021-08-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2021-09-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2021-10-01",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2021-11-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2021-12-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2022-01-01",
+        "n": 28,
+        "partial_period": false
+       },
+       {
+        "period": "2022-02-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2022-03-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2022-04-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2022-05-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2022-06-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2022-07-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2022-08-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2022-09-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2022-10-01",
+        "n": 19,
+        "partial_period": false
+       },
+       {
+        "period": "2022-11-01",
+        "n": 15,
+        "partial_period": false
+       },
+       {
+        "period": "2022-12-01",
+        "n": 16,
+        "partial_period": false
+       },
+       {
+        "period": "2023-01-01",
+        "n": 27,
+        "partial_period": false
+       },
+       {
+        "period": "2023-02-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2023-03-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2023-04-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2023-05-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2023-06-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2023-07-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2023-08-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2023-09-01",
+        "n": 13,
+        "partial_period": false
+       },
+       {
+        "period": "2023-10-01",
+        "n": 14,
+        "partial_period": false
+       },
+       {
+        "period": "2023-11-01",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2023-12-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2024-01-01",
+        "n": 13,
+        "partial_period": false
+       },
+       {
+        "period": "2024-02-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2024-03-01",
+        "n": 13,
+        "partial_period": false
+       },
+       {
+        "period": "2024-04-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2024-05-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2024-06-01",
+        "n": 13,
+        "partial_period": false
+       },
+       {
+        "period": "2024-07-01",
+        "n": 14,
+        "partial_period": false
+       },
+       {
+        "period": "2024-08-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2024-09-01",
+        "n": 15,
+        "partial_period": false
+       },
+       {
+        "period": "2024-10-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2024-11-01",
+        "n": 17,
+        "partial_period": false
+       },
+       {
+        "period": "2024-12-01",
+        "n": 24,
+        "partial_period": false
+       },
+       {
+        "period": "2025-01-01",
+        "n": 30,
+        "partial_period": false
+       },
+       {
+        "period": "2025-02-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2025-03-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2025-04-01",
+        "n": 15,
+        "partial_period": false
+       },
+       {
+        "period": "2025-05-01",
+        "n": 14,
+        "partial_period": false
+       },
+       {
+        "period": "2025-06-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2025-07-01",
+        "n": 13,
+        "partial_period": false
+       },
+       {
+        "period": "2025-08-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2025-09-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2025-10-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2025-11-01",
+        "n": 17,
+        "partial_period": false
+       },
+       {
+        "period": "2025-12-01",
+        "n": 14,
+        "partial_period": false
+       },
+       {
+        "period": "2026-01-01",
+        "n": 23,
+        "partial_period": false
+       },
+       {
+        "period": "2026-02-01",
+        "n": 9,
+        "partial_period": false
+       },
+       {
+        "period": "2026-03-01",
+        "n": 14,
+        "partial_period": false
+       },
+       {
+        "period": "2026-04-01",
+        "n": 15,
+        "partial_period": false
+       },
+       {
+        "period": "2026-05-01",
+        "n": 3,
+        "partial_period": false
+       }
+      ],
+      "total": 934,
+      "trend": {
+       "available": true,
+       "from": "2019-01-01",
+       "to": "2026-05-01",
+       "first": 10,
+       "last": 3,
+       "peak": 30,
+       "peak_period": "2025-01-01",
+       "early_third": 208,
+       "late_third": 384,
+       "elapsed_years": 7.328767,
+       "multiple": 0.3,
+       "direction": "rising",
+       "late_vs_early": 1.85
+      },
+      "censored_at": "2026-06-01",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "news": {
+         "corpus": "news",
+         "rows": 255586690,
+         "expected": 238603270,
+         "pct": 107.1,
+         "partial": false,
+         "checked_at": 1792693393.8728325,
+         "age_seconds": 18.58,
+         "expires_in_seconds": 11.42,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "volumes": {
+      "research": {
+       "n": 115772,
+       "window": "2017-2025",
+       "lane": "subject",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 888,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 811,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 934,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "subject",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 20,
+       "window": "2005-2024",
+       "lane": "subject",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 1,
+       "window": "2005-2025",
+       "lane": "subject",
+       "what": "preprints"
+      }
+     },
+     "context_deferred": false
+    },
+    "window": {},
+    "meta": {
+     "lane": "subject",
+     "note": "every figure is copied from the source sentence shown and verified against the abstract it came from",
+     "seconds": 31.2
+    }
+   }
+  }
+ ]
+}

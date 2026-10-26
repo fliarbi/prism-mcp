@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Plots the full 24-month series with its window. Gives the peak (639, Jan 2025), first and last values, and the thirds (3,100 vs 2,498, read as flat). Does not decompose critical or negative.",
+    "comparison": "Neg:pos 0.21 vs baseline 0.58 is defined, and the delta of 0.37 recomputes correctly.",
+    "chart": "One fully traced volume chart. Tone, the other facet asked, is not charted.",
+    "drilldown": "Themes and organisations form one traced layer with no item-level identifiers. Only 1 of 5 follow-ups executed.",
+    "export": "Two traced CSVs with source, window, unit, coverage=partial and a provenance JSON. Both are referenced from the prose.",
+    "repro": "35 of 35 numbers trace. The calls block and capture date are present, and the 144-day gap is correct.",
+    "refs": "Ceiling 1. Gives no news URLs or headlines.",
+    "accuracy": "Reads fields correctly and carries the caveats. Does not catch the anomalies (critical vs positive, place collisions).",
+    "limits": "Window, censoring, the 144-day gap, match mode, unverified entities, sample-based sources and placed_pct sit next to the numbers they bound.",
+    "verdict": "Complete structure, but it does not name contrary evidence such as the Jan 2026 negative spike.",
+    "facets": "Covers volume, tone, themes, entities, places and sources. Has no headlines and does not address the regulation or dark-store facet."
+   },
+   "B": {
+    "trend": "Thirds, the -40.4% peak-to-last drop (correct), and the critical-share range. It also flags the CAGR/flat conflict. The chart plots only 13 of 24 months.",
+    "comparison": "0.36x of baseline matches the tool. The organisation index to Blinkit recomputes exactly.",
+    "chart": "Traced, but it plots a subset of months and only volume, not tone.",
+    "drilldown": "Organisations and themes, plus critical headlines with date, publisher and URL. 3 of 6 follow-ups executed.",
+    "export": "Ceiling 3. Labelling the monthly CSV coverage=full contradicts the tool's ingestion caveat.",
+    "repro": "80 of 81 numbers trace, and the calls are listed with args.",
+    "refs": "Ceiling 1.",
+    "accuracy": "Catches anomalies: critical is not negative, Motilal Oswal is not a person, the zepto.com.au collision, the CAGR conflict. But it calls the counts 'complete for the window' and describes Jan 2026 as '141 negative of 379' (0.60 is neg:pos, not neg/total).",
+    "limits": "Window gap, enrichment bound with the 4.3% May fill, match modes, sample, and what cannot be answered, all placed beside the numbers.",
+    "verdict": "Direct answer, decision, confidence and what would change it. Weakened by the overclaim that the counts are complete.",
+    "facets": "Covers all measured facets including headlines, and explicitly marks regulation and worker issues as unanswered."
+   },
+   "C": {
+    "trend": "A memory GOV series labelled as an estimate, which is not news volume.",
+    "comparison": "Memory share figures labelled estimate.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Breakdown from memory. The follow-ups are partly executable.",
+    "export": "Estimate-labelled table.",
+    "repro": "All values are memory estimates.",
+    "refs": "No references where the question needs them.",
+    "accuracy": "Honestly labelled, and gives no measured contradictions. The specifics remain unverified.",
+    "limits": "Honest and fairly specific about what is unmeasured.",
+    "verdict": "Low-confidence memory answer with a decision and what would change it.",
+    "facets": "Facets answered from memory only, although it does qualitatively mention regulation and dark stores."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "No breakdown. Follow-ups have generic args, though some executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Says nothing, so it contradicts nothing.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Declines to answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Claims counts are 'complete for the window' and exports coverage=full despite the tool's ingestion-completeness and censoring caveat",
+    "Describes the Jan 2026 0.60 ratio as '141 negative of 379'; 0.60 is negative:positive (141/235)"
+   ],
+   "C": [
+    "Market-share and funding specifics from memory, labelled estimate but unverifiable"
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "A and B both answer from the traced overview with correct trend and tone-versus-baseline numbers. B goes further: it names dated critical headlines with URLs, decomposes critical versus negative, and catches entity and place anomalies. A has cleaner provenance and fewer slips. C and D are honest but measure nothing; C offers memory estimates and D declines entirely."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

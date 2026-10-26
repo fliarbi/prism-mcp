@@ -1,0 +1,223 @@
+{
+ "slug": "tesla-vs-byd",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 26.7,
+   "plain": 26.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.6,
+    "gpt": 30.9
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 2.0,
+    "export": 4.5,
+    "repro": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 0.0,
+    "facets": 4.5
+   },
+   "strict": 40,
+   "plain": 68.6,
+   "invented": true,
+   "by_judge": {
+    "opus": 40,
+    "gpt": 40
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 25.8,
+   "plain": 25.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.8,
+    "gpt": 31.7
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 2.0,
+    "export": 4.5,
+    "repro": 4.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 78.6,
+   "plain": 78.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.7,
+    "gpt": 88.5
+   }
+  }
+ },
+ "judge_mad": 0.68,
+ "verdicts": {
+  "opus": "A and B both traced the full monthly series and exports correctly, and neither tested whether attention follows sales. A gave the richer reading (peaks, critical shares, the 2025-10 BYD anomaly) but placed an untagged, slightly wrong day count in its verdict, which voids it. B is exact throughout, and its verdict is supported and bounded. C and D were honest refusals with no measured content.",
+  "gpt": "C is the strongest decision deliverable: it compares Tesla and BYD on the same traced monthly scale, quantifies their relative attention and growth, and bounds its conclusion by the corpus and window. B has similarly rich evidence and exports, but its invented verdict number fails the script gate; both reports still need executed follow-ups to explain the observed spikes."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Gap to today stated as 145 days; 2026-06-01 to 2026-10-23 is 144",
+    "'107.1% of expected rows' and 'marketai table' do not appear in the reference record",
+    "Untagged 145 in the Verdict"
+   ],
+   "chatgpt_prism": [],
+   "claude_bare": [],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "claude_bare": [],
+   "claude_prism": [
+    "Verdict includes the untagged number 145, which the script flags as invented.",
+    "Describes the returned coverage as full despite the reference noting that row-floor checks do not prove ingest completeness."
+   ],
+   "chatgpt_prism": [
+    "Calls the returned series complete; the reference warns that the newest month can be incomplete due to ingest lag and that row-floor checks do not prove ingestion completeness."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Both full 24-month series are traced with the window stated. Peaks are named with values and dates (Tesla 16,070 in 2025-03; BYD 3,643 in 2026-04). The endpoint changes and the -52% from peak recompute correctly. The critical split is not charted, so it does not reach 5.",
+    "comparison": "Same scale and window. The 4.50x ratio, +63.6 pt share gap, critical shares of 63.8% vs 54.9%, and growth delta all recompute. It carries the common-word caveat. It never tests attention against the sales question the prompt poses.",
+    "chart": "One fully traced volume chart with window, unit and source, tied to the peak claim. Tone and critical share are discussed but not charted.",
+    "drilldown": "One traced layer (term to month to measure). Only 2 of 6 follow-ups returned data.",
+    "export": "Monthly and totals CSVs, both traced and referenced from the prose, with source, window, unit and coverage, plus a provenance JSON.",
+    "repro": "56 of 59 numbers traced, and derived figures show their computation. Three numbers are untagged, including 145 days and 107.1% coverage.",
+    "accuracy": "The arithmetic is correct. The gap is stated as 145 days when 2026-06-01 to 2026-10-23 is 144. It cites '107.1% of expected rows' and 'marketai table', which do not appear in the reference record.",
+    "limits": "Window end, censoring, gap to today, match mode, undefined critical, the common-word caveat and overlap are all placed next to the numbers they bound.",
+    "verdict": "Script ceiling is 0 because of the untagged 145 in the Verdict.",
+    "facets": "Totals, share, monthly series, growth, tone, peaks and the BYD 2025-10 anomaly are covered. Overlap is an honest no-data. Attention vs sales is not addressed."
+   },
+   "chatgpt_prism": {
+    "trend": "The traced series has its window stated. Change is quantified only by endpoints (+19.3%, +51.8%). The Tesla 2025-03 peak is not named even though the full points were available.",
+    "comparison": "The 4.50:1 ratio and the 167,782 difference recompute, and the combined baseline is defined. It notes that combined is a sum, not a dedup. It does not address attention vs sales.",
+    "chart": "Traced volume chart with window, unit, source and supports text. No tone or critical view, and no peak marked.",
+    "drilldown": "Only one traced layer. 1 of 4 follow-ups returned data.",
+    "export": "Two traced CSVs with provenance attributes, referenced from the prose, plus a provenance block.",
+    "repro": "22 of 23 numbers traced, and the calculations are labelled as such.",
+    "accuracy": "No contradictions. The 144-day gap and the percentages are exact. index partition-read remarks are not visible in the record but are presented cautiously.",
+    "limits": "Window, exclusive end, the 144-day gap, coverage caveat, match mode, overlap unknown, and the line between measured and interpreted are placed with the numbers.",
+    "verdict": "Direct answer, decision, confidence and change condition, all supported. It ignores contrary evidence such as Tesla's sharp fall from its peak and the noisy endpoints, and does not engage with sales.",
+    "facets": "Totals, share, series and growth are covered. Tone is barely read (critical shares not compared), and peaks and the anomaly are omitted."
+   },
+   "claude_bare": {
+    "trend": "No series.",
+    "comparison": "Only a qualitative, labelled prior.",
+    "chart": "No chart.",
+    "drilldown": "Planned layers and calls only. 0 of 6 calls ran ok.",
+    "export": "None.",
+    "repro": "No measured numbers.",
+    "accuracy": "No fabrications, and the memory claims are labelled.",
+    "limits": "Specific about what is unmeasured. Its own planned window has a 1-day gap.",
+    "verdict": "An honest no-measure statement with low confidence. It offers a plan rather than an answer.",
+    "facets": "No facets grounded."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Generic planned calls, none of which executed ok.",
+    "export": "None.",
+    "repro": "Honest that nothing is measured.",
+    "accuracy": "No contradictions.",
+    "limits": "Specific about what is missing.",
+    "verdict": "Refuses to answer, and states 'high' confidence in that inability, so there is no real answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "No measured series; only an explicitly unverified memory assertion.",
+    "comparison": "No measured contrast or ratio is available.",
+    "chart": "No chart is supplied.",
+    "drilldown": "Lists proposed calls, but none executed and no traced breakdown is provided.",
+    "export": "No data rows or usable CSV export.",
+    "repro": "No recorded call or sourced numeric claims to replay.",
+    "accuracy": "Clearly distinguishes unavailable measurements from recollection and does not invent counts.",
+    "limits": "Specific about absent measurement, matching, overlap, and the planned window; some limits remain generic.",
+    "verdict": "Directly says it cannot measure and gives a decision and confidence, but the belief about Tesla coverage is only a prior.",
+    "facets": "Identifies the relevant facets but provides grounded values for none."
+   },
+   "claude_prism": {
+    "trend": "Traced 24-month series, exact endpoint changes, peaks, and decomposition of critical and positive/negative counts; direction claims are consistent.",
+    "comparison": "Same-window counts, shares, ratios and deltas are grounded, with overlap and undefined-baseline caveats; directly addresses attention versus sales only incompletely.",
+    "chart": "Both terms are charted with all monthly values, window, unit, source and a prose-linked reading.",
+    "drilldown": "Provides term, month and measure breakdowns, but its follow-up calls do not execute with non-empty results in the script.",
+    "export": "Monthly and summary CSVs carry provenance, trace to the response and are referenced in the report.",
+    "repro": "Nearly all numeric claims trace, but the verdict includes the untagged number 145 and prevents a higher score.",
+    "accuracy": "Core figures and field distinctions are sound, but the verdict's unexplained 145 days conflicts with its own roughly 145-day gap only as a precision/provenance issue.",
+    "limits": "Covers cutoff, censoring, corpus coverage, match mode and interpretation near the relevant figures; some tool caveats are summarized.",
+    "verdict": "The script ceiling is zero because the verdict contains an untagged number, triggering the invention gate.",
+    "facets": "Addresses volume, time trend, tone fields, overlap, ambiguity and the sales-attention distinction with grounded values or explicit limits."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced monthly series with exact endpoint changes, dated peaks and critical-count decomposition; direction is read consistently.",
+    "comparison": "Same-window ratio, difference and shares recompute, and it distinguishes summed term counts from unique-story totals.",
+    "chart": "Fully traced two-term monthly chart with window, unit, source and a claim-linked caption.",
+    "drilldown": "Gives a traced monthly breakdown, but only one proposed follow-up call executed successfully.",
+    "export": "Monthly and summary CSVs trace to the response and include provenance, identifiers and null-preserving structure where applicable.",
+    "repro": "Calls and window are listed and derived figures are recomputable; one numeric claim is untraced, so it falls short of full traceability.",
+    "accuracy": "Measured values and field meanings are handled carefully; it does not catch all possible source anomalies.",
+    "limits": "States window, cutoff gap, censoring, lane, coverage and match limits beside the relevant claims, though not every caveat is fully unpacked.",
+    "verdict": "Gives a bounded answer, decision, confidence, contrary tone evidence and conditions that would change the conclusion.",
+    "facets": "Covers the implied sales-attention contrast, overlap, seasonality/trends, tone limits and term-matching caveats with grounded values or explicit no-data."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series; only states that the trend cannot be quantified.",
+    "comparison": "No measured ratio or delta is supplied.",
+    "chart": "No chart is supplied.",
+    "drilldown": "Proposed calls are unexecuted and do not provide a traced breakdown.",
+    "export": "No data export is provided.",
+    "repro": "Calls are listed, but their arguments do not reproduce recorded results and no numeric evidence is supplied.",
+    "accuracy": "Makes no unsupported measured claims and accurately marks the absence of data.",
+    "limits": "Explains the absent corpus and relevant methodological limits, but does not measure or report the applicable data-specific cutoff and censoring.",
+    "verdict": "States inability to measure, a decision and confidence, but cannot answer the comparison from evidence.",
+    "facets": "Names the requested facets but grounds none in measured values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

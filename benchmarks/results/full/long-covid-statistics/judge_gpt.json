@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The prevalence series is explicitly an estimate from memory, not a measured time series.",
+    "comparison": "Numeric contrasts are labelled estimates, but they compare unlike populations and outcomes.",
+    "chart": "The chart is an honest estimate, not a traced series.",
+    "drilldown": "It names useful breakdowns, but most proposed follow-ups did not execute successfully.",
+    "export": "The CSV is estimated and lacks a usable source call.",
+    "repro": "The figures cannot be reproduced from listed calls.",
+    "refs": "Three resolvable references are tied to claims, but no source quotes are supplied.",
+    "accuracy": "Several estimates and source attributions are approximate; the recommendation band is not grounded in a common population.",
+    "limits": "It clearly labels memory estimates and states the missing database coverage and time gap.",
+    "verdict": "It gives a practical recommendation and medium confidence, but the recommendation rests on unmeasured figures.",
+    "facets": "It addresses definitions and some populations, but leaves the requested citation ranking unmeasured."
+   },
+   "B": {
+    "trend": "It appropriately states that no comparable time series is available.",
+    "comparison": "The arithmetic is checkable, but compares different populations and measures.",
+    "chart": "The figures are source-cited, but the benchmark cannot verify the cited estimates from the supplied record.",
+    "drilldown": "The proposed follow-ups are not executable successfully and the breakdown is shallow.",
+    "export": "The example table lacks reproducible call provenance.",
+    "repro": "Calls and evidence do not reproduce the claims; the listed citation calls were not run.",
+    "refs": "The JAMA DOI is assigned to the wrong paper, and the CDC source is described inaccurately.",
+    "accuracy": "It says the CDC figure is current prevalence, while the cited wording is ‘ever had’; the JAMA attribution is also mismatched.",
+    "limits": "It names several limits, but its source and time-window descriptions do not fully support the claims.",
+    "verdict": "It gives a cautious direct recommendation, but the supporting estimates include a clear misstatement.",
+    "facets": "It recognizes population and definition differences, but does not establish which statistics are most cited."
+   },
+   "C": {
+    "trend": "The annual series is traced and change is quantified, but the trend concerns broad research volume rather than prevalence and the 2025 censoring is not handled cleanly.",
+    "comparison": "Ratios and deltas are mostly reproducible, though they compare research output or framing rather than prevalence.",
+    "chart": "The chart traces the research series, but the question asks for prevalence statistics, which it does not visualize.",
+    "drilldown": "It exposes documents and follow-up calls, but only two of six proposed calls executed successfully.",
+    "export": "The research series and stance table have provenance and are referenced, but the question needs prevalence estimates and linked source rows.",
+    "repro": "Most numbers and calls trace, but the regenerate block omits complete call arguments and one numeric claim is not traced.",
+    "refs": "The cited DOIs resolve and most references are tied to claims; the evidence is chiefly indirect and not a ranked prevalence set.",
+    "accuracy": "It correctly distinguishes the lung-function split from prevalence and flags the poor source fit and broad topic net.",
+    "limits": "It gives relevant windows, lanes, coverage, and interpretation limits alongside the evidence.",
+    "verdict": "It responsibly advises against quoting a prevalence figure, but the deliverable does not answer which statistics are most cited.",
+    "facets": "It grounds the retrieval failure and explains why retrieved figures do not answer prevalence, but leaves the requested figures and populations unresolved."
+   },
+   "D": {
+    "trend": "The traced series has a quantified comparison, but it measures broad research volume and omits the 2025 point from the chart.",
+    "comparison": "The 2020–2021 contrast is on one traced scale, with its interpretation properly bounded to paper counts.",
+    "chart": "The chart traces its values and supports a claim, but charts research volume rather than the requested prevalence facets.",
+    "drilldown": "It provides linked papers and specific follow-ups, though only three of six calls executed and no result was folded back in.",
+    "export": "The export has provenance, but omits the 2025 series point and does not export the needed prevalence documents or estimates.",
+    "repro": "The listed calls support most figures, but the export and chart do not reconstruct every claim and full series.",
+    "refs": "Identifiers resolve and references are tied to claims with quotes; the set is mostly indirect and lacks contrary prevalence sources.",
+    "accuracy": "It correctly says the returned percentages are not long COVID prevalence and does not infer a population rate.",
+    "limits": "It states important window and lane limits but misses some applicable retrieval and coverage caveats.",
+    "verdict": "It gives a direct decision, confidence, and what would change the conclusion, while acknowledging the evidence gap.",
+    "facets": "It grounds the retrieval gap and identifies the non-prevalence statistics, but does not supply prevalence estimates by population or definition."
+   }
+  },
+  "errors": {
+   "A": [
+    "Presents a 5–10% planning band and several prevalence estimates from memory; these are not a measured, comparable set.",
+    "The headline trend chart connects estimates from different populations and definitions as a time series."
+   ],
+   "B": [
+    "Attributes DOI 10.1001/jama.2022.18931 to Perlis et al. rather than the paper identified by that DOI.",
+    "Describes the CDC 7.5% figure as current long COVID, while the cited wording says ever had long COVID."
+   ],
+   "C": [
+    "Uses broad topic-net paper volume and stance as prominent trend and comparison evidence for a question about prevalence.",
+    "The 2025 research period is described as possibly affected by ingest lag even though the reference marks it as censored."
+   ],
+   "D": [
+    "Uses broad research-paper volume as its trend evidence for a prevalence question.",
+    "The chart and CSV stop at 2024 although the reference series includes 2025, which is specifically censored."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid because it clearly separates highly cited reviews and survivor lung-function percentages from actual long COVID prevalence, then recommends against using them as prevalence headlines. C reaches a similar caution, but spends more of the deliverable on broad corpus trends and stance counts that do not answer the prevalence question."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,763 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 641,
+  "charts": [
+   {
+    "id": "seasonal-shape",
+    "title": "Illustrative relative monthly coverage index by hazard (peak=100)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Heatwaves",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     },
+     {
+      "name": "Wildfires",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     },
+     {
+      "name": "Floods",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "hazard_seasonality_illustrative.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 13,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the per-term totals and shares over the last 12 months?",
+    "args": {
+     "terms": [
+      "flood",
+      "heatwave",
+      "wildfire"
+     ],
+     "window": {
+      "from": "2025-10-01",
+      "to": "2026-09-30"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-01', 'to': '2026-09-30'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Which direction is each term trending year on year?",
+    "args": {
+     "terms": [
+      "flood",
+      "heatwave",
+      "wildfire"
+     ],
+     "granularity": "month",
+     "years": 5
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...': 'month', 'years': 5}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['flood', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyears\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=5, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What is the tone per term?",
+    "args": {
+     "terms": [
+      "flood",
+      "heatwave",
+      "wildfire"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...heatwave', 'wildfire']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['flood', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which outlets and countries cover each term most?",
+    "args": {
+     "terms": [
+      "flood",
+      "heatwave",
+      "wildfire"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...heatwave', 'wildfire']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['flood', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "What overlap exists between the terms (combined_articles)?",
+    "args": {
+     "terms": [
+      "flood",
+      "heatwave",
+      "wildfire"
+     ],
+     "dedupe": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...fire'], 'dedupe': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['flood', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndedupe\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which stories drive the peaks (most_covered)?",
+    "args": {
+     "terms": [
+      "flood",
+      "heatwave",
+      "wildfire"
+     ],
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...wildfire'], 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['flood', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 4,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "-1 — - Tone per term: cannot measure. Coverage of all three is likely negative-leaning because ",
+    "+1 — - Tone per term: cannot measure. Coverage of all three is likely negative-leaning because ",
+    "100 — The chart is an illustrative seasonal index (est.), not data. Each series is scaled so its",
+    "296 — - Windows: the illustrative window ends 2025-12-31, which is 296 days before today (2026-1"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1125,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly news articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "floods",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "heatwave",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "wildfire",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 67,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term_summary.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.geography",
+    "question": "Which countries drove the January 2025 wildfire spike?",
+    "args": {
+     "term": "wildfire",
+     "since": "2025-01-01",
+     "until": "2025-02-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.8,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 13607, \"share_pct\": 59.7, \"lift\": 2.4}, {\"label\": \"united kingdom\", \"articles\": 1045, \"share_pct\": 4.6, \"lift\": 0.9}, {\"label\": \"canada\", \"articles\": 983, \"share_pct\": 4.3, \"lift\": 1.0}, {\"label\": \"australia\", \"articles\": 586, \"share_pct\": 2.6, \"lift\": 1.1}, {\"label\": \"france\", \"articles\": 498, \"share_pct\": 2.2, \"lift\": 1.1}, {\"label\": \"mexico\", \"articles\": 460, \"share_pct\": 2.0, \"lift\": 2.0}, {\"label\": \"italy\", \"articles\": 451, \"share_pct\": 2.0, \"lift\": 1.1}, {\"label\": \"spain\", \"articles\": 380, \"share_pct\": 1.7, \"lift\": 1.1}, {\"label\": \"south africa\", \"articles\": 299, \"share_pct\": 1.3, \"lift\": 2.6}, {\"label\": \"iceland\", \"a"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Why did heatwave coverage rise in April-May 2026?",
+    "args": {
+     "term": "heatwave",
+     "since": "2026-03-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"points\": [{\"period\": \"2026-03-01\", \"articles\": 714, \"critical\": 474, \"negative\": 514, \"positive\": 166, \"mean_priority\": 6.88, \"critical_pct\": 66.4, \"partial_period\": false}, {\"period\": \"2026-04-01\", \"articles\": 2283, \"critical\": 1337, \"negative\": 1578, \"positive\": 574, \"mean_priority\": 6.84, \"critical_pct\": 58.6, \"partial_period\": false}, {\"period\": \"2026-05-01\", \"articles\": 2809, \"critical\": 1839, \"negative\": 2012, \"positive\": 700, \"mean_priority\": 6.88, \"critical_pct\": 65.5, \"partial_period\": false}], \"total\": 5806, \"critical_total\": 3650, \"trend\": {\"available\": true, \"from\": \"2026-03-01\", \"to\": \"2026-05-01\", \"first\": 714, \"last\": 2809, \"peak\": 2809, \"peak_period\": \"2026-05-01\", \"early_t"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What are the most critical flood stories of September 2025?",
+    "args": {
+     "term": "floods",
+     "since": "2025-09-01",
+     "until": "2025-10-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-09-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is sentiment per term defined and how does it shift by month?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "How much do the three terms overlap in the same articles?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "Is the seasonal pattern repeating over a longer history?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2020-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2020-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 81,
+   "traced": 74,
+   "derived": 20,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 319,
+  "charts": [
+   {
+    "id": "monthly-coverage",
+    "title": "Monthly news coverage of floods, heatwaves and wildfires",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Floods",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Heatwaves",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Wildfires",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the per-term totals and shares for floods, heatwaves and wildfires over the same date window and outlet set?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwaves",
+      "wildfires"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the comparable monthly article counts for each term over that window?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwaves",
+      "wildfires"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...}, 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwaves', 'wildfires'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does sentiment or tone vary by term, and what definitions and method are used?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwaves",
+      "wildfires"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwaves', 'wildfires'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How much do the topic results overlap, and what common-word or query-matching caveats apply?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwaves",
+      "wildfires"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "include_overlap": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_overlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which topic is most covered, and how many deduplicated articles cover more than one topic?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwaves",
+      "wildfires"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...}, 'deduplicate': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwaves', 'wildfires'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 100,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 681,
+  "charts": [
+   {
+    "id": "monthly-article-volume",
+    "title": "Monthly indexed news articles by hazard",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Floods",
+      "how": "call",
+      "points": 23,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Heatwave",
+      "how": "call",
+      "points": 23,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Wildfire",
+      "how": "call",
+      "points": 23,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 67,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which publishers and source panels contribute most to each term’s volume?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How much do the three term results overlap at article level?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2024-06-01",
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What sentiment labels and classification definitions explain tone by term and month?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which locations account for the coverage of each hazard?",
+    "args": {
+     "terms": [
+      "floods",
+      "heatwave",
+      "wildfire"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['floods', 'heatwave', 'wildfire'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which articles or events drove the wildfire volume spike in January 2025?",
+    "args": {
+     "term": "wildfire",
+     "since": "2025-01-01",
+     "until": "2025-02-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 19,
+   "traced": 19,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 117,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

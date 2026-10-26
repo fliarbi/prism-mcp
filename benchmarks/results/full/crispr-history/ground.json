@@ -1,0 +1,611 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 689,
+  "charts": [
+   {
+    "id": "crispr_yearly",
+    "title": "CRISPR papers per year (title/abstract match, the health literature index-style, approximate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers, estimate",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "crispr_yearly_estimate.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "crispr_scenarios_estimate.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.table",
+    "question": "Which subfields drove growth after 2021?",
+    "args": {
+     "term": "CRISPR",
+     "group_by": "subtopic"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'group_by': 'subtopic'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'group_by': 'subtopic'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='subtopic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which countries contribute most output?",
+    "args": {
+     "term": "CRISPR"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'CRISPR'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "analysis.history",
+    "question": "How did 2026 year-to-date compare with 2025?",
+    "args": {
+     "term": "CRISPR",
+     "from": "2025-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "How many papers are base or prime editing?",
+    "args": {
+     "term": "prime editing OR base editing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...iting OR base editing'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='prime editing OR base editing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Is news coverage following publication growth?",
+    "args": {
+     "term": "CRISPR"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.4,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 651, \"critical\": 609, \"negative\": 25, \"positive\": 616, \"mean_priority\": 7.42, \"critical_pct\": 93.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 579, \"critical\": 535, \"negative\": 42, \"positive\": 531, \"mean_priority\": 7.37, \"critical_pct\": 92.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 588, \"critical\": 534, \"negative\": 17, \"positive\": 557, \"mean_priority\": 7.27, \"critical_pct\": 90.8, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 610, \"critical\": 542, \"negative\": 22, \"positive\": 575, \"mean_priority\": 7.26, \"critical_pct\": 88.9, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\":"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 40,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 5,
+   "untagged_examples": [
+    "16,500 — **Scenarios for next years**, with 2025 as the base (16,500, est.):",
+    "0% — | Year | Low (0%/yr) | Central (+6%/yr) | High (+12%/yr) |",
+    "+6% — | Year | Low (0%/yr) | Central (+6%/yr) | High (+12%/yr) |",
+    "+12% — | Year | Low (0%/yr) | Central (+6%/yr) | High (+12%/yr) |",
+    "10 — - **Windows:** 2012–2025 for history, ending 2025-12-31, which is about 10 months before t"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 135,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 829,
+  "charts": [
+   {
+    "id": "crispr-title-records",
+    "title": "Prism index records with 'crispr' in title, per year, with 2026-2028 central scenario",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Observed",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Central scenario (linear drift)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Lower sensitivity",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Upper sensitivity",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "crispr_history.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "crispr_scenarios.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries drive the growth in CRISPR research?",
+    "args": {
+     "term": "crispr"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'crispr'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='crispr', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers drove the 2025 jump of +891 records?",
+    "args": {
+     "term": "crispr",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 35.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 45061, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117712182\", \"title\": \"A Universal Light-Activated CRISPR-RNA Based on Split Direct Repeat for One-Pot Cas12a Nucleic Acid Detection\", \"authors\": [\"Meng Cheng\", \"Y. Wang\", \"Weihong Lin\", \"Junkai Ye\", \"MINZHI WU\", \"Bo Xiang\", \"Lidong Liu\", \"Baoqing Sun\"], \"venue\": \"Analytical Chemistry\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.1021/acs.analchem.5c05722\", \"url\": \"https://doi.org/10.1021/acs.analchem.5c05722\", \"cited_by\": 1, \"orientation\": \""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How does the count change if matching includes abstracts?",
+    "args": {
+     "term": "crispr"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'crispr'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='crispr', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "Is CRISPR growth outpacing the overall corpus?",
+    "args": {
+     "term": "crispr",
+     "normalize": "corpus_total"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...alize': 'corpus_total'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...alize': 'corpus_total'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='crispr', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nnormalize\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus_total', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which CRISPR papers are most cited?",
+    "args": {
+     "term": "crispr",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'crispr', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='crispr', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.counter_evidence",
+    "question": "What do critical or counter-evidence papers say about CRISPR safety?",
+    "args": {
+     "term": "crispr"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'crispr'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='crispr', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.trends",
+    "question": "How is news attention to CRISPR trending?",
+    "args": {
+     "term": "crispr"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 651, \"critical\": 609, \"negative\": 25, \"positive\": 616, \"mean_priority\": 7.42, \"critical_pct\": 93.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 579, \"critical\": 535, \"negative\": 42, \"positive\": 531, \"mean_priority\": 7.37, \"critical_pct\": 92.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 588, \"critical\": 534, \"negative\": 17, \"positive\": 557, \"mean_priority\": 7.27, \"critical_pct\": 90.8, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 610, \"critical\": 542, \"negative\": 22, \"positive\": 575, \"mean_priority\": 7.26, \"critical_pct\": 88.9, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\":"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 68,
+   "traced": 65,
+   "derived": 29,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 426,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many CRISPR-related research records were published per year under a reproducible query, and how sensitive are counts to the match field?",
+    "args": {
+     "term": "CRISPR",
+     "match_field": "title_abstract",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...t', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmatch_field\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='title_abstract', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What annual series provides a defensible comparison baseline on the same database and counting scale?",
+    "args": {
+     "term": "gene editing",
+     "match_field": "title_abstract",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...t', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='gene editing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmatch_field\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='title_abstract', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "analysis.scenarios",
+    "question": "What central and sensitivity-bound publication-volume scenarios are supported for each forecast year?",
+    "args": {
+     "series": "annual CRISPR research publication counts",
+     "horizon": "next years",
+     "bounds": "sensitivity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for trend_scenarios\nhorizon\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='next years', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/int_parsing\nseries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='annual CRISPR research publication counts', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbounds\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sensitivity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "analysis.history",
+    "question": "How well would the scenario method have forecast prior years compared with a no-change baseline?",
+    "args": {
+     "series": "annual CRISPR research publication counts",
+     "backtest": true,
+     "baseline": "no-change",
+     "metric": "MAE"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'series':...ange', 'metric': 'MAE'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nseries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='annual CRISPR research publication counts', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbacktest\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='no-change', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='MAE', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 518,
+  "charts": [
+   {
+    "id": "crispr-title-records",
+    "title": "CRISPR title-matched research records per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Prism research index title matches",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "crispr_history.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "crispr_scenarios.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which CRISPR subtopics account for the recent annual increase?",
+    "args": {
+     "term": "CRISPR",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 482, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7118110007\", \"title\": \"Mechanism and Applications of CRISPR/Cas-9-Mediated Genome Editing [Corrigendum]\", \"authors\": [\"Misganaw Asmamaw\", \"Belay Zawdie\"], \"venue\": \"Dove Medical Press (Taylor and Francis Group)\", \"year\": 2025, \"date\": \"2025-12-27\", \"doi\": null, \"url\": \"https://www.dovepress.com/corrigendum-mechanism-and-applications-of-crisprcas-9-mediated-genome--peer-reviewed-fulltext-article-BTT\", \"cited_by\": 0, \"orientation\": \"critical\", \"cont"
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "How do CRISPR research counts vary by country or region?",
+    "args": {
+     "term": "CRISPR"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'CRISPR'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What share of CRISPR records concern clinical applications?",
+    "args": {
+     "term": "CRISPR clinical applications"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...clinical applications'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR clinical applications', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "How do title matches compare with abstract matches over the same years?",
+    "args": {
+     "term": "CRISPR",
+     "match_field": "abstract",
+     "from_year": 2017,
+     "to_year": 2025
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 2017, 'to_year': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CRISPR', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmatch_field\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='abstract', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2025, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 15,
+   "traced": 13,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 3,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

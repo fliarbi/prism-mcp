@@ -1,0 +1,609 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 626,
+  "charts": [
+   {
+    "id": "bleaching-events",
+    "title": "Share of reef area hit by bleaching-level heat stress, by global event (estimate)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Reef area affected",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "events.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers on coral bleaching since 2023 are most cited?",
+    "args": {
+     "term": "coral bleaching",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3067, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117324858\", \"title\": \"Structural Climate Drivers of Global Coral Bleaching\", \"authors\": [\"Jungang Lu\", \"Wenqi Xing\", \"Huazhu Zheng\", \"Zhengyu Yao\", \"Nian Wei\", \"Hongming He\"], \"venue\": \"Global Change Biology\", \"year\": 2025, \"date\": \"2025-12-26\", \"doi\": \"10.1111/gcb.70661\", \"url\": \"https://doi.org/10.1111/gcb.70661\", \"cited_by\": 0, \"orientation\": \"breakthrough\", \"contribution\": \"methodological\", \"stance_score\": 0.9, \"topics\": [\"Coral and Marine E"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has the share of critical-orientation papers changed by year?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"coral bleaching\", \"reef bleaching\", \"mass coral bleaching\"], \"points\": [{\"year\": 2017, \"total\": 268, \"orientation\": {\"breakthrough\": 17, \"comparative\": 3, \"cautionary\": 12, \"problem_identifying\": 20, \"critical\": 2, \"descriptive\": 57, \"promising\": 18}, \"stance_score\": null, \"positive\": 35, \"contested\": 34, \"positive_pct\": 13.1, \"contested_pct\": 12.7}, {\"year\": 2018, \"total\": 357, \"orientation\": {\"cautionary\": 26, \"descriptive\": 83, \"critical\": 1, \"breakthrough\": 27, \"problem_identifying\": 23, \"comparative\": 3, \"promising\": 22}, \"stance_score\": null, \"positive\": 49, \"contested\": 50, \"positive_pct\": 13.7, \"contested_pct\": 14.0}, {\"year\": 2019, \"tot"
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "Which topics are under-covered (e.g. deep reefs, Indian Ocean)?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'coral bleaching'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news volume on bleaching trended?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.6,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 38, \"critical\": 30, \"negative\": 20, \"positive\": 17, \"mean_priority\": 7.05, \"critical_pct\": 78.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 23, \"critical\": 21, \"negative\": 17, \"positive\": 6, \"mean_priority\": 7.09, \"critical_pct\": 91.3, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 51, \"critical\": 51, \"negative\": 46, \"positive\": 5, \"mean_priority\": 8.31, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 13, \"critical\": 12, \"negative\": 7, \"positive\": 6, \"mean_priority\": 7.31, \"critical_pct\": 92.3, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 22, \"critical\""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which regions dominate research output?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'coral bleaching'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.counter_evidence",
+    "question": "What evidence challenges restoration effectiveness?",
+    "args": {
+     "term": "coral restoration"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'coral restoration'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral restoration', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 10,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "1.2 — - Reefs were thought to be near a tipping point at about 1.2°C of warming. A 2025 Global T"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1029,
+  "charts": [
+   {
+    "id": "research-trend",
+    "title": "Coral bleaching papers per year, endpoints only",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers (first and last year only)",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "radar_summary.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What is the year-by-year paper count?",
+    "args": {
+     "term": "coral bleaching",
+     "from": 2017,
+     "to": 2025
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...rom': 2017, 'to': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2025, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers are critical or cautionary?",
+    "args": {
+     "term": "coral bleaching",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 42, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W4415090860\", \"title\": \"A Requiem for the Ocean: Ecocritical Engagements with Plastic Pollution and Coral Bleaching\", \"authors\": [\"Mary S. Steffi Santhana\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-10-12\", \"doi\": \"10.4324/9781003725152-29\", \"url\": \"https://doi.org/10.4324/9781003725152-29\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"review\", \"stance_score\": -0.4, \"topics\": [\"Microplastics and Plastic Pollution\"], \"institutions\": ["
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has stance shifted over time?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"coral bleaching\", \"reef bleaching\", \"mass coral bleaching\"], \"points\": [{\"year\": 2017, \"total\": 268, \"orientation\": {\"critical\": 2, \"promising\": 20, \"problem_identifying\": 13, \"cautionary\": 10, \"descriptive\": 57, \"comparative\": 3, \"breakthrough\": 19}, \"stance_score\": null, \"positive\": 39, \"contested\": 25, \"positive_pct\": 14.6, \"contested_pct\": 9.3}, {\"year\": 2018, \"total\": 357, \"orientation\": {\"cautionary\": 33, \"descriptive\": 83, \"critical\": 1, \"promising\": 33, \"problem_identifying\": 23, \"comparative\": 3, \"breakthrough\": 28}, \"stance_score\": null, \"positive\": 61, \"contested\": 57, \"positive_pct\": 17.1, \"contested_pct\": 16.0}, {\"year\": 2019, \"tota"
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which countries publish most?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'coral bleaching'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How does news coverage compare by month?",
+    "args": {
+     "term": "coral bleaching",
+     "from": "2019-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "What is the news tone?",
+    "args": {
+     "term": "coral bleaching"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.3,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 20, \"positive\": 17, \"neutral\": 1, \"ratio\": 1.18}, {\"period\": \"2024-07-01\", \"negative\": 17, \"positive\": 6, \"neutral\": 0, \"ratio\": 2.83}, {\"period\": \"2024-08-01\", \"negative\": 46, \"positive\": 5, \"neutral\": 0, \"ratio\": 9.2}, {\"period\": \"2024-09-01\", \"negative\": 7, \"positive\": 6, \"neutral\": 0, \"ratio\": 1.17}, {\"period\": \"2024-10-01\", \"negative\": 18, \"positive\": 3, \"neutral\": 1, \"ratio\": 6.0}, {\"period\": \"2024-11-01\", \"negative\": 18, \"positive\": 7, \"neutral\": 0, \"ratio\": 2.57}, {\"period\": \"2024-12-01\", \"negative\": 4, \"positive\": 9, \"neutral\": 0, \"ratio\": 0.44}, {\"period\": \"2025-01-01\", \"negative\": 17, \"positive\": 12, \"neutral\": 1, \"ratio\": 1.42}, {\""
+   },
+   {
+    "id": "f7",
+    "feature": "research.evidence",
+    "question": "What does the evidence say about symbiont interventions?",
+    "args": {
+     "term": "assisted evolution coral symbionts"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ution coral symbionts'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='assisted evolution coral symbionts', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 45,
+   "traced": 45,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 9,
+   "found_in_corpus": 9,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 126,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 713,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "Which papers drove changes in coral bleaching research orientation by year?",
+    "args": {
+     "term": "coral bleaching",
+     "window": "2018-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2018-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.citations",
+    "question": "What are the most cited recent coral bleaching papers, with DOI and citation counts?",
+    "args": {
+     "term": "coral bleaching",
+     "year_from": 2020,
+     "year_to": 2026,
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...to': 2026, 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2020, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which recent papers focus on heat tolerance, adaptation, and coral symbionts?",
+    "args": {
+     "term": "coral bleaching heat tolerance adaptation symbionts",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'coral bleaching heat tolerance adaptation symbionts' — try expand=true, or a broader phrase",
+    "seconds": 13.7,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which regions and topics are under-covered in coral bleaching research?",
+    "args": {
+     "term": "coral bleaching",
+     "year_from": 2020,
+     "year_to": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 2020, 'year_to': 2026}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2020, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of coral bleaching changed over time?",
+    "args": {
+     "term": "coral bleaching",
+     "window": "2018-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2018-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 1,
+   "not_found": [
+    "10.1038/s41558-020-0798-2",
+    "10.1038/s41586-019-1729-9",
+    "10.1038/s43017-021-00186-8"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 0,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 899,
+  "charts": [
+   {
+    "id": "research-output",
+    "title": "Indexed coral-bleaching research output",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research trend endpoints",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_trend_endpoints.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drove the rise in indexed coral-bleaching research output by year?",
+    "args": {
+     "term": "coral bleaching",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 42, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 18, \"papers\": [{\"id\": \"W4415090860\", \"title\": \"A Requiem for the Ocean: Ecocritical Engagements with Plastic Pollution and Coral Bleaching\", \"authors\": [\"Mary S. Steffi Santhana\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-10-12\", \"doi\": \"10.4324/9781003725152-29\", \"url\": \"https://doi.org/10.4324/9781003725152-29\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"review\", \"stance_score\": -0.4, \"topics\": [\"Microplastics and Plastic Pollution\"], \"institutions\": "
+   },
+   {
+    "id": "f2",
+    "feature": "research.brief",
+    "question": "What methods and findings do recent bleaching detection and forecasting studies report?",
+    "args": {
+     "topic": "coral bleaching detection and forecasting",
+     "since_year": 2022
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for research_brief\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has research attention to assisted evolution and symbiont tolerance changed over time?",
+    "args": {
+     "topic": "coral bleaching assisted evolution symbiont tolerance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...on symbiont tolerance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching assisted...tion symbiont tolerance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.radar",
+    "question": "Which coral-bleaching topics have high research volume but low news coverage using a defensible topic match?",
+    "args": {
+     "topic": "coral bleaching",
+     "since_year": 2022
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 45.7,
+    "sample": "{\"new_work\": [{\"title\": \"The Fourth Global Coral Bleaching Event: Where do we go from here?\", \"year\": 2024, \"venue\": \"Coral Reefs\", \"cited_by\": 197, \"orientation\": \"problem_identifying\", \"url\": \"https://doi.org/10.1007/s00338-024-02504-w\"}, {\"title\": \"Triggers, cascades, and endpoints: connecting the dots of coral bleaching mechanisms\", \"year\": 2024, \"venue\": \"Biological reviews/Biological reviews of the Cambridge Philosophical Society\", \"cited_by\": 104, \"orientation\": \"breakthrough\", \"url\": \"https://doi.org/10.1111/brv.13042\"}, {\"title\": \"Hidden heatwaves and severe coral bleaching linked to mesoscale eddies and thermocline dynamics\", \"year\": 2023, \"venue\": \"Nature Communications\", \"cited_b"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What is the trend in news coverage specifically about coral bleaching, with the query and counts exposed?",
+    "args": {
+     "query": "coral bleaching",
+     "from": "2019-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='coral bleaching', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 21,
+   "traced": 17,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 99,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None]"
+  ],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 3,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

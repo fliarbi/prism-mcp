@@ -1,0 +1,647 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 569,
+  "charts": [
+   {
+    "id": "solar-additions",
+    "title": "Approximate global solar PV additions (not news volume)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Global PV additions (rough)",
+      "how": "estimate",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "solar_additions_estimate.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Which months saw volume spikes and why?",
+    "args": {
+     "term": "solar power",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "granularity must be one of ['daily', 'weekly', 'monthly', 'quarterly', 'yearly']",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which organisations are mentioned most?",
+    "args": {
+     "term": "solar power",
+     "facet": "organisations"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nfacet\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organisations', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which people are mentioned most?",
+    "args": {
+     "term": "solar power",
+     "facet": "people"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nfacet\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='people', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "What share of coverage is placed, and where?",
+    "args": {
+     "term": "solar power",
+     "show": "placed_pct"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nshow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='placed_pct', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage among publishers?",
+    "args": {
+     "term": "solar power",
+     "facet": "sources"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nfacet\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sources', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "How has tone moved month by month?",
+    "args": {
+     "term": "solar power",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "granularity must be one of ['daily', 'weekly', 'monthly', 'quarterly', 'yearly']",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 7,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "22 — - Windows: no news window was queried. The latest capacity year referenced is 2024, which "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 815,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly articles mentioning solar power",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "solar_monthly.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 17,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which headlines are critical of solar, with date, publisher and URL?",
+    "args": {
+     "term": "solar power",
+     "since": "2025-06-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What drove the February 2026 step-up in volume?",
+    "args": {
+     "term": "solar power",
+     "since": "2026-01-01",
+     "granularity": "weekly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.5,
+    "sample": "{\"points\": [{\"period\": \"2025-12-29\", \"articles\": 138, \"critical\": 112, \"negative\": 19, \"positive\": 118, \"mean_priority\": 6.93, \"critical_pct\": 81.2, \"partial_period\": true}, {\"period\": \"2026-01-05\", \"articles\": 496, \"critical\": 399, \"negative\": 55, \"positive\": 439, \"mean_priority\": 6.85, \"critical_pct\": 80.4, \"partial_period\": false}, {\"period\": \"2026-01-12\", \"articles\": 587, \"critical\": 481, \"negative\": 54, \"positive\": 531, \"mean_priority\": 6.86, \"critical_pct\": 81.9, \"partial_period\": false}, {\"period\": \"2026-01-19\", \"articles\": 585, \"critical\": 466, \"negative\": 70, \"positive\": 511, \"mean_priority\": 6.84, \"critical_pct\": 79.7, \"partial_period\": false}, {\"period\": \"2026-01-26\", \"articles\": "
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Is India's share growing over time?",
+    "args": {
+     "term": "solar power",
+     "country": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does solar compare with wind in tone and volume?",
+    "args": {
+     "terms": [
+      "solar power",
+      "wind energy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.4,
+    "sample": "{\"terms\": [\"solar power\", \"wind energy\"], \"rows\": [{\"term\": \"solar power\", \"articles\": 58907, \"share_pct\": 70.4, \"critical\": 45058, \"direction\": \"flat\", \"growth\": 1.15, \"tone_ratio\": 0.14, \"vs_baseline\": 0.24, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 2050, \"critical\": 1563, \"negative\": 212, \"positive\": 1827, \"mean_priority\": 6.71, \"critical_pct\": 76.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 2498, \"critical\": 1873, \"negative\": 240, \"positive\": 2239, \"mean_priority\": 6.62, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2304, \"critical\": 1814, \"negative\": 267, \"positive\": 2023, \"mean_priority\": 6.75, \"critical_pct\": 78.7, \"par"
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Which articles drive the Nov 2024 negative spike?",
+    "args": {
+     "term": "solar power",
+     "since": "2024-11-01",
+     "until": "2024-12-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.0,
+    "sample": "{\"points\": [{\"period\": \"2024-11-01\", \"negative\": 512, \"positive\": 2070, \"neutral\": 16, \"ratio\": 0.25}], \"totals\": {\"neg\": 512, \"pos\": 2070, \"neutral\": 16, \"n\": 2598, \"neg_pct\": 19.7, \"pos_pct\": 79.7, \"ratio\": 0.25}, \"corpus_baseline_ratio\": 0.56, \"vs_baseline\": 0.45, \"reading\": \"markedly more positive than ordinary news coverage\"}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "What has happened since June 2026?",
+    "args": {
+     "term": "solar power",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'solar power' in this window",
+    "seconds": 0.1,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 68,
+   "traced": 68,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 284,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly volume and direction of solar-power news?",
+    "args": {
+     "term": "solar power"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 2050, \"critical\": 1563, \"negative\": 212, \"positive\": 1827, \"mean_priority\": 6.71, \"critical_pct\": 76.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 2498, \"critical\": 1873, \"negative\": 240, \"positive\": 2239, \"mean_priority\": 6.62, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2304, \"critical\": 1814, \"negative\": 267, \"positive\": 2023, \"mean_priority\": 6.75, \"critical_pct\": 78.7, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 2438, \"critical\": 1961, \"negative\": 227, \"positive\": 2197, \"mean_priority\": 6.79, \"critical_pct\": 80.4, \"partial_period\": false}, {\"period\": \"2024-10-"
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does solar-power news compare with a defined corpus baseline?",
+    "args": {
+     "term": "solar power",
+     "baseline": "all news"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'baseline': 'all news'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='solar power', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What is the tone of solar-power coverage relative to the corpus baseline?",
+    "args": {
+     "term": "solar power",
+     "baseline": "all news"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are mentioned, and what share of items have an identified place?",
+    "args": {
+     "term": "solar power"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.7,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 16003, \"share_pct\": 21.9, \"lift\": 1.0}, {\"label\": \"india\", \"articles\": 11006, \"share_pct\": 15.1, \"lift\": 2.3}, {\"label\": \"china\", \"articles\": 4375, \"share_pct\": 6.0, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 3682, \"share_pct\": 5.0, \"lift\": 1.0}, {\"label\": \"australia\", \"articles\": 2978, \"share_pct\": 4.1, \"lift\": 0.9}, {\"label\": \"germany\", \"articles\": 2289, \"share_pct\": 3.1, \"lift\": 2.5}, {\"label\": \"france\", \"articles\": 1809, \"share_pct\": 2.5, \"lift\": 1.4}, {\"label\": \"japan\", \"articles\": 1699, \"share_pct\": 2.3, \"lift\": 1.5}, {\"label\": \"canada\", \"articles\": 1625, \"share_pct\": 2.2, \"lift\": 0.7}, {\"label\": \"spain\", \""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical solar-power headlines should a decision-maker review?",
+    "args": {
+     "term": "solar power"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 23.4,
+    "sample": "{\"articles\": [], \"returned\": 0, \"requested\": 10, \"unresolved\": 3, \"relevance_or_duplicate_rejections\": 7, \"entity_identity_verified\": false, \"identity_note\": \"Visible term matching does not disambiguate homonyms such as Apple; inspect article context.\", \"unresolved_note\": \"some ids no longer have a record in the article store — rotated out, not an error\"}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which companies and people appear most in solar-power news, and how concentrated are the sources?",
+    "args": {
+     "term": "solar power"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 46.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"solar power\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 34953, \"place\": 0, \"tagged_articles\": 51639, \"entity_labelled_articles\": 39545, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 58907, \"critical_articles\": 45058, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:49:38\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close eve"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 85,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 749,
+  "charts": [
+   {
+    "id": "solar-monthly-coverage",
+    "title": "Monthly news articles mentioning solar power",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "solar_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 22,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "solar_tone.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "solar_geography.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 20,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which critical solar-power headlines were missed or unavailable, with date, publisher, and URL?",
+    "args": {
+     "term": "solar power",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does monthly solar coverage compare with wind and fossil-fuel coverage on the same scale?",
+    "args": {
+     "terms": [
+      "solar power",
+      "wind power",
+      "fossil fuels"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.5,
+    "sample": "{\"terms\": [\"solar power\", \"wind power\", \"fossil fuels\"], \"rows\": [{\"term\": \"solar power\", \"articles\": 58907, \"share_pct\": 47.1, \"critical\": 45058, \"direction\": \"flat\", \"growth\": 1.15, \"tone_ratio\": 0.14, \"vs_baseline\": 0.24, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 2050, \"critical\": 1563, \"negative\": 212, \"positive\": 1827, \"mean_priority\": 6.71, \"critical_pct\": 76.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 2498, \"critical\": 1873, \"negative\": 240, \"positive\": 2239, \"mean_priority\": 6.62, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2304, \"critical\": 1814, \"negative\": 267, \"positive\": 2023, \"mean_priority\": 6.75, \"critical_p"
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How did solar coverage tone compare with the corpus baseline month by month?",
+    "args": {
+     "term": "solar power",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 212, \"positive\": 1827, \"neutral\": 9, \"ratio\": 0.12}, {\"period\": \"2024-07-01\", \"negative\": 240, \"positive\": 2239, \"neutral\": 17, \"ratio\": 0.11}, {\"period\": \"2024-08-01\", \"negative\": 267, \"positive\": 2023, \"neutral\": 12, \"ratio\": 0.13}, {\"period\": \"2024-09-01\", \"negative\": 227, \"positive\": 2197, \"neutral\": 12, \"ratio\": 0.1}, {\"period\": \"2024-10-01\", \"negative\": 236, \"positive\": 2116, \"neutral\": 19, \"ratio\": 0.11}, {\"period\": \"2024-11-01\", \"negative\": 512, \"positive\": 2070, \"neutral\": 16, \"ratio\": 0.25}, {\"period\": \"2024-12-01\", \"negative\": 263, \"positive\": 1945, \"neutral\": 9, \"ratio\": 0.14}, {\"period\": \"2025-01-01\", \"negative\": 293, \"positive\": "
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which solar companies were central to coverage, after article-level identity checks?",
+    "args": {
+     "term": "solar power",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"solar power\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 34953, \"place\": 0, \"tagged_articles\": 51639, \"entity_labelled_articles\": 39545, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 58907, \"critical_articles\": 45058, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:49:38\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close eve"
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "How does country placement and placed share change over time?",
+    "args": {
+     "term": "solar power",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 15199, \"share_pct\": 21.9, \"lift\": 1.0}, {\"label\": \"india\", \"articles\": 10513, \"share_pct\": 15.1, \"lift\": 2.3}, {\"label\": \"china\", \"articles\": 4128, \"share_pct\": 5.9, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 3537, \"share_pct\": 5.1, \"lift\": 1.0}, {\"label\": \"australia\", \"articles\": 2823, \"share_pct\": 4.1, \"lift\": 0.9}, {\"label\": \"germany\", \"articles\": 2177, \"share_pct\": 3.1, \"lift\": 2.5}, {\"label\": \"france\", \"articles\": 1724, \"share_pct\": 2.5, \"lift\": 1.4}, {\"label\": \"japan\", \"articles\": 1582, \"share_pct\": 2.3, \"lift\": 1.5}, {\"label\": \"canada\", \"articles\": 1517, \"share_pct\": 2.2, \"lift\": 0.6}, {\"label\": \"spain\", \""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Is the apparent recent volume pickup sustained after the censored period?",
+    "args": {
+     "term": "solar power",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 2050, \"critical\": 1563, \"negative\": 212, \"positive\": 1827, \"mean_priority\": 6.71, \"critical_pct\": 76.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 2498, \"critical\": 1873, \"negative\": 240, \"positive\": 2239, \"mean_priority\": 6.62, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2304, \"critical\": 1814, \"negative\": 267, \"positive\": 2023, \"mean_priority\": 6.75, \"critical_pct\": 78.7, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 2438, \"critical\": 1961, \"negative\": 227, \"positive\": 2197, \"mean_priority\": 6.79, \"critical_pct\": 80.4, \"partial_period\": false}, {\"period\": \"2024-10-"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 30,
+   "traced": 29,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

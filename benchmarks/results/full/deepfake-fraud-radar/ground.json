@@ -1,0 +1,689 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1478,
+  "charts": [
+   {
+    "id": "ic3-losses",
+    "title": "FBI IC3 total reported cyber-crime losses (not deepfake-specific)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "IC3 reported losses",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "losses.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "detector_drop.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drove the post-2022 rise in deepfake detection research?",
+    "args": {
+     "term": "deepfake detection",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2226, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7117891640\", \"title\": \"Understanding Deepfake Detection Strategies Among Young Adults and Seniors\", \"authors\": [\"Zhong Tang\", \"Dion Hoe‐Lian Goh\", \"Chei Sian Lee\", \"Chen Chen\"], \"venue\": \"International Journal of Human-Computer Interaction\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.1080/10447318.2025.2607571\", \"url\": \"https://doi.org/10.1080/10447318.2025.2607571\", \"cited_by\": 1, \"orientation\": \"comparative\", \"contribution\": \"empirical\", \"s"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has the share of critical or generalisation-focused papers changed by year?",
+    "args": {
+     "term": "deepfake detection generalization"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"deepfake detection generalization\", \"generalization of deepfake detectors\", \"robust deepfake detection\"], \"points\": [{\"year\": 2020, \"total\": 1, \"orientation\": {\"breakthrough\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2021, \"total\": 1, \"orientation\": {\"breakthrough\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2022, \"total\": 5, \"orientation\": {\"breakthrough\": 3}, \"stance_score\": null, \"positive\": 3, \"contested\": 0, \"positive_pct\": 60.0, \"contested_pct\": 0.0}, {\"year\": 2023, \"total\": 4, \"orientation\": {\"caution"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence exists that detectors work in the wild?",
+    "args": {
+     "term": "deepfake detector robustness"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e detector robustness'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detector robustness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news volume on deepfake fraud moved since 2022?",
+    "args": {
+     "term": "deepfake fraud"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.4,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 3, \"critical\": 3, \"negative\": 1, \"positive\": 2, \"mean_priority\": 7.33, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 10, \"critical\": 10, \"negative\": 6, \"positive\": 4, \"mean_priority\": 7.6, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 9, \"critical\": 9, \"negative\": 7, \"positive\": 2, \"mean_priority\": 7.78, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 7, \"critical\": 7, \"negative\": 5, \"positive\": 2, \"mean_priority\": 7.43, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 10, \"critical\": 8, \"ne"
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries publish the most deepfake detection research?",
+    "args": {
+     "term": "deepfake detection"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'deepfake detection'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "Which papers are most cited since 2022?",
+    "args": {
+     "term": "deepfake detection",
+     "from": 2022
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...tection', 'from': 2022}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.compare",
+    "question": "How does news sentiment on deepfake fraud differ from research framing?",
+    "args": {
+     "term": "deepfake fraud"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'deepfake fraud'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake fraud', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 30,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 6,
+   "untagged_examples": [
+    "3.3 — The change is +6.3 USD billion, or about +61% [r12]. A second chart showing the Deloitte f",
+    "100 — Baseline: detector AUC on older academic benchmarks, indexed to 100. The comparison is the",
+    "0.50 — | Video | 100 | about 50 [r6] | about 0.50 |",
+    "0.52 — | Audio | 100 | about 52 [r6] | about 0.52 |",
+    "0.55 — | Image | 100 | about 55 [r6] | about 0.55 |",
+    "22 — - **Windows.** Research and news material covers 2022 to the end of 2025. The IC3 series e"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 150,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1016,
+  "charts": [
+   {
+    "id": "papers-per-year",
+    "title": "Deepfake-detection papers per year (endpoints only)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers (endpoints; intermediate years not retrieved)",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "papers_per_year.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "framing_windows.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which critical papers on detector generalization appeared since 2022?",
+    "args": {
+     "term": "deepfake detection generalization",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'deepfake detection generalization' — try expand=true, or a broader phrase",
+    "seconds": 3.4,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How do cautionary-share trends move year by year?",
+    "args": {
+     "term": "deepfake detection"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"deepfake detection\", \"synthetic media detection\", \"ai-generated content detection\", \"deepfake identification\"], \"points\": [{\"year\": 2019, \"total\": 5, \"orientation\": {\"descriptive\": 2, \"breakthrough\": 2, \"comparative\": 1}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \"positive_pct\": 40.0, \"contested_pct\": 0.0}, {\"year\": 2020, \"total\": 45, \"orientation\": {\"descriptive\": 2, \"problem_identifying\": 3, \"comparative\": 1, \"cautionary\": 3, \"breakthrough\": 23, \"promising\": 13}, \"stance_score\": null, \"positive\": 36, \"contested\": 6, \"positive_pct\": 80.0, \"contested_pct\": 13.3}, {\"year\": 2021, \"total\": 109, \"orientation\": {\"breakthrough\": 54, \"compar"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What does the literature say about deepfake fraud (voice cloning, KYC bypass)?",
+    "args": {
+     "term": "deepfake fraud"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'deepfake fraud'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake fraud', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of deepfake fraud trended?",
+    "args": {
+     "term": "deepfake fraud",
+     "from": "2019-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence exists on detector accuracy in the wild?",
+    "args": {
+     "term": "deepfake detection accuracy"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ke detection accuracy'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection accuracy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries produce the research?",
+    "args": {
+     "term": "deepfake detection"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'deepfake detection'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 57,
+   "traced": 57,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 123,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 756,
+  "charts": [
+   {
+    "id": "trend-1",
+    "title": "Deepfake detection research framing in selected works",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Manipulation and synthetic-media detection",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     },
+     {
+      "name": "Generalization, provenance, and deployment risks",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     },
+     {
+      "name": "Fraud enabled by impersonation and social engineering",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "selected-evidence.csv",
+    "how": "ref",
+    "rows": 5,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which detection papers appeared each year, and what are their citation counts and orientations?",
+    "args": {
+     "term": "deepfake detection",
+     "orientation": "all",
+     "limit": 50
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2226, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 40, \"papers\": [{\"id\": \"W7117891640\", \"title\": \"Understanding Deepfake Detection Strategies Among Young Adults and Seniors\", \"authors\": [\"Zhong Tang\", \"Dion Hoe‐Lian Goh\", \"Chei Sian Lee\", \"Chen Chen\"], \"venue\": \"International Journal of Human-Computer Interaction\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.1080/10447318.2025.2607571\", \"url\": \"https://doi.org/10.1080/10447318.2025.2607571\", \"cited_by\": 1, \"orientation\": \"comparative\", \"contribution\": \"empirical\", \""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How did papers on generalization and cross-generator robustness change over time?",
+    "args": {
+     "term": "deepfake detection generalization",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence or limits do evaluations report for deepfake detectors in deployment?",
+    "args": {
+     "term": "deepfake detection deployment robustness"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...deployment robustness'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection deployment robustness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What measured statistics connect deepfakes specifically to fraud losses or incidents?",
+    "args": {
+     "term": "deepfake fraud losses incidents"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...raud losses incidents'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake fraud losses incidents', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of deepfake-enabled fraud changed by year?",
+    "args": {
+     "term": "deepfake fraud",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which regions and fraud types are represented or missing in deepfake fraud reporting?",
+    "args": {
+     "term": "deepfake fraud"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 89, \"share_pct\": 19.2, \"lift\": 0.8}, {\"label\": \"united kingdom\", \"articles\": 49, \"share_pct\": 10.6, \"lift\": 2.1}, {\"label\": \"china\", \"articles\": 32, \"share_pct\": 6.9, \"lift\": 1.4}, {\"label\": \"singapore\", \"articles\": 27, \"share_pct\": 5.8, \"lift\": 10.2}, {\"label\": \"germany\", \"articles\": 17, \"share_pct\": 3.7, \"lift\": 3.0}, {\"label\": \"india\", \"articles\": 16, \"share_pct\": 3.5, \"lift\": 0.5}, {\"label\": \"united arab emirates\", \"articles\": 15, \"share_pct\": 3.2, \"lift\": 4.1}, {\"label\": \"mexico\", \"articles\": 14, \"share_pct\": 3.0, \"lift\": 5.0}, {\"label\": \"france\", \"articles\": 12, \"share_pct\": 2.6, \"lift\": 1.5}, {\"label\": \"colombia\", \"a"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 4,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": false,
+   "words": 115,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 916,
+  "charts": [
+   {
+    "id": "research-attention",
+    "title": "Prism research trend index",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research trend",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_trend.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "framing_comparison.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers since 2022 directly evaluate detection on real-world fraud cases?",
+    "args": {
+     "term": "deepfake detection real-world fraud evaluation",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W4404206182\", \"title\": \"Synthetic Media Detection, the Wheel, and the Burden of Proof\", \"authors\": [\"Keith Raymond Harris\"], \"venue\": \"Philosophy & Technology\", \"year\": 2024, \"date\": \"2024-11-09\", \"doi\": \"10.1007/s13347-024-00821-0\", \"url\": \"https://doi.org/10.1007/s13347-024-00821-0\", \"cited_by\": 7, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Law in Society and Culture\", \"Legal Education and Practice Inno"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How have detection benchmarks and reported error rates changed since 2022?",
+    "args": {
+     "topic": "deepfake detection benchmark error rates",
+     "since_year": 2022
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...s', 'since_year': 2022}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection benchmark error rates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "Which fraud mechanisms and victim groups are under-studied in deepfake research?",
+    "args": {
+     "topic": "deepfake fraud victims mechanisms",
+     "since_year": 2022
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 40.1,
+    "sample": "{\"new_work\": [{\"title\": \"Organisational Challenges in US Law Enforcement’s Response to AI-Driven Cybercrime and Deepfake Fraud\", \"year\": 2025, \"venue\": \"Laws\", \"cited_by\": 2, \"orientation\": \"problem_identifying\", \"url\": \"https://doi.org/10.3390/laws14040046\"}, {\"title\": \"Classification of Deepfake Fraud and Cyber Kidnapping\", \"year\": 2024, \"venue\": \"Actual Problems of Russian Law\", \"cited_by\": 1, \"orientation\": \"problem_identifying\", \"url\": \"https://doi.org/10.17803/1994-1471.2024.168.11.106-113\"}, {\"title\": \"Cyber Insurance in the Age of AI-Powered Attacks: Pricing and Coverage Strategies as AI-Generated Malware and Deepfake Fraud become Mainstream\", \"year\": 2025, \"venue\": \"International Jo"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news specifically about deepfake-enabled fraud changed by year?",
+    "args": {
+     "topic": "deepfake fraud",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake fraud', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which 2024 robustness and adversarial papers have stronger citation or venue evidence?",
+    "args": {
+     "topic": "deepfake detection robustness adversarial attacks",
+     "since_year": 2022
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...s', 'since_year': 2022}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='deepfake detection robus...ess adversarial attacks', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2022, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 25,
+   "traced": 24,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

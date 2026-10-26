@@ -1,0 +1,643 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1470,
+  "charts": [
+   {
+    "id": "spm-child-poverty",
+    "title": "US child poverty rate (Supplemental Poverty Measure), 2020-2023",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "SPM child poverty rate",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ubi_child_poverty.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "ubi_work_effects.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many research papers per year address UBI and labour supply, and what share find negative effects?",
+    "args": {
+     "term": "universal basic income labor supply",
+     "from": "2015",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "Which papers report effect sizes on employment from cash transfers?",
+    "args": {
+     "term": "unconditional cash transfer employment effect"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...fer employment effect'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='unconditional cash transfer employment effect', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which studies contradict the claim that UBI does not reduce work?",
+    "args": {
+     "term": "basic income reduces work",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...uces work', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='basic income reduces work', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of UBI trials changed since the 2024 OpenResearch release?",
+    "args": {
+     "term": "universal basic income",
+     "from": "2023-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2023-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How do news outlets compare in framing the OpenResearch result?",
+    "args": {
+     "term": "OpenResearch basic income study"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ch basic income study'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='OpenResearch basic income study', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "Which papers cite the OpenResearch working paper, and what do they conclude?",
+    "args": {
+     "term": "How Much Can We Learn from Unconditional Cash Transfers"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...tional Cash Transfers'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='How Much Can We Learn fr...ditional Cash Transfers', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 34,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 6,
+   "untagged_examples": [
+    "125 — - **Stockton SEED (2019–2021).** 125 people received $500/month. Full-time employment rose",
+    "500 — - **Stockton SEED (2019–2021).** 125 people received $500/month. Full-time employment rose",
+    "13.7% — The change was −4.5 points from 2020 to 2021 and +7.2 points from 2021 to 2022 (computed f",
+    "125 — The Stockton net effect is 12 minus 5 = 7 pp, computed from [r9]. It is a small sample of ",
+    "+7 — The Stockton net effect is 12 minus 5 = 7 pp, computed from [r9]. It is a small sample of ",
+    "17 — Tally (my own judgment, not a Prism count): by tier weighting of A=3, B=2, C=1, supporting"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 941,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Typed research papers per year, UBI-poverty intersection lane",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_volume.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "stance_counts.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Does UBI reduce employment or hours worked?",
+    "args": {
+     "claim": "Universal basic income does not reduce employment",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.7,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 742, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 27, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 0, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"co"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers argue UBI reduces work?",
+    "args": {
+     "claim": "Universal basic income does not reduce employment",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"supporting\": [{\"id\": \"prism:W3082690747\", \"title\": \"Is There Empirical Evidence on How the Implementation of a Universal Basic Income (UBI) Affects Labour Supply? A Systematic Review\", \"year\": 2020, \"venue\": \"Sustainability\", \"tier\": \"review\", \"strength\": \"moderate\", \"stance\": \"supports\", \"quote\": \"we have not found any evidence of a significant reduction in labour supply.\", \"grounded\": true, \"why\": \"Finds no evidence of employment reduction, matching claim.\", \"url\": \"https://doi.org/10.3390/su12229459\", \"cited_by\": 51, \"doi\": \"10.3390/su12229459\"}, {\"id\": \"prism:W3123878610\", \"title\": \"Is There Empirical Evidence on How the Implementation of a Universal Basic Income (UBI) Affects Labour S"
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What effect sizes exist for employment?",
+    "args": {
+     "claim": "Cash transfers effect on employment hours",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "the retrieved abstracts carry figures, but none of them measures what this claim asserts",
+    "seconds": 52.7,
+    "sample": "{\"stats\": [], \"rejected\": [], \"candidate_sentences\": 11, \"candidates\": [{\"doc_id\": \"prism:W4289026309\", \"title\": \"Long-Term Impacts of Conditional Cash Transfers: Review of the Evidence\", \"year\": 2018, \"tier\": \"article\", \"venue\": \"The World Bank Research Observer\", \"url\": \"https://doi.org/10.1093/wbro/lky005\", \"sentence\": \"The first includes children exposed to CCTs in utero or during early childhood who have reached school ages.\"}, {\"doc_id\": \"prism:W4289026309\", \"title\": \"Long-Term Impacts of Conditional Cash Transfers: Review of the Evidence\", \"year\": 2018, \"tier\": \"article\", \"venue\": \"The World Bank Research Observer\", \"url\": \"https://doi.org/10.1093/wbro/lky005\", \"sentence\": \"Most studi"
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which pilots are in the literature?",
+    "args": {
+     "term": "basic income pilot randomized",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 9, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W4403196828\", \"title\": \"Poverty constructions and discursive strategies employed by participants in the Finnish Basic Income Experiment\", \"authors\": [\"Laura Tarkiainen\", \"Helena Blomberg\", \"Christian Kroll\"], \"venue\": \"Discourse & Society\", \"year\": 2024, \"date\": \"2024-10-06\", \"doi\": \"10.1177/09579265241284649\", \"url\": \"https://doi.org/10.1177/09579265241284649\", \"cited_by\": 3, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of UBI evolved?",
+    "args": {
+     "term": "universal basic income"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 41, \"critical\": 33, \"negative\": 11, \"positive\": 30, \"mean_priority\": 6.93, \"critical_pct\": 80.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 45, \"critical\": 32, \"negative\": 18, \"positive\": 27, \"mean_priority\": 6.76, \"critical_pct\": 71.1, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 52, \"critical\": 35, \"negative\": 19, \"positive\": 33, \"mean_priority\": 6.67, \"critical_pct\": 67.3, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 53, \"critical\": 36, \"negative\": 15, \"positive\": 36, \"mean_priority\": 6.68, \"critical_pct\": 67.9, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 41, \"critic"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 36,
+   "traced": 34,
+   "derived": 5,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 126,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 1020,
+  "charts": [
+   {
+    "id": "work-effects-us-cash-experiments",
+    "title": "Estimated employment effects in selected US cash experiments",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Employment effect",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "selected_studies.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What do randomized studies find about UBI effects on poverty and employment, by population and duration?",
+    "args": {
+     "term": "universal basic income poverty employment randomized trial",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ed trial', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='universal basic income p...oyment randomized trial', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies find work reductions, and how strong is that evidence?",
+    "args": {
+     "term": "basic income guaranteed income employment labor supply",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...r supply', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='basic income guaranteed ...employment labor supply', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How do estimated effects vary by recipient group and program design?",
+    "args": {
+     "term": "cash transfers basic income employment poverty subgroup effect sizes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...subgroup effect sizes'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cash transfers basic inc...y subgroup effect sizes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has research on UBI employment effects changed over time?",
+    "args": {
+     "term": "universal basic income employment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'universal basic income employment'",
+    "seconds": 0.1,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What recent news coverage reports on basic income evaluations?",
+    "args": {
+     "term": "basic income poverty employment trial"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'basic income poverty employment trial' in this window",
+    "seconds": 0.1,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 1,
+   "not_found": [
+    "10.1257/pol.20170044"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 868,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism intersection research papers on UBI and poverty",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "effect_estimate.csv",
+    "how": "call",
+    "rows": 1,
+    "numeric_cells": 1,
+    "traced_share": 0.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which randomized or quasi-experimental studies estimate ongoing UBI effects on poverty rates and employment?",
+    "args": {
+     "term": "universal basic income ongoing payments poverty employment randomized evaluation",
+     "orientation": "descriptive",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 5, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 5, \"papers\": [{\"id\": \"W4294253317\", \"title\": \"Lessons from basic income experiments\", \"authors\": [\"Heikki Hiilamo\"], \"venue\": \"Edward Elgar Publishing eBooks\", \"year\": 2022, \"date\": \"2022-08-12\", \"doi\": \"10.4337/9781800880801.00012\", \"url\": \"https://doi.org/10.4337/9781800880801.00012\", \"cited_by\": 3, \"orientation\": \"descriptive\", \"contribution\": \"empirical\", \"stance_score\": 0.0, \"topics\": [\"Income, Poverty, and Inequality\"], \"institutions\": []}, {\"id\": \"W3190313117\", \"ti"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What studies report employment or labor-force effects, including null or negative results?",
+    "args": {
+     "claim": "Universal basic income effect on employment and labor supply",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no sentence in the retrieved abstracts carries a figure — this claim's literature is qualitative, or the numbers are in tables rather than abstracts",
+    "seconds": 50.2,
+    "sample": "{\"searched_documents\": 1, \"research_series\": {\"available\": true, \"corpus\": \"research_typed\", \"unit\": \"year\", \"window\": \"2017-2025\", \"lane\": \"intersection\", \"points\": [{\"period\": \"2017\", \"n\": 107, \"partial_period\": false}, {\"period\": \"2018\", \"n\": 111, \"partial_period\": false}, {\"period\": \"2019\", \"n\": 105, \"partial_period\": false}, {\"period\": \"2020\", \"n\": 97, \"partial_period\": false}, {\"period\": \"2021\", \"n\": 109, \"partial_period\": false}, {\"period\": \"2022\", \"n\": 74, \"partial_period\": false}, {\"period\": \"2023\", \"n\": 92, \"partial_period\": false}, {\"period\": \"2024\", \"n\": 111, \"partial_period\": false}, {\"period\": \"2025\", \"n\": 107, \"partial_period\": false}], \"total\": 913, \"trend\": {\"available\": tru"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which documents directly contradict a claim that UBI reduces poverty without reducing work?",
+    "args": {
+     "claim": "Universal basic income reduces poverty without reducing employment",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 33.5,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 5, \"unread\": 0}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 36729, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"orientation\": {\"descriptive\": 13177, \"problem_identifying\": 9290, \"promising\": 4907, \"critical\": 3300, \"cautionary\": 2483, \"breakthrough\": 2266, \"comparative\": 1306}, \"contribution\": {\"empirical\": 23921, \"methodological\": 3956, \"position\": 3878, \"theoretical\": 2744, \"review\": 2230}, \"sides\": {\"supporting\": 7173, \"qualifying\": 11773, \"contradicting\": 3300, \"neutr"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How have research stances on UBI poverty and work changed by year?",
+    "args": {
+     "claim": "Universal basic income poverty employment",
+     "window": "2017-2025"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ... 'window': '2017-2025'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Universal basic income poverty employment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2017-2025', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "What recent news reports cover UBI evaluations and measured work outcomes?",
+    "args": {
+     "term": "universal basic income poverty employment evaluation",
+     "window": "2019-01-01..2026-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...26-06-01', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='universal basic income p...y employment evaluation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01..2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=20, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 23,
+   "traced": 23,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 119,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None, None, None]"
+  ],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 4,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

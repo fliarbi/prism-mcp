@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Explicitly an illustrative estimate, not a measured time series.",
+    "comparison": "Numeric contrasts are memory estimates and not verifiable against a common source.",
+    "chart": "Memory-based chart is honestly labelled estimate.",
+    "drilldown": "Names possible breakdowns, but follow-up calls mostly did not return usable results.",
+    "export": "CSV contains estimated values without traceable source calls.",
+    "repro": "No database calls; effect estimates and comparisons are labelled estimates.",
+    "refs": "References and identifiers are expressly unverified.",
+    "accuracy": "Avoids claiming its recalled numbers are measured and gives a cautious, reasonable conclusion.",
+    "limits": "Clearly states missing corpus measurements and the age and uncertainty of recalled evidence.",
+    "verdict": "Direct recommendation and confidence, with a condition that would change it; names the observational signal and RCT gap.",
+    "facets": "Addresses the observational-versus-randomized distinction, but most evidence and disagreements are memory estimates."
+   },
+   "B": {
+    "trend": "Series and endpoint change are traced, but it omits the named peak and its censoring statement is imprecise relative to the source caveat.",
+    "comparison": "Defines the relative-rate baseline and contrasts observational and randomized estimates while acknowledging different populations and designs.",
+    "chart": "Fully traced annual values with window and source, but the censored-period marking is not clearly resolved.",
+    "drilldown": "Gives selected studies and a cancer-site layer, but only one proposed follow-up executed successfully.",
+    "export": "Traced research series has provenance, but the effect estimates needed for this question are not exported as a second table.",
+    "repro": "Lists calls with arguments and the numeric claims largely trace; the regenerate recipe does not rebuild every reported table.",
+    "refs": "Four resolvable, claim-linked references with metadata and source quotes; contrary evidence is included.",
+    "accuracy": "Distinguishes association from causation and correctly flags the DPP population caveat; minor precision issues remain.",
+    "limits": "Places the key windows, lane, censoring, and corpus-count limits near the claims; the precise censoring interpretation is unclear.",
+    "verdict": "Clear answer, decision, confidence, and what evidence could change it; recognizes the null randomized result.",
+    "facets": "Covers the core design contrast, selected contrary evidence, and limits, but leaves several open facets without executed follow-ups."
+   },
+   "C": {
+    "trend": "No temporal series; the chart is explicitly not a trend.",
+    "comparison": "Qualitative design contrast only, without comparable estimates.",
+    "chart": "Qualitative direction chart is not a traced chart of measured values.",
+    "drilldown": "Names subgroup questions but offers no traced breakdown or successful executable follow-up.",
+    "export": "CSV is an unmeasured qualitative summary, not a traced evidence export.",
+    "repro": "Calls are described as unexecuted and numeric results are absent.",
+    "refs": "One DOI is not found in the corpus and quotes are absent.",
+    "accuracy": "Cautious conclusion with no clear contradiction of the supplied record; evidence specifics are not verified.",
+    "limits": "Explicit about memory and missing measurements, but lacks specific corpus windows and coverage details.",
+    "verdict": "Direct but not supported by traced evidence, and does not state a data-bounded confidence basis or strongest contrary source.",
+    "facets": "Addresses the broad design distinction, but provides no grounded effect estimates or measured contrary evidence."
+   },
+   "D": {
+    "trend": "Traces and quantifies the annual series, but does not visibly mark the censored newest period as required.",
+    "comparison": "Numerical estimates are compared on a defined relative scale with population/design caveats; the ratio calculation is supported.",
+    "chart": "Traced full annual series and tied to a claim, but lacks a visible censoring marker.",
+    "drilldown": "Provides study and site layers with identifiers, but only one proposed follow-up executed successfully.",
+    "export": "Includes useful series and effect-size tables, but provenance JSON omits full call arguments and export hygiene is incomplete.",
+    "repro": "Most figures trace and calls are listed, but the provenance recipe omits arguments for some calls, limiting exact regeneration.",
+    "refs": "Resolvable identifiers and metadata, with contrary sources; some listed evidence is unread or not quote-verified.",
+    "accuracy": "Overstates the search as establishing there was no established-T2D RCT and treats the DPP as the sole trial; the record does not support that exhaustive claim.",
+    "limits": "States windows and corpus limits, but says the 2025 value is not flagged partial while also reporting the source's censoring caveat without resolving it.",
+    "verdict": "Direct and actionable, but the claimed absence of an established-T2D RCT exceeds what this record can establish, weakening confidence and bounds.",
+    "facets": "Covers observational and randomized evidence, disagreements by site, trends, and corpus limits with traced values."
+   }
+  },
+  "errors": {
+   "A": [
+    "Effect estimates, study details, comparison values, and chart points are unverified memory estimates; no measured series or export is supplied."
+   ],
+   "B": [
+    "Calls 2025 the censored newest year, while the source caveat says the newest period is excluded because of ingest lag; the deliverable does not clarify the discrepancy."
+   ],
+   "C": [
+    "Cites DOI 10.1007/s00125-011-2389-3, which the benchmark did not find in its corpus."
+   ],
+   "D": [
+    "Says no randomized trial in established type 2 diabetes was found; the supplied record contains one DPP follow-up and does not establish that the search was exhaustive.",
+    "The trend chart does not visibly mark the censored period, and the method says the 2025 value is not flagged partial despite the source censoring caveat."
+   ]
+  },
+  "best": "B",
+  "verdict": "B best separates the observational association from the weaker randomized evidence, flags the DPP population mismatch, and gives a usable decision with traceable estimates. D is broader and supplies more site-specific counterexamples, but its claim that no established-T2D randomized trial was found exceeds what the record establishes, and its censoring account is inconsistent."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

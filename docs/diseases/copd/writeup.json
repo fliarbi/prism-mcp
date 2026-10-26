@@ -1,0 +1,782 @@
+{
+ "facts": {
+  "disease": "COPD",
+  "volumes": {
+   "research": {
+    "n": 81979,
+    "window": "2017-2025",
+    "what": "Prism-typed research papers"
+   },
+   "readable_papers": {
+    "n": 30355,
+    "window": "1990-2025",
+    "what": "papers carrying a real abstract, title-anchored"
+   },
+   "pubmed": {
+    "n": 62960,
+    "window": "1990-2025",
+    "what": "the health literature index records — study designs available here"
+   },
+   "news": {
+    "n": 18104,
+    "window": "2019-01-01..2026-06-01",
+    "what": "news articles mentioning this"
+   },
+   "patents": {
+    "n": 2102,
+    "window": "2005-2024",
+    "what": "patents whose title matches"
+   },
+   "arxiv": {
+    "n": 15,
+    "window": "2005-2025",
+    "what": "preprints"
+   }
+  },
+  "literature_mix": {
+   "mix": {
+    "supporting": 28007,
+    "qualifying": 15285,
+    "contradicting": 972,
+    "neutral": 37715
+   },
+   "reading": "mixed framing with no dominant lean",
+   "contested_pct": 19.8,
+   "papers": 81979
+  },
+  "established_reviews": [
+   {
+    "title": "[Efficacy and safety of Wenxin Granules in treating chronic pulmonary heart disease complicated by arrhythmia: a systematic review and Meta-analysis].",
+    "year": 2025,
+    "tier": "meta_analysis",
+    "cited_by": 0,
+    "venue": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica"
+   },
+   {
+    "title": "Effects of wearable devices on physical activity monitoring in pulmonary rehabilitation programs for chronic respiratory diseases: a systematic review and meta-analysis.",
+    "year": 2025,
+    "tier": "meta_analysis",
+    "cited_by": 0,
+    "venue": "Scientific reports"
+   },
+   {
+    "title": "Comparative efficacy of pulmonary rehabilitation delivery models on dyspnoea, exercise capacity and health-related quality of life in chronic respiratory disease: a systematic review and network meta-analysis.",
+    "year": 2025,
+    "tier": "meta_analysis",
+    "cited_by": 0,
+    "venue": "NPJ primary care respiratory medicine"
+   },
+   {
+    "title": "Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease",
+    "year": 2007,
+    "tier": "review",
+    "cited_by": 4686,
+    "venue": "American Journal of Respiratory and Critical Care Medicine"
+   },
+   {
+    "title": "Pulmonary rehabilitation for chronic obstructive pulmonary disease",
+    "year": 2015,
+    "tier": "review",
+    "cited_by": 2518,
+    "venue": "Cochrane Database of Systematic Reviews"
+   }
+  ],
+  "key_numbers": [
+   {
+    "value": "-0.82",
+    "measures": "mean difference in mMRC dyspnea score",
+    "population": "patients with chronic respiratory diseases"
+   },
+   {
+    "value": "65.45",
+    "measures": "mean difference in 6‑minute walk test distance",
+    "population": "patients with chronic respiratory diseases"
+   },
+   {
+    "value": "86%",
+    "measures": "proportion of goals attained",
+    "population": "study participants"
+   }
+  ],
+  "claims_corpus": {
+   "claims": 41483,
+   "high_tier_share_pct": 33.1,
+   "risk_factors": [
+    [
+     "smoking",
+     679,
+     12.2
+    ],
+    [
+     "air pollution",
+     232,
+     5.2
+    ],
+    [
+     "age",
+     79,
+     19.0
+    ],
+    [
+     "cigarette smoke",
+     62,
+     9.7
+    ],
+    [
+     "cigarette smoke (cs)",
+     44,
+     2.3
+    ],
+    [
+     "tobacco smoking",
+     42,
+     14.3
+    ],
+    [
+     "climate change",
+     26,
+     0.0
+    ],
+    [
+     "comorbidities",
+     26,
+     11.5
+    ]
+   ],
+   "protective_factors": [],
+   "treatments": [
+    [
+     "pulmonary rehabilitation",
+     89,
+     67.4
+    ],
+    [
+     "roflumilast",
+     79,
+     45.6
+    ],
+    [
+     "pulmonary rehabilitation (pr)",
+     73,
+     54.8
+    ],
+    [
+     "indacaterol",
+     71,
+     56.3
+    ],
+    [
+     "tiotropium",
+     70,
+     72.9
+    ],
+    [
+     "inhalers",
+     52,
+     7.7
+    ]
+   ]
+  },
+  "research_per_year": {},
+  "scenarios": [],
+  "scenario_baseline": null,
+  "framing_by_year": [
+   {
+    "year": 2017,
+    "positive_pct": 16.3,
+    "contested_pct": 10.1
+   },
+   {
+    "year": 2018,
+    "positive_pct": 17.8,
+    "contested_pct": 9.2
+   },
+   {
+    "year": 2019,
+    "positive_pct": 16.5,
+    "contested_pct": 8.8
+   },
+   {
+    "year": 2020,
+    "positive_pct": 16.7,
+    "contested_pct": 9.0
+   },
+   {
+    "year": 2021,
+    "positive_pct": 17.9,
+    "contested_pct": 9.2
+   },
+   {
+    "year": 2022,
+    "positive_pct": 16.3,
+    "contested_pct": 9.4
+   },
+   {
+    "year": 2023,
+    "positive_pct": 18.7,
+    "contested_pct": 9.1
+   },
+   {
+    "year": 2024,
+    "positive_pct": 20.5,
+    "contested_pct": 8.9
+   },
+   {
+    "year": 2025,
+    "positive_pct": 21.9,
+    "contested_pct": 9.7
+   }
+  ],
+  "screening_question": "Does {row} increase the risk of chronic obstructive pulmonary disease?",
+  "screening": [
+   {
+    "row": "smoking",
+    "value": null,
+    "measures": null,
+    "population": null,
+    "papers": 0,
+    "source": null,
+    "year": null
+   },
+   {
+    "row": "biomass fuel smoke",
+    "value": null,
+    "measures": null,
+    "population": null,
+    "papers": 0,
+    "source": null,
+    "year": null
+   },
+   {
+    "row": "outdoor air pollution",
+    "value": null,
+    "measures": null,
+    "population": null,
+    "papers": 0,
+    "source": null,
+    "year": null
+   },
+   {
+    "row": "occupational dust",
+    "value": "ES=1.01",
+    "measures": "association between occupational wood dust exposure and COPD risk",
+    "population": "occupational exposure to wood dust",
+    "papers": 4,
+    "source": "[Meta-analysis study on occupational wood dust exposure association with chronic obstructive pulmonary disease].",
+    "year": 2019
+   },
+   {
+    "row": "asthma",
+    "value": null,
+    "measures": null,
+    "population": null,
+    "papers": 7,
+    "source": "Glucagon-like peptide 1 (GLP-1) receptor agonists and asthma and COPD exacerbations in adults with diabetes: A systematic review.",
+    "year": 2025
+   },
+   {
+    "row": "tuberculosis",
+    "value": null,
+    "measures": null,
+    "population": null,
+    "papers": 4,
+    "source": "Inhaled Corticosteroids and Mycobacterial Infection in Patients with Chronic Airway Diseases: A Systematic Review and Meta-Analysis.",
+    "year": 2022
+   }
+  ],
+  "clinical_claim": "Pulmonary rehabilitation improves quality of life in COPD",
+  "clinical_documents_by_verdict": {
+   "unrelated": 5,
+   "supports": 1,
+   "contradicts": 1,
+   "unread": 3
+  },
+  "clinical_documents_by_tier": {
+   "meta_analysis": 5,
+   "trial": 3,
+   "review": 2
+  },
+  "clinical_corpus_stance": {
+   "papers": 2908,
+   "sides": {
+    "supporting": 1089,
+    "qualifying": 487,
+    "contradicting": 12,
+    "neutral": 1320
+   },
+   "contested_pct": 17.2,
+   "reading": "mixed framing with no dominant lean"
+  },
+  "counter_evidence": {
+   "tally": {
+    "supports": 2,
+    "contradicts": 0,
+    "qualifies": 0,
+    "unrelated": 8,
+    "unread": 0
+   },
+   "recommendation": "The documents read support the claim; this selected sample does not establish scientific consensus."
+  },
+  "risk_claim": "Biomass fuel smoke increases the risk of COPD",
+  "risk_claim_sources_by_tier": {
+   "meta_analysis": 5,
+   "trial": 1,
+   "review": 3,
+   "article": 6
+  },
+  "risk_claim_top_sources": [
+   {
+    "title": "Lung function and secondhand smoke exposure among children with cystic fibrosis: A Bayesian meta-analysis.",
+    "year": 2023,
+    "tier": "meta_analysis",
+    "cited_by": 0
+   },
+   {
+    "title": "Secondhand Smoke Exposure and the Risk of Chronic Obstructive Pulmonary Disease: A Systematic Review and Meta-Analysis.",
+    "year": 2023,
+    "tier": "meta_analysis",
+    "cited_by": 0
+   },
+   {
+    "title": "Mortality Attributable to Environmental Tobacco Smoke Exposure in Spain in 2020.",
+    "year": 2023,
+    "tier": "meta_analysis",
+    "cited_by": 0
+   },
+   {
+    "title": "What is the association between secondhand smoke (SHS) and possible obstructive sleep apnea: a meta-analysis.",
+    "year": 2022,
+    "tier": "meta_analysis",
+    "cited_by": 0
+   }
+  ],
+  "head_to_head": {
+   "a": {
+    "claim": "Pulmonary rehabilitation improves quality of life in COPD",
+    "papers_both_poles": 2908,
+    "corpus_mix": {
+     "supporting": 1089,
+     "qualifying": 487,
+     "contradicting": 12,
+     "neutral": 1320
+    },
+    "contested_pct": 17.2,
+    "documents_read": {
+     "supports": 2,
+     "contradicts": 2,
+     "qualifies": 0,
+     "unrelated": 10,
+     "unread": 0
+    },
+    "strongest_source": {
+     "title": "Effects of Tai Chi on exercise capacity and health-related quality of life in patients with chronic obstructive pulmonary disease: a systematic review and meta-analysis",
+     "tier": "meta_analysis",
+     "year": 2014,
+     "url": "https://doi.org/10.2147/copd.s70862",
+     "stance": "supports"
+    }
+   },
+   "b": {
+    "claim": "Inhaled corticosteroids reduce COPD exacerbations",
+    "papers_both_poles": 4154,
+    "corpus_mix": {
+     "supporting": 1398,
+     "qualifying": 793,
+     "contradicting": 63,
+     "neutral": 1900
+    },
+    "contested_pct": 20.6,
+    "documents_read": {
+     "supports": 1,
+     "contradicts": 1,
+     "qualifies": 0,
+     "unrelated": 8,
+     "unread": 4
+    },
+    "strongest_source": {
+     "title": "Inhaled corticosteroids vs placebo for preventing COPD exacerbations: a systematic review and metaregression of randomized controlled trials.",
+     "tier": "meta_analysis",
+     "year": 2010,
+     "url": "https://doi.org/10.1378/chest.09-1305",
+     "stance": "supports"
+    }
+   },
+   "verdict": "the first claim has more evidence behind it"
+  },
+  "frontier_new_work": [
+   {
+    "title": "Global, regional, and national prevalence of, and risk factors for, chronic obstructive pulmonary disease (COPD) in 2019: a systematic review and modelling analysis",
+    "year": 2022,
+    "venue": "The Lancet Respiratory Medicine",
+    "cited_by": 1260,
+    "orientation": "descriptive"
+   },
+   {
+    "title": "Burden of chronic obstructive pulmonary disease and its attributable risk factors in 204 countries and territories, 1990-2019: results from the Global Burden of Disease Study 2019",
+    "year": 2022,
+    "venue": "BMJ",
+    "cited_by": 854,
+    "orientation": "descriptive"
+   },
+   {
+    "title": "Towards the elimination of chronic obstructive pulmonary disease: a Lancet Commission",
+    "year": 2022,
+    "venue": "The Lancet",
+    "cited_by": 598,
+    "orientation": "problem_identifying"
+   },
+   {
+    "title": "The global economic burden of chronic obstructive pulmonary disease for 204 countries and territories in 2020–50: a health-augmented macroeconomic modelling study",
+    "year": 2023,
+    "venue": "The Lancet Global Health",
+    "cited_by": 457,
+    "orientation": "descriptive"
+   },
+   {
+    "title": "Definition and Nomenclature of Chronic Obstructive Pulmonary Disease: Time for Its Revision",
+    "year": 2022,
+    "venue": "American Journal of Respiratory and Critical Care Medicine",
+    "cited_by": 450,
+    "orientation": "promising"
+   },
+   {
+    "title": "Oxidative Stress in Chronic Obstructive Pulmonary Disease",
+    "year": 2022,
+    "venue": "Antioxidants",
+    "cited_by": 229,
+    "orientation": "cautionary"
+   }
+  ],
+  "framing_shift": {
+   "available": true,
+   "windows": {
+    "recent": {
+     "papers": 20654,
+     "cautionary_pct": 19.0
+    },
+    "earlier": {
+     "papers": 20298,
+     "cautionary_pct": 20.4
+    }
+   },
+   "delta_pct_points": -1.4,
+   "reading": "framing is broadly unchanged",
+   "caveat": "orientation labels the paper's own framing, not the truth"
+  },
+  "under_covered_topics": [
+   [
+    "Respiratory Support and Mechanisms",
+    16883
+   ],
+   [
+    "Interstitial Lung Diseases and Idiopathic Pulmonary Fibrosis",
+    5893
+   ],
+   [
+    "Respiratory and Cough-Related Research",
+    5875
+   ],
+   [
+    "Inhalation and Respiratory Drug Delivery",
+    4307
+   ],
+   [
+    "Cardiovascular and exercise physiology",
+    3892
+   ],
+   [
+    "Delphi Technique in Research",
+    3829
+   ]
+  ],
+  "gaps": [
+   {
+    "component": "exposure to biomass fuel smoke",
+    "evidence": "yes"
+   },
+   {
+    "component": "increased risk of COPD",
+    "evidence": "yes"
+   },
+   {
+    "component": "biomass smoke as a risk factor for COPD",
+    "evidence": "yes"
+   }
+  ],
+  "facets": {
+   "orientation": [
+    {
+     "orientation": "descriptive",
+     "papers": 5121,
+     "share_pct": 35.6
+    },
+    {
+     "orientation": "promising",
+     "papers": 5004,
+     "share_pct": 34.8
+    },
+    {
+     "orientation": "problem_identifying",
+     "papers": 1759,
+     "share_pct": 12.2
+    },
+    {
+     "orientation": "comparative",
+     "papers": 1140,
+     "share_pct": 7.9
+    },
+    {
+     "orientation": "cautionary",
+     "papers": 836,
+     "share_pct": 5.8
+    },
+    {
+     "orientation": "breakthrough",
+     "papers": 420,
+     "share_pct": 2.9
+    },
+    {
+     "orientation": "critical",
+     "papers": 115,
+     "share_pct": 0.8
+    }
+   ],
+   "contribution": [
+    {
+     "contribution": "empirical",
+     "papers": 10754
+    },
+    {
+     "contribution": "review",
+     "papers": 2437
+    },
+    {
+     "contribution": "methodological",
+     "papers": 753
+    },
+    {
+     "contribution": "position",
+     "papers": 435
+    },
+    {
+     "contribution": "theoretical",
+     "papers": 16
+    }
+   ],
+   "topics": [
+    {
+     "topic": "Chronic Obstructive Pulmonary Disease (COPD) Research",
+     "papers": 9793
+    },
+    {
+     "topic": "Respiratory Support and Mechanisms",
+     "papers": 2715
+    },
+    {
+     "topic": "Asthma and respiratory diseases",
+     "papers": 1678
+    },
+    {
+     "topic": "Pediatric health and respiratory diseases",
+     "papers": 732
+    },
+    {
+     "topic": "Respiratory and Cough-Related Research",
+     "papers": 716
+    },
+    {
+     "topic": "Chronic Disease Management Strategies",
+     "papers": 657
+    },
+    {
+     "topic": "Inhalation and Respiratory Drug Delivery",
+     "papers": 638
+    },
+    {
+     "topic": "Pulmonary Hypertension Research and Treatments",
+     "papers": 540
+    },
+    {
+     "topic": "Delphi Technique in Research",
+     "papers": 485
+    },
+    {
+     "topic": "Neonatal Respiratory Health Research",
+     "papers": 392
+    }
+   ]
+  },
+  "most_cited_since_2020": [
+   {
+    "title": "Clinical value of vascular endothelial glycocalyx in acute exacerbation of chronic obstructive pulmonary disease",
+    "year": 2025,
+    "cited_by": 0,
+    "orientation": "promising",
+    "contribution": "empirical"
+   },
+   {
+    "title": "Combined Effect of Respiratory Muscle Stretching and Active Cycle of Breathing Technique on Kinesiophobia, Functional Capacity and Anxiety among Chronic Obstructive Pulmonary Disease Patients",
+    "year": 2025,
+    "cited_by": 0,
+    "orientation": "promising",
+    "contribution": "empirical"
+   },
+   {
+    "title": "The effects of pulmonary rehabilitation on symptom change and exacerbations in patients with chronic obstructive pulmonary disease: A randomised controlled trial",
+    "year": 2025,
+    "cited_by": 0,
+    "orientation": "promising",
+    "contribution": "review"
+   },
+   {
+    "title": "Haemodynamics and post-exercise recovery response in chronic obstructive pulmonary disease-pulmonary hypertension and interstitial lung disease-pulmonary hypertension: An appraisal",
+    "year": 2025,
+    "cited_by": 0,
+    "orientation": "critical",
+    "contribution": "position"
+   },
+   {
+    "title": "Efficacy of Carbocisteine in Reducing Exacerbations in Chronic Obstructive Pulmonary Disease: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+    "year": 2025,
+    "cited_by": 0,
+    "orientation": "promising",
+    "contribution": "review"
+   },
+   {
+    "title": "Concurrent Chinese and Western medication use and risk of acute exacerbations in chronic obstructive pulmonary disease: A national cohort study",
+    "year": 2025,
+    "cited_by": 0,
+    "orientation": "cautionary",
+    "contribution": "empirical"
+   }
+  ],
+  "where_studied": [
+   [
+    "United States",
+    2660
+   ],
+   [
+    "China",
+    755
+   ],
+   [
+    "United Kingdom",
+    450
+   ],
+   [
+    "Japan",
+    241
+   ],
+   [
+    "Spain",
+    235
+   ],
+   [
+    "Canada",
+    233
+   ],
+   [
+    "Italy",
+    225
+   ],
+   [
+    "Australia",
+    211
+   ]
+  ],
+  "where_reported": [
+   [
+    "united states",
+    744
+   ],
+   [
+    "united kingdom",
+    289
+   ],
+   [
+    "india",
+    237
+   ],
+   [
+    "china",
+    141
+   ],
+   [
+    "japan",
+    88
+   ],
+   [
+    "canada",
+    87
+   ],
+   [
+    "italy",
+    82
+   ],
+   [
+    "australia",
+    77
+   ]
+  ],
+  "news_articles": 6704,
+  "news_window": " to ",
+  "news_causes": [
+   "air pollution",
+   "heatwaves intensified by climate change and urban heat islands",
+   "ozone",
+   "smoking",
+   "heatwaves and air pollution together",
+   "toxic smog",
+   "wildfire smoke",
+   "annual pm2.5 exposure exceeding WHO target"
+  ],
+  "news_impacts": [
+   "deaths from chronic obstructive pulmonary disease (COPD)",
+   "heat-related mortality",
+   "severe respiratory, cardiovascular, and neurological problems",
+   "deaths attributable to air pollution",
+   "worsening COPD and breathing problems",
+   "slow death",
+   "complications from advanced chronic obstructive pulmonary disease",
+   "141,733 deaths in the United States in 2023"
+  ],
+  "news_arc": "In mid‑2025 the narrative centered on COPD’s massive health and economic burden and early research into novel therapies. By late 2025 the focus shifted to prevention, hidden prevalence in low‑resource settings, and the growing impact of air pollution, while several high‑profile drug trials faltered. 2026 saw a surge of precision approaches—AI‑driven care, multi‑omics insights, and new biologics targeting eosinophilic disease—alongside expanding market investment and regulatory approvals. 2026 also highlighted the importance of environmental interventions and multidisciplinary management as mortality from comorbidities and pollution remained high. The story now moves toward integrating personalized medicine, sustainable health‑system tools, and broader public‑health actions to curb COPD’s toll."
+ },
+ "text": {
+  "summary": "The COPD literature in the index holds 81,979 typed research papers for 2017-2025, with framing that is mixed and has no dominant lean; contested_pct is 19.8. News coverage is large, with 18,104 articles, and centres on air pollution, smoking and mortality. For clinicians, pulmonary rehabilitation has the stronger evidence base of the two claims compared, with 2,908 papers at both poles and contested_pct of 17.2, against 4,154 and 20.6 for inhaled corticosteroids and exacerbations. Risk-factor screening is thin: smoking, biomass fuel smoke and outdoor air pollution returned 0 papers, and the only quoted effect size is ES=1.01 for occupational wood dust exposure. Descriptive and promising framings dominate the orientation facets, and the framing shift between earlier and recent windows is broadly unchanged. Several topic areas, such as interstitial lung disease and respiratory drug delivery, are flagged as under-covered relative to their size.",
+  "policy": "The index shows 81,979 typed research papers for 2017-2025 and 18,104 news articles, so COPD attracts sustained attention in both research and the press. Where studied is led by the United States with 2,660 papers, then China with 755 and the United Kingdom with 450. Where reported in the news is led by the United States with 744 articles, then the United Kingdom with 289 and India with 237. India's position in the news but not in the research list suggests a gap between media attention and local research. News causes centre on air pollution, smoking, ozone, wildfire smoke and heatwaves, and one impact cited is 141,733 deaths in the United States in 2023. The news arc moves from burden and novel therapies towards prevention, hidden prevalence in low-resource settings, precision approaches and environmental interventions. Framing in research is broadly unchanged, with a change of -1.4 percentage points in cautionary share between earlier and recent windows.",
+  "policy_actions": [
+   "Commission evidence reviews on air pollution and COPD, since news coverage stresses it but screening found 0 papers for outdoor air pollution as a risk factor",
+   "Watch prevalence and risk-factor work in low-resource settings, where news reports hidden prevalence and research geography is led by the United States, China and the United Kingdom",
+   "Fund pulmonary rehabilitation delivery research, given the 2025 meta-analyses on delivery models and wearable monitoring",
+   "Track the Lancet Commission and Global Burden of Disease work on burden and economic cost as reference points for planning",
+   "Monitor under-covered topics such as respiratory drug delivery, with 4,307 papers flagged, and interstitial lung disease, with 5,893"
+  ],
+  "doctor": "The clinical claim examined is that pulmonary rehabilitation improves quality of life in COPD. The corpus holds 2,908 papers at both poles, with 1,089 supporting, 487 qualifying, 12 contradicting and 1,320 neutral, and contested_pct is 17.2. The strongest source is a 2014 meta-analysis of Tai Chi on exercise capacity and health-related quality of life, which supports the claim. Among documents read for this claim, 2 support and 2 contradict, and 10 are unrelated, so the sample does not establish scientific consensus. Key numbers from a rehabilitation-related synthesis in patients with chronic respiratory diseases are a mean difference of -0.82 in mMRC dyspnea score and a mean difference of 65.45 in 6-minute walk test distance. Risk-factor evidence is uneven: smoking appears in 679 claims, air pollution in 232, and the biomass fuel smoke screening returned 0 papers.",
+  "doctor_points": [
+   "Meta-analysis tier: a 2014 meta-analysis of Tai Chi supports improved exercise capacity and health-related quality of life in COPD",
+   "Meta-analysis tier: pooled mean difference of -0.82 in mMRC dyspnea score and 65.45 in 6-minute walk test distance in patients with chronic respiratory diseases",
+   "Corpus tier: for pulmonary rehabilitation and quality of life, 12 papers contradict and 487 qualify out of 2,908, with contested_pct of 17.2",
+   "Meta-analysis tier: occupational wood dust exposure shows ES=1.01 for association with COPD risk, from 4 papers, a 2019 meta-analysis",
+   "Review tier: the GOLD strategy report (2007) and a Cochrane review of pulmonary rehabilitation (2015) remain the most cited reviews, with 4,686 and 2,518 citations"
+  ],
+  "scientist": "The literature is mixed in framing, with 28,007 supporting, 15,285 qualifying, 972 contradicting and 37,715 neutral papers. Orientation facets are led by descriptive papers at 5,121 (35.6%) and promising papers at 5,004 (34.8%), with cautionary at 836 (5.8%) and critical at 115 (0.8%). Empirical work accounts for 10,754 papers, against 2,437 reviews and only 16 theoretical papers. Newer prominent work is largely descriptive burden modelling, such as the 2022 Lancet Respiratory Medicine prevalence analysis with 1,260 citations, plus the Lancet Commission on elimination. Thin areas include risk-factor screening, where smoking, biomass fuel smoke and outdoor air pollution returned 0 papers, and under-covered topics led by Respiratory Support and Mechanisms with 16,883 papers. The 2025 papers carry 0 citations so far, so their influence cannot yet be judged.",
+  "scientist_questions": [
+   "Why did screening for smoking, biomass fuel smoke and outdoor air pollution return 0 papers with a quantified effect, and can effect sizes be extracted from the wider literature?",
+   "What does the ES=1.01 for occupational wood dust exposure mean given only 4 papers, and how robust is it?",
+   "Do pulmonary rehabilitation delivery models differ in effect on quality of life, dyspnoea and exercise capacity?",
+   "How should COPD be defined and named, following the call for revision of its definition and nomenclature?",
+   "What explains the gap between news attention in India, with 237 articles, and its place in the research geography?"
+  ],
+  "triangulation": "The claim that pulmonary rehabilitation improves quality of life in COPD is supported by a sample of documents, with one document supporting and one contradicting the claim. The tier distribution shows five meta‑analyses, three trials and two reviews among the clinical corpus. The broader corpus of 2,908 papers is split into 1,089 supporting, 487 qualifying, 12 contradicting and 1,320 neutral, giving a contested proportion of 17.2 %. The reading is described as mixed framing with no dominant lean, and the counter‑evidence tally adds two supports and no contradictions. The recommendation notes that the selected sample does not establish scientific consensus. A careful researcher would broaden the sample, verify the tier quality of the supporting sources and seek a systematic synthesis to determine consensus.",
+  "head_to_head": "Two interventions are compared: pulmonary rehabilitation versus inhaled corticosteroids. The rehabilitation claim is linked to 2,908 papers with a corpus mix of 1,089 supporting, 487 qualifying, 12 contradicting and 1,320 neutral, and a contested proportion of 17.2 %; the strongest source is a 2014 meta‑analysis that supports the claim. The corticosteroid claim is linked to 4,154 papers with a corpus mix of 1,398 supporting, 793 qualifying, 63 contradicting and 1,900 neutral, and a contested proportion of 20.6 %; its strongest source is a 2010 meta‑analysis that also supports the claim. The verdict states that the first claim has more evidence behind it, but the result does not quantify the magnitude of benefit. A careful researcher would examine the effect sizes and methodological rigour of the strongest sources before drawing clinical conclusions.",
+  "screening": "Only the occupational dust row returned a measured effect size, listed as ES=1.01 for the association between occupational wood dust exposure and COPD risk, based on four papers from 2019. All other rows – smoking, biomass fuel smoke, outdoor air pollution, asthma and tuberculosis – have null values and zero papers reported. The absence of values indicates that no quantified risk estimate was found for those factors in this screening, not that the factors lack risk. This does not provide a complete risk profile for COPD. A careful researcher would search for primary studies on the missing factors and extract effect sizes to fill the gaps.",
+  "framing": "The yearly positive percentages rise from 16.3 % in 2017 to 21.9 % in 2025, while contested percentages remain around 9–10 % over the same period. This pattern suggests that the literature is becoming more hopeful over time. The data do not explain why the optimism is increasing or which sub‑areas drive the change. It also does not assess the validity of the positive framing. A careful researcher would investigate the drivers of the rising positive orientation and test whether it aligns with clinical outcomes.",
+  "frontier": "The frontier scan lists six recent highly cited works, most of which are descriptive, with citation counts ranging from 450 to 1,260. The framing shift shows a delta of -1.4 percentage points, and the reading notes that framing is broadly unchanged. Under‑covered topics such as Respiratory Support and Mechanisms (16,883 papers) and Interstitial Lung Diseases (5,893 papers) are highlighted, indicating areas with many papers but little coverage in the new work. The result does not assess the quality or impact of the new publications. A careful researcher would examine the under‑covered topics for research opportunities and evaluate the methodological strength of the newly identified works.",
+  "gaps": "For the claim that biomass fuel smoke increases COPD risk, the gap analysis finds evidence for exposure, increased risk and the risk factor relationship, indicating that the literature covers all three components. This shows that the claim is well represented in the existing literature. The analysis does not provide any quantitative estimate of the risk magnitude. A careful researcher would therefore seek to quantify the effect size, perhaps through a meta‑analysis, to complement the presence of evidence.",
+  "history": "The historical analysis returns empty structures for research per year, scenarios and baseline, indicating that no publication count data were available for this disease. Consequently, no trend of growth or projection can be inferred from this method. The absence does not imply that research is static; it simply reflects missing data. A careful researcher would need to compile yearly publication counts from external sources before modelling future trajectories.",
+  "geography": "The geographic triangulation shows that the United States leads with 2,660 studies, followed by China (755) and the United Kingdom (450). Reporting counts differ, with the United States again highest at 744, the United Kingdom at 289 and India at 237. These figures illustrate where research is conducted and where it is reported, but they do not indicate the quality or relevance of the studies across regions. The result also does not reveal any regional differences in outcomes. A careful researcher would compare study designs and findings across the major countries to assess generalisability.",
+  "facets": "Orientation facets reveal that descriptive (5,121 papers, 35.6 %) and promising (5,004 papers, 34.8 %) orientations dominate the COPD literature, while cautionary and critical orientations are less common. Contribution facets show that empirical papers (10,754) far exceed reviews (2,437) and other types. Topic facets list the most frequent topics, with COPD research itself (9,793 papers) leading, and several other areas such as Respiratory Support (2,715 papers) and Asthma (1,678 papers) following. The data do not convey the depth or impact of each orientation or topic. A careful researcher would target under‑represented orientations or topics for deeper investigation.",
+  "workflow": "Begin with triangulation to establish whether a clinical claim has supporting evidence and to gauge the balance of support versus contradiction. Use head‑to‑head comparison to assess which of two interventions has a larger evidence base. Apply screening to identify risk factors with quantified effect sizes, noting any missing estimates. Examine framing trends to understand whether the literature is becoming more hopeful or cautious, and complement this with a frontier scan to spot newly influential work and under‑covered topics. Finally, map gaps, geography and facets to confirm coverage, locate research hubs and understand the types of studies available, guiding subsequent focused reviews."
+ }
+}

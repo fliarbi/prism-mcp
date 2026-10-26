@@ -1,0 +1,238 @@
+{
+ "slug": "carbon-tax-stance",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 33.7,
+   "plain": 33.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 34.2,
+    "gpt": 33.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.5,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 3.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 80.7,
+   "plain": 80.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 78.4,
+    "gpt": 83.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 2.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 25.3,
+   "plain": 25.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.0,
+    "gpt": 28.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 4.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 78.1,
+   "plain": 78.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 76.4,
+    "gpt": 79.8
+   }
+  }
+ },
+ "judge_mad": 0.32,
+ "verdicts": {
+  "opus": "B and D both grounded their answers in the 2017-2025 stance series and both recompute correctly. B charted the right quantity (positive vs contested shares), flagged that the shift is concentrated in 2025, and caught false phrase matches. D plotted raw counts in a growing corpus. A and C were honest about having no measurement but gave a decision-maker nothing traceable. C's guessed series also mis-levels the critical share, and none of the four tested the distributional-critique claim directly.",
+  "gpt": "B best supports a decision because it compares traced positive and contested shares over time, quantifies the shift, and acknowledges the stable broader framing summary. A is careful and well sourced but its chart emphasizes counts; C and D do not provide a measured trend."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Verdict labels positive_pct (promising+breakthrough) as 'promising share'"
+   ],
+   "claude_bare": [
+    "Illustrative critical-share values (28-35%) bear no relation to the corpus (critical ~1-6%), though labelled as guesses"
+   ],
+   "chatgpt_prism": [
+    "Gap to today stated as 297 days; 2025-12-31 to 2026-10-23 is 296"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The reported gap from 2025-12-31 to 2026-10-23 is 297 days; the date difference is 296 days."
+   ],
+   "claude_prism": [
+    "The claim that 2025 may be incomplete is not supported by the supplied record, which includes a 2025 annual value and records a latest example dated 2025-12-31."
+   ],
+   "claude_bare": [
+    "The claimed emissions-reduction figures and cited studies are explicitly unverified estimates, so they cannot support measured conclusions."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison made.",
+    "chart": "No chart.",
+    "drilldown": "Has specific follow-up calls, but only 2 of 5 executed and there is no breakdown.",
+    "export": "No export.",
+    "repro": "No numbers; an honest empty deliverable.",
+    "refs": "No references.",
+    "accuracy": "No contradictions; empty deliverable.",
+    "limits": "Specific about what is unmeasured (coding rules, phrase expansion), but no data limits are applied.",
+    "verdict": "A decision and confidence are given, but the answer is 'cannot establish'.",
+    "facets": "No facet answered with grounded values."
+   },
+   "claude_prism": {
+    "trend": "Full positive_pct and contested_pct series for 2017-2025, with deltas exact (+11.8, -8.1). It names the 2025 step. The verdict mislabels positive_pct as the 'promising' share.",
+    "comparison": "2017 vs 2025 on one scale; ratios recompute (1.94, 0.68, 0.51 to 1.44). The c2 bucketing is flagged as not to be mixed. Does not address the distributional dimension.",
+    "chart": "Traced share chart with the positive vs contested decomposition and window, unit and source. No volume chart, and no tone or volume overlay.",
+    "drilldown": "Contribution, topic and phrase layers, plus paper ids and DOIs. Follow-ups 4/6 ok, none folded back.",
+    "export": "Script ceiling 3. Two traced CSVs plus provenance JSON.",
+    "repro": "87/87 traced; calls block with args, plus capture date.",
+    "refs": "4 DOIs resolve and are tied to claims with venue and year. No quotes, no contrary sources.",
+    "accuracy": "The verdict calls positive_pct (promising+breakthrough) 'the promising share', a field misreading. Otherwise exact. Catches the carbon-fibers false matches.",
+    "limits": "Window gap, lane, phrase audit with false-match evidence, framing-not-truth and thin critical class are each placed next to their numbers.",
+    "verdict": "Direct answer, decision, medium confidence with reason, and a change condition. Acknowledges the tool's 'broadly unchanged' reading.",
+    "facets": "Trend, shares, examples, thin years and phrase expansion are grounded. The distributional-critique angle is not addressed."
+   },
+   "claude_bare": {
+    "trend": "Memory guess series labelled estimate.",
+    "comparison": "Compares two guessed endpoints.",
+    "chart": "Estimate-labelled guess chart. Its 'supports' line points to an unrelated claim.",
+    "drilldown": "Follow-ups proposed, only 2/6 ok; no traced layer.",
+    "export": "Estimate CSV.",
+    "repro": "All numbers are memory or estimate.",
+    "refs": "Real papers recalled, but no resolvable identifiers.",
+    "accuracy": "No direct contradiction of the reference. The guessed critical-share level (~28-35%) is far from the corpus (~2-5%) but labelled a guess.",
+    "limits": "Honest about what is unmeasured, but generic otherwise.",
+    "verdict": "Qualitative answer that engages the distributional critique, with low confidence and a change condition. Unmeasured.",
+    "facets": "Facets answered from memory."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced counts for promising and critical, window stated, change quantified (6.5x, 2020 critical peak 28). Shares only first/last in prose; full shares in CSV.",
+    "comparison": "2025 promising vs critical, 214 vs 15 (14.3:1), baseline defined. Carries the -2.2 pt 'broadly unchanged' caveat.",
+    "chart": "Traced, but plots raw counts while volume tripled. No share or volume view, so tone is not normalised in the chart.",
+    "drilldown": "Phrase audit and example items with DOIs and ids. Follow-up f2 duplicates c1; 3/4 ok.",
+    "export": "Two traced CSVs with provenance and a JSON block. The phrase audit is oddly flagged coverage=partial.",
+    "repro": "24/25 traced; derived values marked and recomputable. The day gap is off by one (296, not 297).",
+    "refs": "2 DOIs resolve and are tied to claims. Tier is not supplied, no quotes, no contrary sources.",
+    "accuracy": "Shares and ratios recompute (9.7%, 19.0%, 4.7%, 1.3%, 6.5x, 14.3). Minor off-by-one in the date gap. Notes off-topic examples.",
+    "limits": "Window gap, lane, match mode and the framing-not-validity caveat are placed in context. Does not say what would close the gap.",
+    "verdict": "Nuanced answer (latest-year favourable vs balance unchanged), with decision, confidence with reason, and a change condition.",
+    "facets": "Trend, comparison, examples, thin years and phrase expansion are grounded. Distribution is not addressed."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced yearly counts, window, peaks, and change; the chart shows counts rather than the available orientation shares.",
+    "comparison": "Compares orientations on the same 2025 scale, defines the baseline, and distinguishes framing counts from evidence strength.",
+    "chart": "Both plotted series trace to the source and support prose claims, but the chart omits the share comparison central to the question.",
+    "drilldown": "Provides yearly and phrase layers, paper identifiers, and specific calls; no executed follow-up result is folded in.",
+    "export": "Both needed tables are traced, referenced, and carry provenance; the provenance block omits coverage details.",
+    "repro": "Calls and most values are traceable with arguments and windows; the stated 297-day gap is arithmetically off.",
+    "refs": "The two DOIs resolve and are tied to claims, but there are no source-abstract quotes.",
+    "accuracy": "The measured distinctions are sound; the 297-day gap is one small date error.",
+    "limits": "Explains window, phrase matching, and framing limits near the figures; the date gap is misstated.",
+    "verdict": "Direct, qualified answer with decision, confidence, and a condition that would change it; recognizes the stable broader framing balance.",
+    "facets": "Covers trend, orientation split, phrase coverage, and limits, but not seasonality or a measured news comparison."
+   },
+   "claude_prism": {
+    "trend": "Traced annual shares and counts, quantified changes, named the 2025 concentration, and decomposed positive and contested framing.",
+    "comparison": "Uses one annual-share scale, states deltas and ratios, defines its baseline, and separates the browse summary's different buckets.",
+    "chart": "The traced positive and contested share series directly compare the orientations and support the stated reading.",
+    "drilldown": "Gives orientation, contribution, topic, phrase, and paper layers with identifiers and targeted calls; no follow-up result is folded back.",
+    "export": "Two traced tables are provided, but the script ceiling limits export quality and the exports lack the full decision-ready provenance and row identifiers.",
+    "repro": "Numeric claims trace to calls with arguments and windows, and the regenerate block supports replay.",
+    "refs": "Identifiers resolve and examples are tied to claims, but there are no verbatim abstract quotes.",
+    "accuracy": "The main series and definitions match; describing 2025 as potentially incomplete is not established by the supplied record.",
+    "limits": "Covers lane, phrase matching, and the 2026 gap, but overstates uncertainty about 2025 completeness and does not fully locate coverage caveats.",
+    "verdict": "Answers directly with a decision, confidence, and change condition, while acknowledging stable contested framing; the 2025 caveat is not grounded in the record.",
+    "facets": "Covers orientation, phrase mix, and research-lane bounds, but lacks seasonality and a measured research-versus-news comparison."
+   },
+   "claude_bare": {
+    "trend": "The series is explicitly an unmeasured estimate, earning the estimate-level ceiling only.",
+    "comparison": "Numerical comparison is explicitly a comparison of guessed values.",
+    "chart": "The chart is clearly labeled illustrative and estimated, but is not measured.",
+    "drilldown": "Names relevant layers and calls, but the proposed calls are not a traced breakdown of the answer.",
+    "export": "The CSV is explicitly an estimate rather than a sourced export.",
+    "repro": "No measured claims or replayable calls support the central trend.",
+    "refs": "References are unverified and identifiers are absent or imprecise.",
+    "accuracy": "Estimates are labeled, and no direct contradiction is established, but the trend direction is unsupported.",
+    "limits": "Clearly states that no series was measured and identifies what remains unknown.",
+    "verdict": "Makes a policy recommendation from memory claims that do not support the recommendation or trend conclusion.",
+    "facets": "Most requested measured facets are unavailable; the response acknowledges this but does not ground them."
+   },
+   "chatgpt_bare": {
+    "trend": "No sourced series is provided.",
+    "comparison": "No measured comparison is made; only the inability to compare is reported.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Lists proposed calls, but they did not execute and are not grounded breakdown layers.",
+    "export": "No data export is provided.",
+    "repro": "The calls are listed but there are no results to reproduce.",
+    "refs": "No references were verified.",
+    "accuracy": "The response avoids unsupported measured claims and does not contradict the supplied record.",
+    "limits": "Clearly states that no corpus, coverage, or observed window is available.",
+    "verdict": "Gives a direct, bounded answer with a decision, confidence, and what evidence would change it, but offers no measured support.",
+    "facets": "The deliverable identifies missing facets but supplies no grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

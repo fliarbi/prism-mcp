@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 2,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 2,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The reef-area series is explicitly an estimate, so it earns the memory-series anchor only.",
+    "comparison": "The event comparison is numeric but estimated and not independently checkable.",
+    "chart": "The plotted values are memory estimates, explicitly labelled as such.",
+    "drilldown": "It names layers and specific questions, but only three of six proposed calls executed successfully and no traced item-level breakdown is shown.",
+    "export": "The event CSV is an estimate, not a traced export.",
+    "repro": "No numbers trace to reproducible calls; the deliverable says no Prism calls were run.",
+    "refs": "One DOI resolves, but the other references lack specific, checkable identifiers and the cited support is thin.",
+    "accuracy": "The estimates are labelled, and no direct conflict with the supplied record is apparent; the answer does not measure recent research changes.",
+    "limits": "It identifies memory-only coverage, partial window, and the gap to today near the relevant claims.",
+    "verdict": "It gives a decision, low confidence, and conditions, but the central shift is not supported by measured evidence.",
+    "facets": "It covers event impacts and interventions from memory, but does not ground the research-trend facets."
+   },
+   "B": {
+    "trend": "It provides no time series, consistent with its stated lack of measurement.",
+    "comparison": "It explains that a measured comparison cannot be made, but offers no measured contrast.",
+    "chart": "There is no chart block.",
+    "drilldown": "No traced breakdown or successful on-topic follow-up calls are provided.",
+    "export": "No dataset or CSV export is supplied.",
+    "repro": "The answer is explicitly memory-based and has no reproducible calls.",
+    "refs": "Only one of four DOI identifiers was found in the corpus; the others fail the reference ceiling.",
+    "accuracy": "Several listed DOI/title pairings are unsupported by the corpus record, and the described trend is an unmeasured synthesis.",
+    "limits": "It states the absence of a corpus and limits on coverage, though it cannot give a measured window.",
+    "verdict": "It offers a decision and confidence, but the claimed framing shift is not supported by measured evidence and contrary evidence is absent.",
+    "facets": "Most requested trend, comparison, and research-versus-news facets remain unmeasured."
+   },
+   "C": {
+    "trend": "The traced endpoints, stated window, and recomputed growth quantify direction; the source does not provide the intervening annual points.",
+    "comparison": "The cautionary-share comparison is traced, defined, and correctly recomputed, with its framing caveat; it does not resolve exact window boundaries.",
+    "chart": "The endpoint chart is sourced, labelled, and tied to the claim, but it shows only endpoints and omits supported facets such as framing and news comparison.",
+    "drilldown": "Selected papers provide one traced layer, but only two of five follow-up calls succeeded and no second item-level layer is exposed.",
+    "export": "The endpoint CSV traces, but it is not the full series or the other needed comparison/document tables and lacks full provenance attributes.",
+    "repro": "Most numbers trace, but 17 of 21 are verified and the call block declares a call that was never made.",
+    "refs": "All four DOIs resolve and are tied to claims with metadata; no abstract quotes are supplied.",
+    "accuracy": "It correctly distinguishes framing from truth and taxonomy-label news zeros from scientific under-coverage; its limitations are generally explicit.",
+    "limits": "It states window ends, gaps to today, lane, coverage, matching limits, and what the available result cannot establish.",
+    "verdict": "The answer and decision follow from the evidence, with confidence and what would change it; it acknowledges thin evidence and limits.",
+    "facets": "It covers output, framing, selected methods, and grounded gaps, but leaves seasonality and research-news mismatch insufficiently resolved."
+   },
+   "D": {
+    "trend": "The traced endpoint values, window, and quantified growth support a rising trend, but the full annual path is absent.",
+    "comparison": "The ratios are individually traced, but the news and research windows differ, so comparing which grew faster is not a like-for-like contrast.",
+    "chart": "The chart traces and supports its endpoint claim with unit, window, and source, but does not visualize the other supported facets or mark partial periods.",
+    "drilldown": "The selected papers and metadata give item-level detail, but only three of seven proposed follow-ups succeeded and no executed result is folded back in.",
+    "export": "The CSV traces and is referenced, but it omits the monthly series and other tables needed to reproduce the report’s facets.",
+    "repro": "The cited numbers trace and the main call includes arguments; the report notes the key gap between the endpoint chart and an annual path.",
+    "refs": "The DOI-backed items are traceable, but the evidence section does not tie each identifier as fully as the rubric requires, and quotes are absent.",
+    "accuracy": "The data is mostly read correctly, but ‘news grew faster than research’ overstates a comparison between different windows and lanes.",
+    "limits": "It places the windows, lane, coverage, match mode, and framing-window uncertainty near the results, while noting the likely incomplete news endpoint.",
+    "verdict": "It offers a direct answer and decision, but overstates the news-versus-research comparison and omits a clear contrary finding in its evidence.",
+    "facets": "It covers research volume, framing, selected work, and the taxonomy-label caveat, but does not resolve seasonality or a comparable research-news contrast."
+   }
+  },
+  "errors": {
+   "A": [
+    "The central shift toward a recurring global crisis and intervention is presented as a memory-based interpretation, not a measured research trend.",
+    "The event-area chart and comparison are estimates rather than recorded series."
+   ],
+   "B": [
+    "Three DOI identifiers were not found in the corpus: 10.1038/s41558-020-0798-2, 10.1038/s41586-019-1729-9, and 10.1038/s43017-021-00186-8.",
+    "The claimed framing shift is qualitative and unmeasured."
+   ],
+   "C": [
+    "The call block declares a call that was never made.",
+    "Only 17 of 21 numeric claims trace, and only two of five proposed follow-ups executed successfully."
+   ],
+   "D": [
+    "The claim that news grew faster than research compares ratios from different windows and lanes.",
+    "The last news value is zero at the endpoint; the deliverable flags possible incompleteness, but the source does not establish that caveat."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is strongest for a decision-maker: its core research-volume and framing figures trace to the reference record, and it provides a useful set of recent papers with identifiers. Its main weakness is the claim that news grew faster than research, which compares different windows and lanes; C is more careful about that limitation but has weaker traceability and export coverage."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 2,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 2,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

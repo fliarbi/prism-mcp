@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 5,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced monthly series with a stated window. However, it compares June 2024 with the April 2026 peak and reads 'rose for all three', which contradicts the tool's falling direction for recession and interest rates. Censoring is misread.",
+    "comparison": "Ratios 2.45x and 9.09x recompute correctly, the baseline is defined and the overlap caveat is carried. It does not engage volume against tone.",
+    "chart": "The chart traces 100%. Its caption says the final month is partial, but the reference flags May 2026 as non-partial. Only volume is charted.",
+    "drilldown": "One traced layer (term to month). Only 2 of 4 follow-ups executed.",
+    "export": "Two traced tables with provenance and JSON. The coverage=partial label is questionable.",
+    "repro": "25 of 26 numbers trace, the call is listed with args and the percentage changes are recomputable.",
+    "accuracy": "Clear contradiction: it treats May 2026 as a partial period, while the reference has partial_period false and censors at June 2026. It also asserts a rising direction against the tool's labels.",
+    "limits": "Window, the 144-day gap, match mode and overlap are all stated. The censoring limit is misapplied to the wrong month.",
+    "verdict": "Gives a ranking, decision, confidence and what would change it. It is silent on trend direction and not consistent with its own 'rose' claim.",
+    "facets": "Volume, share and overlap are covered. Direction is misread and tone is only declared undefined."
+   },
+   "B": {
+    "trend": "Memory index labelled as an estimate.",
+    "comparison": "Estimated index ratios on a shifted baseline. Unmeasured.",
+    "chart": "Chart from memory, honestly labelled as an estimate.",
+    "drilldown": "Layers named but no traced breakdown. Follow-ups are partly generic and only 2 of 5 executed.",
+    "export": "CSV explicitly labelled as estimates.",
+    "repro": "No traced numbers. 8 numbers are untagged.",
+    "accuracy": "Its estimate that attention to all three declined contradicts the reference: inflation is flat and has a large spring-2026 spike.",
+    "limits": "Honest and specific about what is unmeasured. It uses an assumed window.",
+    "verdict": "The ranking matches by luck, but the trend claims rest on memory. Low confidence is stated.",
+    "facets": "Facets are answered from memory."
+   },
+   "C": {
+    "trend": "Full traced series with window and censoring. Peaks, troughs and ratios (x1.51, x13.2, x2.16) all recompute exactly. Critical decomposition is given only at the totals level.",
+    "comparison": "Same-window ratios are exact and the baseline is defined. It declines to interpret the undefined vs_baseline. It contrasts the narrow spread in critical share with the wide spread in volume, and states that overlap cannot be measured.",
+    "chart": "Fully traced volume chart with unit, window and source. There is no tone or critical overlay, and the caption's '12–19k' slightly understates the 2025 highs.",
+    "drilldown": "One traced layer. Only 2 of 6 follow-ups executed, and no item-level identifiers are given.",
+    "export": "Two traced tables with full provenance, referenced from the prose, plus a provenance JSON block.",
+    "repro": "88 of 88 numbers trace. Derived figures are shown and the call is listed with args and window.",
+    "accuracy": "Correctly reads May 2026 as non-partial. Notes that combined_articles is a sum and not a count of unique articles. Separates critical from negative. Flags the July 2025 priority anomaly and the undefined fields.",
+    "limits": "Window, the 145-day unmeasured gap, coverage flag, censoring, match mode, overlap and interpretation are all placed next to the numbers they bound.",
+    "verdict": "Direct, decision-oriented answer with reasoned confidence and the contrary spike named. It could bound the conclusion more tightly to the missing June–October months.",
+    "facets": "Volume, share, trend, tone (labelled) and overlap are all covered with grounded values or grounded statements of no data."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "An empty chart block with no points.",
+    "drilldown": "Generic follow-ups only, and 0 of 5 executed.",
+    "export": "A header-only CSV.",
+    "repro": "Nothing to reproduce.",
+    "accuracy": "Refusal, so no contradictions.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "An honest 'cannot answer' with a decision, but no answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [
+    "Treats May 2026 as a partial period; the reference has partial_period false and censors at 2026-06-01.",
+    "'Rose for all three terms' contradicts the tool's direction of falling for recession and interest rates; the endpoint was cherry-picked at the April 2026 peak."
+   ],
+   "B": [
+    "Memory estimate that all three terms declined contradicts the measured series: inflation is flat, with its peak in April 2026."
+   ],
+   "C": [],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C was the only deliverable that read the measured record correctly end to end. Its ratios and peaks recompute exactly, it understood that combined counts are not unique articles, it applied censoring to the right month and it flagged data anomalies. A used the same data but misread the censored month and claimed rising trends against the tool's own direction labels. B offered memory-based estimates that contradicted the data, and D declined to answer."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 5,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

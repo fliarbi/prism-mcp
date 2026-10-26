@@ -1,0 +1,197 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced yearly contested-share series, quantified 2020–2025 change, and notes thin years and the missing 2021; it does not quantify the later decline from the 2022 peak.",
+    "comparison": "Promising and cautionary shares use the same corpus denominator; the 14.5-point difference and 1.75:1 ratio are correct, with scope limits stated.",
+    "chart": "The traced chart has the correct unit, window, source, and caption, and shows the peak and subsequent decline.",
+    "drilldown": "Provides orientation and topic breakdowns, identifiers for example papers, and specific follow-up calls; no contrary-paper item layer is returned into the report.",
+    "export": "The yearly CSV traces and preserves the missing year, with source, window, unit, coverage, and provenance; it omits the orientation breakdown needed for a fuller framing export.",
+    "repro": "Lists calls with arguments and windows, capture date, and values that reproduce the reported figures.",
+    "refs": "All three DOIs resolve and support tied claims, but no abstract quotes are supplied.",
+    "accuracy": "Reads contested and positive shares correctly and avoids treating labels as outcome evidence; its stated 296-day gap is one day short (the gap from Dec. 31, 2025 to Oct. 23, 2026 is 296 days only if counting elapsed days from Dec. 31; acceptable).",
+    "limits": "Places window, thin-year, missing-year, match, lane, and interpretation limits alongside the evidence.",
+    "verdict": "Direct answer, decision, confidence, conditions, and contrary evidence are present; the conclusion is bounded by corpus limitations."
+   },
+   "B": {
+    "trend": "Traces both positive and contested shares over 2023–2025, quantifies changes and volume growth, and distinguishes thin early years.",
+    "comparison": "The 2023–2025 shares and count ratios use consistent years and recompute correctly, with the baseline defined.",
+    "chart": "Both traced series have a suitable time-series chart, window, unit, source, and reading caption.",
+    "drilldown": "Shows orientation, year, contribution, and topic layers with specific calls; it does not fold returned contrary-paper examples into the report.",
+    "export": "The traced CSV has useful yearly orientation counts but lacks full provenance attributes such as coverage and counted/captured date in the CSV itself; ceiling is 3.",
+    "repro": "Lists source calls with arguments and windows and the derived values are recomputable.",
+    "refs": "Identifiers resolve and claims are tied to papers, but abstracts quotes are absent.",
+    "accuracy": "Calls 2025 incomplete at query time despite the reference window ending 2025-12-31; also infers corpus-wide linguistics contamination from a keyword facet without sufficient support.",
+    "limits": "Covers window, lane, match mode, thin years, and coverage caveat, though the 2025 incompleteness claim is inaccurate.",
+    "verdict": "A direct answer and decision are given, but the script ceiling is 3; its verdict does not fully reconcile the promising-versus-cautionary framing with the broader positive/contested split.",
+    "facets": "Answers orientation, movement, volume, and the implied limits and corpus-matching facets with grounded values."
+   },
+   "C": {
+    "trend": "No measured series or grounded year-by-year change.",
+    "comparison": "The 1:1 comparison is explicitly limited to a selected pair, not a field-level measured contrast.",
+    "chart": "No chart is included.",
+    "drilldown": "Acknowledges no breakdown and provides calls, but only two of four executed successfully and no traced layers are reported.",
+    "export": "No export is provided.",
+    "repro": "Calls have arguments, but they do not reproduce reported measurements; the only numeric comparison is an illustrative pair.",
+    "refs": "Both listed DOI identifiers were not found in the reference corpus, triggering the fabricated-identifier cap.",
+    "accuracy": "The cautious caveats are sound, but the referenced works and identifiers are not supported by the record.",
+    "limits": "Clearly states that corpus, window, coding, coverage, and trend are unmeasured, but the scope of limits remains general.",
+    "verdict": "Gives a direct bounded recommendation and confidence, but lacks measured support and a specific evidence-based change condition.",
+    "facets": "Grounds the qualitative existence of both frames, but leaves prevalence and movement unanswered."
+   },
+   "D": {
+    "trend": "The chart is honestly labeled as an estimate, which earns the estimate anchor only.",
+    "comparison": "The comparison is explicitly estimated and internally computable, but it is not measured or traceable to a common corpus.",
+    "chart": "The chart is labeled as an estimate, so it earns the honest memory-chart anchor only.",
+    "drilldown": "Provides generic breakdown categories and proposed calls, but most follow-ups fail or return empty and no traced item layer is shown.",
+    "export": "Both exports are explicitly estimates rather than traced database rows.",
+    "repro": "No database calls were run and the estimates cannot be regenerated.",
+    "refs": "Identifiers resolve and most entries are tied to claims with metadata; verbatim abstract quotes are absent.",
+    "accuracy": "Estimates are disclosed and the sourced examples are plausible, but the claimed direction and percentages are not established by the reference record.",
+    "limits": "Clearly states the estimated window, unknown coverage, partial 2026, lane, match mode, and interpretation limits near the claims.",
+    "verdict": "Provides a recommendation and confidence, but its central shift claim rests on unmeasured estimates and does not establish what would change the measured conclusion.",
+    "facets": "Addresses several implied facets qualitatively, but without grounded values."
+   }
+  },
+  "errors": {
+   "A": [
+    "The CSV labels the 2021 row blank, correctly avoiding a zero; the chart omits 2021 and the 2022 peak is based on a thin sample, both noted.",
+    "No cautionary or critical item examples were retrieved, so the contrary-paper facet remains open."
+   ],
+   "B": [
+    "Says the 2025 window is incomplete at query time, although the reference includes papers through 2025-12-31.",
+    "Infers that linguistics papers are mixed in from the 'Generative grammar' keyword count; the reference does not establish that those papers match the education corpus.",
+    "The positive and contested aggregates are accurately reported; do not treat the tool's early-to-late framing-shift reading as a comparable multi-year trend because its early baseline is a single thin-year paper."
+   ],
+   "C": [
+    "Both DOI identifiers listed in the references were not found in the research corpus; their associated metadata and examples are therefore unverified against the supplied record."
+   ],
+   "D": [
+    "Presents the estimated 2022–2026 cautionary-share series as a chart and CSV; it is transparently marked as an estimate but is not measured.",
+    "The proposed follow-ups are mostly unexecuted or empty, so they do not substantiate the claimed movement."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it traces the movement, compares orientations on defined scales, and keeps thin years and corpus limits visible. B offers a richer decomposition, but incorrectly calls the 2025 window incomplete and overreads a keyword facet; C and D cannot establish a measured trend."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {
+  "chatgpt_bare": [
+   "refs 1->0"
+  ]
+ }
+}

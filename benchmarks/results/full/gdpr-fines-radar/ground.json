@@ -1,0 +1,602 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 520,
+  "charts": [
+   {
+    "id": "fines-annual",
+    "title": "Approx. annual total GDPR fines, EUR millions (recalled, rounded)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Annual fines (estimate)",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "fines_annual.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are newest on GDPR fines since 2024?",
+    "args": {
+     "term": "GDPR fines enforcement",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'GDPR fines enforcement' — try expand=true, or a broader phrase",
+    "seconds": 2.5,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "Is the literature becoming more critical?",
+    "args": {
+     "term": "GDPR enforcement"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"gdpr enforcement\", \"data protection enforcement\"], \"points\": [{\"year\": 2018, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2020, \"total\": 1, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2021, \"total\": 3, \"orientation\": {\"promising\": 1, \"descriptive\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 1, \"positive_pct\": 33.3, \"contested_pct\": 33.3}, {\"year\": 2022, \"total\": 6, \"orientation\": {\"critical\": 1, \"b"
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "Which countries lead research output?",
+    "args": {
+     "term": "GDPR enforcement"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'GDPR enforcement'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR enforcement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of GDPR fines trended?",
+    "args": {
+     "term": "GDPR fine"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 15, \"critical\": 15, \"negative\": 15, \"positive\": 0, \"mean_priority\": 7.73, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 3, \"critical\": 3, \"negative\": 3, \"positive\": 0, \"mean_priority\": 8.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 6, \"critical\": 6, \"negative\": 6, \"positive\": 0, \"mean_priority\": 7.83, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 1, \"critical\": 1, \"negati"
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What evidence says fines are not collected?",
+    "args": {
+     "term": "GDPR fines effectiveness"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...R fines effectiveness'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR fines effectiveness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.radar",
+    "question": "Which topics are under-covered?",
+    "args": {
+     "term": "GDPR enforcement"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'GDPR enforcement'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR enforcement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 14,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "32 — Layers: by country (Ireland, Luxembourg, France, Italy, Spain), by violation type (Art. 5/",
+    "16 — - Window: recall up to my knowledge cutoff (June 2026), but reliable only to about 2025; t"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1238,
+  "charts": [
+   {
+    "id": "new-work-by-year",
+    "title": "Papers in radar top-10 list by publication year (GDPR enforcement)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers in top-10 list",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "gdpr_new_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "gdpr_by_orientation.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 6,
+    "traced_share": 0.6666666666666666,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "Is the share of critical or cautionary work rising since 2022?",
+    "args": {
+     "term": "gdpr enforcement",
+     "since_year": 2018
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2018, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers cover GDPR fines specifically, and how are they oriented?",
+    "args": {
+     "term": "gdpr fines",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 14, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7117474523\", \"title\": \"GDPR Fines in Europe: Concentration, Enforcement Patterns, and Implications\", \"authors\": [\"Lorena Granada R.\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-28\", \"doi\": \"10.5281/zenodo.18077552\", \"url\": \"https://doi.org/10.5281/zenodo.18077552\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"empirical\", \"stance_score\": -0.3, \"topics\": [], \"instituti"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What does the literature say on enforcement variation across member states?",
+    "args": {
+     "term": "gdpr enforcement variation"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...enforcement variation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='gdpr enforcement variation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Which work disputes the claim of an enforcement deficit?",
+    "args": {
+     "term": "gdpr enforcement deficit"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...r enforcement deficit'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='gdpr enforcement deficit', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of GDPR fines changed over time?",
+    "args": {
+     "term": "gdpr fine"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 15, \"critical\": 15, \"negative\": 15, \"positive\": 0, \"mean_priority\": 7.73, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 3, \"critical\": 3, \"negative\": 3, \"positive\": 0, \"mean_priority\": 8.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 6, \"critical\": 6, \"negative\": 6, \"positive\": 0, \"mean_priority\": 7.83, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 1, \"critical\": 1, \"negati"
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries produce the research on GDPR enforcement?",
+    "args": {
+     "term": "gdpr enforcement"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'gdpr enforcement'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='gdpr enforcement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 19,
+   "traced": 16,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 3,
+   "comparison": 3,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 340,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which recent papers study GDPR fines, and what are their year, orientation, DOI, and citation counts?",
+    "args": {
+     "term": "GDPR enforcement fines",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W3099273321\", \"title\": \"The GDPR enforcement fines at glance\", \"authors\": [\"Jukka Ruohonen\", \"Kalle Hjerppe\"], \"venue\": \"Information Systems\", \"year\": 2021, \"date\": \"2021-08-29\", \"doi\": \"10.1016/j.is.2021.101876\", \"url\": \"https://doi.org/10.1016/j.is.2021.101876\", \"cited_by\": 26, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_score\": 0.6, \"topics\": [\"Ethics and Social Impacts of AI\", \"Privacy, Security, and Data Protection\", \"COVID-"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has research attention to GDPR enforcement changed by year?",
+    "args": {
+     "term": "GDPR enforcement fines"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"gdpr enforcement fines\"], \"points\": [{\"year\": 2020, \"total\": 1, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2021, \"total\": 1, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}], \"totals\": {\"promising\": 2}, \"papers\": 2, \"per_orientation_trend\": {\"promising\": {\"available\": false, \"reason\": \"fewer than three periods\"}}, \"framing_shift\": {\"early_contested_pct\": 0.0, \"late_contested_pct\": 0.0, \"delta_pct_points\": 0.0, \"reading\": \"the balance of framing is broadly unchanged\"},"
+   },
+   {
+    "id": "f3",
+    "feature": "research.brief",
+    "question": "What framing shifts appear in research on GDPR fines and enforcement?",
+    "args": {
+     "term": "framing shifts GDPR enforcement fines"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...DPR enforcement fines'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='framing shifts GDPR enforcement fines', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.radar",
+    "question": "Which GDPR enforcement topics are under-covered in the research?",
+    "args": {
+     "term": "GDPR fines enforcement"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'GDPR fines enforcement'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR fines enforcement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of GDPR fines changed over time?",
+    "args": {
+     "term": "GDPR fines enforcement"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'GDPR fines enforcement' in this window",
+    "seconds": 2.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How does news coverage compare across enforcement topics or regions?",
+    "args": {
+     "term": "GDPR enforcement fines"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'GDPR enforcement fines'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR enforcement fines', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": false,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 1132,
+  "charts": [
+   {
+    "id": "selected_papers_by_year",
+    "title": "Papers in the Prism radar's selected list by publication year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Selected papers",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "gdpr_enforcement_selected_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How has the volume of GDPR enforcement research changed by year across a broader corpus?",
+    "args": {
+     "topic": "GDPR enforcement",
+     "since_year": 2015
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...t', 'since_year': 2015}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR enforcement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2015, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "Which enforcement frames have gained or lost prominence over time?",
+    "args": {
+     "topic": "GDPR enforcement",
+     "since_year": 2015
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...t', 'since_year': 2015}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GDPR enforcement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2015, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "Which topics in GDPR enforcement research appear under-covered?",
+    "args": {
+     "topic": "GDPR enforcement",
+     "since_year": 2015
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.0,
+    "sample": "{\"new_work\": [{\"title\": \"Is Centralised General Data Protection Regulation Enforcement a Constitutional Necessity?\", \"year\": 2023, \"venue\": \"European Constitutional Law Review\", \"cited_by\": 7, \"orientation\": \"critical\", \"url\": \"https://doi.org/10.1017/s1574019623000202\"}, {\"title\": \"RETHINKING EUROPEAN CYBERSECURITY INTEGRATION THROUGH LIBERAL INTERGOVERNMENTAL POLITICS IN GENERAL DATA PROTECTION REGULATION ENFORCEMENT STUDY\", \"year\": 2025, \"venue\": \"Bangladesh Journal of Multidisciplinary Scientific Research\", \"cited_by\": 0, \"orientation\": \"descriptive\", \"url\": \"https://doi.org/10.46281/bjmsr.v11i1.2638\"}], \"new_work_how\": \"the most-cited typed papers published since the start year whose ti"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What is the trend in news coverage of GDPR enforcement and fines?",
+    "args": {
+     "term": "GDPR enforcement fines",
+     "since_year": 2015
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2015, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "How does news coverage of GDPR enforcement compare across regions?",
+    "args": {
+     "term": "GDPR enforcement fines",
+     "since_year": 2015
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2015, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 23,
+   "traced": 21,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series at all; the chart has empty points.",
+    "comparison": "None.",
+    "chart": "The chart block has no data points.",
+    "drilldown": "Generic follow-ups, all of which failed on execution (0/6).",
+    "export": "No export.",
+    "repro": "No numbers to trace or reproduce.",
+    "refs": "No sources consulted.",
+    "accuracy": "Empty but honest, with no contradictions.",
+    "limits": "Specific about what is unmeasured; no data limits to place.",
+    "verdict": "Topic list from memory with low confidence; not grounded.",
+    "facets": "No facet answered with grounded values."
+   },
+   "B": {
+    "trend": "Traced monthly series with window and censoring; peak, endpoints and delta quantified. No CAGR or critical/total decomposition.",
+    "comparison": "Tone ratio 0.09 vs baseline 0.58 traced, with the baseline and the machine-label caveat carried. Does not engage the post-IYM contrast.",
+    "chart": "One traced volume chart; tone and critical share not charted; broken empty image tag.",
+    "drilldown": "Theme, entity and critical layers with dated headlines but no URLs; 3/6 follow-ups ran.",
+    "export": "One traced CSV with provenance and a prose reference; no summary or headline table.",
+    "repro": "35/35 numbers traced; call block with args and window.",
+    "refs": "Headlines carry no resolvable identifiers.",
+    "accuracy": "Reads 41.5% as a share 'of placed articles' (743/917 is about 81%), a denominator misreading. Calls Marico the 'leading' organisation although that is by lift, not count.",
+    "limits": "Window, censoring, 144-day gap, match mode and enrichment stated, but mostly in a footer section.",
+    "verdict": "Direct answer, decision, confidence with reason and what would change it; does not address the IYM framing.",
+    "facets": "Volume, tone, themes, entities, geography and publishers covered. Critical share, the IYM after-spike question and mention-vs-central are not read."
+   },
+   "C": {
+    "trend": "Traced series with critical decomposition. CAGR -21.9%/-27.2%, late/early 0.55, peak, trough and recovery all named.",
+    "comparison": "Ratio 0.16x baseline with the baseline defined, monthly range given and small-base caveat for May 2026.",
+    "chart": "Volume and critical overlaid, fully traced. Tone not charted; no visible censor marker.",
+    "drilldown": "Layers listed with dated headlines, but all follow-ups failed (ceiling 1).",
+    "export": "Rich monthly CSV with provenance; single table (ceiling 3).",
+    "repro": "92/92 numbers traced, with a call block and export provenance.",
+    "refs": "Headlines are not given with resolvable URLs (says they are 'in payload').",
+    "accuracy": "'41.5% of the 1,551 matched' and '41.5% of placed coverage' are wrong denominators. Otherwise it catches anomalies: critical is not negative, Cameroon/Iceland collision, ThePrint as publisher, enrichment lag.",
+    "limits": "Limits are placed where the numbers are used: gap to today, enrichment bound, match modes, sample size. It also proposes a fresher-window call.",
+    "verdict": "Strong answer, but capped at 3 by the script. 'Driven by' is a causal phrasing, softened later.",
+    "facets": "Nearly all facets grounded; the IYM after-spike question is explicitly marked untestable. Mention-vs-central is addressed."
+   },
+   "D": {
+    "trend": "Attention index from memory, labelled estimate.",
+    "comparison": "Memory production figures compared with qualitative attention; not on a news scale.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Breakdown from memory; some follow-ups ran but none were folded back.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Numbers are memory or estimate.",
+    "refs": "Generic government sources. The UN resolution number may be misattributed: the IYM resolution is likely A/RES/75/263, not 75/251.",
+    "accuracy": "Honestly labelled memory; no direct contradiction with the record.",
+    "limits": "Honest and specific about what is unmeasured; plain-model cap.",
+    "verdict": "Hypothesis-grade answer with decision and confidence, but not grounded in measured data.",
+    "facets": "Mostly memory or estimate."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "India's 41.5% is presented as a share of placed articles; 743/917 placed is about 81%, so this is a denominator misreading."
+   ],
+   "C": [
+    "India's 41.5% is presented as a share of the 1,551 matched articles and of placed coverage; both are denominator misreadings.",
+    "'Driven by' gives a causal reading of the April 2026 critical spike in the verdict."
+   ],
+   "D": [
+    "The resolution identifier A/RES/75/251 is possibly misattributed (IYM 2023 is likely A/RES/75/263)."
+   ]
+  },
+  "best": "C",
+  "verdict": "C gave the decision-maker the most usable picture. It shows volume falling (CAGR -21.9%, late/early 0.55) with the critical share decomposed, tone set against a defined baseline, and limits placed next to the numbers, including the five unmeasured months. Its weak points are failing follow-ups and an unlinked headline layer. B is cleanly traced but thinner: one series, no critical or CAGR reading. A and D answered honestly from no data or memory and cannot support a decision."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

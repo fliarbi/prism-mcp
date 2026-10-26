@@ -1,0 +1,182 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Only series is remembered IC3 losses, labelled estimate; it measures losses, not news coverage.",
+    "comparison": "Its only ratio (3.0x) is between estimated loss figures; there is no coverage comparison.",
+    "chart": "Memory chart honestly labelled estimate.",
+    "drilldown": "Layers are named generically; no traced breakdown; only 3 of 6 follow-ups executed ok.",
+    "export": "CSV labelled estimate.",
+    "repro": "Figures are honest memory labels and cannot be reproduced.",
+    "refs": "One generic ic3.gov link with no quote and no specific document.",
+    "accuracy": "No contradictions; remembered facts are plausible; nothing measured.",
+    "limits": "Specific about what is unmeasured, and states the 34-month gap.",
+    "verdict": "Honest scoping verdict with a decision and conditions, but it does not answer the question.",
+    "facets": "Facets answered from memory or left unanswered."
+   },
+   "B": {
+    "trend": "Full traced series with window and censoring, peak, CAGR and late/early ratio; flat label read correctly; no decomposition.",
+    "comparison": "Tone vs a defined corpus baseline; delta and 6.0x computed and caveated; no ransomware/fraud/breach contrast.",
+    "chart": "Volume chart is fully traced, but tone and themes are not charted.",
+    "drilldown": "Traced themes and headlines with urls; only 1 of 5 follow-ups executed ok.",
+    "export": "Monthly and geography CSVs with provenance and a provenance block, both referenced from the prose.",
+    "repro": "36/36 traced; prism-calls listed with args and window.",
+    "refs": "Ceiling 1; no reference list; headlines are sourced only to the call.",
+    "accuracy": "Values match the record and fields are read correctly; no anomalies caught beyond caveats.",
+    "limits": "Window end, 144-day gap, lane, match mode, enrichment lag, placed_pct and the sample-based publisher figures all sit next to the numbers they bound.",
+    "verdict": "Ceiling 3; the critical-stories part of the answer is thin.",
+    "facets": "Volume, place, themes (including ransomware and breach tags), tone and headlines are all grounded."
+   },
+   "C": {
+    "trend": "Traced series with window; flags the CAGR vs 'flat' conflict; decomposes into critical, negative and positive in the export, plus the July 2025 critical dip.",
+    "comparison": "Baseline defined, delta and ratio exact, monthly ratio range given.",
+    "chart": "Single traced volume chart; no tone or critical overlay.",
+    "drilldown": "Traced themes, countries and headlines with urls; only 2 of 6 follow-ups executed ok.",
+    "export": "Ceiling 3; two traced CSVs with provenance.",
+    "repro": "87/87 traced; calls listed.",
+    "refs": "Ceiling 1.",
+    "accuracy": "Catches non-organisation entity labels, the CAGR conflict, high-lift low-count place rows, enrichment lag and the thin critical panel.",
+    "limits": "Ceiling 3, though the limits are well placed.",
+    "verdict": "Direct answer, decision, confidence with reason and what would change it, and the thin headline list noted.",
+    "facets": "Volume, where, themes splitting fraud, ransomware and breach, tone and critical stories are all grounded."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "Follow-up calls only, with no layers.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Specific about what is unmeasured, and says unmeasured is not zero.",
+    "verdict": "Declines to answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C and B both measured the same window, but C went further for a decision-maker. It split the coverage into fraud, ransomware and data-breach themes, decomposed critical and tone counts by month, and flagged anomalies in the data (non-organisation entity labels, the CAGR vs flat-label conflict, the high-lift Cambodia row). It also named the actual critical story threads. A and D lacked data: A gave honest memory estimates about losses rather than coverage, and D gave a well-formed refusal."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

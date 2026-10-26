@@ -1,0 +1,226 @@
+{
+ "slug": "microfinance-claims",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 1.5,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 21.1,
+   "plain": 21.1,
+   "invented": true,
+   "by_judge": {
+    "opus": 23.1,
+    "gpt": 19.1
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 4.0,
+    "chart": 0.0,
+    "drilldown": 2.0,
+    "export": 4.5,
+    "repro": 3.0,
+    "refs": 2.5,
+    "accuracy": 2.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 3.5
+   },
+   "strict": 54.9,
+   "plain": 54.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 52.7,
+    "gpt": 57.1
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 3.5,
+    "accuracy": 2.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 37.1,
+   "plain": 37.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 26.7,
+    "gpt": 47.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 4.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 4.5,
+    "repro": 4.5,
+    "refs": 2.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 64.8,
+   "plain": 64.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 60.7,
+    "gpt": 68.9
+   }
+  }
+ },
+ "judge_mad": 0.65,
+ "verdicts": {
+  "opus": "C was the only deliverable that kept every number traced and on the correct lane. It flagged the off-topic strongest source and the undefined contested share, and it gave a clean, provenance-backed export. D did more comparative arithmetic but mixed the intersection and subject lanes in its headline reading. The memory-only answers (A, B) could not measure anything, and B misreported a key RCT.",
+  "gpt": "B is the strongest decision aid: it preserves the recorded corpus counts and provenance, calculates the limited same-scale comparison, and clearly explains why those counts cannot decide borrower outcomes. D offers richer calculations and a chart, but mixes incompatible lanes and adds unverified memory claims; A is careful but largely unmeasured, while C overstates unverified specifics."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "Untagged numeric range (15-36 months) in the verdict"
+   ],
+   "chatgpt_bare": [
+    "Misstates Banerjee-Duflo-Glennerster-Kinnan 2015 as finding improved women's decision-making and mobility; the study found no significant effect"
+   ],
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "Compares B's subject-lane count (78,834) with A's intersection count (376) to call the empowerment body small, though A's own subject count is 146,493 (lane mixing)"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "Presents multiple unverified study details and numeric claims from memory as factual; the tool ceiling flags six untagged numbers.",
+    "Uses an unverified DOI for Schicks and unverified identifiers for other references."
+   ],
+   "claude_prism": [
+    "Chart labels the call date as a data window even though the recorded response has an empty window.",
+    "Compares stance shares using different lane denominators, so the deltas and ratios are not like-for-like.",
+    "States from memory that debt harm is concentrated in saturated, poorly regulated markets without traced support."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "comparison": "The contrast table is from memory and qualitative only. The script ceiling is 2, and I scored lower because nothing in it is measured.",
+    "chart": "No chart.",
+    "drilldown": "The breakdown layers are generic and from memory. Only 1 of 5 follow-ups executed.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "No calls were run. The untagged 15-36 month figure caps this at 0.",
+    "refs": "The main DOIs resolve and each reference is tied to a claim. Three entries lack identifiers ('doi not verified', a generic EPPI url) and there are no quotes.",
+    "accuracy": "The recalled findings match the literature (six-site RCTs, Hyderabad null on decision-making, Vaessen near-zero). Several specifics are memory estimates.",
+    "limits": "States honestly that it ran nothing, plus the window gap and the trial-horizon limits. These are mostly generic memory caveats.",
+    "verdict": "Ceiling 0 because of the untagged numbers in the Verdict, even though the substance is sound.",
+    "facets": "Answered from memory only."
+   },
+   "chatgpt_bare": {
+    "comparison": "Qualitative table only.",
+    "chart": "No chart.",
+    "drilldown": "The layers are only the three cited refs. None of the follow-ups executed.",
+    "export": "No export.",
+    "repro": "The memory sourcing is acknowledged, but nothing can be regenerated.",
+    "refs": "The identifiers resolve, but [r2] is tied to a claim it does not support.",
+    "accuracy": "Says Banerjee et al. 2015 (Hyderabad) found improved women's decision-making and mobility. That RCT found no significant empowerment effect.",
+    "limits": "Notes the memory sourcing, the window gap and the asymmetry. These limits are general rather than data-specific.",
+    "verdict": "Has a structure, decision and confidence, but its 'some agency' answer leans on the misread study.",
+    "facets": "Answered from memory."
+   },
+   "chatgpt_prism": {
+    "comparison": "The 0.54x subject-paper ratio recomputes exactly (78,834/146,493). The lane asymmetry is carried and no intersection ratio is claimed. It does not answer the effect-level contrast the question poses.",
+    "chart": "No chart.",
+    "drilldown": "Script ceiling 1: the follow-ups did not execute.",
+    "export": "One traced CSV with provenance and a provenance JSON, referenced from the prose. The missing intersection value is left blank rather than zero. Columns are renamed.",
+    "repro": "All 18 numbers trace to c1 and the calls block is complete. The derived ratio is marked.",
+    "refs": "Tool sources are listed and tied to claims, and the off-topic meta-analysis is flagged. [r1] has no identifier and there are no quotes.",
+    "accuracy": "Fields are read correctly. It catches that the strongest debt source is 'unrelated' and that contested_pct is undefined. It does not flag that the two subject counts differ for the same subject.",
+    "limits": "The empty window, the lanes, paper counts versus outcomes, and the tool's own caveat are each placed beside the numbers they bound.",
+    "verdict": "Answer, decision, confidence and what would change it are all present and bounded. It is thin on substance: the RCT wave the question names is never addressed.",
+    "facets": "The corpus facets are covered. The substantive RCT-versus-debt facet is unaddressed."
+   },
+   "claude_prism": {
+    "comparison": "Within-lane shares and deltas recompute correctly. It states that the lanes differ but leaves the mixing unresolved.",
+    "chart": "Script ceiling 0.",
+    "drilldown": "The layers trace (lane, stance, tier, reads). All 6 follow-ups failed.",
+    "export": "One traced long-format CSV with provenance JSON, referenced from the prose.",
+    "repro": "39 of 49 numbers trace. The memory claims are marked est.",
+    "refs": "c1 sources plus two recalled DOIs that resolve, each tied to a claim. No quotes.",
+    "accuracy": "Contrasts B's 78,834 subject papers with A's 376 intersection papers to call A's literature 'small' and say the tool verdict conflicts with raw volumes. A's own subject lane is 146,493, so this mixes lanes.",
+    "limits": "Strong placed limits: the empty window, lanes, tiny document reads, and the classifier-level stances.",
+    "verdict": "Low confidence with a decision and what would change it. Partly rests on the lane-mixed volume contrast.",
+    "facets": "The corpus facets are covered, with the RCT background from memory."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "comparison": "Qualitative, memory-based comparison with no common measured scale.",
+    "chart": "No chart block.",
+    "drilldown": "Names evidence layers, but proposed calls were not run and no traced item-level breakdown is provided.",
+    "export": "No quantitative export.",
+    "repro": "No measured numbers or reproducible calls; sources are named, but the research synthesis is not regenerated.",
+    "refs": "All three DOI/URL references resolve and are tied to claims with metadata; no unsupported verbatim quotes are offered.",
+    "accuracy": "Carefully distinguishes average effects from crisis evidence and does not contradict the record; claims about the research are a memory synthesis.",
+    "limits": "States the evidence window, gap, coverage, differing study designs, follow-up limits, and what cannot be measured near the relevant claims.",
+    "verdict": "Direct recommendation with medium confidence, conditions, and contrary evidence; bounded by the cited evidence, though decision support could be more explicit about its scope.",
+    "facets": "Addresses effects and debt risks qualitatively, but lacks grounded comparison of claim evidence, 2015 wave detail, and other implied facets."
+   },
+   "chatgpt_prism": {
+    "comparison": "Traced subject-paper counts on the same reported scale; computes 78,834/146,493 as about 0.54 and explicitly carries the lane mismatch and missing comparable intersection caveat.",
+    "chart": "No chart block.",
+    "drilldown": "Provides traced breakdowns but no executable follow-up call returned non-empty results; ceiling is 1.",
+    "export": "The claim-comparison CSV and provenance trace to the call, retain the missing intersection as null, and are referenced in the prose.",
+    "repro": "All numeric claims trace to the listed call or are recomputable; the call includes args and window, and the export recipe is present.",
+    "refs": "The corpus record is identified, but the other entries lack a claim-supporting quote and the Akhuwat entry has no resolving identifier; citation support is incomplete.",
+    "accuracy": "Counts and lanes are reported correctly, including the unrelated strongest source; the corpus mix is not borrower-outcome evidence.",
+    "limits": "Covers unknown window, lane, coverage and matching limits, but does not state specific censoring or enrichment limits; these are not returned by the call.",
+    "verdict": "Gives a supported decision, confidence, condition for change, and acknowledges the strongest contrary evidence: the larger reported empowerment subject count and lane mismatch.",
+    "facets": "Covers lane mismatch, overlap absence, corpus tallies, and the research-versus-outcome distinction, but lacks seasonal or time-period evidence."
+   },
+   "claude_bare": {
+    "comparison": "Uses memory-based numeric claims and no traceable common quantitative comparison; honest estimates cap the score at 2.",
+    "chart": "No chart block.",
+    "drilldown": "Names layers but supplies no traceable breakdown; calls are mostly unexecuted or empty.",
+    "export": "The estimate CSV is explicitly memory-based, so it earns the estimate anchor only.",
+    "repro": "Six untagged numbers and no executed source calls; numeric claims cannot be regenerated.",
+    "refs": "The Schicks DOI is explicitly unverified and other entries lack verified identifiers, capping references at 1.",
+    "accuracy": "Presents a near-zero pooled empowerment result and several study specifics as fact despite no source verification; the comparison record does not substantiate them.",
+    "limits": "Clearly labels memory coverage and notes the long gap, short horizons, and missing outcome prevalence; several claims remain unverified.",
+    "verdict": "The script-checkable ceiling is 0 because its verdict contains untagged numbers 15, 36, and 10; the direct answer cannot overcome that gate.",
+    "facets": "Mostly memory claims, with no grounded comparison or measured evidence for the implied facets."
+   },
+   "claude_prism": {
+    "comparison": "Computes ratios and deltas from traced corpus counts and explains lane asymmetry, though it still compares non-equivalent denominators.",
+    "chart": "No chart block; the embedded prism-chart block is not a counted chart under the script ceiling.",
+    "drilldown": "One traced breakdown layer and no successful executable follow-ups; the reported follow-up calls did not return on-topic data.",
+    "export": "CSV rows and provenance reproduce the corpus stance counts, with lane and coverage stated and the export referenced.",
+    "repro": "Most numeric claims trace, but 10 of 49 do not and two are untagged; listed calls reproduce only the measured portion.",
+    "refs": "Some sources resolve, but the strongest-source entry lacks an identifier and memory references lack quotes or retrieved support.",
+    "accuracy": "Correctly notices the lane mismatch and unrelated top source, but its chart window implies a publication window the call did not return, and its comparison uses incompatible lane denominators.",
+    "limits": "Places the unknown window, lane mismatch, small read samples, and classifier limits next to the numbers; identifies several unanswered facets.",
+    "verdict": "Direct recommendation and low confidence with conditions, but memory assertions and the internally inconsistent comparison weaken support; ceiling 3 applies."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

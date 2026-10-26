@@ -1,0 +1,183 @@
+{
+ "slug": "improve-screen-time",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 1.0
+   },
+   "strict": 51.0,
+   "plain": 51.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 42.1,
+    "gpt": 60.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "repro": 2.5,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 62.8,
+   "plain": 62.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 55.2,
+    "gpt": 70.3
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 1.5,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 30.3,
+   "plain": 30.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 26.9,
+    "gpt": 33.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "repro": 2.5,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.0
+   },
+   "strict": 59.3,
+   "plain": 59.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 46.2,
+    "gpt": 72.4
+   }
+  }
+ },
+ "judge_mad": 0.75,
+ "verdicts": {
+  "opus": "All four correctly downgrade 'causes' to an associational verb. B best tied its rewrite, the corpus mix and the subject-lane caveat to the recorded call, and gave a calibrated low confidence. B and C both lose points for quoting text from a c2 call that actually returned null. D's polished citations rest on an unresolvable DOI, and A is an honest memory answer with one factual slip.",
+  "gpt": "B is the most decision-ready: it gives a clear noncausal rewrite and accurately reports the assessment, lane caveat, corpus classifications, and missing evidence card. C covers more implied facets, but misattributes the 11-document tally to the empty evidence-card call; A is candid but largely memory-based, while D relies on an unresolved DOI."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "Ra et al. 2018 (JAMA) described as Hong Kong-based; it was a Southern California cohort"
+   ],
+   "claude_prism": [
+    "Quote and no_data payload attributed to c2, but c2 returned ok:false with null data",
+    "Chart window 2026-10-23 to 2026-10-23 invented; the record window was empty"
+   ],
+   "chatgpt_prism": [
+    "Quote attributed to c2 ('11 documents were read...') is not in the recorded response, which was ok:false with null data"
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1016/j.jaac.2020.03.019 not found in the corpus; likely fabricated",
+    "Verbatim quotes are unverifiable",
+    "Memory-based summary presented as an 'evidence card'"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [],
+   "chatgpt_prism": [
+    "Evidence-card quote is not the recorded response: c2 returned ok:false with null data, not the quoted 11-document statement."
+   ],
+   "claude_prism": [
+    "Attributes an 11-document tally to the evidence-card call; the reference record shows that call returned no data. The 11-document tally appears only in the improve result."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1016/j.jaac.2020.03.019 was not found in the research corpus, and the script flags it as unresolved; the review details and quoted conclusion are therefore unsupported by the record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "repro": "Every figure is labelled a memory estimate. This is honest but cannot be reproduced.",
+    "refs": "Papers are named only, with no identifiers or quotes, so none can be resolved.",
+    "accuracy": "Ra et al. 2018 is misplaced as Hong Kong-based (it was a Los Angeles cohort). The other recollections are hedged as estimates.",
+    "limits": "States specific limits: knowledge cutoff, the unmeasured gap to today, no lanes, and what it cannot answer. Nothing was measured to bound.",
+    "verdict": "Gives a rewrite, a decision, a reasoned confidence and what would change it. Names sibling and Mendelian-randomization attenuation as contrary evidence.",
+    "facets": "All facets are answered from memory, with no grounded values."
+   },
+   "claude_prism": {
+    "repro": "The c1 numbers trace, the sum 2,624 is recomputable, and calls are listed with args. However, the c2 quote and the chart window (2026-10-23 to 2026-10-23) are not in the record.",
+    "refs": "No research documents. Only tool calls are cited.",
+    "accuracy": "The c1 values are read correctly, including the subject-lane caveat on the 428 supporting documents. But c2 returned ok:false with null data, and B attributes an invented quote and no_data payload to it. The chart window is also invented.",
+    "limits": "Lane, empty window, coverage of 11 read versus 2,624 classified, and what the counts are all sit next to the numbers. The follow-up calls show how to close the gaps.",
+    "verdict": "Gives the tool's rewrite, a decision, low confidence with its reason, and what would change it. Bounded by the 0-papers-both-sides note.",
+    "facets": "Covers the rewrite, a grounded corpus mix with caveat, the strongest document (an honest 'none'), and what the evidence tier allows the verb to be."
+   },
+   "chatgpt_prism": {
+    "repro": "The c1 figures trace and calls are listed with args. The c2 quote is not in the record.",
+    "refs": "No research documents. Only tool calls are cited.",
+    "accuracy": "Reads c1 correctly but quotes c2 text that the recorded ok:false/null response does not contain.",
+    "limits": "States the lane, the absence of windows and the unknown gap. These limits are less tied to the specific numbers than in B.",
+    "verdict": "Gives an answer, a confidence and what would change it. The decision is thin and the confidence reasoning is brief.",
+    "facets": "Covers the rewrite and corpus mix. The discussion of what the evidence tier allows is shallow."
+   },
+   "chatgpt_bare": {
+    "repro": "No calls were run. The numbers carry no traceable source.",
+    "refs": "The JAACAP DOI was not found in the corpus, which looks fabricated. One fabricated identifier caps this parameter at 1.",
+    "accuracy": "The core reference has a fabricated-looking DOI and unverified 'verbatim' quotes. It is presented as an 'evidence card' even though no calls were made.",
+    "limits": "Admits that no search was run. But it frames memory as an evidence card and a 'corpus mix'.",
+    "verdict": "The rewrite and structure are reasonable, but they rest on a likely fabricated reference.",
+    "facets": "Answered from memory. The corpus mix is a non-measurement."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "repro": "All recalled figures are labeled estimates, with no traceable calls or sources; ceiling 1.",
+    "refs": "No identifiers or verified references; ceiling 1.",
+    "accuracy": "No contradiction with the record; the rewrite correctly downgrades causation to association.",
+    "limits": "Clearly labels memory estimates and states the absent search, coverage, and time gap limits.",
+    "verdict": "Direct rewrite, decision, confidence, and conditions are given; the decision is bounded, though evidence is memory-based.",
+    "facets": "Provides no grounded corpus or study-level values; most relevant evidence facets remain unanswered."
+   },
+   "chatgpt_prism": {
+    "repro": "Four of five numeric claims trace, but calls and windows do not support full regeneration; ceiling 3.",
+    "refs": "No bibliographic identifiers or research references; ceiling 1.",
+    "accuracy": "Faithfully reports the assessment, lane note, corpus classifications, and empty evidence-card result.",
+    "limits": "Places the missing windows, subject lane, corpus-count meaning, and coverage limits alongside the claims.",
+    "verdict": "Answers directly with a decision, confidence, and a change condition; acknowledges the empty evidence card and bounds the conclusion.",
+    "facets": "Grounds the rewrite and corpus mix, but omits study-design, temporal, news, and other implied facets."
+   },
+   "claude_prism": {
+    "repro": "Nine of fourteen numeric claims trace; several claims and call details remain unreproducible; ceiling 3.",
+    "refs": "No bibliographic research identifiers or source references; ceiling 1.",
+    "accuracy": "Mostly matches the record, but says the tool read 11 documents when the evidence-card call only reports no result; the 11-document tally belongs to improve.",
+    "limits": "States the empty windows, subject lane, coverage, matching uncertainty, and absent news/trend calls where relevant.",
+    "verdict": "Gives a direct rewrite, decision, low confidence, and change condition, and acknowledges no grounded document; however, it overstates the evidence-card result as an 11-document read.",
+    "facets": "Addresses implied facets with grounded no-data statements and distinguishes the topic-level corpus from claim evidence, while naming missing news and trend data."
+   },
+   "chatgpt_bare": {
+    "repro": "No reported numbers trace to calls or named measured sources; ceiling 0.",
+    "refs": "One DOI fails to resolve to the claimed work, capping refs at 1.",
+    "accuracy": "The first cited review identifier does not match the claimed review, so its specific title, venue, year, and attributed finding are unsupported.",
+    "limits": "States that no current search was run, but omits several applicable source and coverage limits; ceiling 3.",
+    "verdict": "Direct answer and conditions are present, but confidence lacks a grounded record and depends on an invalid citation.",
+    "facets": "Provides no grounded corpus values or tool-backed no-data for the implied facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

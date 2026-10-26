@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series; it only states that a trend cannot be measured.",
+    "comparison": "Gives only a qualitative contrast between input control and data-to-action systems.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown layer and an empty follow-up list.",
+    "export": "No export.",
+    "repro": "Contains no numbers and is honestly framed as general knowledge.",
+    "refs": "No references.",
+    "accuracy": "No contradictions, but no measured content either.",
+    "limits": "It is specific about what it cannot measure, which is honest. Without data it cannot place limits next to numbers.",
+    "verdict": "Gives an answer, a decision, a confidence level and what would change it. The answer rests on memory only.",
+    "facets": "Themes come from memory. News, under-coverage and trend are not grounded."
+   },
+   "B": {
+    "trend": "The index series is labelled estimate, from memory.",
+    "comparison": "Compares memory index values against a baseline that is also from memory.",
+    "chart": "The chart is labelled estimate, which is the honest ceiling.",
+    "drilldown": "Breakdown is from memory. Only 2 of 6 follow-up calls executed.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "All figures are memory estimates.",
+    "refs": "No references.",
+    "accuracy": "Labelled estimates conflict with the record. B says 'up to roughly ten thousand papers by mid-2020s' and about 20% CAGR, against 24,885 papers in 2025 and 29% CAGR.",
+    "limits": "States window end versus today, lanes, coverage and censoring. As a plain model it cannot earn above 3.",
+    "verdict": "Has a complete structure but the answer rests on memory.",
+    "facets": "Facets are answered from memory."
+   },
+   "C": {
+    "trend": "Gives research and news endpoints with CAGR, the late/early ratio and the news peak (120 in 2025-03). The partial-2025 caveat is noted.",
+    "comparison": "The framing comparison (-2.0 pp) is traced with its baseline and caveat. The research vs news ratio is flagged as mixing windows.",
+    "chart": "The single endpoint chart traces. News volume and framing are not charted.",
+    "drilldown": "One traced layer: 10 works with DOIs plus topic counts. Only 3 of 6 follow-ups executed and none were folded back into the report.",
+    "export": "Two traced CSVs with provenance. The new_work.csv lacks DOI identifiers.",
+    "repro": "58 of 58 numbers trace, there is a calls block, and derived figures recompute (7.7x, 1.7, 19.9 pp).",
+    "refs": "All 10 DOIs resolve and each is tied to a claim with year and venue. There are no quotes, and the tier labels are self-assigned (disclosed as such).",
+    "accuracy": "It miscounts orientations: it says four promising, but the record has five, plus one problem_identifying.",
+    "limits": "Limits sit next to the numbers: window gaps, censoring, match mode, and the meaning of the under-covered zero counts.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It notes the lack of outcome data.",
+    "facets": "Covers trend, news, new work, framing and under-coverage. It does not address the drones vs AI vs IoT speed contrast."
+   },
+   "D": {
+    "trend": "Research endpoints are quantified (7.66x, 29% CAGR). It omits the research censoring caveat and the news series entirely.",
+    "comparison": "The framing comparison is traced with its baseline, recomputed (0.81x), and carries its caveat.",
+    "chart": "The single endpoint chart traces. News and framing are not charted.",
+    "drilldown": "Evidence carries DOIs, but the grouping is qualitative. Only 2 of 6 follow-ups executed, and some are mismatched (geography called for under-coverage; critical browse called for growth drivers).",
+    "export": "Two CSVs with a provenance block. The framing window is unknown and there is no document table.",
+    "repro": "25 of 26 numbers trace and derived values recompute.",
+    "refs": "Five DOIs resolve, tied to claims with year and venue. There are no quotes.",
+    "accuracy": "The verdict says the 'shift toward cautionary framing is modest', but the cautionary share fell from 10.3% to 8.3%.",
+    "limits": "Limits are well placed, including the 175-day gap and the coverage caveat.",
+    "verdict": "The verdict misreads the framing direction against its own data, and the measured news trend is omitted.",
+    "facets": "The news trend is omitted despite being available. The drones/AI/IoT speed contrast is not addressed."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Memory estimates (around 10k papers per year by the mid-2020s, about 20% CAGR) conflict with the record (24,885 papers in 2025, 29.0% CAGR)."
+   ],
+   "C": [
+    "Says four of the top ten are labelled 'promising'. The record has five promising, four descriptive and one problem_identifying."
+   ],
+   "D": [
+    "The verdict describes a 'shift toward cautionary framing', but the cautionary share declined from 10.3% to 8.3%."
+   ]
+  },
+  "best": "C",
+  "verdict": "C and D both grounded their answers in the radar call. C used more of it: it quantified the research and news trends with ratios and the news peak, listed all ten DOI-linked works, and read the under-coverage zeros correctly. D omitted the news series and misread the direction of the framing shift in its verdict. A and B were honest memory-only answers with no measured support; B added labelled estimates that understate the recorded growth."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

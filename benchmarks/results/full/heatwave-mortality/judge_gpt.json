@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 2,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Its event figures are explicitly estimates from memory, not a sourced time series.",
+    "comparison": "The heat-cold comparison is numeric but memory-based and cannot be checked against a recorded source.",
+    "chart": "The chart is honestly labeled estimated, earning the memory-chart anchor only.",
+    "drilldown": "It names breakdowns and follow-ups, but most calls failed or were not on-topic.",
+    "export": "The CSV is an estimate without recorded provenance.",
+    "repro": "No calls or reproducible sources are supplied for the figures.",
+    "refs": "References lack resolvable identifiers and several bibliographic details are approximate.",
+    "accuracy": "Estimates are labeled as memory; no clear contradiction with the reference record.",
+    "limits": "It clearly states that the response is memory-only and gives relevant limits, but cannot provide data-specific corpus caveats.",
+    "verdict": "Direct answer, decision, confidence, conditions, and contrary considerations are present.",
+    "facets": "It gives no grounded population-linked effect estimate or verifiable evidence breakdown."
+   },
+   "B": {
+    "trend": "The full annual series, quantified growth, decisive values, window, and censoring are reported; the direction is consistent.",
+    "comparison": "The 55% contrast has a defined baseline and caveat; the research-news ratio is correctly computed, though it is a corpus-volume contrast rather than an effect-size comparison.",
+    "chart": "The chart traces the annual series and supports a stated claim, but does not visibly mark the censored year or chart a population-linked effect size.",
+    "drilldown": "It provides corpus and stance layers, but the executed follow-ups yielded only two of six successful on-topic calls.",
+    "export": "The traced series and stance CSVs lack the complete set of tables needed for the reported evidence and effect-size figures.",
+    "repro": "Nearly all numeric claims trace and the calls include arguments; two claims do not trace, preventing the full reproducibility anchor.",
+    "refs": "Identifiers and quotes resolve and claims are linked; no traceable contrary document is presented, so the highest ranking/tiering anchor is not met.",
+    "accuracy": "It carefully distinguishes paper framing from claim verdicts, but treats the retrieved effect-size examples as more directly informative about heatwave effects than their climate-attribution framing warrants.",
+    "limits": "Windows, lane, coverage, corpus breadth, extracted-claim duplication, and the missing population denominator are stated beside the relevant results.",
+    "verdict": "It gives a supported answer and decision with confidence and conditions, but does not identify a contrary finding from its evidence or fully bound the verdict to the absent population denominator.",
+    "facets": "It covers evidence direction, counts, and limits, but provides no grounded population-linked risk estimate or population breakdown."
+   },
+   "C": {
+    "trend": "No sourced series is supplied.",
+    "comparison": "It explains why cross-study comparisons need alignment but gives no measured contrast.",
+    "chart": "No chart is supplied.",
+    "drilldown": "Proposed calls failed, with no traced breakdown or successful follow-up.",
+    "export": "No measured CSV is supplied.",
+    "repro": "No data calls or reproducible numeric evidence are supplied.",
+    "refs": "One unverified reference has no DOI or exact bibliographic details.",
+    "accuracy": "It is candid about what it cannot verify and does not contradict the supplied record.",
+    "limits": "It accurately describes the absence of retrieval, but the limits remain general rather than tied to measured results.",
+    "verdict": "The answer and decision are clear, but confidence and conditions are not grounded in measured evidence or a checked contrary source.",
+    "facets": "It gives a qualitative conclusion but no grounded numbers or population-linked effect estimate."
+   },
+   "D": {
+    "trend": "The full annual series and quantified increase are accurate, with the censored year caveat stated.",
+    "comparison": "The 55% statistic has a defined baseline and its missing counts are acknowledged; the event attribution is not presented as a general risk estimate.",
+    "chart": "The chart traces the research series but lacks a visible censoring mark and uses a research-volume chart rather than a population-linked effect chart.",
+    "drilldown": "It describes breakdowns, but none of the proposed follow-up calls executed successfully.",
+    "export": "The series export traces, but the event-statistics CSV gives an incompatible source/window and leaves population and baseline blank without a reason column.",
+    "repro": "All listed numeric claims trace, calls and windows are recorded, and the series can be regenerated.",
+    "refs": "One DOI is malformed and fails to resolve as presented, capping the score.",
+    "accuracy": "It attributes the 6,079 and 55% statistics to c2, which contains no such statistics; they appear in c3. The malformed DOI also weakens the evidence trail.",
+    "limits": "It identifies the intersection lane, censoring, coverage gaps, sparse reading, missing denominators, and limits of the event attribution.",
+    "verdict": "It gives a direct answer, decision, confidence, and conditions, and acknowledges that the event estimate is not a general risk measure.",
+    "facets": "It addresses evidence direction, research-volume trend, and corpus limits, but lacks population-linked effect estimates."
+   }
+  },
+  "errors": {
+   "A": [
+    "The remembered death counts, attributable fractions, relative risks, and trend estimate are not verifiable from the supplied record; they are labeled estimates.",
+    "The cited cold-versus-heat comparison is not traceable to the supplied calls."
+   ],
+   "B": [
+    "The August 2003 6,079 figure attributes deaths to climate change, not specifically to heatwaves; the deliverable flags this distinction, but the figure does not itself establish a heatwave-versus-baseline effect size.",
+    "The claimed research-to-news ratio compares corpus counts with different time windows and source types; it is labeled an estimate but is not a like-for-like comparison."
+   ],
+   "C": [
+    "No measured effect size, population denominator, or reproducible evidence breakdown is supplied."
+   ],
+   "D": [
+    "The 6,079 deaths and 55% underprediction are attributed to c2, but those statistics are in c3; c2 has no statistics.",
+    "The first DOI is malformed in the evidence section as presented, and the script reports it unresolved.",
+    "The event-statistics CSV assigns the research.statistics#1 source and an August 2003 window, which do not match the cited call's recorded window."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid because it separates corpus activity from mortality evidence, reports the available numeric findings with their limits, and avoids claiming a pooled risk estimate when no population denominator was retrieved. D offers a useful annual chart, but its misattributed statistics and malformed DOI weaken its evidence trail; neither deliverable supplies the population-linked effect size the question most needs."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 2,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

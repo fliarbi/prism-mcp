@@ -1,0 +1,227 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Opus 5.5 alone</title><style>
+:root{--bg:#ffffff;--ink:#14161a;--ink2:#4b5160;--ink3:#8a8f9c;--line:#e3e5ea;--card:#f6f7f9;--accent:#2a78d6;--bad:#c4321d;--good:#1a8f62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 32px 40px}
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:18px}
+.bar .who{font-weight:700;font-size:20px}.bar .q{color:var(--ink2);font-size:13px;max-width:560px;text-align:right}
+h2{font-size:18px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+table{border-collapse:collapse;margin:10px 0;font-size:13px;width:100%}th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}code{background:var(--card);padding:1px 4px;border-radius:3px;font-size:12.5px}
+.chart{margin:12px 0}.chart img,.chart svg{max-width:100%}.cap{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:9px;border:1px solid var(--line);color:var(--ink2);margin-left:6px}
+.tag.inv{color:var(--bad);border-color:var(--bad)}.tag.ok{color:var(--good);border-color:var(--good)}
+.csvh{font-size:12px;color:var(--ink2);margin-top:12px}details{margin:8px 0;font-size:12.5px}pre{white-space:pre-wrap;background:var(--card);padding:8px;border-radius:4px;font-size:11.5px}
+</style></head><body><div class='wrap'><div class='bar'><div class='who'>Opus 5.5 alone</div><div class='q'>Do share buybacks reduce long-term corporate investment? What does the evidence say?</div></div><h1>Do share buybacks reduce long-term corporate investment? Evidence review</h1>
+<p><strong>Basis:</strong> This review draws only on the author's recall of published sources. No Prism calls were run, so no figures here carry a [cN] tag. Where a recalled value could not be pinned to an exact source figure, it is tagged (est.).</p>
+<h2>Verdict</h2>
+<ul>
+<li><strong>Answer:</strong> On average, there is no robust evidence that buybacks cause lower aggregate investment. There is credible causal evidence that a subset of buybacks does crowd out investment and employment: those timed to hit EPS targets or to coincide with executive equity vesting.</li>
+<li><strong>Decision:</strong> Do not treat buyback volume as a proxy for underinvestment. Scrutinise the motive instead: EPS-threshold timing, vesting overlap, and debt-funded repurchases at firms with high Tobin's q.</li>
+<li><strong>Confidence:</strong> medium. Causal designs exist only for narrow subsets. Aggregate studies are correlational, and they disagree mainly on gross versus net payout accounting.</li>
+<li><strong>What would change it:</strong> A credible natural experiment showing firm-level capex or R&amp;D responses to an exogenous buyback cost shock. The 2023 US 1% excise tax [r11] is a candidate.</li>
+</ul>
+<h2>What the data shows</h2>
+<ul>
+<li><strong>Gross payouts look large.</strong> Of the 449 S&amp;P 500 firms continuously listed over 2003–2012, buybacks absorbed 54% of earnings ($2.4 trillion) and dividends another 37% [r2].</li>
+<li><strong>Net payouts look much smaller.</strong> Net of equity issuance, payouts by all US public firms over 2007–2016 were roughly 41% of net income (est., recalled from [r3]). On that measure, capex plus R&amp;D intensity did not fall [r3].</li>
+<li><strong>A causal subset exists.</strong> Firms that repurchase to just meet the analyst EPS consensus subsequently cut investment and employment [r1]. The effect is identified on firms near the EPS threshold, not on all repurchasers.</li>
+<li><strong>Incentives are a mechanism.</strong> CEO equity vesting predicts more buybacks and lower subsequent investment growth [r7].</li>
+<li><strong>The aggregate picture is weak.</strong> Investment weakness after 2000 is explained mainly by output growth, competition and ownership structure, not by payouts [r4][r5][r9].</li>
+<li><strong>Selection runs the other way.</strong> Repurchasers tend to have declining investment opportunities before they buy back [r6]. Long-run returns after buyback announcements are positive internationally [r12], which is inconsistent with systematic value-destroying crowd-out.</li>
+</ul>
+<h2>Trend</h2>
+<p>S&amp;P 500 buybacks rose from about $572bn (2015) to about $943bn (2024) (est.). That is a change of +$371bn, or +65% (est.).</p>
+<p>The path was not smooth: buybacks fell to about $520bn in 2020 (est.). The values are recalled from S&amp;P Dow Jones Indices releases [r10] and are tagged as estimates because the exact figures were not re-verified.</p>
+<div class='chart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="S&amp;P 500 annual share buybacks"><style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a8984;--grid:#e6e5e0;--axis:#c9c8c2;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neu:#b9b8b1;--band:#2a78d633}
+
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.t{font-size:17px;font-weight:600}.st{font-size:12.5px;fill:var(--ink2)}.src{font-size:11px;fill:var(--ink3)}
+.ax{font-size:11px;fill:var(--ink2)}.lb{font-size:12px;fill:var(--ink)}.v{font-size:11.5px;fill:var(--ink2)}
+.g{stroke:var(--grid);stroke-width:1}.a{stroke:var(--axis);stroke-width:1}
+.c1{fill:var(--s1)}.c2{fill:var(--s2)}.c3{fill:var(--s3)}.c4{fill:var(--s4)}.cn{fill:var(--neu)}
+.l1{stroke:var(--s1)}.l2{stroke:var(--s2)}.l3{stroke:var(--s3)}.l4{stroke:var(--s4)}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.bg{fill:var(--bg);stroke:var(--grid)}
+</style><rect class="bg" x="0.5" y="0.5" width="759" height="329" rx="10"/><text class="t" x="24" y="34">S&amp;P 500 annual share buybacks</text><text class="st" x="24" y="54">USD bn · window {&quot;from&quot;: &quot;2015-01-01&quot;, &quot;to&quot;: &quot;2024-12-31&quot;}</text><line class="a" x1="64" x2="736" y1="272.0" y2="272.0"/><text class="ax" x="56" y="276.0" text-anchor="end">0</text><line class="g" x1="64" x2="736" y1="222.5" y2="222.5"/><text class="ax" x="56" y="226.5" text-anchor="end">250</text><line class="g" x1="64" x2="736" y1="173.0" y2="173.0"/><text class="ax" x="56" y="177.0" text-anchor="end">500</text><line class="g" x1="64" x2="736" y1="123.5" y2="123.5"/><text class="ax" x="56" y="127.5" text-anchor="end">750</text><line class="g" x1="64" x2="736" y1="74.0" y2="74.0"/><text class="ax" x="56" y="78.0" text-anchor="end">1,000</text><text class="ax" x="64.0" y="290" text-anchor="middle">2015</text><text class="ax" x="138.7" y="290" text-anchor="middle">2016</text><text class="ax" x="213.3" y="290" text-anchor="middle">2017</text><text class="ax" x="288.0" y="290" text-anchor="middle">2018</text><text class="ax" x="362.7" y="290" text-anchor="middle">2019</text><text class="ax" x="437.3" y="290" text-anchor="middle">2020</text><text class="ax" x="512.0" y="290" text-anchor="middle">2021</text><text class="ax" x="586.7" y="290" text-anchor="middle">2022</text><text class="ax" x="661.3" y="290" text-anchor="middle">2023</text><text class="ax" x="736.0" y="290" text-anchor="middle">2024</text><path class="ln l1" d="M64.0,158.7 L138.7,165.9 L213.3,169.2 L288.0,112.4 L362.7,127.7 L437.3,169.0 L512.0,97.4 L586.7,89.2 L661.3,114.6 L736.0,85.3"/><circle class="c1" cx="736.0" cy="85.3" r="4.5" stroke="var(--bg)" stroke-width="2"/><text class="v" x="736.0" y="75.3" text-anchor="middle">943</text><text class="src" x="24" y="316">source: estimate</text></svg><div class='cap'>Buybacks rose about 65% over the decade with a sharp 2020 dip and records in 2022 and 2024.<span class='tag'>from memory (estimate / cited, not checkable)</span></div></div>
+<p>The rising volume does not by itself show reduced investment. A level series cannot separate crowd-out from the alternative explanation that firms are returning free cash flow they cannot productively invest.</p>
+<h2>Comparison</h2>
+<p>The key contrast is how large payouts look depending on whether equity issuance is netted out. Both figures below use net income as the baseline.</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Population</th>
+<th>Window</th>
+<th>Payout as % of net income</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gross payouts (buybacks + dividends)</td>
+<td>449 S&amp;P 500 firms</td>
+<td>2003–2012</td>
+<td>91% (54% + 37%)</td>
+<td>[r2]</td>
+</tr>
+<tr>
+<td>Net payouts (net of issuance)</td>
+<td>All US public firms</td>
+<td>2007–2016</td>
+<td>~41%</td>
+<td>(est.) from [r3]</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Delta:</strong> about 50 percentage points (est.).</li>
+<li><strong>Ratio:</strong> about 2.2× (est.).</li>
+<li><strong>Caveat:</strong> the windows and populations differ, so this is indicative only.</li>
+</ul>
+<div class='chart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 144" width="760" height="144" role="img" aria-label="Shareholder payouts as % of net income: gross vs net of issuance"><style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a8984;--grid:#e6e5e0;--axis:#c9c8c2;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neu:#b9b8b1;--band:#2a78d633}
+
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.t{font-size:17px;font-weight:600}.st{font-size:12.5px;fill:var(--ink2)}.src{font-size:11px;fill:var(--ink3)}
+.ax{font-size:11px;fill:var(--ink2)}.lb{font-size:12px;fill:var(--ink)}.v{font-size:11.5px;fill:var(--ink2)}
+.g{stroke:var(--grid);stroke-width:1}.a{stroke:var(--axis);stroke-width:1}
+.c1{fill:var(--s1)}.c2{fill:var(--s2)}.c3{fill:var(--s3)}.c4{fill:var(--s4)}.cn{fill:var(--neu)}
+.l1{stroke:var(--s1)}.l2{stroke:var(--s2)}.l3{stroke:var(--s3)}.l4{stroke:var(--s4)}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.bg{fill:var(--bg);stroke:var(--grid)}
+</style><rect class="bg" x="0.5" y="0.5" width="759" height="143" rx="10"/><text class="t" x="24" y="34">Shareholder payouts as % of net income: gross vs net of issuance</text><text class="st" x="24" y="54">% of net income · window {&quot;from&quot;: &quot;2003-01-01&quot;, &quot;to&quot;: &quot;2016-12-31&quot;}</text><line class="a" x1="115" x2="115" y1="68" y2="102"/><text class="lb" x="105" y="89.0" text-anchor="end">Gross payouts</text><rect class="c1" x="115" y="74" width="565.0" height="22" rx="4"/><text class="v" x="688.0" y="89.0">91</text><text class="src" x="24" y="130">source: ref:r2</text></svg><div class='cap'>Netting out equity issuance roughly halves the apparent drain on corporate funds.<span class='tag'>from memory (estimate / cited, not checkable)</span></div></div>
+<h2>Evidence</h2>
+<p>The tiers used below are:
+- <strong>A:</strong> peer-reviewed top-tier journal.
+- <strong>B:</strong> central-bank or Brookings paper.
+- <strong>C:</strong> practitioner outlet or data vendor.</p>
+<p><strong>Supporting crowd-out (at least for a subset)</strong></p>
+<ul>
+<li><strong>[r1]</strong> Almeida, Fos &amp; Kronlund. 2016, <em>Journal of Financial Economics</em>, tier A.</li>
+<li><strong>Claim:</strong> EPS-driven buybacks reduce investment and employment.</li>
+<li><strong>Quote (from memory; verify):</strong> "We find that EPS-motivated repurchases are associated with reductions in employment and investment, and a decrease in cash holdings."</li>
+<li><strong>[r7]</strong> Edmans, Fang &amp; Huang. 2022, <em>Journal of Accounting Research</em>, tier A.</li>
+<li><strong>Claim:</strong> Vesting equity is followed by more buybacks and lower investment growth.</li>
+<li><strong>Quote:</strong> paraphrase only; no verbatim quote recalled.</li>
+<li><strong>[r2]</strong> Lazonick. 2014, <em>Harvard Business Review</em>, tier C.</li>
+<li><strong>Claim:</strong> Payouts consume nearly all earnings.</li>
+<li><strong>Quote (from memory; verify):</strong> firms "used 54% of their earnings—a total of $2.4 trillion—to buy back their own stock."</li>
+<li><strong>[r8]</strong> Asker, Farre-Mensa &amp; Ljungqvist. 2015, <em>Review of Financial Studies</em>, tier A.</li>
+<li><strong>Claim:</strong> Listed firms invest less, and respond less to investment opportunities, than comparable private firms. This is indirect evidence of short-termism, not evidence about buybacks specifically.</li>
+<li><strong>[r9]</strong> Gutiérrez &amp; Philippon. 2017, <em>Brookings Papers on Economic Activity</em>, tier B.</li>
+<li><strong>Claim:</strong> Quasi-indexer ownership is associated with higher buybacks and lower investment.</li>
+<li><strong>Note:</strong> this paper is mixed. Its main drivers are competition and ownership, not buybacks.</li>
+</ul>
+<p><strong>Contradicting a general crowd-out</strong></p>
+<ul>
+<li><strong>[r4]</strong> Kahle &amp; Stulz. 2021, <em>Journal of Financial Economics</em>, tier A.</li>
+<li><strong>Claim (paraphrase):</strong> High payouts reflect high earnings and accumulated cash. They are not funded by cutting investment.</li>
+<li><strong>[r5]</strong> Gruber &amp; Kamin. 2017, Federal Reserve Board IFDP Notes, tier B.</li>
+<li><strong>Claim (paraphrase):</strong> Across countries, weak investment is explained by weak output growth, with little role for buybacks.</li>
+<li><strong>[r3]</strong> Fried &amp; Wang. 2018, <em>Harvard Business Review</em>, tier C.</li>
+<li><strong>Claim:</strong> Net payouts are moderate, and investment intensity has held up.</li>
+<li><strong>[r6]</strong> Grullon &amp; Michaely. 2004, <em>Journal of Finance</em>, tier A.</li>
+<li><strong>Claim:</strong> Repurchasers face declining investment opportunities, so buybacks reflect free-cash-flow distribution rather than causing lower investment.</li>
+<li><strong>[r12]</strong> Manconi, Peyer &amp; Vermaelen. 2019, <em>Journal of Financial and Quantitative Analysis</em>, tier A.</li>
+<li><strong>Claim:</strong> Long-run returns after buyback announcements are positive.</li>
+</ul>
+<p><strong>Tier-weighted tally (hand-coded, est.)</strong></p>
+<p>This tally covers only the 9 documents above (est.); it is not a corpus count. Weights are A = 3, B = 2, C = 1 (est.).</p>
+<table>
+<thead>
+<tr>
+<th>Side</th>
+<th>Documents</th>
+<th>Tiers</th>
+<th>Weighted score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supporting</td>
+<td>4</td>
+<td>3A, 1C</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Contradicting</td>
+<td>4</td>
+<td>2A, 1B, 1C</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Mixed</td>
+<td>1</td>
+<td>1B</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>The near-balance (10 vs 9, est.) reflects the fact that the two sides answer different questions: a causal subset versus the aggregate.</p>
+<p><strong>What cannot be measured here:</strong> read/unread counts, corpus-wide stance shares and news volumes. These need [f1]–[f3] below.</p>
+<h2>Drill-down</h2>
+<p>The evidence breaks into four layers:
+1. <strong>Motive-specific causal evidence:</strong> [r1], [r7].
+2. <strong>Accounting of the size of payouts:</strong> [r2] versus [r3].
+3. <strong>Macro and aggregate studies:</strong> [r4], [r5], [r9].
+4. <strong>Selection and returns:</strong> [r6], [r12].</p>
+<p>The prism-calls block below holds follow-up questions only. No calls were run, so it contains no "used_for" entries.</p>
+<details open><summary>Calls and follow-up queries (executable)</summary><pre>[
+ {&quot;id&quot;: &quot;f1&quot;, &quot;question&quot;: &quot;How many papers on buybacks and investment exist by lane, and what share are supporting vs critical?&quot;, &quot;feature&quot;: &quot;research.stance_trends&quot;, &quot;args&quot;: {&quot;term&quot;: &quot;share repurchases corporate investment&quot;, &quot;from&quot;: &quot;2000-01-01&quot;, &quot;to&quot;: &quot;2026-10-23&quot;}},
+ {&quot;id&quot;: &quot;f2&quot;, &quot;question&quot;: &quot;Which peer-reviewed papers find buybacks do NOT reduce investment, with DOIs and quotes?&quot;, &quot;feature&quot;: &quot;research.counter_evidence&quot;, &quot;args&quot;: {&quot;claim&quot;: &quot;share buybacks reduce corporate investment&quot;, &quot;limit&quot;: 8}},
+ {&quot;id&quot;: &quot;f3&quot;, &quot;question&quot;: &quot;How has news coverage volume and tone on buybacks shifted since the 2022 excise tax?&quot;, &quot;feature&quot;: &quot;news.trends&quot;, &quot;args&quot;: {&quot;term&quot;: &quot;stock buybacks investment&quot;, &quot;from&quot;: &quot;2021-01-01&quot;, &quot;to&quot;: &quot;2026-10-23&quot;}},
+ {&quot;id&quot;: &quot;f4&quot;, &quot;question&quot;: &quot;What effect sizes (capex/R&amp;D elasticity to repurchases) are reported, and in which populations?&quot;, &quot;feature&quot;: &quot;research.statistics&quot;, &quot;args&quot;: {&quot;term&quot;: &quot;repurchase investment elasticity capex R&amp;D&quot;}},
+ {&quot;id&quot;: &quot;f5&quot;, &quot;question&quot;: &quot;Did the 2023 US 1% buyback excise tax change firm investment?&quot;, &quot;feature&quot;: &quot;research.evidence&quot;, &quot;args&quot;: {&quot;claim&quot;: &quot;buyback excise tax increased corporate investment&quot;, &quot;limit&quot;: 8}},
+ {&quot;id&quot;: &quot;f6&quot;, &quot;question&quot;: &quot;Which papers cite Almeida, Fos and Kronlund (2016) and do they replicate the crowd-out?&quot;, &quot;feature&quot;: &quot;research.citations&quot;, &quot;args&quot;: {&quot;doi&quot;: &quot;10.1016/j.jfineco.2015.08.008&quot;}},
+ {&quot;id&quot;: &quot;f7&quot;, &quot;question&quot;: &quot;How do buyback-investment findings differ across US, Europe and Japan?&quot;, &quot;feature&quot;: &quot;research.geography&quot;, &quot;args&quot;: {&quot;term&quot;: &quot;share repurchases investment&quot;}}
+]</pre></details>
+<h2>Exports</h2>
+<p>Two files are exported below:
+- <code>spx_buybacks.csv</code> holds the trend series. It is an estimate.
+- <code>evidence_tally.csv</code> holds the hand-coded document tally. It is also an estimate.</p>
+<div class='csvh'>⬇ <b>spx_buybacks.csv</b> · source estimate · window 2015-01-01..2024-12-31 · unit USD_bn<span class='tag'>from memory</span></div><table><tr><th>year</th><th>sp500_buybacks_usd_bn</th></tr><tr><td>2015</td><td>572</td></tr><tr><td>2016</td><td>536</td></tr><tr><td>2017</td><td>519</td></tr><tr><td>2018</td><td>806</td></tr><tr><td>2019</td><td>729</td></tr><tr><td>2020</td><td>520</td></tr><tr><td>2021</td><td>882</td></tr><tr><td>2022</td><td>923</td></tr><tr><td>2023</td><td>795</td></tr><tr><td>2024</td><td>943</td></tr></table>
+<div class='csvh'>⬇ <b>evidence_tally.csv</b> · source estimate · window 2004-01-01..2022-12-31 · unit documents<span class='tag'>from memory</span></div><table><tr><th>ref</th><th>year</th><th>tier</th><th>stance</th></tr><tr><td>r1</td><td>2016</td><td>A</td><td>supporting</td></tr><tr><td>r7</td><td>2022</td><td>A</td><td>supporting</td></tr><tr><td>r8</td><td>2015</td><td>A</td><td>supporting</td></tr><tr><td>r2</td><td>2014</td><td>C</td><td>supporting</td></tr><tr><td>r9</td><td>2017</td><td>B</td><td>mixed</td></tr><tr><td>r4</td><td>2021</td><td>A</td><td>contradicting</td></tr><tr><td>r6</td><td>2004</td><td>A</td><td>contradicting</td></tr><tr><td>r5</td><td>2017</td><td>B</td><td>contradicting</td></tr><tr><td>r3</td><td>2018</td><td>C</td><td>contradicting</td></tr></table>
+<details open><summary>json</summary><pre>{&quot;exported_at&quot;: &quot;2026-10-23T00:00:00Z&quot;, &quot;calls&quot;: [], &quot;note&quot;: &quot;No Prism calls executed; all values from cited references or labelled estimates recalled by the author.&quot;}</pre></details>
+<h2>Method and limits</h2>
+<p><strong>Windows and gap to today</strong>
+- The literature window is publications from 2004 to 2022.
+- The buyback series ends on 2024-12-31, about 22 months before today (2026-10-23).
+- The author's knowledge cutoff is June 2026, so 2025–2026 data and any post-excise-tax studies are not covered.</p>
+<p><strong>Lanes</strong>
+- Research: hand-selected papers.
+- Data: S&amp;P DJI releases, recalled.
+- News: not covered.</p>
+<p><strong>Coverage and censoring</strong>
+- Coverage is purposive and partial, not systematic.
+- Recent working papers are right-censored, meaning they are under-represented because they were too new to be included.</p>
+<p><strong>Match mode</strong>
+- There was no keyword or corpus matching. Documents were chosen from memory.
+- The tally counts cited documents only. It is not the population of studies, and it is not a measure of how strong the evidence is.</p>
+<p><strong>Effect sizes</strong>
+- No numerical effect sizes are reported. Magnitudes from [r1] and [r7] were not reliably recalled.
+- The populations are:
+  - [r1]: US firms near the EPS threshold.
+  - [r7]: US firms with CEO equity vesting.</p>
+<p><strong>Verification</strong>
+- DOIs are omitted where they were not confidently recalled.
+- Quotes are marked as from memory and must be verified before reuse.</p>
+<p><strong>Interpretation</strong>
+- The reconciliation in the Verdict is the author's synthesis, not a finding of any single paper. It holds that causal crowd-out exists for some motives while aggregate crowd-out is not shown.</p>
+<h2>References</h2>
+<ul>
+<li>[r1] Almeida, H., Fos, V., Kronlund, M. The real effects of share repurchases. <em>Journal of Financial Economics</em>, 2016. doi:10.1016/j.jfineco.2015.08.008</li>
+<li>[r2] Lazonick, W. Profits Without Prosperity. <em>Harvard Business Review</em>, September 2014. https://hbr.org/2014/09/profits-without-prosperity</li>
+<li>[r3] Fried, J., Wang, C.C.Y. Are Buybacks Really Shortchanging Investment? <em>Harvard Business Review</em>, March–April 2018. https://hbr.org/2018/03/are-buybacks-really-shortchanging-investment</li>
+<li>[r4] Kahle, K., Stulz, R. Why are corporate payouts so high in the 2000s? <em>Journal of Financial Economics</em>, 2021. DOI not recalled.</li>
+<li>[r5] Gruber, J., Kamin, S. Corporate Buybacks and Capital Investment: An International Perspective. Federal Reserve Board, IFDP Notes, April 2017. https://www.federalreserve.gov/econres/notes/ifdp-notes/</li>
+<li>[r6] Grullon, G., Michaely, R. The Information Content of Share Repurchase Programs. <em>Journal of Finance</em>, 2004. doi:10.1111/j.1540-6261.2004.00645.x</li>
+<li>[r7] Edmans, A., Fang, V., Huang, A. The Long-Term Consequences of Short-Term Incentives. <em>Journal of Accounting Research</em>, 2022. DOI not recalled.</li>
+<li>[r8] Asker, J., Farre-Mensa, J., Ljungqvist, A. Corporate Investment and Stock Market Listing: A Puzzle? <em>Review of Financial Studies</em>, 2015. doi:10.1093/rfs/hhu077</li>
+<li>[r9] Gutiérrez, G., Philippon, T. Investmentless Growth: An Empirical Investigation. <em>Brookings Papers on Economic Activity</em>, Fall 2017.</li>
+<li>[r10] S&amp;P Dow Jones Indices. S&amp;P 500 Buybacks quarterly press releases (H. Silverblatt), 2016–2025. https://www.spglobal.com/spdji/</li>
+<li>[r11] Inflation Reduction Act of 2022, Pub. L. 117-169, §10201 (IRC §4501, 1% excise tax on repurchases from 2023). US Congress, 2022.</li>
+<li>[r12] Manconi, A., Peyer, U., Vermaelen, T. Are Buybacks Good for Long-Term Shareholder Value? Evidence from Buybacks around the World. <em>Journal of Financial and Quantitative Analysis</em>, 2019.</li>
+</ul></div></body></html>

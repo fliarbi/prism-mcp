@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 5
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full monthly series traced with its window. Peak 89 (2026-04) and late/early 1.18 are quantified. The flat label is read correctly and the CAGR distortion is flagged. No tone-over-time decomposition is charted.",
+    "comparison": "Tone ratio 0.18 vs baseline 0.58 is defined. The -0.40 delta and 0.31x recompute, and the negative months are named. The contrast is not fully framed against export reality.",
+    "chart": "Volume and tone charts are both traced and captioned. The tone chart shows bare levels, and censoring is not visibly marked.",
+    "drilldown": "Theme, entity, place and publisher layers are traced, with dated URL items. The 6/6 follow-ups ran, but none was folded back into the report.",
+    "export": "One traced CSV and a provenance JSON. Capped at 3.",
+    "repro": "81/81 numbers traced. The calls block and capture date are present.",
+    "refs": "Ceiling 2. News items carry dates, publishers and URLs.",
+    "accuracy": "Values match the record. A correctly notes that critical is undefined and not negative, and that the CAGR is endpoint-distorted.",
+    "limits": "Gives the five-month gap, enrichment bound, placed_pct, sample size, match mode, and what would close each gap.",
+    "verdict": "Direct answer, decision, confidence with reason, and change conditions. Notes import dependence and the window bound, and stays concise.",
+    "facets": "Volume, tone, themes, entities, places, critical items and sources are all grounded."
+   },
+   "B": {
+    "trend": "A fiscal-year official series from memory with generic PIB refs. It is not the news series the question asks for.",
+    "comparison": "Ratios computed on memory export values, not on news coverage.",
+    "chart": "Memory chart citing an unverifiable source.",
+    "drilldown": "Only 1/5 follow-ups returned. The breakdowns are from memory.",
+    "export": "Memory table.",
+    "repro": "Ceiling 0. Untagged numbers and no calls were run.",
+    "refs": "Generic pib.gov.in references with no resolvable URLs.",
+    "accuracy": "Figures are plausible public values. However, it omits the FY26 Rs 38,424 crore record the record shows, and the destination claims are estimates.",
+    "limits": "Honest and specific about what was unmeasured, but memory-based.",
+    "verdict": "Ceiling 0 because an untagged number appears in the verdict.",
+    "facets": "Mostly memory or 'cannot measure'."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups were named but 0/5 executed.",
+    "export": "None.",
+    "repro": "No numbers. Honest, but nothing is reproducible.",
+    "refs": "None.",
+    "accuracy": "No claims, so no contradictions.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "A refusal that does not answer the question.",
+    "facets": "No facets answered."
+   },
+   "D": {
+    "trend": "Traced series with an exclusive window. -8 / -26.7% recompute correctly, with the peak and thirds given. The verdict leans on the endpoint decline despite the tool's flat label.",
+    "comparison": "0.18 vs 0.58, delta 0.40 and 0.31x are correct, and the baseline is defined.",
+    "chart": "Only a volume chart. Tone was asked for but not charted.",
+    "drilldown": "Some layers are given, but only 2/5 follow-ups executed. Theme layers lack counts.",
+    "export": "Traced monthly CSV with a provenance block, referenced from the prose.",
+    "repro": "32/33 traced. Calls and capture date are present.",
+    "refs": "Ceiling 2. URLs with dates and publishers.",
+    "accuracy": "Matches the record. The 144-day gap is correct. It does not define 'critical' and calls the critical feed positive.",
+    "limits": "Covers censoring, the 144-day gap, lane, match mode, sample size and placed_pct, each placed next to its number.",
+    "verdict": "Clear answer, decision, confidence and change conditions. Import dependence is not raised as contrary evidence within the verdict.",
+    "facets": "Themes and entities are thin on values. The other facets are grounded."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Untagged number in the verdict",
+    "Memory-based destination and theme claims; omits the FY26 record figure present in the record"
+   ],
+   "C": [],
+   "D": [
+    "Verdict frames 'ends below opening month' although the tool's direction is flat (endpoint reading)"
+   ]
+  },
+  "best": "A",
+  "verdict": "A and D both grounded their answers in the same overview call, but A went further. It added the tone comparison chart, the substantive export claims (Rs 38,424 crore, 25-fold), a correct reading of 'critical', and executable follow-ups. B gave plausible official figures from memory and did not measure the news at all, and C declined to answer."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,566 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 476,
+  "charts": [],
+  "tables": [
+   {
+    "name": "candidates.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Which technology topics have the highest growth_x over the last 90 days versus the prior 90?",
+    "args": {
+     "window_days": 90,
+     "rank_by": "growth_x",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'window_d...growth_x', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nwindow_days\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=90, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nrank_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='growth_x', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=20, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which topics appear for the first time in the latest window?",
+    "args": {
+     "window_days": 90,
+     "mode": "new_only"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'window_d...90, 'mode': 'new_only'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nwindow_days\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=90, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='new_only', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which technology topics have the largest total coverage?",
+    "args": {
+     "window_days": 90,
+     "sort": "volume"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'window_d...: 90, 'sort': 'volume'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nwindow_days\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=90, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsort\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='volume', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Where is coverage of AI agents concentrated geographically?",
+    "args": {
+     "term": "AI agents"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 8316, \"share_pct\": 37.2, \"lift\": 1.6}, {\"label\": \"united kingdom\", \"articles\": 1568, \"share_pct\": 7.0, \"lift\": 1.4}, {\"label\": \"india\", \"articles\": 1525, \"share_pct\": 6.8, \"lift\": 1.0}, {\"label\": \"netherlands\", \"articles\": 831, \"share_pct\": 3.7, \"lift\": 16.3}, {\"label\": \"colombia\", \"articles\": 819, \"share_pct\": 3.7, \"lift\": 7.5}, {\"label\": \"china\", \"articles\": 765, \"share_pct\": 3.4, \"lift\": 0.7}, {\"label\": \"south korea\", \"articles\": 659, \"share_pct\": 2.9, \"lift\": 3.9}, {\"label\": \"australia\", \"articles\": 617, \"share_pct\": 2.8, \"lift\": 0.6}, {\"label\": \"japan\", \"articles\": 608, \"share_pct\": 2.7, \"lift\": 1.8}, {\"label\": \"france"
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Is coverage of the fastest risers mostly positive or negative?",
+    "args": {
+     "terms": [
+      "AI agents",
+      "AI data center power"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...AI data center power']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['AI agents', 'AI data center power'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What critical coverage exists on AI regulation?",
+    "args": {
+     "term": "AI regulation",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.4,
+    "sample": "{\"articles\": [{\"target_id\": \"69c95601288a36c0c7b7f9ec\", \"url\": \"https://www.digit.in/news/general/india-ai-impact-summit-2026-openai-ceo-sam-altman-calls-for-global-ai-watchdog-as-superintelligence-nears.html\", \"title\": \"India AI Impact Summit 2026: OpenAI CEO Sam Altman calls for urgent AI regulations as superintelligence nears\", \"excerpt\": \"Artificial intelligence is undoubtedly evolving faster than the systems designed to govern it. Speaking at the India AI Impact Summit 2026, OpenAI CEO Sam Altman stated that the world requires immediate AI regulation. The statement comes amid a heated international debate over AI regulation, economi\", \"publisher\": \"digit.in\", \"published\": \"2026-02-19 13"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "90 — No contrast on one scale can be given. The baseline should be defined as the 90 days endin",
+    "90 — No contrast on one scale can be given. The baseline should be defined as the 90 days endin"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 122,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 850,
+  "charts": [
+   {
+    "id": "robotics_two_window",
+    "title": "Articles per 60-day window, selected technology topics",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Domestic service robotics",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Entertainment and companion robotics",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Artificial intelligence advancements",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "technology_trending.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 26,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How has robotics coverage moved week by week since February 2026?",
+    "args": {
+     "query": "household robotics",
+     "days": 240
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...robotics', 'days': 240}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='household robotics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=240, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries drive the robotics surge?",
+    "args": {
+     "query": "domestic service robotics"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...stic service robotics'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='domestic service robotics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "Is the robotics coverage positive or negative in tone?",
+    "args": {
+     "query": "companion robotics"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'companion robotics'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='companion robotics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "What does the latest window (ending near 2026-10-23) show?",
+    "args": {
+     "days": 60,
+     "category": "technology"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'days': 6...ategory': 'technology'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncategory\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='technology', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How do AI and robotics compare over time?",
+    "args": {
+     "queries": [
+      "artificial intelligence",
+      "household robotics"
+     ],
+     "days": 240
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'queries'...obotics'], 'days': 240}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nqueries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['artificial intelligence', 'household robotics'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=240, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What critical coverage exists of home robots?",
+    "args": {
+     "query": "household robots"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'household robots'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='household robots', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 87,
+   "traced": 87,
+   "derived": 11,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 133,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 315,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which technology topics had the largest count increases between comparable recent and prior windows?",
+    "args": {
+     "topic": "technology",
+     "windows": "recent and preceding equal-length window"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...g equal-length window'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='technology', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindows\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='recent and preceding equal-length window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Which topics appeared in the recent window but not the prior window?",
+    "args": {
+     "topic": "technology",
+     "windows": "recent and preceding equal-length window",
+     "newly_covered": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ... 'newly_covered': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='technology', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindows\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='recent and preceding equal-length window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nnewly_covered\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which technology topics had the highest news volume in the recent window?",
+    "args": {
+     "topic": "technology",
+     "window": "recent window",
+     "sort": "count descending"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...t': 'count descending'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='technology', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='recent window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsort\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='count descending', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 85,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 642,
+  "charts": [
+   {
+    "id": "robotics-growth",
+    "title": "Robotics news article growth, current vs prior window",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Prior window",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Current window",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "robotics_windows.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which specific articles account for the rise in domestic service robotics?",
+    "args": {
+     "term": "domestic service robotics for household tasks",
+     "days": 60
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which specific articles account for the rise in entertainment and companion robotics?",
+    "args": {
+     "term": "entertainment and companion robotics",
+     "days": 60
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How did robotics coverage change week by week across the current and prior windows?",
+    "args": {
+     "term": "robotics",
+     "days": 120
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=120, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trending",
+    "question": "What technology topics have the greatest current article volume?",
+    "args": {
+     "days": 60,
+     "category": "technology",
+     "limit": 50
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.0,
+    "sample": "{\"rising\": [{\"topic\": \"unesco world heritage historical sites\", \"articles\": 2631, \"previous\": 10, \"growth_x\": 263.1, \"new\": false}, {\"topic\": \"landscape photography styles\", \"articles\": 1032, \"previous\": 14, \"growth_x\": 73.71, \"new\": false}, {\"topic\": \"entertainment and companion robotics\", \"articles\": 15870, \"previous\": 1020, \"growth_x\": 15.56, \"new\": false}, {\"topic\": \"domestic service robotics for household tasks\", \"articles\": 16021, \"previous\": 1128, \"growth_x\": 14.2, \"new\": false}, {\"topic\": \"dslr cameras and accessories\", \"articles\": 3913, \"previous\": 224, \"growth_x\": 17.47, \"new\": false}, {\"topic\": \"mirrorless camera systems\", \"articles\": 5426, \"previous\": 556, \"growth_x\": 9.76, \"new\""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trending",
+    "question": "Which genuinely new technology topics appeared in the current window?",
+    "args": {
+     "days": 60,
+     "category": "technology",
+     "limit": 50
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"rising\": [{\"topic\": \"unesco world heritage historical sites\", \"articles\": 2631, \"previous\": 10, \"growth_x\": 263.1, \"new\": false}, {\"topic\": \"landscape photography styles\", \"articles\": 1032, \"previous\": 14, \"growth_x\": 73.71, \"new\": false}, {\"topic\": \"entertainment and companion robotics\", \"articles\": 15870, \"previous\": 1020, \"growth_x\": 15.56, \"new\": false}, {\"topic\": \"domestic service robotics for household tasks\", \"articles\": 16021, \"previous\": 1128, \"growth_x\": 14.2, \"new\": false}, {\"topic\": \"dslr cameras and accessories\", \"articles\": 3913, \"previous\": 224, \"growth_x\": 17.47, \"new\": false}, {\"topic\": \"mirrorless camera systems\", \"articles\": 5426, \"previous\": 556, \"growth_x\": 9.76, \"new\""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 26,
+   "traced": 23,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 100,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 1,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 3,
+   "comparison": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

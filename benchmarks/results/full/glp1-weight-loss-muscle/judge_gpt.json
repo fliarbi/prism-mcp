@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 2,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 0,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No research or media time series; the chart is a trial before-and-after estimate.",
+    "comparison": "Compares rounded estimates from one cited study, but they are not traceable to the record.",
+    "chart": "Estimate-labelled chart, but the source values are not in the supplied record.",
+    "drilldown": "Names evidence layers, but follow-up calls failed and no linked item-level breakdown is established.",
+    "export": "Estimate-labelled CSV; no recorded response traces its rows.",
+    "repro": "No numeric claims trace to a replayable recorded call.",
+    "refs": "One DOI is not found in the corpus, capping the score at 1.",
+    "accuracy": "The distinction between lean mass and muscle is sound, but specific STEP figures are not verified here.",
+    "limits": "Clearly labels knowledge-only evidence and several relevant limits; some data-specific limits cannot be measured.",
+    "verdict": "Direct, bounded answer with confidence, decision, and what evidence would change it.",
+    "facets": "Addresses clinical significance and measurement limits, but lacks grounded corpus and comparison facets."
+   },
+   "B": {
+    "trend": "Annual series and eightfold change are reported, but the 2025 censoring caveat is not reconciled with plotting 2025 as a full point.",
+    "comparison": "Uses a common conceptual scale and explains the class-level versus mouse evidence, but gives no numeric contrast or defined baseline.",
+    "chart": "The annual chart traces to the recorded series and supports a stated claim; its censoring treatment is incomplete.",
+    "drilldown": "Script found none of the proposed follow-up calls returned usable data; contribution-type breakdown is one layer.",
+    "export": "Annual CSV traces, but omits the full series field names/provenance and other needed tables.",
+    "repro": "Most numeric claims trace and calls include args; the trend’s 2025 treatment weakens exact replay fidelity.",
+    "refs": "All three identifiers resolve and claims/quotes are tied to sources, but the unread contrary item’s quote is unverified.",
+    "accuracy": "Most fields are read correctly; the annual-series censoring is presented inconsistently with the plotted endpoint.",
+    "limits": "States windows, lanes and limits, but misses or misplaces some caveats alongside the affected values.",
+    "verdict": "Direct and appropriately cautious, with decision, confidence and conditions; bounded evidence does not establish clinical significance.",
+    "facets": "Covers research volume, evidence types, class versus semaglutide, and uncertainty; no usable follow-up results."
+   },
+   "C": {
+    "trend": "Quantifies the rise and early/late ratio, but does not resolve the source’s warning about the censored 2025 point.",
+    "comparison": "The numeric diet comparison relies on an explicitly unverified memory estimate, so it is not a traced comparison.",
+    "chart": "Series values trace and are labelled, but the censoring caveat is not visibly marked in the chart.",
+    "drilldown": "Provides one traced breakdown layer and calls, but only one of five follow-ups executed successfully.",
+    "export": "Exports trace in part, but provenance is incomplete and the tally omits the tool’s sides/stance fields.",
+    "repro": "Recorded calls and most numeric claims are traceable, with args; some exported/call windows are incomplete.",
+    "refs": "Identifiers resolve and quotes are tied to claims, but one contrary quote is explicitly unverified.",
+    "accuracy": "Mostly faithful to the record, but treats the 2025 series point ambiguously and adds an ungrounded diet comparison.",
+    "limits": "Specific window, lane, coverage, match-mode and noisy-match limits appear near the claims; some censoring language conflicts with the series.",
+    "verdict": "Direct answer and confidence are given, but the stated confidence and monitoring recommendation outrun the corpus’s lack of verified human evidence.",
+    "facets": "Covers key evidence, trend and no-data facets, but the diet comparison is ungrounded and follow-up coverage is thin."
+   },
+   "D": {
+    "trend": "Two cross-trial estimates are explicitly labelled; they are not a research time series.",
+    "comparison": "Numeric estimates are presented on a common scale and labelled memory, but cannot be checked against the record.",
+    "chart": "Estimate-labelled chart earns the memory-chart anchor only.",
+    "drilldown": "Provides proposed calls but no traced breakdown and none executed successfully.",
+    "export": "Estimate-labelled CSV is not traced to a recorded response.",
+    "repro": "Numbers are explicitly memory estimates and no replayable calls are provided.",
+    "refs": "The cited DOI resolves, but quotes and claim-support details are absent and other references lack identifiers.",
+    "accuracy": "Memory estimates are clearly disclosed, but the STEP DOI identifies the main trial rather than the stated DXA substudy.",
+    "limits": "Clearly identifies memory basis, unmeasured outcomes and the gap to today; limits are specific.",
+    "verdict": "Direct answer, decision, confidence and conditions are stated, though the quantified basis is unverified.",
+    "facets": "Discusses clinical significance and limits, but has no grounded corpus, trend or follow-up facets."
+   }
+  },
+  "errors": {
+   "A": [
+    "The 2017 review DOI is not found in the corpus.",
+    "STEP 1 chart and comparison values are not traceable to the supplied research record."
+   ],
+   "B": [
+    "The 2025 annual count is plotted while the prose says the newest period is censored; the supplied series note says ingest lag affects that period."
+   ],
+   "C": [
+    "The diet-induced 25% baseline and resulting 1.6x comparison are explicitly from memory, not traced evidence.",
+    "The 2025 point is included in the chart while its censoring caveat is not reconciled."
+   ],
+   "D": [
+    "The STEP 1 DOI cited is for the main trial, not the described DXA substudy.",
+    "The numeric comparisons and trend chart are unverified memory estimates."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it answers directly, separates class-level human evidence from a mouse finding, and traces its annual series and citations. Its 2025 censoring treatment and incomplete exports and limits keep it short of a fully reproducible, decision-grade deliverable; C is similarly well sourced but weakens its answer with an ungrounded diet comparison."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 2,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 0,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

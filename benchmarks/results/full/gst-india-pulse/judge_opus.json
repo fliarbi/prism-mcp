@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 24-point series with its window. The change is quantified exactly (CAGR -66.2%, late/early 0.22, 399 vs 1,832). Peak 2,430 in 2025-09 is named. Critical-share extremes are given (94.9% in Dec 2025, 49.2% in May 2025). Critical is in the CSV but not charted.",
+    "comparison": "Baseline is defined as the negative/positive ratio: 0.43 vs 0.58, delta -0.15, 0.74×. Early vs late thirds are compared. It also compares the late tone ratios (1.09, 1.60) with the 0.35 in the spike. All recompute.",
+    "chart": "Only a volume chart is given; tone was asked for and supported by the data but not charted. The censoring boundary is not marked.",
+    "drilldown": "Layers go month → themes/entities/places → headlines with date, publisher and URL. 4 of 6 follow-ups are specific and executed ok. None was run and folded back into the report.",
+    "export": "One fully traced monthly CSV with provenance JSON. A tone/sentiment table is missing. The coverage flag reads 'full' although the window is censored.",
+    "repro": "76 of 76 numbers traced. The prism-calls block lists args and a capture date. The one background claim is labelled (est.).",
+    "refs": "Capped at 1 by the script ceiling. News items do carry date, publisher and URL.",
+    "accuracy": "All values match the reference. It catches the Cameroon acronym collision and the 'GST' organisation-label artefact. It notes that critical and polarity are separate measures.",
+    "limits": "Limits sit next to the numbers they bound: window and 145-day gap, mention vs central match mode, enrichment bound and 4% fill, placed_pct, and the publisher sample. Some are in the method section.",
+    "verdict": "Gives answer, decision, confidence with reason, and what would change it. It reconciles the critical-vs-positive contrast and is bounded by the window. It does not foreground the tone shift around GST 2.0.",
+    "facets": "Covers volume, trend, tone, themes, entities, places, sources and headlines. Rate-level data is explicitly reported as absent."
+   },
+   "B": {
+    "trend": "No news series. It charts a recalled GST-collections series labelled estimate, which is not the quantity asked about.",
+    "comparison": "The slab before/after comparison is from memory and is not a news measure.",
+    "chart": "Memory chart labelled estimate, of an off-question quantity (tax collections, not news coverage).",
+    "drilldown": "Breakdown is from memory. Follow-up calls are listed and some execute.",
+    "export": "Event table labelled recalled/estimate.",
+    "repro": "No traced numbers.",
+    "refs": "No references.",
+    "accuracy": "The recalled events are broadly correct (Jaisalmer 55th meeting, 56th meeting on 3 Sep 2025, 5/18/40 slabs) and labelled est. Nothing is presented as measured.",
+    "limits": "Honest about what is unmeasured. Limits are general rather than tied to specific numbers.",
+    "verdict": "Direct answer from memory with low confidence, a decision and a change condition. It is unmeasured.",
+    "facets": "Facets are mostly from memory."
+   },
+   "C": {
+    "trend": "Traced series with window and censoring note, CAGR -66.2%, peak and late/early ratio. No decomposition into critical vs total.",
+    "comparison": "7.4× and +2,103 recompute exactly from a defined June 2024 baseline. It adds tone vs corpus baseline (0.43 vs 0.58).",
+    "chart": "Only a volume chart; tone is not charted.",
+    "drilldown": "Breakdown is given as panel pointers. Headlines lack URLs. Only 2 of 6 follow-ups returned ok.",
+    "export": "One traced CSV with censoring provenance. No sentiment table.",
+    "repro": "29 of 30 numbers traced, with a calls block and args.",
+    "refs": "Headlines are named but without URLs. The only reference is the tool call.",
+    "accuracy": "No contradictions. It misses the Cameroon collision and the GST-label anomaly.",
+    "limits": "Window, 144-day gap, lane, match mode, sample and enrichment lag are stated inline.",
+    "verdict": "Supported and bounded, but it ignores the late-window negative tone turn present in the data.",
+    "facets": "Places, sources and themes are covered. Critical headlines and the tone time path are thin."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "The chart has an empty series.",
+    "drilldown": "Generic follow-ups only; none executed ok.",
+    "export": "No export.",
+    "repro": "No numbers to trace.",
+    "refs": "No references.",
+    "accuracy": "Refusal; no contradictions.",
+    "limits": "Specific about what it cannot measure.",
+    "verdict": "Declines to answer the question.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "The trend chart plots GST collections rather than news coverage, which is off the question asked."
+   ],
+   "C": [],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A and C both measured the coverage, but A went further. It traced every number, separated the critical flag from polarity, caught the Cameroon and 'GST' label artefacts, and gave linkable headlines and the late-window tone turn. B offered accurate but unmeasured recall of the GST 2.0 events, and D declined to answer."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

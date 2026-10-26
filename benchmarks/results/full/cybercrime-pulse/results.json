@@ -1,0 +1,236 @@
+{
+ "slug": "cybercrime-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 1.5,
+    "facets": 1.0
+   },
+   "strict": 28.7,
+   "plain": 28.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.4,
+    "gpt": 27.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 69.6,
+   "plain": 69.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 74.2,
+    "gpt": 65.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 0.5,
+    "refs": 0.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 0.0
+   },
+   "strict": 20.1,
+   "plain": 20.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.2,
+    "gpt": 22.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 2.5,
+    "export": 4.0,
+    "repro": 4.5,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 68.6,
+   "plain": 68.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.4,
+    "gpt": 67.8
+   }
+  }
+ },
+ "judge_mad": 0.52,
+ "verdicts": {
+  "opus": "C and B both measured the same window, but C went further for a decision-maker. It split the coverage into fraud, ransomware and data-breach themes, decomposed critical and tone counts by month, and flagged anomalies in the data (non-organisation entity labels, the CAGR vs flat-label conflict, the high-lift Cambodia row). It also named the actual critical story threads. A and D lacked data: A gave honest memory estimates about losses rather than coverage, and D gave a well-formed refusal.",
+  "gpt": "C is the strongest decision aid: it ties its monthly series, geography, tone, and sample caveats to a replayable source and exports the key tables. B is more expansive and offers more story examples, but its unsupported Cambodia geography row and inconsistent trend reading reduce trust; neither deliverable fully resolves the critical-story facet."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_prism": [],
+   "claude_prism": [],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Cambodia geography row (1,126 articles; lift 29.4) is not in the reference geography results; the reference lists Colombia (1,173) and does not list Cambodia there.",
+    "Claims only two critical articles returned, while the reference overview contains two surfaced headlines but also includes two further headline examples in the deliverable that are not supported by the supplied excerpt.",
+    "Labels the overall direction flat to modestly rising despite the source's direction label of flat; the 33.4% CAGR is acknowledged as conflicting."
+   ],
+   "chatgpt_prism": [
+    "Reports 5 unresolved critical records; the supplied reference excerpt states 7 unresolved IDs.",
+    "Uses 2026-05-01 as the geography panel bound, while the reference geography window ends 2026-05-01 exclusive and labels may lag; this phrasing risks implying May is included.",
+    "Does not provide a grounded, sufficiently broad answer to which critical ransomware, fraud, and breach stories matter."
+   ],
+   "claude_bare": [
+    "The remembered IC3 series is explicitly estimate-labelled and is not a measure of news coverage, so it cannot answer the requested volume or trend."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Only series is remembered IC3 losses, labelled estimate; it measures losses, not news coverage.",
+    "comparison": "Its only ratio (3.0x) is between estimated loss figures; there is no coverage comparison.",
+    "chart": "Memory chart honestly labelled estimate.",
+    "drilldown": "Layers are named generically; no traced breakdown; only 3 of 6 follow-ups executed ok.",
+    "export": "CSV labelled estimate.",
+    "repro": "Figures are honest memory labels and cannot be reproduced.",
+    "refs": "One generic ic3.gov link with no quote and no specific document.",
+    "accuracy": "No contradictions; remembered facts are plausible; nothing measured.",
+    "limits": "Specific about what is unmeasured, and states the 34-month gap.",
+    "verdict": "Honest scoping verdict with a decision and conditions, but it does not answer the question.",
+    "facets": "Facets answered from memory or left unanswered."
+   },
+   "chatgpt_prism": {
+    "trend": "Full traced series with window and censoring, peak, CAGR and late/early ratio; flat label read correctly; no decomposition.",
+    "comparison": "Tone vs a defined corpus baseline; delta and 6.0x computed and caveated; no ransomware/fraud/breach contrast.",
+    "chart": "Volume chart is fully traced, but tone and themes are not charted.",
+    "drilldown": "Traced themes and headlines with urls; only 1 of 5 follow-ups executed ok.",
+    "export": "Monthly and geography CSVs with provenance and a provenance block, both referenced from the prose.",
+    "repro": "36/36 traced; prism-calls listed with args and window.",
+    "refs": "Ceiling 1; no reference list; headlines are sourced only to the call.",
+    "accuracy": "Values match the record and fields are read correctly; no anomalies caught beyond caveats.",
+    "limits": "Window end, 144-day gap, lane, match mode, enrichment lag, placed_pct and the sample-based publisher figures all sit next to the numbers they bound.",
+    "verdict": "Ceiling 3; the critical-stories part of the answer is thin.",
+    "facets": "Volume, place, themes (including ransomware and breach tags), tone and headlines are all grounded."
+   },
+   "claude_prism": {
+    "trend": "Traced series with window; flags the CAGR vs 'flat' conflict; decomposes into critical, negative and positive in the export, plus the July 2025 critical dip.",
+    "comparison": "Baseline defined, delta and ratio exact, monthly ratio range given.",
+    "chart": "Single traced volume chart; no tone or critical overlay.",
+    "drilldown": "Traced themes, countries and headlines with urls; only 2 of 6 follow-ups executed ok.",
+    "export": "Ceiling 3; two traced CSVs with provenance.",
+    "repro": "87/87 traced; calls listed.",
+    "refs": "Ceiling 1.",
+    "accuracy": "Catches non-organisation entity labels, the CAGR conflict, high-lift low-count place rows, enrichment lag and the thin critical panel.",
+    "limits": "Ceiling 3, though the limits are well placed.",
+    "verdict": "Direct answer, decision, confidence with reason and what would change it, and the thin headline list noted.",
+    "facets": "Volume, where, themes splitting fraud, ransomware and breach, tone and critical stories are all grounded."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "Follow-up calls only, with no layers.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Specific about what is unmeasured, and says unmeasured is not zero.",
+    "verdict": "Declines to answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured monthly series; ceiling 0.",
+    "comparison": "No measured comparison; ceiling 1.",
+    "chart": "No chart; ceiling 0.",
+    "drilldown": "Six specific proposed calls, but no traced breakdown; ceiling 3.",
+    "export": "No data export; ceiling 0.",
+    "repro": "No recorded results or replayable measurement; ceiling 1.",
+    "refs": "No references; ceiling 1.",
+    "accuracy": "Clearly identifies the absence of measurements in its own response; no factual contradiction.",
+    "limits": "Names the missing window, lane, coverage, censoring, and match mode; ceiling 3.",
+    "verdict": "Gives a clear cautious recommendation and confidence, but no measured support or coverage facets.",
+    "facets": "No grounded values for volume, trend, geography, or critical stories."
+   },
+   "claude_prism": {
+    "trend": "Complete traced series, censoring noted, and growth and peak stated; trend caveats and direction are not fully reconciled.",
+    "comparison": "Exact 3.48 versus 0.58 ratio and delta on a defined baseline; caveat is stated.",
+    "chart": "Traced monthly volume chart supports a claim, but no chart for tone or geography facets.",
+    "drilldown": "Some layers and specific follow-ups, but only 2 of 6 calls returned usable data and stories are not linked through multiple traced layers.",
+    "export": "Monthly export is useful, but geography export omits rows present in the source and provenance/coverage is incomplete; ceiling 3.",
+    "repro": "Recorded call with args and window reproduces the reported values; ceiling 5.",
+    "refs": "No DOI references and news URLs are supplied, but the script ceiling is 1.",
+    "accuracy": "Cambodia is presented as a country row with 1,126 articles and lift 29.4, contradicting the supplied geography rows; trend language also softens a reported flat direction.",
+    "limits": "Several limits are stated, but specific coverage and enrichment limits are not consistently placed with the affected numbers; ceiling 3.",
+    "verdict": "Direct answer and decision with confidence and a change condition, but accuracy issues and unaddressed strongest contrary evidence weaken support.",
+    "facets": "Covers volume, trend, tone, themes, geography, outlets and example stories; some implied overlap and research-vs-news facets remain."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced full monthly series with window, censoring, peak and change metrics; prose notes the inconsistent flat direction and growth summary.",
+    "comparison": "Ratios and delta against a defined corpus baseline recompute correctly, with baseline caveat.",
+    "chart": "Traced volume chart with window and source, but it omits the critical-share decomposition and tone facet; ceiling 4.",
+    "drilldown": "Includes surfaced headlines and a country layer, but only one of five follow-up calls returned usable data; ceiling 3.",
+    "export": "Monthly and country tables are traced, linked, and carry provenance; ceiling 5.",
+    "repro": "Recorded call, args, window and exported values permit regeneration; ceiling 5.",
+    "refs": "No external reference entries and no DOI-backed items; ceiling 1.",
+    "accuracy": "The response avoids a clear factual contradiction and flags the direction anomaly, but does not resolve the source's conflicting trend signals.",
+    "limits": "Places window, censoring, lane, match mode, enrichment lag, placement share and sampling caveats beside relevant claims; ceiling 5.",
+    "verdict": "Direct bounded answer, but it does not name a decision with confidence and change condition together, and its evidence is thin on the critical-story question.",
+    "facets": "Grounded volume, trend, tone, themes, geography, publisher sample and critical items; overlap and research-vs-news mismatch are not fully addressed."
+   },
+   "claude_bare": {
+    "trend": "No news trend; chart is explicitly an estimated loss series, ceiling 1.",
+    "comparison": "Qualitative tone comparison and estimated loss ratio only; ceiling 2.",
+    "chart": "Estimated remembered series, honestly labelled; ceiling 1.",
+    "drilldown": "Specific proposed calls but no traced breakdown; ceiling 3.",
+    "export": "Estimate CSV is labelled and not a needed coverage export; ceiling 1.",
+    "repro": "No measured calls; figures are labelled memory/estimate, ceiling 1.",
+    "refs": "One generic FBI landing-page citation with remembered figures, not resolving support for the claims; ceiling 2.",
+    "accuracy": "The remembered FBI loss figures are presented as a benchmark without verification, and the response does not answer measured coverage facets.",
+    "limits": "Clearly distinguishes estimated losses from article counts and states the absent news window; ceiling 5.",
+    "verdict": "Scoping note rather than a supported answer to the coverage question; confidence and conditions do not rescue missing measurements.",
+    "facets": "Most requested coverage facets remain unmeasured; qualitative themes alone do not ground them."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

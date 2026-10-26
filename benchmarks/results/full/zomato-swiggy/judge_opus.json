@@ -1,0 +1,182 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced 24-month series with the window stated. Both Nov 2024 peaks are named and peak-to-latest falls (64.7%, 48.1%) recompute exactly. Critical share is decomposed and also traced.",
+    "comparison": "Same call and window throughout. Ratios and deltas recompute (1.035, +765, 0.65), the baseline is defined, the overlap caveat is carried, and the reading says this is attention, not business performance.",
+    "chart": "Volume chart and critical-share chart are both fully traced, overlaid per term, with window, unit and source. The censored month is correctly excluded.",
+    "drilldown": "One traced layer (period and tone class). Only 1 of 7 follow-ups executed, and no item-level identifiers.",
+    "export": "Monthly and summary CSVs are fully traced, with source, window, unit and coverage. Period ids are included, the provenance JSON is present, and both files are referenced.",
+    "repro": "82 of 88 numbers traced, the call is listed with args, and derived figures are shown. A few figures (coverage 107.1%, the Eternal note) are not in the reference.",
+    "accuracy": "Peaks, lead counts (13/24, 6 of last 8), the critical percentages and the 144-day gap all check. Undefined fields are flagged and the tone_ratio inference is labelled. No anomaly beyond that is caught.",
+    "limits": "Window, censoring, gap to today, match mode, overlap and the Eternal alias are each stated next to the numbers they bound.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It names the contrary recent Swiggy lead and stays under 150 words.",
+    "facets": "Volume, share, trend, tone, overlap and the Eternal rename are all addressed. The overlap and the alias are not measurable from the data."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups only, and most fail.",
+    "export": "An empty table labelled estimate.",
+    "repro": "Memory, labelled estimate.",
+    "accuracy": "Two misreadings: it calls combined_articles a de-duplicated union (it is the plain sum), and it treats 'Zomato' as a common word.",
+    "limits": "Specific about what is unmeasured, and the Eternal alias is a good catch.",
+    "verdict": "Low-confidence memory answer.",
+    "facets": "Facets come mostly from memory or are left blank."
+   },
+   "C": {
+    "trend": "Uses only the first and last points although all were available. The peak is not named. The endpoint change is wrongly called provisional because of an 'incomplete' month.",
+    "comparison": "Traced 1.035 ratio and 765 delta with the baseline defined and the attention caveat carried.",
+    "chart": "Volume chart only. Tone was available but is not charted.",
+    "drilldown": "One aggregate layer, and follow-ups mostly fail.",
+    "export": "Traced CSVs with provenance, but coverage=partial is mislabelled and the window end is given as inclusive of 2026-06.",
+    "repro": "32 of 34 traced, with the call and args listed.",
+    "accuracy": "Misreads censoring: it claims May 2026 is incomplete, but May is partial_period:false and June was already censored.",
+    "limits": "The window and gap to today are stated, but the censoring limit is misapplied.",
+    "verdict": "Supported answer, but its confidence rests on a misread incomplete month. It does not cover tone.",
+    "facets": "Tone is only lightly read. Eternal is not addressed."
+   },
+   "D": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic proposed calls only.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "A refusal with no answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [
+    "Coverage figure of 107.1% is not visible in the reference record."
+   ],
+   "B": [
+    "Calls combined_articles a de-duplicated union; it equals the sum of the two term totals.",
+    "Calls 'Zomato' a common first word in other contexts."
+   ],
+   "C": [
+    "Claims the latest displayed month (2026-05) is incomplete; the reference marks it partial_period:false, and the censored month is 2026-06.",
+    "Labels both exports coverage=partial."
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A read the full traced series correctly. It named the peaks, computed exact declines and lead changes, decomposed tone, and flagged the Eternal rename and the overlap. C used the same data but compared only endpoints and misread the censoring, treating May 2026 as incomplete. B and D measured nothing; B also misdescribed combined_articles."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {
+  "claude_bare": [
+   "repro 1->0"
+  ]
+ }
+}

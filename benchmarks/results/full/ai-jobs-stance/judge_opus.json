@@ -1,0 +1,189 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 1,
+    "verdict": 0,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "It only asks the user to supply data; there is no breakdown or call.",
+    "export": "None.",
+    "repro": "No numbers to reproduce.",
+    "refs": "None.",
+    "accuracy": "A refusal has no contradictions, which scores 3 under the anti-gaming rule.",
+    "limits": "It names what cannot be measured but stays at the ceiling of 1.",
+    "verdict": "No answer.",
+    "facets": "No facet answered."
+   },
+   "B": {
+    "trend": "The promising-share series is traced, the window is stated, the +13.1pp change is correct and thin years are flagged. It is not decomposed into the pessimistic labels.",
+    "comparison": "Early vs late contested share (25.6 to 19.4, 0.76x) recomputes exactly. It carries the caveat that contested is not pessimistic.",
+    "chart": "The single chart traces with window, unit and source. It plots only the promising share, so the pessimism side (critical, cautionary, contested) is not charted, although the question asks about pessimism.",
+    "drilldown": "There is one layer of promising papers with IDs. Only 2 of 4 follow-ups executed, and no critical drill was done.",
+    "export": "One traced CSV with provenance and a JSON block. Critical counts for 2020-22 are left blank, but they are really zeros (the key is absent from the orientation dict). There is no papers table.",
+    "repro": "Calls are listed with args and window, and 13/14 numbers trace.",
+    "refs": "Two DOIs resolve and each is tied to a claim. There are no quotes and no contrary sources.",
+    "accuracy": "No direct contradiction with the record. Some unsupported specifics appear: 'strict index partition reads / historical row floors' and the claim that matching uses title and keywords with expand=true. Blank critical counts are misdescribed as not provided.",
+    "limits": "Window end, the 296-day gap (correct), thin years, phrase matching and the fact that orientation is not truth are all placed next to the numbers.",
+    "verdict": "Direct, with decision, confidence and conditions. It does not name the strongest contrary evidence: problem_identifying is up 3.33x and cautionary is rising.",
+    "facets": "Answers the promising and contested facets. It misses the decomposition of the pessimistic labels and the off-topic attrition rows."
+   },
+   "C": {
+    "trend": "A memory series of non-comparable headline 'share at risk' figures. It is not the quantity asked about (research orientation), though the metric mixing is stated honestly.",
+    "comparison": "The WEF net-jobs and Frey-Arntz contrasts are memory figures, so they cannot be placed on one checkable scale.",
+    "chart": "Memory chart with named sources but unverifiable; at the ceiling.",
+    "drilldown": "The breakdown is generic. Only 1 of 6 follow-ups executed.",
+    "export": "CSVs from memory, flagged in the JSON note; at the ceiling.",
+    "repro": "No traced numbers; the ceiling is 0.",
+    "refs": "Four DOIs resolve and contrary sources (Humlum, WEF) are included. Several entries have no identifiers and there are no quotes.",
+    "accuracy": "The recalled figures match the public literature and nothing contradicts the record. They are memory specifics but are labelled as such.",
+    "limits": "Honest and specific about what is unmeasured: the orientation series, thin years and phrase expansion.",
+    "verdict": "A reasoned 'partly' with decision, confidence and conditions. It rests on memory and does not answer the measured question.",
+    "facets": "Mostly memory; the measured research-orientation facet is not grounded."
+   },
+   "D": {
+    "trend": "Contested and positive series are traced with the window. The changes (-6.2pp, +13.1pp, 6x volume) are exact. The 2022 spike is correctly read as noise on 7 papers, the series is decomposed by orientation, and the contested grouping recomputes (for example, 2025 = 5+4+1 = 10).",
+    "comparison": "The late/early ratio table is exact and the pessimistic sum (20 vs 11, 1.8x) recomputes. It answers the promising-vs-cautious contrast the question poses.",
+    "chart": "Two traced series are overlaid with window, unit and source. Volume is not charted, and the possibly partial 2025 is not marked.",
+    "drilldown": "Several traced layers: orientation x year, contribution, topics, and papers with IDs and DOIs. All 6 follow-ups executed; none was folded back into the report.",
+    "export": "The CSV traces with provenance and a JSON block. coverage=full is overstated, and there is no papers or orientation-ratio table.",
+    "repro": "66/66 traced. The prism-calls block has args and derived figures are recomputable.",
+    "refs": "DOIs resolve, are tied to claims, and off-topic HR rows are flagged. There are no quotes and no critical or contrary papers.",
+    "accuracy": "Catches the record's anomalies: off-topic workforce-attrition rows, the 95 vs 175 count mismatch and the undefined 'contested' grouping. Minor faults: coverage=full in the CSV, and 'reachability checks' is not in the shown record.",
+    "limits": "The limits change the reading: thin years, the HR-attrition contamination, 2025 possibly partial, the unexpanded match mode. It also says how to close each gap.",
+    "verdict": "A direct 'no' with decision, low confidence with reasons, and what would change it. The verdict itself under-weights the rising problem_identifying and cautionary counts.",
+    "facets": "Covers volume, orientation shares, framing shift, thin years, phrase-matching contamination and the research-count mismatch."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Unsupported specific: 'strict index partition reads and historical row floors' does not appear in the reference record.",
+    "Critical counts for 2020-2022 are exported as blank or 'not provided', but the orientation dicts imply zero."
+   ],
+   "C": [
+    "Memory-based figures presented as a trend series of non-comparable metrics (flagged)."
+   ],
+   "D": [
+    "The CSV declares coverage=full, which conflicts with its own caveat that the coverage check does not prove complete ingest."
+   ]
+  },
+  "best": "D",
+  "verdict": "D best answered the actual question with traced data. It decomposed orientation counts so the promising rise could be set against the pessimistic labels, recomputed every ratio exactly, and caught the off-topic HR-attrition rows and the count mismatch that bias the corpus. B reached the same answer from the same data but charted only the promising share and left the pessimism side thin. C gave an informed memory-based narrative that cannot be checked, and A declined to answer."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 1,
+   "verdict": 0,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,166 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "No numeric comparison; its proposed calls are unexecuted and do not match the recorded call arguments.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are listed, but none executed with non-empty results and several use unsupported arguments or features.",
+    "export": "No CSV export.",
+    "repro": "The deliverable is explicitly unmeasured and contains no numeric claims to reproduce; calls lack the recorded arguments and no results are supplied.",
+    "accuracy": "It avoids asserting unsupported measurements and correctly says patent data availability cannot be established from its materials.",
+    "limits": "It identifies missing windows, lanes, coverage and censoring, but does not report the applicable recorded limits because it has no retrieved data.",
+    "verdict": "Direct answer, decision, low confidence and conditions are stated, but no evidence supports a geographic answer.",
+    "facets": "It grounds none of the requested geography facets in values or a source-backed no-data result."
+   },
+   "B": {
+    "comparison": "Only a proposed comparison; no numeric contrast is measured.",
+    "chart": "No chart block.",
+    "drilldown": "The layers are generic and the proposed calls mostly fail or are off-topic; only one follow-up executed successfully.",
+    "export": "The empty schema stub is not a traced export and has no source call.",
+    "repro": "One numeric claim (GDPR date) is untagged and the calls block has no executed source results.",
+    "accuracy": "It correctly labels its geographic statements as hypotheses, but asserts patents are explicitly empty when the reference has four patent rows, including a blank-country row.",
+    "limits": "Specific caveats are detailed, but the claim of an empty patent result contradicts the available record and the stated geography remains unmeasured.",
+    "verdict": "It gives a cautious decision and conditions, but no measured evidence supports its geographic hypothesis.",
+    "facets": "Most geographic facets are hypotheses or absent rather than grounded values or a source-backed no-data result."
+   },
+   "C": {
+    "comparison": "The within-lane US-to-UK ratios recompute and are traced; it keeps research and news scales separate and identifies their distinct meanings, though it does not directly compare study share with news share.",
+    "chart": "No chart block.",
+    "drilldown": "It supplies traced country rows and call identifiers, but follow-ups are largely off-topic or fail; only one of five returns on-topic non-empty data.",
+    "export": "The CSVs are referenced and mostly trace, but the research export omits source field names/definitions and the news export omits provenance fields such as placed coverage and captured date; research window is unknown.",
+    "repro": "All listed calls and windows are given and almost all numeric claims trace; the research/news exports and derived comparisons can largely be regenerated, but research has no stated window and not every derived number is fully attributable.",
+    "accuracy": "The main rankings and field meanings match the record, but it calls the news window complete through 2026-05-01 despite censoring and enrichment lag, and its comparison is not a same-window cross-lane test.",
+    "limits": "It places window, censoring, placement coverage, lane definitions and key unknowns beside the figures; it notes the five-month gap and country-resolution cautions.",
+    "verdict": "Direct answer, decision, confidence, change conditions and contrary lane distinctions are stated, with bounds; the proposed decision to focus on US and UK is supported by both rankings.",
+    "facets": "It covers research authorship/publication, news geography, placement coverage, patent rows, lane mismatch and country-resolution caveats with grounded values or explicit limits."
+   },
+   "D": {
+    "comparison": "The central cross-lane shares use different lists and windows, and the 86.7% claim conflicts with the separate term-level 29.6% share; the author acknowledges but does not resolve this mismatch.",
+    "chart": "The chart invents a common window for research and news series and its news percentages (86.7%, 4.9%, etc.) are listed-row shares from c1, not the c2 news series it purports to compare; chart values also depend on mismatched denominators.",
+    "drilldown": "It exposes multiple traced layers with country and lane identifiers and five of six follow-ups executed successfully, though the returned follow-up results are not folded into the report.",
+    "export": "The needed lane CSVs are referenced, trace to calls and preserve the blank patent row; provenance is present, but research exports lack explicit window/coverage and news coverage is mislabeled full despite 25% placement.",
+    "repro": "Calls, arguments and capture date are supplied and nearly all numeric claims trace, but one number is untraced and the chart's fabricated shared window prevents faithful regeneration.",
+    "accuracy": "It presents 86.7% US news share as a cross-lane finding from the c1 listed rows despite c2 reporting 29.6% for a different term/window; it also derives unsupported ‘under’ comparisons from absence in a truncated top-12 list.",
+    "limits": "It identifies many relevant limits, but fails to keep them attached to the main cross-lane comparison and chart, which present incompatible windows and denominators as a mismatch measure.",
+    "verdict": "The answer and decision rely on the unresolved, internally conflicting 86.7% figure; confidence and conditions do not repair that contradiction.",
+    "facets": "It addresses the implied research/news distinction, multiple geography lanes, coverage, overlap limits and explicit unknowns with source-backed information, despite misreading the comparison."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Says patent-origin rows are explicitly empty; reference c1 returns US 10, KR 6, four blank-country and DE 4 patents."
+   ],
+   "C": [
+    "Describes the c2 news window as ending 2026-05-01 inclusive; the recorded window ends exclusively at 2026-06-01 and is censored there, with enrichment bound 2026-05-01."
+   ],
+   "D": [
+    "Calls US news 86.7% of listed articles from c1 and compares it with research shares as a mismatch finding, while c2 reports US share_pct 29.6% for a different term and window; the cross-lane comparison is not on one scale/window.",
+    "Uses c2's window as the chart window for c1 research rows even while acknowledging research has no stated window.",
+    "Infers countries absent from a truncated top-12 news list have fewer than 67 articles, which the source does not establish."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is the strongest decision aid: it gives traceable research and news leaders, distinguishes author affiliation from journal location and article subject, and puts placement coverage and timing limits near the numbers. D offers richer drill-downs and exports, but its headline 86.7% comparison and chart combine incompatible news and research slices, so they cannot support a reliable decision."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

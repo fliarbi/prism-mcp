@@ -1,0 +1,630 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 588,
+  "charts": [
+   {
+    "id": "repo_year_end",
+    "title": "RBI repo rate at year end (my recollection)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Repo rate",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "repo_year_end.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many articles per month covered RBI repo rate decisions, Nov 2024-Oct 2026?",
+    "args": {
+     "term": "RBI repo rate",
+     "from": "2024-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "Was tone more positive or negative than the corpus baseline around cuts?",
+    "args": {
+     "term": "RBI repo rate"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 0, \"positive\": 3, \"neutral\": 2, \"ratio\": 0.0}, {\"period\": \"2024-09-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2024-10-01\", \"negative\": 0, \"positive\": 0, \"neutral\": 3, \"ratio\": null}, {\"period\": \"2024-11-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2024-12-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2025-01-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-02-01\", \"negative\": 4, \"positive\": 9, \"neutral\": 0, \"ratio\": 0.44}, {\"period\": \"2025-03-01\", \"negative\": 2, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": "
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which headlines were most critical of the decisions?",
+    "args": {
+     "term": "RBI repo rate",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'RBI repo rate'",
+    "seconds": 21.1,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does coverage of cuts compare with holds?",
+    "args": {
+     "term": "RBI repo rate cut",
+     "versus": "RBI repo rate hold"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...: 'RBI repo rate hold'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='RBI repo rate cut', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nversus\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='RBI repo rate hold', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which publishers dominate coverage?",
+    "args": {
+     "term": "RBI repo rate"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 61.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"RBI repo rate\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 5, \"entity_labelled_articles\": 100, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 128, \"critical_articles\": 74, \"first_seen\": \"2024-06-05 03:25:19\", \"last_seen\": \"2026-04-10 11:11:22\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a col"
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Where is coverage placed geographically?",
+    "args": {
+     "term": "RBI repo rate"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 32, \"share_pct\": 57.1, \"lift\": 8.7}, {\"label\": \"united states\", \"articles\": 18, \"share_pct\": 32.1, \"lift\": 1.4}, {\"label\": \"china\", \"articles\": 4, \"share_pct\": 7.1, \"lift\": 1.4}, {\"label\": \"iran\", \"articles\": 1, \"share_pct\": 1.8, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 1, \"share_pct\": 1.8, \"lift\": 1.0}], \"placed_articles\": 45, \"matched_articles\": 129, \"placed_pct\": 34.9, \"what\": \"the place an article is ABOUT, as resolved by the pipeline — not where it was published\"}"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 23,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 118,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 796,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly articles mentioning 'repo rate'",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_repo_rate.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.sentiment",
+    "question": "What was the tone around each RBI decision month?",
+    "args": {
+     "term": "RBI repo rate",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 0, \"positive\": 3, \"neutral\": 2, \"ratio\": 0.0}, {\"period\": \"2024-09-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2024-10-01\", \"negative\": 0, \"positive\": 0, \"neutral\": 3, \"ratio\": null}, {\"period\": \"2024-11-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2024-12-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2025-01-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-02-01\", \"negative\": 4, \"positive\": 9, \"neutral\": 0, \"ratio\": 0.44}, {\"period\": \"2025-03-01\", \"negative\": 2, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": "
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "Which RBI-central headlines were most critical?",
+    "args": {
+     "term": "RBI repo rate",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'RBI repo rate'",
+    "seconds": 0.3,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does RBI coverage compare with Fed and ECB coverage?",
+    "args": {
+     "terms": [
+      "RBI repo rate",
+      "Federal Reserve rate",
+      "ECB rate"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 45.8,
+    "sample": "{\"terms\": [\"RBI repo rate\", \"Federal Reserve rate\", \"ECB rate\"], \"rows\": [{\"term\": \"RBI repo rate\", \"articles\": 128, \"share_pct\": 4.5, \"critical\": 74, \"direction\": \"rising\", \"growth\": 3.25, \"tone_ratio\": 1.1, \"vs_baseline\": 1.9, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 5, \"critical\": 1, \"negative\": 0, \"positive\": 3, \"mean_priority\": 6.2, \"critical_pct\": 20.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false},"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What happened June-October 2026?",
+    "args": {
+     "term": "RBI repo rate",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'RBI repo rate' in this window",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which places are covered for RBI-only articles?",
+    "args": {
+     "term": "Reserve Bank of India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.4,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 27789, \"share_pct\": 45.0, \"lift\": 6.8}, {\"label\": \"united states\", \"articles\": 12954, \"share_pct\": 21.0, \"lift\": 0.9}, {\"label\": \"china\", \"articles\": 2732, \"share_pct\": 4.4, \"lift\": 0.9}, {\"label\": \"united kingdom\", \"articles\": 1475, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"japan\", \"articles\": 1392, \"share_pct\": 2.3, \"lift\": 1.5}, {\"label\": \"cameroon\", \"articles\": 1088, \"share_pct\": 1.8, \"lift\": 6.7}, {\"label\": \"iran\", \"articles\": 1076, \"share_pct\": 1.7, \"lift\": 0.6}, {\"label\": \"russia\", \"articles\": 878, \"share_pct\": 1.4, \"lift\": 1.7}, {\"label\": \"singapore\", \"articles\": 858, \"share_pct\": 1.4, \"lift\": 2.4}, {\"label\": \"united arab "
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "What is the historical decision path?",
+    "args": {
+     "term": "RBI repo rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'RBI repo rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='RBI repo rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 62,
+   "traced": 62,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 383,
+  "charts": [
+   {
+    "id": "repo-rate-memory",
+    "title": "RBI repo rate (memory estimate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Repo rate",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "repo-rate-estimates.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many news items about RBI repo-rate decisions appeared each month in the last two years?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How did coverage sentiment compare with the broader news corpus?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "compare": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes and entities featured most in coverage?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "from": "2024-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places were mentioned, and what share of items had place information?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "from": "2024-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which headlines were most critical, and who published them?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which publishers contributed the largest share of coverage?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='RBI repo rate decision', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 5,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "6.50% — - **Answer:** News coverage reports that the RBI began cutting the repo rate in February 2"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 103,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 6.50%"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 908,
+  "charts": [
+   {
+    "id": "repo-rate-monthly-volume",
+    "title": "Monthly news articles mentioning repo rate",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "repo_rate_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.browse",
+    "question": "Which articles specifically report RBI repo-rate decisions, by decision date and outlet?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "orientation": "neutral",
+     "limit": 20
+    },
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "What were the full headlines and article URLs for RBI repo-rate decisions across the period?",
+    "args": {
+     "term": "RBI repo rate",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'RBI repo rate'",
+    "seconds": 0.1,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does sentiment for RBI-only decision coverage compare with the news corpus baseline?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.7,
+    "sample": "{\"points\": [{\"period\": \"2024-10-01\", \"negative\": 0, \"positive\": 0, \"neutral\": 2, \"ratio\": null}], \"totals\": {\"neg\": 0, \"pos\": 0, \"neutral\": 2, \"n\": 2, \"neg_pct\": 0.0, \"pos_pct\": 0.0, \"ratio\": null}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which publishers account for the most RBI-only decision coverage across the full window?",
+    "args": {
+     "term": "RBI repo rate decision",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='RBI repo rate decision', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 37,
+   "traced": 36,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

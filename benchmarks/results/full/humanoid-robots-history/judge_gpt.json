@@ -1,0 +1,175 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 5,
+    "export": 3,
+    "repro": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 0,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced annual points, quantified changes, peak, flat period, and forecast bounds are read consistently.",
+    "comparison": "The same annual-count scale and defined 2017 baseline support recomputable ratios and deltas.",
+    "chart": "Both observed history and forecast scenarios are fully sourced, labelled, and tied to claims.",
+    "drilldown": "Provides multiple traced layers, but only one of four follow-up calls returned usable data.",
+    "export": "Both needed CSVs trace to calls and include provenance plus a regenerate block.",
+    "repro": "Most figures trace and calls are replayable; one numeric claim is untagged.",
+    "accuracy": "No material contradiction; it does not catch or discuss reference anomalies.",
+    "limits": "Places window, scope, coverage, match, and forecast caveats alongside the figures.",
+    "verdict": "Direct and actionable with confidence and change conditions, but omits the weak backtest as contrary evidence.",
+    "facets": "Covers trend and forecast, but not the implied research-versus-news and term-overlap facets."
+   },
+   "B": {
+    "trend": "Explicitly says no measured series is available; direction is only asserted broadly.",
+    "comparison": "Qualitative only; no measured baseline or comparable period.",
+    "chart": "No chart block.",
+    "drilldown": "Proposed generic, unexecuted calls and no traced breakdown.",
+    "export": "No CSV export.",
+    "repro": "No measured claims or executed calls to reproduce.",
+    "accuracy": "Does not invent or contradict measured facts.",
+    "limits": "Clearly states that there is no corpus, window, coverage, or measured result.",
+    "verdict": "Gives a direct abstention, decision, confidence, and conditions for revisiting it.",
+    "facets": "Grounds the absence of evidence but leaves nearly all empirical facets unanswered."
+   },
+   "C": {
+    "trend": "Sparse, explicitly estimated points; no sourced measured series.",
+    "comparison": "Numeric estimated comparisons are labelled, but remain unverifiable.",
+    "chart": "Estimate chart is honestly labelled, which earns the memory-chart anchor only.",
+    "drilldown": "Lists hypothetical breakdowns and calls; none is traced or successfully executed.",
+    "export": "Exports are labelled estimates, not data-backed rows.",
+    "repro": "No numbers trace to recorded calls, and the verdict contains untagged estimates.",
+    "accuracy": "Estimates and judgment are clearly identified rather than presented as measured facts.",
+    "limits": "States no database was queried and explains assumed scope, though some limits remain generic.",
+    "verdict": "The verdict contains untagged numerical estimates, triggering the zero ceiling.",
+    "facets": "Estimated facets are not grounded in data; actual counts and composition remain unanswered."
+   },
+   "D": {
+    "trend": "Traced observed series and scenarios with quantified changes, but the observed-series comparison is not fully decomposed to a robust growth measure.",
+    "comparison": "Mostly traced and recomputable comparisons; minor rounding is acceptable, but the report overstates coverage elsewhere.",
+    "chart": "Charts trace and show central and sensitivity paths, but omit a visible partial-period/censoring mark.",
+    "drilldown": "Exposes years, scenario values, and backtest folds with identifiers and three successful on-topic follow-ups.",
+    "export": "Traced tables are present, but the history export calls coverage full despite the source caveat that completeness is unproven.",
+    "repro": "Calls and many numbers are traceable, but several numeric claims are untagged and the ceiling is three.",
+    "accuracy": "The export misstates coverage as full, contrary to the source’s explicit warning that ingestion-safe bounds do not prove completeness.",
+    "limits": "Explains the window, lane, match mode, normalization, and forecast caveats near the claims; the export’s coverage label conflicts.",
+    "verdict": "The script assigns a zero ceiling because 860 and 950 appear untagged in the verdict.",
+    "facets": "Covers historical growth, forecast range, and limits, but leaves research-versus-news and term-overlap comparisons unmeasured."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Verdict gives untagged estimates of 1.3–1.5x annual growth and a 25% threshold; these are not measured or sourced."
+   ],
+   "D": [
+    "The verdict contains untagged forecast figures 860 and 950, although the corresponding sourced values are 864.375 and 951.125.",
+    "The history CSV labels coverage full, while the source says its year bounds are ingestion-safe defaults and do not prove complete coverage."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it gives a reproducible historical series and a clearly bounded three-year scenario, while acknowledging the forecast’s weak validation. D offers deeper follow-up work, but its untagged verdict figures and unsupported full-coverage label weaken trust; B is careful but cannot quantify the answer, and C relies on estimates."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 5,
+   "export": 3,
+   "repro": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 0,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

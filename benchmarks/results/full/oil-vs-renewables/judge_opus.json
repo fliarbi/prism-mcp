@@ -1,0 +1,170 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Its only series is a labelled memory estimate of supply share, not coverage.",
+    "comparison": "The oil vs gas ratio uses memory supply figures. It is a proxy, not coverage, so it gets no more credit than a qualitative comparison.",
+    "chart": "An estimate-labelled memory chart earns exactly 1.",
+    "drilldown": "Layers are generic and only 1 of 5 follow-ups executed.",
+    "export": "The CSV is an estimate-labelled memory table.",
+    "repro": "All numbers are labelled estimates and cannot be reproduced.",
+    "accuracy": "There are no contradictions, and the memory figures are labelled.",
+    "limits": "It is specific about what is unmeasured and gives the gap to today.",
+    "verdict": "It honestly says it cannot answer and gives a plan, but there is no answer to the question.",
+    "facets": "No coverage facet is answered. The proxy measures energy supply, not coverage."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "The follow-up args are placeholders and none executed.",
+    "export": "No export.",
+    "repro": "No numbers and nothing to regenerate.",
+    "accuracy": "Empty but not contradictory.",
+    "limits": "It is specific about what is unmeasured.",
+    "verdict": "No answer, and 'high' confidence is attached to a refusal.",
+    "facets": "None answered."
+   },
+   "C": {
+    "trend": "The series is traced with its window. Change is computed only from endpoints, and it misses the March 2026 spike and peak.",
+    "comparison": "The 4.37x and 5.11x ratios recompute exactly and the overlap caveat is carried. It declines to read tone, which is the contrast the question poses.",
+    "chart": "One traced volume chart with window, unit and source. Tone is not charted although the data supports it.",
+    "drilldown": "One month layer, and only 1 of 4 follow-ups ran ok.",
+    "export": "Two traced CSVs with tool field names and a provenance JSON.",
+    "repro": "23 of 25 numbers traced, with the call listed with args.",
+    "accuracy": "No contradictions. It does not flag that combined_articles is a non-deduplicated sum.",
+    "limits": "Window, gap to today and the reachability caveat are stated, but mostly in a footer.",
+    "verdict": "It ranks volume, but ignores the oil and gas spike and the tone contrast.",
+    "facets": "Volume, share and trend are covered. Tone is left unread."
+   },
+   "D": {
+    "trend": "Traced series with window and censoring. The March spike is quantified (4.4x, 2.9x), the half-year ratio is recomputed exactly and peaks are named.",
+    "comparison": "Ratios, deltas and share shifts recompute exactly. Peak-month neg/pos tone answers the oil-spike vs positive-renewables contrast, and it states what overlap it cannot measure.",
+    "chart": "One traced volume chart with a caption. Tone and critical decomposition sit only in tables, not in a chart.",
+    "drilldown": "Term and month layers are traced but carry no item identifiers. Only 2 of 6 follow-ups executed.",
+    "export": "Summary and monthly CSVs are traced with provenance and a JSON block. The wide-format column renames are undocumented.",
+    "repro": "80 of 83 numbers traced and derived values are recomputable. There are 2 untagged numbers.",
+    "accuracy": "Every recomputed number is exact. It catches that combined_articles equals the plain sum, and that tone_ratio and vs_baseline are undefined (inferring a common ~0.58 baseline).",
+    "limits": "Window, the 145-day gap, censoring, match mode, lane and undefined fields are all stated, and f6 is proposed to close the gap.",
+    "verdict": "Gives an answer, a decision, a confidence level with its reason and what would change it, and it is consistent with the data.",
+    "facets": "Volume, share, trend, spike, tone and overlap are all covered with grounded values or a grounded 'cannot measure'."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": []
+  },
+  "best": "D",
+  "verdict": "C and D both rest on the same traced news.compare call. D read what the question turns on: the March 2026 oil and gas spike, the negative vs positive tone split, and the non-deduplicated combined total. C only reported endpoint changes and declined to interpret tone. A and B measured nothing, so they offer a decision-maker only a plan."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

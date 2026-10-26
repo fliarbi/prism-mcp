@@ -1,0 +1,179 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; explicitly declines to estimate.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are generic, use placeholder windows, and none executed successfully.",
+    "export": "No CSV export.",
+    "repro": "No measurements to reproduce; calls lack valid concrete windows.",
+    "accuracy": "Does not invent or contradict measured results.",
+    "limits": "Clearly identifies absent window, lane, censoring, match mode, and unmeasured quantities.",
+    "verdict": "Gives a cautious answer and decision, but has no evidence-based confidence or useful conditions beyond acquiring data.",
+    "facets": "Acknowledges lack of data but grounds no requested comparison facets."
+   },
+   "B": {
+    "trend": "Series is explicitly a memory estimate, so ceiling is 1; it concerns energy supply, not coverage.",
+    "comparison": "Qualitative/no measured coverage comparison; supply proxy is labeled estimate.",
+    "chart": "Honest estimate chart, but it is unrelated to coverage and earns only the memory-chart anchor.",
+    "drilldown": "One proposed follow-up succeeded, but breakdown is generic and the calls are not grounded in an executed result.",
+    "export": "CSV is labeled estimate and has no traced coverage rows.",
+    "repro": "No measured figures or reproducible coverage calls; proxy figures are estimates.",
+    "accuracy": "Clearly distinguishes supply proxy from media coverage, though the illustrative memory estimates add little relevant evidence.",
+    "limits": "Specific limits are stated, but the deliverable does not use the available reference window or its censoring information.",
+    "verdict": "Directly recommends not allocating on the proxy and gives low confidence, but no measured answer or concrete evidence-based change condition.",
+    "facets": "Coverage volume, trend, tone, overlap and ranking remain unmeasured."
+   },
+   "C": {
+    "trend": "Traced monthly series, window and censoring are stated, and endpoint changes are calculated; it omits quantified reported growth and decisive peak dates, and the prose misses the March spike decomposition.",
+    "comparison": "Ratios and deltas recompute on a common window; it defines the count basis and carries overlap caveats, but tone is not resolved and the contrast remains mention volume.",
+    "chart": "Traced chart has source, window, unit and supports the trend claim; it shows bare levels rather than a decomposition and does not visibly mark the censoring boundary.",
+    "drilldown": "Two traced layers (term and month/measure) but no item-level identifiers or successful, on-topic follow-up set.",
+    "export": "Monthly and term tables are traced, referenced, and have provenance; they lack identifiers/provenance hygiene needed for 5 and do not preserve all fields needed to inspect tone decomposition.",
+    "repro": "The main call and window are listed and most claims trace; two numeric claims fail trace, preventing full reproduction.",
+    "accuracy": "Counts and shares align; it overstates that all terms rose from endpoints as a trend reading and does not catch the March anomaly or undefined fields fully.",
+    "limits": "Window, cutoff gap, ingest caveat, overlap/common-word risk and unknown matching are placed in the report; it could more clearly state the actionable consequence of stale coverage.",
+    "verdict": "Direct, supported ranking with confidence, decision and change condition; it acknowledges overlap but does not address the strongest contrary evidence of the sharp March oil/gas surge.",
+    "facets": "Covers volume, trend, tone caveat, overlap, and ingest/matching limits, but not the scenario's price-spike driver or research/news mismatch."
+   },
+   "D": {
+    "trend": "Traced series and quantified February-to-March spike plus subsequent easing; misses reported growth reconciliation and decisive peak-date context is limited to the spike month.",
+    "comparison": "Common-window ratios and share shifts are stated with a defined baseline and overlap caveat; they answer relative attention, though the claimed share denominator is not the distinct-article universe.",
+    "chart": "Fully traced and sourced chart with comparison/decomposition and censored month omitted; it supports the spike reading, though censoring is described rather than visibly marked in the chart specification.",
+    "drilldown": "Two traced levels and two follow-ups succeeded with non-empty relevant data per script ceiling; lacks returned item-level identifiers/results folded into report.",
+    "export": "Both needed tables trace and are referenced with provenance; CSVs omit row-level IDs and the full provenance shape needed for 5.",
+    "repro": "Listed call and window reproduce most numeric claims, but two untagged and one untraced claims prevent full traceability.",
+    "accuracy": "Most figures align, but it presents inferred tone_ratio meaning as supported by monthly counts despite the definition being unavailable, and mischaracterizes the March spike as a surge in the verdict without causal evidence.",
+    "limits": "Window, censoring, ingest reachability, lane, match uncertainty, overlap and undefined fields are stated near the relevant figures; it explains the limits on interpretation.",
+    "verdict": "Gives a decision and confidence, but the escalation-monitoring recommendation is not well supported by the limited window, and the verdict does not acknowledge that March counts receded by May.",
+    "facets": "Grounds coverage, trends, tone caveat, overlap and limits, but does not establish what drove the spike or the research/news mismatch."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Memory-based global energy-supply estimates are not coverage measures; they are labeled estimates and are not presented as coverage facts."
+   ],
+   "C": [
+    "Says the call warns the newest month can be incomplete, but the reference specifically warns about a partial newest month at the cutoff; May is the last included month and is not flagged partial.",
+    "The caption says all terms end above their June 2024 counts, which is true, but does not convey the large March 2026 crude-oil and natural-gas spike relevant to the scenario."
+   ],
+   "D": [
+    "Treats tone_ratio as negative divided by positive and infers a common baseline ratio from undefined fields; these are explicitly inferences, not established tool definitions.",
+    "Calls March oil and gas volumes a surge without identifying a cause; the data cannot establish an event or its driver.",
+    "Claims article counts overlap and shares are not distinct-story shares; this is appropriately caveated, but overlap is not quantified."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid: it exposes the monthly oil and gas spike, compares all three terms on a shared window, and supplies usable exports with clear limits. C is more restrained about tone, but D better answers the scenario’s central risk that a price-driven spike can distort headline coverage; both leave the spike’s cause and unique-article overlap unresolved."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,198 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 3,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 2,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The annual series traces, but it omits the tool’s full trend summary and says the latest period is censored even though the source marks 2025 as the excluded newest period; the chart plots it anyway.",
+    "comparison": "The hardship comparison is not reproducible from the record: it supplies no comparison-group value, only the subgroup estimate.",
+    "chart": "The research chart traces and supports a stated claim, but it plots the censored 2025 endpoint without visibly marking censoring.",
+    "drilldown": "It gives one breakdown layer and follow-up questions, but only 2 of 5 calls executed successfully and returned data.",
+    "export": "The script ceiling is 0; the CSV tables do not trace fully to the recorded calls and contain unsupported or incomplete fields.",
+    "repro": "Core counts and chart points trace, but declared calls lack identifiers and the effect export does not preserve source-call provenance sufficiently.",
+    "refs": "Both cited DOIs resolve, metadata matches, quotes are in the supplied abstracts, and claims are appropriately bounded.",
+    "accuracy": "Most claims are bounded, but the comparison group is asserted without a recorded baseline, and the censoring note is misapplied to the plotted 2025 point.",
+    "limits": "It places relevant windows and coverage caveats near the findings, but misses the specific meaning of the research series’ excluded newest period.",
+    "verdict": "Direct, decision-oriented, calibrated answer that names what evidence would change it and does not overclaim the hardship result.",
+    "facets": "It addresses poverty, work, limitations, and the research lane, but does not provide grounded work-effect evidence or the missing follow-up findings."
+   },
+   "B": {
+    "trend": "A sourced but unverified memory series is provided; the 2023 point is explicitly from memory and not independently checkable here.",
+    "comparison": "The numeric comparison is explicitly memory-based and mixes different outcome definitions and studies, so it is not a clean common-scale contrast.",
+    "chart": "The chart uses a memory-sourced series and its 2023 endpoint is explicitly uncertain.",
+    "drilldown": "Breakdowns are recalled rather than traced, and none of the proposed follow-up calls returned data.",
+    "export": "The exports are memory-based and have incomplete provenance; one table also has an unsupported 2023 value.",
+    "repro": "No Prism calls or replayable source arguments; numeric claims are predominantly untraced memory estimates.",
+    "refs": "Several identifiers are present, but references are not tied to verified quotes and one citation is incomplete or unverified.",
+    "accuracy": "The answer is generally cautious and acknowledges the strongest contrary result, but presents numerous specific memory figures that the record cannot verify.",
+    "limits": "It clearly labels the synthesis as memory and states major scope limits, but lacks specific retrieval-window, coverage, and censoring details.",
+    "verdict": "It gives a direct policy answer, confidence, decision, contrary evidence, and conditions that would change the view.",
+    "facets": "It covers poverty and work from memory but leaves the requested research/news corpus facets unmeasured."
+   },
+   "C": {
+    "trend": "The full annual series, window, change, CAGR, and tool direction are given; the chart caption’s late-vs-early ratio is consistent with the record.",
+    "comparison": "Shares and ratio are recomputable from the stance counts, but the comparison concerns framing labels in a broad corpus rather than the question’s actual poverty/work contrast.",
+    "chart": "The chart traces and supports the trend claim, but does not visibly mark the source’s excluded newest period.",
+    "drilldown": "It provides multiple breakdown layers and specific follow-ups; 4 of 5 calls returned non-empty on-topic data, but no follow-up result is incorporated.",
+    "export": "The series and stance counts trace, but provenance is incomplete and some export calls omit or alter recorded arguments and windows.",
+    "repro": "Most values trace, but there are untraced numeric claims and the listed call set does not fully reproduce all stated figures.",
+    "refs": "Identifiers resolve and metadata mostly matches; claims are tied to sources, though the reference set does not fully rank evidence strength or supply all supporting quotes from the record.",
+    "accuracy": "It misstates the record’s 355 as carrying abstracts without preserving the title-anchored qualification, overstates what the qualifying finding establishes, and repeats the broad-lane limitation inconsistently.",
+    "limits": "It gives the broad lane, coverage, window, censoring, and the unmeasured work outcome near the findings.",
+    "verdict": "The answer is cautious and direct, but its claim that verified documents show conditional poverty reductions is stronger than the supplied record supports, and it omits what would change the conclusion as a decision condition.",
+    "facets": "It covers several corpus facets but does not ground the work-effect evidence or resolve the key joint poverty-and-work question."
+   },
+   "D": {
+    "trend": "No comparable outcome time series; the response correctly says it cannot quantify one.",
+    "comparison": "The ratio is arithmetic on claimed historical subgroup effects, but the cited values are not checkable against the record.",
+    "chart": "The chart is an unverified memory series and its source identifier conflicts with the bibliography’s historical-study source.",
+    "drilldown": "The study list is a single untraced layer and proposed calls did not execute successfully.",
+    "export": "The CSV is not traceable to recorded calls and uses one source tag for multiple different studies.",
+    "repro": "No calls were made, and the study values and specific claims cannot be regenerated from the stated sources.",
+    "refs": "One DOI fails to resolve to the cited Alaska study, and another study’s quoted text contains an obvious corruption.",
+    "accuracy": "The employment chart and comparison present unsupported historical estimates as measured, and the Alaska DOI is invalid for the cited work.",
+    "limits": "It clearly states that the set is selected, memory-based, and not a systematic search, with no corpus or retrieval measures.",
+    "verdict": "It provides a direct, bounded policy answer with a decision and conditions, but its support includes unreliable specifics.",
+    "facets": "It addresses the question’s broad limits but has no grounded measurements of poverty/work effects or corpus evidence."
+   }
+  },
+  "errors": {
+   "A": [
+    "The chart plots 2025 while the source says the newest period is excluded because of ingest lag; calling that endpoint censored is inconsistent with the plotted data.",
+    "The comparison asserts a study comparison group, but the recorded statistic supplies no baseline value.",
+    "The effect-estimate CSV says source call research.statistics#1, but the recorded c3 result does not provide the stated comparison-group data."
+   ],
+   "B": [
+    "The 2023 child-poverty point and several trial effect sizes are memory estimates, not checkable against the supplied record.",
+    "The work comparison combines participation, employment, part-time work, and full-time employment across different studies as a single percentage-point spread.",
+    "The export’s Alaska employment null is described as approximately zero despite no numeric value or recorded response establishing that estimate."
+   ],
+   "C": [
+    "The record’s qualifying document says poverty reduction increases with benefit generosity in both countries, but the deliverable presents this as a verified conditional poverty reduction finding without the underlying poverty estimates.",
+    "The 355 readable-paper count is described as papers carrying a real abstract, omitting that they are title-anchored.",
+    "The $11,400 model-based finding is included as a specific claim, though the record marks its document ungrounded and unread."
+   ],
+   "D": [
+    "The chart’s historical employment values are not present in the supplied reference record and are presented as measured.",
+    "The Alaska DOI 10.1257/pol.20170044 does not resolve to the cited work according to the script check.",
+    "The quoted 2024 NBER passage is corrupted (“4. ಕಟ್ಟ”), and the reference does not provide a resolvable DOI or verified quote."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it gives a clear, restrained answer, uses a traceable hardship estimate, and explains why that estimate cannot settle the combined poverty-and-work question. C has stronger research-series and drill-down coverage, but its broad-corpus framing and ungrounded model claim blur what the evidence actually establishes; B and D rely on unverified memory figures."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 3,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 2,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

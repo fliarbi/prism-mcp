@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 2,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; it explicitly says none is available.",
+    "comparison": "Qualitative placebo comparison, without a measured common-scale contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Names evidence layers but supplies no traceable breakdown or successful follow-up calls.",
+    "export": "No CSV export.",
+    "repro": "Calls use incorrect argument names and do not reproduce the reported material.",
+    "refs": "One DOI is malformed and the other is unverified; neither meets the reference ceiling.",
+    "accuracy": "Cautious answer and no measured claims contradict the supplied record.",
+    "limits": "Specific limits are stated, but the answer lacks a defined corpus window and match mode.",
+    "verdict": "Direct, bounded decision and confidence with a condition that would change it; no contrary result is discussed.",
+    "facets": "Covers the clinical answer and key uncertainty, but omits grounded corpus and trend facets."
+   },
+   "B": {
+    "trend": "Annual series is traced, censored, and quantified with CAGR, early/late ratio, and peak; prose reads the rise correctly.",
+    "comparison": "Research and news early/late contrasts are traced, quantified, and their different scales and small news base are acknowledged.",
+    "chart": "Both traced series have units, windows, source lines and readings; charts are decompositions over time.",
+    "drilldown": "Multiple traced layers reach identified papers, and four specific follow-up calls returned on-topic data; no executed follow-up result is folded back in.",
+    "export": "CSV rows trace, but tables have incomplete or inconsistent provenance and do not include the needed provenance JSON shape.",
+    "repro": "Core recorded calls and series reproduce, but listed follow-up calls and some claimed details are not fully supported by the recorded calls.",
+    "refs": "The Auddy entry lacks DOI and venue, and Leonard is explicitly ungrounded; the reference ceiling is 1.",
+    "accuracy": "Mostly faithful, but it calls the research series the last year reported without carrying the explicit censoring explanation there, and some tier ranks are unsupported by the record.",
+    "limits": "Specific windows, lanes, censoring, matching, and extraction limits are discussed near the relevant counts; some coverage limitations could be more precise.",
+    "verdict": "Direct and actionable, with confidence and change conditions; it names heterogeneity and sampling limits but does not squarely address the strongest contrary signal, minimal extracted evidence and zero high-tier share.",
+    "facets": "Addresses evidence quality, trend, comparisons, lanes, overlap, matching, and missing anxiety-specific evidence."
+   },
+   "C": {
+    "trend": "Traced annual series and delta are given, but CAGR/early-late change and decisive points such as the peak are omitted despite being available.",
+    "comparison": "The pooled estimate is compared with zero and its heterogeneity is stated, but this is not a full measured contrast addressing the evidence-quality question.",
+    "chart": "The annual chart traces and supports a claim; the monthly chart traces all supplied points with window, unit and source, and marks the exclusive endpoint in prose.",
+    "drilldown": "Shows aggregates and selected papers, but follow-up calls are missing args in the declared-call block and breakdown items are not consistently linkable.",
+    "export": "Both series exports trace with source, window, unit and coverage; provenance is present, though row-level hygiene and schema do not fully meet anchor 5.",
+    "repro": "Recorded calls are named but their args are absent from the call block, preventing full regeneration.",
+    "refs": "All cited DOIs resolve per script; claim ties, metadata, tiers and verbatim verified quotes are supplied, with a contrary sample noted.",
+    "accuracy": "Mostly matches the record; it overstates coverage checks as strict index partition and row-floor checks not present in the supplied response and calls the 2025 research period possibly incomplete where the series marks it censored.",
+    "limits": "Window, lane, empty intersection, censoring, coverage, match mode and the limits of news and extracted claims are stated near the relevant results.",
+    "verdict": "Answers directly with a decision, confidence and change condition, and notes heterogeneity and the empty claim intersection; it could more explicitly weigh the minimal claim extraction against supportive selected studies.",
+    "facets": "Covers the clinical question, evidence tiers, trend, lane mismatch, overlap, seasonality/monthly series, and research-news distinction."
+   },
+   "D": {
+    "trend": "The estimate is labelled, but the claimed tenfold rise is not a traced measured series.",
+    "comparison": "Comparison uses memory estimates and does not establish a checkable same-scale result.",
+    "chart": "Chart is explicitly an estimate, earning the estimate ceiling only.",
+    "drilldown": "Names possible breakdowns and includes follow-up calls, but no traced item layer is provided.",
+    "export": "CSV is explicitly an estimate, with no recorded source response.",
+    "repro": "No calls were run; effect sizes and other figures are estimates from memory.",
+    "refs": "References lack resolving identifiers and the cited specifics are unverified.",
+    "accuracy": "Presents precise-looking trial counts and effect estimates from memory, including claims not supported by the reference record.",
+    "limits": "Clearly labels memory and states unknown coverage, but several decision claims remain ungrounded.",
+    "verdict": "Ceiling is zero: script identifies untagged numbers in the verdict, and the claims are not supported by the record.",
+    "facets": "Most requested measurable facets are either absent or estimated rather than grounded."
+   }
+  },
+  "errors": {
+   "A": [
+    "Malformed DOI: 10.1089/acm.2013.017эс.",
+    "Calls use term instead of the recorded claim argument and do not reproduce the cited evidence."
+   ],
+   "B": [
+    "Labels the research-series endpoint without clearly identifying it as censored in the trend paragraph.",
+    "Presents tier ranks and some source details not contained in the supplied record."
+   ],
+   "C": [
+    "Claims strict index partition-read and historical-row-floor checks that are absent from the supplied record.",
+    "Declared calls omit args, so the report cannot be regenerated from that block."
+   ],
+   "D": [
+    "Untagged verdict numbers (12, 500, 12) are presented as facts.",
+    "Trial counts and estimated effects are explicitly memory-based and lack traceable sources."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision deliverable: it combines reproducible research and news trends, quantified contrasts, and a direct conclusion bounded by the empty claim-intersection lane and a selected read sample. C is close and has cleaner paper citations and exports, but its incomplete regenerate calls and omitted trend decomposition weaken auditability; both leave the funding and bias question unresolved in the supplied evidence."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 2,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 2,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 2,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured time series; the chart compares trial outcomes.",
+    "comparison": "Cross-trial figures are labeled and caveated, but the source is not reproducible here.",
+    "chart": "The chart is labeled as sourced to references, but its values are not traceable to the supplied record.",
+    "drilldown": "Names evidence layers, but has no traced breakdown or executed useful follow-ups.",
+    "export": "Trial table is labeled partial, but its rows are not backed by the supplied record.",
+    "repro": "No numeric claims trace to recorded calls or resolvable sources in this benchmark.",
+    "refs": "All three DOIs resolve; entries are tied to claims and the lecanemab quote is verbatim.",
+    "accuracy": "Trial effects are plausible and carefully qualified; it omits the key recent regulatory changes.",
+    "limits": "Clearly states the evidence gap, selection limits, and that counts cannot be measured.",
+    "verdict": "Direct, qualified answer and decision with confidence and conditions, but the recent field changes are under-covered.",
+    "facets": "Some clinical and mechanism facets are addressed, but no grounded trend, corpus breakdown, or news comparison."
+   },
+   "B": {
+    "trend": "Quantifies the research increase and reports news thirds and peak, but does not fully reconcile the anomalous news endpoints.",
+    "comparison": "Cautionary share comparison is traced and caveated; the framing windows lack dates.",
+    "chart": "The chart traces its endpoints and states window, unit, source, and reading; it omits a decomposition available in the record.",
+    "drilldown": "One traced breakdown layer is given; only one of five proposed follow-ups executed with useful data.",
+    "export": "The referenced trend CSV is traced but contains only endpoints; provenance is present but incomplete for full decision-ready export.",
+    "repro": "All numeric claims are tagged to the recorded radar call, with args and window sufficient to regenerate them.",
+    "refs": "DOIs resolve and metadata matches, but no claim-linked verbatim abstract quotes are supplied.",
+    "accuracy": "Reads the radar fields and the news endpoint anomaly carefully, without material contradiction.",
+    "limits": "Places window, corpus, selection, coverage, and interpretation limits next to the findings.",
+    "verdict": "Answers directly with decision, confidence, conditions, and a cautionary framing result; it does not discuss contrary clinical evidence.",
+    "facets": "Covers research/news trends, framing, selected work, and the grounded taxonomy-label caveat; overlap and seasonality are not addressed."
+   },
+   "C": {
+    "trend": "Quantifies growth and names peak and thirds, but the prose calls news sharply rising despite the anomalous equal first and last values.",
+    "comparison": "The research/news growth comparison combines different windows and corpora, so it is not a clean single-scale contrast.",
+    "chart": "The endpoint chart is traced and labeled; it omits a charted news/framing comparison and does not visibly mark the anomalous news endpoint.",
+    "drilldown": "Provides traced topics and item DOIs, but proposed follow-ups mostly failed and no executed result is folded back in.",
+    "export": "Exports are referenced but lack full provenance and required fields; the window comparison mixes units and windows.",
+    "repro": "Numeric claims trace to the radar call and its args; derived ratios are recomputable.",
+    "refs": "Paper DOIs resolve, but entries are not claim-tied with quotes and tier/strength detail as required.",
+    "accuracy": "Mostly reads the record correctly and flags the endpoint anomaly, but overstates the news trend and compares unlike windows.",
+    "limits": "States the key windows, match mode, and coverage caveats; the research end-to-today gap is approximate and limits are not consistently attached to each number.",
+    "verdict": "Direct answer with decision, confidence, conditions, and limits; its news-trend wording weakens consistency.",
+    "facets": "Grounds the main implied facets: volume, framing, new work, news, under-coverage caveat, and research/news mismatch."
+   },
+   "D": {
+    "trend": "The chart is explicitly estimated and concerns trial effects rather than research volume; it is not a measured trend in the question’s quantity.",
+    "comparison": "Cross-trial figures are caveated but come from memory, and the semaglutide row is unmeasured.",
+    "chart": "Chart values are a mix of memory and estimates, so it earns only the honest-estimate anchor.",
+    "drilldown": "Lists generic breakdown dimensions and papers, but no measured layers or executed follow-ups.",
+    "export": "The effect-size table is explicitly partial and partly estimated, not traced to recorded responses.",
+    "repro": "No calls were run and the numeric claims cannot be replayed from the listed calls.",
+    "refs": "DOIs resolve, but quotes are absent and the claims are not sufficiently tied to sourced abstracts.",
+    "accuracy": "Memory claims are marked estimated and trial effects qualified, but regulatory and failure specifics remain unverified here.",
+    "limits": "States memory basis and missing measurements, but does not supply data-specific corpus limits for a trend analysis.",
+    "verdict": "Direct answer, decision, confidence, conditions, and contrary failures are included, with the limits of memory acknowledged.",
+    "facets": "Covers clinical examples but lacks grounded measures of research/news trends and other requested facets."
+   }
+  },
+  "errors": {
+   "A": [
+    "Treats the cross-trial relative-slowing chart as a charted comparison even though its values do not trace to the benchmark record."
+   ],
+   "B": [
+    "Calls the research trend window through 2025-12-31 although the record provides years 2017–2025, not explicit calendar-day bounds.",
+    "The framing comparison omits the calendar boundaries of its windows."
+   ],
+   "C": [
+    "Describes news volume as having risen sharply despite the reported equal first and last monthly values; it does flag the anomaly.",
+    "Compares news and research growth as roughly ten times faster despite different corpus windows and measures."
+   ],
+   "D": [
+    "The aducanumab, semaglutide, and blood-test specifics are labeled estimates but have no cited sources or reproducible calls.",
+    "Uses estimated trial-effect values in a chart about treatment effects rather than a time series of research activity."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision deliverable: it traces and qualifies the research trend, covers framing and news, and supplies reproducible calls, while being candid about the limits of selected title matches. C covers more facets, but its cross-lane growth comparison and news-rise wording weaken its reading; neither database-backed response directly answers the clinical and regulatory changes highlighted by the question."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 2,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 2,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

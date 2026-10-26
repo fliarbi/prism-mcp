@@ -1,0 +1,615 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1159,
+  "charts": [
+   {
+    "id": "upf-mortality-papers",
+    "title": "Approximate UPF-mortality cohort papers per year (rough count)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Estimated mortality-focused UPF cohort papers",
+      "how": "estimate",
+      "points": 7,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "upf_effect_sizes.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many UPF-mortality papers per year, by corpus?",
+    "args": {
+     "term": "ultra-processed food mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...cessed food mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers contradict or weaken the association?",
+    "args": {
+     "term": "ultra-processed food mortality",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mortality', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What are the strongest supporting papers, with quotes and DOIs?",
+    "args": {
+     "term": "ultra-processed food all-cause mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...d all-cause mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food all-cause mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has the stance of research shifted over time?",
+    "args": {
+     "term": "ultra-processed food mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'ultra-processed food mortality'",
+    "seconds": 8.6,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How much news coverage is there, and how does it compare with the research?",
+    "args": {
+     "term": "ultra-processed food deaths"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'ultra-processed food deaths' in this window",
+    "seconds": 5.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries produce this research?",
+    "args": {
+     "term": "ultra-processed food mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...cessed food mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 37,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 8,
+   "untagged_examples": [
+    "1.00 — Baseline: the lowest UPF intake category (tertile, quartile or quintile, depending on the ",
+    "1.62 — Reading: the pooled estimates are smaller than the largest single-cohort signal, which sug",
+    "1.14 — | r5 | 2019 to 2020, NutriNet-Santé cohort (Schnabel et al., JAMA Intern Med) | Tier 2, co",
+    "10 — | r5 | 2019 to 2020, NutriNet-Santé cohort (Schnabel et al., JAMA Intern Med) | Tier 2, co",
+    "1.62 — | r6 | 2019, SUN cohort (Rico-Campà et al., BMJ) | Tier 2, cohort | Supports: HR about 1.6",
+    "1.1 — | r7 | NIH-AARP and US cohorts, 2022 to 2024 | Tier 2, cohort | Supports: smaller HR, abou",
+    "1.3 — | r7 | NIH-AARP and US cohorts, 2022 to 2024 | Tier 2, cohort | Supports: smaller HR, abou",
+    "1.62 — - Interpretation: calling the evidence \"medium\" confidence, and the view that the 1.62 fig"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 153,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1358,
+  "charts": [
+   {
+    "id": "research_series",
+    "title": "Papers covering UPF and all-cause mortality per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research papers (intersection lane)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "pooled_effects",
+    "title": "Pooled all-cause mortality ratio, highest vs lowest UPF intake",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Pooled ratio",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "upf_pooled_effects.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "upf_research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are labelled contradicting, and what do they say?",
+    "args": {
+     "term": "ultra-processed food mortality",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'ultra-processed food mortality' — try expand=true, or a broader phrase",
+    "seconds": 6.4,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has the share of supporting vs contradicting stance changed by year?",
+    "args": {
+     "claim": "Ultra-processed food consumption increases mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...n increases mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Ultra-processed food con...ion increases mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.citations",
+    "question": "Which cohort studies drive the pooled estimates?",
+    "args": {
+     "term": "ultra-processed food all-cause mortality meta-analysis",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...-analysis', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food all...mortality meta-analysis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "What does news coverage say and how is it framed?",
+    "args": {
+     "term": "ultra-processed food mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no article between 2024-06-01 and 2026-06-01 mentions 'ultra-processed food mortality'",
+    "seconds": 4.9,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries produce this research?",
+    "args": {
+     "term": "ultra-processed food mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...cessed food mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What are the scenarios if UPF intake is cut by a given share?",
+    "args": {
+     "term": "ultra-processed food mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 94,
+   "traced": 94,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 945,
+  "charts": [
+   {
+    "id": "mortality-quartiles",
+    "title": "All-cause mortality association by UPF quartile, NHANES-linked cohort",
+    "kind": "line",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "HR",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Which studies support or contradict an association between UPF and all-cause mortality, and what are their effect sizes?",
+    "args": {
+     "term": "ultra-processed food all-cause mortality",
+     "orientation": "supporting",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...pporting', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food all-cause mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='supporting', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What mortality studies report null or inverse findings?",
+    "args": {
+     "term": "ultra-processed food all-cause mortality",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ortality', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food all-cause mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How do mortality effect estimates vary by population, exposure measure, and follow-up?",
+    "args": {
+     "term": "ultra-processed food mortality",
+     "outcome": "all-cause mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'all-cause mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\noutcome\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all-cause mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has publication activity on UPF and mortality changed over time?",
+    "args": {
+     "term": "ultra-processed food mortality",
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of UPF and mortality changed over time?",
+    "args": {
+     "term": "ultra-processed food mortality",
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 22,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "1.31 — Two major prospective cohort analyses report higher all-cause mortality with greater UPF c",
+    "95% — Two major prospective cohort analyses report higher all-cause mortality with greater UPF c",
+    "1.04 — - **Supporting:** “Association between ultra-processed food consumption and all-cause mort",
+    "10 — - **Supporting:** “Association between ultra-processed food consumption and all-cause mort"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 895,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism-indexed research papers matching UPF and mortality",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Intersection-lane typed research",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "mortality_effects.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which prospective cohort studies contribute to the 2025 pooled mortality estimate, and what populations and follow-up periods did they cover?",
+    "args": {
+     "term": "ultra-processed foods all-cause mortality prospective cohort",
+     "orientation": "supporting",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'ultra-processed foods all-cause mortality prospective cohort' — try expand=true, or a broader phrase",
+    "seconds": 6.2,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Are there cohort studies or meta-analyses reporting null or inverse mortality associations?",
+    "args": {
+     "term": "ultra-processed foods all-cause mortality",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'ultra-processed foods all-cause mortality' — try expand=true, or a broader phrase",
+    "seconds": 6.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "How do mortality estimates differ by country, sex, age, or UPF measurement method?",
+    "args": {
+     "claim": "ultra-processed food mortality subgroup effect sizes",
+     "group_by": "population"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...roup_by': 'population'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...roup_by': 'population'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ultra-processed food mor...y subgroup effect sizes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='population', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 57,
+   "traced": 56,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

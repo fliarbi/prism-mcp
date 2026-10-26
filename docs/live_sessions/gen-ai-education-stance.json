@@ -1,0 +1,44 @@
+{
+ "slug": "gen-ai-education-stance",
+ "claude_live": {
+  "text": "**Direct answer:** The research is mostly promising, but a large cautionary share has built up alongside it, so it is mixed rather than one-sided. The balance shifted from enthusiasm toward a \"promising plus problem-flagging\" mix in 2024. It then partly rebalanced in 2025.\n\n**What the data shows** (Prism typed research corpus, papers with \"generative AI\" in the title and an education scope, 2017–2025; the stance_trends call counts 1,339 papers and the browse call counts 2,118, because the two use different matching):\n- Across the stance_trends set, promising papers are 616 of 1,339 (46%). Cautionary papers are 321 (24%), problem-identifying 185 (14%), critical 42 (3%), descriptive 142, and breakthrough 24.\n- The browse facet shows a similar picture, with 33.8% promising, 23.5% problem-identifying and 19.3% cautionary. It puts \"positive\" at 42.4% and \"contested\" at 45.4%.\n- Volume grew from 143 papers in 2023 to 577 in 2024 and 1,393 in 2025. Years before 2023 have fewer than 20 papers, so their shares are noise.\n- The promising share was 27% in 2023 (39 of 143), 29% in 2024 (167 of 577) and 29% in 2025 (410 of 1,393).\n- The contested share (cautionary, critical and problem-identifying papers) was 7% in 2023 and 42% in 2024. It fell to 21% in 2025. Problem-identifying papers peaked at 138 in 2024 and dropped to 44 in 2025.\n- Descriptive papers rose to 131 in 2025 from 9 in 2024.\n- The tool's own \"framing shift\" reading, which compares only the early and late thirds of the window, says recent work is 21 points more cautious. That comparison is built on the thin 2020 and 2022 years, so I would not rely on it.\n\n**Interpretation (mine, not the data's):**\n- Optimism was the default in 2023 and critical framing arrived in 2024, as classroom evidence and concerns about integrity, over-reliance and equity accumulated.\n- In 2025 the field seems to have moved toward descriptive and empirical work, with cautionary framing continuing in absolute terms.\n- Orientation labels describe how a paper frames its own finding, not whether the finding is true. 2025 may also be incomplete because of ingest lag.",
+  "seconds": 169.2,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "stance_trends",
+    "args": {
+     "term": "generative AI in education"
+    },
+    "ok": true,
+    "chars": 4023
+   },
+   {
+    "tool": "browse_research",
+    "args": {
+     "term": "generative AI in education",
+     "limit": 3
+    },
+    "ok": true,
+    "chars": 6354
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**The research is mixed, but the balance has shifted toward caution.** Promising papers remain numerous; cautionary and problem identifying work has grown alongside them.\n\n**What the data shows —** Prism’s typed research corpus records **2,118 papers from 2017–2025** on generative AI in education. In **2025**, it classified **44.0%** as positive (promising or breakthrough) and **43.6%** as contested (cautionary, critical, or problem identifying). Counts grew sharply: **143 papers in 2023, 577 in 2024, and 1,393 in 2025**. Early years are too sparse for reliable shares: 2020 had one paper and 2022 had four. *(Source: Prism stance trends; coverage marked complete.)*\n\n**My interpretation —** This is not a clean move from optimism to pessimism. The literature expanded rapidly, and both hopeful and skeptical framings grew; by 2025, positive and contested framings were nearly even. The data classifies how papers frame their findings, not whether their claims are correct.",
+  "seconds": 97.8,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "stance_trends",
+    "args": {
+     "term": "generative AI in education",
+     "since": 2017,
+     "until": 2025
+    },
+    "ok": true,
+    "chars": 9568
+   }
+  ]
+ }
+}

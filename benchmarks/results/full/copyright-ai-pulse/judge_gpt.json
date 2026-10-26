@@ -1,0 +1,195 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 2,
+    "verdict": 0,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly series, quantified 6.59× late-versus-early change, and names the February peak; it omits the available critical-series decomposition.",
+    "comparison": "The 5.54 sentiment ratio versus the defined 0.58 corpus baseline recomputes to 9.55×, with the lane limitation stated.",
+    "chart": "The monthly volume chart traces to c1 and has a unit, window, and claim, but does not chart the available critical or sentiment series and does not visibly mark censoring.",
+    "drilldown": "Provides traced theme, entity, and geography layers plus specific follow-up questions; only three of six calls executed successfully, and no item-level headline layer is available.",
+    "export": "Both needed summary and monthly tables are referenced and trace; provenance is present, but export hygiene falls short of the complete documented provenance shape and full capture details.",
+    "repro": "Nearly all numbers trace and the call and window are listed; 28 of 29 traced prevents full reproducibility credit.",
+    "refs": "No external documents or resolving identifiers support the discussion; the only reference is the data call.",
+    "accuracy": "Measured claims mostly match the record and interpretations are identified; the recent-article description is not independently established in the supplied excerpt.",
+    "limits": "Specific window, censoring, mention mode, lane, and geography caveats are placed near the claims; not every applicable coverage and pipeline limit is carried through.",
+    "verdict": "Directly explains that the data measures topic news rather than lawsuits, gives a decision, confidence, and what would change it; it does not name contrary evidence from the available coverage signals.",
+    "facets": "Covers volume, trend, tone, themes, entities, geography, and source-panel limits, but leaves some implied facets and decompositions underused."
+   },
+   "B": {
+    "trend": "Traced full monthly volume and critical series, quantifies the reported multiples, names decisive points, and carries the censoring caveat.",
+    "comparison": "The sentiment ratio and defined corpus baseline are compared on one scale with correctly recomputed ratio and delta, plus the February-exclusion caveat.",
+    "chart": "Both monthly volume and critical subset are traced, labeled, and tied to claims; the chart does not visibly mark the censored boundary and tone is not charted.",
+    "drilldown": "Monthly, theme, and entity layers are presented, but the executed follow-ups and available item-level evidence do not establish two traced layers reaching an identified headline.",
+    "export": "Monthly volume and tone tables are traced and referenced, but provenance and decision-ready hygiene do not fully meet the top anchor.",
+    "repro": "All numeric claims trace, calls have arguments and windows, and the export carries a regenerate recipe with capture date.",
+    "refs": "No external documents are supplied with resolving identifiers; the result relies on the data call.",
+    "accuracy": "Numbers and field definitions largely agree with the record; the February cluster explanation and policy-debate interpretation are appropriately marked as readings, not measured findings.",
+    "limits": "States the window, censoring, lane, match modes, enrichment lag, and placement caveats near the figures; the remaining limits are not uniformly attached to every relevant number.",
+    "verdict": "Gives a direct bounded answer, decision, confidence, and condition for change, while acknowledging the anomalous month; it could state the strongest contrary evidence more explicitly.",
+    "facets": "Addresses volume, critical share, tone, themes, entities, geography, source limits, and the mismatch between topic mentions and lawsuit coverage."
+   },
+   "C": {
+    "trend": "The series is explicitly an estimate from memory, which earns only the estimate anchor.",
+    "comparison": "A numeric settlement-to-statutory-damages comparison is offered, but the settlement figure is an unverified memory estimate.",
+    "chart": "The chart is explicitly labeled estimate and has no traced source.",
+    "drilldown": "Breakdown layers are recalled estimates and are not traceable; listing follow-up calls does not supply a traced breakdown.",
+    "export": "The CSV is explicitly an estimate, with unknown coverage.",
+    "repro": "No calls were run and the central figures are memory estimates.",
+    "refs": "One statutory citation is supplied, but the relied-on case and settlement claims lack resolvable supporting references.",
+    "accuracy": "The deliverable labels estimates, but presents specific case and settlement assertions without enough verification to establish them against the record.",
+    "limits": "Clearly states the memory cutoff and unmeasured facets, but cannot provide corpus-specific limits for the estimates.",
+    "verdict": "It answers the legal-risk question with a decision and confidence, but does not answer coverage and its conditions rely on unverified figures.",
+    "facets": "Several lawsuit facts are estimated from memory; coverage-specific facets are explicitly unmeasured."
+   },
+   "D": {
+    "trend": "No measured series or direction is available.",
+    "comparison": "No measured, common-scale comparison is provided.",
+    "chart": "The empty chart is explicitly marked as an estimate/no-observation display, earning the estimate anchor only.",
+    "drilldown": "It provides generic proposed calls, none run successfully, and no breakdown layer.",
+    "export": "The empty CSV is marked unknown rather than a measured zero, but contains no exportable observations.",
+    "repro": "No calls or source-backed numbers are provided.",
+    "refs": "No references are provided despite the supplied reference record and the topic's need for sourced evidence.",
+    "accuracy": "It says no dataset was supplied and that browsing was prohibited, although the prompt supplies a database record and contains no such prohibition.",
+    "limits": "It identifies some relevant limits, but incorrectly claims no news lane or corpus was supplied.",
+    "verdict": "The refusal is grounded in a false premise about the available information and does not use the supplied evidence.",
+    "facets": "It gives no grounded coverage values despite the supplied news record."
+   }
+  },
+  "errors": {
+   "A": [
+    "The coverage series is topic mention matching and cannot establish lawsuit counts; the verdict correctly states this limitation."
+   ],
+   "B": [
+    "Calling the February cluster mostly off-topic syndicated material is an interpretation, not a database finding; the deliverable labels it as interpretation.",
+    "The supplied source record does not establish that the recent compliance article was positive-polarity."
+   ],
+   "C": [
+    "The 50–60 case count, cumulative series, and case-specific settlement and ruling details are memory estimates, not verified coverage measurements."
+   ],
+   "D": [
+    "Claims that no dataset was supplied and that browsing was prohibited contradict the prompt."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it quantifies the news trend, exposes the anomalous February spike, and separates topic mentions from actual lawsuit counts. A is also careful about that core limitation, but B better uses the critical-series decomposition and covers more of the available facets."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 2,
+   "verdict": 0,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {
+  "claude_bare": [
+   "repro 1->0"
+  ]
+ }
+}

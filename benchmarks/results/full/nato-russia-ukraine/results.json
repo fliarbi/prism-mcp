@@ -1,0 +1,231 @@
+{
+ "slug": "nato-russia-ukraine",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 32.8,
+   "plain": 32.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 27.0,
+    "gpt": 38.7
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 3.5,
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 70.8,
+   "plain": 70.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.9,
+    "gpt": 65.7
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 0.5
+   },
+   "strict": 27.0,
+   "plain": 27.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.4,
+    "gpt": 31.5
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 2.5,
+    "comparison": 3.5,
+    "chart": 3.0,
+    "drilldown": 2.0,
+    "export": 4.0,
+    "repro": 3.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 61.0,
+   "plain": 61.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 55.9,
+    "gpt": 66.1
+   }
+  }
+ },
+ "judge_mad": 0.53,
+ "verdicts": {
+  "opus": "D was the only deliverable to turn the data into a decision-grade comparison. It gives exact half-on-half changes, ratios and peaks. It caught that combined_articles is a plain sum, so overlap is unresolved. It also flagged the mismatch between Ukraine's 'flat' label and its -15.9% decline. It has one wrong trough. B traced the same data but read it shallowly and misplaced the censoring. A and C honestly declined and gave a decision-maker nothing usable.",
+  "gpt": "D is the most decision-ready: it gives a supported ranking and comparable ratios while clearly treating overlap and tone interpretation as limits. C has richer analysis and drill-down, but its speculative tone-ratio reading and treatment of the overlapping combined count weaken confidence; A and B are honest scoping notes rather than measured comparisons."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_prism": [
+    "States May 2026 is within the censored final month; the reference has partial_period false and the censor at 2026-06-01",
+    "Treats the queried terms as 'lanes'"
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Russia's lowest month is given as 2025-06 (37,018); the reference has 2025-11 lower at 36,813",
+    "Critical % is tagged [c1] although it is derived"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "No measured series or comparison is supplied; estimates are explicitly labeled, so they are not fabricated measurements."
+   ],
+   "chatgpt_bare": [
+    "No measured series or comparison is supplied; no fabricated specifics identified."
+   ],
+   "claude_prism": [
+    "Treats combined_articles, which equals the sum of overlapping term counts, as a meaningful combined total without establishing distinct articles.",
+    "Infers that tone_ratio means negative articles per positive article although the reference does not define it.",
+    "Describes NATO as the only term classed rising while separately deriving a substantial Ukraine decline; the differing measures are not reconciled."
+   ],
+   "chatgpt_prism": [
+    "Calls the three queried terms 'lanes,' although the reference uses lanes for data categories and does not define these terms as lanes.",
+    "The chart plots May 2026 as an ordinary point even though the reference warns that the newest month may be incomplete."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "No series and no direction asserted.",
+    "comparison": "Only a qualitative expectation, labelled est., that NATO is far smaller.",
+    "chart": "No chart.",
+    "drilldown": "Generic planned layers; 0/5 follow-ups executed ok.",
+    "export": "Empty CSV labelled estimate.",
+    "repro": "No measured numbers; calls listed but not run.",
+    "accuracy": "No contradictions, but the assumed window 2024-10..2026-10 does not match the data.",
+    "limits": "Specific about what is unmeasured (match mode, overlap, dedup), but the window is speculative.",
+    "verdict": "Honest 'cannot answer' with a call plan; no substantive answer.",
+    "facets": "Facets answered only by labelled expectation."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window and growth labels, but no peaks or troughs. It wrongly treats May 2026 as the censored month.",
+    "comparison": "Russia vs NATO 4.8x and vs Ukraine 1.4x recompute correctly. Calling it a 'combined-articles baseline' is muddled, and overlap is left unresolved.",
+    "chart": "One traced volume chart; tone or critical share is not charted although the data supports it.",
+    "drilldown": "Gives only the critical% range; follow-ups 1/4 ok, and f2 duplicates c1.",
+    "export": "Two traced CSVs with provenance block; coverage flag set to partial.",
+    "repro": "17/20 numbers traced; at the ceiling.",
+    "accuracy": "Misreads censoring (May 2026 has partial_period false; the censor is at June). Calls the terms 'lanes'. Misses that combined equals the sum.",
+    "limits": "Limits are mostly in a footer and one is wrong (censoring).",
+    "verdict": "Direct answer, but it restates the headline counts and names no contrary evidence.",
+    "facets": "Volume and trend covered; tone only noted; overlap left unresolved."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Three generic follow-ups, none of which ran ok.",
+    "export": "No export.",
+    "repro": "No numbers.",
+    "accuracy": "No contradictions or fabrications.",
+    "limits": "Specific about the unmeasured aspects (match mode, coverage).",
+    "verdict": "Refusal with a decision; no answer.",
+    "facets": "No facet answered."
+   },
+   "claude_prism": {
+    "trend": "Full traced series. The half-on-half change (+19.8%, +1.3%, -15.9%) recomputes exactly, peaks are named, and it flags the Ukraine label mismatch. One trough is wrong.",
+    "comparison": "Ratios 4.80x, 3.47x, 1.38x and their deltas recompute exactly. The baseline is defined and the overlap caveat is carried.",
+    "chart": "Traced volume chart plus a derived critical-share chart; captions tie each to a claim.",
+    "drilldown": "Term and month layers with item-level identifiers missing; specific follow-ups (spike month, tone dip, overlap), 3/6 ok.",
+    "export": "Monthly and summary CSVs, fully traced, with a provenance JSON.",
+    "repro": "78/85 traced; derived figures recomputable; 7 untagged (e.g. the 107.1% row check).",
+    "accuracy": "Catches that combined_articles equals the sum (not distinct articles). It misstates Russia's lowest month.",
+    "limits": "Window end vs today, censoring, match mode and overlap are placed where used. It says what would close the gaps.",
+    "verdict": "Answer, decision, confidence with reason and what would change it. The Ukraine -15.9% contrary point sits in the trend section, not the verdict.",
+    "facets": "Volume, trend, tone and overlap are all addressed with grounded values or grounded unknowns."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "Calls the series unmeasured and labels expectations as estimates, but provides no series.",
+    "comparison": "Describes planned ratios only; no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Names possible breakdowns and follow-ups, but none executed or returned data.",
+    "export": "CSV is an empty plan, not a traced measurement.",
+    "repro": "Calls and export provenance are incomplete and describe unrun work.",
+    "accuracy": "Does not contradict the reference or present measured figures as fact; overlap is correctly flagged.",
+    "limits": "Clearly states that no call ran and identifies the planned window, unknown coverage, censoring, and match mode.",
+    "verdict": "Directly says the comparison cannot be made, gives a decision, confidence, and what would change it.",
+    "facets": "Covers the inability to measure and the overlap caveat, but leaves the measured comparison facets unanswered."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or quantified change.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Lists possible breakdowns and calls, but none executed; calls do not match the reference interface.",
+    "export": "No CSV or provenance export.",
+    "repro": "No measured claims, but proposed calls lack valid replayable arguments for the reference setup.",
+    "accuracy": "Makes no unsupported measured claims and correctly identifies overlap as unresolved.",
+    "limits": "States several relevant limits, but does not have a measured window or source-specific coverage and censoring details.",
+    "verdict": "Gives a clear non-measurement answer, decision, confidence, and a condition that would change it.",
+    "facets": "Addresses the missing data and overlap issue, but supplies no grounded term comparison or trend."
+   },
+   "claude_prism": {
+    "trend": "Traced monthly series and peak dates, but the growth change is not consistently quantified: the tool growth values are reported without a defined formula, and the first-versus-last-year comparison is derived separately. The censored-month caveat is not clearly carried into the chart.",
+    "comparison": "Ratios and deltas recompute, but the stated combined-article total is the sum of overlapping term counts, so it is not a distinct-article baseline; the tool's overlap caveat is not resolved.",
+    "chart": "Both charts trace to c1 and have units and windows, but the monthly chart does not visibly mark the censored latest month, and the critical-share chart treats an undefined classifier as a tone comparison.",
+    "drilldown": "Provides term and month layers and six concrete follow-ups; only three executed successfully, and no item-level breakdown or executed result is folded into the report.",
+    "export": "Monthly series and term summary are traced, have provenance and are referenced in the text. The exports include the needed rows and identifiers, though they lack the specified provenance JSON shape.",
+    "repro": "The primary call and window are recorded, and most numeric claims trace; seven numeric claims are untagged, and the regenerate recipe does not fully document all derived calculations.",
+    "accuracy": "The headline ordering is supported, but the interpretation of tone_ratio is speculative and the combined_articles sum risks implying a distinct-article total despite overlap.",
+    "limits": "Identifies the window, lag, match-mode uncertainty, and overlap, but the censored-month caveat is not clearly reconciled with the chart and is displaced into methodology.",
+    "verdict": "Direct answer and decision are present, but confidence relies on a coverage check and caveats while the verdict omits the strongest contrary evidence: Ukraine's derived year-over-year decline and unresolved overlap.",
+    "facets": "Grounded volume, trends, and tone fields are covered; overlap is acknowledged but not measured, and the tool's common-word caveat is not checked against a sources panel."
+   },
+   "chatgpt_prism": {
+    "trend": "The monthly series is traced and direction labels are reported, but no change is quantified beyond undefined growth figures; the chart also plots the censored month without a visible marker.",
+    "comparison": "Ratios and deltas recompute on the same term-count scale, and overlap is explicitly caveated. The combined_articles baseline is described imprecisely, but does not drive the ratios.",
+    "chart": "The monthly chart traces to the source and supports a stated claim, but the censored month is not visibly marked and the requested tone facet is not charted.",
+    "drilldown": "One traced monthly layer is present, but the proposed calls are generic or fail the benchmark checks; no concrete item-level follow-up is returned.",
+    "export": "Both needed CSV tables are present, referenced, and traced with source, window, unit, and provenance. They omit row-level coverage flags and the required provenance JSON shape.",
+    "repro": "Most numbers trace and the main call is recorded, but three numeric claims are untraced and the recipe does not rebuild every chart and table.",
+    "accuracy": "The ranking and ratios match the reference, and undefined tone fields are treated cautiously. The description of the three terms as 'lanes' is imprecise.",
+    "limits": "States the window, lag, and match uncertainty, but does not place all applicable caveats next to the figures; the exact match and overlap behavior remains unresolved.",
+    "verdict": "Direct answer, decision, confidence, and a condition for reconsideration are given; the limits and overlap caveat support the conclusion, though the strongest contrary pattern in the monthly series is not discussed.",
+    "facets": "Covers volume, trend labels, tone limitations, and overlap as unresolved; it does not quantify overlap or explain the movement behind the peaks."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

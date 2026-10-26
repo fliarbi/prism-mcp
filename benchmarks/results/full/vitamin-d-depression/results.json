@@ -1,0 +1,253 @@
+{
+ "slug": "vitamin-d-depression",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 21.5,
+   "plain": 21.5,
+   "invented": true,
+   "by_judge": {
+    "opus": 22.2,
+    "gpt": 20.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 4.0,
+    "refs": 4.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 71.4,
+   "plain": 71.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.0,
+    "gpt": 73.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 0.5,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 1.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 26.3,
+   "plain": 26.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.2,
+    "gpt": 28.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.5,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 4.5,
+    "facets": 3.5
+   },
+   "strict": 80.2,
+   "plain": 80.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.4,
+    "gpt": 89.0
+   }
+  }
+ },
+ "judge_mad": 0.55,
+ "verdicts": {
+  "opus": "D and A both grounded their answer in the recorded calls, with verbatim quotes and resolving DOIs. D went further: it surfaced the 16-paper subject/outcome intersection, the news trend, the source-fit failures and per-corpus gaps to today, which justified a low-confidence 'not established' verdict. B and C reached clinically sensible conclusions from memory, but could not be traced; C also attached mismatched or unresolvable identifiers to its key references.",
+  "gpt": "A best supports a treatment decision: it gives a cautious answer, distinguishes broad vitamin D publication volume from depression-specific evidence, and presents the conflicting review findings with traceable sources. B covers more corpus facets, but its unsupported news detail and treatment of source-fit failures as contradictions reduce confidence; C and D rely on unverified specifics."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "VITAL-DEP HR stated ≈0.99 (reported 0.97)",
+    "Vellekkatt & Menon venue/year conflated (J Postgrad Med 2019 vs Indian J Psychol Med)",
+    "Mikola 2023 venue inconsistent (Nutrition Reviews vs Crit Rev Food Sci Nutr)",
+    "D-Health age range given as 60–79"
+   ],
+   "chatgpt_bare": [
+    "Shaffer 2014 attributed to Psychosomatic Medicine but given a J Clin Psychopharmacol DOI; evidence.csv venue contradicts the reference list",
+    "VITAL-DEP DOI 10.1001/jama.2019.18400 not found",
+    "Verbatim quotes presented without a source that can verify them"
+   ],
+   "claude_prism": [
+    "States the newest period is excluded from each series while plotting 2025 in the research series",
+    "Labels the WHI and dose-comparison trials 'contradicts' although the tool's stance is 'unrelated' (caveated in text)"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Describes the 2026-06-01 news end as the newest month censored; the record says the newest period is excluded because of ingest lag, and its trend window ends 2026-05-01.",
+    "Calls the 70% endpoint change exact enough, but it is a rounded calculation (7097/4179−1 ≈ 69.8%)."
+   ],
+   "claude_prism": [
+    "Says January is consistently the highest month each year and gives a 2025 January count of 50; those values are absent from the recorded monthly array, which only contains monthly points through 2021-06.",
+    "Treats source-fit-failed documents as contradictions, including the 2025 dose-comparison trial and the 2012 WHI study, though it appropriately notes their design limits.",
+    "Calls the 0.72 difference a delta despite acknowledging the estimates may use noncommensurate scales."
+   ],
+   "claude_bare": [
+    "Presents unverified VITAL-DEP, D-Health, and meta-analysis figures as factual specifics despite marking some as estimates.",
+    "Attributes a 2019 meta-analysis to Vellekkatt and Menon, while the supplied record identifies their review as 2018.",
+    "The cited numeric efficacy conclusions and recommendations are not supported by the recorded responses."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1001/jama.2019.18400 is not found in the corpus as the claimed VITAL-DEP paper.",
+    "The VITAL-DEP estimate, confidence interval, and quoted wording are not in the supplied reference record.",
+    "The 2014 Shaffer reference metadata and quote are not verified by the record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Traced 2017-2025 research series with a window. The 70% endpoint change is correct (7097/4179). Omits the tool's CAGR (6.8%), its late_vs_early ratio (1.43) and the censoring note for the research series.",
+    "comparison": "Traced SMD against a zero baseline, with the correct caveat that the two scales may differ. No delta or ratio is stated.",
+    "chart": "One fully traced volume chart with window, unit, source and caption. The news series the data supports is not charted.",
+    "drilldown": "One traced document layer with DOIs and quotes. Only 1 of 4 follow-ups executed ok.",
+    "export": "One traced CSV with full provenance and a provenance JSON. There is no documents/DOI table, which the question needs.",
+    "repro": "44/44 numbers traced. Calls are listed with args and capture date. The derived 70% and 144-day gap recompute exactly.",
+    "refs": "3/3 DOIs resolve. Quotes are verbatim, each is tied to a claim, and contrary evidence is included. No explicit tier ranking with reasons.",
+    "accuracy": "No contradictions with the record. Does not catch the anomaly that the research series is marked censored at 2025 while plotting 2025.",
+    "limits": "Limits sit next to the numbers they bound: windows, censoring, gap to today, lane, the 16-paper intersection, coverage caveat, and an explicit list of what cannot be answered.",
+    "verdict": "Direct answer, decision, medium confidence with a reason, a change condition, and the contrary meta-analysis named.",
+    "facets": "Effect, evidence, research trend and limits are covered. The news trend facet goes unread."
+   },
+   "claude_bare": {
+    "trend": "No measured series. The illustrative effect 'trend' is labelled estimate.",
+    "comparison": "Memory numbers on an 'HR-like' scale. The SMD and HR scales are conflated.",
+    "chart": "Chart is labelled estimate, which is honest but unmeasured.",
+    "drilldown": "Breakdown layers are named from memory. Only 1 of 6 follow-ups returned ok.",
+    "export": "CSV source is 'estimate'.",
+    "repro": "0/27 traced. The untagged verdict numbers (25, 30 nmol/L) cannot be regenerated.",
+    "refs": "No identifiers and no quotes. Several venues are inconsistent.",
+    "accuracy": "Labelled memory, but with specific slips: VITAL-DEP HR given as ≈0.99 (reported 0.97), D-Health age range, and wrong Vellekkatt year/venue and Mikola venue.",
+    "limits": "Specific about what is unmeasured: no corpus, knowledge cutoff, gap to today.",
+    "verdict": "Ceiling 0 because the verdict contains untagged numbers.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "chatgpt_bare": {
+    "trend": "No series. The trend section shows a single study.",
+    "comparison": "VITAL-DEP HR compared with placebo from memory.",
+    "chart": "Chart values match public VITAL-DEP figures, but cite an unverifiable reference.",
+    "drilldown": "Two items without traced identifiers. Follow-ups 0/5 ok.",
+    "export": "The CSV pairs a JCP DOI with Shaffer, while the reference list says Psychosomatic Medicine. Rows are untraced, not labelled estimate, and internally inconsistent.",
+    "repro": "Numbers come from cited publications only. None trace to a recorded call.",
+    "refs": "The VITAL-DEP DOI is not found. The Shaffer DOI and venue mismatch. The verbatim quotes appear fabricated.",
+    "accuracy": "Fabricated-looking identifier and quote presented as fact. The 'gap of six years' is odd.",
+    "limits": "Honest and specific about what is unmeasured and how partial the coverage is.",
+    "verdict": "Reasonable, directly answered verdict with confidence and a change condition. It rests partly on misattributed references.",
+    "facets": "Facets are answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Traced research series with CAGR 6.8% and late/early ratio 1.43. News series given early vs late (625 vs 637), with the January 2023 peak at 70 and censoring stated. It still says the newest period is excluded while plotting 2025.",
+    "comparison": "Traced delta of 0.72 with a scale caveat, plus the news early/late ratio of 1.02. The lane counts (16 vs 81,033) address the association-vs-RCT problem.",
+    "chart": "Fully traced research chart with window and source. The news series is not charted.",
+    "drilldown": "Ceiling 1: follow-ups 0/6 ok.",
+    "export": "Ceiling 0. The effect_sizes CSV mixes populations and leaves nulls unexplained. The provenance JSON drops args.",
+    "repro": "54/54 traced. The prism-calls block is complete, but the provenance JSON omits the claim args, and the tier 'rank' numbers are untagged.",
+    "refs": "7/7 DOIs resolve. Quotes are verbatim, tiers stated, contrary sources included. Stance labels for WHI and the dose-comparison RCT depart from the tool's 'unrelated', though with explanation.",
+    "accuracy": "Faithful to the record. It catches the gap between proposed stance and failed source-fit. Minor overreach: 'January consistently highest'.",
+    "limits": "Window and gap to today per corpus, lane, coverage, censoring and match mode, all placed next to the numbers. Limits drive the low-confidence reading, and it says what would close the gap.",
+    "verdict": "Direct answer, decision, low confidence with traced reasons, a change condition and the contrary meta-analysis. The deficiency advice is flagged as background knowledge.",
+    "facets": "Effect, evidence, research and news trends, and the lane mismatch are all covered with grounded values."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced annual series, exact 70% endpoint increase, peak and full points; no decomposition available.",
+    "comparison": "Defines the null baseline and correctly declines to compare estimates reported on potentially different scales.",
+    "chart": "Fully traced annual chart, with window, unit, source, caption, and claim; all plotted points match.",
+    "drilldown": "Shows documents and a tally, but no follow-up call executed successfully beyond the ceiling of 3.",
+    "export": "Series CSV is traced, but the question also needs effect/document data; no export of those tables.",
+    "repro": "Lists calls and arguments and a regenerate block, but not every prose number has a clearly replayable source window.",
+    "refs": "All three resolvable DOIs are tied to claims with matching metadata and verified quotes; includes contrary evidence and tiers.",
+    "accuracy": "Distinguishes subject volume from depression-specific evidence and correctly reports the mixed estimates and intersection caveat.",
+    "limits": "Places corpus windows, lane, censoring, coverage caveat, and interpretation limits near the claims they bound.",
+    "verdict": "Direct, calibrated answer with a decision, confidence, contrary evidence, and conditions that would change it.",
+    "facets": "Covers efficacy, research trend, evidence tension, and lane mismatch; does not ground special facets such as seasonality or research/news mismatch with aligned data."
+   },
+   "claude_prism": {
+    "trend": "Research and news trends are traced and quantified, with censoring noted; however, the news monthly series supplied is truncated, and the stated 2025 January value is unsupported by the record.",
+    "comparison": "Numeric contrast and baseline are stated, but the 0.72 subtraction compares effect estimates that may not share a scale, weakening the comparison.",
+    "chart": "Annual series chart fully traces to the recorded call and supports the stated publication-volume trend.",
+    "drilldown": "Breakdown is present, but no proposed follow-up executed successfully.",
+    "export": "No CSV export meets the rubric; script ceiling is zero.",
+    "repro": "Most numbers trace and calls are listed, but some claims exceed the record, including an unsupported monthly news detail; regeneration is incomplete.",
+    "refs": "Seven corpus-resolved DOIs with metadata and quotes tied to claims; includes contrary and null evidence.",
+    "accuracy": "Mostly careful about lane and scale limits, but treats the 2012 and 2025 source-fit failures as contradictions and asserts a January 2025 news count not present in the supplied series.",
+    "limits": "Covers windows, lane, censoring, match mode, and coverage caveat; some limits are summarized rather than consistently attached to each number.",
+    "verdict": "Direct answer and decision, but confidence is low without a grounded rationale for the advice to supplement only when deficient, and it does not address what would change the verdict sufficiently.",
+    "facets": "Covers corpus counts, framing, effects, evidence tiers, and both research and news trends, including the subject/outcome intersection."
+   },
+   "claude_bare": {
+    "trend": "No measured series; the plotted values are explicitly estimates, which earns the ceiling of 1.",
+    "comparison": "Estimate-based comparison is not verifiable on a common scale; script ceiling is 2.",
+    "chart": "Illustrative estimate chart, not a traced series; estimate labelling earns 1.",
+    "drilldown": "Generic proposed calls did not yield the required traced layers or successful follow-ups.",
+    "export": "Estimate-labelled table only; no traced export.",
+    "repro": "Numbers are not reproducible from listed calls, and the calls block is empty.",
+    "refs": "References lack verified identifiers and quotes; none are grounded in the record.",
+    "accuracy": "The answer imports unverified trial and meta-analysis specifics and overstates a conclusion about prevention as evidence for treatment.",
+    "limits": "Acknowledges memory estimates and the absent search, but omits applicable corpus-specific limits because no data was retrieved.",
+    "verdict": "Verdict rests on unverified specifics and conflicts with the record’s mixed, narrow retrieved evidence; script ceiling is zero.",
+    "facets": "Most requested measured facets are unavailable and not grounded; estimates do not count as measured coverage."
+   },
+   "chatgpt_bare": {
+    "trend": "Explicitly says no time series was measured; chart is a single-study result, not a trend.",
+    "comparison": "A cited comparison is described, but it is an unverified memory figure and cannot be checked against the record.",
+    "chart": "The chart uses a cited but unverified public result; ceiling 1, and it does not show a trend.",
+    "drilldown": "Names broad breakdowns but provides no successful follow-up or item-level traceable layer.",
+    "export": "Estimate/citation-based tables are not traced to recorded responses; ceiling 1.",
+    "repro": "No calls were run and the calls block is empty; figures are not reproducible here.",
+    "refs": "One DOI fails to resolve to the claimed work, capping the score at 1.",
+    "accuracy": "The claimed VITAL-DEP estimate and Shaffer result are not supported by the reference record; one DOI is specifically not found.",
+    "limits": "Clearly says no corpus was queried, but does not supply the source-specific limits needed for higher scores.",
+    "verdict": "Gives a direct bounded answer and decision, but relies on unverified evidence and lacks a grounded confidence basis.",
+    "facets": "Most measured facets are explicitly unavailable; the two-publication memory summary does not cover them with grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

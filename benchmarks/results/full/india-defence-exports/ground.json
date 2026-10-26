@@ -1,0 +1,612 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 870,
+  "charts": [
+   {
+    "id": "exports_fy",
+    "title": "India defence exports by fiscal year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Defence exports",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "india_defence_exports_fy.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Which months spiked and why?",
+    "args": {
+     "term": "India defence exports",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "granularity must be one of ['daily', 'weekly', 'monthly', 'quarterly', 'yearly']",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does tone compare with defence-sector coverage overall?",
+    "args": {
+     "term": "India defence exports",
+     "baseline": "defence"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'baseline': 'defence'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='defence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which publishers supply most of the coverage?",
+    "args": {
+     "term": "India defence exports",
+     "by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries are named as buyers?",
+    "args": {
+     "term": "BrahMos export"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 24.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"russia\", \"articles\": 2, \"share_pct\": 25.0, \"lift\": 30.0}, {\"label\": \"india\", \"articles\": 2, \"share_pct\": 25.0, \"lift\": 3.8}, {\"label\": \"vietnam\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 40.6}, {\"label\": \"philippines\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 21.7}, {\"label\": \"indonesia\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 25.8}, {\"label\": \"thailand\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 43.5}], \"placed_articles\": 2, \"matched_articles\": 3, \"placed_pct\": 66.7, \"what\": \"the place an article is ABOUT, as resolved by the pipeline — not where it was published\"}"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "What do critical stories say about delivery or import dependence?",
+    "args": {
+     "term": "India defence exports import dependence",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'India defence exports import dependence'",
+    "seconds": 4.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 44,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 10,
+   "untagged_examples": [
+    "26 — - Decision: Treat \"record exports, rising ambition\" as a supportable headline. Do not rely",
+    "26 — - What would change it: Running the news.trends, news.compare and news.critical calls belo",
+    "1.0 — | FY2016-17 | 1,521 [r1] | 1.0x |",
+    "13.9 — | FY2023-24 | 21,083 [r1] | 13.9x |",
+    "15.5 — | FY2024-25 | 23,622 [r2] | 15.5x |",
+    "32.9 — | Target 2029 | 50,000 [r3] | 32.9x |",
+    "24 — Destinations named in reporting (est.): the US, France and Armenia were among the top dest",
+    "31 — - Windows: official data end 31 March 2025, a gap of about 19 months to today (2026-10-23)"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 164,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 26, 26"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1032,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly articles mentioning defence exports",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "tone_ratio",
+    "title": "Negative/positive ratio: defence exports vs corpus baseline",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "ratio",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which articles are actually negative or sceptical about export claims?",
+    "args": {
+     "term": "defence exports",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.8,
+    "sample": "{\"articles\": [{\"target_id\": \"6a0ea0299341f3dc2adbef4a\", \"url\": \"https://www.outlookbusiness.com/economy-and-policy/indias-defence-exports-jump-25-fold-since-fy17-but-import-dependence-persists\", \"title\": \"India’s Defence Exports Jump 25-Fold Since FY17, But Import Dependence Persists – Outlook Business\", \"excerpt\": \"India defence exports surge 25 times to ₹384bn since FY2017Private sector share in defence exports rises to 45% in FY2026India still remains world’s second-largest arms importer despite manufacturing growthIndia’s defence exports have increased more than 25 times since FY2017, reflecting a broader s\", \"publisher\": \"outlookbusiness.com\", \"published\": \"2026-05-06 10:14:39\", \"partit"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How did coverage of BrahMos exports develop?",
+    "args": {
+     "term": "BrahMos exports"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What drove the negative spike in September 2024?",
+    "args": {
+     "term": "defence exports",
+     "since": "2024-09-01",
+     "until": "2024-10-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"points\": [{\"period\": \"2024-09-01\", \"negative\": 13, \"positive\": 8, \"neutral\": 1, \"ratio\": 1.62}], \"totals\": {\"neg\": 13, \"pos\": 8, \"neutral\": 1, \"n\": 22, \"neg_pct\": 59.1, \"pos_pct\": 36.4, \"ratio\": 1.62}, \"corpus_baseline_ratio\": 0.61, \"vs_baseline\": 2.66, \"reading\": \"markedly more negative than ordinary news coverage\"}"
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does Indian defence export coverage compare with Armenia-related coverage?",
+    "args": {
+     "terms": [
+      "defence exports",
+      "Armenia India arms"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.6,
+    "sample": "{\"terms\": [\"defence exports\", \"Armenia India arms\"], \"rows\": [{\"term\": \"defence exports\", \"articles\": 551, \"share_pct\": 100.0, \"critical\": 497, \"direction\": \"flat\", \"growth\": 1.18, \"tone_ratio\": 0.18, \"vs_baseline\": 0.31, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 30, \"critical\": 28, \"negative\": 2, \"positive\": 27, \"mean_priority\": 7.67, \"critical_pct\": 93.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 28, \"critical\": 26, \"negative\": 1, \"positive\": 27, \"mean_priority\": 7.68, \"critical_pct\": 92.9, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 17, \"critical\": 13, \"negative\": 2, \"positive\": 15, \"mean_priority\": 7.24, \"critical_pct\": 76.5, \"partial_period\""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Where are buyers named in the news?",
+    "args": {
+     "term": "defence exports",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 333, \"share_pct\": 26.5, \"lift\": 4.0}, {\"label\": \"united states\", \"articles\": 143, \"share_pct\": 11.4, \"lift\": 0.5}, {\"label\": \"russia\", \"articles\": 59, \"share_pct\": 4.7, \"lift\": 5.6}, {\"label\": \"china\", \"articles\": 52, \"share_pct\": 4.1, \"lift\": 0.8}, {\"label\": \"ukraine\", \"articles\": 52, \"share_pct\": 4.1, \"lift\": 8.7}, {\"label\": \"france\", \"articles\": 51, \"share_pct\": 4.1, \"lift\": 2.3}, {\"label\": \"armenia\", \"articles\": 41, \"share_pct\": 3.3, \"lift\": 121.0}, {\"label\": \"philippines\", \"articles\": 39, \"share_pct\": 3.1, \"lift\": 5.4}, {\"label\": \"pakistan\", \"articles\": 28, \"share_pct\": 2.2, \"lift\": 2.1}, {\"label\": \"israel\", \"articles\": 28, \"s"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "What happened after May 2026?",
+    "args": {
+     "term": "defence exports",
+     "since": "2026-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.1,
+    "sample": "{\"points\": [{\"period\": \"2026-05-01\", \"articles\": 22, \"critical\": 21, \"negative\": 0, \"positive\": 22, \"mean_priority\": 7.55, \"critical_pct\": 95.5, \"partial_period\": false}], \"total\": 22, \"critical_total\": 21, \"trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"critical_trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"growth_note\": \"Zero-count periods included; partial boundary buckets excluded from growth.\", \"country\": null}"
+   }
+  ],
+  "followups_ok": 6,
+  "numbers": {
+   "total": 81,
+   "traced": 81,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 137,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 331,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How did monthly article volume about India's defence exports change, and what was the quantified change?",
+    "args": {
+     "query": "India defence exports",
+     "from": "2025-10-23",
+     "to": "2026-10-23",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...', 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does the coverage tone compare with the corpus baseline?",
+    "args": {
+     "query": "India defence exports",
+     "baseline": "corpus",
+     "from": "2025-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...3', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes, organisations, people, and places appear in the coverage, and what percentage of articles have a placed location?",
+    "args": {
+     "query": "India defence exports",
+     "from": "2025-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...3', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What critical headlines appeared, with date, publisher, and URL?",
+    "args": {
+     "query": "India defence exports",
+     "from": "2025-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...3', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How concentrated is coverage among publishers?",
+    "args": {
+     "query": "India defence exports",
+     "dimension": "publisher",
+     "from": "2025-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...3', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 99,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 843,
+  "charts": [
+   {
+    "id": "monthly-coverage",
+    "title": "Monthly news articles matching “defence exports”",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "defence-exports-monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which official fiscal-year figures support the reported export growth, and how do sources reconcile differences?",
+    "args": {
+     "term": "India defence exports official fiscal year exports",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'India defence exports official fiscal year exports'",
+    "seconds": 2.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which customers and destinations are named in coverage, and how often?",
+    "args": {
+     "term": "defence exports",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 333, \"share_pct\": 26.5, \"lift\": 4.0}, {\"label\": \"united states\", \"articles\": 143, \"share_pct\": 11.4, \"lift\": 0.5}, {\"label\": \"russia\", \"articles\": 59, \"share_pct\": 4.7, \"lift\": 5.6}, {\"label\": \"china\", \"articles\": 52, \"share_pct\": 4.1, \"lift\": 0.8}, {\"label\": \"ukraine\", \"articles\": 52, \"share_pct\": 4.1, \"lift\": 8.7}, {\"label\": \"france\", \"articles\": 51, \"share_pct\": 4.1, \"lift\": 2.3}, {\"label\": \"armenia\", \"articles\": 41, \"share_pct\": 3.3, \"lift\": 121.0}, {\"label\": \"philippines\", \"articles\": 39, \"share_pct\": 3.1, \"lift\": 5.4}, {\"label\": \"pakistan\", \"articles\": 28, \"share_pct\": 2.2, \"lift\": 2.1}, {\"label\": \"israel\", \"articles\": 28, \"s"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "Which outlets account for the largest share across a larger article sample?",
+    "args": {
+     "term": "defence exports",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='defence exports', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "Which articles drive the April 2026 coverage spike?",
+    "args": {
+     "term": "defence exports",
+     "since": "2026-04-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"points\": [{\"period\": \"2026-04-01\", \"articles\": 89, \"critical\": 85, \"negative\": 13, \"positive\": 76, \"mean_priority\": 7.62, \"critical_pct\": 95.5, \"partial_period\": false}, {\"period\": \"2026-05-01\", \"articles\": 22, \"critical\": 21, \"negative\": 0, \"positive\": 22, \"mean_priority\": 7.55, \"critical_pct\": 95.5, \"partial_period\": false}], \"total\": 111, \"critical_total\": 106, \"trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"critical_trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"growth_note\": \"Zero-count periods included; partial boundary buckets excluded from growth.\", \"country\": null}"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical coverage examines import dependence or export constraints?",
+    "args": {
+     "term": "defence exports import dependence",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'defence exports import dependence'",
+    "seconds": 4.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 33,
+   "traced": 32,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

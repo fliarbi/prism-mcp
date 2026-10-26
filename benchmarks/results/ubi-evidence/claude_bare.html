@@ -1,0 +1,142 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Claude alone</title><style>
+:root{--bg:#ffffff;--ink:#14161a;--ink2:#4b5160;--ink3:#8a8f9c;--line:#e3e5ea;--card:#f6f7f9;--accent:#2a78d6;--bad:#c4321d;--good:#1a8f62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 32px 40px}
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:18px}
+.bar .who{font-weight:700;font-size:20px}.bar .q{color:var(--ink2);font-size:13px;max-width:560px;text-align:right}
+h2{font-size:18px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+table{border-collapse:collapse;margin:10px 0;font-size:13px;width:100%}th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}code{background:var(--card);padding:1px 4px;border-radius:3px;font-size:12.5px}
+.chart{margin:12px 0}.chart img,.chart svg{max-width:100%}.cap{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:9px;border:1px solid var(--line);color:var(--ink2);margin-left:6px}
+.tag.inv{color:var(--bad);border-color:var(--bad)}.tag.ok{color:var(--good);border-color:var(--good)}
+.csvh{font-size:12px;color:var(--ink2);margin-top:12px}details{margin:8px 0;font-size:12.5px}pre{white-space:pre-wrap;background:var(--card);padding:8px;border-radius:4px;font-size:11.5px}
+</style></head><body><div class='wrap'><div class='bar'><div class='who'>Claude alone</div><div class='q'>Does universal basic income reduce poverty without reducing work? What does the evidence say?</div></div><h2>Verdict</h2>
+<ul>
+<li>Answer: Cash transfers reduce poverty in the short term. The evidence on work is mixed. Most trials find little or no reduction, but the largest recent US trial found a small one (about 2 percentage points less participation).</li>
+<li>Decision: This supports funding or scaling targeted or time-limited transfers where poverty reduction is the goal, with labour outcomes tracked. It does not support assuming "no work effect" for a permanent, large, universal US-style program.</li>
+<li>Confidence: medium - several credible randomized trials agree on poverty and are close on work, but they differ in size, duration and setting. None tests a permanent, population-wide UBI.</li>
+<li>What would change it: Long-horizon (5+ years) results from a saturation or permanent-scheme trial showing larger work effects, or replication of the OpenResearch result.</li>
+</ul>
+<h2>What the data shows</h2>
+<p>Nothing here comes from a Prism call. This is a from-memory synthesis, so numbers are tagged [rN] to the cited source or (est.) where I am unsure of the exact figure. Verify before citing.</p>
+<ul>
+<li><strong>Poverty.</strong> US child poverty (Supplemental Poverty Measure, SPM) fell from 9.7% in 2020 to 5.2% in 2021 when the expanded Child Tax Credit paid out, then rose to 12.4% in 2022 after it lapsed [r1]. This is the strongest natural experiment on the poverty side, though it is a quasi-universal child benefit, not a UBI.</li>
+<li><strong>Largest recent US trial (OpenResearch, 2020–2023).</strong> 1,000 recipients got $1,000/month and 2,000 controls got $50/month, for three years [r2]. Labour-market participation was about 2 percentage points lower in the treatment group [r2]. Hours worked fell by about 1.3 per week [r2]. Pre-transfer individual income fell by roughly $1,500 a year (est.).</li>
+<li><strong>Finland (2017–2018).</strong> 2,000 unemployed people received €560/month [r3]. Employment effects were small. Treated people had about 6 more days employed in the second year (est.), and well-being was higher [r3].</li>
+<li><strong>Alaska Permanent Fund Dividend.</strong> Overall employment did not fall. Part-time work rose by about 1.8 percentage points (est.) [r4]. The dividend is annual and modest, so it is a weak test of a full UBI.</li>
+<li><strong>Developing countries.</strong> Kenya GiveDirectly transfers raised local output with a multiplier of about 2.5 (est.) [r5]. Evidence reviews find no systematic reduction in work from cash transfers [r6][r7].</li>
+<li><strong>Older negative income tax (NIT) experiments (1970s).</strong> Primary earners reduced hours by single-digit percentages (est.). Secondary earners and young people reduced them more, roughly 15–20% for wives (est.) [r8].</li>
+<li><strong>Stockton SEED (2019–2021).</strong> 125 people received $500/month. Full-time employment rose from 28% to 40% in the treatment group, versus 32% to 37% in the control group [r9].</li>
+</ul>
+<p>Facets this document cannot measure: publication or news volumes by corpus and lane, research-versus-news series, and read/unread counts. No retrieval was run, so these are unknown.</p>
+<h2>Trend</h2>
+<p>The trend that is best sourced is US child poverty across the period the Child Tax Credit expansion paid out and then lapsed.</p>
+<div class='chart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="US child poverty rate (Supplemental Poverty Measure), 2020-2023"><style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a8984;--grid:#e6e5e0;--axis:#c9c8c2;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neu:#b9b8b1;--band:#2a78d633}
+
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.t{font-size:17px;font-weight:600}.st{font-size:12.5px;fill:var(--ink2)}.src{font-size:11px;fill:var(--ink3)}
+.ax{font-size:11px;fill:var(--ink2)}.lb{font-size:12px;fill:var(--ink)}.v{font-size:11.5px;fill:var(--ink2)}
+.g{stroke:var(--grid);stroke-width:1}.a{stroke:var(--axis);stroke-width:1}
+.c1{fill:var(--s1)}.c2{fill:var(--s2)}.c3{fill:var(--s3)}.c4{fill:var(--s4)}.cn{fill:var(--neu)}
+.l1{stroke:var(--s1)}.l2{stroke:var(--s2)}.l3{stroke:var(--s3)}.l4{stroke:var(--s4)}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.bg{fill:var(--bg);stroke:var(--grid)}
+</style><rect class="bg" x="0.5" y="0.5" width="759" height="329" rx="10"/><text class="t" x="24" y="34">US child poverty rate (Supplemental Poverty Measure), 2020-2023</text><text class="st" x="24" y="54">percent of children · window {&quot;from&quot;: &quot;2020-01-01&quot;, &quot;to&quot;: &quot;2023-12-31&quot;}</text><line class="a" x1="64" x2="736" y1="272.0" y2="272.0"/><text class="ax" x="56" y="276.0" text-anchor="end">0</text><line class="g" x1="64" x2="736" y1="222.5" y2="222.5"/><text class="ax" x="56" y="226.5" text-anchor="end">3.8</text><line class="g" x1="64" x2="736" y1="173.0" y2="173.0"/><text class="ax" x="56" y="177.0" text-anchor="end">7.5</text><line class="g" x1="64" x2="736" y1="123.5" y2="123.5"/><text class="ax" x="56" y="127.5" text-anchor="end">11.2</text><line class="g" x1="64" x2="736" y1="74.0" y2="74.0"/><text class="ax" x="56" y="78.0" text-anchor="end">15</text><text class="ax" x="64.0" y="290" text-anchor="middle">2020</text><text class="ax" x="288.0" y="290" text-anchor="middle">2021</text><text class="ax" x="512.0" y="290" text-anchor="middle">2022</text><text class="ax" x="736.0" y="290" text-anchor="middle">2023</text><path class="ln l1" d="M64.0,144.0 L288.0,203.4 L512.0,108.3 L736.0,91.2"/><circle class="c1" cx="736.0" cy="91.2" r="4.5" stroke="var(--bg)" stroke-width="2"/><text class="v" x="736.0" y="81.2" text-anchor="middle">13.7</text><text class="src" x="24" y="316">source: ref:r1</text></svg><div class='cap'>Child poverty fell by 4.5 points in 2021 while the expanded credit paid out, then rose by 7.2 points in 2022 after it lapsed.<span class='tag'>from memory (estimate / cited, not checkable)</span></div></div>
+<p>The change was −4.5 points from 2020 to 2021 and +7.2 points from 2021 to 2022 (computed from [r1]). The 2023 figure of 13.7% is from my memory of the same series. Other factors also moved over these years, such as pandemic aid ending and inflation, so the chart is not a clean causal estimate.</p>
+<h2>Comparison</h2>
+<p>The scale is the change in work outcomes for treated people relative to a control group, in percentage points. The baseline is the control group in each study. The studies measure different things, so this is a rough comparison.</p>
+<table>
+<thead>
+<tr>
+<th>Study</th>
+<th>Measure</th>
+<th>Treatment effect vs control</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenResearch (US, 3 years)</td>
+<td>Labour-market participation</td>
+<td>−2.0 pp</td>
+<td>[r2]</td>
+</tr>
+<tr>
+<td>Alaska PFD (US, annual)</td>
+<td>Employment</td>
+<td>about 0 pp</td>
+<td>[r4]</td>
+</tr>
+<tr>
+<td>Alaska PFD</td>
+<td>Part-time work</td>
+<td>+1.8 pp (est.)</td>
+<td>[r4]</td>
+</tr>
+<tr>
+<td>Stockton SEED (US, 2 years)</td>
+<td>Full-time employment</td>
+<td>+12 pp vs +5 pp, so +7 pp net</td>
+<td>[r9]</td>
+</tr>
+</tbody>
+</table>
+<p>The Stockton net effect is 12 minus 5 = 7 pp, computed from [r9]. It is a small sample of 125 recipients and is not significant evidence by itself. The spread, from −2 to +7 pp, shows no consistent large negative effect. The best-powered US trial leans negative.</p>
+<h2>Evidence</h2>
+<p>Tier A is a peer-reviewed journal. Tier B is a working paper. Tier C is a government or pilot evaluation. I have not read these documents in this run, and I give no verbatim quotes because I cannot reproduce them reliably. Identifiers are from memory and should be verified.</p>
+<p><strong>Supporting "reduces poverty and little work loss":</strong>
+- [r1] Census, 2024, Tier C: the SPM child-poverty series above.
+- [r4] Jones &amp; Marinescu, 2022, AEJ: Economic Policy, Tier A: no fall in employment, with a part-time rise.
+- [r5] Egger et al., 2022, Econometrica, Tier A: large local multiplier from cash transfers.
+- [r6] Haushofer &amp; Shapiro, 2016, QJE, Tier A: cash transfers did not reduce work.
+- [r7] Banerjee et al., 2017, World Bank Research Observer, Tier A: no systematic discouragement of work.
+- [r3] Finland/Kela, 2020, Tier C: small positive or neutral employment effect.
+- [r9] Stockton SEED, 2021, Tier C: full-time employment rose.</p>
+<p><strong>Contradicting "without reducing work":</strong>
+- [r2] Vivalt et al., 2024, NBER, Tier B: participation about 2 pp lower, hours about 1.3 per week lower.
+- [r8] Negative income tax experiments, Robins 1985 (J. Human Resources), Tier A: hours reductions, larger for secondary earners.</p>
+<p>Tally (my own judgment, not a Prism count): by tier weighting of A=3, B=2, C=1, supporting evidence scores 3+3+3+3+3+1+1 = 17 and contradicting evidence scores 2+3 = 5. This reflects the number of studies, not their relevance to a permanent UBI. Read count is 0 and unread is 9, because none were opened in this run.</p>
+<h2>Drill-down</h2>
+<p>Breakdown layers to examine, with identifiers:
+- By population: working-age adults (r2, r3), parents (r1), unemployed (r3), low-income developing-country households (r5, r6).
+- By design: universal vs targeted, size, duration, and lump sum vs monthly.
+- By outcome: participation, hours, earnings, job quality, and health or education.</p>
+<details open><summary>Calls and follow-up queries (executable)</summary><pre>[
+{&quot;id&quot;:&quot;f1&quot;,&quot;question&quot;:&quot;How many research papers per year address UBI and labour supply, and what share find negative effects?&quot;,&quot;feature&quot;:&quot;research.stance_trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;universal basic income labor supply&quot;,&quot;from&quot;:&quot;2015&quot;,&quot;to&quot;:&quot;2026&quot;}},
+{&quot;id&quot;:&quot;f2&quot;,&quot;question&quot;:&quot;Which papers report effect sizes on employment from cash transfers?&quot;,&quot;feature&quot;:&quot;research.statistics&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;unconditional cash transfer employment effect&quot;}},
+{&quot;id&quot;:&quot;f3&quot;,&quot;question&quot;:&quot;Which studies contradict the claim that UBI does not reduce work?&quot;,&quot;feature&quot;:&quot;research.counter_evidence&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;basic income reduces work&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f4&quot;,&quot;question&quot;:&quot;How has news coverage of UBI trials changed since the 2024 OpenResearch release?&quot;,&quot;feature&quot;:&quot;news.trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;universal basic income&quot;,&quot;from&quot;:&quot;2023-01-01&quot;,&quot;to&quot;:&quot;2026-10-23&quot;}},
+{&quot;id&quot;:&quot;f5&quot;,&quot;question&quot;:&quot;How do news outlets compare in framing the OpenResearch result?&quot;,&quot;feature&quot;:&quot;news.compare&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;OpenResearch basic income study&quot;}},
+{&quot;id&quot;:&quot;f6&quot;,&quot;question&quot;:&quot;Which papers cite the OpenResearch working paper, and what do they conclude?&quot;,&quot;feature&quot;:&quot;research.citations&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;How Much Can We Learn from Unconditional Cash Transfers&quot;}}
+]</pre></details>
+<h2>Exports</h2>
+<p>File <code>ubi_child_poverty.csv</code>:</p>
+<div class='csvh'>⬇ <b>ubi_child_poverty.csv</b> · source ref:r1 · window 2020..2023 · unit percent<span class='tag'>from memory</span></div><table><tr><th>year</th><th>spm_child_poverty_pct</th></tr><tr><td>2020</td><td>9.7</td></tr><tr><td>2021</td><td>5.2</td></tr><tr><td>2022</td><td>12.4</td></tr><tr><td>2023</td><td>13.7</td></tr></table>
+<p>File <code>ubi_work_effects.csv</code>:</p>
+<div class='csvh'>⬇ <b>ubi_work_effects.csv</b> · source ref:r2 · window 2020..2023 · unit percentage<span class='tag'>from memory</span></div><table><tr><th>study</th><th>measure</th><th>effect_pp</th></tr><tr><td>OpenResearch</td><td>labour_market_participation</td><td>-2.0</td></tr><tr><td>Alaska PFD</td><td>employment</td><td></td></tr><tr><td>Alaska PFD</td><td>part_time_work</td><td>1.8</td></tr><tr><td>Stockton SEED</td><td>full_time_employment_net</td><td>7</td></tr></table>
+<p>The Alaska and Stockton rows come from [r4] and [r9]. The file-level source tag is [r2] for the first row only. The 1.8 value is an estimate (est.). The null for Alaska employment means "approximately zero, not reported as a number here".</p>
+<details open><summary>json</summary><pre>{&quot;exported_at&quot;:&quot;2026-10-23&quot;,&quot;calls&quot;:[]}</pre></details>
+<h2>Method and limits</h2>
+<ul>
+<li><strong>Windows.</strong> Evidence runs to 2023 data (child poverty and OpenResearch trial end). My knowledge extends to June 2026, which is 4 months before today (2026-10-23). Later publications are not covered.</li>
+<li><strong>Lanes and coverage.</strong> Research only, from memory. No news lane was read, and no Prism calls were run, so corpus volumes, news series and match mode are unknown. Coverage is partial and selective, not a systematic review.</li>
+<li><strong>Censoring.</strong> Trials end at 2–3 years, so long-run effects, including on skills and careers, are not observed. Studies with null or negative results may be over- or under-remembered.</li>
+<li><strong>What the counts are.</strong> The tally above is a count of studies I chose to recall, weighted by tier. It is not a measure of the literature's balance.</li>
+<li><strong>Not measured.</strong> No trial tests a permanent, universal, nationwide UBI. General-equilibrium effects, such as taxes to fund it, prices and wages, are not estimated here. Effect sizes on poverty from a true UBI are not measured in these data.</li>
+<li><strong>Interpretation.</strong> The reading that effects on work are small is mine. The 2024 OpenResearch result is a counterweight to it. Population differences (US adults, Finnish unemployed, Kenyan households) limit transfer between settings.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>[r1] Poverty in the United States (Supplemental Poverty Measure series, 2020–2023). US Census Bureau, report P60-series, 2021–2024. url: census.gov (exact report numbers to verify).</li>
+<li>[r2] Vivalt, Rhodes, Bartik, Broockman, Miller. How Much Can We Learn from Unconditional Cash Transfers? Evidence from the OpenResearch Lab. NBER Working Paper 32719, 2024. url: nber.org/papers/w32719</li>
+<li>[r3] Kela. Experiment on basic income in Finland: final results. Kela, 2020. url: kela.fi. See also Verho, Hämäläinen, Kanninen, AEJ: Economic Policy, 2022 (doi not verified).</li>
+<li>[r4] Jones &amp; Marinescu. The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund. AEJ: Economic Policy, 2022. doi:10.1257/pol.20190299</li>
+<li>[r5] Egger, Haushofer, Miguel, Niehaus, Walker. General Equilibrium Effects of Cash Transfers: Experimental Evidence from Kenya. Econometrica, 2022. doi:10.3982/ECTA17945</li>
+<li>[r6] Haushofer &amp; Shapiro. The Short-Term Impact of Unconditional Cash Transfers to the Poor. Quarterly Journal of Economics, 2016. doi:10.1093/qje/qjw025</li>
+<li>[r7] Banerjee, Hanna, Kreindler, Olken. Debunking the Stereotype of the Lazy Welfare Recipient. World Bank Research Observer, 2017 (doi not verified).</li>
+<li>[r8] Robins. A Guaranteed Annual Income: Evidence from Social Experiments (Seattle/Denver NIT). Journal of Human Resources, 1985 (identifier not verified).</li>
+<li>[r9] West et al. Preliminary Analysis: SEED's First Year. Stockton Economic Empowerment Demonstration, 2021. url: stocktondemonstration.org</li>
+</ul></div></body></html>

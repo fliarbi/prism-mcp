@@ -1,0 +1,243 @@
+{
+ "slug": "millets-india-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 37.3,
+   "plain": 37.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.4,
+    "gpt": 44.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 4.5,
+    "chart": 4.5,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 71.5,
+   "plain": 71.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 70.6,
+    "gpt": 72.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 0.5,
+    "chart": 0.5,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 0.5
+   },
+   "strict": 28.3,
+   "plain": 28.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 20.6,
+    "gpt": 36.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 4.0,
+    "export": 4.0,
+    "repro": 4.5,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 73.3,
+   "plain": 73.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 65.0,
+    "gpt": 81.6
+   }
+  }
+ },
+ "judge_mad": 0.66,
+ "verdicts": {
+  "opus": "C gave the decision-maker the most usable picture. It shows volume falling (CAGR -21.9%, late/early 0.55) with the critical share decomposed, tone set against a defined baseline, and limits placed next to the numbers, including the five unmeasured months. Its weak points are failing follow-ups and an unlinked headline layer. B is cleanly traced but thinner: one series, no critical or CAGR reading. A and D answered honestly from no data or memory and cannot support a decision.",
+  "gpt": "C is the strongest decision brief: it gives a traceable trend, a grounded tone comparison, useful breakdowns, and a reproducible export while distinguishing news coverage from adoption or outcomes. B has fuller trend decomposition, but its unsupported causal account and failed follow-ups weaken its decision value; C’s main gaps are the missing trend CAGR and incomplete placement of data limits."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "India's 41.5% is presented as a share of placed articles; 743/917 placed is about 81%, so this is a denominator misreading."
+   ],
+   "claude_prism": [
+    "India's 41.5% is presented as a share of the 1,551 matched articles and of placed coverage; both are denominator misreadings.",
+    "'Driven by' gives a causal reading of the April 2026 critical spike in the verdict."
+   ],
+   "claude_bare": [
+    "The resolution identifier A/RES/75/251 is possibly misattributed (IYM 2023 is likely A/RES/75/263)."
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "The estimated 2021–2025 attention series and its 2023 peak are not measured news-volume data.",
+    "The production share and foodgrain comparison are estimated and do not answer a corpus coverage comparison."
+   ],
+   "claude_prism": [
+    "The Centre–Tamil Nadu crop-bonus dispute is presented as the driver of the spring 2026 critical rise, but the reference provides no causal linkage.",
+    "Headline examples lack resolving article URLs and claim-specific traceable records in the deliverable."
+   ],
+   "chatgpt_prism": [
+    "The decline from the Sep 2024 peak to May 2026 is quantified, but the reported trend CAGR and early-versus-late comparison are omitted."
+   ],
+   "chatgpt_bare": [
+    "No measured facets, source references, or export are supplied."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series at all; the chart has empty points.",
+    "comparison": "None.",
+    "chart": "The chart block has no data points.",
+    "drilldown": "Generic follow-ups, all of which failed on execution (0/6).",
+    "export": "No export.",
+    "repro": "No numbers to trace or reproduce.",
+    "refs": "No sources consulted.",
+    "accuracy": "Empty but honest, with no contradictions.",
+    "limits": "Specific about what is unmeasured; no data limits to place.",
+    "verdict": "Topic list from memory with low confidence; not grounded.",
+    "facets": "No facet answered with grounded values."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced monthly series with window and censoring; peak, endpoints and delta quantified. No CAGR or critical/total decomposition.",
+    "comparison": "Tone ratio 0.09 vs baseline 0.58 traced, with the baseline and the machine-label caveat carried. Does not engage the post-IYM contrast.",
+    "chart": "One traced volume chart; tone and critical share not charted; broken empty image tag.",
+    "drilldown": "Theme, entity and critical layers with dated headlines but no URLs; 3/6 follow-ups ran.",
+    "export": "One traced CSV with provenance and a prose reference; no summary or headline table.",
+    "repro": "35/35 numbers traced; call block with args and window.",
+    "refs": "Headlines carry no resolvable identifiers.",
+    "accuracy": "Reads 41.5% as a share 'of placed articles' (743/917 is about 81%), a denominator misreading. Calls Marico the 'leading' organisation although that is by lift, not count.",
+    "limits": "Window, censoring, 144-day gap, match mode and enrichment stated, but mostly in a footer section.",
+    "verdict": "Direct answer, decision, confidence with reason and what would change it; does not address the IYM framing.",
+    "facets": "Volume, tone, themes, entities, geography and publishers covered. Critical share, the IYM after-spike question and mention-vs-central are not read."
+   },
+   "claude_prism": {
+    "trend": "Traced series with critical decomposition. CAGR -21.9%/-27.2%, late/early 0.55, peak, trough and recovery all named.",
+    "comparison": "Ratio 0.16x baseline with the baseline defined, monthly range given and small-base caveat for May 2026.",
+    "chart": "Volume and critical overlaid, fully traced. Tone not charted; no visible censor marker.",
+    "drilldown": "Layers listed with dated headlines, but all follow-ups failed (ceiling 1).",
+    "export": "Rich monthly CSV with provenance; single table (ceiling 3).",
+    "repro": "92/92 numbers traced, with a call block and export provenance.",
+    "refs": "Headlines are not given with resolvable URLs (says they are 'in payload').",
+    "accuracy": "'41.5% of the 1,551 matched' and '41.5% of placed coverage' are wrong denominators. Otherwise it catches anomalies: critical is not negative, Cameroon/Iceland collision, ThePrint as publisher, enrichment lag.",
+    "limits": "Limits are placed where the numbers are used: gap to today, enrichment bound, match modes, sample size. It also proposes a fresher-window call.",
+    "verdict": "Strong answer, but capped at 3 by the script. 'Driven by' is a causal phrasing, softened later.",
+    "facets": "Nearly all facets grounded; the IYM after-spike question is explicitly marked untestable. Mention-vs-central is addressed."
+   },
+   "claude_bare": {
+    "trend": "Attention index from memory, labelled estimate.",
+    "comparison": "Memory production figures compared with qualitative attention; not on a news scale.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Breakdown from memory; some follow-ups ran but none were folded back.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Numbers are memory or estimate.",
+    "refs": "Generic government sources. The UN resolution number may be misattributed: the IYM resolution is likely A/RES/75/263, not 75/251.",
+    "accuracy": "Honestly labelled memory; no direct contradiction with the record.",
+    "limits": "Honest and specific about what is unmeasured; plain-model cap.",
+    "verdict": "Hypothesis-grade answer with decision and confidence, but not grounded in measured data.",
+    "facets": "Mostly memory or estimate."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "The five-point series is explicitly an estimate from memory.",
+    "comparison": "The production comparison is numeric but estimated and uses no news measure.",
+    "chart": "The chart is an honest estimated memory series, so it earns the estimate anchor.",
+    "drilldown": "It gives several breakdown layers and three follow-up calls executed with non-empty results, but no traced items.",
+    "export": "The CSV is explicitly an estimated attention index.",
+    "repro": "It records no executed calls; its numbers are labeled estimates or tied to incomplete references.",
+    "refs": "The UN and budget references are identifiable, but production is only generically sourced and the claims lack supporting quotes.",
+    "accuracy": "It honestly labels the series as an estimate and avoids claiming measured corpus results, but some context claims are imprecise and not substantiated.",
+    "limits": "It clearly states the absence of measurement, unknown coverage, no window, and the gap to today.",
+    "verdict": "It gives a bounded answer, decision, low confidence, and what would change it, while acknowledging that the central facets are unmeasured.",
+    "facets": "It addresses the missing measured facets as unmeasured, but most requested facets receive no grounded findings."
+   },
+   "claude_prism": {
+    "trend": "The traced monthly series includes the full window and censoring, quantified decline and CAGR, peak and trough, and a critical-count decomposition.",
+    "comparison": "The positive/negative ratio comparison is on one corpus baseline, recomputes correctly, and includes the baseline definition and caveat.",
+    "chart": "Both monthly volume and critical counts are traced and labeled, with window, unit, source, and a caption interpreting the pattern.",
+    "drilldown": "Although it lists layers, its six proposed follow-up calls returned no usable results, and it supplies no traced item-level headline identifiers.",
+    "export": "The monthly series CSV is traced and has window, unit, coverage, and provenance, but it omits a needed separate summary table and some source field naming.",
+    "repro": "All numeric claims trace; the used call has arguments and window, and derived ratios and changes are reproducible.",
+    "refs": "The references fail the identifier ceiling: headline examples are not supplied as resolving URLs and claim-linked source records.",
+    "accuracy": "Most measurements are faithfully read, but the alleged Centre–Tamil Nadu dispute attribution and the causal framing of the 2026 critical rise are not established by the reference record.",
+    "limits": "It states the window, lag, match modes, and label limits near the findings, but does not fully resolve all applicability and coverage caveats in context.",
+    "verdict": "The answer and decision are clear, but the verdict lacks a sufficiently supported contrary finding and its causal claim about the critical rise weakens the confidence basis.",
+    "facets": "It grounds volume, tone, themes, geography, publishers, and entities, but misses the implied seasonality and research-versus-news comparison."
+   },
+   "chatgpt_prism": {
+    "trend": "The monthly series is traced and the peak-to-end change is quantified, but it omits the reference's reported CAGR and early-versus-late comparison.",
+    "comparison": "The tone ratio contrast is numeric, defined, and recomputes correctly; it directly compares the measured coverage with the corpus baseline.",
+    "chart": "The volume chart is fully traced and supports the prose, but there is no chart for the supported tone comparison.",
+    "drilldown": "It exposes multiple breakdowns with examples and identifiers and includes several specific follow-ups; three executed successfully with relevant results folded into the findings.",
+    "export": "The monthly CSV is traced with provenance, identifiers, null hygiene, and a rebuild call block.",
+    "repro": "The figures trace to the overview call, with args, window, capture date, and a recipe for rebuilding the chart and table.",
+    "refs": "The ceiling is 1 because article identifiers and claim-linked references do not meet the script's resolution check.",
+    "accuracy": "Its measured counts and field definitions align with the record; it distinguishes critical from negative and explains that place is about-location, not publication location.",
+    "limits": "It covers window, censoring, match modes, and classification limits, but does not carry every applicable coverage and enrichment caveat where the affected numbers appear.",
+    "verdict": "It gives a supported answer, decision, confidence, and conditions for revision, but does not name the strongest contrary evidence within its own findings.",
+    "facets": "It covers the implied seasonality, matching and overlap caveats, and news-versus-outcome gap alongside measured volume, tone, themes, geography, and sources."
+   },
+   "chatgpt_bare": {
+    "trend": "There is no measured series; the empty chart is explicitly an estimate and earns only the estimate anchor.",
+    "comparison": "It explains that no comparison is possible, but offers no numeric contrast.",
+    "chart": "The empty chart is explicitly presented as unavailable measurement, so it receives the estimate-chart ceiling.",
+    "drilldown": "It lists generic follow-up calls, none of which executed successfully.",
+    "export": "No data export is provided.",
+    "repro": "No measurement calls or numeric claims are supplied.",
+    "refs": "No sources or resolving references are provided.",
+    "accuracy": "It makes no measured claims that contradict the record and labels its broad topics as context rather than findings.",
+    "limits": "It specifically states that no corpus or window was used, but does not provide the reference record's applicable window and censoring details.",
+    "verdict": "It states a cautious answer, decision, confidence, and what evidence would change it, while making clear there is no measured basis.",
+    "facets": "It acknowledges the missing facets but supplies no grounded values or database-backed no-data results."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

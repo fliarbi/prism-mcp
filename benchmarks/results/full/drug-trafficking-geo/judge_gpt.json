@@ -1,0 +1,164 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "comparison": 2,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 5
+   },
+   "C": {
+    "comparison": 3,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 5,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 5
+   },
+   "D": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Only proposes a comparison; provides no measured figures.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-ups are planned, but most are unexecuted and no traced breakdown is shown.",
+    "export": "CSV is explicitly an estimate and has no measured rows.",
+    "repro": "No calls were run; values are labeled estimates.",
+    "accuracy": "Memory claims are marked as estimates, without a clear contradiction to the record.",
+    "limits": "Clearly says the measurements, windows, and coverage are unknown; some limits are necessarily generic without calls.",
+    "verdict": "Gives a cautious decision and conditions, but the answer rests on unmeasured directional claims.",
+    "facets": "Most requested facets are estimates or unmeasured."
+   },
+   "B": {
+    "comparison": "The comparison table juxtaposes news shares and research paper counts, which are different scales; it correctly declines to calculate a ratio.",
+    "chart": "The news chart is traced and well specified, but research geography—the other side of the question—is not charted.",
+    "drilldown": "Country rows and lane breakdowns are traced, with specific follow-ups; no executed follow-up result is folded back into the report.",
+    "export": "Exports are traced and referenced, but the research export lacks a window and the CSVs omit some needed provenance and identifiers.",
+    "repro": "Numeric claims trace to calls with arguments and windows where available; the provenance block allows regeneration.",
+    "accuracy": "Reads the lane definitions and placement denominator correctly, flags the small research sample, acronym collisions, and high-lift low-count caveat.",
+    "limits": "Places the main window, censoring, placement, lane, and matching caveats near the findings; the five-and-a-half-month gap is approximate.",
+    "verdict": "Direct and cautious, but does not name the shared US presence as contrary evidence or clearly say what finding would change the decision.",
+    "facets": "Covers authorship, publication, news geography, placement, patents, and the research-versus-news mismatch with grounded values or no-data."
+   },
+   "C": {
+    "comparison": "The US-versus-Mexico news comparison is traced and recomputable, but it addresses a news-country contrast rather than the studied-versus-reported contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Provides traced country and lane breakdowns plus concrete follow-up calls, but only one follow-up executed successfully and no result is folded in.",
+    "export": "Both requested lane exports and provenance are present, with identifiers, null handling, and source calls.",
+    "repro": "All presented values trace to the listed calls; the calls include arguments, windows, and a capture date.",
+    "accuracy": "Generally reads the fields correctly and catches important caveats, but the comparison risks implying more than the tiny research result can establish.",
+    "limits": "States the key window, censoring, placement, enrichment, and acronym caveats, though the script ceiling limits this score to 3.",
+    "verdict": "Answers directly with confidence and conditions, but does not fully name contrary evidence or support a decision-grade conclusion.",
+    "facets": "Addresses the research/news distinction, placement coverage, separate research lanes, patent result, and acronym and high-lift caveats."
+   },
+   "D": {
+    "comparison": "Says a comparison cannot be calculated and gives no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Names potential calls, but gives no traced breakdown and the follow-ups are not sufficiently executable or on-topic.",
+    "export": "No CSV export.",
+    "repro": "No measured numbers or reproducible results; calls are only proposed.",
+    "accuracy": "Makes no fabricated measured claims; its statement that no observations were supplied is a defensible memory-only response.",
+    "limits": "Clearly identifies missing windows and coverage, but cannot state the specific limits of the recorded data.",
+    "verdict": "Gives a direct answer, decision, confidence, and conditions, bounded by its stated lack of data.",
+    "facets": "Most facets are explicitly unmeasured rather than answered with grounded values."
+   }
+  },
+  "errors": {
+   "A": [
+    "Directional country and regional claims are memory estimates, not measured findings; several are broad and unsupported."
+   ],
+   "B": [
+    "The research-versus-news comparison table places news percentages beside paper counts, so it is not a shared-scale comparison."
+   ],
+   "C": [
+    "The numeric comparison supports a US-versus-Mexico news contrast, not the question's core contrast between where research is studied and where it is reported."
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it traces both research and news geography, explains why their counts cannot be directly compared, and carries the key coverage and timing caveats. Its main weakness is that the chart covers only news and the headline comparison does not establish a measured research-versus-reporting gap; C has stronger exports, but its comparison also stops short of that core contrast."
+ },
+ "scores": {
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "comparison": 2,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "comparison": 3,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 5,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 2,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 1,
+    "drilldown": 4,
+    "export": 1,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Three-point modelled death series with a named source but unverifiable, and the 1990 point is an estimate.",
+    "comparison": "Ratio table of memory figures. Arithmetic is fine but the figures are unverifiable.",
+    "chart": "Memory chart citing r1, partly labelled est.",
+    "drilldown": "Layers are named generically. No traced breakdown. Follow-ups are partly ok but not grounded.",
+    "export": "Memory table from a cited source.",
+    "repro": "No calls were run. Figures are from memory and labelled.",
+    "refs": "Only 2 of 7 references carry resolvable identifiers. The WHO and World Bank entries have none. No quotes.",
+    "accuracy": "The 1990 baseline of 0.64M looks wrong; GBD 2021 reports about 1.06M. That makes the +78% growth claim misleading, even with the est. label.",
+    "limits": "Honest and specific that no corpus lanes or windows exist, and gives the gap to today. The limits are mostly in a footer.",
+    "verdict": "Has answer, decision, confidence and what would change it, but rests on memory figures.",
+    "facets": "No corpus volumes, lanes, contested share or news trend. Mostly memory."
+   },
+   "B": {
+    "trend": "Traced 24-month news series with window. Late-vs-early 1.13, peak 2025-01 at 1,520, and the research CAGR are all given. Critical share 92.2% recomputes exactly. The final month is treated cautiously.",
+    "comparison": "Ratios 3.9×, 72% and 73% recompute exactly with the baseline defined. Keeps the c1 and c2 news series apart and the research and news lanes apart, and carries the 'three different questions' note.",
+    "chart": "Capped at 1 by the script.",
+    "drilldown": "Gives institutions with lift, three geography lenses and the framing mix, plus specific follow-ups. Only 3 of 6 follow-ups ran ok.",
+    "export": "Capped at 1 by the script.",
+    "repro": "112 of 115 numbers traced. Calls are listed with args and window, with a provenance JSON block.",
+    "refs": "8 of 8 DOIs resolve. Quotes are verbatim and tiers are stated. Flags that the Lancet paper is mis-tiered as a review. No contrary sources.",
+    "accuracy": "Catches anomalies: the CAGR sign conflicts with the 'rising' label, the c1 and c2 news series disagree, and the Lancet tier is off. The memory forecast is labelled est.",
+    "limits": "Limits sit next to the numbers they bound: censoring date, a 144-day gap to today, mention matching, the coverage floor, and what cannot be answered.",
+    "verdict": "Direct, decision-ready, with confidence and reason, and bounded by the window. Does not strongly name the contrary evidence it contains.",
+    "facets": "Covers volumes by lane, established, contested mix, key numbers, both trends and geography lanes. Burden after 2019 is honestly marked missing."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "One memory ratio, 26%.",
+    "chart": "No chart.",
+    "drilldown": "Layers named generically. 0 of 4 follow-ups ran ok.",
+    "export": "No export.",
+    "repro": "Memory figures from named sources only.",
+    "refs": "The DOI and WHO URLs resolve and are tied to claims. No quotes.",
+    "accuracy": "No contradictions. The figures are correct.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Clear answer and decision, but memory-based and narrow.",
+    "facets": "Most facets are answered with 'cannot measure'."
+   },
+   "D": {
+    "trend": "Traced news series with window and censoring, plus the research CAGR. Does not give the news late-vs-early ratio or the flat reading. No decomposition.",
+    "comparison": "3.9× definitional ratio, traced, with the baseline defined.",
+    "chart": "One fully traced volume chart. No research or critical view, and the censored month is not visibly marked.",
+    "drilldown": "Capped at 1 by the script. No breakdown layer.",
+    "export": "One traced CSV with provenance. Burden and volume tables are missing.",
+    "repro": "30 of 31 numbers traced. Calls are listed with args and window.",
+    "refs": "3 of 3 DOIs resolve. Quote abbreviated with an ellipsis. Claims are tied.",
+    "accuracy": "Wrongly says the brief gives no contested counts, but c1 gives the mix. Calls May 2026 an incomplete bucket, against partial_period:false.",
+    "limits": "Gives the window, the 144-day gap, mention matching and the coverage floor, and states that counts are not incidence.",
+    "verdict": "Generic answer that does not name the strongest contrary evidence.",
+    "facets": "Contested mix, geography rows and the news flat reading are not given."
+   }
+  },
+  "errors": {
+   "A": [
+    "The 1990 attributable-deaths figure of 0.64M appears wrong (GBD 2021 reports about 1.06M), which inflates the stated +78% 1990–2021 growth"
+   ],
+   "B": [],
+   "C": [],
+   "D": [
+    "Claims the brief gives no contested counts, but c1 returns the supporting/qualifying/contradicting/neutral mix",
+    "Asserts May 2026 is an incomplete boundary bucket, though the tool marks it partial_period:false"
+   ]
+  },
+  "best": "B",
+  "verdict": "B was the only deliverable that met the question's hard part. It labelled every volume with its lane and window, kept the two news series apart, read the flat 1.13 news trend correctly and caught the tool's anomalies. D was traced but thin and misread two fields. A and C were memory-only; C was honest, while A carried a probably wrong 1990 baseline."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 2,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 1,
+   "drilldown": 4,
+   "export": 1,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

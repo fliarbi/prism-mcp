@@ -1,0 +1,186 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The two yield estimates are explicitly not a time series and do not measure research orientation; the orientation trend is unavailable.",
+    "comparison": "It quantifies a difference between two remembered yield estimates, but the figures are not benchmark-traced.",
+    "chart": "The chart is a cited but unverifiable two-point comparison of separate studies, not a measured research-orientation chart.",
+    "drilldown": "It provides topic layers and specific calls, but only three of six follow-ups executed successfully and no results are folded back in.",
+    "export": "The CSV is an honest memory-based estimate, not a traced export of the question's research trend.",
+    "repro": "No counted calls or replayable measurements support the figures; the call list is only proposed follow-up work.",
+    "refs": "The DOIs resolve and claims are tied to references, but there are no abstract quotes to verify support.",
+    "accuracy": "It distinguishes yield outcomes from research framing and labels the figures as memory estimates; no clear contradiction appears.",
+    "limits": "It states the old evidence window, selection bias, absent counts, and that framing claims are interpretation.",
+    "verdict": "It directly says the trend is unproven and gives confidence and conditions, but does not answer based on measured evidence.",
+    "facets": "It covers yield and environmental considerations from remembered studies but lacks grounded trend, orientation, and contrary-paper breakdowns."
+   },
+   "B": {
+    "trend": "No series or measured direction is supplied.",
+    "comparison": "It explicitly has no comparable counts or periods.",
+    "chart": "No chart is supplied.",
+    "drilldown": "It describes missing breakdowns and lists calls, but only one of four executed successfully and no traced breakdown is shown.",
+    "export": "No data export is supplied.",
+    "repro": "The calls lack reproducible results and the response contains no measured values.",
+    "refs": "No references were retrieved or verified.",
+    "accuracy": "It declines unsupported claims and does not contradict the reference record.",
+    "limits": "It clearly names absent windows, lanes, coverage, matching, and the distinction between counts and evidence quality.",
+    "verdict": "It gives a decision and conditions, but the answer is a refusal to assess the question rather than a supported finding.",
+    "facets": "It grounds the absence of data but leaves nearly all substantive facets unanswered."
+   },
+   "C": {
+    "trend": "The traced annual series, quantified changes, peaks, and positive-versus-contested decomposition are presented with the stated window.",
+    "comparison": "The count ratios and deltas recompute and distinguish counts from shares and evidence quality.",
+    "chart": "The chart traces both orientations across the full window and supports the prose claim about rising but mixed framing.",
+    "drilldown": "It has annual and orientation layers plus a paper record, but only three of four follow-ups executed and the item record is not direct evidence.",
+    "export": "The annual CSV is referenced and traced, but coverage is marked unknown and it lacks all decision-ready provenance hygiene.",
+    "repro": "Nearly all numeric claims trace and the calls include arguments and windows; one numeric claim is untagged and there is no full renderer recipe.",
+    "refs": "The single DOI resolves, but the paper is not direct evidence for the claim and no verbatim abstract quote is supplied.",
+    "accuracy": "The measured trends and their limits are handled carefully; the untagged date-gap calculation and unsupported thin-year assertion keep it below full credit.",
+    "limits": "It identifies the window, phrase expansion, incomplete-year uncertainty, and distinction between framing and truth near the relevant claims.",
+    "verdict": "It gives a supported mixed-trend answer, confidence, decision, and contrary evidence, but does not fully bound the verdict by coverage and completion limits.",
+    "facets": "It covers trend, orientation split, phrase scope, and paper-level limitations, but does not resolve the strongest contrary-study facet."
+   },
+   "D": {
+    "trend": "The traced shares are fully charted with quantified endpoint changes and a positive-versus-contested decomposition.",
+    "comparison": "The same-window share deltas, ratios, and gap change are defined and recompute correctly.",
+    "chart": "The chart traces both requested framing shares over the stated years and visibly supports the comparison.",
+    "drilldown": "It exposes several traced layers and identifiers, but only two of six proposed follow-ups executed and none is folded into the report.",
+    "export": "The annual table is traced and referenced, but its coverage/provenance hygiene is incomplete and the ceiling is three.",
+    "repro": "All reported numbers trace to calls or explicit arithmetic, with arguments, windows, and a regenerate block.",
+    "refs": "The DOIs resolve and items are tied to claims, but there are no verbatim abstract quotes.",
+    "accuracy": "The main series is read correctly, but the claim that the match used no expansion conflicts with the five-phrase cluster in the record.",
+    "limits": "It covers the window and lane, but misstates the match mode and places some important scope limits away from the numbers they qualify.",
+    "verdict": "The answer is direct and cites contrary framing, but the confidence and decision are weakened by the match-mode error and it lacks a clear change condition grounded in measured results.",
+    "facets": "It addresses research orientation, phrase overlap, paper examples, and the research-versus-outcome distinction, while leaving several facets without grounded results."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "The statement that the series reports no thin years is not established by the supplied trend response."
+   ],
+   "D": [
+    "It says the match used no expansion, but the recorded stance-trend response uses a five-phrase cluster that includes sustainable agriculture."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is the strongest decision aid: it shows the traced annual framing series, compares positive and contested patterns, and warns that framing is not evidence quality. D offers a more polished comparison but misstates the phrase matching; A and B appropriately limit claims but cannot measure the trend."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

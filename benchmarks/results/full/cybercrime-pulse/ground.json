@@ -1,0 +1,634 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 657,
+  "charts": [
+   {
+    "id": "ic3-losses",
+    "title": "FBI IC3 reported cybercrime losses (remembered, not news coverage)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "IC3 reported losses",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ic3_losses.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "How many cybercrime articles in the last 12 months, and which outlets carry them?",
+    "args": {
+     "term": "cybercrime",
+     "window": "12m"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='12m', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What is the monthly series and direction?",
+    "args": {
+     "term": "cybercrime",
+     "granularity": "month",
+     "window": "36m"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='36m', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "Is tone more negative than the corpus baseline?",
+    "args": {
+     "term": "cybercrime",
+     "baseline": "all_news",
+     "metric": "tone"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ews', 'metric': 'tone'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cybercrime', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all_news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='tone', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries are covered, and what share is placed?",
+    "args": {
+     "term": "cybercrime"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.7,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 16883, \"share_pct\": 20.8, \"lift\": 0.9}, {\"label\": \"india\", \"articles\": 13668, \"share_pct\": 16.9, \"lift\": 2.6}, {\"label\": \"united kingdom\", \"articles\": 5253, \"share_pct\": 6.5, \"lift\": 1.3}, {\"label\": \"china\", \"articles\": 2975, \"share_pct\": 3.7, \"lift\": 0.7}, {\"label\": \"nigeria\", \"articles\": 2685, \"share_pct\": 3.3, \"lift\": 4.6}, {\"label\": \"france\", \"articles\": 2367, \"share_pct\": 2.9, \"lift\": 1.7}, {\"label\": \"australia\", \"articles\": 2192, \"share_pct\": 2.7, \"lift\": 0.6}, {\"label\": \"russia\", \"articles\": 2182, \"share_pct\": 2.7, \"lift\": 3.2}, {\"label\": \"united arab emirates\", \"articles\": 1627, \"share_pct\": 2.0, \"lift\": 2.5}, {\"lab"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "What are the most critical stories with date, publisher and URL?",
+    "args": {
+     "term": "cybercrime",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.3,
+    "sample": "{\"articles\": [{\"target_id\": \"69f1c6a2a5706a322e0ea356\", \"url\": \"https://stratnewsglobal.com/china/alleged-china-linked-hacker-extradited-to-u-s-by-italy/\", \"title\": \"Alleged China-Linked Hacker Extradited To U.S. By Italy\", \"excerpt\": \"Italy has extradited to the United States a Chinese national sought on hacking charges, including the alleged theft of COVID-19 medical research, Italian police said Monday, confirming earlier reports. Cybercrime Allegations and Espionage Links Xu Zewei was arrested in Milan last July at the request\", \"publisher\": \"stratnewsglobal.com\", \"published\": \"2026-04-28 06:30:34\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-04-28 06:30:34\", \"priority\": 9, \"polar"
+   },
+   {
+    "id": "f6",
+    "feature": "research.stance_trends",
+    "question": "What does research say about cybercrime trends?",
+    "args": {
+     "term": "cybercrime"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"cybercrime\", \"cyber crime\", \"digital crime\", \"online fraud\"], \"points\": [{\"year\": 2017, \"total\": 640, \"orientation\": {\"promising\": 30, \"breakthrough\": 17, \"problem_identifying\": 145, \"comparative\": 9, \"critical\": 10, \"cautionary\": 7, \"descriptive\": 63}, \"stance_score\": null, \"positive\": 47, \"contested\": 162, \"positive_pct\": 7.3, \"contested_pct\": 25.3}, {\"year\": 2018, \"total\": 767, \"orientation\": {\"comparative\": 12, \"breakthrough\": 19, \"problem_identifying\": 176, \"cautionary\": 5, \"critical\": 8, \"promising\": 38, \"descriptive\": 72}, \"stance_score\": null, \"positive\": 57, \"contested\": 189, \"positive_pct\": 7.4, \"contested_pct\": 24.6}, {\"year\": 2019, \""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 8,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "34 — - **Windows:** No news window was queried. The remembered series ends in 2023, about 34 mo"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1063,
+  "charts": [
+   {
+    "id": "monthly_volume",
+    "title": "Monthly articles mentioning cybercrime",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_cybercrime.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 95,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "countries.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 28,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove the February and April 2026 spikes?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2026-01-01",
+     "granularity": "weekly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.6,
+    "sample": "{\"points\": [{\"period\": \"2025-12-29\", \"articles\": 246, \"critical\": 211, \"negative\": 161, \"positive\": 75, \"mean_priority\": 7.03, \"critical_pct\": 85.8, \"partial_period\": true}, {\"period\": \"2026-01-05\", \"articles\": 648, \"critical\": 544, \"negative\": 517, \"positive\": 122, \"mean_priority\": 7.19, \"critical_pct\": 84.0, \"partial_period\": false}, {\"period\": \"2026-01-12\", \"articles\": 578, \"critical\": 490, \"negative\": 436, \"positive\": 140, \"mean_priority\": 7.25, \"critical_pct\": 84.8, \"partial_period\": false}, {\"period\": \"2026-01-19\", \"articles\": 649, \"critical\": 553, \"negative\": 505, \"positive\": 139, \"mean_priority\": 7.22, \"critical_pct\": 85.2, \"partial_period\": false}, {\"period\": \"2026-01-26\", \"articles"
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "What are the most critical stories on scam compounds in Southeast Asia?",
+    "args": {
+     "term": "scam compounds",
+     "since": "2026-01-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does India's cybercrime coverage differ in tone from the US?",
+    "args": {
+     "term": "cybercrime",
+     "countries": [
+      "india",
+      "united states"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...dia', 'united states']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cybercrime', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncountries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['india', 'united states'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What happened after 2026-05-31?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'cybercrime' in this window",
+    "seconds": 0.4,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which stories concern ransomware?",
+    "args": {
+     "term": "ransomware",
+     "since": "2025-06-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "What explains the July 2025 tone dip?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2025-06-01",
+     "until": "2025-09-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.6,
+    "sample": "{\"points\": [{\"period\": \"2025-06-01\", \"negative\": 1748, \"positive\": 491, \"neutral\": 21, \"ratio\": 3.56}, {\"period\": \"2025-07-01\", \"negative\": 2420, \"positive\": 494, \"neutral\": 20, \"ratio\": 4.9}, {\"period\": \"2025-08-01\", \"negative\": 2182, \"positive\": 574, \"neutral\": 20, \"ratio\": 3.8}], \"totals\": {\"neg\": 6350, \"pos\": 1559, \"neutral\": 61, \"n\": 7970, \"neg_pct\": 79.7, \"pos_pct\": 19.6, \"ratio\": 4.07}, \"corpus_baseline_ratio\": 0.7, \"vs_baseline\": 5.81, \"reading\": \"markedly more negative than ordinary news coverage\"}"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 87,
+   "traced": 87,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 302,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many cybercrime news items appear by month, and how does that compare with the corpus baseline?",
+    "args": {
+     "term": "cybercrime",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone of cybercrime coverage compared with the corpus baseline?",
+    "args": {
+     "term": "cybercrime"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.6,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 1596, \"positive\": 511, \"neutral\": 20, \"ratio\": 3.12}, {\"period\": \"2024-07-01\", \"negative\": 2538, \"positive\": 601, \"neutral\": 24, \"ratio\": 4.22}, {\"period\": \"2024-08-01\", \"negative\": 2251, \"positive\": 574, \"neutral\": 16, \"ratio\": 3.92}, {\"period\": \"2024-09-01\", \"negative\": 2394, \"positive\": 688, \"neutral\": 31, \"ratio\": 3.48}, {\"period\": \"2024-10-01\", \"negative\": 2429, \"positive\": 808, \"neutral\": 24, \"ratio\": 3.01}, {\"period\": \"2024-11-01\", \"negative\": 2232, \"positive\": 651, \"neutral\": 32, \"ratio\": 3.43}, {\"period\": \"2024-12-01\", \"negative\": 2513, \"positive\": 806, \"neutral\": 34, \"ratio\": 3.12}, {\"period\": \"2025-01-01\", \"negative\": 2546, \"positiv"
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes and entities appear in cybercrime coverage?",
+    "args": {
+     "term": "cybercrime"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 53.1,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"cybercrime\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 51, \"place\": 0, \"tagged_articles\": 73371, \"entity_labelled_articles\": 47002, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 76508, \"critical_articles\": 64468, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:30:22\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places appear, and what share of records are assigned a place?",
+    "args": {
+     "term": "cybercrime"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 16883, \"share_pct\": 20.8, \"lift\": 0.9}, {\"label\": \"india\", \"articles\": 13668, \"share_pct\": 16.9, \"lift\": 2.6}, {\"label\": \"united kingdom\", \"articles\": 5253, \"share_pct\": 6.5, \"lift\": 1.3}, {\"label\": \"china\", \"articles\": 2975, \"share_pct\": 3.7, \"lift\": 0.7}, {\"label\": \"nigeria\", \"articles\": 2685, \"share_pct\": 3.3, \"lift\": 4.6}, {\"label\": \"france\", \"articles\": 2367, \"share_pct\": 2.9, \"lift\": 1.7}, {\"label\": \"australia\", \"articles\": 2192, \"share_pct\": 2.7, \"lift\": 0.6}, {\"label\": \"russia\", \"articles\": 2182, \"share_pct\": 2.7, \"lift\": 3.2}, {\"label\": \"united arab emirates\", \"articles\": 1627, \"share_pct\": 2.0, \"lift\": 2.5}, {\"lab"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical cybercrime stories should decision-makers review?",
+    "args": {
+     "term": "cybercrime",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.0,
+    "sample": "{\"articles\": [{\"target_id\": \"69f1c6a2a5706a322e0ea356\", \"url\": \"https://stratnewsglobal.com/china/alleged-china-linked-hacker-extradited-to-u-s-by-italy/\", \"title\": \"Alleged China-Linked Hacker Extradited To U.S. By Italy\", \"excerpt\": \"Italy has extradited to the United States a Chinese national sought on hacking charges, including the alleged theft of COVID-19 medical research, Italian police said Monday, confirming earlier reports. Cybercrime Allegations and Espionage Links Xu Zewei was arrested in Milan last July at the request\", \"publisher\": \"stratnewsglobal.com\", \"published\": \"2026-04-28 06:30:34\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-04-28 06:30:34\", \"priority\": 9, \"polar"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which publishers account for the largest share of cybercrime coverage?",
+    "args": {
+     "term": "cybercrime"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'cybercrime'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cybercrime', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 86,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 660,
+  "charts": [
+   {
+    "id": "cybercrime-monthly",
+    "title": "Cybercrime news articles by month",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "cybercrime_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "cybercrime_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 28,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which cybercrime stories rank highest by criticality in the latest complete month?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2026-05-01",
+     "until": "2026-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-05-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which publishers dominate cybercrime coverage across the full measured window?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2024-06-01",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cybercrime', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "How does cybercrime coverage volume differ by country and month?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2024-06-01",
+     "level": "country",
+     "group_by": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which organisations are most often mentioned in ransomware coverage?",
+    "args": {
+     "term": "ransomware",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 59.9,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"ransomware\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 31298, \"entity_labelled_articles\": 22233, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 33989, \"critical_articles\": 29143, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 18:50:16\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series wi"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which people and organisations appear in the leading critical stories?",
+    "args": {
+     "term": "cybercrime",
+     "since": "2026-05-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-05-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 36,
+   "traced": 36,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": false,
+   "words": 108,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

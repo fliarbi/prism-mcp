@@ -1,0 +1,92 @@
+{
+ "slug": "drone-warfare-pulse",
+ "claude_live": {
+  "text": "**Drone warfare coverage is rising fast, is concentrated on Ukraine and Russia, and is overwhelmingly critical.** All figures come from Prism news, 1 Jun 2024 to 31 May 2026. Prism cuts off at June 2026 because later ingest is incomplete.\n\n**What the data shows**\n- **Volume:** 1,431 matching articles. Monthly counts rose from 27 (Jun 2024) to 200 (Mar 2026 and May 2026). The late third of the window had 3.5 times the volume of the early third. Spikes were Sep 2025 (111), Mar 2026 (200) and May 2026 (200).\n- **Critical share:** 1,258 articles (88%) were flagged critical. Mean priority ran about 7 out of 9 in most months.\n- **Tone:** 53% negative against 45% positive. That is about twice as negative as the corpus baseline, with a negative-to-positive ratio of 1.20 against 0.58.\n- **Places** (the place each article is about, with 63% of articles placed):\n  - Ukraine 546 articles (16%)\n  - United States 492 (15%)\n  - Russia 480 (14%)\n  - China 159, Iran 147, India 136\n  - Pakistan 88 and Poland 54, both with above-average lift\n- **Themes:**\n  - Defence and military categories dominate.\n  - Subcategories led by drone applications in defence, UAV advances, and cyber and space warfare.\n  - Top tags: Ukraine, Russia, NATO, Kyiv, Operation Sindoor (India–Pakistan).\n- **Named entities:** Zelenskyy appears in 199 articles, Putin in 147, and NATO in 189. Defence firms such as Northrop Grumman and Anduril also appear.\n- **Publishers:** coverage is spread out. In a sample of 217 articles, the top outlet, Yahoo, had 9%.\n- **Critical stories:**\n  - Russia said it downed 3,124 Ukrainian drones in a week (May 2026).\n  - Ukraine announced a drone-infantry combat model (Apr 2026).\n  - Ukrainian drones hit the Taganrog drone-industry centre (Mar 2026).\n  - A US strike hit a drone facility in Syria (May 2026).\n  - Analysts argued drones \"haven't won the fight\" in Ukraine (Mar 2026).\n\n**Interpretation**\n- The Ukraine war frames the topic. The \"lessons for NATO\" and Western procurement angle is growing.\n- Two caveats on the critical share. Most war news is flagged critical, so the 88% is partly an effect of that. The sentiment labels are also noisy, since \"positive\" often marks military success.\n- Place and entity labels are incomplete from May 2026 (about 4% filled), so the late-window geography is undercounted.",
+  "seconds": 168.0,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "drone warfare"
+    },
+    "ok": true,
+    "chars": 40796
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Drone-warfare coverage rose sharply through the measured period, with Ukraine and Russia dominating the mapped geography and military technology framing the coverage.** These are Prism news-corpus measures, not a census of all reporting.\n\n**What the data shows (1 Jan 2024–30 Apr 2026):** Prism counted **1,360 articles**, **1,187** of them in its high-priority “critical” band. Quarterly volume peaked at **301** in Jan–Mar 2026, versus **61** in Jan–Mar 2024; the last three full quarters had **2.9×** the volume of the first three. The April–June 2026 bucket is partial, so I exclude it from that comparison. Prism’s ingest window is censored at 1 June 2026.  \nOf the 1,360 articles, **880 (64.7%)** were assigned a country: Ukraine (615), US (555), Russia (540), China (180), Iran (174). Country counts can overlap; they are places articles are *about*, not publication locations.  \nTheme labels emphasize defense (952), politics (925), international relations (716), and military (640). Subcategory labels include defense drone applications (428) and UAV advances (364). [Prism news trends, geography and themes](https://prism)\n\n**Critical stories in Prism’s feed:** Reuters reported Ukraine’s new integrated drone–infantry combat model (16 Apr 2026); a March feature argued drones have not won the Ukraine war and warned against Western overreliance; other high-priority coverage described attacks on Taganrog and Ukraine’s claimed record drone interceptions. [Reuters via The Star](https://www.thestar.com.my/news/world/2026/04/16/ukraine-says-it-is-employing-new-integrated-drone-infantry-warfare-system) · [Business Insider via Yahoo](https://www.yahoo.com/news/articles/drones-havent-won-fight-ukraine-092001486.html)\n\n**Interpretation:** Coverage is increasingly tied to battlefield adaptation, air defense and military investment, with Ukraine–Russia as its center of gravity. Prism’s counts show attention and framing; they do not verify battlefield claims.",
+  "seconds": 272.0,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "news_trends",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-01-01",
+     "until": "2026-04-30",
+     "granularity": "quarterly"
+    },
+    "ok": true,
+    "chars": 7763
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-01-01",
+     "until": "2026-04-30",
+     "level": "country",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 5709
+   },
+   {
+    "tool": "news_themes",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-01-01",
+     "until": "2026-04-30",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 13133
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "drone warfare",
+     "days": 180,
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 15497
+   },
+   {
+    "tool": "news_themes",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-01-01",
+     "until": "2026-04-30",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 13163
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "drone warfare",
+     "since": "2024-01-01",
+     "until": "2026-04-30",
+     "level": "country",
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 5407
+   }
+  ]
+ }
+}

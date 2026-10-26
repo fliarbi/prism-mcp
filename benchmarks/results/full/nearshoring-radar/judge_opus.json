@@ -1,0 +1,186 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Series is from memory and honestly labelled (est.). No source resolves.",
+    "comparison": "Numeric China-vs-Mexico import-share contrast from memory; cannot be put on a checked scale.",
+    "chart": "The only chart is a memory chart labelled estimate.",
+    "drilldown": "Breakdown layers come from memory. Some follow-ups execute, but there is no traced layer.",
+    "export": "The CSV is labelled source=estimate.",
+    "repro": "0/13 numbers trace and the provenance block lists no calls.",
+    "refs": "Working papers are recalled with no identifiers, so none resolve.",
+    "accuracy": "Recalled figures are plausible and labelled estimates. No contradiction with the record.",
+    "limits": "Gives the specific cutoff and the gap to today, but limits sit mostly in a footer.",
+    "verdict": "Direct answer with decision, confidence and change condition, but it rests on memory estimates.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "B": {
+    "trend": "Traced endpoints with window and CAGR stated. Peak not named, no censoring caveat, no news trend.",
+    "comparison": "Traced framing delta of 0.7 pp, but it omits the tool's 'orientation is framing, not truth' caveat.",
+    "chart": "One fully traced volume chart. News trend and framing were supported by the data but not charted.",
+    "drilldown": "One traced layer (paper list with DOIs). Only 2/7 follow-ups returned data.",
+    "export": "Only one endpoint table, although the document list was also needed. Provenance is present.",
+    "repro": "7/7 numbers trace and the call is listed with args and a provenance block.",
+    "refs": "3 DOIs resolve and each is tied to a claim with venue and year. No tier given.",
+    "accuracy": "Reads the fields correctly and flags the papers as off-topic. Does not use the under-covered caveat.",
+    "limits": "Window gap, match mode and what the counts are not are all stated near the numbers.",
+    "verdict": "Bounded, decision-oriented, with low confidence and a reason.",
+    "facets": "News trend and under-covered topics are omitted as findings."
+   },
+   "C": {
+    "trend": "Endpoints, peak 2025, 3.06x factor, 15% CAGR and late/early 2.26 all stated, with a partial-year caveat.",
+    "comparison": "Papers-per-article ratios recompute (11.3x, 1.8x, 6.1x) and the zero-label caveat is carried. Framing delta also given.",
+    "chart": "Single traced chart covers volume only. News and framing were not charted.",
+    "drilldown": "Two traced layers (topics with counts; papers with DOIs). 4/6 follow-ups ok, none folded back.",
+    "export": "Two traced CSVs with ids and provenance. The JSON lacks a coverage field.",
+    "repro": "38/39 numbers trace, the call is listed, and there is a provenance block.",
+    "refs": "All 10 ids resolve and are tied to claims. Missing tier is handled honestly. No quotes, since no abstracts were returned.",
+    "accuracy": "Catches the off-topic 'robustness' rows, the zero-label caveat, fragile small news counts and citation-recency bias.",
+    "limits": "Limits sit next to the numbers, and it says what would close the gap (rerun on the literal terms).",
+    "verdict": "Concise and bounded. It separates the proxy from the target and names the contrary evidence: no reshoring titles.",
+    "facets": "Every facet is either grounded or given an explicit grounded 'cannot measure'."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Generic memory breakdown. Only 1/5 follow-ups ok.",
+    "export": "No export.",
+    "repro": "No traced numbers and no calls.",
+    "refs": "One DOI is not found in the corpus. Prose metadata contradicts the reference list.",
+    "accuracy": "Citation details look fabricated: the Antràs title/DOI, and r2/r3 venue, year and topic mismatches between prose and references.",
+    "limits": "Honest and specific about what was not measured.",
+    "verdict": "Direct answer with decision and confidence, but from memory and resting on shaky references.",
+    "facets": "Facets are answered mostly from memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": [
+    "r1 DOI 10.1057/s42214-023-00148-3 not found; title 'Global Production: Firms, Contracts, and Trade Structure' is a book, not a 2023 JIBP article",
+    "r3 described in prose as Journal of Operations Management ripple-effect paper but reference lists a Production Planning & Control digital-twin paper",
+    "r2 prose (2022, complex adaptive systems) does not match the listed 'Dancing the Supply Chain' metadata"
+   ]
+  },
+  "best": "C",
+  "verdict": "C was the only deliverable that traced nearly every number, recomputed its derived ratios correctly and carried the tool's caveats next to the figures. It also caught that the proxy search returned 'robustness' papers rather than reshoring work, so it did not present them as findings. B was honest but thinner, leaving out the news trend and the under-covered panel. A was a candid memory estimate, and D's references show fabricated-looking metadata."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,237 @@
+{
+ "slug": "gst-india-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 0.5,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 31.2,
+   "plain": 31.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.2,
+    "gpt": 32.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 80.3,
+   "plain": 80.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 76.4,
+    "gpt": 84.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 0.5
+   },
+   "strict": 22.0,
+   "plain": 22.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.2,
+    "gpt": 25.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 68.7,
+   "plain": 68.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 65.2,
+    "gpt": 72.2
+   }
+  }
+ },
+ "judge_mad": 0.48,
+ "verdicts": {
+  "opus": "A and C both measured the coverage, but A went further. It traced every number, separated the critical flag from polarity, caught the Cameroon and 'GST' label artefacts, and gave linkable headlines and the late-window tone turn. B offered accurate but unmeasured recall of the GST 2.0 events, and D declined to answer.",
+  "gpt": "A is the strongest decision aid: it traces the full monthly news series, quantifies attention and tone against a defined baseline, and gives unusually specific limits and follow-up paths. B is cleaner but leaves out available trend decomposition and tone charting; C offers unverified recollection, while D is candid but supplies almost no measured answer."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [],
+   "claude_bare": [
+    "The trend chart plots GST collections rather than news coverage, which is off the question asked."
+   ],
+   "chatgpt_prism": [],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "claude_prism": [
+    "The supplied c1 overview does not establish that the September 2025 spike was caused by GST 2.0 rate rationalisation; A labels this background inference as needing verification.",
+    "The cited headline examples are not shown as resolved article records in the supplied material."
+   ],
+   "chatgpt_prism": [
+    "The stated 144-day gap is arithmetically incorrect: 2026-06-01 to 2026-10-23 is 144 days only when counting the interval from the exclusive cutoff; the prose otherwise describes the boundary imprecisely. The reference does not support the claimed specific May 27 headline details in the excerpt provided."
+   ],
+   "claude_bare": [
+    "The 56th meeting, slab changes, effective date, insurance exemption, and collections figures are memory estimates rather than verified news-corpus findings; the answer substitutes an economic collection series for the requested news trend."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Traced 24-point series with its window. The change is quantified exactly (CAGR -66.2%, late/early 0.22, 399 vs 1,832). Peak 2,430 in 2025-09 is named. Critical-share extremes are given (94.9% in Dec 2025, 49.2% in May 2025). Critical is in the CSV but not charted.",
+    "comparison": "Baseline is defined as the negative/positive ratio: 0.43 vs 0.58, delta -0.15, 0.74×. Early vs late thirds are compared. It also compares the late tone ratios (1.09, 1.60) with the 0.35 in the spike. All recompute.",
+    "chart": "Only a volume chart is given; tone was asked for and supported by the data but not charted. The censoring boundary is not marked.",
+    "drilldown": "Layers go month → themes/entities/places → headlines with date, publisher and URL. 4 of 6 follow-ups are specific and executed ok. None was run and folded back into the report.",
+    "export": "One fully traced monthly CSV with provenance JSON. A tone/sentiment table is missing. The coverage flag reads 'full' although the window is censored.",
+    "repro": "76 of 76 numbers traced. The prism-calls block lists args and a capture date. The one background claim is labelled (est.).",
+    "refs": "Capped at 1 by the script ceiling. News items do carry date, publisher and URL.",
+    "accuracy": "All values match the reference. It catches the Cameroon acronym collision and the 'GST' organisation-label artefact. It notes that critical and polarity are separate measures.",
+    "limits": "Limits sit next to the numbers they bound: window and 145-day gap, mention vs central match mode, enrichment bound and 4% fill, placed_pct, and the publisher sample. Some are in the method section.",
+    "verdict": "Gives answer, decision, confidence with reason, and what would change it. It reconciles the critical-vs-positive contrast and is bounded by the window. It does not foreground the tone shift around GST 2.0.",
+    "facets": "Covers volume, trend, tone, themes, entities, places, sources and headlines. Rate-level data is explicitly reported as absent."
+   },
+   "claude_bare": {
+    "trend": "No news series. It charts a recalled GST-collections series labelled estimate, which is not the quantity asked about.",
+    "comparison": "The slab before/after comparison is from memory and is not a news measure.",
+    "chart": "Memory chart labelled estimate, of an off-question quantity (tax collections, not news coverage).",
+    "drilldown": "Breakdown is from memory. Follow-up calls are listed and some execute.",
+    "export": "Event table labelled recalled/estimate.",
+    "repro": "No traced numbers.",
+    "refs": "No references.",
+    "accuracy": "The recalled events are broadly correct (Jaisalmer 55th meeting, 56th meeting on 3 Sep 2025, 5/18/40 slabs) and labelled est. Nothing is presented as measured.",
+    "limits": "Honest about what is unmeasured. Limits are general rather than tied to specific numbers.",
+    "verdict": "Direct answer from memory with low confidence, a decision and a change condition. It is unmeasured.",
+    "facets": "Facets are mostly from memory."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window and censoring note, CAGR -66.2%, peak and late/early ratio. No decomposition into critical vs total.",
+    "comparison": "7.4× and +2,103 recompute exactly from a defined June 2024 baseline. It adds tone vs corpus baseline (0.43 vs 0.58).",
+    "chart": "Only a volume chart; tone is not charted.",
+    "drilldown": "Breakdown is given as panel pointers. Headlines lack URLs. Only 2 of 6 follow-ups returned ok.",
+    "export": "One traced CSV with censoring provenance. No sentiment table.",
+    "repro": "29 of 30 numbers traced, with a calls block and args.",
+    "refs": "Headlines are named but without URLs. The only reference is the tool call.",
+    "accuracy": "No contradictions. It misses the Cameroon collision and the GST-label anomaly.",
+    "limits": "Window, 144-day gap, lane, match mode, sample and enrichment lag are stated inline.",
+    "verdict": "Supported and bounded, but it ignores the late-window negative tone turn present in the data.",
+    "facets": "Places, sources and themes are covered. Critical headlines and the tone time path are thin."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "The chart has an empty series.",
+    "drilldown": "Generic follow-ups only; none executed ok.",
+    "export": "No export.",
+    "repro": "No numbers to trace.",
+    "refs": "No references.",
+    "accuracy": "Refusal; no contradictions.",
+    "limits": "Specific about what it cannot measure.",
+    "verdict": "Declines to answer the question.",
+    "facets": "No facets answered."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Full traced monthly series, quantified decline and late/early comparison, with peak and censoring stated.",
+    "comparison": "Exact, defined corpus sentiment baseline and early/late volume comparisons; caveats are carried.",
+    "chart": "The traced monthly chart has window, unit, source, and supports the stated attention claim; relevant tone facets are covered in prose and trend decomposition.",
+    "drilldown": "Provides traced theme/entity/place layers and identifiers, with four of six follow-ups returning useful results; not all headline details are independently traceable here.",
+    "export": "Monthly CSV traces and has provenance, but lacks all needed summary/detail tables and complete export hygiene.",
+    "repro": "Lists the used call with arguments and capture date; numeric claims trace and derived values can be recomputed.",
+    "refs": "No external references; the supplied news headlines have dates and publishers but are not fully evidenced as resolving items.",
+    "accuracy": "Measured claims largely match the record and criticality is distinguished from polarity; the Cameroon explanation and the supposed 40% rate evidence are not established by the supplied call.",
+    "limits": "Places window, censoring, gap, match modes, enrichment lag, and measurement limits alongside the claims.",
+    "verdict": "Direct, bounded answer with confidence and conditions, but does not name contrary evidence from its own positive overall polarity versus late negative months."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced monthly series and quantified endpoints, but omits the tool's late/early and critical-series decomposition despite those being available.",
+    "comparison": "Same-window, same-scale September-to-June contrast with recomputable ratio and delta and a clear attention caveat.",
+    "chart": "Monthly chart is traced and relevant, but it does not chart the tone facet the deliverable discusses.",
+    "drilldown": "Headline examples and named panels give some detail, but follow-up execution yielded only two useful calls and the breakdown does not reach fully identified items.",
+    "export": "Monthly CSV is traced and provenance is present, but the question needs more than this one export table.",
+    "repro": "Most numeric claims trace and the principal call is replayable, though one of 30 claims does not trace and the full regenerate recipe is incomplete.",
+    "refs": "Only a Prism result is cited; there are no verified, claim-linked news references with resolving URLs in the supplied record.",
+    "accuracy": "No major contradiction; it correctly separates mentions from decisions and states the polarity measure's limits.",
+    "limits": "Censoring, gap, match mode, and label/sample limitations are explained, though some are consolidated rather than placed at every affected number.",
+    "verdict": "Answers directly with decision, confidence, and a condition, but does not explicitly weigh the strongest contrary evidence in its own results."
+   },
+   "claude_bare": {
+    "trend": "The plotted series is explicitly an estimate of collections, not the news quantity asked about.",
+    "comparison": "Slab comparison is memory-based and does not measure news coverage on a checkable scale.",
+    "chart": "Honest estimate label earns the memory-chart anchor; it charts collections rather than news coverage.",
+    "drilldown": "Names layers but supplies no traced breakdown; proposed calls are largely generic or fail to return useful data.",
+    "export": "The event CSV is explicitly recalled and estimated, not a traced export.",
+    "repro": "Numbers are honestly labelled estimates, but calls are not a reproducible measurement recipe.",
+    "refs": "No external references or resolving identifiers are supplied.",
+    "accuracy": "Major event and rate details are unverified and some are presented as factual specifics despite estimate labels; the answer also substitutes collections for news coverage.",
+    "limits": "Clearly states memory-only status, cutoff gap, and which requested measures cannot be measured.",
+    "verdict": "Gives an orientation answer and confidence, but the substantive answer rests on unverified event claims and does not support a decision beyond verification.",
+    "facets": "Only limited event context is addressed from memory; key coverage, tone, trend, and source facets lack grounded values."
+   },
+   "chatgpt_bare": {
+    "trend": "No series; the chart is empty.",
+    "comparison": "No measured comparison is made.",
+    "chart": "The chart contains no plotted values.",
+    "drilldown": "No breakdown or executed follow-up; the calls are proposals only.",
+    "export": "No CSV export is provided.",
+    "repro": "No numeric claims to reproduce and no calls were run; the corpus is named only generically as unavailable.",
+    "refs": "No verified references are supplied.",
+    "accuracy": "It avoids unsupported factual claims and accurately states that no corpus was queried.",
+    "limits": "It identifies the missing corpus and several unassessed limits, but cannot state applicable window, censoring, matching, or coverage specifics from a source.",
+    "verdict": "Clear refusal to make unsupported claims, but offers no evidence-based answer or decision beyond obtaining a corpus.",
+    "facets": "It names the missing facets but provides no grounded values or data-backed no-data results."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {
+   "claude_bare": [
+    "repro 1->0"
+   ]
+  }
+ }
+}

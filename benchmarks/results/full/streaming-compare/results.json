@@ -1,0 +1,230 @@
+{
+ "slug": "streaming-compare",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 28.3,
+   "plain": 28.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 27.0,
+    "gpt": 29.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 5.0,
+    "chart": 3.0,
+    "drilldown": 2.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 3.5
+   },
+   "strict": 64.3,
+   "plain": 64.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.9,
+    "gpt": 52.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 23.5,
+   "plain": 23.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.0,
+    "gpt": 28.9
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.5,
+    "chart": 2.0,
+    "drilldown": 1.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 64.5,
+   "plain": 64.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 56.3,
+    "gpt": 72.6
+   }
+  }
+ },
+ "judge_mad": 0.62,
+ "verdicts": {
+  "opus": "A gives the decision-maker the full traced monthly series for all three services. It also computes the share shift that actually tells the challenger story: Prime Video gains about 2.8 points while Netflix slips 3.4. It adds a critical-share contrast, with only a minor critical-peak slip. D's numbers trace, but it reduces the trend to two endpoints and misreads the censoring rule. B and C measured nothing, and B's estimate index points the wrong way on Disney+ vs Prime.",
+  "gpt": "A is the most decision-ready: it quantifies the attention gap and challenger growth, preserves key caveats, and supplies a traced monthly export. C has richer charts and tables, but its treatment of censored May 2026 as a real collapse undermines its trend and verdict; B and D appropriately acknowledge that they cannot measure the comparison."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Prime Video critical_pct peak stated as 12.5% (Jan 2026); the actual maximum is 13.5% (Jul 2024)",
+    "Gap to today stated as 145 days; it is 144"
+   ],
+   "claude_bare": [
+    "Estimated index Disney+ 60 / Prime 45 conflicts with the record's near parity (103,301 vs 99,892), though labelled an estimate"
+   ],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Treats May 2026 as the censored partial month; the record censors from 2026-06-01 and marks May partial_period=false",
+    "Netflix growth +117.9% should be +118.0%"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The source window ends exclusively at 2026-06-01 and censors the newest month; export includes the May point but marks coverage partial, so its coverage label is too broad."
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Plots and describes May 2026 as a genuine decline even though the source says the newest month is censored because ingest is incomplete.",
+    "Calls the window 2024-06-01 through 2026-05-31 and says May is not partial, contrary to the source's exclusive cutoff and censoring note.",
+    "Claims 'complete-looking coverage' despite the source explicitly saying strict index partition reads do not prove ingest completeness."
+   ],
+   "claude_bare": [
+    "Provides Netflix 100, Disney+ 60, and Prime Video 45 as memory estimates; they are labeled, but unsupported and unusable for a measured comparison."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full 24-month traced series for all three terms with the window stated. The Apr-26 vs Jun-24 multiples and the Apr-2026 peak are exact. The critical decomposition is added, but one critical-peak claim is wrong.",
+    "comparison": "Ratios and deltas recompute exactly and the overlap caveat is carried. The share-shift computation (Netflix -3.4pt, Prime +2.8pt) directly answers the challenger-growth contrast.",
+    "chart": "Traced monthly line for all three terms and a critical-share bar chart, each with a caption and claim. Critical share is not overlaid over time.",
+    "drilldown": "One traced layer (month × tone bucket). Only 1/6 follow-ups executed OK; nothing was folded back.",
+    "export": "Two traced CSVs with provenance attributes and a provenance JSON. Column renames are not documented.",
+    "repro": "76/77 numbers trace and the calls block has args. The 145-day gap is off by one (it is 144) and the 107.1% figure is untagged.",
+    "accuracy": "Says Prime Video's critical share 'peaked at 12.5% in Jan 2026', but July 2024 was 13.5%. Gap is 145 vs 144 days. Otherwise exact, and May 2026 is read correctly as not partial.",
+    "limits": "Window end, 144-day gap, censoring, match mode, overlap and attention-not-importance are each placed next to the numbers. States what follow-ups would close the gaps.",
+    "verdict": "Direct answer, decision, medium confidence with reason, and what would change it; names Netflix's critical skew. The verdict itself does not state the window end.",
+    "facets": "Totals, shares, trend, growth, tone/critical and most_covered are covered. Overlap is flagged as unmeasured."
+   },
+   "claude_bare": {
+    "trend": "No series.",
+    "comparison": "Memory index explicitly called illustrative and estimated; qualitative at best.",
+    "chart": "No chart.",
+    "drilldown": "Plan only; 0/6 follow-ups ran.",
+    "export": "Empty plan CSV labelled estimate.",
+    "repro": "Only labelled estimates.",
+    "accuracy": "Its estimate index (Disney+ 60, Prime 45) diverges from the near-parity in the record. It is labelled a guess, not a fact.",
+    "limits": "Specific about what is unmeasured, including Prime/Disney+ match ambiguity.",
+    "verdict": "Honest low-confidence non-answer.",
+    "facets": "Nothing grounded."
+   },
+   "chatgpt_bare": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic follow-ups; 1/5 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "States it has no data, but gives few specific limits.",
+    "verdict": "Refusal, oddly with 'high' confidence.",
+    "facets": "None answered."
+   },
+   "chatgpt_prism": {
+    "trend": "Prose and chart give only first/last points although the full series was available. Netflix growth is stated as +117.9% where the data gives 118.0%.",
+    "comparison": "Exact ratios and deltas with the overlap caveat. Does not address the share or challenger growth contrast beyond the endpoints.",
+    "chart": "Two-point line of endpoints only; no tone view.",
+    "drilldown": "0/4 follow-ups ran; no traced breakdown layer.",
+    "export": "One traced monthly CSV with provenance. Coverage is wrongly flagged as partial; column renames are not documented.",
+    "repro": "30/30 numbers trace and the calls block has args and window.",
+    "accuracy": "Misreads censoring: treats May 2026 as the censored partial month, but censored_at is 2026-06-01 and May has partial_period=false. It then excludes May on that basis.",
+    "limits": "Gives the window, 144-day gap, match mode and double counting. The censoring limit is misapplied.",
+    "verdict": "Answer, decision, confidence and what would change it are all present. Names no contrary evidence, such as the May drop or Netflix's critical share.",
+    "facets": "Tone and critical fields are reported but not compared; no share-shift reading."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced monthly series and quantified endpoint changes across complete months; peak and full decomposition are not reported.",
+    "comparison": "Ratios and deltas use the same term-count window and define the combined-count baseline, with overlap caveat.",
+    "chart": "Chart traces but plots only two endpoints, so it does not show the monthly series the question calls for.",
+    "drilldown": "No traced breakdown to story or source; proposed calls did not return data.",
+    "export": "Monthly CSV is fully traced and carries source, window, unit, coverage, identifiers, and provenance; per-term summary export is absent.",
+    "repro": "Call args and window are supplied and the figures are reproducible, but the export omits the full regenerate recipe needed to rebuild every artifact.",
+    "accuracy": "Measured claims are mostly careful; it says the window cutoff is 144 days before today, while the actual date gap is 144 days only by date subtraction? It also calls coverage 'not proven complete' appropriately.",
+    "limits": "Specific window, censoring, overlap, match-mode, lane, and coverage limits are placed near the claims; ingest lag is not otherwise quantified.",
+    "verdict": "Direct answer, decision, confidence, and conditions are given, but the strongest contrary evidence and tone comparison are not addressed in the verdict.",
+    "facets": "Covers attention and trend with grounded data, but leaves tone comparison, source breakdown, overlap size, and implied facet checks unresolved."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or sourced estimate.",
+    "comparison": "No measured common-scale comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are generic and missing the benchmark window; only one follow-up executed successfully.",
+    "export": "No data export; empty provenance block.",
+    "repro": "No numeric claims to reproduce, but no measured source call or reproducible evidence.",
+    "accuracy": "Makes no contradictory measured claims; appropriately states the data are unavailable.",
+    "limits": "Clearly states missing window, lane, coverage, censoring, and match mode, though no measurement exists.",
+    "verdict": "Gives a direct decision, high confidence in the inability to measure, and specifies what evidence would change it.",
+    "facets": "Most requested facets are explicitly unavailable, but only a small portion of the implied comparison is grounded."
+   },
+   "claude_prism": {
+    "trend": "Includes the censored May 2026 point as a normal decline, directly contradicting the source caveat; this caps the score.",
+    "comparison": "Ratios and deltas are on a shared scale and mostly recompute, with overlap and denominator caveats.",
+    "chart": "The monthly chart plots censored May as a collapse and its caption claims a real fall; that source contradiction makes the chart invalid.",
+    "drilldown": "Has a traced term/month breakdown but follow-up calls are mostly empty or fail, and there are no item-level identifiers.",
+    "export": "Two relevant tables are referenced and largely traced, but the window label and coverage flag misstate the source's exclusive cutoff and censoring.",
+    "repro": "Most figures trace and the call is reproducible, but one numeric claim is untraced and the report materially misreads the censored endpoint.",
+    "accuracy": "Treats the censored May value as complete and interprets it as a real fall; the verdict also calls coverage 'complete-looking' despite the stated incompleteness caveat.",
+    "limits": "Mentions ingest lag and window, but incorrectly says May is uncensored and presents the cutoff as an inclusive end date.",
+    "verdict": "Although direct, it rests on the false May decline and misses the strongest limitation, so it is unsupported by its own correctly read evidence.",
+    "facets": "Addresses volume, trends, critical share, and limits, but tone is not established and implied source/overlap checks remain open."
+   },
+   "claude_bare": {
+    "trend": "No measured time series; explicitly labels its index estimates.",
+    "comparison": "Only an estimate-based qualitative/index comparison, not a measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Proposed calls are unexecuted and several use unsupported or malformed arguments; no traced breakdown.",
+    "export": "CSV is explicitly an estimate/plan with null values, earning the estimate-only level.",
+    "repro": "No measured numeric claims; estimates are labeled, but no call was run and the plan is not reproducible evidence.",
+    "accuracy": "Estimates are clearly marked and no reference facts are contradicted as measurements.",
+    "limits": "Specific missing-data, window, lane, censoring, and match-mode limits are stated.",
+    "verdict": "Gives a cautious answer and decision, but its unsupported index estimates weaken the recommendation and confidence.",
+    "facets": "Most requested facets are listed as unmeasured, without grounded values or grounded database no-data results."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

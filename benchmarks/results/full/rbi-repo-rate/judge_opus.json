@@ -1,0 +1,186 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Rate path is from memory and honestly labelled est.; it does not measure news volume.",
+    "comparison": "The numeric 125bp / 19% contrast uses memory figures that cannot be checked.",
+    "chart": "Single chart is labelled estimate.",
+    "drilldown": "Layers are named generically with no traced breakdown; only 3/6 follow-ups returned data.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "All figures are memory, honestly labelled.",
+    "refs": "No references; it only points generically to rbi.org.in.",
+    "accuracy": "The remembered rate path is consistent with the reference (5.25% hold in Feb 2026); no contradictions.",
+    "limits": "Specific about what is unmeasured, but the '0-day gap' framing is weak.",
+    "verdict": "Direct answer with decision, confidence and what would change it, but it rests on memory.",
+    "facets": "Facets answered from memory or declared unmeasurable."
+   },
+   "B": {
+    "trend": "Traced 24-month series with window. Peak, endpoints and early/late thirds (1.33x) are read correctly. No critical decomposition.",
+    "comparison": "0.64 vs 0.58 baseline, 1.10x, delta 0.06, defined and traced, with the caveat carried.",
+    "chart": "Volume only is charted; tone is not charted although it is a facet.",
+    "drilldown": "Traced themes, entities and headlines with URLs, but only 1/4 follow-ups returned data.",
+    "export": "One traced CSV with provenance; only one table.",
+    "repro": "36/37 numbers trace; call listed with args and provenance JSON.",
+    "refs": "News URLs with date and publisher, but they are capped by the script.",
+    "accuracy": "Fields read correctly; it flags South African contamination and the window mismatch.",
+    "limits": "Placed limits: 144-day gap, censoring, sampled publishers, placed_pct, mention mode.",
+    "verdict": "Answers about coverage volume and tone but barely says what the news reported about the decisions themselves; no contrary evidence named.",
+    "facets": "Most facets are grounded with traced values."
+   },
+   "C": {
+    "trend": "Traced series with peak and trough. Late/early is 1.33, and critical late/early 1.32 is decomposed. It correctly rejects the -50.4% CAGR as a censoring artefact.",
+    "comparison": "Baseline is defined, ratio and delta traced, and the monthly ratio range is given with a noise caveat.",
+    "chart": "Only a volume chart; tone and critical are not charted.",
+    "drilldown": "Multiple traced layers down to headlines with date and publisher, but no URLs; 3/6 follow-ups returned data.",
+    "export": "One traced CSV; coverage=full is a questionable flag given the 5-month gap.",
+    "repro": "62/62 traced; prism-calls block, capture date and provenance JSON.",
+    "refs": "Headlines lack URLs; capped at 1.",
+    "accuracy": "It catches the anomalies: UK MPC label collision, Cameroon acronym, Barbie Hsu noise, the CAGR artefact, and critical vs polarity.",
+    "limits": "Limits are placed beside the numbers and change the reading: the data ends 5 months before today, so decisions after May 2026 are unseen. It says what would close the gap.",
+    "verdict": "Concise, traced, with decision, confidence and conditions, and it names the non-RBI contamination.",
+    "facets": "All facets are grounded, plus the collisions and the critical-vs-tone distinction."
+   },
+   "D": {
+    "trend": "Memory estimate chart covering only Feb-Jun 2025.",
+    "comparison": "Memory numeric contrast labelled est.",
+    "chart": "Chart is labelled estimate.",
+    "drilldown": "No breakdown; 0/6 follow-ups returned data.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "An untagged 6.50% appears in the verdict and nothing traces.",
+    "refs": "None.",
+    "accuracy": "The remembered facts are plausible and do not contradict the reference.",
+    "limits": "Honest about what is unmeasured, but the window and gap framing are wrong.",
+    "verdict": "Script ceiling of 0 because the verdict contains an untagged number.",
+    "facets": "Facets declared unavailable; only partial memory content."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "CSV is labelled coverage=full although the data ends about 5 months before today"
+   ],
+   "D": [
+    "Untagged 6.50% in the verdict is presented as fact"
+   ]
+  },
+  "best": "C",
+  "verdict": "C and B both grounded every figure in the recorded overview, but C read the data more critically. It rejected the misleading CAGR, separated 'critical' from polarity, and flagged the entity and place collisions and the non-RBI contamination. It also stated plainly that RBI decisions after May 2026 are unseen. A and D answered honestly from memory but could not measure coverage at all."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

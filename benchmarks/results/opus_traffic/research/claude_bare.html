@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rising traffic congestion and quality of life: evidence map, analytical report and research article</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+<style>
+body{font-family:Georgia,"Times New Roman",serif;max-width:980px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#1d1d1d}
+h1{font-size:1.7rem;margin-bottom:.2rem}
+h2{border-bottom:2px solid #333;padding-bottom:.2rem;margin-top:2.2rem}
+h3{margin-top:1.6rem}
+.verdict{border:2px solid #333;background:#f6f4ee;padding:1rem 1.2rem;border-radius:4px}
+.note{background:#fff7e0;border-left:4px solid #d39e00;padding:.6rem .9rem;margin:.8rem 0;font-size:.93rem}
+.limit{background:#eef3fb;border-left:4px solid #3a6ab0;padding:.6rem .9rem;margin:.8rem 0;font-size:.93rem}
+.measured{border-left:4px solid #2e7d32;padding-left:.8rem}
+.interp{border-left:4px solid #8e24aa;padding-left:.8rem}
+.chart{width:100%;min-height:300px;margin:.6rem 0}
+.chartbox{border:1px solid #ccc;padding:.6rem .9rem;margin:1.2rem 0;border-radius:4px}
+.chartbox .meta{font-size:.85rem;color:#444}
+.reading{font-weight:bold}
+table{border-collapse:collapse;width:100%;font-size:.88rem;margin:.6rem 0}
+th,td{border:1px solid #bbb;padding:.3rem .45rem;text-align:left;vertical-align:top}
+th{background:#eee}
+td.null{background:#fafafa;color:#999}
+code{font-size:.85rem;background:#f2f2f2;padding:0 .2rem}
+#research-article{border-top:4px double #333;margin-top:3rem;padding-top:1rem}
+.small{font-size:.85rem;color:#555}
+.dl a{display:inline-block;margin:.25rem .6rem .25rem 0;padding:.25rem .6rem;border:1px solid #3a6ab0;border-radius:3px;text-decoration:none;color:#3a6ab0}
+</style>
+</head>
+<body>
+
+<h1>Rising traffic congestion and residents' quality of life</h1>
+<p class="small">Evidence-synthesis report and workshop article. Prepared 2026-10-23. Tag convention: [rN] = entry N in References; [r1-r15] = a count I made over this page's own 15-item reference list (my own coding, described in Data and methods); (est.) = figure from memory without a citable source. <strong>No data queries were run for this page</strong>: no bibliographic database, news archive or patent office was searched, so the "calls" list in the manifest contains only proposed follow-up queries (f1-f6), not executed calls. Numeric values attributed to [rN] were recalled from those publications, not re-extracted during this task, and should be checked against the source before submission.</p>
+
+<!-- ===================== A. VERDICT ===================== -->
+<section class="verdict" id="verdict">
+<h2 style="border:none;margin-top:0">Verdict</h2>
+<p><strong>Answer.</strong> Harm from road traffic through air pollution, noise and lost time is well supported by high-tier reviews [r1][r2][r6]. The narrower claim, that rising <em>congestion</em> lowers quality of life, rests on 1 quasi-experiment among 15 assembled sources [r1-r15][r3] and on commuting-time proxies [r9][r10]. Research, news and patent attention were not measured.</p>
+<p><strong>Decision.</strong> Fund congestion-specific causal studies in highly congested cities that are absent from this evidence base, such as Bengaluru at 28.2 min per 10 km [r15]. Build a measured bibliometric and news baseline before claiming any trend.</p>
+<p><strong>Confidence: low.</strong> No queries were run, and I assembled the 15 sources [r1-r15] from memory.</p>
+<p><strong>What would change it:</strong> measured counts showing many congestion-specific causal studies, or quasi-experimental evidence from Indian cities.</p>
+</section>
+
+<!-- ===================== B. ANALYTICAL REPORT ===================== -->
+<h2>Analytical report</h2>
+<div class="limit"><strong>Scope bound for every number below.</strong> The newest source on this page is the TomTom Traffic Index 2023 edition, released in early 2024 [r15]. That leaves a gap of roughly 33 months (est.) to today, 2026-10-23. Every count tagged [r1-r15] describes <em>my 15-item reference list</em>, not the literature. It is a convenience set recalled from memory, so its shares reflect my selection. News and patent lanes were not collected at all. Closing these gaps requires the follow-up queries f1-f6 in section D.</div>
+
+<h3>RQ1 - Attention: papers per year and news per month</h3>
+<div class="measured"><p><strong>Measured:</strong> nothing. Papers per year, news articles per month, their percentage change and their correlation <strong>cannot be measured on this page</strong>, because no bibliographic database (for example Prism research index) or news archive (for example GDELT) was queried. I give no estimated trend line, because it would be a plausible figure without an origin.</p></div>
+<div class="interp"><p><strong>What I can show instead</strong>, clearly labelled as something else, is the publication-year spread of the reference list I assembled (chart ch_time). It describes my selection, not field growth.</p></div>
+
+<div class="chartbox">
+<div class="meta"><strong>Chart 1 (time) - Publication years of this page's reference list, 5-year bins.</strong> Unit: number of references. Window: 2004-2024. Source: my coding of r1-r15. The bin 2025-2026 is not plotted. That is not a zero: the list was not designed to sample recent output.</div>
+<div id="ch_time" class="chart"></div>
+<p class="reading">The 15 references cluster after 2010, with 12 of 15 published 2010-2024 [r1-r15]; this describes my selection, not the literature's growth.</p>
+</div>
+
+<h3>RQ2 - Evidence: what the clinical and health literatures say</h3>
+<div class="measured">
+<p><strong>Strongest effect sizes (recalled from the cited sources; verify before submission):</strong></p>
+<table>
+<tr><th>Outcome</th><th>Effect</th><th>Population</th><th>Design / tier</th><th>Source</th></tr>
+<tr><td>Prematurity</td><td>-10.8% after E-ZPass [r3]</td><td>Mothers within 2 km of toll plazas, New Jersey and Pennsylvania [r3]</td><td>Quasi-experimental (difference-in-differences)</td><td>[r3]</td></tr>
+<tr><td>Low birth weight</td><td>-11.8% after E-ZPass [r3]</td><td>Same as above [r3]</td><td>Quasi-experimental</td><td>[r3]</td></tr>
+<tr><td>All-cause mortality</td><td>RR 1.04 (95% CI 1.01-1.06) per 10 µg/m³ NO₂ [r1]</td><td>Pooled cohorts, mainly North America and Europe [r1]</td><td>Systematic review / meta-analysis</td><td>[r1]</td></tr>
+<tr><td>Childhood asthma onset</td><td>RR 1.05 (95% CI 1.02-1.07) per 4 µg/m³ NO₂ [r2]</td><td>Pooled child cohorts [r2]</td><td>Systematic review / meta-analysis</td><td>[r2]</td></tr>
+<tr><td>Premature deaths attributable to congestion-related PM2.5</td><td>about 4,000 deaths in 2000, valued at about $31 billion [r4]</td><td>83 US urban areas [r4]</td><td>Health risk assessment (modelling)</td><td>[r4]</td></tr>
+<tr><td>Road-traffic noise threshold</td><td>Recommended below 53 dB L<sub>den</sub> [r8]</td><td>European Region guideline [r8]</td><td>Guideline (built on systematic reviews)</td><td>[r8]</td></tr>
+<tr><td>Lost time</td><td>54 hours of delay per auto commuter in 2019 [r13]</td><td>US urban areas [r13]</td><td>Index / grey literature</td><td>[r13]</td></tr>
+</table>
+<p>Only rows 1, 2 and 5 concern congestion as such; rows 3, 4 and 6 concern traffic exposure, and row 7 is exposure to delay, not a health outcome.</p>
+</div>
+
+<div class="chartbox">
+<div class="meta"><strong>Chart 2 (evidence magnitude) - Reduction in adverse birth outcomes after electronic tolling reduced congestion at toll plazas.</strong> Unit: % reduction relative to mothers 2-10 km away. Window: births 1994-2003 (recalled). Source: r3.</div>
+<div id="ch_effect" class="chart"></div>
+<p class="reading">Introduction of electronic tolling cut prematurity by 10.8% and low birth weight by 11.8% among mothers living within 2 km of a toll plaza [r3].</p>
+</div>
+
+<div class="measured"><p><strong>Balance by tier (my coding of r1-r15).</strong> I weighted systematic reviews and meta-analyses 3, quasi-experiments 2 and all other designs 1. On that scheme, supporting documents sum to 16 and contesting or qualifying documents sum to 2 [r1-r15]. This tally measures my selection; it is not a literature-wide balance. <strong>Risk-factor direction tally:</strong> no such tally exists in my sources, so this cannot be measured.</p></div>
+
+<div class="chartbox">
+<div class="meta"><strong>Chart 3 (composition) - Stance of each reference toward the central claim.</strong> Unit: number of references. Window: publications 2004-2024. Source: my coding of r1-r15.</div>
+<div id="ch_stance" class="chart"></div>
+<p class="reading">Of the 15 references, 11 support the central claim through at least one mechanism, 2 contest or qualify it and 2 measure exposure only [r1-r15].</p>
+</div>
+
+<div class="interp"><p><strong>Where the claim is contested.</strong></p>
+<ul>
+<li><strong>Emissions.</strong> Relieving congestion can lower CO₂ emissions. Pushing speeds high enough, or inducing new traffic, can raise them [r14].</li>
+<li><strong>Wellbeing.</strong> Commuting and wellbeing studies are heterogeneous by mode and context [r12]. Active commuters fare differently from drivers.</li>
+<li><strong>Proxies.</strong> The wellbeing evidence uses commute <em>duration</em> [r9][r10][r11], not congestion. A long commute may reflect distance chosen in exchange for housing, rather than delay.</li>
+</ul></div>
+
+<h3>RQ3 - Geography: four lanes, kept apart</h3>
+<div class="measured">
+<p><strong>Measured on this page:</strong> only the "studied" lane, and only for my reference list. I coded the first-author (or issuing body) country from recalled affiliations at the time of publication.</p>
+<p><strong>Not measured:</strong> the published lane (journal country), the reported lane (country a news article is about) and the patented lane (assignee country). No query was run for any of them.</p>
+<p>The studied-versus-reported mismatch therefore <strong>cannot be quantified</strong>.</p>
+</div>
+<table>
+<tr><th>Country</th><th>Studied (first-author, this list) [r1-r15]</th><th>Published (journal country)</th><th>Reported (news about country)</th><th>Patented (assignee country)</th></tr>
+<tr><td>India (IND)</td><td>0</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+<tr><td>United States (USA)</td><td>8</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+<tr><td>United Kingdom (GBR)</td><td>2</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+<tr><td>Germany (DEU)</td><td>1</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+<tr><td>Netherlands (NLD)</td><td>2</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+<tr><td>Switzerland (CHE)</td><td>1</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+<tr><td>Denmark (DNK, WHO Europe seat)</td><td>1</td><td class="null">not measured</td><td class="null">not measured</td><td class="null">not measured</td></tr>
+</table>
+
+<div class="chartbox">
+<div class="meta"><strong>Chart 4 (geography, map) - Studied lane: first-author or issuing-body country of this page's reference list.</strong> Unit: number of references. Window: publications 2004-2024. Source: my coding of r1-r15. India is shown at 0. Grey means no reference, not a measured zero for the literature.</div>
+<div id="ch_map" class="chart"></div>
+<p class="reading">On the studied lane of this reference set, the United States holds 8 of 15 first-author affiliations and India holds 0 [r1-r15].</p>
+</div>
+
+<div class="chartbox">
+<div class="meta"><strong>Chart 5 (comparison) - Average travel time per 10 km in the city centre, 2023.</strong> Unit: minutes per 10 km. Window: calendar 2023. Source: r15 (values recalled from the published ranking; verify). This measures congestion exposure, not health and not attention.</div>
+<div id="ch_comp" class="chart"></div>
+<p class="reading">TomTom places Bengaluru (28.2 min per 10 km) and Pune (27.8 min) close to Dublin (29.5 min) and Toronto (29.0 min), behind London (37.3 min), in its 2023 city-centre ranking [r15].</p>
+</div>
+
+<div class="interp"><p><strong>Connecting the sources.</strong></p>
+<ul>
+<li>The congestion index places 2 Indian cities among the slowest city centres it ranks [r15]. Yet the studied lane of my list has 0 Indian first authors against 8 US ones [r1-r15]. The only congestion-specific causal estimate also comes from the US [r3]. Where congestion is severe and where its health effect is identified do not coincide in this evidence base.</li>
+<li>The exposure figure of 54 delay hours per US commuter [r13] and the dose-response of RR 1.04 per 10 µg/m³ NO₂ [r1] cannot be combined into a burden here. Of my sources, only the modelling study [r4] links congestion to pollutant concentrations.</li>
+</ul></div>
+
+<h3>RQ4 - Trajectory: three-year projection</h3>
+<div class="measured"><p><strong>Not produced.</strong> A projection needs a measured series. None was collected: no papers per year, no news per month and no patents per year. The method, baseline, backtest error against a no-change forecast, last observed period and gap to today are therefore all <strong>not measured</strong>. I chose not to draw a projection from memory labelled estimate, because the underlying yearly counts would themselves be invented.</p>
+<p><strong>What would be done:</strong></p>
+<ul>
+<li>Collect yearly counts with query f1.</li>
+<li>Treat the latest calendar year as incomplete and exclude it.</li>
+<li>Fit damped exponential smoothing on log counts.</li>
+<li>Run a rolling-origin backtest over the last 5 complete years (est.) and report MAPE against a naive no-change forecast.</li>
+<li>Keep the model only if it beats the naive baseline.</li>
+</ul></div>
+
+<h3>RQ5 - Synthesis</h3>
+<div class="chartbox">
+<div class="meta"><strong>Chart 6 (source mix) - Source type of this page's evidence base.</strong> Unit: number of items. Window: 2004-2024. Source: my coding of r1-r15. The news and patent lanes are shown as 0 because they were <em>not collected</em>, not because they are empty.</div>
+<div id="ch_mix" class="chart"></div>
+<p class="reading">The evidence base here is 8 health-literature items, 5 other research items and 2 grey indices, with 0 news items and 0 patents because neither lane was collected [r1-r15].</p>
+</div>
+<div class="interp">
+<p>Taken together, the data support one argument. The mechanisms are established: pollution [r1][r2], noise [r6][r7][r8] and lost time [r11][r13]. The specific congestion-to-wellbeing link is identified causally only in narrow settings [r3]. That link is also missing for the most congested Indian cities [r15][r1-r15].</p>
+<p>For a funder, the marginal value lies in two places:</p>
+<ul>
+<li>congestion-specific natural experiments outside the US and Europe;</li>
+<li>a measured attention baseline (f1-f3).</li>
+</ul>
+<p>Another review of traffic-pollution mechanisms adds less.</p>
+</div>
+
+<!-- ===================== D. DRILL-DOWN ===================== -->
+<h2>Drill-down</h2>
+<h3>Under each headline number</h3>
+<ul>
+<li><strong>11 supporting [r1-r15]</strong>, by mechanism:
+  <ul>
+  <li>Pollution: r1, r2, r4, r5.</li>
+  <li>Congestion and birth outcomes: r3.</li>
+  <li>Noise: r6, r7, r8.</li>
+  <li>Time and wellbeing: r9, r10, r11.</li>
+  </ul></li>
+<li><strong>2 contesting or qualifying [r1-r15]:</strong>
+  <ul>
+  <li>r12: wellbeing effects vary by mode.</li>
+  <li>r14: the effect of congestion relief on emissions can go either way.</li>
+  </ul></li>
+<li><strong>2 exposure-only [r1-r15]:</strong> r13 (US delay hours) and r15 (global city ranking).</li>
+<li><strong>Tiers [r1-r15]:</strong>
+  <ul>
+  <li>Systematic review or meta-analysis: 2 (r1, r2).</li>
+  <li>Quasi-experimental: 1 (r3).</li>
+  <li>Observational panel: 2 (r9, r10).</li>
+  <li>Experience sampling: 1 (r11).</li>
+  <li>Narrative review: 3 (r6, r7, r12).</li>
+  <li>Modelling or health risk assessment: 3 (r4, r5, r14).</li>
+  <li>Guideline: 1 (r8).</li>
+  <li>Index: 2 (r13, r15).</li>
+  </ul></li>
+<li><strong>Studied lane, US 8 [r1-r15]:</strong> r1, r3, r4, r5, r6, r11, r13, r14. UK 2: r2, r12. Netherlands 2: r10, r15. Germany 1: r7. Switzerland 1: r9. Denmark 1: r8. India 0.</li>
+</ul>
+
+<h3>Follow-up questions and the exact query that would answer each</h3>
+<p class="small">I have no tool in this task, so each query is given in words. None has been run.</p>
+<ol>
+<li><strong>f1</strong> - How many papers per year mention congestion together with health or quality of life? Query: Prism research index <code>/works?filter=title_and_abstract.search:"traffic congestion" AND (health OR "quality of life" OR wellbeing OR "well-being" OR stress),from_publication_date:2000-01-01,to_publication_date:2026-10-23&amp;group_by=publication_year</code>. Flag the current year as incomplete.</li>
+<li><strong>f2</strong> - How many news articles per month? Query: GDELT DOC 2.0 API, <code>query="traffic congestion" (health OR pollution OR stress OR commute)</code>, <code>mode=timelinevolraw</code>, <code>timespan</code> 2017-01-01 to 2026-10-23, monthly. Then compute the Spearman correlation with f1 aggregated by year.</li>
+<li><strong>f3</strong> - Where is congestion technology patented? Query: Lens.org patent search on CPC G08G1 (traffic control systems) AND full text "congestion", grouped by applicant country and priority year. Treat the last 18 months as censored by the publication lag.</li>
+<li><strong>f4</strong> - Where is the subject studied versus published? Query: the f1 result set, grouped by the first author's <code>authorships.institutions.country_code</code> (position = first) and by <code>primary_location.source.host_organization</code> country.</li>
+<li><strong>f5</strong> - Is there quasi-experimental congestion-health evidence from India? Query: the health literature index <code>("traffic congestion" OR "congestion pricing" OR "odd-even") AND (India OR Delhi OR Bengaluru OR Pune OR Mumbai) AND (health OR mortality OR "birth weight" OR asthma)</code>, all years, screened for difference-in-differences or regression-discontinuity designs.</li>
+<li><strong>f6</strong> - Which way do the congestion-pricing evaluations point? Query: Scopus <code>TITLE-ABS-KEY("congestion charge" OR "congestion pricing") AND TITLE-ABS-KEY(health OR asthma OR mortality)</code>, 2000-2026. Code each study's direction and design tier.</li>
+</ol>
+
+<!-- ===================== E. EXPORTS ===================== -->
+<h2>Exports</h2>
+<p>Four CSV tables are embedded in the manifest. Download links are generated below. Nulls are empty cells, and each file records its source, window, unit, coverage and export date (2026-10-23).</p>
+<ul>
+<li><code>series_yearly_monthly.csv</code>: the requested yearly papers series and monthly news series. Both are empty because they were not measured. It also holds the reference-list year bins behind Chart 1.</li>
+<li><code>country_lanes.csv</code>: the four lanes for India and the comparator countries. Only the studied lane (this list) is filled.</li>
+<li><code>key_documents.csv</code>: the 15 documents with identifiers, tiers, stance and source type. The verbatim-quote column is empty because no source text was retrieved, and I do not reproduce quotes from memory.</li>
+<li><code>effect_sizes.csv</code>: the effect table under RQ2.</li>
+</ul>
+<div class="dl" id="downloads"></div>
+
+<!-- ===================== F. METHOD AND LIMITS ===================== -->
+<h2>Method and limits</h2>
+<div class="limit">
+<ul>
+<li><strong>Newest data:</strong> r15, released early 2024. The gap to 2026-10-23 is about 33 months (est.).</li>
+<li><strong>What each count is:</strong> a count over my 15-item list [r1-r15]. It is <strong>not</strong> a count of the literature, the news or patents.</li>
+<li><strong>Lanes:</strong> only the studied lane is coded, by first-author affiliation as recalled. Published, reported and patented are not measured.</li>
+<li><strong>Coverage:</strong> unknown. The list is a purposive, memory-based selection that overweights English-language sources from the US and Europe.</li>
+<li><strong>Title matching:</strong> none performed.</li>
+<li><strong>Censoring:</strong> not applicable, since there is no time series. Any future f1 series must drop or flag 2026.</li>
+<li><strong>Patent publication lag:</strong> not applicable here. Under f3, applications are published about 18 months after priority (est.), so 2025-2026 counts would be incomplete.</li>
+<li><strong>Thin evidence:</strong> a single congestion-specific causal study [r3].</li>
+<li><strong>What closes each gap:</strong> f1 to f6.</li>
+</ul>
+</div>
+
+<!-- ===================== C. RESEARCH ARTICLE ===================== -->
+<article id="research-article">
+<h1>Congestion is not traffic: an evidence map of what is and is not known about rising traffic congestion and residents' quality of life</h1>
+
+<h2>Abstract</h2>
+<p><strong>Background.</strong> Traffic congestion is widely assumed to harm residents' quality of life through air pollution, noise, lost time and stress. The evidence behind that assumption is spread across epidemiology, economics, psychology and transport research, and is rarely separated into what concerns traffic in general and what concerns congestion specifically.</p>
+<p><strong>Methods.</strong> I assembled a purposive set of 15 sources [r1-r15] from my own knowledge, with no new database search. For each source I coded:</p>
+<ul>
+<li>design tier;</li>
+<li>stance toward the central claim;</li>
+<li>source type;</li>
+<li>first-author country.</li>
+</ul>
+<p>I also extracted the headline effect sizes as reported. Research-literature, news and patent attention were not measured.</p>
+<p><strong>Results.</strong></p>
+<ul>
+<li>Stance: 11 of 15 sources support at least one harm mechanism, 2 qualify or contest it, and 2 measure exposure only [r1-r15].</li>
+<li>Tier-weighted balance: supporting documents score 16 and contesting ones 2 [r1-r15].</li>
+<li>Pollution: meta-analyses report RR 1.04 per 10 µg/m³ NO₂ for all-cause mortality [r1] and RR 1.05 per 4 µg/m³ NO₂ for childhood asthma [r2].</li>
+<li>Congestion specifically: the only quasi-experimental estimate finds reductions of 10.8% in prematurity and 11.8% in low birth weight near toll plazas after electronic tolling [r3].</li>
+<li>Geography: 8 of 15 first authors are US-based and 0 are India-based [r1-r15], although Bengaluru and Pune rank among the slowest city centres in a global index [r15].</li>
+</ul>
+<p><strong>Conclusions.</strong> The harm pathways are well established. Congestion-specific causal evidence is thin and geographically concentrated away from the most congested cities. Funding should prioritise natural experiments in such cities and a measured attention baseline.</p>
+
+<h2>Introduction</h2>
+<p>Traffic congestion appears in public debate as a quality-of-life problem: lost hours, frustration, dirtier air and noisier streets. Index providers publish annual rankings of the slowest cities. The TomTom Traffic Index, for example, reports average city-centre travel times of 37.3 minutes per 10 km for London and 28.2 minutes for Bengaluru in 2023 [r15]. The Texas A&amp;M Transportation Institute estimates 54 hours of delay per US auto commuter in 2019 [r13]. These figures are measures of exposure to delay. They are not measures of harm.</p>
+<p>The claim examined here is that <em>increasing</em> traffic congestion harms residents' quality of life through health, lost time, stress and wellbeing. Evaluating it requires separating three things that the literature often merges.</p>
+<ul>
+<li><strong>Traffic exposure:</strong> living near roads, breathing traffic-related pollution and hearing traffic noise.</li>
+<li><strong>Commuting:</strong> time spent travelling, whether or not it is slowed by congestion.</li>
+<li><strong>Congestion itself:</strong> the excess of travel time and stop-and-go operation over free-flow conditions.</li>
+</ul>
+<p>Evidence on the first two is substantial. Evidence on the third, which is the actual subject of the claim, is much thinner. The policy implications differ. Reducing congestion by raising speeds may not reduce exposure, and may even increase emissions and traffic volumes [r14].</p>
+<p>The workshop asks five questions:</p>
+<ol>
+<li>How has research and news attention moved?</li>
+<li>What does the health evidence say?</li>
+<li>Where is the subject studied, published, reported and patented?</li>
+<li>Where is the trajectory heading?</li>
+<li>What single argument do the data support?</li>
+</ol>
+<p>This article answers them with an explicit boundary. No new data were collected, so questions 1 and 4, and three of the four lanes of question 3, are reported as not measured rather than filled with plausible numbers. The contribution is an evidence map that separates the established from the assumed, together with an exact list of queries that would close the remaining gaps.</p>
+<p>Three bodies of work frame the problem.</p>
+<ul>
+<li><strong>Environmental epidemiology</strong> has repeatedly reviewed traffic-related air pollution. The most comprehensive recent assessment, by a Health Effects Institute panel, rates the evidence for all-cause mortality and childhood asthma as high in confidence [r1]. Earlier meta-analysis reached similar conclusions for asthma onset [r2].</li>
+<li><strong>Noise research</strong> has established auditory and non-auditory effects, including cardiovascular disease [r6][r7], and the World Health Organization has issued exposure guidelines for road traffic noise [r8].</li>
+<li><strong>Wellbeing economics and psychology</strong> have documented that commuting is among the least enjoyable daily activities [r11] and that longer commutes are associated with lower life satisfaction [r9] and worse self-reported health [r10]. A critical review cautions that these associations vary by mode and context [r12].</li>
+</ul>
+<p>Into this landscape, a small number of studies isolate congestion directly. The best known uses the staggered introduction of electronic toll collection, which reduced idling and queuing at toll plazas without changing traffic volumes much, as a natural experiment for infant health [r3]. Health risk assessments have modelled the population burden of congestion-related fine particles in US cities [r4] and the incremental risk from congested versus free-flow traffic [r5]. Engineering work has shown that the emissions consequences of congestion relief depend on the resulting speed profile [r14].</p>
+
+<h2>Data and methods</h2>
+<p><strong>Design.</strong> This is a structured evidence map built on a purposive reference set. I performed no new search of any database, news archive or patent office. The manifest lists no executed data calls. It lists only six proposed follow-up queries (f1-f6), which have not been run.</p>
+<p><strong>Data sources.</strong> The sole data source is the 15 publications listed under References, selected from my own knowledge of the literature to cover the four mechanisms in the central claim: air pollution, noise, lost time, and stress and wellbeing. I also selected two exposure indices and two sources that qualify the claim. Numeric results were recalled from these publications, not re-extracted during this task. Each should be verified against the original before submission. No verbatim quotations are reproduced, because no source text was retrieved.</p>
+<p><strong>Queries, phrases and matching rules.</strong> None were used. No keyword query, title matching, deduplication rule or date filter was applied, because no search was performed.</p>
+<p><strong>Window.</strong> The reference set spans publications from 2004 to 2024 [r1-r15]. The newest source was released in early 2024 [r15], about 33 months (est.) before the analysis date of 2026-10-23.</p>
+<p><strong>Coding.</strong> I coded each of the 15 sources on four variables.</p>
+<ol>
+<li><strong>Design tier.</strong> Categories: systematic review or meta-analysis; quasi-experimental; observational panel; experience sampling; narrative review; modelling or health risk assessment; guideline; index or grey literature.</li>
+<li><strong>Stance toward the central claim.</strong> "Supports" means the source reports harm through at least one named mechanism. "Contests or qualifies" means the source reports that the effect is heterogeneous, reversible or mechanism-dependent. "Exposure only" means the source measures congestion or delay without a health or wellbeing outcome.</li>
+<li><strong>Source type.</strong> Health literature (health, epidemiology, medical or health-economics venues or bodies); other research literature (economics, psychology, transport); or grey index.</li>
+<li><strong>First-author or issuing-body country</strong>, as recalled at the time of publication.</li>
+</ol>
+<p><strong>Tier weighting.</strong> To give a tier-weighted balance, I assigned weight 3 to systematic reviews and meta-analyses, 2 to quasi-experiments and 1 to all other designs, and summed the weights by stance. The weights are a transparent convention, not an estimate of evidential value.</p>
+<p><strong>Lanes.</strong> The workshop specifies four geographic lanes:</p>
+<ul>
+<li>studied (first-author affiliation);</li>
+<li>published (journal country);</li>
+<li>reported (country a news article is about);</li>
+<li>patented (assignee country).</li>
+</ul>
+<p>Only the studied lane was coded, and only for the 15-item set. The other three lanes were not measured. Lanes are never summed.</p>
+<p><strong>Tag convention.</strong> [rN] marks a figure taken from reference N. [r1-r15] marks a count made over my coding of the 15-item set. (est.) marks a figure from memory without a citable source.</p>
+<p><strong>Not performed.</strong> The following were not done:</p>
+<ul>
+<li>bibliometric time series;</li>
+<li>news volume series;</li>
+<li>correlation between attention series;</li>
+<li>patent counts;</li>
+<li>forecasting or backtesting;</li>
+<li>meta-analytic pooling;</li>
+<li>risk-of-bias assessment.</li>
+</ul>
+
+<h2>Results</h2>
+<p><strong>Composition of the evidence set.</strong></p>
+<ul>
+<li>Stance: 11 sources support at least one harm mechanism, 2 qualify or contest the claim, and 2 measure exposure only [r1-r15].</li>
+<li>Tiers: 2 systematic reviews or meta-analyses, 1 quasi-experiment, 2 observational panels, 1 experience-sampling study, 3 narrative reviews, 3 modelling studies, 1 guideline and 2 indices [r1-r15].</li>
+<li>Tier-weighted balance: supporting sources sum to 16 and contesting or qualifying sources to 2 [r1-r15].</li>
+<li>Source type: 8 health-literature items, 5 other research items and 2 grey indices; news and patents were not collected [r1-r15].</li>
+<li>Publication years: 12 of the 15 sources date from 2010-2024 [r1-r15]. This is a property of the selection, not evidence of growing attention.</li>
+</ul>
+<p><strong>Air pollution.</strong> The Health Effects Institute panel's meta-analysis reports a relative risk of all-cause mortality of 1.04 (95% CI 1.01-1.06) per 10 µg/m³ NO₂, used as a marker of traffic-related pollution [r1]. A meta-analysis of childhood asthma onset reports a relative risk of 1.05 (95% CI 1.02-1.07) per 4 µg/m³ NO₂ [r2]. A US health risk assessment attributes about 4,000 premature deaths in 2000, valued at about $31 billion, to the PM2.5 increment from congestion across 83 urban areas [r4]. Modelling of vehicle traffic further indicates that congested conditions raise pollutant emissions and associated risks relative to free flow [r5].</p>
+<p><strong>Congestion specifically.</strong> The only quasi-experimental, congestion-specific health estimate in the set uses the introduction of E-ZPass. Among mothers living within 2 km of a toll plaza, prematurity fell by 10.8% and low birth weight by 11.8%, relative to mothers living 2 to 10 km away [r3].</p>
+<p><strong>Noise.</strong> Reviews establish auditory and non-auditory effects of noise, including on sleep and cardiovascular outcomes [r6][r7]. The WHO recommends road-traffic noise below 53 dB L<sub>den</sub> [r8].</p>
+<p><strong>Lost time, stress and wellbeing.</strong> Commuting is rated among the least positive daily episodes in day-reconstruction data [r11]. Longer commutes are associated with lower life satisfaction that is not compensated by income or housing [r9], and with worse self-reported health [r10]. These are commute-duration effects, not congestion effects. The exposure side is quantified as 54 hours of delay per US auto commuter in 2019 [r13].</p>
+<p><strong>Qualifying evidence.</strong> A critical overview finds that the wellbeing consequences of commuting differ by mode, by length and by individual circumstance [r12]. Engineering analysis shows that relieving severe congestion can reduce CO₂ emissions, while raising speeds beyond moderate levels can increase them [r14].</p>
+<p><strong>Geography.</strong> On the studied lane of the 15-item set, the United States accounts for 8 first authors, the United Kingdom 2, the Netherlands 2, and Germany, Switzerland and Denmark 1 each; India accounts for 0 [r1-r15]. In the 2023 congestion index, Bengaluru (28.2 min per 10 km) and Pune (27.8 min) sit close to Dublin (29.5 min) and Toronto (29.0 min), behind London (37.3 min) [r15]. The published, reported and patented lanes were not measured.</p>
+<p><strong>Not measured.</strong> Papers per year, news articles per month, their relationship, patent counts by assignee country and any projection.</p>
+
+<h2>Discussion</h2>
+<p>The results support one argument. The mechanisms through which road traffic harms residents are established at the highest evidence tiers. The congestion-specific version of the claim is supported causally by a single natural experiment in the set [r3][r1-r15].</p>
+<p><strong>Mechanisms.</strong> The pollution pathway has high-confidence systematic-review support for mortality and asthma [r1][r2]. The noise pathway is reviewed in leading clinical journals [r6][r7] and codified in WHO guidelines [r8]. The time and wellbeing pathway rests on robust panel and experience-sampling evidence [r9][r10][r11].</p>
+<p><strong>The inferential gap.</strong> Each of these mechanisms concerns traffic volume, proximity or commute length, not congestion as such. The policy-relevant question is different: does reducing delay, rather than reducing traffic, improve residents' quality of life?</p>
+<ul>
+<li>The E-ZPass study is valuable because it isolates delay. Queuing and idling fell while volumes changed little, so the infant-health gains can be attributed to congestion relief [r3].</li>
+<li>The modelling studies [r4][r5] support the same direction but depend on assumed emission-speed relationships.</li>
+<li>Those relationships are themselves non-monotonic [r14].</li>
+</ul>
+<p>A reader who equates "less congestion" with "better health" therefore risks a policy error. Road expansion that raises speeds and induces traffic may move exposure in the wrong direction. Measures that cut stop-and-go operation without adding volume, such as electronic tolling, are the better-identified case.</p>
+<p><strong>Wellbeing is contested in detail.</strong> The commuting paradox [r9] and the health association [r10] are consistent with harm. The critical review [r12] stresses heterogeneity: some commuters, particularly active ones, report neutral or positive experiences. Congestion probably matters through unpredictability as well as duration, but none of the sources here measures that directly.</p>
+<p><strong>Geography.</strong> In the studied lane of this set, the causal and wellbeing evidence comes predominantly from the US and Western Europe [r1-r15]. The cities that the congestion index places among the slowest include Bengaluru and Pune [r15]. Pollution backgrounds, vehicle fleets, two-wheeler shares and informal transport in Indian cities differ from the US settings in which the toll-plaza experiment was run [r3]. Effect sizes may not transfer. This is the clearest research and funding gap the map reveals.</p>
+<p>Because the set was assembled from memory, a 0 for India is weak evidence of absence. Query f5 would test it directly.</p>
+<p><strong>Implications for what to study or fund.</strong></p>
+<ol>
+<li>Prioritise natural experiments that change delay without changing volume, such as tolling technology, signal coordination, congestion pricing and traffic-restriction schemes, with health or wellbeing outcomes, in highly congested cities outside the US and Europe.</li>
+<li>Fund a measured attention baseline (queries f1-f4) before making claims about rising research or media interest. No such claim can be made from this map.</li>
+<li>Require studies to report delay exposure in the same units as the indices [r13][r15], so that health dose-response [r1] can eventually be linked to congestion metrics.</li>
+</ol>
+
+<h2>Limitations</h2>
+<ul>
+<li><strong>Data end date.</strong> The newest source was released in early 2024 [r15], about 33 months (est.) before 2026-10-23. Evidence published since, including any new congestion-pricing evaluations, is not reflected.</li>
+<li><strong>No search.</strong> The 15 sources were selected from memory, not by a reproducible search. Coverage is unknown and probably biased toward highly cited English-language work from the US and Europe. Every share and every count tagged [r1-r15] describes this selection, not the literature.</li>
+<li><strong>Recalled values.</strong> Effect sizes and index values were recalled, not re-extracted, and no verbatim quotes are given. Each value must be checked against its source before submission.</li>
+<li><strong>Lanes.</strong> Only the studied lane was coded, using recalled affiliations of first authors or issuing bodies. The published, reported and patented lanes were not measured, so the studied-versus-reported mismatch is unquantified.</li>
+<li><strong>Title matching.</strong> None was performed. A future search will need explicit rules to separate "traffic congestion" from unrelated uses such as nasal or network congestion.</li>
+<li><strong>Censoring.</strong> No time series exists here. Future annual counts must treat 2026 as incomplete.</li>
+<li><strong>Patent publication lag.</strong> Applications typically appear about 18 months after priority (est.), so recent patent years would be undercounted.</li>
+<li><strong>Thin evidence.</strong> Only 1 congestion-specific quasi-experiment is in the set [r1-r15]. Exposure proxies (NO₂, commute duration) stand in for congestion elsewhere.</li>
+<li><strong>Coding.</strong> Tier weights and stance codes are mine and unvalidated. A second coder and a kappa statistic would be needed.</li>
+</ul>
+<p><strong>What would change the conclusions:</strong></p>
+<ul>
+<li>a reproducible search (f1, f4, f5, f6) finding multiple congestion-specific causal studies, especially from Indian or other low- and middle-income cities;</li>
+<li>evidence that congestion relief worsens exposure in practice;</li>
+<li>measured attention series showing a trend in either direction.</li>
+</ul>
+
+<h2>References</h2>
+<ol>
+<li id="r1">[r1] Boogaard H, et al. Long-term exposure to traffic-related air pollution and selected health outcomes: A systematic review and meta-analysis. <em>Environment International</em>, 2022. <a href="https://doi.org/10.1016/j.envint.2022.107262">doi:10.1016/j.envint.2022.107262</a>. Supports the pollution mechanism (mortality RR).</li>
+<li id="r2">[r2] Khreis H, et al. Exposure to traffic-related air pollution and risk of development of childhood asthma: A systematic review and meta-analysis. <em>Environment International</em>, 2017. <a href="https://doi.org/10.1016/j.envint.2016.11.012">doi:10.1016/j.envint.2016.11.012</a>. Supports the asthma RR.</li>
+<li id="r3">[r3] Currie J, Walker R. Traffic Congestion and Infant Health: Evidence from E-ZPass. <em>American Economic Journal: Applied Economics</em>, 2011. <a href="https://doi.org/10.1257/app.3.1.65">doi:10.1257/app.3.1.65</a>. The congestion-specific causal estimate.</li>
+<li id="r4">[r4] Levy JI, Buonocore JJ, von Stackelberg K. Evaluation of the public health impacts of traffic congestion: a health risk assessment. <em>Environmental Health</em>, 2010. <a href="https://doi.org/10.1186/1476-069X-9-65">doi:10.1186/1476-069X-9-65</a>. Congestion-attributable deaths.</li>
+<li id="r5">[r5] Zhang K, Batterman S. Air pollution and health risks due to vehicle traffic. <em>Science of the Total Environment</em>, 2013. <a href="https://doi.org/10.1016/j.scitotenv.2013.01.074">doi:10.1016/j.scitotenv.2013.01.074</a>. Congested versus free-flow risk.</li>
+<li id="r6">[r6] Basner M, et al. Auditory and non-auditory effects of noise on health. <em>The Lancet</em>, 2014. <a href="https://doi.org/10.1016/S0140-6736(13)61613-X">doi:10.1016/S0140-6736(13)61613-X</a>. The noise mechanism.</li>
+<li id="r7">[r7] Münzel T, et al. Environmental Noise and the Cardiovascular System. <em>Journal of the American College of Cardiology</em>, 2018. <a href="https://doi.org/10.1016/j.jacc.2017.12.015">doi:10.1016/j.jacc.2017.12.015</a>. The cardiovascular noise pathway.</li>
+<li id="r8">[r8] World Health Organization Regional Office for Europe. Environmental Noise Guidelines for the European Region. WHO, 2018. <a href="https://www.who.int/europe/publications/i/item/9789289053563">who.int/europe/publications/i/item/9789289053563</a>. The 53 dB L<sub>den</sub> guideline.</li>
+<li id="r9">[r9] Stutzer A, Frey BS. Stress that doesn't pay: The commuting paradox. <em>Scandinavian Journal of Economics</em>, 2008. <a href="https://doi.org/10.1111/j.1467-9442.2008.00542.x">doi:10.1111/j.1467-9442.2008.00542.x</a>. Commute duration and life satisfaction.</li>
+<li id="r10">[r10] Künn-Nelen A. Does commuting affect health? <em>Health Economics</em>, 2016. <a href="https://doi.org/10.1002/hec.3199">doi:10.1002/hec.3199</a>. Commute duration and self-reported health.</li>
+<li id="r11">[r11] Kahneman D, et al. A survey method for characterizing daily life experience: The day reconstruction method. <em>Science</em>, 2004. <a href="https://doi.org/10.1126/science.1103572">doi:10.1126/science.1103572</a>. Commuting as a low-affect activity.</li>
+<li id="r12">[r12] Chatterjee K, et al. Commuting and wellbeing: a critical overview of the literature with implications for policy and future research. <em>Transport Reviews</em>, 2020. <a href="https://doi.org/10.1080/01441647.2019.1649317">doi:10.1080/01441647.2019.1649317</a>. Heterogeneity; qualifies the claim.</li>
+<li id="r13">[r13] Schrank D, Albert L, Eisele B, Lomax T. 2021 Urban Mobility Report. Texas A&amp;M Transportation Institute, 2021. <a href="https://mobility.tamu.edu/umr/">mobility.tamu.edu/umr/</a>. US delay hours per commuter.</li>
+<li id="r14">[r14] Barth M, Boriboonsomsin K. Real-world carbon dioxide impacts of traffic congestion. <em>Transportation Research Record</em>, 2008. <a href="https://doi.org/10.3141/2058-20">doi:10.3141/2058-20</a>. Non-monotonic emissions; contests the simple link.</li>
+<li id="r15">[r15] TomTom. TomTom Traffic Index 2023. TomTom International, 2024. <a href="https://www.tomtom.com/traffic-index/">tomtom.com/traffic-index/</a>. City-centre travel time per 10 km.</li>
+</ol>
+</article>
+
+<!-- ===================== MANIFEST ===================== -->
+<script type="application/json" id="report-manifest">
+{
+"verdict": {
+ "answer": "Harm from road traffic via pollution, noise and lost time is well supported by high-tier reviews [r1][r2][r6], but the narrower claim that rising congestion itself lowers quality of life rests on 1 quasi-experiment among 15 assembled sources [r3][r1-r15] and on commuting-time proxies [r9][r10]; research, news and patent attention were not measured.",
+ "decision": "Fund congestion-specific causal studies in highly congested cities absent from the evidence base (e.g. Bengaluru, 28.2 min per 10 km [r15]) and a measured bibliometric/news baseline before any trend claim.",
+ "confidence": "low - no data queries were run and the 15-source set was assembled from memory, with values recalled rather than re-extracted",
+ "what_would_change": "Measured counts showing many congestion-specific causal studies, or quasi-experimental evidence from Indian cities."
+},
+"charts": [
+ {"id":"ch_time","kind":"bars","title":"Publication years of this page's reference list (5-year bins)","unit":"number of references","window":{"from":"2004-01-01","to":"2024-12-31"},"x":{"field":"label","type":"ordinal"},
+  "series":[{"name":"references","source":"ref:r1..r15 (author coding of reference list)","points":[["2000-2004",1],["2005-2009",2],["2010-2014",4],["2015-2019",4],["2020-2024",4]]}],
+  "caption":"Describes the author's selection, not literature growth; 2025-2026 not plotted (not a zero).",
+  "supports":"The 15 references cluster after 2010, with 12 of 15 published 2010-2024 [r1-r15]; this describes my selection, not the literature's growth."},
+ {"id":"ch_effect","kind":"hbar","title":"Reduction in adverse birth outcomes after E-ZPass, mothers within 2 km of toll plaza","unit":"% reduction","window":{"from":"1994-01-01","to":"2003-12-31"},"x":{"field":"label","type":"ordinal"},
+  "series":[{"name":"% reduction","source":"ref:r3","points":[["Prematurity",10.8],["Low birth weight",11.8]]}],
+  "caption":"Values recalled from r3; verify.",
+  "supports":"Introduction of electronic tolling cut prematurity by 10.8% and low birth weight by 11.8% among mothers living within 2 km of a toll plaza [r3]."},
+ {"id":"ch_stance","kind":"share","title":"Stance of each reference toward the central claim","unit":"number of references","window":{"from":"2004-01-01","to":"2024-12-31"},"x":{"field":"label","type":"ordinal"},
+  "series":[{"name":"references","source":"ref:r1..r15 (author coding of reference list)","points":[["Supports",11],["Contests or qualifies",2],["Exposure only",2]]}],
+  "caption":"Author's coding; selection-dependent.",
+  "supports":"Of the 15 references, 11 support the central claim through at least one mechanism, 2 contest or qualify it and 2 measure exposure only [r1-r15]."},
+ {"id":"ch_map","kind":"map","title":"Studied lane: first-author or issuing-body country of this page's reference list","unit":"number of references","window":{"from":"2004-01-01","to":"2024-12-31"},"x":{"field":"country","type":"geo"},
+  "series":[{"name":"studied lane (reference list)","source":"ref:r1..r15 (author coding of reference list)","points":[["USA",8],["GBR",2],["NLD",2],["DEU",1],["CHE",1],["DNK",1],["IND",0]]}],
+  "caption":"Only the studied lane, only for this list; published, reported and patented lanes not measured.",
+  "supports":"On the studied lane of this reference set, the United States holds 8 of 15 first-author affiliations and India holds 0 [r1-r15]."},
+ {"id":"ch_comp","kind":"hbar","title":"Average city-centre travel time per 10 km, 2023","unit":"minutes per 10 km","window":{"from":"2023-01-01","to":"2023-12-31"},"x":{"field":"label","type":"ordinal"},
+  "series":[{"name":"travel time per 10 km","source":"ref:r15","points":[["London (GBR)",37.3],["Dublin (IRL)",29.5],["Toronto (CAN)",29.0],["Bengaluru (IND)",28.2],["Pune (IND)",27.8]]}],
+  "caption":"Values recalled from r15; verify. Exposure measure, not health.",
+  "supports":"TomTom places Bengaluru (28.2 min per 10 km) and Pune (27.8 min) close to Dublin (29.5 min) and Toronto (29.0 min), behind London (37.3 min), in its 2023 city-centre ranking [r15]."},
+ {"id":"ch_mix","kind":"bars","title":"Source type of this page's evidence base","unit":"number of items","window":{"from":"2004-01-01","to":"2024-12-31"},"x":{"field":"label","type":"ordinal"},
+  "series":[{"name":"items","source":"ref:r1..r15 (author coding of reference list)","points":[["Health literature",8],["Other research literature",5],["Grey index",2],["News (not collected)",0],["Patents (not collected)",0]]}],
+  "caption":"News and patents are 0 because not collected, not because empty.",
+  "supports":"The evidence base here is 8 health-literature items, 5 other research items and 2 grey indices, with 0 news items and 0 patents because neither lane was collected [r1-r15]."}
+],
+"exports": [
+ {"name":"series_yearly_monthly.csv","source":"not measured (research, news); reference-list coding r1..r15 (bins)","window":"2000-01-01..2026-10-23","unit":"papers per year; articles per month; references per 5-year bin","coverage":"unknown",
+  "csv":"series,period,value,unit,source,coverage,export_date\nresearch_papers_per_year,,,papers per year,not measured (query f1 not run),unknown,2026-10-23\nnews_articles_per_month,,,articles per month,not measured (query f2 not run),unknown,2026-10-23\nreference_list_bin,2000-2004,1,references,author coding r1-r15,partial,2026-10-23\nreference_list_bin,2005-2009,2,references,author coding r1-r15,partial,2026-10-23\nreference_list_bin,2010-2014,4,references,author coding r1-r15,partial,2026-10-23\nreference_list_bin,2015-2019,4,references,author coding r1-r15,partial,2026-10-23\nreference_list_bin,2020-2024,4,references,author coding r1-r15,partial,2026-10-23"},
+ {"name":"country_lanes.csv","source":"studied lane: author coding r1..r15; other lanes not measured","window":"2004-01-01..2024-12-31","unit":"number of documents per lane (lanes never summed)","coverage":"partial",
+  "csv":"country,iso3,studied_reference_list,published_journal_country,reported_news_country,patented_assignee_country,source,coverage,export_date\nIndia,IND,0,,,,author coding r1-r15,partial,2026-10-23\nUnited States,USA,8,,,,author coding r1-r15,partial,2026-10-23\nUnited Kingdom,GBR,2,,,,author coding r1-r15,partial,2026-10-23\nGermany,DEU,1,,,,author coding r1-r15,partial,2026-10-23\nNetherlands,NLD,2,,,,author coding r1-r15,partial,2026-10-23\nSwitzerland,CHE,1,,,,author coding r1-r15,partial,2026-10-23\nDenmark,DNK,1,,,,author coding r1-r15,partial,2026-10-23"},
+ {"name":"key_documents.csv","source":"References r1..r15 (author coding)","window":"2004-01-01..2024-12-31","unit":"one row per document","coverage":"partial",
+  "csv":"id,year,venue,doi_or_url,tier,tier_weight,stance,source_type,first_author_country,verbatim_quote,export_date\nr1,2022,Environment International,https://doi.org/10.1016/j.envint.2022.107262,systematic review/meta-analysis,3,supports,health,USA,,2026-10-23\nr2,2017,Environment International,https://doi.org/10.1016/j.envint.2016.11.012,systematic review/meta-analysis,3,supports,health,GBR,,2026-10-23\nr3,2011,American Economic Journal: Applied Economics,https://doi.org/10.1257/app.3.1.65,quasi-experimental,2,supports,other research,USA,,2026-10-23\nr4,2010,Environmental Health,https://doi.org/10.1186/1476-069X-9-65,modelling/HRA,1,supports,health,USA,,2026-10-23\nr5,2013,Science of the Total Environment,https://doi.org/10.1016/j.scitotenv.2013.01.074,modelling/HRA,1,supports,health,USA,,2026-10-23\nr6,2014,The Lancet,https://doi.org/10.1016/S0140-6736(13)61613-X,narrative review,1,supports,health,USA,,2026-10-23\nr7,2018,Journal of the American College of Cardiology,https://doi.org/10.1016/j.jacc.2017.12.015,narrative review,1,supports,health,DEU,,2026-10-23\nr8,2018,WHO Regional Office for Europe,https://www.who.int/europe/publications/i/item/9789289053563,guideline,1,supports,health,DNK,,2026-10-23\nr9,2008,Scandinavian Journal of Economics,https://doi.org/10.1111/j.1467-9442.2008.00542.x,observational panel,1,supports,other research,CHE,,2026-10-23\nr10,2016,Health Economics,https://doi.org/10.1002/hec.3199,observational panel,1,supports,health,NLD,,2026-10-23\nr11,2004,Science,https://doi.org/10.1126/science.1103572,experience sampling,1,supports,other research,USA,,2026-10-23\nr12,2020,Transport Reviews,https://doi.org/10.1080/01441647.2019.1649317,narrative review,1,contests or qualifies,other research,GBR,,2026-10-23\nr13,2021,Texas A&M Transportation Institute,https://mobility.tamu.edu/umr/,index/grey,1,exposure only,grey index,USA,,2026-10-23\nr14,2008,Transportation Research Record,https://doi.org/10.3141/2058-20,modelling/HRA,1,contests or qualifies,other research,USA,,2026-10-23\nr15,2024,TomTom,https://www.tomtom.com/traffic-index/,index/grey,1,exposure only,grey index,NLD,,2026-10-23"},
+ {"name":"effect_sizes.csv","source":"r1, r2, r3, r4, r8, r13 (values recalled; verify)","window":"1994-01-01..2024-12-31","unit":"as stated per row","coverage":"partial",
+  "csv":"outcome,estimate,lower,upper,unit,population,ref,export_date\nprematurity,-10.8,,,% change,mothers within 2 km of toll plaza NJ/PA,r3,2026-10-23\nlow birth weight,-11.8,,,% change,mothers within 2 km of toll plaza NJ/PA,r3,2026-10-23\nall-cause mortality,1.04,1.01,1.06,RR per 10 ug/m3 NO2,pooled cohorts,r1,2026-10-23\nchildhood asthma onset,1.05,1.02,1.07,RR per 4 ug/m3 NO2,pooled child cohorts,r2,2026-10-23\ncongestion-attributable premature deaths,4000,,,deaths (year 2000),83 US urban areas,r4,2026-10-23\nroad traffic noise guideline,53,,,dB Lden,European Region,r8,2026-10-23\ndelay per auto commuter,54,,,hours (2019),US urban areas,r13,2026-10-23"}
+],
+"calls": [
+ {"id":"f1","question":"Papers per year on congestion and health/quality of life","feature":"none (query in words; not run)","args":"Prism research index /works?filter=title_and_abstract.search:\"traffic congestion\" AND (health OR \"quality of life\" OR wellbeing OR \"well-being\" OR stress),from_publication_date:2000-01-01,to_publication_date:2026-10-23&group_by=publication_year"},
+ {"id":"f2","question":"News articles per month and correlation with papers","feature":"none (query in words; not run)","args":"GDELT DOC 2.0 query=\"traffic congestion\" (health OR pollution OR stress OR commute), mode=timelinevolraw, 2017-01-01..2026-10-23, monthly; Spearman vs f1 by year"},
+ {"id":"f3","question":"Patents by assignee country","feature":"none (query in words; not run)","args":"Lens.org patents CPC G08G1 AND fulltext \"congestion\", group by applicant country and priority year; flag last 18 months as censored"},
+ {"id":"f4","question":"Studied vs published lane","feature":"none (query in words; not run)","args":"f1 result set grouped by first-author authorships.institutions.country_code and by primary_location.source host country"},
+ {"id":"f5","question":"Indian quasi-experimental congestion-health evidence","feature":"none (query in words; not run)","args":"the health literature index (\"traffic congestion\" OR \"congestion pricing\" OR \"odd-even\") AND (India OR Delhi OR Bengaluru OR Pune OR Mumbai) AND (health OR mortality OR \"birth weight\" OR asthma), screen for DiD/RD designs"},
+ {"id":"f6","question":"Direction and tier of congestion-pricing health evaluations","feature":"none (query in words; not run)","args":"Scopus TITLE-ABS-KEY(\"congestion charge\" OR \"congestion pricing\") AND TITLE-ABS-KEY(health OR asthma OR mortality), 2000-2026; code direction and tier"}
+],
+"references": [
+ {"id":"r1","title":"Long-term exposure to traffic-related air pollution and selected health outcomes: A systematic review and meta-analysis","venue":"Environment International","year":2022,"doi_or_url":"https://doi.org/10.1016/j.envint.2022.107262"},
+ {"id":"r2","title":"Exposure to traffic-related air pollution and risk of development of childhood asthma: A systematic review and meta-analysis","venue":"Environment International","year":2017,"doi_or_url":"https://doi.org/10.1016/j.envint.2016.11.012"},
+ {"id":"r3","title":"Traffic Congestion and Infant Health: Evidence from E-ZPass","venue":"American Economic Journal: Applied Economics","year":2011,"doi_or_url":"https://doi.org/10.1257/app.3.1.65"},
+ {"id":"r4","title":"Evaluation of the public health impacts of traffic congestion: a health risk assessment","venue":"Environmental Health","year":2010,"doi_or_url":"https://doi.org/10.1186/1476-069X-9-65"},
+ {"id":"r5","title":"Air pollution and health risks due to vehicle traffic","venue":"Science of the Total Environment","year":2013,"doi_or_url":"https://doi.org/10.1016/j.scitotenv.2013.01.074"},
+ {"id":"r6","title":"Auditory and non-auditory effects of noise on health","venue":"The Lancet","year":2014,"doi_or_url":"https://doi.org/10.1016/S0140-6736(13)61613-X"},
+ {"id":"r7","title":"Environmental Noise and the Cardiovascular System","venue":"Journal of the American College of Cardiology","year":2018,"doi_or_url":"https://doi.org/10.1016/j.jacc.2017.12.015"},
+ {"id":"r8","title":"Environmental Noise Guidelines for the European Region","venue":"WHO Regional Office for Europe","year":2018,"doi_or_url":"https://www.who.int/europe/publications/i/item/9789289053563"},
+ {"id":"r9","title":"Stress that doesn't pay: The commuting paradox","venue":"Scandinavian Journal of Economics","year":2008,"doi_or_url":"https://doi.org/10.1111/j.1467-9442.2008.00542.x"},
+ {"id":"r10","title":"Does commuting affect health?","venue":"Health Economics","year":2016,"doi_or_url":"https://doi.org/10.1002/hec.3199"},
+ {"id":"r11","title":"A survey method for characterizing daily life experience: The day reconstruction method","venue":"Science","year":2004,"doi_or_url":"https://doi.org/10.1126/science.1103572"},
+ {"id":"r12","title":"Commuting and wellbeing: a critical overview of the literature with implications for policy and future research","venue":"Transport Reviews","year":2020,"doi_or_url":"https://doi.org/10.1080/01441647.2019.1649317"},
+ {"id":"r13","title":"2021 Urban Mobility Report","venue":"Texas A&M Transportation Institute","year":2021,"doi_or_url":"https://mobility.tamu.edu/umr/"},
+ {"id":"r14","title":"Real-world carbon dioxide impacts of traffic congestion","venue":"Transportation Research Record","year":2008,"doi_or_url":"https://doi.org/10.3141/2058-20"},
+ {"id":"r15","title":"TomTom Traffic Index 2023","venue":"TomTom International","year":2024,"doi_or_url":"https://www.tomtom.com/traffic-index/"}
+]
+}
+</script>
+
+<script>
+(function(){
+  var opt = {actions:false};
+
+  vegaEmbed('#ch_time', {
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json","width":"container","height":240,
+    "title":"Publication years of this page's reference list (references per 5-year bin) [r1-r15]",
+    "data":{"values":[{"label":"2000-2004","n":1},{"label":"2005-2009","n":2},{"label":"2010-2014","n":4},{"label":"2015-2019","n":4},{"label":"2020-2024","n":4}]},
+    "mark":{"type":"bar","color":"#5b7fa8"},
+    "encoding":{"x":{"field":"label","type":"ordinal","title":"Publication years"},"y":{"field":"n","type":"quantitative","title":"Number of references"},"tooltip":[{"field":"label"},{"field":"n"}]}
+  }, opt);
+
+  vegaEmbed('#ch_effect', {
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json","width":"container","height":140,
+    "title":"% reduction after E-ZPass, mothers within 2 km of toll plaza [r3]",
+    "data":{"values":[{"label":"Prematurity","v":10.8},{"label":"Low birth weight","v":11.8}]},
+    "mark":{"type":"bar","color":"#2e7d32"},
+    "encoding":{"y":{"field":"label","type":"ordinal","title":null},"x":{"field":"v","type":"quantitative","title":"% reduction"},"tooltip":[{"field":"label"},{"field":"v"}]}
+  }, opt);
+
+  vegaEmbed('#ch_stance', {
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json","width":"container","height":80,
+    "title":"Stance toward the central claim (number of references) [r1-r15]",
+    "data":{"values":[{"label":"Supports","n":11},{"label":"Contests or qualifies","n":2},{"label":"Exposure only","n":2}]},
+    "mark":"bar",
+    "encoding":{"x":{"field":"n","type":"quantitative","stack":"zero","title":"Number of references"},"color":{"field":"label","type":"nominal","title":"Stance","scale":{"range":["#2e7d32","#c62828","#9e9e9e"],"domain":["Supports","Contests or qualifies","Exposure only"]}},"tooltip":[{"field":"label"},{"field":"n"}]}
+  }, opt);
+
+  vegaEmbed('#ch_map', {
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json","width":"container","height":380,
+    "title":"Studied lane, this reference list: references by first-author country [r1-r15]",
+    "data":{"url":"world_india_official.geojson","format":{"type":"json","property":"features"}},
+    "projection":{"type":"equalEarth"},
+    "transform":[{"lookup":"properties.iso3","from":{"data":{"values":[
+      {"iso3":"USA","n":8},{"iso3":"GBR","n":2},{"iso3":"NLD","n":2},{"iso3":"DEU","n":1},{"iso3":"CHE","n":1},{"iso3":"DNK","n":1},{"iso3":"IND","n":0}
+    ]},"key":"iso3","fields":["n"]}}],
+    "mark":{"type":"geoshape","stroke":"#fff","strokeWidth":0.4},
+    "encoding":{
+      "color":{"condition":{"test":"isValid(datum.n)","field":"n","type":"quantitative","title":"References","scale":{"scheme":"blues","domain":[0,8]}},"value":"#e6e6e6"},
+      "tooltip":[{"field":"properties.name","title":"Country"},{"field":"n","title":"References (this list)"}]
+    }
+  }, opt);
+
+  vegaEmbed('#ch_comp', {
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json","width":"container","height":200,
+    "title":"City-centre travel time per 10 km, 2023 (minutes) [r15]",
+    "data":{"values":[{"label":"London (GBR)","v":37.3},{"label":"Dublin (IRL)","v":29.5},{"label":"Toronto (CAN)","v":29.0},{"label":"Bengaluru (IND)","v":28.2},{"label":"Pune (IND)","v":27.8}]},
+    "mark":"bar",
+    "encoding":{"y":{"field":"label","type":"ordinal","sort":"-x","title":null},"x":{"field":"v","type":"quantitative","title":"Minutes per 10 km"},
+      "color":{"condition":{"test":"indexof(datum.label,'IND')>=0","value":"#e07b00"},"value":"#5b7fa8"},"tooltip":[{"field":"label"},{"field":"v"}]}
+  }, opt);
+
+  vegaEmbed('#ch_mix', {
+    "$schema":"https://vega.github.io/schema/vega-lite/v5.json","width":"container","height":220,
+    "title":"Source type of evidence base (number of items) [r1-r15]",
+    "data":{"values":[{"label":"Health literature","n":8},{"label":"Other research literature","n":5},{"label":"Grey index","n":2},{"label":"News (not collected)","n":0},{"label":"Patents (not collected)","n":0}]},
+    "layer":[
+      {"mark":{"type":"bar","color":"#8e6bb0"},"encoding":{"x":{"field":"label","type":"ordinal","sort":null,"title":null,"axis":{"labelAngle":-20}},"y":{"field":"n","type":"quantitative","title":"Number of items"},"tooltip":[{"field":"label"},{"field":"n"}]}},
+      {"mark":{"type":"text","dy":-8,"fontSize":11},"encoding":{"x":{"field":"label","type":"ordinal","sort":null},"y":{"field":"n","type":"quantitative"},"text":{"field":"n","type":"quantitative"}}}
+    ]
+  }, opt);
+
+  // Export download links generated from the manifest (same content as manifest)
+  try {
+    var m = JSON.parse(document.getElementById('report-manifest').textContent);
+    var box = document.getElementById('downloads');
+    m.exports.forEach(function(e){
+      var blob = new Blob([e.csv], {type:'text/csv'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob); a.download = e.name;
+      a.textContent = e.name + ' (coverage: ' + e.coverage + ')';
+      box.appendChild(a);
+    });
+  } catch(err) { console.error(err); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 5,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured monthly series; ceiling 0.",
+    "comparison": "No measured comparison; ceiling 1.",
+    "chart": "No chart; ceiling 0.",
+    "drilldown": "Six specific proposed calls, but no traced breakdown; ceiling 3.",
+    "export": "No data export; ceiling 0.",
+    "repro": "No recorded results or replayable measurement; ceiling 1.",
+    "refs": "No references; ceiling 1.",
+    "accuracy": "Clearly identifies the absence of measurements in its own response; no factual contradiction.",
+    "limits": "Names the missing window, lane, coverage, censoring, and match mode; ceiling 3.",
+    "verdict": "Gives a clear cautious recommendation and confidence, but no measured support or coverage facets.",
+    "facets": "No grounded values for volume, trend, geography, or critical stories."
+   },
+   "B": {
+    "trend": "Complete traced series, censoring noted, and growth and peak stated; trend caveats and direction are not fully reconciled.",
+    "comparison": "Exact 3.48 versus 0.58 ratio and delta on a defined baseline; caveat is stated.",
+    "chart": "Traced monthly volume chart supports a claim, but no chart for tone or geography facets.",
+    "drilldown": "Some layers and specific follow-ups, but only 2 of 6 calls returned usable data and stories are not linked through multiple traced layers.",
+    "export": "Monthly export is useful, but geography export omits rows present in the source and provenance/coverage is incomplete; ceiling 3.",
+    "repro": "Recorded call with args and window reproduces the reported values; ceiling 5.",
+    "refs": "No DOI references and news URLs are supplied, but the script ceiling is 1.",
+    "accuracy": "Cambodia is presented as a country row with 1,126 articles and lift 29.4, contradicting the supplied geography rows; trend language also softens a reported flat direction.",
+    "limits": "Several limits are stated, but specific coverage and enrichment limits are not consistently placed with the affected numbers; ceiling 3.",
+    "verdict": "Direct answer and decision with confidence and a change condition, but accuracy issues and unaddressed strongest contrary evidence weaken support.",
+    "facets": "Covers volume, trend, tone, themes, geography, outlets and example stories; some implied overlap and research-vs-news facets remain."
+   },
+   "C": {
+    "trend": "Traced full monthly series with window, censoring, peak and change metrics; prose notes the inconsistent flat direction and growth summary.",
+    "comparison": "Ratios and delta against a defined corpus baseline recompute correctly, with baseline caveat.",
+    "chart": "Traced volume chart with window and source, but it omits the critical-share decomposition and tone facet; ceiling 4.",
+    "drilldown": "Includes surfaced headlines and a country layer, but only one of five follow-up calls returned usable data; ceiling 3.",
+    "export": "Monthly and country tables are traced, linked, and carry provenance; ceiling 5.",
+    "repro": "Recorded call, args, window and exported values permit regeneration; ceiling 5.",
+    "refs": "No external reference entries and no DOI-backed items; ceiling 1.",
+    "accuracy": "The response avoids a clear factual contradiction and flags the direction anomaly, but does not resolve the source's conflicting trend signals.",
+    "limits": "Places window, censoring, lane, match mode, enrichment lag, placement share and sampling caveats beside relevant claims; ceiling 5.",
+    "verdict": "Direct bounded answer, but it does not name a decision with confidence and change condition together, and its evidence is thin on the critical-story question.",
+    "facets": "Grounded volume, trend, tone, themes, geography, publisher sample and critical items; overlap and research-vs-news mismatch are not fully addressed."
+   },
+   "D": {
+    "trend": "No news trend; chart is explicitly an estimated loss series, ceiling 1.",
+    "comparison": "Qualitative tone comparison and estimated loss ratio only; ceiling 2.",
+    "chart": "Estimated remembered series, honestly labelled; ceiling 1.",
+    "drilldown": "Specific proposed calls but no traced breakdown; ceiling 3.",
+    "export": "Estimate CSV is labelled and not a needed coverage export; ceiling 1.",
+    "repro": "No measured calls; figures are labelled memory/estimate, ceiling 1.",
+    "refs": "One generic FBI landing-page citation with remembered figures, not resolving support for the claims; ceiling 2.",
+    "accuracy": "The remembered FBI loss figures are presented as a benchmark without verification, and the response does not answer measured coverage facets.",
+    "limits": "Clearly distinguishes estimated losses from article counts and states the absent news window; ceiling 5.",
+    "verdict": "Scoping note rather than a supported answer to the coverage question; confidence and conditions do not rescue missing measurements.",
+    "facets": "Most requested coverage facets remain unmeasured; qualitative themes alone do not ground them."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Cambodia geography row (1,126 articles; lift 29.4) is not in the reference geography results; the reference lists Colombia (1,173) and does not list Cambodia there.",
+    "Claims only two critical articles returned, while the reference overview contains two surfaced headlines but also includes two further headline examples in the deliverable that are not supported by the supplied excerpt.",
+    "Labels the overall direction flat to modestly rising despite the source's direction label of flat; the 33.4% CAGR is acknowledged as conflicting."
+   ],
+   "C": [
+    "Reports 5 unresolved critical records; the supplied reference excerpt states 7 unresolved IDs.",
+    "Uses 2026-05-01 as the geography panel bound, while the reference geography window ends 2026-05-01 exclusive and labels may lag; this phrasing risks implying May is included.",
+    "Does not provide a grounded, sufficiently broad answer to which critical ransomware, fraud, and breach stories matter."
+   ],
+   "D": [
+    "The remembered IC3 series is explicitly estimate-labelled and is not a measure of news coverage, so it cannot answer the requested volume or trend."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is the strongest decision aid: it ties its monthly series, geography, tone, and sample caveats to a replayable source and exports the key tables. B is more expansive and offers more story examples, but its unsupported Cambodia geography row and inconsistent trend reading reduce trust; neither deliverable fully resolves the critical-story facet."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 5,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,626 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 910,
+  "charts": [
+   {
+    "id": "stage-extraction",
+    "title": "India national stage of groundwater extraction (est.)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Stage of extraction",
+      "how": "estimate",
+      "points": 8,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "stage_extraction.csv",
+    "how": "estimate",
+    "rows": 8,
+    "numeric_cells": 8,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "state_stage.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which papers dispute the GRACE depletion magnitude?",
+    "args": {
+     "term": "India groundwater depletion GRACE",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ion GRACE', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India groundwater depletion GRACE', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has research stance on depletion causes shifted over time?",
+    "args": {
+     "term": "India groundwater depletion causes"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"groundwater depletion\", \"groundwater scarcity\", \"aquifer depletion\"], \"points\": [{\"year\": 2017, \"total\": 14, \"orientation\": {\"promising\": 1, \"problem_identifying\": 1, \"critical\": 1, \"descriptive\": 5}, \"stance_score\": null, \"positive\": 1, \"contested\": 2, \"positive_pct\": 7.1, \"contested_pct\": 14.3}, {\"year\": 2018, \"total\": 21, \"orientation\": {\"descriptive\": 3, \"cautionary\": 1, \"breakthrough\": 1, \"problem_identifying\": 7, \"promising\": 2}, \"stance_score\": null, \"positive\": 3, \"contested\": 8, \"positive_pct\": 14.3, \"contested_pct\": 38.1}, {\"year\": 2019, \"total\": 18, \"orientation\": {\"cautionary\": 2, \"promising\": 1, \"descriptive\": 1, \"problem_identifyin"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What does the evidence say about Punjab paddy and power subsidies?",
+    "args": {
+     "term": "Punjab groundwater paddy subsidy"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ndwater paddy subsidy'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Punjab groundwater paddy subsidy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of groundwater in India trended?",
+    "args": {
+     "term": "India groundwater depletion"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'India groundwater depletion' in this window",
+    "seconds": 14.6,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which states dominate coverage and research?",
+    "args": {
+     "term": "India groundwater"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'India groundwater'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India groundwater', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What are the scenarios under current extraction?",
+    "args": {
+     "term": "India groundwater depletion"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India groundwater depletion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 28,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 16,
+   "untagged_examples": [
+    "58% — Quantified change: national stage moved by only a few percentage points (about 58% to abou",
+    "60 — Quantified change: national stage moved by only a few percentage points (about 58% to abou",
+    "63% — Quantified change: national stage moved by only a few percentage points (about 58% to abou",
+    "60% — | Unit | Stage of extraction (est.) | Ratio to national (~60%) |",
+    "150% — | Rajasthan | ~150% | ~2.5x |",
+    "2.5 — | Rajasthan | ~150% | ~2.5x |",
+    "150 — | Punjab | ~150–165% | ~2.5–2.75x |",
+    "165% — | Punjab | ~150–165% | ~2.5–2.75x |"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1221,
+  "charts": [
+   {
+    "id": "research-trend",
+    "title": "Research papers on groundwater depletion in India, first and last years plus peak",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "news-critical",
+    "title": "Share of 'groundwater' news articles classed critical, selected months",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "critical_pct",
+      "how": "call",
+      "points": 5,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "depletion_estimates.csv",
+    "how": "ref",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "research_trend.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which papers contradict the depletion consensus?",
+    "args": {
+     "term": "groundwater depletion india",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ion india', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='groundwater depletion india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How large is the crop-production impact?",
+    "args": {
+     "term": "groundwater depletion agricultural production india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ural production india'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='groundwater depletion ag...ltural production india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which states are worst affected in news coverage?",
+    "args": {
+     "term": "groundwater depletion",
+     "country": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How does stance on climate versus irrigation drivers shift over time?",
+    "args": {
+     "term": "groundwater depletion india"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"groundwater depletion\", \"groundwater scarcity\", \"aquifer depletion\", \"groundwater overexploitation\"], \"points\": [{\"year\": 2017, \"total\": 14, \"orientation\": {\"promising\": 2, \"problem_identifying\": 2, \"critical\": 1, \"descriptive\": 7}, \"stance_score\": null, \"positive\": 2, \"contested\": 3, \"positive_pct\": 14.3, \"contested_pct\": 21.4}, {\"year\": 2018, \"total\": 25, \"orientation\": {\"descriptive\": 5, \"problem_identifying\": 8, \"cautionary\": 1, \"breakthrough\": 1, \"promising\": 6}, \"stance_score\": null, \"positive\": 7, \"contested\": 9, \"positive_pct\": 28.0, \"contested_pct\": 36.0}, {\"year\": 2019, \"total\": 18, \"orientation\": {\"descriptive\": 2, \"cautionary\": 3, \"p"
+   },
+   {
+    "id": "f5",
+    "feature": "analysis.scenarios",
+    "question": "What are the future scenarios under climate change?",
+    "args": {
+     "term": "india groundwater depletion"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india groundwater depletion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which news is critical about policy and subsidies?",
+    "args": {
+     "term": "india groundwater depletion",
+     "since": "2025-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 63,
+   "traced": 63,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 8,
+   "found_in_corpus": 8,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 118,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 818,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.table",
+    "question": "What are the latest state and assessment-unit extraction stages, with classifications and assessment year?",
+    "args": {
+     "term": "India CGWB 2023 dynamic groundwater resources state assessment unit extraction stage"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...unit extraction stage'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...unit extraction stage'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India CGWB 2023 dynamic ...t unit extraction stage', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "Which peer-reviewed studies measure groundwater storage change in India, and what methods and periods do they use?",
+    "args": {
+     "term": "India groundwater storage depletion measurement GRACE wells irrigation"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...RACE wells irrigation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India groundwater storag... GRACE wells irrigation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What evidence challenges or qualifies claims of national groundwater depletion, and what share of reviewed evidence is contested?",
+    "args": {
+     "term": "India groundwater depletion national estimates contested methods"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...tes contested methods'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India groundwater deplet...mates contested methods', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What is the recent news trend on groundwater depletion in India, by year and source volume?",
+    "args": {
+     "term": "India groundwater depletion"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'India groundwater depletion' in this window",
+    "seconds": 0.1,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which Indian regions show the strongest measured groundwater decline, and what spatial coverage supports that comparison?",
+    "args": {
+     "term": "India measured groundwater decline regional aquifer trends"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...gional aquifer trends'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India measured groundwat...regional aquifer trends', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 5,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 110,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 919,
+  "charts": [
+   {
+    "id": "news-groundwater-monthly",
+    "title": "Monthly news articles mentioning groundwater",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "groundwater_news_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which Indian states have the highest measured groundwater storage losses, using comparable periods and methods?",
+    "args": {
+     "topic": "groundwater depletion",
+     "geo": "india",
+     "measure": "storage loss"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...asure': 'storage loss'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='groundwater depletion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='storage loss', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What evidence links groundwater depletion in India to agricultural production outcomes?",
+    "args": {
+     "topic": "groundwater depletion",
+     "geo": "india",
+     "outcome": "agricultural production"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...ricultural production'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='groundwater depletion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\noutcome\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='agricultural production', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which studies challenge or qualify the reported national depletion estimates?",
+    "args": {
+     "topic": "groundwater depletion",
+     "geo": "india",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...: 'india', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='groundwater depletion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How have research positions on causes of groundwater depletion in India changed over time?",
+    "args": {
+     "topic": "groundwater depletion",
+     "geo": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...etion', 'geo': 'india'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='groundwater depletion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "What are the most recent India-focused groundwater depletion news developments?",
+    "args": {
+     "term": "groundwater depletion",
+     "country": "india",
+     "since": "2026-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 40,
+   "traced": 40,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 119,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

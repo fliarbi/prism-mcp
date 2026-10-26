@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 2017-2025 research series with a window. The 70% endpoint change is correct (7097/4179). Omits the tool's CAGR (6.8%), its late_vs_early ratio (1.43) and the censoring note for the research series.",
+    "comparison": "Traced SMD against a zero baseline, with the correct caveat that the two scales may differ. No delta or ratio is stated.",
+    "chart": "One fully traced volume chart with window, unit, source and caption. The news series the data supports is not charted.",
+    "drilldown": "One traced document layer with DOIs and quotes. Only 1 of 4 follow-ups executed ok.",
+    "export": "One traced CSV with full provenance and a provenance JSON. There is no documents/DOI table, which the question needs.",
+    "repro": "44/44 numbers traced. Calls are listed with args and capture date. The derived 70% and 144-day gap recompute exactly.",
+    "refs": "3/3 DOIs resolve. Quotes are verbatim, each is tied to a claim, and contrary evidence is included. No explicit tier ranking with reasons.",
+    "accuracy": "No contradictions with the record. Does not catch the anomaly that the research series is marked censored at 2025 while plotting 2025.",
+    "limits": "Limits sit next to the numbers they bound: windows, censoring, gap to today, lane, the 16-paper intersection, coverage caveat, and an explicit list of what cannot be answered.",
+    "verdict": "Direct answer, decision, medium confidence with a reason, a change condition, and the contrary meta-analysis named.",
+    "facets": "Effect, evidence, research trend and limits are covered. The news trend facet goes unread."
+   },
+   "B": {
+    "trend": "No measured series. The illustrative effect 'trend' is labelled estimate.",
+    "comparison": "Memory numbers on an 'HR-like' scale. The SMD and HR scales are conflated.",
+    "chart": "Chart is labelled estimate, which is honest but unmeasured.",
+    "drilldown": "Breakdown layers are named from memory. Only 1 of 6 follow-ups returned ok.",
+    "export": "CSV source is 'estimate'.",
+    "repro": "0/27 traced. The untagged verdict numbers (25, 30 nmol/L) cannot be regenerated.",
+    "refs": "No identifiers and no quotes. Several venues are inconsistent.",
+    "accuracy": "Labelled memory, but with specific slips: VITAL-DEP HR given as ≈0.99 (reported 0.97), D-Health age range, and wrong Vellekkatt year/venue and Mikola venue.",
+    "limits": "Specific about what is unmeasured: no corpus, knowledge cutoff, gap to today.",
+    "verdict": "Ceiling 0 because the verdict contains untagged numbers.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "C": {
+    "trend": "No series. The trend section shows a single study.",
+    "comparison": "VITAL-DEP HR compared with placebo from memory.",
+    "chart": "Chart values match public VITAL-DEP figures, but cite an unverifiable reference.",
+    "drilldown": "Two items without traced identifiers. Follow-ups 0/5 ok.",
+    "export": "The CSV pairs a JCP DOI with Shaffer, while the reference list says Psychosomatic Medicine. Rows are untraced, not labelled estimate, and internally inconsistent.",
+    "repro": "Numbers come from cited publications only. None trace to a recorded call.",
+    "refs": "The VITAL-DEP DOI is not found. The Shaffer DOI and venue mismatch. The verbatim quotes appear fabricated.",
+    "accuracy": "Fabricated-looking identifier and quote presented as fact. The 'gap of six years' is odd.",
+    "limits": "Honest and specific about what is unmeasured and how partial the coverage is.",
+    "verdict": "Reasonable, directly answered verdict with confidence and a change condition. It rests partly on misattributed references.",
+    "facets": "Facets are answered from memory."
+   },
+   "D": {
+    "trend": "Traced research series with CAGR 6.8% and late/early ratio 1.43. News series given early vs late (625 vs 637), with the January 2023 peak at 70 and censoring stated. It still says the newest period is excluded while plotting 2025.",
+    "comparison": "Traced delta of 0.72 with a scale caveat, plus the news early/late ratio of 1.02. The lane counts (16 vs 81,033) address the association-vs-RCT problem.",
+    "chart": "Fully traced research chart with window and source. The news series is not charted.",
+    "drilldown": "Ceiling 1: follow-ups 0/6 ok.",
+    "export": "Ceiling 0. The effect_sizes CSV mixes populations and leaves nulls unexplained. The provenance JSON drops args.",
+    "repro": "54/54 traced. The prism-calls block is complete, but the provenance JSON omits the claim args, and the tier 'rank' numbers are untagged.",
+    "refs": "7/7 DOIs resolve. Quotes are verbatim, tiers stated, contrary sources included. Stance labels for WHI and the dose-comparison RCT depart from the tool's 'unrelated', though with explanation.",
+    "accuracy": "Faithful to the record. It catches the gap between proposed stance and failed source-fit. Minor overreach: 'January consistently highest'.",
+    "limits": "Window and gap to today per corpus, lane, coverage, censoring and match mode, all placed next to the numbers. Limits drive the low-confidence reading, and it says what would close the gap.",
+    "verdict": "Direct answer, decision, low confidence with traced reasons, a change condition and the contrary meta-analysis. The deficiency advice is flagged as background knowledge.",
+    "facets": "Effect, evidence, research and news trends, and the lane mismatch are all covered with grounded values."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "VITAL-DEP HR stated ≈0.99 (reported 0.97)",
+    "Vellekkatt & Menon venue/year conflated (J Postgrad Med 2019 vs Indian J Psychol Med)",
+    "Mikola 2023 venue inconsistent (Nutrition Reviews vs Crit Rev Food Sci Nutr)",
+    "D-Health age range given as 60–79"
+   ],
+   "C": [
+    "Shaffer 2014 attributed to Psychosomatic Medicine but given a J Clin Psychopharmacol DOI; evidence.csv venue contradicts the reference list",
+    "VITAL-DEP DOI 10.1001/jama.2019.18400 not found",
+    "Verbatim quotes presented without a source that can verify them"
+   ],
+   "D": [
+    "States the newest period is excluded from each series while plotting 2025 in the research series",
+    "Labels the WHI and dose-comparison trials 'contradicts' although the tool's stance is 'unrelated' (caveated in text)"
+   ]
+  },
+  "best": "D",
+  "verdict": "D and A both grounded their answer in the recorded calls, with verbatim quotes and resolving DOIs. D went further: it surfaced the 16-paper subject/outcome intersection, the news trend, the source-fit failures and per-corpus gaps to today, which justified a low-confidence 'not established' verdict. B and C reached clinically sensible conclusions from memory, but could not be traced; C also attached mismatched or unresolvable identifiers to its key references."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

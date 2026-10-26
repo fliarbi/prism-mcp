@@ -1,0 +1,203 @@
+#!/usr/bin/env python3
+"""prism: the Prism API from your terminal, with one Fliar API key.
+
+    prism login [rdr_...]              save your key (or set FLIAR_API_KEY)
+    prism entity "tata motors"         who, what, where and how a company, person, place or phrase is covered
+    prism compare "narendra modi" "donald trump"   attention, growth and tone on one scale
+    prism trends "gold price"          monthly volume, critical volume and tone
+    prism places "air pollution" [state|city]      where coverage is about, with lift
+    prism people "infosys"             organisations, people and places around a term
+    prism evidence "metformin reduces cancer risk" supporting and contradicting research, read and labelled
+    prism call <feature> key=value ... any feature (values may be JSON: limit=10 terms='["a","b"]')
+    prism features | prism pricing     what you can call and what it costs
+    prism mcp [claude|codex]           connect Prism to Claude Code or Codex as an MCP server
+
+Options: --json (raw envelope), --url URL (default $PRISM_URL or https://radar-api.fliarbi.com/prism).
+Every call costs credits from your Fliar API wallet; failed or empty answers cost nothing.
+"""
+import json
+import os
+import shutil
+import subprocess
+import sys
+import urllib.error
+import urllib.request
+
+DEFAULT_URL = "https://radar-api.fliarbi.com/prism"
+CONF = os.path.join(os.path.expanduser("~"), ".config", "prism", "config.json")
+KEYS_PAGE = "https://fliarbi.com/radar/dashboard?tab=radarapi"
+
+
+def conf():
+    try:
+        return json.load(open(CONF))
+    except (OSError, ValueError):
+        return {}
+
+
+def key():
+    k = os.environ.get("FLIAR_API_KEY") or conf().get("api_key")
+    if not k:
+        sys.exit(f"No API key. Run `prism login`, or create one at {KEYS_PAGE}")
+    return k
+
+
+def base(args):
+    if "--url" in args:
+        i = args.index("--url")
+        url = args[i + 1]
+        del args[i:i + 2]
+        return url.rstrip("/")
+    return (os.environ.get("PRISM_URL") or conf().get("url") or DEFAULT_URL).rstrip("/")
+
+
+def call(url, feature, body, auth=True):
+    req = urllib.request.Request(f"{url}/v1/{feature}", method="POST" if body is not None else "GET",
+                                 data=json.dumps(body).encode() if body is not None else None,
+                                 headers={"Content-Type": "application/json", "User-Agent": "prism-cli/1.0",
+                                          **({"Authorization": f"Bearer {key()}"} if auth else {})})
+    try:
+        with urllib.request.urlopen(req, timeout=900) as r:
+            return json.loads(r.read()), r.headers.get("X-Prism-Credits")
+    except urllib.error.HTTPError as e:
+        try:
+            return json.loads(e.read()), e.headers.get("X-Prism-Credits")
+        except ValueError:
+            sys.exit(f"HTTP {e.code} from {url}")
+    except urllib.error.URLError as e:
+        sys.exit(f"Could not reach {url}: {e.reason}")
+
+
+def value(v):
+    try:
+        return json.loads(v)
+    except ValueError:
+        return v
+
+
+def num(x):
+    return f"{x:,}" if isinstance(x, int) else str(x)
+
+
+def show(env, credits, raw):
+    if raw or not isinstance(env, dict):
+        print(json.dumps(env, indent=2, ensure_ascii=False))
+        return
+    if not env.get("ok"):
+        err = env.get("error") or {}
+        print(f"✗ {err.get('kind', 'error')}: {err.get('reason') or err.get('message')}", file=sys.stderr)
+        sys.exit(1)
+    d, f = env.get("data") or {}, env.get("feature", "")
+    w = env.get("window") or {}
+    if f == "news.compare":
+        print(f"{'term':28} {'articles':>10} {'share':>7} {'growth':>8} {'neg:pos':>8}")
+        for r in d.get("rows") or []:
+            print(f"{str(r.get('term'))[:28]:28} {num(r.get('articles')):>10} {str(r.get('share_pct', '')):>6}% "
+                  f"{str(r.get('growth', '')):>8} {str(r.get('tone_ratio', '')):>6}")
+    elif f == "news.trends":
+        tr = d.get('trend') or {}
+        print(f"{num(d.get('total'))} articles · {tr.get('direction', '')} · peak {num(tr.get('peak'))} in {tr.get('peak_period')} · {tr.get('cagr_pct')}% a year")
+        for p in (d.get("points") or [])[-12:]:
+            print(f"  {p.get('period')}  {num(p.get('n', p.get('articles')))}")
+    elif f == "news.geography":
+        print(f"{'place':28} {'articles':>10} {'share':>7} {'lift':>6}")
+        for r in d.get("rows") or []:
+            print(f"{str(r.get('label'))[:28]:28} {num(r.get('articles')):>10} {str(r.get('share_pct', '')):>6}% {str(r.get('lift', '')):>6}")
+    elif f == "news.entities":
+        for kind, block in d.items():
+            if isinstance(block, dict) and block.get("rows"):
+                print(kind + ": " + ", ".join(f"{r.get('label')} ({num(r.get('articles'))})" for r in block["rows"][:10]))
+    elif f == "news.overview":
+        tone = d.get("sentiment") or {}
+        tr = (d.get('trends') or {}).get('trend') or {}
+        print(f"{num((d.get('trends') or {}).get('total'))} articles · {tr.get('direction', '')} ({tr.get('cagr_pct', '?')}% a year) · "
+              f"negative:positive {(tone.get('totals') or {}).get('ratio')} ({tone.get('vs_baseline')}x the all-news baseline)")
+        themes = ((d.get("themes") or {}).get("categories") or {}).get("rows") or []
+        if themes:
+            print("themes: " + ", ".join(r.get("label") for r in themes[:6]))
+        geo = (d.get("geography") or {}).get("rows") or []
+        if geo:
+            print("places: " + ", ".join(f"{r.get('label')} (lift {r.get('lift')})" for r in geo[:5]))
+        for kind in ("organizations", "people"):
+            rows = ((d.get("entities") or {}).get(kind) or {}).get("rows") or []
+            if rows:
+                print(f"{kind}: " + ", ".join(r.get("label") for r in rows[:8]))
+        for a in ((d.get("critical") or {}).get("articles") or [])[:5]:
+            print(f"  ! {str(a.get('published') or a.get('datetime'))[:10]}  {a.get('title')}")
+    elif f in ("research.evidence", "research.counter_evidence"):
+        print("tally:", json.dumps((d.get("tally") or {}).get("counts")))
+        for doc in (d.get("documents") or d.get("supporting") or [])[:8]:
+            print(f"  [{doc.get('stance')}] {doc.get('year')} {doc.get('title')}  {doc.get('doi') or ''}")
+    else:
+        print(json.dumps(d, indent=2, ensure_ascii=False)[:6000])
+    if w:
+        print(f"window: {json.dumps(w, ensure_ascii=False)[:200]}", file=sys.stderr)
+    if credits is not None:
+        print(f"credits used: {credits}", file=sys.stderr)
+
+
+def main():
+    args = sys.argv[1:]
+    raw = "--json" in args
+    args = [a for a in args if a != "--json"]
+    url = base(args)
+    if not args or args[0] in ("-h", "--help", "help"):
+        print(__doc__)
+        return
+    cmd, rest = args[0], args[1:]
+    if cmd == "login":
+        k = rest[0] if rest else input("Fliar API key (rdr_…): ").strip()
+        if not k.startswith("rdr_"):
+            sys.exit(f"Keys start with rdr_. Create one at {KEYS_PAGE}")
+        os.makedirs(os.path.dirname(CONF), exist_ok=True)
+        with open(CONF, "w") as fh:
+            json.dump({**conf(), "api_key": k, "url": url}, fh)
+        os.chmod(CONF, 0o600)
+        print(f"Saved to {CONF} (owner-only).")
+        return
+    if cmd == "features":
+        env, _ = call(url, "system.features", None)
+        for x in (env.get("data") or {}).get("features") or []:
+            print(f"{x['feature']:28} {x['tool']:24} {x.get('summary', '')[:70]}")
+        return
+    if cmd == "pricing":
+        env, _ = call(url, "pricing", None, auth=False)
+        for group, feats in (env.get("features") or {}).items():
+            for f, c in feats.items():
+                print(f"{f:30} {c:>3} credits")
+        return
+    if cmd == "mcp":
+        target = rest[0] if rest else ("claude" if shutil.which("claude") else "codex")
+        if target == "claude" and shutil.which("claude"):
+            subprocess.run(["claude", "mcp", "add", "--transport", "http", "prism", f"{url}/mcp",
+                            "--header", f"Authorization: Bearer {key()}"], check=False)
+        elif target == "codex":
+            print(f'Add to ~/.codex/config.toml:\n\n[mcp_servers.prism]\nurl = "{url}/mcp"\n'
+                  f'bearer_token_env_var = "FLIAR_API_KEY"\ntool_timeout_sec = 600\n\nand export FLIAR_API_KEY.')
+        else:
+            print(f"MCP server: {url}/mcp  with header  Authorization: Bearer $FLIAR_API_KEY")
+        return
+    shortcuts = {
+        "entity": lambda r: ("news.overview", {"term": " ".join(r)}),
+        "compare": lambda r: ("news.compare", {"terms": r}),
+        "trends": lambda r: ("news.trends", {"term": " ".join(r)}),
+        "places": lambda r: ("news.geography", {"term": r[0], "level": r[1] if len(r) > 1 else "country"}),
+        "people": lambda r: ("news.entities", {"term": " ".join(r)}),
+        "evidence": lambda r: ("research.evidence", {"claim": " ".join(r)}),
+    }
+    if cmd in shortcuts:
+        if not rest:
+            sys.exit(f"usage: prism {cmd} <term>")
+        feature, body = shortcuts[cmd](rest)
+    elif cmd == "call":
+        if not rest:
+            sys.exit("usage: prism call <feature> key=value ...")
+        feature, body = rest[0], {k: value(v) for k, v in (x.split("=", 1) for x in rest[1:] if "=" in x)}
+    else:
+        sys.exit(f"Unknown command {cmd!r}. Run `prism help`.")
+    env, credits = call(url, feature, body)
+    show(env, credits, raw)
+
+
+if __name__ == "__main__":
+    main()

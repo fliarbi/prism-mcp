@@ -1,0 +1,171 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "chart": 0,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 2
+   },
+   "D": {
+    "chart": 0,
+    "drilldown": 5,
+    "export": 3,
+    "repro": 5,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "chart": "No chart block.",
+    "drilldown": "Lists four follow-ups, but none executed successfully; no item-level identifiers for further exploration.",
+    "export": "Claim-level CSV has source call, unknown window, units, partial coverage, nulls and provenance JSON, all aligned to the audit.",
+    "repro": "All measured numbers resolve to c1; the call, args, empty window and capture date are supplied.",
+    "refs": "Three of six DOI identifiers fail corpus resolution, triggering the fabricated-identifier ceiling.",
+    "accuracy": "Reads audit classifications correctly and avoids treating literature coverage as agreement; its statement that no citation issues were reported is unsupported by the record.",
+    "limits": "Explains literal matching and empty window, but does not state all applicable limits beside each result.",
+    "verdict": "Direct recommendation, confidence and conditions; appropriately notes that the audit does not settle truth, though the strongest contrary evidence is not developed.",
+    "facets": "Covers all three claims and key audit facets, but does not address implied overlap or research-versus-news comparison."
+   },
+   "B": {
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls did not execute successfully; no traced breakdown layer.",
+    "export": "CSV is explicitly an estimate and has no call-backed source; earns the memory-estimate anchor.",
+    "repro": "The estimate count is untraced and listed calls do not reproduce the claims.",
+    "refs": "Sources are named with supporting claims, but key fields and verbatim quotes are missing for some entries; ceiling is 2.",
+    "accuracy": "No clear contradiction with c1; appropriately distinguishes memory judgments from database measurements, though it calls the fire claim unsupported rather than explaining the audit's not_research classification.",
+    "limits": "Specific limits accompany the judgments, including the time gap, missing definitions and absence of a systematic search.",
+    "verdict": "Direct decision, medium confidence and conditions; acknowledges the evidence gap, with a reasonable account of contrary considerations.",
+    "facets": "Addresses the three claims, but omits grounded audit findings and implied facets."
+   },
+   "C": {
+    "chart": "No chart block.",
+    "drilldown": "Only generic layers are given; the single successful follow-up does not provide a traced item breakdown.",
+    "export": "Memory estimates are labelled, but the CSV lacks a source call and full provenance.",
+    "repro": "Most figures are estimates from memory; no calls reproduce them.",
+    "refs": "URLs are generic or incomplete and no verbatim quotes are provided; the corpus identifier ceiling is 1.",
+    "accuracy": "The asserted fire-rate comparison and coal-grid emissions findings are presented as directional facts beyond the supplied record; several remembered figures are unverified.",
+    "limits": "Clearly labels memory, approximate figures and gaps, but those caveats do not make the claims measured.",
+    "verdict": "Confidently answers the claims but relies on unverified figures and does not provide a decision-grade evidentiary basis.",
+    "facets": "Covers the three claims but uses estimates for key findings and leaves audit-grounded facets unanswered."
+   },
+   "D": {
+    "chart": "No chart block.",
+    "drilldown": "Provides claim-to-status-to-document layers with identifiers and includes three successful, on-topic follow-ups, one of whose results is folded into the report.",
+    "export": "CSV traces the claim counts and includes source, window, unit and coverage, but lacks some required provenance hygiene and only represents one needed table.",
+    "repro": "All measured numbers trace to c1 with args and capture date; the audit call reproduces them.",
+    "refs": "All six DOI identifiers resolve, metadata and quotes match, tiers and relevance are stated, including contrary/irrelevant evidence.",
+    "accuracy": "Correctly flags the extractor's conflicting checkable-claim counts and deep-read tally inconsistency; minor imprecision remains in describing the fire claim as a records question.",
+    "limits": "Specific window, lane, matching, coverage and interpretation limits are stated alongside the findings.",
+    "verdict": "Gives a decision and confidence, but its directional conclusion is partly memory-based and the verdict exceeds the support available from the audit.",
+    "facets": "Addresses all three claims and the implied audit anomalies and research-versus-record distinction."
+   }
+  },
+  "errors": {
+   "A": [
+    "Three DOI strings have trailing '**' and were not found in the corpus; the record does not establish they are fabricated works.",
+    "Says the audit reported no citation issues, although the record only says citation coverage was not measured."
+   ],
+   "B": [
+    "Calls all three claims research-checkable in principle, which conflicts with the audit's classification of the fire claim as not_research; this is explicitly a memory assessment, not a measured count.",
+    "States citation coverage is zero of three as an estimate; the audit says citation coverage was not measured."
+   ],
+   "C": [
+    "Reports specific lifecycle-emissions percentages, battery degradation rate and fire rates from memory without verified source support.",
+    "States batteries typically retain most capacity after five years and EV fire rates are lower as conclusions despite no retrieved evidence."
+   ],
+   "D": [
+    "Says the audit could not settle any claim, although it classified the emissions claim as claim_covered; that indicates coverage, not agreement or truth.",
+    "Calls the fire claim a records question, while c1 only says the corpus screen cannot assess it and that a record could settle it.",
+    "Claims the corpus coverage check passed, which is not stated in the supplied reference record."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is strongest for a decision-maker because its measured figures are reproducible, its references resolve, and it exposes important inconsistencies and limits in the audit. Its recommendation still needs care: the audit’s claim_covered status means literature addresses both sides of the emissions claim, not that the claim is supported."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "chart": 0,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 2
+  },
+  "claude_prism": {
+   "chart": 0,
+   "drilldown": 5,
+   "export": 3,
+   "repro": 5,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

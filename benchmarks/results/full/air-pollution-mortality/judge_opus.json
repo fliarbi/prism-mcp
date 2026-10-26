@@ -1,0 +1,195 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Only series is the WHO guideline (10 to 5 µg/m³), a cited public figure that is not the quantity the question asks about.",
+    "comparison": "Memory hazard ratios compared on one scale with est labels; capped at 2.",
+    "chart": "Single chart of a public guideline series the benchmark cannot verify.",
+    "drilldown": "Layers named generically; only 1 of 6 follow-ups executed ok.",
+    "export": "CSV honestly labelled estimate.",
+    "repro": "All numbers from memory and labelled est.",
+    "refs": "Mostly real DOIs, but r1 has no identifier and there are no quotes.",
+    "accuracy": "Mostly right from memory; Pope 2002 cardiopulmonary ~13% is overstated; marked est.",
+    "limits": "Specific about what it cannot measure; no data limits beyond that.",
+    "verdict": "Script ceiling 0 (untagged number in the Verdict).",
+    "facets": "Answered from memory."
+   },
+   "B": {
+    "trend": "No series; states that a trend cannot be measured.",
+    "comparison": "Memory comparison whose cited sources do not match the figures.",
+    "chart": "Estimate-labelled memory chart; attributes both points to r1.",
+    "drilldown": "Breakdown from memory only; follow-ups not executed.",
+    "export": "Estimate-labelled table.",
+    "repro": "Script ceiling 0.",
+    "refs": "r1 DOI resolves to Pope 2009 on life expectancy but carries the 2002 JAMA title. r2 is called a 2014 EHP paper while its DOI is Hoek 2013 in Environ Health.",
+    "accuracy": "Effect sizes are misattributed: HR 1.07 is not from the 2009 NEJM paper, and Hoek's pooled estimate is about 1.06, not 1.08.",
+    "limits": "Honest and specific about what was unmeasured.",
+    "verdict": "Clear answer, decision, confidence and conditions, but it rests on misattributed citations.",
+    "facets": "Memory only."
+   },
+   "C": {
+    "trend": "Full traced series with CAGR 6.6%, 2023 peak, 1.47x late vs early and the news thirds. 2025 is called censored but plotted unmarked.",
+    "comparison": "Ratios 1.76x and 3.5x recompute; baseline defined; caveat on differing outcome definitions given.",
+    "chart": "Two traced charts tied to claims. The Medicare window is an estimate and the censored year is not marked.",
+    "drilldown": "Corpus, stance, document and DOI layers; 2 of 6 follow-ups ok.",
+    "export": "Two CSVs with provenance; medicare window=unknown; at script ceiling 3.",
+    "repro": "All numbers traced and calls listed. The provenance JSON drops the claim args for c2 and c3.",
+    "refs": "7 of 7 DOIs found, verified quotes for the read papers, unread items flagged.",
+    "accuracy": "Accurate overall. The China '0 to 62 μg/m³' claimed quote does not appear in the supplied record. 'Tier rank 3' is an inferred label.",
+    "limits": "Window gaps, lane, coverage, censoring and match mode are placed next to the numbers, with what would close each gap.",
+    "verdict": "Direct and bounded; carries the 7-paper intersection caveat and the empty contrary list.",
+    "facets": "Volumes, stance, tally, effect sizes, series and contrary evidence all covered."
+   },
+   "D": {
+    "trend": "Traced series with a 66% change that recomputes. Peak and 2024 dip not named; series not decomposed.",
+    "comparison": "Subtraction deltas exact with all-cause as the baseline and a single-study caveat.",
+    "chart": "One traced chart, of research volume only; effect sizes are not charted and the censored year is unmarked.",
+    "drilldown": "Corpus, lane and stance layers with values; 1 of 5 follow-ups ok.",
+    "export": "Single traced CSV with full provenance; effect sizes not exported.",
+    "repro": "All numbers traced, calls listed with args, provenance block present.",
+    "refs": "3 of 3 DOIs resolve, verbatim quote verified, tier stated, contrary set reported as empty.",
+    "accuracy": "Faithful to the record; notes the sample-size ambiguity and the linear vs non-linear model sensitivity.",
+    "limits": "Precise gap arithmetic, lane, coverage, match mode and censoring placed at the numbers.",
+    "verdict": "Clear answer, decision, confidence and conditions. Says 'strong' with medium confidence, which is explained by the narrow selection.",
+    "facets": "Most facets grounded, including tally, contrary set, series and volumes."
+   }
+  },
+  "errors": {
+   "A": [
+    "Pope 2002 cardiopulmonary ~13% per 10 µg/m³ overstated (est. labelled)",
+    "Untagged number in the Verdict (script)"
+   ],
+   "B": [
+    "DOI 10.1056/NEJMoa0803894 metadata mismatch (title is the 2002 JAMA paper)",
+    "Hoek cited as 2014 EHP but DOI is 2013 Environ Health",
+    "HR 1.07 and RR 1.08 misattributed to these sources"
+   ],
+   "C": [
+    "China '0 to 62 μg/m³' claimed quote not present in the supplied record",
+    "2025 called censored but plotted unmarked",
+    "Provenance JSON omits claim args for c2 and c3"
+   ],
+   "D": [
+    "Censored 2025 point plotted without a marker"
+   ]
+  },
+  "best": "C",
+  "verdict": "C and D were both grounded in the recorded Prism responses and both flagged the 7-paper intersection limit. A and B relied on memory, and B's citations did not match its effect sizes. C edged D by covering more facets: the full trend with peak and CAGR, the news thirds, and a traced cause-specific effect chart. D was slightly cleaner on accuracy but charted and exported only research volume."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

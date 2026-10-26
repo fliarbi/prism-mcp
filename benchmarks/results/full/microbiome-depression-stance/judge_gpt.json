@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 5,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 5,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No sourced time series or quantified change.",
+    "comparison": "No measured contrast; explicitly says it cannot calculate one.",
+    "chart": "No chart block.",
+    "drilldown": "Evidence layers are named, but no traced breakdown or executable follow-up returned data.",
+    "export": "No export supplied.",
+    "repro": "References support examples, but no measured figures or reproducible calls.",
+    "refs": "All three DOIs resolve and each is tied to a claim; no quotes are offered.",
+    "accuracy": "Makes no measured claims that contradict the record and appropriately distinguishes animal from human evidence.",
+    "limits": "Specific memory and coverage limits are stated, though no corpus window or data-specific caveats can be supplied.",
+    "verdict": "Direct, bounded answer with a decision, confidence, and condition that would change it; no contrary evidence is addressed in its examples.",
+    "facets": "Answers the broad framing and candidate-study facets qualitatively, but lacks grounded framing counts, trend, and comparison."
+   },
+   "B": {
+    "trend": "Chart points and quantified early-to-late changes trace to the stance-trends response; sparse years and the thin-year warning are stated.",
+    "comparison": "Early versus late contested-share delta is traced and recomputes; baseline is described, though the tool's undefined grouping and tiny base limit the reading.",
+    "chart": "Traced orientation chart has a window, unit, source, and caption tied to the trend claim; it decomposes the requested framing.",
+    "drilldown": "Several breakdowns are given, but there is no item-level paper quote or executed follow-up result folded into the report.",
+    "export": "Exports are traced and referenced, but provenance is incomplete for each CSV and the orientation export omits total and coverage details needed for full auditability.",
+    "repro": "Both used calls include arguments and window, and the numeric claims trace; the recipe does not fully specify rebuilding the exports/charts and has no explicit capture date in the call block.",
+    "refs": "All identifiers resolve and claims are tied to papers, but verbatim abstract quotes are absent.",
+    "accuracy": "Mostly careful, but calls the 14-paper orientation totals a complete corpus while browse returns 17; its CSV says absent orientations were not reported even though the source provides zeros for those categories. The 2020 and 2023 category totals also do not sum to totals in the source.",
+    "limits": "Places window, thin-year, phrase-match, coverage, and lane caveats near relevant claims; some provenance details remain incomplete.",
+    "verdict": "Direct decision and confidence with a change condition, consistent with the evidence; acknowledges the discrepant totals, but does not name contrary papers because the supplied call omitted them.",
+    "facets": "Covers framing, candidate papers, trend, comparative caution, phrase coverage, and study-type limitations with grounded values or explicit gaps."
+   },
+   "C": {
+    "trend": "The only series is explicitly an estimate, so it earns the estimate anchor; it does not answer the requested framing trend.",
+    "comparison": "Qualitative, estimated early/late comparison with no measured ratio or delta.",
+    "chart": "The chart is explicitly an estimate, so it earns the memory-chart anchor only.",
+    "drilldown": "Evidence categories are named, but no traced breakdown or successful executable follow-up is provided.",
+    "export": "Estimated volume CSV is honestly labelled, but is not a grounded export of the requested framing data.",
+    "repro": "No calls or measured numeric claims; figures are marked estimates, not reproducible.",
+    "refs": "The cited DOI resolves and entries are tied to claims; other references lack identifiers, but the resolving one supports a specific claim.",
+    "accuracy": "Memory framing is qualified, but the claimed approximate cohort size and pooled effect are unsupported estimates and the causal/mechanistic framing is not grounded in the supplied record.",
+    "limits": "States memory, window, and coverage limits, but the invented-volume estimate and absent data-specific corpus limits constrain the score.",
+    "verdict": "Gives a decision and confidence, but its support is largely memory and estimates, with no measured framing answer.",
+    "facets": "Most requested measured facets, including framing shares and recent study ranking, are absent or estimated."
+   },
+   "D": {
+    "trend": "Traced series and early-to-late change are given with window and thin-year caveat; the full observed points are charted.",
+    "comparison": "Traced comparisons recompute and the baseline is stated; the early/late grouping is flagged as undefined.",
+    "chart": "Traced framing chart has window, unit, source, and caption, but its zeros for absent years conflict with the export's blank-as-missing treatment, and the partial-year marking is not visible.",
+    "drilldown": "Offers traced category and paper layers, but follow-ups did not return enough successful non-empty results to meet the higher anchor.",
+    "export": "CSV matches observed orientation rows and preserves absent years as blank, but lacks full provenance and required per-row fields for the higher anchor.",
+    "repro": "Most numeric claims trace, but 3 of 18 do not; the supplied call block omits a capture date and cannot fully regenerate the deliverable.",
+    "refs": "All DOIs resolve and papers are tied to claims, but the references lack verbatim abstract quotes and tiering is incomplete.",
+    "accuracy": "Flags the 14-versus-17 discrepancy and avoids treating framing as efficacy; minor issue: the chart plots absent years as zeros while the CSV correctly leaves them blank.",
+    "limits": "Covers window end, lane, phrase matching, coverage, thin evidence, and the gap to today near the relevant claims.",
+    "verdict": "Direct answer and decision with confidence and a change condition; acknowledges the count discrepancy and bounds the cautious-shift reading, though it does not identify contrary papers.",
+    "facets": "Addresses framing, trend, promising examples, coverage, and the research-versus-efficacy gap with grounded results."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "The CSV's blank orientation cells are described as unreported, but the source reports zero for those orientations.",
+    "The 14-paper stance-trends total and 17-paper browse facet are distinct and unreconciled; the deliverable acknowledges this but also treats totals as a corpus census."
+   ],
+   "C": [
+    "Publication-volume estimates (150 to 4,000) are explicitly labelled estimates and are not grounded in the supplied record or relevant to the requested orientation trend.",
+    "The approximate cohort size and pooled effect are memory estimates, not sourced measurements."
+   ],
+   "D": [
+    "The chart plots absent years as zero while the export says absent years are blank; the source has no 2019 point.",
+    "The early/late grouping behind the contested-share change is undefined in the source, a limitation the deliverable notes."
+   ]
+  },
+  "best": "B",
+  "verdict": "B gives the clearest decision-grade account: it traces the framing series, quantifies the cautious shift, and links the small, review-heavy corpus to practical limits. D is close, but its chart turns absent years into zeros and its export/reproduction details are weaker; A and C rely mainly on memory or estimates."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 5,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 5,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

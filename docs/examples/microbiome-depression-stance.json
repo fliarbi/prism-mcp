@@ -1,0 +1,639 @@
+{
+ "slug": "microbiome-depression-stance",
+ "captured_at": "2026-10-22T23:09:21+0530",
+ "calls": [
+  {
+   "tool": "stance_trends",
+   "feature": "research.stance_trends",
+   "args": {
+    "term": "gut microbiome depression"
+   },
+   "seconds": 43.9,
+   "response": {
+    "ok": true,
+    "feature": "research.stance_trends",
+    "subject": {
+     "subject": "gut microbiome depression"
+    },
+    "data": {
+     "scope": null,
+     "geo_mode": null,
+     "phrases": [
+      "gut microbiome and depression",
+      "gut-brain axis in depression"
+     ],
+     "points": [
+      {
+       "year": 2018,
+       "total": 2,
+       "orientation": {
+        "promising": 2
+       },
+       "stance_score": null,
+       "positive": 2,
+       "contested": 0,
+       "positive_pct": 100.0,
+       "contested_pct": 0.0
+      },
+      {
+       "year": 2020,
+       "total": 4,
+       "orientation": {
+        "promising": 1,
+        "descriptive": 3
+       },
+       "stance_score": null,
+       "positive": 1,
+       "contested": 0,
+       "positive_pct": 25.0,
+       "contested_pct": 0.0
+      },
+      {
+       "year": 2021,
+       "total": 1,
+       "orientation": {
+        "descriptive": 1
+       },
+       "stance_score": null,
+       "positive": 0,
+       "contested": 0,
+       "positive_pct": 0.0,
+       "contested_pct": 0.0
+      },
+      {
+       "year": 2022,
+       "total": 1,
+       "orientation": {
+        "problem_identifying": 1
+       },
+       "stance_score": null,
+       "positive": 0,
+       "contested": 1,
+       "positive_pct": 0.0,
+       "contested_pct": 100.0
+      },
+      {
+       "year": 2023,
+       "total": 4,
+       "orientation": {
+        "descriptive": 1,
+        "promising": 1
+       },
+       "stance_score": null,
+       "positive": 1,
+       "contested": 0,
+       "positive_pct": 25.0,
+       "contested_pct": 0.0
+      },
+      {
+       "year": 2024,
+       "total": 3,
+       "orientation": {
+        "problem_identifying": 1,
+        "promising": 1
+       },
+       "stance_score": null,
+       "positive": 1,
+       "contested": 1,
+       "positive_pct": 33.3,
+       "contested_pct": 33.3
+      },
+      {
+       "year": 2025,
+       "total": 2,
+       "orientation": {
+        "promising": 1,
+        "descriptive": 1
+       },
+       "stance_score": null,
+       "positive": 1,
+       "contested": 0,
+       "positive_pct": 50.0,
+       "contested_pct": 0.0
+      }
+     ],
+     "totals": {
+      "promising": 6,
+      "descriptive": 6,
+      "problem_identifying": 2
+     },
+     "papers": 14,
+     "per_orientation_trend": {
+      "promising": {
+       "available": true,
+       "from": "2018",
+       "to": "2025",
+       "first": 2,
+       "last": 1,
+       "peak": 2,
+       "peak_period": "2018",
+       "early_third": 3,
+       "late_third": 2,
+       "elapsed_years": 7.0,
+       "multiple": 0.5,
+       "direction": "falling",
+       "late_vs_early": 0.67
+      },
+      "descriptive": {
+       "available": true,
+       "from": "2018",
+       "to": "2025",
+       "first": 0,
+       "last": 1,
+       "peak": 3,
+       "peak_period": "2020",
+       "early_third": 3,
+       "late_third": 1,
+       "elapsed_years": 7.0,
+       "direction": "falling",
+       "late_vs_early": 0.33
+      },
+      "problem_identifying": {
+       "available": true,
+       "from": "2018",
+       "to": "2025",
+       "first": 0,
+       "last": 0,
+       "peak": 1,
+       "peak_period": "2022",
+       "early_third": 0,
+       "late_third": 1,
+       "elapsed_years": 7.0,
+       "direction": "rising",
+       "late_vs_early": null
+      }
+     },
+     "framing_shift": {
+      "early_contested_pct": 0.0,
+      "late_contested_pct": 20.0,
+      "delta_pct_points": 20.0,
+      "reading": "recent work is markedly more cautious than earlier work"
+     },
+     "thin_years": [
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "thin_note": "years with under 20 papers — a share computed on them is noise",
+     "term_split": {
+      "subject": "gut microbiome depression",
+      "scope": null,
+      "split": false
+     }
+    },
+    "window": {
+     "period": "2017-2025"
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792690700.1555538,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "caveat": "orientation is how a paper frames its own finding, not a verdict; and a rising count means little without the share beside it, which is why both are here",
+     "seconds": 43.9
+    }
+   }
+  },
+  {
+   "tool": "browse_research",
+   "feature": "research.browse",
+   "args": {
+    "term": "gut microbiome depression",
+    "orientation": "promising",
+    "limit": 8
+   },
+   "seconds": 61.1,
+   "response": {
+    "ok": true,
+    "feature": "research.browse",
+    "subject": {
+     "subject": "gut microbiome depression"
+    },
+    "data": {
+     "scope": null,
+     "geo_mode": null,
+     "scope_means": null,
+     "matched": 6,
+     "matched_note": "papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded",
+     "returned": 5,
+     "papers": [
+      {
+       "id": "W4414523593",
+       "title": "The microbiota-gut-brain axis in depression: unraveling the relationships and therapeutic opportunities",
+       "authors": [
+        "Zhangcheng Zhu",
+        "Yiwen Cheng",
+        "Xia Liu",
+        "Xiaocui Xu",
+        "Wenwen Ding",
+        "Zongxin Ling",
+        "Jiaming Liu",
+        "Guangyong Cai"
+       ],
+       "venue": "Frontiers in Immunology",
+       "year": 2025,
+       "date": "2025-09-25",
+       "doi": "10.3389/fimmu.2025.1644160",
+       "url": "https://doi.org/10.3389/fimmu.2025.1644160",
+       "cited_by": 11,
+       "orientation": "promising",
+       "contribution": "review",
+       "stance_score": 0.6,
+       "topics": [
+        "Gut microbiota and health",
+        "Tryptophan and brain disorders",
+        "Neuroendocrine regulation and behavior"
+       ],
+       "institutions": [
+        "Affiliated Hospital of Nantong University",
+        "First Affiliated Hospital Zhejiang University",
+        "First People"
+       ]
+      },
+      {
+       "id": "W4403848257",
+       "title": "The Impact of Antidepressants on Gut Microbiome and Depression Management",
+       "authors": [
+        "Ellen Tang",
+        "Ke-Yan Loo",
+        "Angel Yun-Kuan Thye",
+        "Jodi Woan‐Fei Law",
+        "Loh Teng‐Hern Tan",
+        "Malarvili Selvaraja",
+        "Sivakumar Thurairajasingam",
+        "Learn−Han Lee"
+       ],
+       "venue": "Progress In Microbes & Molecular Biology",
+       "year": 2024,
+       "date": "2024-07-22",
+       "doi": "10.36877/pmmb.a0000446",
+       "url": "https://doi.org/10.36877/pmmb.a0000446",
+       "cited_by": 3,
+       "orientation": "promising",
+       "contribution": "review",
+       "stance_score": 0.6,
+       "topics": [
+        "Diet and metabolism studies",
+        "Gut microbiota and health",
+        "Tryptophan and brain disorders"
+       ],
+       "institutions": []
+      },
+      {
+       "id": "W6944970717",
+       "title": "Bioengineered Wheat Arabinoxylan: Fostering Next-Generation Prebiotics Targeting Gut Microbiome and Depression Inversely-Linked Microbes",
+       "authors": [
+        "Njoku, Emmanuel Nnabuike"
+       ],
+       "venue": "uO Research (University of Ottawa)",
+       "year": 2023,
+       "date": "2023-04-20",
+       "doi": "10.20381/ruor-29036",
+       "url": "https://doi.org/10.20381/ruor-29036",
+       "cited_by": 0,
+       "orientation": "promising",
+       "contribution": "empirical",
+       "stance_score": 0.6,
+       "topics": [
+        "Gut microbiota and health",
+        "Food composition and properties",
+        "Polysaccharides and Plant Cell Walls"
+       ],
+       "institutions": []
+      },
+      {
+       "id": "W3080122692",
+       "title": "Gut Microbiome and Depression: How Microbes Affect the Way We Think",
+       "authors": [
+        "Therese Limbana",
+        "Farah Khan",
+        "Noha Eskander"
+       ],
+       "venue": "Cureus",
+       "year": 2020,
+       "date": "2020-08-23",
+       "doi": "10.7759/cureus.9966",
+       "url": "https://doi.org/10.7759/cureus.9966",
+       "cited_by": 117,
+       "orientation": "promising",
+       "contribution": "review",
+       "stance_score": 0.6,
+       "topics": [
+        "Gut microbiota and health",
+        "Diet and metabolism studies",
+        "Tryptophan and brain disorders"
+       ],
+       "institutions": [
+        "California Institute of Behavioral Neurosciences and Psychology (United States)"
+       ]
+      },
+      {
+       "id": "W2787646573",
+       "title": "Gut microbiome and depression: what we know and what we need to know",
+       "authors": [
+        "Gerhard Winter",
+        "Robert A. de J. Hart",
+        "Richard P.G. Charlesworth",
+        "Christopher F. Sharpley"
+       ],
+       "venue": "Reviews in the Neurosciences",
+       "year": 2018,
+       "date": "2018-02-04",
+       "doi": "10.1515/revneuro-2017-0072",
+       "url": "https://doi.org/10.1515/revneuro-2017-0072",
+       "cited_by": 384,
+       "orientation": "promising",
+       "contribution": "theoretical",
+       "stance_score": 0.6,
+       "topics": [
+        "Tryptophan and brain disorders",
+        "Gut microbiota and health",
+        "Stress Responses and Cortisol"
+       ],
+       "institutions": [
+        "University of New England"
+       ]
+      }
+     ],
+     "facets": {
+      "orientation": [
+       {
+        "orientation": "descriptive",
+        "papers": 8,
+        "share_pct": 47.1
+       },
+       {
+        "orientation": "promising",
+        "papers": 6,
+        "share_pct": 35.3
+       },
+       {
+        "orientation": "problem_identifying",
+        "papers": 3,
+        "share_pct": 17.6
+       }
+      ],
+      "contribution": [
+       {
+        "contribution": "review",
+        "papers": 11
+       },
+       {
+        "contribution": "position",
+        "papers": 2
+       },
+       {
+        "contribution": "theoretical",
+        "papers": 2
+       },
+       {
+        "contribution": "empirical",
+        "papers": 2
+       }
+      ],
+      "by_year": [
+       {
+        "year": 2018,
+        "papers": 2
+       },
+       {
+        "year": 2020,
+        "papers": 4
+       },
+       {
+        "year": 2021,
+        "papers": 1
+       },
+       {
+        "year": 2022,
+        "papers": 1
+       },
+       {
+        "year": 2023,
+        "papers": 4
+       },
+       {
+        "year": 2024,
+        "papers": 3
+       },
+       {
+        "year": 2025,
+        "papers": 2
+       }
+      ],
+      "topics": [
+       {
+        "topic": "Gut microbiota and health",
+        "papers": 13
+       },
+       {
+        "topic": "Tryptophan and brain disorders",
+        "papers": 12
+       },
+       {
+        "topic": "Diet and metabolism studies",
+        "papers": 7
+       },
+       {
+        "topic": "Neuroendocrine regulation and behavior",
+        "papers": 4
+       },
+       {
+        "topic": "Maternal Mental Health During Pregnancy and Postpartum",
+        "papers": 1
+       },
+       {
+        "topic": "Health, psychology, and well-being",
+        "papers": 1
+       },
+       {
+        "topic": "Geochemistry and Geologic Mapping",
+        "papers": 1
+       },
+       {
+        "topic": "Gastrointestinal motility and disorders",
+        "papers": 1
+       },
+       {
+        "topic": "Stress Responses and Cortisol",
+        "papers": 1
+       },
+       {
+        "topic": "Electrical and Electromagnetic Research",
+        "papers": 1
+       }
+      ],
+      "keywords": [
+       {
+        "keyword": "Microbiome",
+        "papers": 13
+       },
+       {
+        "keyword": "Depression (economics)",
+        "papers": 13
+       },
+       {
+        "keyword": "Biology",
+        "papers": 13
+       },
+       {
+        "keyword": "Bioinformatics",
+        "papers": 12
+       },
+       {
+        "keyword": "Gut flora",
+        "papers": 11
+       },
+       {
+        "keyword": "Medicine",
+        "papers": 11
+       },
+       {
+        "keyword": "Gut–brain axis",
+        "papers": 11
+       },
+       {
+        "keyword": "Gut microbiome",
+        "papers": 11
+       },
+       {
+        "keyword": "Psychology",
+        "papers": 10
+       },
+       {
+        "keyword": "Psychiatry",
+        "papers": 8
+       },
+       {
+        "keyword": "Immunology",
+        "papers": 7
+       },
+       {
+        "keyword": "Neuroscience",
+        "papers": 4
+       }
+      ]
+     },
+     "stance_summary": {
+      "positive_pct": 35.3,
+      "contested_pct": 17.6
+     },
+     "filters": {
+      "orientation": [
+       "promising"
+      ],
+      "contribution": null,
+      "sort": "recent",
+      "expand": false,
+      "min_citations": null
+     },
+     "term_split": {
+      "subject": "gut microbiome depression",
+      "scope": null,
+      "split": false
+     },
+     "fallback": null,
+     "phrases": [
+      "gut microbiome and depression",
+      "gut-brain axis in depression"
+     ],
+     "phrase_audit": [
+      {
+       "phrase": "gut microbiome and depression",
+       "titles": 11
+      },
+      {
+       "phrase": "gut-brain axis in depression",
+       "titles": 6
+      },
+      {
+       "phrase": "fecal microbiota transplantation for depression",
+       "titles": 1
+      },
+      {
+       "phrase": "gut microbiome depression",
+       "titles": 0
+      },
+      {
+       "phrase": "intestinal microbiota and depressive disorders",
+       "titles": 0
+      },
+      {
+       "phrase": "microbial dysbiosis and mood disorders",
+       "titles": 0
+      }
+     ],
+     "scope_match": null,
+     "vocabulary": {
+      "orientation": [
+       "breakthrough",
+       "promising",
+       "descriptive",
+       "comparative",
+       "cautionary",
+       "problem_identifying",
+       "critical"
+      ],
+      "contribution": [
+       "empirical",
+       "review",
+       "methodological",
+       "theoretical",
+       "position"
+      ],
+      "sort": [
+       "recent",
+       "cited",
+       "stance",
+       "oldest"
+      ]
+     }
+    },
+    "window": {
+     "period": "2017-2025"
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792690761.2648022,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "how": "matched on the phrase in title and paper keywords — set expand=true to widen to the whole concept cluster",
+     "caveat": "orientation labels how a paper FRAMES its finding, not whether the finding is true; and this corpus starts in 2017",
+     "seconds": 61.1
+    }
+   }
+  }
+ ]
+}

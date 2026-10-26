@@ -1,0 +1,459 @@
+{
+ "slug": "audit-ev-draft",
+ "captured_at": "2026-10-23T00:20:58+0530",
+ "calls": [
+  {
+   "tool": "research_audit",
+   "feature": "research.audit",
+   "args": {
+    "text": "Electric vehicles produce fewer lifetime emissions than petrol cars even on coal-heavy grids. EV batteries lose most of their capacity within five years. Battery fires are more common in electric vehicles than in petrol cars.",
+    "deep": 3
+   },
+   "seconds": 62.4,
+   "response": {
+    "ok": true,
+    "feature": "research.audit",
+    "subject": {},
+    "data": {
+     "claims_detected": 3,
+     "research_checkable": 2,
+     "not_research": 1,
+     "by_status": {
+      "claim_covered": 1,
+      "no_literature": 1,
+      "not_research": 1
+     },
+     "status_means": {
+      "not_research": "only a record — a filing, a register or a news report — could settle this. Prism's research corpus has no opinion, and that is not the same as the claim being wrong",
+      "no_literature": "no paper title matches this claim's own wording. The field may still cover it under different words — run research.evidence on the claim to find out",
+      "thin_literature": "a handful of paper titles match this wording — too few to rest an assertion on without reading them",
+      "literature_exists": "research exists on this subject — which is not the same as research agreeing with the claim; research.evidence reads it",
+      "claim_covered": "papers cover BOTH sides of the claim, so the literature speaks to it directly",
+      "unchecked": "the corpus lane failed for this claim"
+     },
+     "by_checkable_by": {
+      "research": 3
+     },
+     "single_word_phrases_dropped": 1,
+     "evidence_coverage": 50,
+     "method": "one model call extracts every claim and one the index scan counts them all, so a whole article costs two round trips. Matching is on the claim's OWN WORDING against paper titles — deliberately literal. research.evidence resolves a claim properly (naming its concepts, discovering the corpus's labels for them, reading abstracts) and will find work this screen misses. Use `deep` to run it here on the weakest claims.",
+     "evidence_coverage_means": "share of the RESEARCH-CHECKABLE claims with a literature behind them, weighted by how directly it speaks to the claim. Claims only a record could settle are excluded rather than counted as failures. It is not a truth score: it says a body of work exists, not that the work agrees",
+     "citation_coverage": null,
+     "citation_presence_ratio": 0,
+     "citation_coverage_means": "Not measured. Presence of a DOI or link does not verify a source or its support for a claim.",
+     "citations": {
+      "available": false,
+      "dois": 0,
+      "resolved_in_corpus": [],
+      "unresolved_dois": [],
+      "lookup_error": null,
+      "verification_note": "Corpus resolution is not publisher validation or proof of claim support. Unresolved does not mean fabricated.",
+      "links": [],
+      "inline_markers": 0,
+      "by_kind": {},
+      "note": "DOIs are tiered from the corpus; bare links are classified by host only, which is weaker evidence about a source's strength"
+     },
+     "citation_issues": [],
+     "claims": [
+      {
+       "claim": "Electric vehicles produce fewer lifetime emissions than petrol cars even on coal-heavy grids.",
+       "sentence": "Electric vehicles produce fewer lifetime emissions than petrol cars even on coal-heavy grids.",
+       "start": 0,
+       "end": 93,
+       "type": "comparison",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "definition of \"lifetime emissions\" may vary across studies",
+       "subject_phrases": [
+        "electric vehicles",
+        "petrol cars"
+       ],
+       "outcome_phrases": [
+        "lifetime emissions"
+       ],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "vehicles"
+       ],
+       "outcome_terms": [
+        "emissions"
+       ],
+       "subject_papers": 151813,
+       "both_poles_papers": 8695,
+       "status": "claim_covered",
+       "why": "8,695 papers cover both sides of this claim"
+      },
+      {
+       "claim": "EV batteries lose most of their capacity within five years.",
+       "sentence": "EV batteries lose most of their capacity within five years.",
+       "start": 94,
+       "end": 153,
+       "type": "prevalence",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "\"most\" is vague and depends on measurement methods",
+       "subject_phrases": [
+        "ev batteries"
+       ],
+       "outcome_phrases": [],
+       "dropped_phrases": [
+        {
+         "phrase": "capacity",
+         "why": "single word — matches a field, not this claim"
+        }
+       ],
+       "subject_terms": [
+        "batteries"
+       ],
+       "outcome_terms": [
+        "capacity"
+       ],
+       "subject_papers": 234,
+       "both_poles_papers": 0,
+       "status": "no_literature",
+       "why": "234 papers match the subject wording, none that also match the outcome this claim asserts"
+      },
+      {
+       "claim": "Battery fires are more common in electric vehicles than in petrol cars.",
+       "sentence": "Battery fires are more common in electric vehicles than in petrol cars.",
+       "start": 154,
+       "end": 225,
+       "type": "comparison",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "underreporting of fire incidents may bias the comparison",
+       "subject_phrases": [
+        "battery fires",
+        "electric vehicles"
+       ],
+       "outcome_phrases": [],
+       "dropped_phrases": [],
+       "subject_terms": [
+        "fires",
+        "vehicles"
+       ],
+       "outcome_terms": [],
+       "subject_papers": 151873,
+       "both_poles_papers": null,
+       "status": "not_research",
+       "why": "the search phrases matched 151,873 papers — that is the size of a field, not evidence about this sentence. The claim is probably about something specific a corpus does not index"
+      }
+     ],
+     "needs_attention": [
+      {
+       "claim": "EV batteries lose most of their capacity within five years.",
+       "sentence": "EV batteries lose most of their capacity within five years.",
+       "start": 94,
+       "end": 153,
+       "type": "prevalence",
+       "assertion": "strong",
+       "checkable_by": "research",
+       "risk": "\"most\" is vague and depends on measurement methods",
+       "subject_phrases": [
+        "ev batteries"
+       ],
+       "outcome_phrases": [],
+       "dropped_phrases": [
+        {
+         "phrase": "capacity",
+         "why": "single word — matches a field, not this claim"
+        }
+       ],
+       "subject_terms": [
+        "batteries"
+       ],
+       "outcome_terms": [
+        "capacity"
+       ],
+       "subject_papers": 234,
+       "both_poles_papers": 0,
+       "status": "no_literature",
+       "why": "234 papers match the subject wording, none that also match the outcome this claim asserts"
+      }
+     ],
+     "deep_reads": [
+      {
+       "claim": "EV batteries lose most of their capacity within five years.",
+       "status": "no_literature",
+       "tally": {
+        "counts": {
+         "supports": 0,
+         "contradicts": 0,
+         "qualifies": 0,
+         "unrelated": 12,
+         "unread": 0
+        },
+        "tier_weighted": {
+         "supports": 0,
+         "contradicts": 0,
+         "qualifies": 0
+        },
+        "read": 0,
+        "ungrounded": 0
+       },
+       "corpus_stance": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
+       "documents": [
+        {
+         "id": "prism:W4300772585",
+         "source": "research",
+         "title": "Optimization techniques for grid-connected PV with retired EV batteries in centralized charging station with challenges and future possibilities: A review",
+         "abstract": null,
+         "authors": [
+          "Pankaj Sharma",
+          "Rani Chinnappa Naidu"
+         ],
+         "venue": "Ain Shams Engineering Journal",
+         "year": 2022,
+         "doi": "10.1016/j.asej.2022.101985",
+         "cited_by": 74,
+         "type": "review",
+         "tier": "review",
+         "strength": "moderate",
+         "tier_rank": 4,
+         "why_tier": "summarises a field rather than adding a measurement",
+         "url": "https://doi.org/10.1016/j.asej.2022.101985",
+         "institutions": [
+          "Vellore Institute of Technology University"
+         ],
+         "country": null,
+         "lane": "current",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "This paper emphasizes the usage of Retired Electric Vehicle Batteries (REVB) to support a system with a Centralized Charging Station (CCS) for charging electric vehicle batteries.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Focuses on system design, not capacity loss timeline.",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W4405641743",
+         "source": "research",
+         "title": "Repurposing Second-Life EV Batteries to Advance Sustainable Development: A Comprehensive Review",
+         "abstract": null,
+         "authors": [
+          "Muhammad Nadeem Akram",
+          "Walid Abdul‐Kader"
+         ],
+         "venue": "Batteries",
+         "year": 2024,
+         "doi": "10.3390/batteries10120452",
+         "cited_by": 35,
+         "type": "review",
+         "tier": "review",
+         "strength": "moderate",
+         "tier_rank": 4,
+         "why_tier": "summarises a field rather than adding a measurement",
+         "url": "https://doi.org/10.3390/batteries10120452",
+         "institutions": [
+          "University of Windsor"
+         ],
+         "country": null,
+         "lane": "review",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "While lithium-ion batteries (LIBs) have pushed the progression of electric vehicles (EVs) as a viable commercial option, they introduce their own set of issues regarding sustainable development.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Discusses sustainability, not five‑year capacity loss.",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W4411923007",
+         "source": "research",
+         "title": "Artificial intelligence for estimating State of Health and Remaining Useful Life of EV batteries: A systematic review",
+         "abstract": null,
+         "authors": [
+          "Md Shahriar Nazim",
+          "Arbil Chakma",
+          "Md. Ibne Joha",
+          "Syed Samiul Alam",
+          "Md Minhazur Rahman",
+          "Miftahul Khoir Shilahul Umam",
+          "Yeong Min Jang"
+         ],
+         "venue": "ICT Express",
+         "year": 2025,
+         "doi": "10.1016/j.icte.2025.05.013",
+         "cited_by": 25,
+         "type": "review",
+         "tier": "review",
+         "strength": "moderate",
+         "tier_rank": 4,
+         "why_tier": "summarises a field rather than adding a measurement",
+         "url": "https://doi.org/10.1016/j.icte.2025.05.013",
+         "institutions": [
+          "Kookmin University"
+         ],
+         "country": null,
+         "lane": "review",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Lithium-ion batteries are critical to electric vehicles (EVs) but degrade over time, requiring accurate State of Health (SOH) and Remaining Useful Life (RUL) estimation.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Mentions degradation generally, no five‑year capacity figure.",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W3150066018",
+         "source": "research",
+         "title": "Feasibility of utilising second life EV batteries: Applications, lifespan, economics, environmental impact, assessment, and challenges",
+         "abstract": null,
+         "authors": [
+          "Mohammed Hussein Saleh Mohammed Haram",
+          "Jia Woon Lee",
+          "Gobbi Ramasamy",
+          "Eng Eng Ngu",
+          "Siva Priya Thiagarajah",
+          "Yuen How Lee"
+         ],
+         "venue": "Alexandria Engineering Journal",
+         "year": 2021,
+         "doi": "10.1016/j.aej.2021.03.021",
+         "cited_by": 262,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1016/j.aej.2021.03.021",
+         "institutions": [
+          "Multimedia University"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "It is estimated that by the year 2030, the cumulative of Electric Vehicles (EVs) will reach 85 million.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Provides market forecast, not battery capacity loss data.",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W3108944598",
+         "source": "research",
+         "title": "Quantum Advantage in the Charging Process of Sachdev-Ye-Kitaev Batteries",
+         "abstract": null,
+         "authors": [
+          "Davide Rossini",
+          "Gian Marcello Andolina",
+          "Dario Rosa",
+          "Matteo Carrega",
+          "Marco Polini"
+         ],
+         "venue": "Physical Review Letters",
+         "year": 2020,
+         "doi": "10.1103/physrevlett.125.236402",
+         "cited_by": 257,
+         "type": "article",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.1103/physrevlett.125.236402",
+         "institutions": [
+          "Istituto Nanoscienze",
+          "Istituto Nazionale di Fisica Nucleare, Sezione di Pisa",
+          "Italian Institute of Technology",
+          "Korea Institute for Advanced Study",
+          "Scuola Normale Superiore"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "The exactly solvable Sachdev-Ye-Kitaev (SYK) model has recently received considerable attention in both condensed matter and high energy physics because it describes quantum matter without quasiparticles, while being at the same time the holographic dual of a quantum black hole.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Focuses on quantum model, unrelated to EV battery aging.",
+         "confidence": "high"
+        },
+        {
+         "id": "prism:W2276827192",
+         "source": "research",
+         "title": "Identifying and Overcoming Critical Barriers to Widespread Second Use of PEV Batteries",
+         "abstract": null,
+         "authors": [
+          "J. Neubauer",
+          "Kandler Smith",
+          "Eric Wood",
+          "Ahmad Pesaran"
+         ],
+         "venue": "",
+         "year": 2015,
+         "doi": "10.2172/1171780",
+         "cited_by": 175,
+         "type": "report",
+         "tier": "article",
+         "strength": "moderate",
+         "tier_rank": 3,
+         "why_tier": "peer-reviewed research article",
+         "url": "https://doi.org/10.2172/1171780",
+         "institutions": [
+          "National Laboratory of the Rockies"
+         ],
+         "country": null,
+         "lane": "landmark",
+         "stance": "unrelated",
+         "claimed_stance": null,
+         "quote": "Both the market penetration of plug-in electric vehicles (PEVs) and deployment of grid-connected energy storage systems are presently restricted by the high cost of batteries.",
+         "claimed_quote": null,
+         "grounded": true,
+         "quote_verified": true,
+         "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+         "why": "Addresses cost barriers, not capacity loss within five years.",
+         "confidence": "high"
+        }
+       ]
+      }
+     ]
+    },
+    "window": {},
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792695041.903698,
+        "age_seconds": 16.49,
+        "expires_in_seconds": 13.51,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792695058.3956144,
+        "age_seconds": 0.0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "seconds": 62.4
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,238 @@
+{
+ "slug": "esg-investing-stance",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 30.9,
+   "plain": 30.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.0,
+    "gpt": 30.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 5.0,
+    "chart": 4.5,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 2.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.5,
+    "facets": 4.5
+   },
+   "strict": 84.6,
+   "plain": 84.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 88.6,
+    "gpt": 80.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 26.2,
+   "plain": 26.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 16.6,
+    "gpt": 35.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 1.5,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 3.5
+   },
+   "strict": 68.0,
+   "plain": 68.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 63.8,
+    "gpt": 72.2
+   }
+  }
+ },
+ "judge_mad": 0.57,
+ "verdicts": {
+  "opus": "C charted and read the per-year contested and positive shares. It quantified both the early-to-late decline and the 2025 rebound, and it flagged the corpus noise, giving a decision-maker a calibrated 'no, but watch 2025'. A reached the same answer from raw counts, wrongly claimed shares were unavailable, and missed the rebound. B guessed the opposite direction from memory, and D declined.",
+  "gpt": "B is the most decision-ready: it gives a reproducible annual framing series, quantifies the early-to-late shift, and flags the 2025 rebound and corpus limits. Its key weakness is conflating the separate contested-share measure with critical orientations; D is more cautious but misses that critical shares can be calculated from its own data."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Claims the output does not provide yearly share, but contested_pct and positive_pct per year are in c1"
+   ],
+   "claude_bare": [
+    "Illustrative critical-share rise contradicts the recorded decline in contested share (labelled estimate)"
+   ],
+   "claude_prism": [],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Calls the contested share a sum of critical-type orientations; the reference reports contested_pct separately from the critical orientation count.",
+    "Says the yearly series is a phrase match on title and keywords; the stance-trends response does not specify that match mode."
+   ],
+   "claude_bare": [
+    "Presents an estimated rising critical share from recalled values without a sourced basis; it is labeled as a guess, not measured evidence.",
+    "Treats remembered performance, ratings, and impact findings as evidence of a temporal change in academic framing, which those figures do not measure."
+   ],
+   "chatgpt_prism": [
+    "Says the series cannot establish critical share by year, although the reference provides annual critical counts and totals from which that share can be calculated."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Traced critical and promising counts with the window and deltas. It falsely says yearly shares are unavailable, so it ignores the contested_pct series.",
+    "comparison": "9 vs 68 (7.6x) and the 24.8% to 15.7% shift recompute correctly. The baseline is defined.",
+    "chart": "Fully traced counts chart, but it plots no share or tone-ratio view although the data supports one.",
+    "drilldown": "One layer plus a single example paper. Follow-ups ran 3/5, and f2 duplicates c1.",
+    "export": "One traced CSV with provenance (at the ceiling).",
+    "repro": "15/16 numbers traced. The calls block lists args.",
+    "refs": "One DOI, a promising and off-topic paper. It is not tied to the critical claim and has no quote.",
+    "accuracy": "Misreads the record by claiming no yearly shares exist. Its confused date self-correction is visible in the text.",
+    "limits": "Window end, 296-day gap, phrase matching and the warning not to mix denominators are all placed.",
+    "verdict": "Complete structure, but it misses the strongest contrary signal: the 2025 contested rebound to 24.9%.",
+    "facets": "Missing the per-year share facet."
+   },
+   "claude_bare": {
+    "trend": "Series is labelled as an estimate and has no source.",
+    "comparison": "Compares unlike memory quantities and admits no ratio is valid.",
+    "chart": "Estimate chart, honestly labelled.",
+    "drilldown": "Generic layers. Follow-ups ran 3/6.",
+    "export": "Estimate table only.",
+    "repro": "Memory only.",
+    "refs": "Three real DOIs, no quotes. r4 is an unverified, vague recollection.",
+    "accuracy": "Its guessed rising critical share (15%→35%) runs against the recorded falling contested share. It is labelled an estimate, though.",
+    "limits": "Honest and specific about what memory cannot measure.",
+    "verdict": "'Probably yes' rests on guesswork, with low confidence.",
+    "facets": "Facets are answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Full traced contested and positive share series. Early/late delta, the 2024 trough, the 2025 +18.1pt rebound and the decomposition into problem_identifying all recompute exactly.",
+    "comparison": "Ratio 0.63 and the 7.31 vs 2.0 contrast are correct with the baseline defined. It flags the c2 filter as non-comparable.",
+    "chart": "Share overlay chart is traced and captioned. It has no volume companion.",
+    "drilldown": "Facet layers plus paper IDs and DOIs. Follow-ups ran 4/5. Nothing was executed and folded back.",
+    "export": "Single CSV with provenance (at the ceiling).",
+    "repro": "71/71 numbers traced, with a calls recipe and capture date.",
+    "refs": "Papers carry W ids and DOIs tied to claims, and the off-topic item is flagged. No quotes.",
+    "accuracy": "Catches the off-topic cemetery row and the c2 facet vs 782 scope mismatch. No contradictions.",
+    "limits": "Window end, 2026 gap, phrase dilution and thin early years are covered. Some sit in a footer.",
+    "verdict": "Clear 'no', decision, low-medium confidence, the 2025 rebound named, and bounded by the data.",
+    "facets": "Volume, shares, framing shift, examples and phrase effect are all covered."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups only; just 1/4 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Empty, so no contradictions.",
+    "limits": "Generic statement of having no data.",
+    "verdict": "Declines to answer.",
+    "facets": "None answered."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "Explicitly says the annual orientation trend is unmeasured.",
+    "comparison": "No measured early/late comparison; proposed call uses unsupported arguments.",
+    "chart": "No chart block or measured series.",
+    "drilldown": "Lists specific questions, but only one of four follow-up calls executed successfully.",
+    "export": "No data export.",
+    "repro": "No recorded calls or numeric claims to reproduce.",
+    "refs": "No verified references or identifiers.",
+    "accuracy": "Does not invent or contradict measured findings.",
+    "limits": "Clearly states the missing window, lane, coverage, censoring, and match mode.",
+    "verdict": "Direct cautious answer, decision, confidence, and conditions; grounded in the absence of measurements.",
+    "facets": "Does not answer the trend or framing-shift facets with data."
+   },
+   "claude_prism": {
+    "trend": "Traced annual series, quantified early/late change and 2025 rebound, and compares positive with contested shares.",
+    "comparison": "Same-scale early/late share contrast with defined baseline, exact delta and ratio, and scope caveat.",
+    "chart": "Both plotted series trace to the source, with window, unit, source, and caption tied to the claim.",
+    "drilldown": "Traced years, facets, and item records; calls are mostly useful, but no critical-paper result is folded back in.",
+    "export": "Traced annual CSV is referenced, but the question also needs an item-level evidence export and provenance is incomplete.",
+    "repro": "Numeric claims are tied to listed calls and can be recomputed; recipe includes capture date.",
+    "refs": "Calls and DOI records resolve, but entries are not tied to claim-level verbatim abstract quotes or ranked evidence tiers.",
+    "accuracy": "Mostly sound, but the contested series is presented as a composite of critical-type orientations even though the reference treats contested and critical as distinct fields.",
+    "limits": "Window, corpus start, lane, phrase matching, broad-term noise, and interpretive limits are stated near the evidence; some coverage detail is overstated.",
+    "verdict": "Direct answer and decision with confidence, conditions, and the 2025 counter-signal; the field conflation weakens support.",
+    "facets": "Covers volume, framing, year trend, comparison, terminology, and research/news scope, but leaves critical-item evidence unresolved."
+   },
+   "claude_bare": {
+    "trend": "The chart is explicitly an estimate, so it earns only the estimate anchor.",
+    "comparison": "The comparison is explicitly non-comparable across different quantities, but remains memory-based.",
+    "chart": "Illustrative memory chart is honestly labeled as an estimate.",
+    "drilldown": "Names layers but provides no identifiers or successfully executed, on-topic follow-ups.",
+    "export": "CSV is honestly labeled as an estimate, not measured data.",
+    "repro": "No calls and the numeric claims are memory estimates.",
+    "refs": "DOIs resolve, but the entries lack checked verbatim support and one reference is explicitly unverified.",
+    "accuracy": "The response admits no measurement, but its asserted direction and recalled particulars do not establish a temporal framing trend.",
+    "limits": "Clearly identifies the memory-only lane, missing coverage, censoring, match mode, and unmeasured series.",
+    "verdict": "Gives a direct but unsupported answer; confidence is low and no decision-grade trend evidence supports it.",
+    "facets": "The requested measured trend and framing comparison are not established."
+   },
+   "chatgpt_prism": {
+    "trend": "Charted counts trace, but the prose does not quantify the overall count change and lacks the series’ decomposition into shares.",
+    "comparison": "Exact, defined same-scale count comparison with ratio and scope caveat, though it does not settle critical share over time.",
+    "chart": "Both chart series trace to the source and have window, unit, source, and claim-linked caption.",
+    "drilldown": "Two traced layers and specific calls are present, but no item-level critical-paper result is returned and folded into the report.",
+    "export": "Traced CSV is referenced, but it is a selected-orientation table and does not preserve the full question-relevant evidence.",
+    "repro": "Nearly all numbers trace, but one numeric claim is untagged, so it cannot earn the full reproducibility score.",
+    "refs": "No external or item-level references are supplied for the claims; Prism calls alone do not meet the document-reference standard.",
+    "accuracy": "The main reading is cautious, but it treats the supplied counts as not providing critical share by year, although critical counts and annual totals permit calculating it.",
+    "limits": "Window, lane, phrase matching, coverage caveat, and gaps between calls are stated near the numbers.",
+    "verdict": "Direct answer and confidence are given, but it does not acknowledge that rising critical share is calculable from its own chart and totals.",
+    "facets": "Addresses volume, orientations, comparison, terminology, and scope, while leaving critical share and paper-level evidence unresolved."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

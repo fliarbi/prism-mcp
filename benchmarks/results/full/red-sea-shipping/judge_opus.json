@@ -1,0 +1,182 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 0
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 24-month series with its window. Change is quantified: CAGR -3.5%, late/early 1.21, March 2025 peak of 126. Critical late/early 1.28 and the February 2026 positive anomaly are named. Censoring is noted, but critical is not charted.",
+    "comparison": "Baseline 0.58 is defined. Ratio 3.9, multiple 6.72x and delta 3.32 all recompute. Per-month range 0.45 to 40.0 is traced.",
+    "chart": "One fully traced volume chart with window, unit, source and claim. Tone was asked for and is not charted.",
+    "drilldown": "Traced layers for themes, places, entities and two headlines with URLs. Only 2 of 6 follow-ups returned data.",
+    "export": "Traced CSVs with provenance. The monthly CSV holds selected months only, not the full series.",
+    "repro": "67/67 numbers traced. Calls block with args and a capture date. The 94.5% figure (430/455) recomputes.",
+    "refs": "Ceiling 1. Two news URLs, no tiering.",
+    "accuracy": "Matches the record. Reads placed_pct with its denominator. Does not flag anomalies such as critical 'rising' while its CAGR is 0.0, or high-lift rows with tiny counts.",
+    "limits": "Limits sit next to the numbers: censoring, 4.7-month gap to today, mention vs central match, enrichment lag with May fill at 4%, thin publisher sample.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. Bounded by the window and the empty critical panel.",
+    "facets": "Volume, tone, themes, places and source concentration are grounded. Critical stories get a grounded empty result plus two items."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Proposed calls only, and 0 of 6 returned data.",
+    "export": "None.",
+    "repro": "No numbers to trace.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "States in general terms that it has no window, lane or coverage.",
+    "verdict": "An honest refusal, but it gives no answer.",
+    "facets": "No facet answered."
+   },
+   "C": {
+    "trend": "Memory index, honestly labelled as an estimate.",
+    "comparison": "No measured comparison.",
+    "chart": "Estimate chart, labelled.",
+    "drilldown": "Generic follow-ups, only 1 of 4 returned data.",
+    "export": "Estimate CSV, labelled.",
+    "repro": "Estimates only.",
+    "refs": "None.",
+    "accuracy": "Labels its estimates and does not contradict the record.",
+    "limits": "Specific about what is unmeasured and about the gap after its knowledge cutoff.",
+    "verdict": "Low-confidence answer from memory.",
+    "facets": "Facets answered from memory."
+   },
+   "D": {
+    "trend": "Full traced series with window, CAGR, peak and first/last values. Critical values appear only in the CSV, and the February–March 2026 revival is not read.",
+    "comparison": "Ratio, 6.72x multiple and +3.32 delta are traced. Baseline is defined, and the deliverable notes it is not a matched control.",
+    "chart": "One traced volume chart. Tone is not charted.",
+    "drilldown": "Ceiling 1: 0 of 4 follow-ups returned data, and the headlines have no URLs.",
+    "export": "Complete monthly CSV plus a sentiment summary, with provenance JSON including censoring.",
+    "repro": "40/40 numbers traced. The 144-day gap recomputes correctly.",
+    "refs": "Ceiling 1. Headlines are cited without URLs.",
+    "accuracy": "Defines 'critical' correctly and flags that theme denominators overlap.",
+    "limits": "Thorough and placed next to the numbers: censoring, days to today, match modes, enrichment lag, sample size.",
+    "verdict": "Decision is vague ('directional read'). Places and critical-story answers are thin.",
+    "facets": "Most facets are grounded. Critical stories are handled as a grounded 'no data'."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A and D both traced every number to the Prism overview and stated window, censoring and the gap to today. A gave the decision-maker more: two critical headlines with URLs, the February 2026 positive-tone anomaly, the second volume bump, and a sharper framing decision. D had the cleaner full export. B and C honestly declined to measure, so they offer only framing for a decision."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

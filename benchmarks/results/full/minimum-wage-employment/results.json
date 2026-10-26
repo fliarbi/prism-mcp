@@ -1,0 +1,232 @@
+{
+ "slug": "minimum-wage-employment",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 2.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.0,
+    "limits": 4.0,
+    "verdict": 0.0,
+    "facets": 2.0
+   },
+   "strict": 26.0,
+   "plain": 26.0,
+   "invented": true,
+   "by_judge": {
+    "opus": 22.9,
+    "gpt": 29.1
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 5.0,
+    "chart": 0.0,
+    "drilldown": 3.0,
+    "export": 4.5,
+    "repro": 3.0,
+    "refs": 1.5,
+    "accuracy": 4.5,
+    "limits": 5.0,
+    "verdict": 4.5,
+    "facets": 4.0
+   },
+   "strict": 69.3,
+   "plain": 69.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 72.0,
+    "gpt": 66.7
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 2.0
+   },
+   "strict": 32.3,
+   "plain": 32.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.9,
+    "gpt": 39.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 4.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 4.5,
+    "repro": 4.5,
+    "refs": 2.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 64.8,
+   "plain": 64.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 54.9,
+    "gpt": 74.7
+   }
+  }
+ },
+ "judge_mad": 0.6,
+ "verdicts": {
+  "opus": "A was the only deliverable that used the measured record to read its own instrument. It normalised the stance mixes, showed that claim B's 32,032 count is a matching artifact (99.4% of its subject set), and turned that into the decision rule 'do not cite the count as proof', with every derived number recomputing exactly. B traced cleanly but stopped at the headline ratio and misread tier fields. C and D answered from memory, C with a likely fabricated DOI and a misquote, and D with an untagged threshold in its verdict.",
+  "gpt": "C is strongest for a decision-maker because its comparisons, exports, and numerical claims are reproducible and it clearly separates corpus volume from causal evidence. Its missing chart, weak document references, and unexecuted follow-ups limit the deliverable, but D’s apparent breadth is weakened by an unsupported chart window and untraced numbers."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [],
+   "chatgpt_prism": [
+    "claim-level top_tier (2/3) presented as the tier of the individual strongest sources"
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1257/aer.84.4.772 not found; likely fabricated",
+    "quote attributed to Card & Krueger not verbatim (abstract says 'no indication')"
+   ],
+   "claude_bare": [
+    "untagged 60%-of-median threshold in the verdict",
+    "elasticity misstated as percentage-point loss",
+    "CBO 2024 report attribution doubtful"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [
+    "The DOI 10.1257/aer.84.4.772 is not found in the research corpus."
+   ],
+   "claude_bare": [
+    "The verdict's 60% bite threshold is untagged and unsupported by the stated sources."
+   ],
+   "chatgpt_prism": [
+    "The 2018 preprint has no identifier or URL, and neither surfaced item has a verbatim quote."
+   ],
+   "claude_prism": [
+    "The chart assigns a 2026-10-23 measurement window although the source call reports no window.",
+    "Several background literature claims are memory-based and lack resolving identifiers or quotes."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "comparison": "I recomputed every derived figure from c1 and all match: stance shares, deltas, the 134.6x ratio, 99.4% vs 0.74% both-poles/subject, and contested pct. The tool's 'more evidence is not more true' caveat is carried. It answers studied-vs-supported directly and says what the counts cannot test.",
+    "chart": "Script ceiling is 0.",
+    "drilldown": "Two traced layers: corpus mix and documents, one with a DOI. Only 1 of 6 follow-ups executed ok. Ceiling is 3.",
+    "export": "Two traced CSVs with source, window, unit and coverage, plus a provenance JSON. They are not referenced from the analytic prose, and rows carry no document identifiers.",
+    "repro": "45 of 53 numbers traced and 7 are untagged. Ceiling is 3.",
+    "refs": "One resolving DOI. r1 has no identifier. r3–r6 are memory entries without identifiers, honestly labelled. No quotes.",
+    "accuracy": "No contradictions with c1. It catches the reference's anomalies: claim B's near-total match of its subject set, the strongest source being 'unrelated', and stance labels that look topical rather than directional. Memory citations are correct and labelled.",
+    "limits": "Limits sit next to the numbers they bound: window unknown, gap to today uncomputable, lane not selective for B, n=1 and n=10 reads. The limits change the reading ('do not cite 32,032 vs 238 as proof'), and it names what would close the gap (effect sizes).",
+    "verdict": "Gives an answer, a decision, confidence with its reason, and what would change it. It separates measured from background, addresses the tool's contrary verdict, and is under 150 words.",
+    "facets": "Volume, lane, tally, stance mix, strongest source and asymmetry are all grounded. The research-vs-news mismatch is not addressed."
+   },
+   "chatgpt_prism": {
+    "comparison": "The ratio 134.6 and difference 31,794 recompute exactly, the baseline is defined and the caveat is carried. It does not normalise stance mixes or catch the matching-breadth artifact.",
+    "chart": "No chart; ceiling is 0.",
+    "drilldown": "0 of 4 follow-ups executed ok. Ceiling is 1.",
+    "export": "One full traced CSV whose column names equal the tool's fields, with a provenance block. It has no document/DOI rows.",
+    "repro": "20 of 20 numbers traced and a regenerate block is present. The tier attribution to individual sources is not what the tool states.",
+    "refs": "One DOI resolves and r1 has none. Tiers are misattributed and there are no quotes.",
+    "accuracy": "Field misreading: it gives claim-level top_tier (2, 3) as the tier of each strongest source, which the tool labels 'preprint' and 'article'.",
+    "limits": "Window, lane, coverage, and the corpus-mix vs documents-read distinction are stated and placed. It misses that B's lane matched nearly the whole subject set.",
+    "verdict": "The answer has a decision and conditions, but the decision is vague. 'Can reduce employment in some settings' is not grounded in its data, and it omits the one read document that contradicts claim A.",
+    "facets": "Volume, lane, tally and strongest source are grounded. The asymmetry is only partly analysed."
+   },
+   "chatgpt_bare": {
+    "comparison": "Qualitative only. Ceiling is 1.",
+    "chart": "None.",
+    "drilldown": "The breakdown is from memory. Only 2 of 7 follow-ups executed ok.",
+    "export": "No CSV, honestly declined. Ceiling is 0.",
+    "repro": "No numbers; sources are named. Ceiling is 1.",
+    "refs": "The Card & Krueger DOI is not found and appears fabricated, which caps refs at 1.",
+    "accuracy": "It presents a fabricated-looking DOI and a 'verbatim' quote that misquotes the abstract ('no indication' becomes 'no evidence').",
+    "limits": "It is specific and honest about what is unmeasured. Ceiling is 3.",
+    "verdict": "Gives an answer, a decision, confidence and what would change it, but rests on only two memory sources.",
+    "facets": "Answered from memory."
+   },
+   "claude_bare": {
+    "comparison": "Elasticity comparison from memory. Ceiling is 2.",
+    "chart": "None.",
+    "drilldown": "Layers are named generically. 0 of 6 follow-ups executed ok.",
+    "export": "CSV is labelled estimate. Ceiling is 1.",
+    "repro": "Numbers are memory/estimates.",
+    "refs": "No identifiers.",
+    "accuracy": "Untagged '60% of median' threshold. Elasticity is misstated as 'percentage-point loss per 1% rise'. 'CBO 2024' is doubtful.",
+    "limits": "Honest memory caveats; a plain model is capped at 3.",
+    "verdict": "Script found an invented untagged number in the verdict. Ceiling is 0.",
+    "facets": "Answered from memory."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "comparison": "Qualitative contrast only; it gives no comparable numeric estimates.",
+    "chart": "No chart block.",
+    "drilldown": "Names two evidence layers, but provides no traced item breakdown or executed follow-ups.",
+    "export": "No CSV export.",
+    "repro": "The literature claims and numbers are not tied to reproducible calls or named sources with traceable details.",
+    "refs": "One DOI does not resolve in the research corpus, capping this at 1.",
+    "accuracy": "The general account is cautious and does not materially contradict the reference record.",
+    "limits": "Clearly states several limits, but lacks a measured window and specific corpus coverage details.",
+    "verdict": "Direct answer, decision, confidence, conditions, and contrary evidence are present; bounded by the lack of measured data.",
+    "facets": "Addresses the central debate but leaves most measured facets unavailable."
+   },
+   "claude_bare": {
+    "comparison": "Provides numeric elasticity ranges from memory, explicitly labelled estimates, so the figures are not benchmark-traceable.",
+    "chart": "No chart block.",
+    "drilldown": "Lists follow-up calls, but none executed successfully with on-topic data.",
+    "export": "The estimate CSV is honestly labelled, earning 1.",
+    "repro": "Claims rely on memory and estimates without reproducible source calls.",
+    "refs": "References lack resolvable identifiers and source quotes.",
+    "accuracy": "The untagged 60% threshold is an unsupported specific, and other numerical claims are estimates.",
+    "limits": "Specifies memory-based coverage, freshness gap, lanes, censoring, and match limitations.",
+    "verdict": "The verdict contains the untagged 60% number; the script ceiling is 0.",
+    "facets": "Covers the debate qualitatively, but measured facets are missing."
+   },
+   "chatgpt_prism": {
+    "comparison": "Traced comparison uses one corpus field and window, states ratio and delta, defines the baseline, and explains that counts do not measure truth or evidence strength.",
+    "chart": "No chart block.",
+    "drilldown": "Provides a claim-level breakdown and follow-up questions, but none of the proposed calls returned usable data.",
+    "export": "The needed claim comparison CSV is fully traced with provenance and is referenced in the prose.",
+    "repro": "All numeric claims trace to the recorded call or recomputable arithmetic; the call and capture date are provided.",
+    "refs": "Only one of two surfaced documents has a resolving identifier; quotes are absent and one item cannot be checked.",
+    "accuracy": "Faithfully distinguishes corpus mix from document reads and avoids treating corpus volume as causal evidence; it does not catch further reference anomalies.",
+    "limits": "Places the empty window, lane, coverage, matching and interpretation limits alongside the relevant claims.",
+    "verdict": "Gives a bounded answer, decision, confidence, conditions, and the strongest contrary evidence in the supplied record.",
+    "facets": "Covers the requested claim comparison and grounds the unavailable effect-size and subgroup questions as gaps."
+   },
+   "claude_prism": {
+    "comparison": "Traced same-call comparison with recomputable shares and ratio; it states the matching caveat, though the corpus-volume comparison cannot establish comparative evidence strength.",
+    "chart": "The chart window is invented as the retrieval date despite the source having no reported window; chart ceiling is 0.",
+    "drilldown": "Provides corpus and document layers plus one successful on-topic follow-up, but not the full coverage of open facets.",
+    "export": "Both needed CSVs trace to the recorded call, preserve the reported null-like unread count, and include provenance.",
+    "repro": "Some numeric claims are untraced and the chart window conflicts with the source’s empty window.",
+    "refs": "Only the surfaced New York study has a resolvable identifier; the other relied-on items lack verifiable identifiers or quotes.",
+    "accuracy": "Mostly reads the recorded fields correctly and labels background literature as memory; the chart’s stated window is unsupported.",
+    "limits": "Explains the empty window, intersection lane, thin document reads, matching limits, and what counts cannot establish.",
+    "verdict": "Direct recommendation, confidence, conditions, and limits are present; the literature-based moderate-increase recommendation is less supported by this run’s measured evidence.",
+    "facets": "Covers the main comparison and several limits, but leaves implied facets such as overlap and seasonality without grounded treatment."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

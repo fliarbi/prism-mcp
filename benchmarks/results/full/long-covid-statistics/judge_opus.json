@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 2,
+    "comparison": 3,
+    "chart": 2,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The research series traces to the record and correctly stops at 2024, so the censored 2025 point is excluded. The 15.1x ratio is exact. It omits the tool's CAGR and late_vs_early, and the peak value is only implied in the caption. The series is paper volume, not prevalence.",
+    "comparison": "The 2021 vs 2020 comparison recomputes exactly (+25,669, 1.39x). It does not address the contrast the question poses.",
+    "chart": "Fully traced, with window, unit and source, and tied to a claim. It charts paper volume only, not the prevalence facet.",
+    "drilldown": "One traced layer (corpus volumes). The follow-ups are specific to prevalence; 3/6 executed ok.",
+    "export": "One traced CSV with source, window, unit and coverage=partial, a provenance JSON block, and a reference from the prose. Only one table.",
+    "repro": "29/29 numbers trace. Calls are listed with args. Derived ratios are recomputable.",
+    "refs": "3/3 DOIs resolve. Quotes are verbatim. Each reference carries tier and citation count and is tied to a claim.",
+    "accuracy": "Fields are read correctly. It catches that the 52.9%/47.1% figures are a lung-function phenotype split, not prevalence, and that the reviews give no rate.",
+    "limits": "Windows, censoring, lane and the gap to today are stated, but mostly in a footer section. At ceiling.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It names the misleading statistic. Consistent with its chart.",
+    "facets": "The main facet (most-cited prevalence figures and their sources) gets only a grounded 'not in these results', plus citation counts for reviews."
+   },
+   "B": {
+    "trend": "It plots the censored 2025 point and reads it as a 56% decline from peak. It claims the tool did not flag 2025, which contradicts censored_at=2025. This caps trend at 2.",
+    "comparison": "The 2019 baseline is defined and the ratios (22.8x, 9.9x, 16.5:1) are exact. The comparisons are of paper volume and stance, not prevalence.",
+    "chart": "Traced, but the censored period is plotted and the caption reads it as a fall.",
+    "drilldown": "The layers are listed only generically, without values. Only 2/6 follow-ups executed ok.",
+    "export": "The CSV is labelled coverage=full while it includes the censored 2025 row. The provenance JSON drops the claim args.",
+    "repro": "63/64 numbers trace and calls are listed with args.",
+    "refs": "5/5 DOIs resolve. Tiers are given, references are tied to claims, quotes are verbatim, and the source-fit results are reported.",
+    "accuracy": "It does well to catch that the broad topic net includes only 6,060 'long covid' phrase matches. However, the 2026-04 figure of 203 news articles does not trace, and the censored point is misread as a decline.",
+    "limits": "Window gaps to today are quantified, lane, coverage and the topic-net breadth are stated, and what the data cannot answer is listed.",
+    "verdict": "At ceiling. Direct answer, low confidence with reason, decision, and what would change it.",
+    "facets": "Grounded 'no data' for the prevalence figures, plus phrase-audit, stance and volume facets."
+   },
+   "C": {
+    "trend": "No series. At ceiling 0.",
+    "comparison": "Compares two memory numbers whose attributions are wrong.",
+    "chart": "The chart's values are attributed to mis-identified references and are not labelled estimate.",
+    "drilldown": "The follow-ups are generic. 0/5 executed ok.",
+    "export": "The rows are attributed to refs with wrong metadata and are not labelled estimate.",
+    "repro": "Named sources with wrong metadata. The calls block is empty.",
+    "refs": "The 10.1001/jama.2022.18931 DOI is the GBD Long COVID paper, not Perlis et al. The MMWR title and the quote '7.5% ever had' look fabricated.",
+    "accuracy": "The 6.2% figure is misattributed to Perlis. The quote conflicts with its own 'current' wording (ever vs current prevalence). The window and 1,391-day gap are fabricated.",
+    "limits": "It is honest that no corpus was queried, but invents a window and gap.",
+    "verdict": "Hedged answer resting on misattributed figures.",
+    "facets": "Facets answered from memory, with misattribution."
+   },
+   "D": {
+    "trend": "A memory series labelled estimate. Several of the points are invented.",
+    "comparison": "Compares memory numbers, honestly flagged.",
+    "chart": "A memory chart labelled estimate.",
+    "drilldown": "The layers come from memory. 2/5 follow-ups executed ok.",
+    "export": "A CSV labelled estimate.",
+    "repro": "Memory, labelled est.",
+    "refs": "The DOIs resolve. The r2 title is Chen et al.'s title, not the GBD paper's. No quotes are given.",
+    "accuracy": "Its substantive figures (GBD 6.2%, Chen 43%, ONS 1.9M, the WHO definition) are broadly right and flagged as estimates. The r2 metadata is wrong, and the illustrative 2021 point is invented but labelled.",
+    "limits": "Explicit and specific that it is memory-only and what this leaves unmeasured.",
+    "verdict": "Gives the most usable substantive answer, with a planning band and confidence, but rests on memory. At ceiling.",
+    "facets": "All facets answered from memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "News figure '2026-04 had 203 articles' does not trace to the record",
+    "Censored 2025 research point plotted and read as a 56% decline; the claim that the tool did not mark it contradicts censored_at=2025",
+    "Export labelled coverage=full includes the censored row"
+   ],
+   "C": [
+    "DOI 10.1001/jama.2022.18931 attributed to Perlis et al. (it is the GBD Long COVID Collaborators paper)",
+    "Quote '7.5% of U.S. adults ever had long COVID' appears fabricated and contradicts the 'current' framing",
+    "Invented evidence window and 1,391-day gap"
+   ],
+   "D": [
+    "r2 title mismatches its DOI (the title belongs to Chen et al.)",
+    "Illustrative 2021 headline value of 30% is invented, though labelled est."
+   ]
+  },
+  "best": "A",
+  "verdict": "A was the only deliverable that stayed fully traced and handled the censored period correctly. It told the decision-maker plainly that the retrieved statistics are not prevalence estimates and set out what to commission next. B had richer context, including the useful phrase audit, but plotted a censored year as a decline and included an untraced news figure. C and D answered from memory: D's figures were broadly right and honestly flagged, while C misattributed its headline sources."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 2,
+   "comparison": 3,
+   "chart": 2,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly volume and critical series; quantifies decline, identifies peak, and avoids plotting the censored month as a collapse.",
+    "comparison": "Tone ratio versus defined corpus baseline is traced and correctly gives 3.64x; the unmatched baseline caveat is stated.",
+    "chart": "The monthly series traces to c1 with window, unit, source, and a caption tied to the trend claim.",
+    "drilldown": "Headline examples and breakdowns are present, but only three of five proposed follow-ups executed successfully, below the threshold for three qualifying calls.",
+    "export": "Monthly and place CSVs are traced, provenance is supplied, and both exports are referenced; the needed series and geography tables are included.",
+    "repro": "Numeric claims trace to c1 and the call block supplies arguments and window; derived ratios and trend values can be regenerated.",
+    "refs": "No external references were supplied, and the critical headline claims lack resolving item URLs in the report.",
+    "accuracy": "The report reads critical as a model label, gives the correct place denominator and tone fields, and notes enrichment and sample limitations.",
+    "limits": "It states the window, censoring, mention matching, enrichment lag, and sampled publishers, but omits the applicable corpus coverage flag alongside its principal counts.",
+    "verdict": "It answers the question with confidence and conditions, but does not name the strongest contrary evidence in its own findings, including the February 2026 positive-over-negative month.",
+    "facets": "Addresses trend, tone, themes, actors, places, publisher sample, and critical-story leads while noting the research lane is absent."
+   },
+   "B": {
+    "trend": "The full series and annualized decline are traced, but the chart window ends May 31 rather than the source’s exclusive June 1 bound and the prose omits the tool’s censoring rationale.",
+    "comparison": "The baseline and tone ratio are defined and recompute exactly; it explains what the classifier comparison can establish and its limits.",
+    "chart": "The monthly chart traces fully and is captioned, but its stated window does not match the source window exactly.",
+    "drilldown": "Breakdowns reach some headline items, but only one of six proposed follow-up calls returned qualifying data.",
+    "export": "Monthly and country CSVs are provided, but the benchmark ceiling is 3; export provenance is incomplete for the required hygiene standard.",
+    "repro": "The c1 arguments and window are supplied and the measured numbers trace; derived calculations are reproducible.",
+    "refs": "Headline URLs are supplied, but research references are absent and the supplied headlines are not all tied to supporting claims with verified quotes.",
+    "accuracy": "It says geography ends in April although the source labels through May 1, misstates the placed denominator as a numerator, and calls the February ratio the least-negative month despite July 2025 being 1.4. The critical feed description also conflicts with the record’s two same-page MH370 entries.",
+    "limits": "It covers window, lane, mention matching, enrichment lag, and censoring, but does not carry the source coverage flag next to the main counts.",
+    "verdict": "The verdict is direct but asserts an adversarial framing and a Scarborough-centered decision beyond the measured evidence, and ignores the February tone reversal.",
+    "facets": "Covers volume, tone, themes, actors, places, sources, critical items, and explicitly identifies the missing research lane."
+   },
+   "C": {
+    "trend": "No measured series is supplied.",
+    "comparison": "It explains that no comparable baseline is available, but provides no measured contrast.",
+    "chart": "No chart block with plotted data is supplied.",
+    "drilldown": "Follow-up calls are generic placeholders and no breakdown results are present.",
+    "export": "No data export is supplied.",
+    "repro": "Calls lack executable date arguments and no measurements can be regenerated.",
+    "refs": "No references are supplied.",
+    "accuracy": "It does not fabricate or contradict measured findings and correctly identifies the absence of supplied corpus data.",
+    "limits": "It clearly states that data are absent, but does not have the specific bounds of the reference corpus to report.",
+    "verdict": "It recommends obtaining data, but its claim that no Prism results were provided is inconsistent with the benchmark context and it offers no measured answer.",
+    "facets": "Names the requested facets as unmeasured, but does not address the implied research-versus-news mismatch or other grounded facets."
+   },
+   "D": {
+    "trend": "No series is available; the empty estimate chart earns only the honest-memory anchor.",
+    "comparison": "It correctly says a numeric comparison cannot be made, but supplies none.",
+    "chart": "The chart is explicitly an empty estimate placeholder, which earns the estimate anchor only.",
+    "drilldown": "It names prospective breakdowns, but they are untraced and the follow-ups are planned rather than executed successfully.",
+    "export": "The single empty placeholder CSV is labeled as an estimate and contains no measured rows.",
+    "repro": "No measurements or replayable calls are provided; planned calls have no recorded results.",
+    "refs": "No references or resolving news items are supplied.",
+    "accuracy": "Memory themes are clearly labeled as estimates, and no measured claims contradict the record.",
+    "limits": "It clearly identifies the absence of a queried window and measured data, but does not state the reference corpus’s applicable specific limits.",
+    "verdict": "It gives a bounded use case and confidence, but does not answer the coverage question with evidence or acknowledge contrary evidence.",
+    "facets": "Several facets are explicitly marked unmeasured, while the implied research/news comparison and grounded coverage breakdowns are absent."
+   }
+  },
+  "errors": {
+   "A": [
+    "The verdict omits the strongest contrary tone point: in February 2026 positive articles (375) exceeded negative articles (319)."
+   ],
+   "B": [
+    "Geography/entity enrichment is described as ending April 30; the source bound is 2026-05-01.",
+    "The February ratio of 0.85 is called the lowest, but July 2025 is 1.40.",
+    "The claim that 14,031 of 18,021 is the placed percentage numerator/denominator reverses the source’s placed_articles and matched_articles fields.",
+    "The critical-headline feed is described as three items including two duplicate MH370 pages; the reference summary identifies two MH370 entries as the same page and a separate Antara item.",
+    "The verdict's recommendation to center monitoring on Scarborough is an interpretation not established by the aggregate coverage counts."
+   ],
+   "C": [
+    "Treats the lack of supplied corpus results as a reason to refuse measurement, despite the benchmark reference record containing a measured corpus."
+   ],
+   "D": [
+    "The placeholder CSV contains an empty period row labeled as a coverage export, though the prose correctly says no measurements were retrieved."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it combines a traced trend, tone comparison, topical and geographic breakdowns, and explicit limits while keeping critical labels distinct from editorial importance. B is broader and includes headline URLs, but its geography denominator, enrichment bound, and tone-trend reading contain material errors; C and D provide no measured answer."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

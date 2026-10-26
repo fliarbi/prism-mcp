@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 24-month series with window, CAGR -24.4%, late/early 0.6, June 2024 peak and June 2025 trough; critical decomposition in prose only, not charted",
+    "comparison": "Baseline 0.58 defined, 3.64x and Feb-2026 0.85/0.58≈1.5 recompute; does not test PH/VN/CN framing contrast",
+    "chart": "Single traced volume chart with window, unit and source; tone and critical share were asked but not charted",
+    "drilldown": "At ceiling; traced layers reach headlines with URLs, but only 1 of 6 follow-ups executed ok",
+    "export": "At ceiling; monthly and country CSVs traced with provenance and a JSON block",
+    "repro": "97/97 traced, prism-calls recipe with args and capture date",
+    "refs": "At ceiling; headline URLs tied to claims, but the reference set is thin",
+    "accuracy": "Matches the record and catches anomalies: MH370 false positive, Marcos label duplication, publishers labelled as organisations, Ukraine collision, enrichment lag",
+    "limits": "At ceiling; window, 144-day gap, match mode and enrichment bound stated, mostly in the limits section",
+    "verdict": "At ceiling; full structure with confidence reason, but the 'not a news cycle that is peaking' phrasing is odd",
+    "facets": "Volume, tone, places, themes, critical stories and sources covered; national framing not split"
+   },
+   "B": {
+    "trend": "No series",
+    "comparison": "None",
+    "chart": "None",
+    "drilldown": "Follow-ups use placeholder args",
+    "export": "No export",
+    "repro": "No numbers",
+    "refs": "None",
+    "accuracy": "No contradictions, but empty",
+    "limits": "Specific about what is unmeasured",
+    "verdict": "'Not measurable' is a non-answer",
+    "facets": "None answered"
+   },
+   "C": {
+    "trend": "Traced, CAGR and early/late thirds given; peak and trough not named",
+    "comparison": "Baseline defined, delta 1.53 and 3.64x correct, matched-set caveat carried",
+    "chart": "Volume chart only; tone not charted",
+    "drilldown": "Headlines carry date and publisher but no URLs; 3 of 5 follow-ups ok; f4 duplicates c1",
+    "export": "Two traced CSVs with provenance JSON, referenced from the prose",
+    "repro": "44/44 traced, recipe present",
+    "refs": "At ceiling; headlines lack URLs",
+    "accuracy": "Calls lift-ranked organisations 'most-mentioned', skipping the larger indo-pacific label; otherwise faithful, and notes MH370 and peace-opinion noise",
+    "limits": "At ceiling; window, 144-day gap, censoring, match mode and enrichment lag stated",
+    "verdict": "Concise, with decision, confidence reason and what would change it; omits the Feb 2026 tone reversal",
+    "facets": "Most facets grounded; national framing not split"
+   },
+   "D": {
+    "trend": "Empty placeholder series",
+    "comparison": "None",
+    "chart": "Chart with no points supports no claim",
+    "drilldown": "Memory layers labelled est; 1 of 4 follow-ups ok",
+    "export": "Empty placeholder row",
+    "repro": "At ceiling 0; one untagged number",
+    "refs": "None",
+    "accuracy": "Memory specifics such as the 2016 award are correct and labelled",
+    "limits": "Honest and specific about being unmeasured, including the knowledge cutoff",
+    "verdict": "Honest scoping, but no measured answer",
+    "facets": "Themes and entities from memory only"
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Describes lift-ranked organisations as 'most-mentioned'"
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A and C both grounded every number in the recorded overview. A went further: it named the peak and trough, flagged the Feb-2026 positive-tone anomaly, attached URLs to the critical headlines, and caught the feed's false positives and label duplications. C is clean but thinner on the critical stories. B and D honestly declined to measure, which leaves a decision-maker with nothing usable beyond a plan of calls."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

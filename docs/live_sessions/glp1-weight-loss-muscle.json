@@ -1,0 +1,47 @@
+{
+ "slug": "glp1-weight-loss-muscle",
+ "claude_live": {
+  "text": "**Direct answer:** Yes, in part. GLP-1 drugs reduce lean mass in absolute terms, but whether that is \"significant\" or harmful is still debated. Most of the weight lost is fat.\n\n**What the data shows** (Prism research corpus, papers from 2017–2025; 30 papers cover both GLP-1 and muscle)\n- A 2025 review (Chrysavgis et al., *Int J Mol Sci*) says trials show GLP-1 therapies mainly reduce adipose tissue. They also produce absolute lean-mass reductions, \"generally representing 20–30% of total weight loss.\"\n- A 2025 meta-analysis (Anyiam et al., *Obesity Reviews*) reports a mean reduction in muscle-mass measures of −1.41 kg (95% CI −2.12 to −0.71) in people without diabetes. The Prism read suggests this was not significant in type 2 diabetes. I only have its snippet, and Prism could not verify the quote against the abstract.\n- A 2025 systematic review on mitochondrial function (Old et al., *J Cachexia Sarcopenia Muscle*) states that up to 40% of weight lost may be lean mass. This is background framing, not a measured outcome.\n- Scheen (2025) calls the human evidence mixed: some studies report excess loss of fat-free or skeletal muscle mass, and others argue for a protective effect.\n- Across the 30 papers, 6 are labelled cautionary and 4 problem-identifying. About 37% are contested.\n\n**Limits on the evidence**\n- Prism read only 1 of the 8 top documents fully. The other quotes are ungrounded or unverified.\n- The corpus gives no trial-level data for semaglutide specifically, no outcomes on strength or function, and no news coverage.\n- \"Lean mass\" in these studies usually means DXA fat-free mass. That includes water and organ tissue, so it is not the same as muscle.\n\n**Interpretation (mine, not Prism's)**\n- A lean-mass share of 20–40% of total weight loss is similar to what diet-induced weight loss produces. So the loss looks proportional to the weight lost, not specific to the drug.\n- It matters most for older adults and others at risk of sarcopenia. Whether it causes real functional decline is unproven in this evidence.\n- The reasonable view is to expect some lean-mass loss, not to assume it is harmful. Protein intake and resistance training are sensible mitigations. Prism did not retrieve any evidence testing them.",
+  "seconds": 694.7,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "find_evidence",
+    "args": {
+     "claim": "GLP-1 receptor agonists like semaglutide cause significant lean muscle mass loss",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 17607
+   },
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "semaglutide weight loss lean mass proportion of total weight lost",
+     "include_context": false,
+     "include_trend": false
+    },
+    "ok": false,
+    "chars": 306
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Yes—semaglutide can reduce lean mass during weight loss, but available data do not show that most weight lost is muscle.**\n\n**What the data show:** In a DXA body-composition substudy of STEP 1, after **68 weeks** of semaglutide treatment, participants lost **9.7% of lean body mass** and **19.3% of fat mass** from baseline. Lean mass therefore fell, while fat mass fell more. The study was a substudy, and DXA lean mass is not a direct measure of skeletal muscle alone. [STEP 1 body-composition analysis](https://pubmed.ncbi.nlm.nih.gov/?term=Impact+of+semaglutide+on+body+composition+in+adults+with+overweight+or+obesity+in+the+STEP+1+study)\n\n**Interpretation:** The loss is real and may matter, especially for people already at risk of low muscle or frailty. But “lean mass loss” should not be read as the same percentage of muscle lost: lean mass includes more than muscle, and the substudy does not establish how much muscle function changed. The result supports monitoring strength and nutrition during substantial weight loss; it does not by itself show that semaglutide causes clinically significant muscle impairment.",
+  "seconds": 514.8,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "In adults with overweight or obesity, semaglutide causes significant loss of lean body mass or skeletal muscle during weight loss.",
+     "include_context": true,
+     "include_trend": false,
+     "limit": 8
+    },
+    "ok": false,
+    "chars": 13689
+   }
+  ]
+ }
+}

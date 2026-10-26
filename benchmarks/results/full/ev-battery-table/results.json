@@ -1,0 +1,231 @@
+{
+ "slug": "ev-battery-table",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 32.0,
+   "plain": 32.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 32.4,
+    "gpt": 31.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 1.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 2.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 50.6,
+   "plain": 50.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 55.3,
+    "gpt": 45.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 28.0,
+   "plain": 28.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 28.4,
+    "gpt": 27.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 4.5,
+    "repro": 2.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 55.8,
+   "plain": 55.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 53.1,
+    "gpt": 58.4
+   }
+  }
+ },
+ "judge_mad": 0.33,
+ "verdicts": {
+  "opus": "A and B both report the corpus honestly: 0 of 5 rows have a stated energy-density figure. B goes further for a decision-maker. It catches the solid-state 0-papers anomaly and the off-topic LFP news row, quantifies the 146-day staleness, and keeps clearly labelled memory ranges apart from corpus results. C and D answer only from memory with no traceable sources; C also has midpoint slips and a fabricated chart window.",
+  "gpt": "A is the strongest decision aid because it preserves nulls row by row, traces them to the supplied corpus response, and explains why those nulls cannot support a ranking. C covers the same rows but weakens its answer with unverified estimates and treats a title target as a relevant figure; B and D are candid about memory estimates but do not deliver grounded findings for the requested rows."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Claims a zero-day gap between data and today although the call returned no window"
+   ],
+   "claude_prism": [],
+   "claude_bare": [
+    "Midpoints inconsistent with stated ranges (Li-metal 400 vs 425; LFP 170 vs 172.5)",
+    "Chart and CSV carry an invented 2026-01-01..2026-10-23 window for memory figures"
+   ],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Says the result is dated 2026-10-23 although c1 has an empty window and no result date.",
+    "Does not mention the solid-state title's 350 Wh/kg target as contrary context; c1 says the abstract does not address the query, so it is not a matching figure."
+   ],
+   "chatgpt_bare": [
+    "Provides unsourced memory ranges for most rows and does not cover the five requested chemistries with grounded results."
+   ],
+   "claude_prism": [
+    "Presents a 350 Wh/kg title target as the only source-tied figure even though c1 says the paper does not address the query in its abstract.",
+    "The 146-day interval and newest-item framing assume an unstated record date; c1 only gives the item date and an empty window.",
+    "Memory ranges and ratios are not research findings and cannot establish a cross-chemistry comparison."
+   ],
+   "claude_bare": [
+    "Provides a memory-based ranking and many ranges that do not answer the specified corpus-backed per-chemistry question.",
+    "Calls the date range a window despite no corpus query or source window."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "comparison": "Correctly declines to compare null rows, but offers no comparison at all, so anchor 0 applies.",
+    "chart": "No chart block.",
+    "drilldown": "Breakdown is only the five rows; none of the three follow-ups returned data.",
+    "export": "Per-row CSV keeps nulls as empty cells with a reason column, carries DOIs and has a provenance JSON. Window is unknown and the LFP row has no url.",
+    "repro": "Capped at 2. The call is listed with args, but the empty window limits replay.",
+    "refs": "All 4 DOIs resolve, each tied to a row with year/venue/tier. No quotes are given.",
+    "accuracy": "Reads every row as the reference does. It claims a zero-day gap to today, which the empty window cannot support, and it misses the solid-state 0-papers/top-source anomaly.",
+    "limits": "Placed limits cover lanes, abstract-only matching, cell vs pack, and null vs zero. The window/currency claim is weak.",
+    "verdict": "Direct answer, decision, high confidence with its reason, and what would change it. It does not name the 350 Wh/kg title as the nearest contrary item.",
+    "facets": "All five rows carry a grounded null with the tool's reason."
+   },
+   "claude_prism": {
+    "comparison": "Ratios to the LFP midpoint are memory estimates, labelled and recomputing correctly (1.5, 0.8, 2.2). Anti-gaming caps this at 2.",
+    "chart": "No chart.",
+    "drilldown": "Layers are named, but 0 of 6 follow-ups executed ok.",
+    "export": "Capped at 1 because one CSV is a memory estimate. The coverage CSV preserves nulls.",
+    "repro": "Traced counts come from c1 and the estimates are labelled. Capped at 2.",
+    "refs": "4 DOIs resolve, each tied to a claim with tier. The 350 Wh/kg number is correctly sourced from the [r3] title. No quotes.",
+    "accuracy": "Catches the reference's anomalies: the solid-state row reports 0 papers yet lists a top source, and the LFP news item is off-topic recycling. Memory figures are clearly separated from corpus results.",
+    "limits": "Gives the window as empty, newest item 146 days old (recomputes), lane split, abstract-only censoring and loose matching. Says full-text extraction would close the gap.",
+    "verdict": "Answer, decision, low confidence with its reason, and what would change it. It names the 350 Wh/kg design target. It mixes in memory ranges but labels them.",
+    "facets": "All rows grounded as null with reasons; memory estimates sit apart from them."
+   },
+   "claude_bare": {
+    "comparison": "Memory ratios with midpoint slips: 350–500 gives 425, not 400; LFP gives 172.5 and sodium-ion 137.5.",
+    "chart": "Chart is labelled estimate, which earns 1. Its window of 2026-01..2026-10 is invented for memory data.",
+    "drilldown": "Generic breakdown; only 1 of 6 follow-ups ok.",
+    "export": "CSV labelled estimate.",
+    "repro": "Memory only, labelled.",
+    "refs": "No references.",
+    "accuracy": "Ranges are plausible and nothing contradicts the reference. Midpoints are inconsistent with the stated ranges, and the chart window is spurious.",
+    "limits": "Honest memory labelling with a specific list of what it cannot answer. No corpus limits.",
+    "verdict": "Direct ordering with decision and confidence, but it rests on memory.",
+    "facets": "Answered from memory; does not address the asked rows as corpus rows."
+   },
+   "chatgpt_bare": {
+    "comparison": "Qualitative ordering only.",
+    "chart": "None.",
+    "drilldown": "Generic layers; 0 of 5 follow-ups ok.",
+    "export": "No export.",
+    "repro": "Memory estimates, labelled.",
+    "refs": "No references.",
+    "accuracy": "No contradictions and estimates are labelled.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "General answer with decision and confidence, from memory.",
+    "facets": "Memory only."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "comparison": "Correctly says nulls prevent a numeric contrast; no measured comparison is made.",
+    "chart": "No chart block.",
+    "drilldown": "Lists follow-up questions and calls, but none executed successfully; breakdown is mostly flat.",
+    "export": "CSV preserves the five null rows and provenance, with matching source call and date; null reason is in the row.",
+    "repro": "The table result is traced, but it does not provide a reproducible source for every numeric claim or regenerate every artifact.",
+    "refs": "All four DOIs resolve and are tied to rows, but no verbatim abstract quotes are supplied.",
+    "accuracy": "Faithfully reports the nulls and lane split; its claim that the result is dated 2026-10-23 is unsupported by the empty window.",
+    "limits": "Places the empty window, mixed lanes, abstract limits, and missing system boundary next to the findings.",
+    "verdict": "Direct, bounded answer with confidence and a condition that would change it; it omits the strongest contrary item, the 350 Wh/kg target in the solid-state paper title.",
+    "facets": "Covers all five requested rows with grounded nulls, but not the implied name/overlap facets."
+   },
+   "chatgpt_bare": {
+    "comparison": "Qualitative comparison only; the ranges are explicitly memory estimates.",
+    "chart": "No chart block.",
+    "drilldown": "Proposes calls, but none executed and no traced breakdown is provided.",
+    "export": "No CSV export.",
+    "repro": "The answer explicitly says no sources or reproducible search were used; all values are estimates.",
+    "refs": "No references are supplied.",
+    "accuracy": "The claimed general ordering is unsupported by this deliverable and the requested five-row corpus includes no matching figures; it also substitutes a broader chemistry set.",
+    "limits": "States that no corpus was searched and labels estimates, but lacks the question-specific grounded row results and their reasons.",
+    "verdict": "Answers broadly with confidence and conditions, but does not answer the specified per-chemistry research question with grounded evidence.",
+    "facets": "Only sodium-ion overlaps the requested rows, and even that is an estimate; most requested facets lack grounded values or nulls."
+   },
+   "claude_prism": {
+    "comparison": "The proposed numeric comparison uses estimates and does not resolve the requested contrast with traced values; ceiling is 3.",
+    "chart": "No chart block.",
+    "drilldown": "Lists calls that were not executed successfully; the paper layer has no identifiers attached to every breakdown item.",
+    "export": "CSV is present, but estimated figures and incomplete provenance do not meet the traced export requirements.",
+    "repro": "Some corpus claims trace to c1, while the memory estimates and ratios do not; no runnable calls reproduce those values.",
+    "refs": "DOIs resolve and are tied to claims, but verbatim abstract quotes are absent.",
+    "accuracy": "Mostly reports c1 correctly, but treats the title's 350 Wh/kg target as a sourced number despite c1 saying the abstract does not address the query, and labels the window's newest item as 146 days old based on an unstated date.",
+    "limits": "Identifies the unknown window, lane split, abstract censoring, and estimates near the claims; some details overstate what c1 establishes.",
+    "verdict": "Directly says the corpus supplies no values, but adds unsupported memory-based figures and lacks a decision condition that would change the answer.",
+    "facets": "All five requested rows receive grounded corpus results and the lane mismatch is noted; implied brand/class and overlap facets are not resolved."
+   },
+   "claude_bare": {
+    "comparison": "Ratios are memory estimates, so this is qualitative-only for the benchmark.",
+    "chart": "The chart is an explicitly labelled memory estimate, which earns 1.",
+    "drilldown": "A conceptual hierarchy is given, but no traced breakdown layer or successfully executed on-topic follow-ups.",
+    "export": "CSV is an estimate without source-call provenance; it does not export the requested corpus results.",
+    "repro": "No calls or sources reproduce the numerous numeric claims.",
+    "refs": "No references or identifiers are supplied.",
+    "accuracy": "The estimated ranges are not presented as measured, but they do not answer the requested research corpus question and the ranking is unsupported here.",
+    "limits": "Labels estimates and notes no queries, but offers only generic memory coverage rather than grounded row-specific limits.",
+    "verdict": "Provides a direct rough ranking and conditions, but it is not supported by the requested research results.",
+    "facets": "Most requested chemistries lack grounded row values or nulls; the response substitutes broader categories and estimates."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,607 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 967,
+  "charts": [
+   {
+    "id": "us-rate-vs-price",
+    "title": "US 30-year mortgage rate, annual average, and approximate Case-Shiller national index (Jan 2000=100)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "30y mortgage rate (%)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     },
+     {
+      "name": "Case-Shiller national index (approx.)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "peak_to_trough.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many studies support versus contradict a rate effect on prices?",
+    "args": {
+     "term": "interest rates house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'interest rates house prices'",
+    "seconds": 10.5,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What are the strongest studies finding no or small effects?",
+    "args": {
+     "term": "interest rates house prices",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...se prices', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rates house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What effect sizes and populations are reported?",
+    "args": {
+     "term": "interest rate house price elasticity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ouse price elasticity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rate house price elasticity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does news coverage compare with research?",
+    "args": {
+     "term": "interest rates house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...st rates house prices'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rates house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries are studied most?",
+    "args": {
+     "term": "interest rates house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...st rates house prices'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rates house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What does the evidence say about the lock-in effect?",
+    "args": {
+     "term": "mortgage lock-in housing supply",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ng supply', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mortgage lock-in housing supply', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 15,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 153,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 851,
+  "charts": [
+   {
+    "id": "research-by-year",
+    "title": "Typed research papers on rising interest rates per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "tally.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers cover both mortgage rates and house prices?",
+    "args": {
+     "term": "mortgage rates house prices",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 46, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4416449190\", \"title\": \"Regional-level analysis of housing price dynamics in the United Kingdom: a multivariate causality approach\", \"authors\": [\"Ibrahim Dabara Daniel\", \"Tosin B. Fateye\", \"Fonbeyin Henry Abanda\"], \"venue\": \"International Journal of Housing Markets and Analysis\", \"year\": 2025, \"date\": \"2025-11-21\", \"doi\": \"10.1108/ijhma-08-2025-0186\", \"url\": \"https://doi.org/10.1108/ijhma-08-2025-0186\", \"cited_by\": 0, \"orientation\": \"breakthrough\", "
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "What papers criticise the rate-price link?",
+    "args": {
+     "term": "interest rates house prices",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'interest rates house prices' — try expand=true, or a broader phrase",
+    "seconds": 3.7,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has stance shifted over time?",
+    "args": {
+     "term": "interest rates house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'interest rates house prices'",
+    "seconds": 0.1,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which countries are studied?",
+    "args": {
+     "term": "interest rates house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...st rates house prices'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rates house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news tone differ from research?",
+    "args": {
+     "term": "rate hikes house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...te hikes house prices'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='rate hikes house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What do scenarios imply for a 100bp rise?",
+    "args": {
+     "term": "rate rise house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='rate rise house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 25,
+   "traced": 22,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 141,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 3,
+   "comparison": 3,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 594,
+  "charts": [],
+  "tables": [
+   {
+    "name": "evidence_map.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What are the strongest causal estimates of rate shocks on house prices, with population, horizon, and effect size?",
+    "args": {
+     "term": "monetary policy interest rate shocks house prices causal estimates",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...stimates', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='monetary policy interest...prices causal estimates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies find small, null, or opposite house-price responses to rising rates?",
+    "args": {
+     "term": "interest rate increases house prices null contradictory evidence",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...evidence', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rate increases ... contradictory evidence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How do estimated effects differ by country, mortgage type, and time horizon?",
+    "args": {
+     "term": "interest rate house price effect mortgage regime country horizon"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...egime country horizon'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rate house pric... regime country horizon', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "What has recent research found about the relationship over time?",
+    "args": {
+     "term": "interest rates house prices",
+     "window": "2015-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage described the effect of rate rises on house prices?",
+    "args": {
+     "term": "interest rates house prices",
+     "window": "2015-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "What is the geographic distribution of research on this question?",
+    "args": {
+     "term": "interest rate house prices"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...est rate house prices'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rate house prices', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 102,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 884,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism subject-lane research papers on rising interest rates",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_series.csv",
+    "how": "call",
+    "rows": 89,
+    "numeric_cells": 89,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers directly estimate house-price responses to rate increases across countries?",
+    "args": {
+     "term": "interest rate increases house prices causal effect",
+     "orientation": "supporting",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'interest rate increases house prices causal effect' — try expand=true, or a broader phrase",
+    "seconds": 12.5,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which studies find no price decline or a positive/conditional response to rising rates?",
+    "args": {
+     "term": "rising interest rates house prices no effect counter evidence",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'rising interest rates house prices no effect counter evidence' — try expand=true, or a broader phrase",
+    "seconds": 10.8,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What population-specific price effect estimates and uncertainty intervals are reported?",
+    "args": {
+     "claim": "Rising interest rates reduce house prices",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "the retrieved abstracts carry figures, but none of them measures what this claim asserts",
+    "seconds": 27.0,
+    "sample": "{\"stats\": [], \"rejected\": [], \"candidate_sentences\": 3, \"candidates\": [{\"doc_id\": \"prism:W4393370934\", \"title\": \"Book Value Risk Management of Banks: Limited Hedging, HTM Accounting, and Rising Interest Rates\", \"year\": 2024, \"tier\": \"article\", \"venue\": \"National Bureau of Economic Research\", \"url\": \"https://doi.org/10.3386/w32293\", \"sentence\": \"In the face of rising interest rates in 2022, banks mitigated interest rate exposure of the accounting value of their assets but left the vast majority of their long-duration assets exposed to interest rate risk.Data from call reports and SEC filings shows that only 6% of U.S.\"}, {\"doc_id\": \"prism:W4230986825\", \"title\": \"Fixed versus floating: vulnera"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 13,
+   "traced": 11,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None, None, None]"
+  ],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 3,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

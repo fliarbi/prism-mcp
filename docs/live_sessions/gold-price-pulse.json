@@ -1,0 +1,59 @@
+{
+ "slug": "gold-price-pulse",
+ "claude_live": {
+  "text": "**Gold-price coverage has roughly doubled and turned more negative since early 2026. Even so, it reads about as negative as ordinary news.**\n\nWindow: Jun 2024 to May 2026. News ingest thins after May 2026, so I cut the series there. Today is 22 Oct 2026, so nothing from June–October is included. Source: Prism news corpus, 31,072 articles that mention \"gold prices\".\n\n**What the data shows**\n- **Volume:** Monthly articles rose from 459 (Jun 2024) to a peak of 2,124 (Feb 2026), then 1,755 in May 2026. The latest third of the window had 1.96× the articles of the earliest third. The April 2025 spike (1,915) and the October 2025 spike (2,092) stand out.\n- **Tone:** Across the window, 65.5% of articles are positive and 33.6% negative. The negative-to-positive ratio is 0.51, against a corpus baseline of 0.58, so tone is about baseline. March 2026 is the exception: negative articles (1,109) outnumbered positive ones (864), a ratio of 1.28. April and May 2026 stayed elevated at 0.78 and 0.87.\n- **Critical share:** 8,753 articles (28%) are flagged critical. The monthly share peaked at 34.7% in Feb 2025 and was 32.5% in Feb 2026. The lowest was 20.2% in Dec 2025.\n- **Critical stories (May 2026, priority 8):**\n  - Kerala price swings of ₹10,200 on 13 May, then drops of ₹1,640 per pavan on 15 May and a further drop on 18 May, framed around duty-hike protests and smuggling.\n  - Delhi gold rebounding ₹800 to ₹1.63 lakh per 10 g on 19 May, as US–Iran talks eased inflation fears.\n- **Themes:** The coverage clusters around the Federal Reserve (27% of entity-labelled articles) and Jerome Powell, with Donald Trump named in 42% of articles that name a person. Other recurring themes are the US dollar, interest rates, and trade wars and geopolitics. The leading places are the US (25%) and India (17%), and India's lift is 2.5×.\n- **Price levels quoted in coverage:** Gold passed $4,700/oz in early May 2026 and fell below $4,500 late in the month.\n- **Concentration:** Coverage is spread across many outlets. In a sample of 217 articles, the top publisher had 10.6%.\n\n**My interpretation**\nThe rise looks driven by record prices, Fed uncertainty and geopolitics. The March 2026 negative turn probably reflects volatility and sell-offs, not a collapse in interest. This is an inference. I didn't check what happened to prices that month.\n\n**Caveats**\nGeography and entity labels are thin for May 2026, and the overview only returned four critical headlines.",
+  "seconds": 238.0,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "gold prices"
+    }
+   },
+   {
+    "tool": "freshness_status",
+    "args": {},
+    "ok": true,
+    "chars": 735
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "Gold coverage was **heavy, broadly positive, then turned sharply more negative in March 2026**. Prism’s indexed data run from **October 2025 through May 2026**; its news window is censored at June 1, so it does not describe coverage since then.\n\n**What the data shows — Prism news corpus:** 13,965 articles across those eight complete months, with monthly volume peaking at **2,124 in February 2026**. **3,935 (28%)** were in Prism’s critical priority bands. Overall, **60.3%** were scored positive and **38.7%** negative; the negative-to-positive ratio was **0.64**, versus a **0.58** corpus baseline. March was the clear reversal: **1,109 negative vs. 864 positive** (ratio **1.28**). Coverage remained substantial in April and May, but sentiment stayed net positive. Prism reports full index partition coverage; this is a corpus count, not a census of all news.  \n\n**Critical stories — retrieved examples:** Coverage tied gold to rate expectations and inflation, including a *LiveMint* story on traders awaiting the Fed decision, and an *Economic Times* report linking gold’s fall to oil-driven inflation worries as US–Iran talks faltered. India-focused stories tracked sharp retail price swings in Kerala and a May rebound as US–Iran tensions eased ([LiveMint](https://www.livemint.com/market/stock-market-news/gold-rates-today-mcx-gold-price-remains-steady-ahead-of-us-federal-reserve-policy-decision-11765377590708.html), [Economic Times](https://economictimes.indiatimes.com/markets/commodities/news/gold-falls-on-oil-driven-inflation-worries-as-usiran-peace-talks-falter/articleshow/131001554.cms), [Daily Excelsior](https://www.dailyexcelsior.com/gold-rebounds-rs-800-to-rs-1-63-lakh-10g-as-easing-us-iran-tensions-spur-buying/)).\n\n**Interpretation:** The narrative is not uniformly “safe-haven bullish”: reporting tracks gold’s sensitivity to rates, inflation and geopolitical risk, with local price moves adding volatility. The tone figures describe article labels, not market positioning or investor sentiment.",
+  "seconds": 106.0,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "news_trends",
+    "args": {
+     "term": "gold prices",
+     "granularity": "monthly",
+     "since": "2025-10-01"
+    },
+    "ok": true,
+    "chars": 7067
+   },
+   {
+    "tool": "news_sentiment",
+    "args": {
+     "term": "gold prices",
+     "granularity": "monthly",
+     "since": "2025-10-01"
+    },
+    "ok": true,
+    "chars": 5089
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "gold prices",
+     "days": 180,
+     "limit": 12
+    },
+    "ok": true,
+    "chars": 15934
+   }
+  ]
+ }
+}

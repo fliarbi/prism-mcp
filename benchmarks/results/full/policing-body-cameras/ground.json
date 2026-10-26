@@ -1,0 +1,630 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1155,
+  "charts": [
+   {
+    "id": "uof-effect-by-year",
+    "title": "Reported change in use of force by study publication year (recalled point estimates)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Use-of-force change",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "bwc_studies.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many studies on body-worn cameras and use of force are in the research corpus, by year?",
+    "args": {
+     "term": "body-worn cameras use of force"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"police body cameras\", \"use-of-force incidents\"], \"points\": [{\"year\": 2017, \"total\": 4, \"orientation\": {\"descriptive\": 2, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 25.0}, {\"year\": 2018, \"total\": 1, \"orientation\": {\"cautionary\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2020, \"total\": 3, \"orientation\": {\"promising\": 1, \"problem_identifying\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 1, \"positive_pct\": 33.3, \"contested_pct\": 33.3}, {\"year\": 2021, \"total\": 3, \"orientation\": {\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers find no effect or harm?",
+    "args": {
+     "term": "body-worn cameras reduce use of force",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... of force', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn cameras reduce use of force', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What are the effect sizes and populations across studies?",
+    "args": {
+     "term": "body-worn cameras complaints"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...rn cameras complaints'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn cameras complaints', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Does discretionary activation change results?",
+    "args": {
+     "term": "body-worn camera activation compliance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...activation compliance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn camera activation compliance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of body-camera effectiveness shifted?",
+    "args": {
+     "term": "police body cameras"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.9,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 1, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": 6.0, \"critical_pct\": 0.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1, \"critical\": 1, \"negative\": 0, \"positive\": 1, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2, \"critical\": 1, \"negative\": 2, \"positive\": 0, \"mean_priority\": 6.5, \"critical_pct\": 50.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 4, \"critical\": 4, \"negative\": 2, \"positive\": 2, \"mean_priority\": 7.5, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 1, \"critical\": 1, \"negative\": "
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries have trials?",
+    "args": {
+     "term": "body-worn cameras"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'body-worn cameras'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn cameras', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 14,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 155,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1095,
+  "charts": [
+   {
+    "id": "papers-per-year",
+    "title": "Prism-typed papers per year, policing practices and perceptions (intersection lane)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "papers_per_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "assault_trial.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Do BWCs reduce citizen complaints?",
+    "args": {
+     "claim": "Police body-worn cameras reduce citizen complaints",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 60.0,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 613, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 8, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 0, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"cor"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which reviews or meta-analyses pool BWC trials?",
+    "args": {
+     "term": "body-worn cameras meta-analysis",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 292, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4417538160\", \"title\": \"Comparing Police Officers’ and Domestic Violence Victims’ Perspectives on Body-Worn Cameras\", \"authors\": [\"Zarina Vakhitova\", \"Mary Iliadis\", \"Asher Flynn\", \"Bridget Harris\", \"Danielle Tyson\"], \"venue\": \"Justice Quarterly\", \"year\": 2025, \"date\": \"2025-12-21\", \"doi\": \"10.1080/07418825.2025.2600365\", \"url\": \"https://doi.org/10.1080/07418825.2025.2600365\", \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirical\", "
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "What papers argue BWCs reduce force?",
+    "args": {
+     "term": "body-worn cameras use of force",
+     "orientation": "promising",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W7042948082\", \"title\": \"Quantitative Analysis of Police Body Cameras in the Los Angeles Police Department\", \"authors\": [\"Baltazar, Juan\"], \"venue\": \"CSUN ScholarWorks (California State University, Northridge)\", \"year\": 2020, \"date\": \"2020-08-19\", \"doi\": null, \"url\": \"http://hdl.handle.net/10211.3/217207\", \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_score\": 0.6, \"topics\": [\"Policing Practices and Perceptions\", \"Crim"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has BWC stance shifted over time?",
+    "args": {
+     "term": "police body-worn cameras"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"police body-worn cameras\", \"body-worn cameras\"], \"points\": [{\"year\": 2017, \"total\": 20, \"orientation\": {\"descriptive\": 1, \"cautionary\": 3, \"critical\": 1, \"problem_identifying\": 4, \"breakthrough\": 1, \"promising\": 4}, \"stance_score\": null, \"positive\": 5, \"contested\": 8, \"positive_pct\": 25.0, \"contested_pct\": 40.0}, {\"year\": 2018, \"total\": 29, \"orientation\": {\"descriptive\": 2, \"breakthrough\": 2, \"problem_identifying\": 4, \"cautionary\": 1, \"critical\": 1, \"promising\": 3}, \"stance_score\": null, \"positive\": 5, \"contested\": 6, \"positive_pct\": 17.2, \"contested_pct\": 20.7}, {\"year\": 2019, \"total\": 33, \"orientation\": {\"descriptive\": 3, \"promising\": 2, \"caut"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Is there news coverage of BWC effectiveness?",
+    "args": {
+     "term": "body camera use of force"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'body camera use of force' in this window",
+    "seconds": 1.8,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Where is BWC research produced?",
+    "args": {
+     "term": "police body-worn cameras"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ice body-worn cameras'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='police body-worn cameras', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 61,
+   "traced": 61,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 115,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 826,
+  "charts": [
+   {
+    "id": "bwc-force-trend",
+    "title": "Use-of-force effects across selected randomized BWC studies",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Reported direction of average use-of-force effect",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "bwc_findings.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Which randomized trials measure use of force and complaints, and what are their estimates and uncertainty?",
+    "args": {
+     "term": "police body-worn cameras randomized trial use of force complaints effect sizes",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ct sizes', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='police body-worn cameras...complaints effect sizes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies find null or adverse effects, and for which outcomes and populations?",
+    "args": {
+     "term": "body-worn cameras police use of force complaints null effects",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... effects', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn cameras police...complaints null effects', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.brief",
+    "question": "How do systematic reviews rate the certainty and heterogeneity of BWC effects?",
+    "args": {
+     "term": "body-worn cameras use of force complaints systematic review certainty heterogeneity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...rtainty heterogeneity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn cameras use of...certainty heterogeneity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has research evidence on BWC effects changed over time?",
+    "args": {
+     "term": "police body-worn cameras use of force complaints"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"police body-worn cameras\"], \"points\": [{\"year\": 2017, \"total\": 8, \"orientation\": {\"descriptive\": 1, \"promising\": 1, \"cautionary\": 1, \"critical\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 3, \"positive_pct\": 12.5, \"contested_pct\": 37.5}, {\"year\": 2018, \"total\": 5, \"orientation\": {\"cautionary\": 1, \"critical\": 1, \"breakthrough\": 1, \"problem_identifying\": 2}, \"stance_score\": null, \"positive\": 1, \"contested\": 4, \"positive_pct\": 20.0, \"contested_pct\": 80.0}, {\"year\": 2019, \"total\": 8, \"orientation\": {\"descriptive\": 1, \"problem_identifying\": 2, \"promising\": 1, \"cautionary\": 2}, \"stance_score\": null, \"positive\": 1, \""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What recent news coverage reports on evaluations of police body cameras?",
+    "args": {
+     "query": "police body-worn cameras use of force complaints evaluation"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...complaints evaluation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='police body-worn cameras...e complaints evaluation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.browse",
+    "question": "Which agencies and implementation policies explain variation in BWC outcomes?",
+    "args": {
+     "term": "body-worn cameras implementation activation policy heterogeneous effects force complaints",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 19, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4417203785\", \"title\": \"Police Body-Worn Cameras\", \"authors\": [\"Christopher J. Schneider\", \"Erick Laming\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-12-10\", \"doi\": \"10.4324/9781032627045\", \"url\": \"https://doi.org/10.4324/9781032627045\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Policing Practices and Perceptions\", \"Crime, Deviance, and Social Control\", \"Crime Patterns and Interventions\""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 8,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 7,
+   "untagged_examples": [
+    "10.1007 — - **Supporting:** 2012, *Journal of Quantitative Criminology*, randomized field experiment",
+    "014 — - **Supporting:** 2012, *Journal of Quantitative Criminology*, randomized field experiment",
+    "9236 — - **Supporting:** 2012, *Journal of Quantitative Criminology*, randomized field experiment",
+    "10.1007 — - **Contradicting / qualifying:** 2017, *Journal of Quantitative Criminology*, randomized ",
+    "017 — - **Contradicting / qualifying:** 2017, *Journal of Quantitative Criminology*, randomized ",
+    "9360 — - **Contradicting / qualifying:** 2017, *Journal of Quantitative Criminology*, randomized ",
+    "10.1002 — - **Synthesis:** 2019, *Campbell Systematic Reviews*, systematic review and meta-analysis,"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 1,
+   "not_found": [
+    "10.1002/cl2.1012",
+    "10.1007/s10940-017-9360-7"
+   ],
+   "year_mismatch": [
+    "10.1007/s10940-014-9236-3"
+   ]
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 0,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 745,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism research papers in the claim intersection",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Indexed papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "evidence-tally.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "What do controlled studies find about effects on citizen complaints, with population and uncertainty?",
+    "args": {
+     "term": "police body-worn cameras citizen complaints controlled study",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 10, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W4417203785\", \"title\": \"Police Body-Worn Cameras\", \"authors\": [\"Christopher J. Schneider\", \"Erick Laming\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-12-10\", \"doi\": \"10.4324/9781032627045\", \"url\": \"https://doi.org/10.4324/9781032627045\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Policing Practices and Perceptions\", \"Crime, Deviance, and Social Control\", \"Crime Patterns and Interventions\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which studies directly estimate effects on police use of force, and what are their effect sizes and confidence intervals?",
+    "args": {
+     "term": "body-worn cameras police use of force effect size randomized controlled",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 21, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W4417203785\", \"title\": \"Police Body-Worn Cameras\", \"authors\": [\"Christopher J. Schneider\", \"Erick Laming\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-12-10\", \"doi\": \"10.4324/9781032627045\", \"url\": \"https://doi.org/10.4324/9781032627045\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Policing Practices and Perceptions\", \"Crime, Deviance, and Social Control\", \"Crime Patterns and Interventions\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "How do complaint and force findings vary by department, activation policy, and implementation?",
+    "args": {
+     "claim": "body-worn cameras effects on police force and citizen complaints",
+     "limit": 12
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...mplaints', 'limit': 12}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...mplaints', 'limit': 12}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='body-worn cameras effect... and citizen complaints', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=12, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 19,
+   "traced": 19,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

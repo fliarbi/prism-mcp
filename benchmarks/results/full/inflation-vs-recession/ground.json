@@ -1,0 +1,721 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 649,
+  "charts": [
+   {
+    "id": "trend1",
+    "title": "Relative news attention index by term (est.)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "inflation",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     },
+     {
+      "name": "interest rates",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     },
+     {
+      "name": "recession",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "terms_estimate.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 12,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts per term on one scale?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone per term?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...on', 'interest rates']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "How many articles mention two or more terms?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "mode": "overlap"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...s'], 'mode': 'overlap'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='overlap', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which regions cover recession most?",
+    "args": {
+     "term": "recession"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.3,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 24814, \"share_pct\": 31.3, \"lift\": 1.4}, {\"label\": \"china\", \"articles\": 7638, \"share_pct\": 9.6, \"lift\": 1.9}, {\"label\": \"united kingdom\", \"articles\": 4855, \"share_pct\": 6.1, \"lift\": 1.2}, {\"label\": \"india\", \"articles\": 3565, \"share_pct\": 4.5, \"lift\": 0.7}, {\"label\": \"canada\", \"articles\": 3444, \"share_pct\": 4.3, \"lift\": 1.3}, {\"label\": \"japan\", \"articles\": 2842, \"share_pct\": 3.6, \"lift\": 2.3}, {\"label\": \"germany\", \"articles\": 1937, \"share_pct\": 2.4, \"lift\": 2.0}, {\"label\": \"australia\", \"articles\": 1870, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"mexico\", \"articles\": 1858, \"share_pct\": 2.3, \"lift\": 3.9}, {\"label\": \"france\", \"a"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which articles are most critical of rate policy?",
+    "args": {
+     "term": "interest rates",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.8,
+    "sample": "{\"articles\": [{\"target_id\": \"69e2a93b3aab8d96aa33ae49\", \"url\": \"https://lomazoma.com/laut-macron-stehen-die-g7-kurz-vor-dem-ende-der-russland-sanktionen/\", \"title\": \"Laut Macron stehen die G7 kurz vor dem Ende der Russland-Sanktionen\", \"excerpt\": \"\\\"The country is plunged into recession, has major problems with public finances, inflation and very high interest rates,\\\" continued the top official of the EU Commission. Banks would be on very distressing loans that industry had to borrow to finance the war economy. Now the companies were unable to\", \"publisher\": \"lomazoma.com\", \"published\": \"2026-03-11 22:51:08\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-03-11 22:51:08\", \"priority\": 9,"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 14,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 8,
+   "untagged_examples": [
+    "100 — Illustrative relative-attention index, with inflation in 2024 H1 set to 100. All values ar",
+    "100 — Baseline: inflation in 2024-H2 = 100 (est.), which differs from the chart baseline of infl",
+    "100 — | inflation | 100 | 1.00 |",
+    "1.00 — | inflation | 100 | 1.00 |",
+    "88 — | interest rates | 88 | 0.88 |",
+    "0.88 — | interest rates | 88 | 0.88 |",
+    "47 — | recession | 47 | 0.47 |",
+    "0.47 — | recession | 47 | 0.47 |"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 121,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1126,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly news articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "inflation",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "interest rates",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "recession",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 71,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Which outlets drove the April 2026 inflation spike?",
+    "args": {
+     "term": "inflation",
+     "since": "2026-02-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.5,
+    "sample": "{\"points\": [{\"period\": \"2026-02-01\", \"articles\": 19082, \"critical\": 12757, \"negative\": 11413, \"positive\": 6766, \"mean_priority\": 6.82, \"critical_pct\": 66.9, \"partial_period\": false}, {\"period\": \"2026-03-01\", \"articles\": 29163, \"critical\": 20844, \"negative\": 21725, \"positive\": 6341, \"mean_priority\": 6.97, \"critical_pct\": 71.5, \"partial_period\": false}, {\"period\": \"2026-04-01\", \"articles\": 33148, \"critical\": 22156, \"negative\": 22877, \"positive\": 8822, \"mean_priority\": 6.86, \"critical_pct\": 66.8, \"partial_period\": false}, {\"period\": \"2026-05-01\", \"articles\": 24896, \"critical\": 17194, \"negative\": 16974, \"positive\": 7143, \"mean_priority\": 6.96, \"critical_pct\": 69.1, \"partial_period\": false}], \"to"
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "What were the main stories behind the April 2025 recession spike?",
+    "args": {
+     "term": "recession",
+     "since": "2025-03-01",
+     "until": "2025-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 43.1,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"recession\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 11995, \"entity_labelled_articles\": 11362, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 16856, \"critical_articles\": 11582, \"first_seen\": \"2025-03-01 00:00:00\", \"last_seen\": \"2025-05-31 18:02:29\", \"window\": {\"from\": \"2025-03-01\", \"to\": \"2025-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series wit"
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries produce the most coverage of each term?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How do sentiment definitions and tone ratios differ across terms?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical articles about interest rates are highest priority?",
+    "args": {
+     "term": "interest rates",
+     "since": "2024-06-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "What happened to coverage after May 2026?",
+    "args": {
+     "term": "inflation",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'inflation' in this window",
+    "seconds": 0.3,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 88,
+   "traced": 88,
+   "derived": 20,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 137,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 454,
+  "charts": [
+   {
+    "id": "coverage-trend",
+    "title": "Monthly news coverage of inflation, recession, and interest rates",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Inflation",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Recession",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Interest rates",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "topic_monthly.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the monthly counts and total article counts for the three topics in the same news corpus over the last two years?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "What share of the combined topic-matched coverage does each topic represent, and how many unique articles mention one or more topics?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which terms and rules are used to classify coverage, and how do common-word matches affect counts?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "window": {
+      "from": "2024-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2024-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "What tone distribution does the same corpus assign to each topic, using a consistent documented definition?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...3', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Which outlets and articles contribute most to coverage for each topic?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "breakdown": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...reakdown': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 634,
+  "charts": [
+   {
+    "id": "monthly-term-coverage",
+    "title": "Monthly news articles by term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "inflation",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "recession",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "interest rates",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 71,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.geography",
+    "question": "Which outlets account for the inflation coverage, and how does their share change by month?",
+    "args": {
+     "term": "inflation"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 50.8,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 183111, \"share_pct\": 30.2, \"lift\": 1.3}, {\"label\": \"china\", \"articles\": 41081, \"share_pct\": 6.8, \"lift\": 1.3}, {\"label\": \"india\", \"articles\": 40546, \"share_pct\": 6.7, \"lift\": 1.0}, {\"label\": \"united kingdom\", \"articles\": 36453, \"share_pct\": 6.0, \"lift\": 1.2}, {\"label\": \"canada\", \"articles\": 21880, \"share_pct\": 3.6, \"lift\": 1.1}, {\"label\": \"japan\", \"articles\": 18460, \"share_pct\": 3.0, \"lift\": 2.0}, {\"label\": \"iran\", \"articles\": 18413, \"share_pct\": 3.0, \"lift\": 1.0}, {\"label\": \"australia\", \"articles\": 14670, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"france\", \"articles\": 14065, \"share_pct\": 2.3, \"lift\": 1.3}, {\"label\": \"russi"
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which stories drive the recession coverage peaks, and what topics do they share?",
+    "args": {
+     "term": "recession",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 62.9,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"recession\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 36006, \"entity_labelled_articles\": 32510, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 50279, \"critical_articles\": 32021, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 22:18:42\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series wit"
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does sentiment for each term vary by month, and what are the sentiment definitions?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['inflation', 'recession', 'interest rates'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How many unique articles mention more than one of the three terms?",
+    "args": {
+     "terms": [
+      "inflation",
+      "recession",
+      "interest rates"
+     ],
+     "since": "2024-06-01",
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 26,
+   "traced": 25,
+   "derived": 5,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

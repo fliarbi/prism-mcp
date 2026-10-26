@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown layer. Only 2 of 5 follow-ups execute, and one uses an invalid orientation ('positive').",
+    "export": "No export.",
+    "repro": "No numbers. The refusal is honest but cannot be reproduced.",
+    "refs": "No references.",
+    "accuracy": "Empty deliverable, so no contradictions, which scores 3.",
+    "limits": "Says what is unmeasured, but the statement is largely generic.",
+    "verdict": "'Can't establish' hedges to no answer.",
+    "facets": "No facets answered."
+   },
+   "B": {
+    "trend": "The critical-count series traces, with its 2017-2025 window. The change is quantified (+6, about 18%) and the 2023 peak of 55 is named. It is not decomposed against totals, even though the totals are in c1.",
+    "comparison": "Contested share is compared early vs late (10.1% vs 8.3%, ratio 0.82, -1.8 pp). The baseline is defined and the 'broadly unchanged' caveat is carried. Critical share vs total growth is not resolved.",
+    "chart": "One traced chart of bare counts. It omits the share view the question needs.",
+    "drilldown": "One layer: orientation by year. Follow-ups execute, but f2 duplicates c1. No items with identifiers.",
+    "export": "Traced CSV with provenance, referenced in the prose. It is a single table and omits the total column.",
+    "repro": "19/19 numbers trace, with a calls block and a provenance block. Minor slip: 298 days stated, 296 actual.",
+    "refs": "No paper references, although the browse call returned identified papers.",
+    "accuracy": "It says annual critical shares are unavailable, but c1 carries yearly totals, so shares are computable. This misreading weakens its own analysis.",
+    "limits": "Window, coverage, phrase set and 2025 caution are placed next to the numbers they bound.",
+    "verdict": "Direct and nuanced. It has a decision, a confidence level with its reason, and what would change it, and it names the contrary count rise.",
+    "facets": "Critical trend and framing are covered, and critical examples are given as a grounded no-data. Total-volume decomposition and the replication facet are missing."
+   },
+   "C": {
+    "trend": "Contested share and critical count are both charted. The critical share is recomputed exactly (1.2% to 0.6%) and total growth (about 2.5x) is quantified. A decomposed, correct reading.",
+    "comparison": "Early vs late thirds table traces with a defined baseline. However, it compares the thirds ratios against a 2017-vs-2025 endpoint ratio (2.55). On a thirds basis, total growth is 1.97x, so promising and comparative also outgrew the total. The comparison mixes bases.",
+    "chart": "Two traced charts, share and count, with captions. A critical-share overlay would have been better.",
+    "drilldown": "Facet layers plus papers with W ids. Follow-ups are specific and 5/6 execute.",
+    "export": "At the ceiling: one traced table with provenance JSON.",
+    "repro": "76/78 numbers trace, with calls and provenance listed.",
+    "refs": "All 4 DOIs resolve and carry venue and year. There are no quotes and no contrary sources, which it admits.",
+    "accuracy": "Mostly correct. It catches the 20,812 vs 23,174 base discrepancy. It mixes thirds and endpoint ratios, and loosely combines 345 with the browse 1.6%.",
+    "limits": "Window end, 10-month gap, corpus start in 2017, missing news lane, match mode and classifier blind spots are all placed next to the numbers.",
+    "verdict": "A clear 'No' with a decision, confidence, what would change it, and the cautionary rise named as the countersignal. It is somewhat strong given that absolute counts rose.",
+    "facets": "Most facets are covered with grounded values. The replication-critique facet is stated as unmeasured."
+   },
+   "D": {
+    "trend": "Memory series labelled as an estimate.",
+    "comparison": "Guessed shares labelled as estimates.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "The breakdown is from memory. It names only generic layers.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "At the ceiling: no traced numbers.",
+    "refs": "The 2 DOIs resolve, and the set is tiered with contrary sources. Three entries lack identifiers, and r4 is conflated with MYRIAD.",
+    "accuracy": "Its guessed critical share of 10-15% contradicts the record, where critical is about 1% and contested about 9%. Its 'probably yes' runs against the measured record. It also confuses the Kuyken 2016 study with MYRIAD.",
+    "limits": "Honest that the figures are from memory, with specific gaps named.",
+    "verdict": "Rests on guessed numbers, and its direction contradicts the reference record.",
+    "facets": "Answered mostly from memory, though it does name the replication-era critiques."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Claims annual critical shares cannot be derived, although c1 gives yearly totals",
+    "States 298 days since 2025-12-31; the correct figure is 296"
+   ],
+   "C": [
+    "Compares early/late-thirds ratios against a 2017-vs-2025 endpoint growth factor (2.55x vs a thirds ratio of 1.97x), wrongly concluding that only cautionary and breakthrough outgrew the total",
+    "Pairs the 345 total with the browse facet's 1.6% (665 papers), mixing bases"
+   ],
+   "D": [
+    "Estimated critical share of 10-15% contradicts the record's roughly 1% critical and about 9% contested",
+    "'Probably yes' contradicts the measured flat critical count and falling contested share",
+    "Conflates the Kuyken 2016 relapse study with the MYRIAD trial"
+   ]
+  },
+  "best": "C",
+  "verdict": "C decomposed the measured series: critical share fell from 1.2% to 0.6% while total volume grew about 2.5x, and contested share fell from 10.1% to 8.3%. It also tied paper IDs and specific limits to its 'not more critical' answer. B reached the same reading but did not use the yearly totals it had. D's memory-based 'probably yes' contradicts the record, and A gave no answer."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

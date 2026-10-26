@@ -1,0 +1,196 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 2
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Its estimated series is explicitly from memory, with no measured source.",
+    "comparison": "Effect-size contrasts are labeled estimates and cannot be checked against a common source.",
+    "chart": "The chart is a memory estimate, which earns the estimate anchor only.",
+    "drilldown": "Follow-ups are listed, but none executed successfully; the breakdown is not traced.",
+    "export": "The CSV is explicitly an estimate and lacks reproducible source calls.",
+    "repro": "No numbers trace to recorded calls or reproducible sources.",
+    "refs": "References lack resolvable identifiers and specific, verifiable support.",
+    "accuracy": "It distinguishes estimates from measurements and gives a cautious causal interpretation.",
+    "limits": "It clearly identifies the memory basis, missing corpus measurements, and what cannot be answered.",
+    "verdict": "Direct answer, decision, confidence, and conditions are present, but the support is mostly unverified.",
+    "facets": "It addresses association, causality, and contrary considerations, but key measured evidence facets are absent."
+   },
+   "B": {
+    "trend": "The full traced annual series, window, growth, peak, and censoring caveat are reported.",
+    "comparison": "The pooled estimates are compared on highest-versus-lowest contrasts with the HR/RR distinction and baseline caveat.",
+    "chart": "The traced research-volume chart has a stated window, unit, source, and supports the trend claim; no tone chart is required for this question.",
+    "drilldown": "Breakdown layers are present, but all proposed follow-up calls failed to return usable data.",
+    "export": "The effect-estimate CSV is traced, carries provenance and identifiers, and is referenced in the prose.",
+    "repro": "Nearly all numeric claims trace; calls and arguments are listed and the regenerate provenance is supplied.",
+    "refs": "The cited DOIs resolve and claims are tied to papers; two quoted abstracts are verified, but the 2021 quote is not verified in the record.",
+    "accuracy": "The main findings are represented correctly, though the 2025-series censoring language is not reconciled with its included 2025 point.",
+    "limits": "Most limits are stated near the relevant figures, including windows, lane, censoring, and selected samples; some coverage and matching limits are not fully specified.",
+    "verdict": "It answers directly with confidence and a decision, but does not name the strongest contrary evidence or clearly state what finding would reverse the view.",
+    "facets": "It covers evidence strength, trend, effect sizes, research/news distinction, and grounded gaps."
+   },
+   "C": {
+    "trend": "No calendar-time research or news series is supplied.",
+    "comparison": "It cautions that the cohort estimates use different contrasts, but the comparisons are unverified memory figures.",
+    "chart": "The chart contains unverified memory values and is not a traced source series.",
+    "drilldown": "It names evidence layers but provides no executable, successful follow-up results.",
+    "export": "No CSV export is provided.",
+    "repro": "Numbers are recalled from memory and calls were not run.",
+    "refs": "The references have no verified DOIs, and the quoted study descriptions cannot be checked against the record.",
+    "accuracy": "It avoids claiming that association proves causation, but the central study-specific figures are unverified and the chart is presented with unsupported values.",
+    "limits": "It states that the answer is from memory and identifies several limitations, but lacks the specific corpus-window and coverage limits.",
+    "verdict": "It gives a direct, qualified answer and conditions, but lacks grounded support for its cited findings.",
+    "facets": "It covers association versus causation and some evidence layers, but lacks grounded measures and trends."
+   },
+   "D": {
+    "trend": "The annual series and trend calculations are traced, with the peak and censoring caveat reported.",
+    "comparison": "The pooled estimates are compared with a defined within-study baseline and calculated delta; HR/RR and baseline differences could be clearer.",
+    "chart": "Both charts trace to the recorded series and estimates, include windows and units, and captions state their readings.",
+    "drilldown": "It supplies breakdowns but none of the proposed follow-up calls returned usable results.",
+    "export": "Both needed CSVs are traced and referenced, with identifiers and provenance.",
+    "repro": "All reported numbers trace to the listed calls and the regenerate block is included.",
+    "refs": "Most references resolve and are tied to claims, but the Suksatan quote is unverified and the Bonaccio effect claim is not established by the recorded response.",
+    "accuracy": "The central evidence is sound, but it treats the ungrounded Suksatan quote and the unreturned Bonaccio effect size too assertively; it also overstates what the record establishes about series censoring.",
+    "limits": "It states the main windows, lane, coverage, and sample limits near the results, though it does not fully resolve the newest-period anomaly.",
+    "verdict": "It gives an actionable answer, confidence, and conditions, while acknowledging observational evidence and contrary corpus labels; its support is bounded imperfectly by the data anomalies.",
+    "facets": "It covers measured effect sizes, trend, framing, research/news mismatch, and explicit gaps."
+   }
+  },
+  "errors": {
+   "A": [
+    "Reports cohort and meta-analysis figures as estimates from memory; they are not verifiable from the reference record.",
+    "Its trend chart is an unmeasured estimate, not a database series."
+   ],
+   "B": [
+    "The research series includes 2025 points while describing the newest period as censored/excluded; the record itself carries this inconsistency.",
+    "It does not identify a directly contrary study, despite the corpus stance tally containing 16 contradicting papers."
+   ],
+   "C": [
+    "The chart's intermediate quartile values are unverified estimates, and its cited cohort details and effect sizes are not traceable to the record.",
+    "The proposed follow-up calls did not execute successfully."
+   ],
+   "D": [
+    "Presents the Suksatan quote as a quotation although the record marks it ungrounded and unverified.",
+    "Reports a Bonaccio HR 1.14 effect that does not appear in the supplied response.",
+    "The research series includes 2025 points while describing the newest period as censored/excluded; the record carries this inconsistency.",
+    "Says the trend data show zero in every month except October 2022, although the returned monthly points are truncated and do not establish all monthly zeros."
+   ]
+  },
+  "best": "B",
+  "verdict": "B gives the clearest decision-grade account: it grounds the pooled mortality estimates, distinguishes association from causation, and supplies a reproducible trend and useful export. D is more complete on charts and facets, but its unverified quote and unsupported Bonaccio estimate weaken its factual reliability."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

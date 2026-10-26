@@ -1,0 +1,545 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1418,
+  "charts": [],
+  "tables": [
+   {
+    "name": "orr_by_cancer.csv",
+    "how": "estimate",
+    "rows": 19,
+    "numeric_cells": 16,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.table",
+    "question": "What do the latest pooled analyses report for ORR by cancer type?",
+    "args": {
+     "term": "immune checkpoint inhibitor objective response rate by cancer type",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...cer type', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...cer type', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='immune checkpoint inhibi...nse rate by cancer type', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=20, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies report no benefit or contradict these ORRs?",
+    "args": {
+     "term": "immunotherapy response rate",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...onse rate', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='immunotherapy response rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How do ORRs differ by PD-L1 level in NSCLC?",
+    "args": {
+     "term": "PD-L1 expression NSCLC pembrolizumab objective response"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ab objective response'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PD-L1 expression NSCLC p...umab objective response', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "What is the evidence for MSS colorectal and pancreatic cancer?",
+    "args": {
+     "term": "microsatellite stable colorectal pancreatic checkpoint inhibitor response"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...nt inhibitor response'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microsatellite stable co...oint inhibitor response', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "How has the research stance on immunotherapy in glioblastoma shifted?",
+    "args": {
+     "term": "glioblastoma immunotherapy"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"glioblastoma immunotherapy\"], \"points\": [{\"year\": 2017, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2018, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2019, \"total\": 4, \"orientation\": {\"critical\": 1, \"problem_identifying\": 1, \"promising\": 1, \"breakthrough\": 1}, \"stance_score\": null, \"positive\": 2, \"contested\": 2, \"positive_pct\": 50.0, \"contested_pct\": 50.0}, {\"year\": 2020, \"total\": 6, \"orientation\": {\"problem_ide"
+   },
+   {
+    "id": "f6",
+    "feature": "research.radar",
+    "question": "Which cancer types are rising in recent immunotherapy publications?",
+    "args": {
+     "term": "immunotherapy cancer type"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...notherapy cancer type'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='immunotherapy cancer type', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 73,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "0% — - Answer: Objective response rates (ORR) to immune checkpoint inhibitors range from near 0",
+    "70% — - Answer: Objective response rates (ORR) to immune checkpoint inhibitors range from near 0",
+    "40 — - Answer: Objective response rates (ORR) to immune checkpoint inhibitors range from near 0",
+    "60% — - Answer: Objective response rates (ORR) to immune checkpoint inhibitors range from near 0"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 121,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [
+   "an untagged number in the Verdict: 0%, 70%, 40, 60%"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1011,
+  "charts": [],
+  "tables": [
+   {
+    "name": "ici_response_by_cancer.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What is the objective response rate of PD-1 monotherapy in advanced melanoma in randomized trials?",
+    "args": {
+     "term": "melanoma anti-PD-1 objective response rate randomized"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ponse rate randomized'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='melanoma anti-PD-1 objec...esponse rate randomized', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What ORR do checkpoint inhibitors reach in MSI-H/dMMR colorectal cancer vs MSS?",
+    "args": {
+     "term": "MSI-H colorectal pembrolizumab objective response rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...jective response rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='MSI-H colorectal pembrol...objective response rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What ORR does nivolumab plus ipilimumab achieve in renal cell carcinoma?",
+    "args": {
+     "term": "renal cell carcinoma nivolumab ipilimumab objective response rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...jective response rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='renal cell carcinoma niv...objective response rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "What ORR do checkpoint inhibitors reach in triple-negative breast cancer?",
+    "args": {
+     "term": "triple-negative breast cancer pembrolizumab response rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...lizumab response rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='triple-negative breast c...rolizumab response rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "How does NSCLC ORR vary by PD-L1 level?",
+    "args": {
+     "term": "NSCLC PD-L1 expression objective response rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...jective response rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='NSCLC PD-L1 expression objective response rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.counter_evidence",
+    "question": "Which papers dispute high immunotherapy response claims?",
+    "args": {
+     "term": "immune checkpoint inhibitor response rate overestimated"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...se rate overestimated'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='immune checkpoint inhibi...onse rate overestimated', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 23,
+   "traced": 22,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "145 — - Window: the call set no date window. The cited papers run 2019 to 2025 and the one news "
+   ]
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 3,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 1004,
+  "charts": [],
+  "tables": [
+   {
+    "name": "selected_trial_orr.csv",
+    "how": "ref",
+    "rows": 7,
+    "numeric_cells": 7,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.table",
+    "question": "What are randomized-trial ORRs for first-line immunotherapy by cancer and regimen?",
+    "args": {
+     "term": "first-line cancer immunotherapy objective response rate randomized trials",
+     "columns": [
+      "cancer",
+      "regimen",
+      "setting",
+      "ORR",
+      "source"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ing', 'ORR', 'source']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ing', 'ORR', 'source']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='first-line cancer immuno... rate randomized trials', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncolumns\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['cancer', 'regimen', 'setting', 'ORR', 'source'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How do ORRs differ by PD-L1 level in advanced NSCLC?",
+    "args": {
+     "term": "advanced NSCLC immunotherapy objective response rate PD-L1 subgroup"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e rate PD-L1 subgroup'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='advanced NSCLC immunothe...nse rate PD-L1 subgroup', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What are ORRs for MSI-H/dMMR cancers broken down by tumor type?",
+    "args": {
+     "term": "MSI-H dMMR pembrolizumab objective response rate tumor type"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ponse rate tumor type'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='MSI-H dMMR pembrolizumab...esponse rate tumor type', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "What studies report outcomes that challenge these selected trial examples?",
+    "args": {
+     "term": "cancer immunotherapy objective response rates trial limitations cross-trial comparison"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ross-trial comparison'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cancer immunotherapy obj... cross-trial comparison', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 20,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "2.1 — Among the selected single-cancer trial examples, melanoma’s 40% ORR [r1] is 21 percentage ",
+    "10 — Evidence window: publication years 2015–2020 [r1][r2][r3][r4][r5][r6][r7], ending 2020-12-"
+   ]
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 6,
+   "not_found": [
+    "10.1016/s1470-2045(15)00006-9"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 102,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 984,
+  "charts": [],
+  "tables": [
+   {
+    "name": "immunotherapy_response_by_cancer.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What are response rates by treatment regimen and line of therapy for melanoma?",
+    "args": {
+     "term": "melanoma immunotherapy objective response rate regimen line of therapy"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...gimen line of therapy'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='melanoma immunotherapy o...regimen line of therapy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What absolute response rates are reported for NSCLC after EGFR-TKI resistance, by ICI regimen?",
+    "args": {
+     "term": "advanced NSCLC EGFR-TKI resistance immune checkpoint inhibitor absolute objective response rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...jective response rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='advanced NSCLC EGFR-TKI ...objective response rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which renal cell carcinoma studies report an immunotherapy response rate?",
+    "args": {
+     "term": "renal cell carcinoma immune checkpoint inhibitor objective response rate",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'renal cell carcinoma immune checkpoint inhibitor objective response rate' — try expand=true, or a broader phrase",
+    "seconds": 12.4,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "What response rates do larger urothelial cancer trials report by pembrolizumab and radiotherapy arm?",
+    "args": {
+     "term": "metastatic urothelial cancer pembrolizumab response rate trial"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...b response rate trial'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metastatic urothelial ca...mab response rate trial', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "What colorectal cancer immunotherapy response rates are reported by biomarker and treatment?",
+    "args": {
+     "term": "colorectal cancer immunotherapy objective response rate biomarker"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sponse rate biomarker'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='colorectal cancer immuno...response rate biomarker', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "Which breast cancer immunotherapy trials report objective response rates?",
+    "args": {
+     "term": "breast cancer immunotherapy objective response rate clinical trial"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e rate clinical trial'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='breast cancer immunother...nse rate clinical trial', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 7,
+   "traced": 6,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 3,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

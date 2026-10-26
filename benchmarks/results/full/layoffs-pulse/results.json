@@ -1,0 +1,232 @@
+{
+ "slug": "layoffs-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 32.7,
+   "plain": 32.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 32.8,
+    "gpt": 32.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.5,
+    "drilldown": 4.0,
+    "export": 4.5,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 80.7,
+   "plain": 80.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 77.8,
+    "gpt": 83.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.5,
+    "refs": 0.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 25.4,
+   "plain": 25.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 16.6,
+    "gpt": 34.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 4.5,
+    "chart": 0.0,
+    "drilldown": 2.5,
+    "export": 4.5,
+    "repro": 4.5,
+    "refs": 1.0,
+    "accuracy": 4.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 63.0,
+   "plain": 63.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 58.4,
+    "gpt": 67.6
+   }
+  }
+ },
+ "judge_mad": 0.55,
+ "verdicts": {
+  "opus": "D and B both measured the same corpus correctly. D went further: it decomposed volume into critical share and caught the sports contamination of the 'layoffs' match. It also caught the acronym collision and the May 2026 enrichment collapse, and it shipped valid charts and a full regenerate recipe. B was accurate and well caveated, but its chart is malformed and it is thinner on drill-down. A and C had no data. A offered off-question layoff totals from memory, honestly labelled; C declined entirely.",
+  "gpt": "C best equips a decision-maker: it quantifies the volume and tone trends, shows the critical-share pattern, and surfaces the sports-heavy noise and place-coverage limits. B is careful and reproducible, but its chart and trend ceilings sharply limit the evidence presentation; C’s main weaknesses are its overlong verdict and a one-day gap calculation error."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_prism": [
+    "prism-chart JSON malformed (points array not closed)"
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": []
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "The window from 2026-06-01 to 2026-10-23 is 144 days, not 145."
+   ],
+   "claude_bare": [
+    "Recalled annual tech layoff totals and company/place generalizations do not measure news coverage."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Two recalled Layoffs.fyi annual totals are labelled est. They measure layoffs, not coverage.",
+    "comparison": "The 2024 vs 2023 ratio comes from memory and is about layoffs, not coverage tone. It is off-question.",
+    "chart": "An honest estimate-labelled memory chart earns exactly 1.",
+    "drilldown": "Layers are named but empty. Only 1 of 6 follow-ups executed ok.",
+    "export": "The table is labelled estimate.",
+    "repro": "Every number is memory-labelled.",
+    "refs": "Layoffs.fyi resolves, but no claim-level support is checkable.",
+    "accuracy": "Nothing contradicts the reference, and memory figures are flagged.",
+    "limits": "It is specific about what is unmeasured, including the 22-month gap.",
+    "verdict": "Honest scoping verdict with decision, confidence and what would change it. A memory-only deliverable cannot score higher.",
+    "facets": "Facets are answered from memory or not at all."
+   },
+   "chatgpt_prism": {
+    "trend": "The series is traced, but the chart JSON is malformed (the points array is never closed). The ceiling is 1.",
+    "comparison": "1.13 vs a defined 0.58 baseline, with delta 0.55 and 1.95x, all traced. It does not address the tech-vs-labour-data contrast.",
+    "chart": "The chart block is malformed and does not parse.",
+    "drilldown": "There is a traced country layer but no item level. Only 1 of 5 follow-ups returned ok.",
+    "export": "Monthly and country CSVs are traced, with provenance and coverage flags, and referenced from the prose.",
+    "repro": "34 of 34 numbers traced. The call is listed with args, window and capture date.",
+    "refs": "No news items with url. It honestly reports the critical panel as empty.",
+    "accuracy": "Fields are read correctly and the sports noise is flagged. It does not catch the May enrichment collapse.",
+    "limits": "Censoring, the 144-day gap, mention match mode and differing denominators all sit next to the numbers. It misses the enrichment bound.",
+    "verdict": "Direct answer with decision, medium confidence and its reason, and what would change it. Consistent with the data.",
+    "facets": "All facets are covered with grounded values or a grounded no-data."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "The chart block has an empty series.",
+    "drilldown": "Generic follow-ups with placeholder args. 0 of 6 executed.",
+    "export": "None.",
+    "repro": "No numbers, nothing to regenerate.",
+    "refs": "None.",
+    "accuracy": "No contradictions, because it makes no claims.",
+    "limits": "General statements only. It cannot state a window.",
+    "verdict": "An honest refusal that answers nothing.",
+    "facets": "No facets answered."
+   },
+   "claude_prism": {
+    "trend": "Traced series with window, CAGR 102%, peak, and early/late thirds. It is decomposed into a critical trend (1.91x vs 1.61x). 'Roughly doubled' is loose wording.",
+    "comparison": "Baseline defined, with delta and ratio traced and a monthly ratio range. It does not address the tech-vs-labour-data question.",
+    "chart": "Two fully traced charts, volume and critical share, each with window, unit and source. Tone ratio is not charted.",
+    "drilldown": "Month and country layers are traced, and 4 of 6 follow-ups are ok. There is no item-level (headline) layer.",
+    "export": "Two traced CSVs with provenance JSON and coverage flags. The window is matched to the enrichment bound.",
+    "repro": "76 of 76 numbers traced. A call recipe with window and capture date is included.",
+    "refs": "No news items with url. It honestly reports the critical panel as empty.",
+    "accuracy": "Everything is correct, and 44.2% recomputes. It catches the sports contamination, the Puerto Rico acronym row and the May enrichment collapse.",
+    "limits": "Window, the 145-day gap, enrichment lag, match mode and denominators are all placed next to the numbers. It names a re-run that would close the gap.",
+    "verdict": "Solid and well-bounded, but held at the ceiling of 3.",
+    "facets": "All facets are covered, including the grounded no-data for employers and headlines. It does not address the tech-vs-labour-data mismatch."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured series; the chart is empty.",
+    "comparison": "No measured counts or baseline to compare.",
+    "chart": "The only chart has no plotted values.",
+    "drilldown": "Follow-ups are generic, have placeholder windows, and none executed successfully.",
+    "export": "No data-backed CSV is supplied.",
+    "repro": "No measured numbers or reproducible calls.",
+    "refs": "No references support measured claims.",
+    "accuracy": "It avoids inventing measurements and accurately states that none are available in its own record.",
+    "limits": "It identifies the missing corpus, window, censoring, and match details.",
+    "verdict": "The abstention is direct and supported, but offers no measured answer.",
+    "facets": "It grounds only that the requested measurements are unavailable."
+   },
+   "chatgpt_prism": {
+    "trend": "The monthly series is present, but the trend ceiling is 1.",
+    "comparison": "The sentiment ratio and corpus baseline are defined and the delta and ratio recompute.",
+    "chart": "The chart ceiling is 0.",
+    "drilldown": "One follow-up executed with non-empty results; breakdowns and further calls are provided.",
+    "export": "Monthly and geography CSVs are traced, sourced, windowed, and accompanied by provenance.",
+    "repro": "The figures trace to the overview call and the regenerate call includes arguments and window.",
+    "refs": "No resolving article or paper references are supplied; the ceiling is 1.",
+    "accuracy": "The counts, tone comparison, place shares, censoring, and caveats align with the record.",
+    "limits": "Specific limits are discussed, though several are consolidated in the method section rather than placed beside each result.",
+    "verdict": "It gives a supported answer, decision, confidence, and condition, but does not clearly name the strongest contrary evidence in the verdict.",
+    "facets": "Volume, tone, places, and the lack of reliable employer identification are addressed; implied overlap and research-versus-news facets are not."
+   },
+   "claude_prism": {
+    "trend": "Traced monthly volume and critical-share series include quantified changes, peaks, and decomposition.",
+    "comparison": "The negative-to-positive ratio is compared with a defined corpus baseline and recomputes.",
+    "chart": "Both volume and critical-share charts trace to the source and support stated claims.",
+    "drilldown": "It exposes multiple breakdowns and identifiers, with four successful question-specific follow-ups.",
+    "export": "Monthly and country tables are traced and accompanied by provenance.",
+    "repro": "The call, arguments, window, and capture date support regenerating the reported figures.",
+    "refs": "No resolving article or paper references are supplied; the ceiling is 1.",
+    "accuracy": "Most readings align, but the stated 145-day gap is one day too long; the source dates imply 144 days.",
+    "limits": "It covers censoring, match mode, partial geography enrichment, and interpretation, but some caveats are grouped in the method section.",
+    "verdict": "The verdict is supported but exceeds 150 words, so the rubric caps it at 3.",
+    "facets": "It addresses volume, tone, companies, places, and noise, but not all implied overlap and research-versus-news facets."
+   },
+   "claude_bare": {
+    "trend": "The chart is an explicitly labelled estimate, not a measured coverage trend.",
+    "comparison": "Only an estimated comparison of layoff totals is offered, not coverage.",
+    "chart": "The memory chart is labelled estimate, earning the estimate-only anchor.",
+    "drilldown": "It offers a breakdown outline, but no traced layers or successful question-specific follow-ups.",
+    "export": "The CSV is explicitly an estimate and describes layoffs, not coverage.",
+    "repro": "Figures are labelled as recollections and cannot be reproduced.",
+    "refs": "A generic tracker link is given, without checked records or claim-supporting metadata.",
+    "accuracy": "It avoids claiming measured coverage, but its recalled figures and company/place generalizations are unsupported specifics.",
+    "limits": "It states that the corpus was not queried, but the applicable coverage measures remain unmeasured.",
+    "verdict": "It states that the question cannot be measured, but the confidence and proposed change are scoped only as a scoping note.",
+    "facets": "Most requested facets are unmeasured or guessed rather than grounded."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

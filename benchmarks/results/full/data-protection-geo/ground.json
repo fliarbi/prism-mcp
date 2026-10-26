@@ -1,0 +1,611 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 614,
+  "charts": [],
+  "tables": [
+   {
+    "name": "geography_template.csv",
+    "how": "estimate",
+    "rows": 1,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries have the most authorship rows for data protection law?",
+    "args": {
+     "term": "data protection law",
+     "level": "country"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...w', 'level': 'country'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlevel\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='country', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "Which countries produce the most publications on data protection law, by year?",
+    "args": {
+     "term": "data protection law",
+     "group_by": "country"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'group_by': 'country'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='country', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Where is data protection law reported, and what is placed_pct by country?",
+    "args": {
+     "term": "data protection law"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 356, \"share_pct\": 19.9, \"lift\": 0.9}, {\"label\": \"united kingdom\", \"articles\": 306, \"share_pct\": 17.1, \"lift\": 3.4}, {\"label\": \"brazil\", \"articles\": 147, \"share_pct\": 8.2, \"lift\": 13.0}, {\"label\": \"india\", \"articles\": 88, \"share_pct\": 4.9, \"lift\": 0.7}, {\"label\": \"norway\", \"articles\": 84, \"share_pct\": 4.7, \"lift\": 11.5}, {\"label\": \"china\", \"articles\": 57, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"colombia\", \"articles\": 53, \"share_pct\": 3.0, \"lift\": 6.1}, {\"label\": \"nigeria\", \"articles\": 42, \"share_pct\": 2.3, \"lift\": 3.3}, {\"label\": \"germany\", \"articles\": 38, \"share_pct\": 2.1, \"lift\": 1.7}, {\"label\": \"switzerland\", \"articles"
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does news coverage compare across regions?",
+    "args": {
+     "term": "data protection law",
+     "by": "region"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...n law', 'by': 'region'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='region', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "analysis.history",
+    "question": "Has the geographic mix shifted since GDPR took effect?",
+    "args": {
+     "term": "data protection law",
+     "from": "2016-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '..., 'from': '2016-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2016-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "Which papers are most cited in the leading countries?",
+    "args": {
+     "term": "data protection law",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ction law', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "3166 — Layers, each with its identifier: country (ISO-3166 alpha-2), venue, institution, outlet, "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 116,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1502,
+  "charts": [
+   {
+    "id": "share_by_lane",
+    "title": "US-and-peers share of listed rows: first-author research vs news coverage",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research authorship share (%)",
+      "how": "call",
+      "points": 5,
+      "traced_share": 1.0
+     },
+     {
+      "name": "News coverage share (%)",
+      "how": "call",
+      "points": 5,
+      "traced_share": 0.4
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "geo_research_authorship.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "geo_research_publication.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "geo_news_claim.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "geo_news_term.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "geo_patents.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What window and total paper count sit behind the authorship rows?",
+    "args": {
+     "term": "data protection regulation"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...protection regulation'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection regulation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How has news volume on data protection moved by month, to 2026-05?",
+    "args": {
+     "term": "data protection",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.2,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 7266, \"critical\": 2823, \"negative\": 1404, \"positive\": 4139, \"mean_priority\": 5.09, \"critical_pct\": 38.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 9428, \"critical\": 4404, \"negative\": 3023, \"positive\": 4816, \"mean_priority\": 5.48, \"critical_pct\": 46.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 6454, \"critical\": 2454, \"negative\": 1392, \"positive\": 3672, \"mean_priority\": 5.16, \"critical_pct\": 38.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 7716, \"critical\": 2841, \"negative\": 1738, \"positive\": 4477, \"mean_priority\": 5.25, \"critical_pct\": 36.8, \"partial_period\": false}, {\"period\": \"2024"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does GDPR coverage compare with other data protection regimes?",
+    "args": {
+     "terms": [
+      "GDPR",
+      "CCPA",
+      "DPDP Act"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.5,
+    "sample": "{\"terms\": [\"GDPR\", \"CCPA\", \"DPDP Act\"], \"rows\": [{\"term\": \"GDPR\", \"articles\": 58910, \"share_pct\": 93.8, \"critical\": 34670, \"direction\": \"rising\", \"growth\": 1.5, \"tone_ratio\": 0.37, \"vs_baseline\": 0.64, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 1329, \"critical\": 734, \"negative\": 241, \"positive\": 1015, \"mean_priority\": 6.4, \"critical_pct\": 55.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1860, \"critical\": 1059, \"negative\": 636, \"positive\": 1060, \"mean_priority\": 6.5, \"critical_pct\": 56.9, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1541, \"critical\": 696, \"negative\": 320, \"positive\": 999, \"mean_priority\": 6.21, \"critical_pct\": 45.2, \"partial_period\":"
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which papers come from the Netherlands and Belgium?",
+    "args": {
+     "term": "data protection regulation",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 8620, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7138241669\", \"title\": \"Navigating The Digital Frontier: An Overview of India's DPDP Act and the UK's Data Privacy and Protection Laws\", \"authors\": [\"G Shiv Kumar Shriniwas Rao\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.5281/zenodo.19061963\", \"url\": \"https://doi.org/10.5281/zenodo.19061963\", \"cited_by\": 0, \"orientation\": \"comparative\", \"contribution\": \"empirical\", \"stance_"
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Is coverage critical or positive in the UK and India?",
+    "args": {
+     "term": "data protection",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.2,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 1404, \"positive\": 4139, \"neutral\": 1717, \"ratio\": 0.34}, {\"period\": \"2024-07-01\", \"negative\": 3023, \"positive\": 4816, \"neutral\": 1582, \"ratio\": 0.63}, {\"period\": \"2024-08-01\", \"negative\": 1392, \"positive\": 3672, \"neutral\": 1380, \"ratio\": 0.38}, {\"period\": \"2024-09-01\", \"negative\": 1738, \"positive\": 4477, \"neutral\": 1499, \"ratio\": 0.39}, {\"period\": \"2024-10-01\", \"negative\": 1587, \"positive\": 5765, \"neutral\": 1730, \"ratio\": 0.28}, {\"period\": \"2024-11-01\", \"negative\": 1176, \"positive\": 4494, \"neutral\": 1630, \"ratio\": 0.26}, {\"period\": \"2024-12-01\", \"negative\": 1674, \"positive\": 4329, \"neutral\": 1902, \"ratio\": 0.39}, {\"period\": \"2025-01-01\", \"nega"
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "Which research claims have the strongest evidence?",
+    "args": {
+     "claim": "Data protection regulation"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 92.1,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 39282, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 934, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 106, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 21445, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 19, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 15, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"ava"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 137,
+   "traced": 136,
+   "derived": 44,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 170,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 330,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries or regions have the most research authorship rows, and what are the counts and window?",
+    "args": {
+     "topic": "data protection law",
+     "measure": "authorship"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...measure': 'authorship'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='authorship', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which countries or regions have the most research publication rows, and what are the counts and window?",
+    "args": {
+     "topic": "data protection law",
+     "measure": "publications"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...asure': 'publications'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publications', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries or regions have the most news coverage rows, and what is placed_pct for each?",
+    "args": {
+     "topic": "data protection law"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': 'data protection law'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What are the patent origin rows for data protection law, or is the result explicitly empty?",
+    "args": {
+     "topic": "data protection law",
+     "measure": "patent origins"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...ure': 'patent origins'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='patent origins', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "On a shared window and geographic scale, how does research activity compare with news coverage?",
+    "args": {
+     "topic": "data protection law",
+     "compare_with": "research.geography",
+     "window": "shared"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...y', 'window': 'shared'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection law', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_with\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='research.geography', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='shared', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 725,
+  "charts": [],
+  "tables": [
+   {
+    "name": "research_geography.csv",
+    "how": "call",
+    "rows": 28,
+    "numeric_cells": 28,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which research papers account for US and UK first-author affiliation counts?",
+    "args": {
+     "term": "data protection regulation",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 811, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117889636\", \"title\": \"The Latombe Test: A Rule-of-Law Framework for Ex-Ante Governance of Algorithms\", \"authors\": [\"Olaf Mischa Nijeboer\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.5281/zenodo.18109747\", \"url\": \"https://doi.org/10.5281/zenodo.18109747\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [], \"institutions\":"
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How did research evidence on data protection regulation change over time?",
+    "args": {
+     "claim": "Data protection regulation",
+     "window": "historical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for find_evidence\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='historical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "Which countries have the most news coverage after validating place resolution?",
+    "args": {
+     "term": "data protection",
+     "group_by": "country",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='data protection', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='country', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What explains high news lift in Colombia and Indonesia?",
+    "args": {
+     "term": "data protection",
+     "countries": [
+      "colombia",
+      "indonesia"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\ncountries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['colombia', 'indonesia'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "What are the patent records behind the reported origin rows?",
+    "args": {
+     "term": "data protection patent",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'data protection patent' — try expand=true, or a broader phrase",
+    "seconds": 4.6,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 37,
+   "traced": 37,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

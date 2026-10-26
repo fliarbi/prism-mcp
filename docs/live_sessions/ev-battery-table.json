@@ -1,0 +1,85 @@
+{
+ "slug": "ev-battery-table",
+ "claude_live": {
+  "text": "**Short answer:** Prism could not give a per-chemistry comparison of energy density. Across five searches, only one verified energy-density figure came back. I won't fill the gaps from memory and present them as findings.\n\n**What the data shows**\n- **Lithium-metal, anode-free:** an NCM811/E-Cu pouch cell reached 420 Wh/kg. This is from Advanced Energy Materials (2021), a single paper. It was measured with limited electrolyte (2 g/Ah), and capacity retention was 84%. The paper is in the 2017–2025 typed corpus. Its source is https://doi.org/10.1002/aenm.202003709.\n- **Li-ion (Ni-rich), sodium-ion, LFP:** the retrieved abstracts reported capacity (mAh/g), cycling retention or recycling results. None reported energy density in Wh/kg, so Prism's extractor rejected them. One example is a Ni-rich cathode at 226.9 mAh/g (ACS Energy Letters, 2025). Another is a sodium-ion hard-carbon anode at 361 mAh/g (2018).\n- **Lithium-sulfur:** the search returned nothing usable. Prism could not resolve a search phrase for it.\n\n**Coverage, as paper counts for 2017–2025**\n- Solid-state/lithium-metal: about 327,000 typed papers.\n- Li-ion and LFP: each about 327,000 typed papers. These counts match the solid-state figure almost exactly, so they probably reflect a broad battery cluster, not chemistry-specific volume.\n- Sodium-ion: about 180,000 typed papers.\n\n**Interpretation (mine, not measured)**\n- The literature is large, but the abstracts mostly report materials-level metrics, not cell-level Wh/kg. Cell-level figures are what a chemistry comparison needs.\n- The 420 Wh/kg result is a lab pouch cell under favourable conditions. Don't treat it as a typical or commercial value.\n- A credible comparison needs cell-level values from review papers or datasheets, with the same basis for each chemistry: cell versus pack, gravimetric versus volumetric. Prism's abstract-level retrieval doesn't supply that.\n\n**Suggested next step:** run `research_packet` or `find_evidence` per chemistry, restricted to review papers. Alternatively, provide specific reviews to read.",
+  "seconds": 1330.9,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "lithium-ion battery energy density Wh/kg",
+     "limit": 6,
+     "include_trend": false
+    },
+    "ok": false,
+    "chars": 6741
+   },
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "solid-state lithium metal battery energy density Wh/kg",
+     "limit": 6,
+     "include_trend": false
+    },
+    "ok": true,
+    "chars": 1868
+   },
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "sodium-ion battery energy density Wh/kg",
+     "limit": 6,
+     "include_trend": false
+    },
+    "ok": false,
+    "chars": 6575
+   },
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "lithium-sulfur battery energy density Wh/kg",
+     "limit": 6,
+     "include_trend": false
+    },
+    "ok": false,
+    "chars": 330
+   },
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "lithium iron phosphate LFP battery energy density Wh/kg",
+     "limit": 6,
+     "include_trend": false
+    },
+    "ok": false,
+    "chars": 6245
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Direct answer:** Prism’s research does not provide a comparable set of energy-density figures across battery chemistries. Its retrieved evidence supports a specific 2025 sodium-ion result; it does not establish a ranking across chemistries.\n\n**What the data shows:** A 2025 *Journal of the American Chemical Society* paper reports **385 Wh/L volumetric energy density** for a nano-Bi/hard-carbon composite anode in a sodium-ion battery. That is a specific research result, not a chemistry-wide benchmark. Prism’s broader review of battery energy-density research covers **2017–2025**, but returned no verified key-number comparisons for LFP, NMC, solid-state, or lithium-sulfur chemistries. [Lu et al., 2025](https://doi.org/10.1021/jacs.5c03507); [Prism research brief, 2017–2025](https://doi.org/10.1016/j.egyr.2023.08.069)\n\n**My interpretation:** The evidence here is insufficient to say how much denser one chemistry is than another. The sodium-ion figure is an electrode-level study result, so it should not be treated as a like-for-like cell or pack comparison.",
+  "seconds": 194.9,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "search_research",
+    "args": {
+     "query_text": "battery chemistry energy density gravimetric volumetric lithium ion LFP NMC sodium ion solid state",
+     "limit": 10,
+     "want_recent": true
+    },
+    "ok": true,
+    "chars": 4472
+   },
+   {
+    "tool": "research_brief",
+    "args": {
+     "topic": "battery chemistry energy density comparison LFP NMC sodium-ion solid-state lithium-sulfur"
+    },
+    "ok": true,
+    "chars": 27368
+   }
+  ]
+ }
+}

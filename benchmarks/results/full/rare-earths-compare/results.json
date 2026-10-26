@@ -1,0 +1,227 @@
+{
+ "slug": "rare-earths-compare",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 31.1,
+   "plain": 31.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.3,
+    "gpt": 37.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 3.5,
+    "export": 2.0,
+    "repro": 4.0,
+    "accuracy": 1.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 63.9,
+   "plain": 63.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 64.6,
+    "gpt": 63.3
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 3.5,
+    "limits": 2.5,
+    "verdict": 1.5,
+    "facets": 0.5
+   },
+   "strict": 22.2,
+   "plain": 22.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.8,
+    "gpt": 24.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 3.0
+   },
+   "strict": 65.8,
+   "plain": 65.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 58.7,
+    "gpt": 72.8
+   }
+  }
+ },
+ "judge_mad": 0.68,
+ "verdicts": {
+  "opus": "D and A both grounded their answers in the same traced call, but D read the series more closely. It named peaks and computed critical shares, caught that combined_articles is an undeduplicated sum, and placed the window and overlap limits where they change the reading. Each data-backed deliverable has a factual slip. D misstates lithium's peak month, and A wrongly says lithium leads in every month. B and C honestly declined to measure, so a decision-maker gets nothing actionable from them.",
+  "gpt": "C gives the strongest decision-ready comparison: its complete traced chart and exports show lithium’s volume lead and rare earths’ spikes, with useful limits. B quantifies the trend and offers deeper follow-up, but its unsupported interpretation of the combined count and overlap weakens trust; C also has a direction error in its trend prose."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Caption and prose: 'lithium remains higher throughout' is false; rare earth was higher in 2025-06 (1619 vs 1370) and 2025-10 (2726 vs 2000)",
+    "'Counts rise unevenly for all three terms' contradicts the flat direction reported for lithium and cobalt"
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [],
+   "claude_prism": [
+    "Lithium peak stated as April 2026 (3,059); the reference peak is January 2025 (3,187)",
+    "States 'the full series is in the export', but the monthly CSV holds only 10 of 24 months",
+    "term_totals.csv is labelled coverage=full despite the censored window"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [],
+   "claude_prism": [
+    "Claims combined_articles is a de-duplicated union and equals the sum, then infers that overlap is not deduplicated; the reference does not define combined_articles that way.",
+    "Claims the coverage check passed at 107.1% of an expected row floor; that figure is absent from the reference record."
+   ],
+   "chatgpt_prism": [
+    "Says monthly counts rise unevenly for all three, although lithium falls from 2,175 in June 2024 to 1,867 in May 2026 and cobalt falls from 457 to 412.",
+    "Claims overlap and a deduplicated unique-article count are unavailable without accurately addressing the reported combined_articles field."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Full 24-month series traced, with window and censoring. Change is given only as the tool's growth figures. No peak or trough is named with value and date. The prose says counts 'rise' for all three terms, but lithium and cobalt are flat.",
+    "comparison": "Ratios recompute exactly (2.48, 4.26, 1.72) and the deltas are exact. The baseline is defined and the lack of deduplication is noted. It does not address the spike contrast.",
+    "chart": "All points trace, with window, unit and source. The caption 'Lithium leads monthly volume throughout' is contradicted by Jun-2025 and Oct-2025, when rare earth was higher. Only volume is charted.",
+    "drilldown": "Lists the available fields but gives no item-level layer. Only 1 of 5 follow-ups executed. Follow-up f2 is a duplicate of c1.",
+    "export": "Two fully traced CSVs with provenance and a provenance JSON block, referenced from the prose. There are no row identifiers beyond period.",
+    "repro": "24 of 25 numbers traced, the call is listed with args, and derived ratios are recomputable.",
+    "accuracy": "Contradicts the reference in two places: 'lithium remains higher throughout' and counts 'rise' for all three terms. It also claims index partition/row-floor checks that are not visible in the record.",
+    "limits": "Window, the 144-day gap to today, censoring, lane, undefined match mode and lack of dedup are all placed next to the numbers.",
+    "verdict": "Has an answer, decision, confidence and what would change it. It does not acknowledge its own contrary evidence: rare earth exceeded lithium in the spike months.",
+    "facets": "Covers totals, shares, series, growth and tone as reported. The spike timing and the China export-control driver are not read."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Generic follow-ups only; 1 of 4 executed.",
+    "export": "No export.",
+    "repro": "There are no numbers; it honestly says nothing was measured.",
+    "accuracy": "No contradictions because nothing is claimed.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Declines to answer.",
+    "facets": "No facets answered."
+   },
+   "claude_bare": {
+    "trend": "No series; ordering hypothesis only.",
+    "comparison": "Memory index estimates, honestly labelled.",
+    "chart": "No chart.",
+    "drilldown": "Planned calls only; 1 of 5 executed.",
+    "export": "Estimate table labelled as such, with no source window.",
+    "repro": "Contains untagged memory figures and no traceable numbers.",
+    "accuracy": "Estimates are labelled, not presented as measured. The rare-earth index of 70 overstates the measured 40, but it is not claimed as fact.",
+    "limits": "Specific statement of what is unmeasured.",
+    "verdict": "Low-confidence hypothesis with a decision and a change condition.",
+    "facets": "Answered only from labelled memory."
+   },
+   "claude_prism": {
+    "trend": "Traced with window and censoring. Computed ratios are exact (2.83x, 0.86x, 0.90x) and the rare-earth Oct-2025 peak is named. Lithium's peak is misstated as Apr-2026; Jan-2025 had 3,187. The chart is subsampled to 10 of 24 months.",
+    "comparison": "Ratio table recomputes exactly and critical shares are exact (73.1/67.8/61.5). The baseline is defined and the undefined vs_baseline field is flagged.",
+    "chart": "All plotted points trace, with window, unit, source and caption. It is subsampled and omits decisive months such as Feb-2025 rare earth and the Jan-2025 lithium peak. Only volume is charted.",
+    "drilldown": "Term and month layers only, with no item identifiers. 4 of 6 follow-ups ran and they target the spikes and contamination.",
+    "export": "Monthly CSV has only 10 of 24 months, yet the text says 'the full series is in the export'. The totals CSV is flagged coverage=full despite censoring.",
+    "repro": "75 of 75 numbers traced, the call is listed with args, and derived figures are recomputable.",
+    "accuracy": "One clear contradiction: lithium peak given as Apr-2026 3,059 instead of Jan-2025 3,187. It does catch the anomaly that combined_articles equals the plain sum, so overlap is not deduplicated.",
+    "limits": "Limits are placed at the numbers: the 5-month gap, censoring, match mode, and shares being of mentions rather than articles. These limits change the reading.",
+    "verdict": "Has a direct answer, decision, reasoned confidence and change conditions. It names the single-event spike risk.",
+    "facets": "Covers totals, shares, series, growth, tone, peaks per term and an overlap check with grounded values."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "Only gives a direction-level prior; its estimates are not a sourced series.",
+    "comparison": "The lithium-index estimates are explicitly memory-based, not a measured comparison.",
+    "chart": "No chart is provided.",
+    "drilldown": "Names possible breakdowns and calls, but mostly proposes generic or unexecuted next steps.",
+    "export": "CSV contains only explicitly estimated indices and lacks a measured source window.",
+    "repro": "No measured numeric claims trace to a call or named source.",
+    "accuracy": "Clearly labels estimates and states that measured coverage is unavailable; no direct reference contradiction.",
+    "limits": "Specific about the absent window, lane, censoring, match mode, and what remains unmeasured.",
+    "verdict": "Gives a clear scoping decision, low confidence, and what would change it, but relies on no grounded comparison.",
+    "facets": "Most requested facets are acknowledged as unavailable, but no grounded values or database-backed no-data results are supplied."
+   },
+   "claude_prism": {
+    "trend": "Uses the traced monthly series, names the rare-earth peak, quantifies endpoint changes, and carries censoring; selected plotted points and an inaccurate growth interpretation keep it below 5.",
+    "comparison": "Same-window ratios and deltas recompute, with a defined lithium baseline and relevant caveats about overlap and attention.",
+    "chart": "The plotted points trace and support a claim, but the chart is sparse and does not show all monthly values or visibly mark censoring.",
+    "drilldown": "Provides traced term and month layers and several specific follow-up questions; it lacks item-level records, and only four of six proposed calls executed successfully.",
+    "export": "Includes totals and selected months, but the monthly table is not complete and export provenance/coverage is incomplete.",
+    "repro": "Most figures trace and the primary call has arguments and window, but some claims are unsupported or misread, and the recipe does not rebuild every plotted/exported value.",
+    "accuracy": "Misstates combined_articles as a deduplicated union and asserts overlap/double-counting; the reference does not define that field as a union or establish this claim.",
+    "limits": "Mentions the window gap and censoring, but asserts an unsupported coverage percentage and treats coverage/overlap details as established.",
+    "verdict": "Direct and actionable with confidence and conditions, but its claim about the combined count and overlap is not supported by the reference.",
+    "facets": "Grounds volume, trend, and reported tone indicators, but does not resolve key overlap, seasonality, and research-versus-news facets."
+   },
+   "chatgpt_prism": {
+    "trend": "Full traced monthly chart and window are present, but it does not quantify the change and incorrectly says counts rise unevenly for all three.",
+    "comparison": "Same-window volume ratios and deltas are correctly calculated and answer which term leads, with limits stated.",
+    "chart": "The complete monthly series traces, has window, unit, source and caption, and visibly compares all three terms; the chart does not mark the censored boundary.",
+    "drilldown": "Breakdowns are described, but most follow-up calls are unverified or fail; there are no item-level identifiers.",
+    "export": "Monthly and summary CSVs trace and are referenced, with provenance and period identifiers; coverage is marked partial.",
+    "repro": "The main call and window are listed and figures largely trace, but one numeric claim is untraced and the recipe omits details needed to rebuild every artifact.",
+    "accuracy": "Core totals and field caveats match; however, it says overlap and unique counts are unavailable without acknowledging the reported combined total and its caveat, and misses the monthly-array truncation anomaly.",
+    "limits": "States window, censoring, lane and ingest caveat, but places some limits broadly and does not fully resolve the coverage flag or match mode.",
+    "verdict": "Gives a supported answer and decision with confidence and conditions, but omits the strongest contrary evidence in its own monthly data and is not bounded enough for a measured verdict.",
+    "facets": "Covers the main volume, trend and comparison facets but leaves overlap, seasonality, term variants and research-versus-news mismatch unresolved."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or quantified trend.",
+    "comparison": "No measured ratio, delta, or shared-window baseline.",
+    "chart": "No chart is provided.",
+    "drilldown": "Provides proposed calls, but they are not executed and several arguments are incomplete or unsupported.",
+    "export": "No CSV export.",
+    "repro": "Numbers are honestly absent, but the proposed calls lack sufficient arguments and do not reproduce a result.",
+    "accuracy": "Does not invent measurements or contradict the reference; its refusal is accurate about its own evidence.",
+    "limits": "Names the absence of window and coverage details, but does not apply the reference’s specific censoring and ingest limits.",
+    "verdict": "Makes a cautious decision but offers no measured answer or confidence grounded in comparison data.",
+    "facets": "Lists unmeasured facets without grounded values or database-backed no-data results."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

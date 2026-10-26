@@ -1,0 +1,163 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "chart": 0,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "C": {
+    "chart": 0,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "chart": "No chart.",
+    "drilldown": "Topic layers are a qualitative synthesis; the proposed calls are generic and only two of five executed successfully.",
+    "export": "No CSV export.",
+    "repro": "No measured numbers or reproducible calls.",
+    "refs": "Sources are identifiable and tied to claims, but no verbatim supporting quotes are provided.",
+    "accuracy": "Makes no measured claims and clearly labels the topic mapping as judgment.",
+    "limits": "States the absent search, window, coverage, match mode, and what cannot be measured alongside the conclusions.",
+    "verdict": "Gives an answer, decision, confidence, and conditions, but no contrary evidence from its own evidence set.",
+    "facets": "Suggests broad topics from memory but does not ground the missing-topic assessment in the corpus."
+   },
+   "B": {
+    "chart": "No chart.",
+    "drilldown": "Names layers, but they are not traced breakdowns; three of six proposed calls returned relevant data.",
+    "export": "The table is explicitly an estimate and carries limited provenance.",
+    "repro": "All numeric claims are absent; calls are listed but not reproducible from a captured run.",
+    "refs": "References are tied to claims with years and tiers, but the deliverable itself says details need verification and supplies no quotes.",
+    "accuracy": "No measured specifics are invented; the recommendations are clearly presented as judgment.",
+    "limits": "Clearly states memory-only coverage and the knowledge cutoff, but supplies no measured window, corpus coverage, or matching limits.",
+    "verdict": "Direct recommendation with confidence and conditions; it does not identify contrary evidence in its own evidence.",
+    "facets": "Addresses several broad topic areas, but recommendations and the coverage map are memory judgments."
+   },
+   "C": {
+    "chart": "No chart.",
+    "drilldown": "Provides traced themes and paper leads with identifiers, plus two successful specific follow-ups; the executed follow-up results are not folded back into the report.",
+    "export": "Both needed CSVs are referenced, trace to the call, and include source, window, unit, and coverage; identifiers are retained but the call has no returned window.",
+    "repro": "All numeric claims trace to the listed library-gap call, and derived readings are explained; no complete renderer recipe is provided.",
+    "refs": "All listed DOIs resolve and are tied to claims, but venue or tier metadata is absent and no abstract quotes are supplied.",
+    "accuracy": "Carefully distinguishes theme counts from list coverage and flags irrelevant ranked results; the claim that the scan resolved all four entries is not shown in the record's resolved field.",
+    "limits": "Places the missing window, uncertain matching, incomplete ingestion, and limits of the counts next to their interpretation.",
+    "verdict": "Direct recommendation with confidence and a condition for change, while acknowledging the scan's irrelevant results; the decision and scope are bounded.",
+    "facets": "Grounds topic coverage and missing-paper leads in the corpus, while explicitly noting the scan cannot establish ethics relevance or list-level coverage."
+   },
+   "D": {
+    "chart": "The chart is traced, labeled with unit and window, and tied to a prose claim, but it misleadingly labels theme counts as works resolved per theme.",
+    "drilldown": "Shows themes and candidate papers with identifiers, but only three follow-ups executed successfully and none of their results are included.",
+    "export": "Both referenced CSVs mostly trace and include provenance fields, but the export window is asserted despite the source returning no window.",
+    "repro": "The listed source call supports the figures, but its empty window conflicts with the chart and export dates, and no full regeneration recipe is provided.",
+    "refs": "DOIs resolve and items are tied to claims, but the deliverable does not provide abstract quotes for its references.",
+    "accuracy": "It treats theme counts as counts of resolved works and asserts a 2026-10-22 call date that the record does not supply; relevance-filtered papers are recommendations rather than measured ethics gaps.",
+    "limits": "Notes several corpus and relevance limits, but the asserted one-day window and full coverage overstate what the record establishes.",
+    "verdict": "Offers a decision and confidence, but its supporting account contains misread counts and unsupported relevance-filtered gaps; it also omits contrary evidence from the candidate list.",
+    "facets": "Covers several corpus facets, but the core gap recommendations rely partly on background knowledge and the scan does not establish their coverage."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Says the scan resolved all four input items, but the reference record reports only resolved: 200 and of_items: 4; it does not explicitly say all four resolved."
+   ],
+   "D": [
+    "Describes the theme values as counts of resolved works carrying each theme, but the reference labels them in_library.",
+    "Asserts the call ran on 2026-10-22 and assigns that date as the chart and export window, while the recorded response has window: {}."
+   ]
+  },
+  "best": "C",
+  "verdict": "C best supports a decision-maker by separating corpus-grounded themes and leads from the question of whether they are truly ethics-relevant, while preserving traceable exports and explicit limits. D is more elaborate, but its misreading of the theme counts and unsupported date make its comparisons less dependable; A and B are honest memory-based suggestions without corpus-grounded coverage."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_bare": {
+   "chart": 0,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "chart": 0,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

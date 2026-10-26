@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Explicit memory estimates earn the estimate ceiling only; no sourced series or quantified measured trend.",
+    "comparison": "Memory estimates compare years, but the comparison is unmeasured and only qualitative in decision value.",
+    "chart": "The chart is explicitly an estimate from memory.",
+    "drilldown": "Names possible layers but provides no traced breakdown; one of five follow-up calls executed successfully.",
+    "export": "CSV is explicitly estimated and lacks recorded-response provenance.",
+    "repro": "No data calls; figures are memory estimates and cannot be regenerated.",
+    "accuracy": "The estimated levels conflict sharply with the reference counts, though the estimates are labelled as such.",
+    "limits": "Clearly identifies estimates, assumed matching, incomplete recent years, and the missing measurement window, but limits are not source-specific.",
+    "verdict": "Gives a direct but weakly grounded estimate-based answer with low confidence and a condition for revision.",
+    "facets": "Addresses general trend and forecast, but estimates are ungrounded and misses grounded facets."
+   },
+   "B": {
+    "trend": "Complete traced annual series with exact growth and dates; no censoring/partial-period caveat is reported as carried in the history response.",
+    "comparison": "The exact 2017–2025 ratio is defined and traced, but it does not quantify the slowdown or compare observed and forecast paths.",
+    "chart": "The traced historical chart has a stated window, unit, source, and caption; it omits the supported scenario view.",
+    "drilldown": "Only the year layer is traced; one follow-up executed successfully, short of three.",
+    "export": "Both needed CSVs are fully traced and referenced with source, window, unit, and coverage; missing row identifiers and full provenance shape prevent a higher score.",
+    "repro": "The core calls and arguments are listed, but the claims about query date, age, and some coverage detail are not reproduced by the supplied call record; fewer than 90% of numeric claims trace.",
+    "accuracy": "Core counts and caveats are correct; minor precision issue in the derived elapsed-day figure and incomplete reading of forecast detail.",
+    "limits": "Specific window, match field, coverage, corpus normalization, and forecast limitations are placed near the claims; censoring is not explicitly characterized.",
+    "verdict": "Direct answer, planning implication, confidence, and revision conditions are present, but the verdict omits the slowing-growth pattern and strongest model caveats.",
+    "facets": "Covers observed volume and forecasts, but does not ground the mature-field slowdown or most implied facets such as seasonality and decomposition."
+   },
+   "C": {
+    "trend": "No sourced series or quantified growth.",
+    "comparison": "No measured common-scale comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-ups are generic or invalid for the available setup and none executed successfully; no traced breakdown.",
+    "export": "No CSV export.",
+    "repro": "No measurement calls or reproducible numbers; honest refusal earns the estimate-level ceiling.",
+    "accuracy": "Refuses to invent and makes no claims contradicted by the record.",
+    "limits": "Names key missing scope and coverage limits, but offers no measured window and is generic about censoring.",
+    "verdict": "States a cautious decision but does not answer the requested range and gives no supported confidence or evidence.",
+    "facets": "Does not provide grounded volume, trend, or forecast facets."
+   },
+   "D": {
+    "trend": "Full traced series and exact growth metrics with dates; the monthly censoring caveat does not apply to annual history, but trend prose overlooks the 2025 rebound when characterizing slowdown.",
+    "comparison": "Backtest models are compared on one scale and window with exact MAE delta and caveat; scenarios are also numerically compared.",
+    "chart": "Observed and scenario values trace with window, units, sources, and caption; decomposition and visible partial-period marking are absent.",
+    "drilldown": "Traced annual and scenario layers, but no item-level breakdown; only two of seven follow-ups executed successfully.",
+    "export": "Both required series tables trace and are referenced with provenance; row identifiers are present, but coverage is called full despite the source not guaranteeing completeness, and provenance is not exact tool shape.",
+    "repro": "Calls, arguments, and windows are substantially reproducible, with derived values recomputable; a few numeric claims/details are not fully traceable and recipe metadata is imprecise.",
+    "accuracy": "Historical and scenario values are correct; 'full' coverage overstates the source's reachability check, and the slowdown characterization understates the 2025 acceleration.",
+    "limits": "Explains window gap, title match, coverage caveat, lack of normalization, backtest limitations, and non-probabilistic bounds next to the data.",
+    "verdict": "Direct planning answer with confidence, conditions, and caveats, but it does not name the 2025 rebound as contrary evidence to continued linear growth.",
+    "facets": "Grounds history, scenarios, backtest, and limits, but does not resolve implied research drivers or corpus-normalized growth."
+   }
+  },
+  "errors": {
+   "A": [
+    "Estimated annual counts (for example, 2025 ~16,500) conflict with the reference's 7,633 title-matched records; clearly labelled estimates, not presented as measured."
+   ],
+   "B": [
+    "Calls the scenario bounds sensitivity ranges but does not give the annual 2027 bounds in the prose; no direct factual contradiction."
+   ],
+   "C": [],
+   "D": [
+    "Describes coverage as 'full' in CSVs, while the source says year bounds are not proof of complete coverage; strict index partition and row-floor checks are reachability checks, not completeness proof."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid: it combines the traced historical series, quantified growth, backtest comparison, and conditional 2026–2028 range with useful limits. B is careful and reproducible but leaves the scenario comparison and mature-field slowdown less developed; D’s main weakness is overstating coverage and underplaying the 2025 rebound."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

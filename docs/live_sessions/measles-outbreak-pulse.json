@@ -1,0 +1,69 @@
+{
+ "slug": "measles-outbreak-pulse",
+ "claude_live": {
+  "text": "**Measles outbreak coverage: about 3,978 news articles from June 2024 to May 2026. It is concentrated in the US and peaked in March 2025.** Coverage is rising overall, but it comes in bursts. The source is Prism's news corpus, matching articles that mention \"measles outbreak\". The window ends 1 June 2026 because later data is thin.\n\n**What the data shows**\n- **Trend:**\n  - Volume was low through 2024, at 8–29 articles a month.\n  - It jumped to 388 in February 2025 and peaked at 675 in March 2025 (609 in April).\n  - It fell to 61 in June 2025.\n  - It then recovered in waves: 224 in August 2025, 350 in February 2026 and 370 in April 2026.\n  - The last third of the window had 1,453 articles against 173 in the first third, about 8.4 times as many.\n- **Geography:** This covers the 73% of articles that were placed in a country.\n  - US 2,587 (46%), Canada 470 (8.4%), Mexico 376 (6.7%) and \"Georgia\" 291 (5.2%).\n  - UK 281 (5%), Australia 120, Samoa 96, New Zealand 87 and Bangladesh 68 (1.2%).\n  - Mexico and Samoa are over-represented relative to normal news. The \"Georgia\" count may be the US state or the country, so I'd treat it with caution.\n  - Place labels are only reliable through April 2026, so recent months are under-placed.\n- **Tone:** 91.4% of articles are negative and 8.2% positive. That is about 19 times more negative than the corpus baseline, and 3,743 of the 3,978 articles (94%) were flagged critical.\n- **Themes and actors:** Vaccine hesitancy, immunization and herd immunity dominate. Robert F. Kennedy Jr. appears in about 1,075 articles with people labels, and the CDC and WHO are the leading organisations.\n- **Recent coverage:** April–May 2026 articles cover Bangladesh (reports of over 100 child deaths), South Carolina's outbreak ending, London and Madhya Pradesh in India.\n\n**Interpretation**\n- The 2025 peak is consistent with a US-centred news cycle, and the high Kennedy and CDC share points to policy and politics driving it.\n- The 2026 rise looks more international, with Bangladesh in the recent feed.\n- The negativity is largely built in, because outbreak stories are inherently bad news. The tone figure says little about editorial stance.\n\n**Caveats**\n- Article counts measure attention, not case numbers.\n- The publisher sample was only 75 articles and the entity labels are machine-assigned, so one organisation label (\"cult of the dead cow\") is clearly spurious.\n- Nothing after May 2026 is covered.",
+  "seconds": 197.7,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "measles outbreak"
+    },
+    "ok": true,
+    "chars": 44911
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "Prism recorded **22,586 measles news articles from May 2024 through May 2026**. Monthly coverage rose overall but fluctuated sharply, peaking at **2,531 articles in March 2025**; May 2026 had **914**. The corpus’s early-to-late period comparison shows the final third had **3.57×** the coverage of the first third. *(Prism news.trends; monthly, mention-matched articles.)*\n\n**Where:** Of **21,672** matched articles with geography results, **13,753 (63.5%)** were assigned a country. The United States led with **11,280 (44.0% of placed articles)**, followed by Canada (**1,701; 6.6%**), the UK (**1,581; 6.2%**) and Mexico (**1,052; 4.1%**). These are places the articles were *about*, not publisher locations. *(Prism news.geography; May 2024–May 2026.)*\n\n**What the data shows:** Coverage was highest in early 2025, fell afterward, then rose again in early 2026—**2,069** articles in February and **1,635** in April—before easing to 914 in May. The series’ annualized growth measure is **49.7%** across the window; it does not mean coverage increased steadily month by month.\n\n**Interpretation:** Attention was concentrated on the United States, with smaller but notable coverage about Canada, the UK and Mexico. The overall upward comparison reflects a volatile two-year period with major spikes, rather than a smooth climb. Prism censors the series at **June 1, 2026** because newer news ingestion is incomplete; it reports full corpus index partition coverage, but that is not proof every article has been ingested.",
+  "seconds": 202.9,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "resolve_term",
+    "args": {
+     "term": "measles"
+    },
+    "ok": true,
+    "chars": 3645
+   },
+   {
+    "tool": "freshness_status",
+    "args": {},
+    "ok": true,
+    "chars": 1709
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "measles",
+     "level": "country",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 5727
+   },
+   {
+    "tool": "news_trends",
+    "args": {
+     "term": "measles",
+     "granularity": "month"
+    },
+    "ok": false,
+    "chars": 671
+   },
+   {
+    "tool": "news_trends",
+    "args": {
+     "term": "measles",
+     "granularity": "monthly",
+     "since": "2024-05-01",
+     "until": "2026-06-01"
+    },
+    "ok": true,
+    "chars": 13055
+   }
+  ]
+ }
+}

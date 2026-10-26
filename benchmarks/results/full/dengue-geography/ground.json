@@ -1,0 +1,563 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 509,
+  "charts": [],
+  "tables": [
+   {
+    "name": "dengue_country_rows.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries lead dengue research authorship?",
+    "args": {
+     "term": "dengue",
+     "by": "author_country"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'by': 'author_country'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='author_country', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries does dengue news cover, and what is placed_pct?",
+    "args": {
+     "term": "dengue"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.9,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 3122, \"share_pct\": 23.3, \"lift\": 3.5}, {\"label\": \"united states\", \"articles\": 1718, \"share_pct\": 12.8, \"lift\": 0.6}, {\"label\": \"brazil\", \"articles\": 863, \"share_pct\": 6.4, \"lift\": 10.2}, {\"label\": \"bangladesh\", \"articles\": 515, \"share_pct\": 3.8, \"lift\": 18.8}, {\"label\": \"united kingdom\", \"articles\": 340, \"share_pct\": 2.5, \"lift\": 0.5}, {\"label\": \"france\", \"articles\": 301, \"share_pct\": 2.2, \"lift\": 1.3}, {\"label\": \"australia\", \"articles\": 249, \"share_pct\": 1.9, \"lift\": 0.4}, {\"label\": \"philippines\", \"articles\": 241, \"share_pct\": 1.8, \"lift\": 3.1}, {\"label\": \"china\", \"articles\": 222, \"share_pct\": 1.7, \"lift\": 0.3}, {\"label\": \"mexico\""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How did Brazil's coverage track 2024 case counts?",
+    "args": {
+     "term": "dengue Brazil"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'dengue Brazil' in this window",
+    "seconds": 3.4,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which papers drive the top-country output?",
+    "args": {
+     "term": "dengue",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 37.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 44361, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7125791172\", \"title\": \"Optimizing ovitrap design: the role of ovistrip texture, colour, and water in modulating oviposition behavior of Aedes vector mosquitoes\", \"authors\": [\"Perera A.P.S.\"], \"venue\": \"Tropical biomedicine\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.47665/tb.42.4.012\", \"url\": \"https://doi.org/10.47665/tb.42.4.012\", \"cited_by\": 1, \"orientation\": \"promising\", \"contribution\": \"empirical\", \"stance_score\": 0.6, \"topics\": [\"Mosqu"
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "Is there any patent origin data for dengue?",
+    "args": {
+     "term": "dengue patents"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'dengue patents'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue patents', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1271,
+  "charts": [
+   {
+    "id": "authorship_top12",
+    "title": "Dengue papers by first-author country",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research authorship",
+      "how": "call",
+      "points": 12,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "news_top10",
+    "title": "Dengue news articles by country the article is about",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "News articles",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "authorship.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "publication.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which dengue news is about Thailand, Singapore, Taiwan or Malaysia, and how many articles?",
+    "args": {
+     "terms": [
+      "dengue thailand",
+      "dengue singapore",
+      "dengue taiwan",
+      "dengue malaysia"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 31.3,
+    "sample": "{\"terms\": [\"dengue thailand\", \"dengue singapore\", \"dengue taiwan\", \"dengue malaysia\"], \"rows\": [{\"term\": \"dengue thailand\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"dengue singapore\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"dengue taiwan\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"dengue malays"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What is the dated window and total for the research geography counts?",
+    "args": {
+     "term": "dengue"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'dengue'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Why does Bangladesh draw heavy news but little research?",
+    "args": {
+     "term": "dengue Bangladesh",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 75, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7117546148\", \"title\": \"Escalating Dengue in Bangladesh: An Analytical Assessment of Environmental and Socioeconomic Drivers\", \"authors\": [\"Abdul Kader Mohiuddin\"], \"venue\": \"Preprints.org\", \"year\": 2025, \"date\": \"2025-12-29\", \"doi\": \"10.20944/preprints202512.2526.v1\", \"url\": \"https://doi.org/10.20944/preprints202512.2526.v1\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"position\", \"stance_score\": -0.3, \"topics\": [\"Mosquito-"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How did dengue news volume change month by month, and did India's lead hold?",
+    "args": {
+     "term": "dengue",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 935, \"critical\": 685, \"negative\": 628, \"positive\": 269, \"mean_priority\": 6.69, \"critical_pct\": 73.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1542, \"critical\": 1067, \"negative\": 988, \"positive\": 523, \"mean_priority\": 6.71, \"critical_pct\": 69.2, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1601, \"critical\": 1129, \"negative\": 1062, \"positive\": 493, \"mean_priority\": 6.66, \"critical_pct\": 70.5, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 1827, \"critical\": 1341, \"negative\": 1364, \"positive\": 427, \"mean_priority\": 6.71, \"critical_pct\": 73.4, \"partial_period\": false}, {\"period\": \"2024-10-01\","
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Which tone does dengue coverage take in India and the US?",
+    "args": {
+     "term": "dengue",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.1,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 628, \"positive\": 269, \"neutral\": 38, \"ratio\": 2.33}, {\"period\": \"2024-07-01\", \"negative\": 988, \"positive\": 523, \"neutral\": 28, \"ratio\": 1.89}, {\"period\": \"2024-08-01\", \"negative\": 1062, \"positive\": 493, \"neutral\": 43, \"ratio\": 2.15}, {\"period\": \"2024-09-01\", \"negative\": 1364, \"positive\": 427, \"neutral\": 36, \"ratio\": 3.19}, {\"period\": \"2024-10-01\", \"negative\": 1341, \"positive\": 392, \"neutral\": 15, \"ratio\": 3.42}, {\"period\": \"2024-11-01\", \"negative\": 897, \"positive\": 276, \"neutral\": 11, \"ratio\": 3.25}, {\"period\": \"2024-12-01\", \"negative\": 369, \"positive\": 225, \"neutral\": 16, \"ratio\": 1.64}, {\"period\": \"2025-01-01\", \"negative\": 430, \"positive\": 4"
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Are there dengue patents under a different query, and by which assignee countries?",
+    "args": {
+     "claim": "dengue vaccine"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.6,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"United States\", \"papers\": 2596}, {\"country\": \"India\", \"papers\": 1703}, {\"country\": \"Brazil\", \"papers\": 1691}, {\"country\": \"China\", \"papers\": 1061}, {\"country\": \"Thailand\", \"papers\": 842}, {\"country\": \"Singapore\", \"papers\": 636}, {\"country\": \"Malaysia\", \"papers\": 543}, {\"country\": \"Taiwan\", \"papers\": 542}, {\"country\": \"France\", \"papers\": 499}, {\"country\": \"Australia\", \"papers\": 474}, {\"country\": \"United Kingdom\", \"papers\": 448}, {\"country\": \"Mexico\", \"papers\": 419}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"r"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 115,
+   "traced": 113,
+   "derived": 22,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 156,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 386,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries have the most dengue research authorship rows and publication rows in the same window?",
+    "args": {
+     "term": "dengue"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'dengue'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries have the most dengue news coverage rows, and what is placed_pct for each?",
+    "args": {
+     "term": "dengue"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 3122, \"share_pct\": 23.3, \"lift\": 3.5}, {\"label\": \"united states\", \"articles\": 1718, \"share_pct\": 12.8, \"lift\": 0.6}, {\"label\": \"brazil\", \"articles\": 863, \"share_pct\": 6.4, \"lift\": 10.2}, {\"label\": \"bangladesh\", \"articles\": 515, \"share_pct\": 3.8, \"lift\": 18.8}, {\"label\": \"united kingdom\", \"articles\": 340, \"share_pct\": 2.5, \"lift\": 0.5}, {\"label\": \"france\", \"articles\": 301, \"share_pct\": 2.2, \"lift\": 1.3}, {\"label\": \"australia\", \"articles\": 249, \"share_pct\": 1.9, \"lift\": 0.4}, {\"label\": \"philippines\", \"articles\": 241, \"share_pct\": 1.8, \"lift\": 3.1}, {\"label\": \"china\", \"articles\": 222, \"share_pct\": 1.7, \"lift\": 0.3}, {\"label\": \"mexico\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "Which countries are origins for dengue-related patents, or is the result explicitly empty?",
+    "args": {
+     "term": "dengue patents"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'dengue patents'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue patents', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Where do research and news geography disagree when compared over the same period?",
+    "args": {
+     "term": "dengue",
+     "comparison": "research geography"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...: 'research geography'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncomparison\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='research geography', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "What are the underlying records for the leading research and news countries?",
+    "args": {
+     "term": "dengue",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 335, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117369709\", \"title\": \"When Few Mosquitoes Are Enough: Dengue outbreaks in non-endemic areas\", \"authors\": [\"Giulio Pisaneschi\", \"Piero Manfredi\", \"Alberto Landi\", \"Nico Stollenwerk\", \"Maíra Aguiar\"], \"venue\": \"One Health\", \"year\": 2025, \"date\": \"2025-12-27\", \"doi\": \"10.1016/j.onehlt.2025.101308\", \"url\": \"https://doi.org/10.1016/j.onehlt.2025.101308\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topi"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 84,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 877,
+  "charts": [],
+  "tables": [
+   {
+    "name": "research_authorship.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "research_publication.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers account for the leading first-author country counts, and what are their study locations?",
+    "args": {
+     "term": "dengue",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 335, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117369709\", \"title\": \"When Few Mosquitoes Are Enough: Dengue outbreaks in non-endemic areas\", \"authors\": [\"Giulio Pisaneschi\", \"Piero Manfredi\", \"Alberto Landi\", \"Nico Stollenwerk\", \"Maíra Aguiar\"], \"venue\": \"One Health\", \"year\": 2025, \"date\": \"2025-12-27\", \"doi\": \"10.1016/j.onehlt.2025.101308\", \"url\": \"https://doi.org/10.1016/j.onehlt.2025.101308\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topi"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How do first-author country counts change across a specified publication window?",
+    "args": {
+     "claim": "Dengue fever outbreaks"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 58.7,
+    "sample": "{\"stats\": [], \"rejected\": [{\"value\": \"0.3% to 6.3%\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"0.27 [0.22-0.33]\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"0.14 [0.10-0.18]\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"0.16 [0.09-0.27]\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"0.04 [0.03-0.05]\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"5.6%\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"66.7%\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"10%\", \"why\": \"sentence not found in that abstract\"}], \"candidate_sentences\": 24, \"research_series\": {\"available\": true, \"corpus\": \"research_typed\", \"u"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "Which news items drive coverage of India, the United States, and Brazil?",
+    "args": {
+     "term": "dengue",
+     "countries": [
+      "india",
+      "united states",
+      "brazil"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='dengue', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncountries\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['india', 'united states', 'brazil'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 75,
+   "traced": 75,
+   "derived": 9,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 141,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

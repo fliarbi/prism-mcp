@@ -1,0 +1,247 @@
+{
+ "slug": "pfas-evidence",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 4.0,
+    "facets": 2.0
+   },
+   "strict": 38.1,
+   "plain": 38.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 34.2,
+    "gpt": 42.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 4.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 81.6,
+   "plain": 81.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.2,
+    "gpt": 88.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 2.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 2.0
+   },
+   "strict": 41.4,
+   "plain": 41.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 35.8,
+    "gpt": 47.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 1.0,
+    "export": 4.5,
+    "repro": 4.5,
+    "refs": 4.5,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 77.5,
+   "plain": 77.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.6,
+    "gpt": 86.4
+   }
+  }
+ },
+ "judge_mad": 0.68,
+ "verdicts": {
+  "opus": "B and C both grounded their numbers in the same cancer-only Prism calls. B was the only one to read that evidence honestly: the top-tier meta-analysis contradicts the claim, the statistics and counter-evidence calls failed, and confidence is therefore low. B also paired this with executable outcome-specific follow-ups. C reached a 'Yes' verdict that outran its data and offered no working follow-ups. A and D gave plausible memory answers that a decision-maker cannot verify or regenerate.",
+  "gpt": "C narrowly leads by combining traced evidence, useful document-level drill-down, and explicit limits on what the cancer-focused calls establish. D has stronger chart and export packaging, but its follow-up calls did not execute and its drill-down remains shallow."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "The worker kidney SMR 1.16 (0.86-1.51) is an unverifiable precise memory specific, and its Epidemiology 2017 attribution is uncertain."
+   ],
+   "claude_prism": [
+    "States that coverage tables passed reachability checks, which is not in the record.",
+    "Labels CSV coverage 'full', but the tool reports no coverage flag.",
+    "Did not flag that the 2025 point is plotted although censored_at is 2025."
+   ],
+   "chatgpt_prism": [
+    "Gives a 'Yes' verdict at medium confidence that the corpus evidence it cites does not support.",
+    "States the reachability claim, which is not in the record.",
+    "Alters a quote with the bracketed '[six named PFAS]'."
+   ],
+   "claude_bare": [
+    "The Faroe cohort is dated 2018 in the text but cited as Grandjean 2012.",
+    "The Steenland 2018 citation is admittedly approximate.",
+    "Effect sizes are given from memory."
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "The Faroe Islands cohort is attributed to 2018, while the cited Grandjean JAMA study is from 2012.",
+    "Reference r8 is described as an approximate citation, so its claimed methodological critique is not securely identifiable."
+   ],
+   "claude_prism": [
+    "The trend caveat says the newest period is excluded, but the supplied annual series includes 2025."
+   ],
+   "chatgpt_prism": [
+    "The trend caveat says the newest period is excluded, but the supplied annual series includes 2025."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "Gives no series and explicitly declines to give one.",
+    "comparison": "Compares one memory SMR to a 1.0 baseline. This is uncheckable, so it caps at 2.",
+    "chart": "No chart.",
+    "drilldown": "Names breakdowns only generically. None of its 5 follow-up calls executed.",
+    "export": "A one-row CSV with no traced values. This is the ceiling.",
+    "repro": "All numbers come from memory and are untraced. None of its 12 numbers traced.",
+    "refs": "The two DOIs resolve and the NTP URL is given. Quotes are fragments and the list has no tiering.",
+    "accuracy": "No contradiction with the record. However, the worker SMR 1.16 (0.86-1.51) is a precise memory specific that cannot be checked.",
+    "limits": "It is honest that no corpus was queried and states the gap to today. These are limits of a memory answer, not of measured data.",
+    "verdict": "The verdict has an answer, a decision, a confidence level with its reason, and what would change it. It notes the null worker result. It is sound for an established literature.",
+    "facets": "The facets are answered from memory."
+   },
+   "claude_prism": {
+    "trend": "The research series is traced, with its window and censoring stated. It quantifies the change correctly (7.5x; late vs early third 4.38x) and correctly calls the news series too sparse for a trend.",
+    "comparison": "Uses RR baseline 1.00 with exact deltas of -0.05 and -0.02. It explicitly refuses to compute a PFAS vs PM2.5 ratio across units.",
+    "chart": "One traced chart with window, unit and source. It shows bare levels only, the censoring is not marked, and the outcome facets are not charted.",
+    "drilldown": "Breaks down by site, tier and compound, with DOIs. 5 of 6 specific follow-ups executed. No follow-up result was folded back into the report.",
+    "export": "Two traced CSVs. It labels coverage 'full', which the tool never states. There is no document table carrying DOIs. This is the ceiling.",
+    "repro": "All 56 numbers traced, and the calls are listed with args and a capture date. The reachability-check claim does not appear in the record.",
+    "refs": "All 4 DOIs resolve, quotes are verbatim, and tiers are stated. The contrary meta-analysis is traced the same way.",
+    "accuracy": "Catches the off-topic unread documents, the failed statistics call and the empty counter-evidence result. Minor issues are the unsupported 'coverage full' label and the reachability statement.",
+    "limits": "Limits sit next to the numbers they bound: window end vs today, lane, censoring, match mode and 4 readable papers. It also states what would close the gap.",
+    "verdict": "Honest and bounded: cancer only, unsettled, low confidence, with the strongest contrary evidence named. It is weak on the broader harm question.",
+    "facets": "Cancer is grounded. Other outcomes get an explicit 'no data from these calls'."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced, with window and censoring stated. Quantifies 7.5x and 8 vs 35.",
+    "comparison": "A table with RR 1.00 defined as the baseline and the CI caveat carried.",
+    "chart": "One traced chart with caption. Shows levels only.",
+    "drilldown": "None of its 5 follow-up calls executed. This is the ceiling.",
+    "export": "Two traced CSVs with coverage marked partial and a provenance JSON block, referenced from the prose. There are no row identifiers or document table.",
+    "repro": "All 35 numbers traced and the calls are listed with args. Includes an untraced reachability claim.",
+    "refs": "The 4 DOIs resolve, each with tier and claim. One quote is altered with a bracketed substitution.",
+    "accuracy": "Correctly flags the off-topic statistics candidates. The read/unread tally sentence is garbled.",
+    "limits": "Thorough, but capped at 3.",
+    "verdict": "A 'Yes, harms' answer at medium confidence rests on cancer-only corpus data in which the top-tier paper contradicts the claim. The answer goes beyond its own evidence.",
+    "facets": "Cancer is grounded. Other outcomes are acknowledged as not covered."
+   },
+   "claude_bare": {
+    "trend": "A memory series honestly labelled estimate.",
+    "comparison": "A regulatory-limit comparison from memory. It does not compare health effects.",
+    "chart": "A memory chart labelled estimate.",
+    "drilldown": "Layers are named generically. Only 2 of 6 follow-ups executed.",
+    "export": "CSVs labelled estimate.",
+    "repro": "No call traces. This is the ceiling.",
+    "refs": "No DOIs. Citations are approximate, one is self-described as approximate, and the dates are inconsistent.",
+    "accuracy": "The regulatory facts are broadly right. It says the Faroe result came in 2018 but cites a 2012 paper, and it gives memory effect sizes.",
+    "limits": "Honest about using memory only and states the data-end gaps.",
+    "verdict": "Clear, decision-ready, and names confounding as contrary evidence.",
+    "facets": "Covers many outcomes, but from memory."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured time series is supplied.",
+    "comparison": "The worker SMR is a sourced numeric contrast, but it does not answer the broader health question.",
+    "chart": "No chart block is included.",
+    "drilldown": "Names evidence layers but gives no useful item-level breakdown or executable follow-up that returned data.",
+    "export": "The single CSV row is sourced but is not a decision-ready evidence table.",
+    "repro": "No recorded calls or reproducible numeric evidence; most numeric claims lack traceable sources.",
+    "refs": "The three references resolve, are tied to claims, and the contrary worker estimate is identified.",
+    "accuracy": "Claims are cautious and no specific statement conflicts with the reference record.",
+    "limits": "States scope, missing corpus data, coverage, and the gap to today where relevant.",
+    "verdict": "Gives a direct answer, decision, confidence, conditions, and a qualifying result, with a defensible scope.",
+    "facets": "Covers several health outcomes but lacks grounded evidence across the wider set of implied facets."
+   },
+   "claude_bare": {
+    "trend": "The serum trend is explicitly an estimate from memory, with a quantified direction.",
+    "comparison": "The 2024 limit and 2016 combined advisory are numerically compared, but the exposure benchmarks differ.",
+    "chart": "The chart is explicitly labelled approximate and estimate, so it is an unmeasured chart.",
+    "drilldown": "Provides broad breakdowns and two calls executed with data, but no traced item-level evidence.",
+    "export": "Exports are labelled estimates or have incomplete provenance.",
+    "repro": "No calls were run; numeric claims are memory-based and not reproducible.",
+    "refs": "At least one citation is approximate and not reliably identifiable, capping this score.",
+    "accuracy": "The answer is qualified and its uncertain figures are labelled, but one cohort citation is misstated.",
+    "limits": "States memory-only sourcing and several specific limitations, though not all limits are tied closely to claims.",
+    "verdict": "Direct answer with decision, confidence, conditions, and limitations; it acknowledges uncertainty.",
+    "facets": "Covers multiple outcomes and exposure, but many values are estimates and corpus facets are unmeasured."
+   },
+   "claude_prism": {
+    "trend": "Full annual series and quantified growth are supplied; the stated censoring is ambiguous because 2025 remains plotted.",
+    "comparison": "Breast cancer RRs are compared on a defined baseline with intervals and caveats; unlike-exposure figures are kept separate.",
+    "chart": "The traced annual chart has a clear claim and caption; the censoring ambiguity keeps it below full credit.",
+    "drilldown": "Provides traced document and tier layers plus five successful, specific follow-up calls; one proposed call failed.",
+    "export": "The series is exported, but the volume table conflates windows in its provenance header.",
+    "repro": "Lists the used calls with arguments and windows; figures and derived trend values can be regenerated.",
+    "refs": "All four identifiers resolve, are tied to claims, and include verified quotes and study tiers.",
+    "accuracy": "Mostly faithful to the record, but it repeats the source's ambiguous censoring statement without resolving the plotted 2025 endpoint.",
+    "limits": "Places the key window, lane, coverage, lag, match, and thin-evidence limits alongside the findings.",
+    "verdict": "Direct and bounded, with confidence and conditions; the decision is stated, though broad harm is not resolved by cancer-only evidence.",
+    "facets": "Grounds cancer sites, evidence strength, trends, and explicit gaps for outcomes and lanes outside the calls."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced full series, exact growth and early/late comparison, with ingest-lag censoring noted.",
+    "comparison": "Pooled RRs are contrasted with a defined null baseline, with intervals and scope caveats.",
+    "chart": "Traced chart includes the full window, unit, source, comparison, and interpretation.",
+    "drilldown": "Provides breakdown descriptions but no follow-up calls executed successfully.",
+    "export": "Both needed tables include identifiers, provenance, windows, units, coverage, and a regenerate block.",
+    "repro": "Used calls and windows are listed and the values are reproducible.",
+    "refs": "All four DOIs resolve; claims, metadata, tiers, and source quotes are supplied.",
+    "accuracy": "Faithfully reports the main results, while the stated censoring does not fully clarify the plotted endpoint.",
+    "limits": "Specific scope limits are present, but important caveats are not consistently placed with each number.",
+    "verdict": "Direct, cautious answer with decision, confidence, and conditions; the cancer-only evidence limits its reach.",
+    "facets": "Addresses the cancer evidence facets and flags that broader health outcomes are not covered."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

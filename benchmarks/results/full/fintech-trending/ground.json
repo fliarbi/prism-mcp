@@ -1,0 +1,563 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 464,
+  "charts": [],
+  "tables": [
+   {
+    "name": "topics_unmeasured.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which topics have the largest volume in the latest 30 days?",
+    "args": {
+     "window": "30d",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'window': '30d', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='30d', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=20, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which topics appeared only in the latest window?",
+    "args": {
+     "mode": "new_only",
+     "limit": 15
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'mode': 'new_only', 'limit': 15}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nmode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='new_only', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=15, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Is AI-infrastructure financing growing, and in which regions?",
+    "args": {
+     "term": "AI data center financing"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 4.0,
+    "sample": "{\"level\": \"country\", \"rows\": [], \"placed_articles\": 0, \"matched_articles\": 1, \"placed_pct\": 0.0, \"what\": \"the place an article is ABOUT, as resolved by the pipeline — not where it was published\"}"
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "Is private-credit coverage shifting negative?",
+    "args": {
+     "term": "private credit"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 37, \"positive\": 246, \"neutral\": 5, \"ratio\": 0.15}, {\"period\": \"2024-07-01\", \"negative\": 39, \"positive\": 214, \"neutral\": 5, \"ratio\": 0.18}, {\"period\": \"2024-08-01\", \"negative\": 31, \"positive\": 236, \"neutral\": 6, \"ratio\": 0.13}, {\"period\": \"2024-09-01\", \"negative\": 28, \"positive\": 254, \"neutral\": 5, \"ratio\": 0.11}, {\"period\": \"2024-10-01\", \"negative\": 24, \"positive\": 344, \"neutral\": 14, \"ratio\": 0.07}, {\"period\": \"2024-11-01\", \"negative\": 19, \"positive\": 263, \"neutral\": 2, \"ratio\": 0.07}, {\"period\": \"2024-12-01\", \"negative\": 17, \"positive\": 262, \"neutral\": 6, \"ratio\": 0.06}, {\"period\": \"2025-01-01\", \"negative\": 41, \"positive\": 286, \"neutral\": 16"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "What critical coverage exists on tariff impact?",
+    "args": {
+     "term": "tariffs",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"articles\": [{\"target_id\": \"6a2e493bbf10c43d296b62e4\", \"url\": \"https://www.yahoo.com/news/articles/trump-says-32-000-people-200600845.html\", \"title\": \"Trump says 32,000 people were killed in Iran's crackdown on protesters\", \"excerpt\": \"President Trump said in a news briefing Friday that 32,000 people were killed during the recent protests in Iran, a far higher death toll than has previously been reported. Mr. Trump, who made the remarks while addressing the Supreme Court's ruling striking down his sweeping tariffs, did not offer a\", \"publisher\": \"yahoo.com\", \"published\": \"2026-02-20 20:06:00\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-02-20 20:06:00\", \"priority\": 9, \"polarity\": \"ne"
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "How does the current rise compare with past episodes?",
+    "args": {
+     "term": "interest rates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'interest rates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='interest rates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "30 — No ratio or delta can be given. Defining the baseline for the follow-up: the latest 30 day",
+    "30 — No ratio or delta can be given. Defining the baseline for the follow-up: the latest 30 day"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 879,
+  "charts": [
+   {
+    "id": "finance-core-two-window",
+    "title": "Articles per 60-day window, finance-core topics",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Stock price fluctuations and market reactions",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Investment & funding",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Investor relations and shareholder meetings",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "trending_business.csv",
+    "how": "call",
+    "rows": 16,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What does the same ranking look like for the most recent 60 days?",
+    "args": {
+     "days": 60,
+     "category": "business",
+     "limit": 15
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'days': 6...business', 'limit': 15}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncategory\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='business', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=15, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which sources and articles drove the robotics surge?",
+    "args": {
+     "query": "companion robotics",
+     "days": 60
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ... robotics', 'days': 60}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='companion robotics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Is the infectious-disease coverage genuinely business news or a category artifact?",
+    "args": {
+     "query": "travel-related infectious disease risks",
+     "category": "business"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...'category': 'business'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='travel-related infectious disease risks', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncategory\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='business', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries lead stock-price and funding coverage?",
+    "args": {
+     "query": "stock price fluctuations",
+     "days": 60
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...ctuations', 'days': 60}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='stock price fluctuations', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Is the tone of stock-price coverage negative or positive?",
+    "args": {
+     "query": "stock price fluctuations and market reactions",
+     "days": 60
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...reactions', 'days': 60}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='stock price fluctuations and market reactions', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=60, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How do the chemical topics compare with a longer baseline?",
+    "args": {
+     "query": "green chemistry",
+     "days": 120
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...hemistry', 'days': 120}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green chemistry', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndays\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=120, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 95,
+   "traced": 94,
+   "derived": 11,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 146,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 300,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Which business and finance topics had the largest percentage growth in the latest complete window versus the preceding equal-length window?",
+    "args": {
+     "topic": "business and finance",
+     "window": "latest complete window",
+     "compare": "preceding equal-length window"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...g equal-length window'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='business and finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='latest complete window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='preceding equal-length window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Which topics are newly covered in the latest window, and what are their counts?",
+    "args": {
+     "topic": "business and finance",
+     "window": "latest complete window",
+     "include_new": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...', 'include_new': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='business and finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='latest complete window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_new\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which business and finance topics have the highest counts in the latest window?",
+    "args": {
+     "topic": "business and finance",
+     "window": "latest complete window",
+     "rank_by": "count"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...w', 'rank_by': 'count'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='business and finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='latest complete window', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nrank_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='count', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How do the leading topics compare on one count scale across the latest and preceding equal-length windows?",
+    "args": {
+     "topic": "business and finance",
+     "windows": [
+      "latest complete window",
+      "preceding equal-length window"
+     ],
+     "measure": "count"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...'], 'measure': 'count'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='business and finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindows\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['latest complete window'...ng equal-length window'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='count', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 100,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 608,
+  "charts": [
+   {
+    "id": "travel-risk-counts",
+    "title": "Articles on travel-related infectious disease risks",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "topic_counts.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trending",
+    "question": "Which business and finance topics rose fastest in the latest complete window?",
+    "args": {
+     "days": 60,
+     "category": "business",
+     "limit": 15
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.7,
+    "sample": "{\"rising\": [{\"topic\": \"entertainment and companion robotics\", \"articles\": 15401, \"previous\": 324, \"growth_x\": 47.53, \"new\": false}, {\"topic\": \"domestic service robotics for household tasks\", \"articles\": 15550, \"previous\": 466, \"growth_x\": 33.37, \"new\": false}, {\"topic\": \"travel-related infectious disease risks\", \"articles\": 1315, \"previous\": 14, \"growth_x\": 93.93, \"new\": false}, {\"topic\": \"human-robot interaction and collaborative robotics\", \"articles\": 3869, \"previous\": 237, \"growth_x\": 16.32, \"new\": false}, {\"topic\": \"green chemistry and eco-friendly alternatives\", \"articles\": 2680, \"previous\": 144, \"growth_x\": 18.61, \"new\": false}, {\"topic\": \"digitalization and automation in chemical proc"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trending",
+    "question": "Which finance topics are growing fastest, and what articles support those labels?",
+    "args": {
+     "days": 60,
+     "category": "finance",
+     "limit": 15
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.3,
+    "sample": "{\"rising\": [{\"topic\": \"stock price fluctuations and market reactions\", \"articles\": 49370, \"previous\": 24458, \"growth_x\": 2.02, \"new\": false}, {\"topic\": \"investment & funding\", \"articles\": 31801, \"previous\": 16914, \"growth_x\": 1.88, \"new\": false}, {\"topic\": \"quarterly and annual financial results\", \"articles\": 33775, \"previous\": 24275, \"growth_x\": 1.39, \"new\": false}, {\"topic\": \"corporate earnings reports and financial performance\", \"articles\": 33653, \"previous\": 24266, \"growth_x\": 1.39, \"new\": false}, {\"topic\": \"stock market performance and trends\", \"articles\": 35266, \"previous\": 27591, \"growth_x\": 1.28, \"new\": false}, {\"topic\": \"exchange-traded funds (etfs)\", \"articles\": 17016, \"previous\": "
+   },
+   {
+    "id": "f3",
+    "feature": "news.trending",
+    "question": "Which newly covered business and finance topics appeared in the latest window?",
+    "args": {
+     "days": 60,
+     "category": "business",
+     "limit": 30
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.7,
+    "sample": "{\"rising\": [{\"topic\": \"entertainment and companion robotics\", \"articles\": 15401, \"previous\": 324, \"growth_x\": 47.53, \"new\": false}, {\"topic\": \"domestic service robotics for household tasks\", \"articles\": 15550, \"previous\": 466, \"growth_x\": 33.37, \"new\": false}, {\"topic\": \"travel-related infectious disease risks\", \"articles\": 1315, \"previous\": 14, \"growth_x\": 93.93, \"new\": false}, {\"topic\": \"human-robot interaction and collaborative robotics\", \"articles\": 3869, \"previous\": 237, \"growth_x\": 16.32, \"new\": false}, {\"topic\": \"green chemistry and eco-friendly alternatives\", \"articles\": 2680, \"previous\": 144, \"growth_x\": 18.61, \"new\": false}, {\"topic\": \"digitalization and automation in chemical proc"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trending",
+    "question": "What are the largest business and finance topics by article volume in the latest window?",
+    "args": {
+     "days": 60,
+     "category": "business",
+     "limit": 30
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"rising\": [{\"topic\": \"entertainment and companion robotics\", \"articles\": 15401, \"previous\": 324, \"growth_x\": 47.53, \"new\": false}, {\"topic\": \"domestic service robotics for household tasks\", \"articles\": 15550, \"previous\": 466, \"growth_x\": 33.37, \"new\": false}, {\"topic\": \"travel-related infectious disease risks\", \"articles\": 1315, \"previous\": 14, \"growth_x\": 93.93, \"new\": false}, {\"topic\": \"human-robot interaction and collaborative robotics\", \"articles\": 3869, \"previous\": 237, \"growth_x\": 16.32, \"new\": false}, {\"topic\": \"green chemistry and eco-friendly alternatives\", \"articles\": 2680, \"previous\": 144, \"growth_x\": 18.61, \"new\": false}, {\"topic\": \"digitalization and automation in chemical proc"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 26,
+   "traced": 25,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 108,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

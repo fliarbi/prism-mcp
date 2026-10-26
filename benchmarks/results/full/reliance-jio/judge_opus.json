@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series. The chart has an empty points array.",
+    "comparison": "Explicitly states that no comparison is possible.",
+    "chart": "Placeholder chart with no values. It neither supports a claim nor invents one.",
+    "drilldown": "Follow-up calls are named generically, and 0 of 7 executed.",
+    "export": "Header-only CSV with no rows.",
+    "repro": "No numbers, so nothing can be regenerated. It is honest about this.",
+    "refs": "No references.",
+    "accuracy": "No contradictions. Memory names are labelled as candidates.",
+    "limits": "Specific about what is unmeasured. No window could be stated.",
+    "verdict": "Low-confidence non-answer. A candidate list is not ranked dominance.",
+    "facets": "Facets are answered only from memory, unranked."
+   },
+   "B": {
+    "trend": "Full traced series with window and censoring. Gives the 19.9% CAGR, first and last values, and the March 2025 peak. Not decomposed.",
+    "comparison": "The tone ratio of 0.23 vs a defined baseline of 0.58 is stated correctly, with the 0.35 delta and 0.40x. It does not address the IPO vs tariff contrast.",
+    "chart": "One traced volume chart. The available tone and critical series are not charted.",
+    "drilldown": "One theme layer, and the headlines lack URLs. Only 1 of 5 follow-ups returned data.",
+    "export": "One monthly CSV with provenance. Tone, critical and people tables are missing.",
+    "repro": "24 of 25 numbers trace, and c1 is listed with its args.",
+    "refs": "Headlines are cited without URLs, and no resolvable identifiers are given.",
+    "accuracy": "Lists Scindia (431) as the second person and omits Elon Musk (613), which misleads on the people question. Otherwise faithful.",
+    "limits": "States the window, the 144-day gap, match modes, the sample and placed_pct. Limits are mostly placed in the methods section.",
+    "verdict": "Gives an answer, decision, confidence and what would change it. Ignores the IPO/tariff facet the question flags and names no contrary evidence.",
+    "facets": "Themes and people are covered, but IPO vs tariffs is not quantified and Musk is missing."
+   },
+   "C": {
+    "trend": "No series. It declines to assert a direction, which is honest.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Breakdown is from memory. 3 of 5 follow-ups executed but none were folded back into the report.",
+    "export": "CSV explicitly labelled estimate/memory.",
+    "repro": "Everything is labelled memory.",
+    "refs": "None.",
+    "accuracy": "Memory specifics are labelled est. They do not contradict the record.",
+    "limits": "Specific about the memory cutoff and the roughly four-month gap. Nothing measured.",
+    "verdict": "Memory-based hypothesis list with low confidence and a decision.",
+    "facets": "Facets are answered from memory."
+   },
+   "D": {
+    "trend": "Traced series with censoring. Gives the CAGR, late/early ratio, peak and date, and decomposes critical vs total (0.76 vs 0.66, critical-share peak 73.9% in December 2025).",
+    "comparison": "Baseline defined, with the delta and 0.4x stated. Shows the monthly ratio range (0.13 to 0.40) staying below the baseline. IPO vs tariff counts are given but not explicitly contrasted.",
+    "chart": "Single traced volume chart. Tone and critical splits are in the CSV and prose but not charted.",
+    "drilldown": "Categories, then subcategories and tags, then headlines with date, publisher and a URL. 4 of 6 follow-ups ran. None were folded back into the report.",
+    "export": "Monthly CSV with critical, negative and positive columns, plus a people CSV and a provenance JSON. Rows lack identifiers.",
+    "repro": "98 of 98 numbers trace. c1 is listed with args, and interpretation is labelled.",
+    "refs": "Only one headline carries a URL. There are no resolvable identifiers otherwise.",
+    "accuracy": "All values match the record. It catches mis-typed people labels, Finland, Colombia and Cameroon place collisions, and distinguishes critical from negative.",
+    "limits": "Window, the five-month gap, enrichment lag (May fill about 4%), match modes, the sample and placed_pct all sit next to the numbers. It also says what would close the gap.",
+    "verdict": "Gives an answer, decision, confidence with reason, and what would change it. Names the critical-vs-tone tension. It could tie the IPO and tariff narratives to counts.",
+    "facets": "Themes, people, organisations, tone, places, sources, and IPO and tariff signals are all grounded."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Presents Jyotiraditya Scindia as the second person while omitting Elon Musk, who has more articles (613 vs 431)"
+   ],
+   "C": [],
+   "D": []
+  },
+  "best": "D",
+  "verdict": "D answered the question with traced counts for themes, people and organisations. It separated the 'critical' flag from negative tone, caught pipeline anomalies, and placed every limit next to its number. B had the same data but was thinner: it omitted Musk among people and left the IPO-vs-tariff tension unquantified. A and C were honest memory-only responses with no measured content."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

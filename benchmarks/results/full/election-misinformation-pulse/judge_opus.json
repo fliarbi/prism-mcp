@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced series with window and peak 51 in 2024-10. It quantifies the second peak (44 in 2025-09), early vs late thirds (152 vs 17, 0.11) and the critical decomposition (129 to 17). Censoring is not marked on the chart, and '1–3 a month in 2026' ignores the zero months in Jan and Feb.",
+    "comparison": "The tone ratio of 13.69 against a defined corpus baseline of 0.58 gives 23.6x, which recomputes. Early vs late 8.9x recomputes.",
+    "chart": "Volume chart is fully traced with window, unit and source. Geography ('where') and tone are not charted, even though the data supports them.",
+    "drilldown": "Traced layers include themes, subcategories and headlines with a url. Only 1 of 5 follow-ups executed ok.",
+    "export": "Two traced CSVs and a provenance JSON. The coverage flag is asserted as 'full' for the monthly table.",
+    "repro": "65/65 numbers traced, a prism-calls block and a capture date. The small 2026 range slip keeps it at 4.",
+    "refs": "Script ceiling of 1. Only one headline carries a url; the others lack identifiers.",
+    "accuracy": "Catches the Georgia collision, label noise (employee benefits, metavision) and the polarity oddity in the critical panel. Misses the likely Colombia collision. Minor slip: 1–3 a month in 2026.",
+    "limits": "Window, gap to today, match-mode split and enrichment bound are mostly in the Method section. Script ceiling of 3.",
+    "verdict": "Direct answer covering both how much and where, with a decision, confidence and reason, and what would change it. Consistent with the data.",
+    "facets": "Volume, trend, tone, themes, entities, places, headlines and sources are all grounded."
+   },
+   "B": {
+    "trend": "Traced series and an exact 88.8% decline. The prose names only the 2024 peaks and says the series 'tapers', omitting the equal 44-article spike in Sept 2025.",
+    "comparison": "Baseline is defined, 23.6x is traced, and the caveat about it not being a matched group is stated.",
+    "chart": "Single traced volume chart. No geography chart. Censoring is noted in the caption but not marked on the plot.",
+    "drilldown": "0 of 5 follow-ups executed ok. The layers are named as panel identifiers without values. Script ceiling of 1.",
+    "export": "One traced CSV with provenance. The note about 'blank values' does not match the table, which has no blanks. No geography table.",
+    "repro": "36/36 numbers traced and a calls block. The computed gap is tagged as [c1].",
+    "refs": "Script ceiling of 1; only one url.",
+    "accuracy": "Calls May 2026 partial/censored, but the tool marks partial_period false and censors June. Omits the Sept 2025 spike. Catches no anomalies.",
+    "limits": "Limits sit next to the numbers: mention match, placed denominator, sample size, and the five-month gap.",
+    "verdict": "Answers volume but not 'where'. The decision is vague, and the strongest contrary point (the 2025 spike) is ignored.",
+    "facets": "Most facets are grounded; headlines are thin."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic follow-ups; none executed ok.",
+    "export": "None.",
+    "repro": "No numbers; honest refusal.",
+    "refs": "None.",
+    "accuracy": "No contradictions. Refusal scores 3 per the anti-gaming rule.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "No answer.",
+    "facets": "No facets answered."
+   },
+   "D": {
+    "trend": "Labelled estimate index only.",
+    "comparison": "Only a qualitative estimate ('3x').",
+    "chart": "Labelled estimate chart.",
+    "drilldown": "No traced layer. Some follow-ups run but none were folded back.",
+    "export": "Labelled estimate template.",
+    "repro": "Script ceiling of 0.",
+    "refs": "None.",
+    "accuracy": "US/UK concentration is labelled est. The reference shows Colombia far above the UK, but this is not presented as fact.",
+    "limits": "Honest and specific about what is unmeasured; a plain model cannot score above 3.",
+    "verdict": "Memory-based, low-confidence scoping answer.",
+    "facets": "Facets are from memory or absent."
+   }
+  },
+  "errors": {
+   "A": [
+    "States 1–3 articles a month in 2026; Jan and Feb 2026 were 0."
+   ],
+   "B": [
+    "Treats May 2026 as partial/censored; the tool flags partial_period false and censors June.",
+    "Omits the Sept 2025 peak (44) and says coverage 'tapers'.",
+    "Export note about blank values does not match the table."
+   ],
+   "C": [],
+   "D": [
+    "Memory claim of US/UK dominance conflicts with the record (Colombia 14%, UK 1.8%), though it is labelled est."
+   ]
+  },
+  "best": "A",
+  "verdict": "A and B both traced the same Prism call. A also reported where coverage sits (US 52%, Colombia 14%) inside its verdict, quantified both spikes including Sept 2025, and flagged label anomalies such as the Georgia collision and theme noise. B dropped the 2025 spike and misread the censored month. C and D honestly declined to measure, so they offer a decision-maker nothing beyond a list of calls to run."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

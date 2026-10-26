@@ -1,0 +1,189 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "There is no series.",
+    "comparison": "There is no comparison.",
+    "chart": "There is no chart.",
+    "drilldown": "The proposed follow-up calls all failed (0/5).",
+    "export": "There is no CSV.",
+    "repro": "No numbers are given, and the deliverable says so honestly.",
+    "refs": "There are no references.",
+    "accuracy": "It makes no claims to contradict, so it gets the empty-deliverable 3.",
+    "limits": "It is specific about what it could not measure.",
+    "verdict": "It gives a qualitative answer with confidence and conditions, but no numbers support it.",
+    "facets": "Almost no facet is answered with grounded values."
+   },
+   "B": {
+    "trend": "The series is fully traced, with window, peak and late/early ratio of 1.17 (delta 326). It does not decompose total vs critical.",
+    "comparison": "The early-vs-late third and the tone baseline are both defined and recompute exactly.",
+    "chart": "There is one volume chart and no tone view. The caption calls May 2026 censored, but that bucket is not a partial period.",
+    "drilldown": "Theme, entity and publisher layers are traced. There are no headline items with URLs, and 3 of 5 follow-ups worked.",
+    "export": "It has two traced CSVs with provenance, both referenced in the prose. Item identifiers are missing.",
+    "repro": "All 38 of 38 numbers trace, calls are listed, and the 144-day gap is exact.",
+    "refs": "Headlines exist in the feed, but none are cited with an identifier.",
+    "accuracy": "It misreads the censoring: it says the May bucket is censored, when censoring applies from 2026-06-01.",
+    "limits": "Gap, match mode, placed_pct and machine labels are stated where the numbers are used.",
+    "verdict": "The verdict is sound, but it ignores its own contrary signal: the critical series is rising.",
+    "facets": "Headlines are missing; the other facets are covered."
+   },
+   "C": {
+    "trend": "Total and critical series are both traced. Peaks are named, ratios given (1.17 vs 1.32), the critical share shift is exact, and the CAGR is caveated.",
+    "comparison": "The tone baseline is defined, the 18.76x ratio is carried, and the monthly ratio range is explained by thin positive counts.",
+    "chart": "The chart overlays critical on total, but tone is not charted.",
+    "drilldown": "Headlines carry publisher, date and URL. 2 of 6 follow-ups worked, which caps the score.",
+    "export": "The single CSV is a cherry-picked 6-row subset labelled coverage=full.",
+    "repro": "All 91 of 91 numbers trace and calls are listed. The export subset limits regeneration.",
+    "refs": "News items carry URLs, but the script could not verify them, which caps the score.",
+    "accuracy": "It catches anomalies: Immanuel Kant as an artefact, generic sim/apk/kyc labels, duplicate Outlook entries, and the small-base CAGR.",
+    "limits": "It states the window, gap, enrichment bound and match mode (ceiling 3).",
+    "verdict": "It covers answer, decision, confidence and what would change it, and acknowledges the flat-vs-rising contrast. 'Older victims' is not measured.",
+    "facets": "Nearly all facets are grounded. The research and official lanes were not queried."
+   },
+   "D": {
+    "trend": "It gives an estimate-labelled series, and of the wrong quantity (all cyber-fraud losses).",
+    "comparison": "It compares memory figures that are off the question's topic.",
+    "chart": "It is an estimate-labelled memory chart.",
+    "drilldown": "There is no traced layer, and only 3 of 7 follow-ups worked.",
+    "export": "It is an estimate-labelled memory table.",
+    "repro": "Every figure is a memory estimate.",
+    "refs": "It names no verifiable sources.",
+    "accuracy": "The recalled loss years look shifted: roughly ₹7.4k crore is the 2023 figure, not 2022. 'Fast-growing' is unsupported.",
+    "limits": "It is honest about what is unmeasured and about the gap.",
+    "verdict": "It answers from memory with low confidence. The growth claim is unbacked.",
+    "facets": "Facets are answered mostly from memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Treats the May 2026 bucket as censored or partial, when censoring applies from 2026-06-01."
+   ],
+   "C": [
+    "Export is a 6-row subset labelled coverage=full."
+   ],
+   "D": [
+    "Recalled 2022 loss of ~₹7,400 crore likely matches the 2023 figure, so the year appears misattributed (labelled est.).",
+    "Asserts 'fast-growing' without measured support."
+   ]
+  },
+  "best": "C",
+  "verdict": "C and B both grounded their work in the same traced corpus call. C went further: it decomposed critical against total coverage, surfaced dated headlines with URLs, and flagged entity-label artefacts. B gave cleaner exports but misread the censoring and omitted headlines. A and D had no measured data; A declined honestly, while D offered memory estimates about a different quantity."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

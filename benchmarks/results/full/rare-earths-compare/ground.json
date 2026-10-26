@@ -1,0 +1,636 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 572,
+  "charts": [],
+  "tables": [
+   {
+    "name": "terms_prior.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly article count per term on one scale, and which grows fastest?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone split per term?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ..., 'lithium', 'cobalt']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which articles are most covered, and how many are in the union?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ],
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'cobalt'], 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries drive each term's coverage?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ..., 'lithium', 'cobalt']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Where is coverage critical?",
+    "args": {
+     "term": "cobalt",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.4,
+    "sample": "{\"articles\": [{\"target_id\": \"69dfcd7e86bd23245a91ebc8\", \"url\": \"https://www.autocarpro.in/news/raptees-unique-cell-chemistry-increases-battery-lifespan-claims-dinesh-arjun--120100\", \"title\": \"Raptee's 'unique' cell chemistry increases battery lifespan, claims Dinesh Arjun  | Autocar Professional\", \"excerpt\": \"We’re actually sourcing our cells from multiple countries now, said the Co-founder and CEO of Raptee. Dinesh Arjun, Co-founder and CEO of electric motorcycle Raptee said that they were the only ones in India using their cell chemistry. \\\"These are lithium-ion NMC (Nickle, Manganese, Cobalt) cells but\", \"publisher\": \"autocarpro.in\", \"published\": \"2026-04-15 00:00:00\", \"partition\": \"from_"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 9,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "100 — | Term | Rough relative article volume, lithium = 100 | Basis |",
+    "100 — The baseline I would use is lithium = 100 on a single scale of article counts per month in"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 108,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 919,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "rare earth",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     },
+     {
+      "name": "lithium",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     },
+     {
+      "name": "cobalt",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_selected.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 28,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove the October 2025 rare earth spike?",
+    "args": {
+     "term": "rare earth",
+     "since": "2025-09-01",
+     "until": "2025-12-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.6,
+    "sample": "{\"points\": [{\"period\": \"2025-09-01\", \"articles\": 695, \"critical\": 523, \"negative\": 181, \"positive\": 500, \"mean_priority\": 6.66, \"critical_pct\": 75.3, \"partial_period\": false}, {\"period\": \"2025-10-01\", \"articles\": 2726, \"critical\": 2248, \"negative\": 1571, \"positive\": 1092, \"mean_priority\": 7.15, \"critical_pct\": 82.5, \"partial_period\": false}, {\"period\": \"2025-11-01\", \"articles\": 1116, \"critical\": 837, \"negative\": 380, \"positive\": 720, \"mean_priority\": 6.79, \"critical_pct\": 75.0, \"partial_period\": false}], \"total\": 4537, \"critical_total\": 3608, \"trend\": {\"available\": true, \"from\": \"2025-09-01\", \"to\": \"2025-11-01\", \"first\": 695, \"last\": 1116, \"peak\": 2726, \"peak_period\": \"2025-10-01\", \"early_th"
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries produce the rare earth coverage?",
+    "args": {
+     "term": "rare earth",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 8395, \"share_pct\": 19.5, \"lift\": 0.9}, {\"label\": \"china\", \"articles\": 6678, \"share_pct\": 15.5, \"lift\": 3.0}, {\"label\": \"austria\", \"articles\": 2754, \"share_pct\": 6.4, \"lift\": 21.7}, {\"label\": \"australia\", \"articles\": 2589, \"share_pct\": 6.0, \"lift\": 1.3}, {\"label\": \"india\", \"articles\": 2004, \"share_pct\": 4.7, \"lift\": 0.7}, {\"label\": \"canada\", \"articles\": 1901, \"share_pct\": 4.4, \"lift\": 1.3}, {\"label\": \"japan\", \"articles\": 1480, \"share_pct\": 3.4, \"lift\": 2.2}, {\"label\": \"brazil\", \"articles\": 1427, \"share_pct\": 3.3, \"lift\": 5.3}, {\"label\": \"united kingdom\", \"articles\": 1381, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"ukraine\", "
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What was the March 2025 cobalt spike?",
+    "args": {
+     "term": "cobalt",
+     "since": "2025-03-01",
+     "until": "2025-04-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 32.9,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"cobalt\", \"type\": \"place\", \"type_evidence\": {\"person\": 0, \"organization\": 4, \"place\": 702, \"tagged_articles\": 760, \"entity_labelled_articles\": 1045, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 1539, \"critical_articles\": 993, \"first_seen\": \"2025-03-01 00:00:00\", \"last_seen\": \"2025-03-31 23:00:00\", \"window\": {\"from\": \"2025-03-01\", \"to\": \"2025-04-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a col"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What are the most critical lithium stories?",
+    "args": {
+     "term": "lithium",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "How is tone defined and distributed per term?",
+    "args": {
+     "terms": [
+      "rare earth",
+      "lithium",
+      "cobalt"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earth', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Is lithium's count inflated by off-topic matches?",
+    "args": {
+     "term": "lithium",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 65.5,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"lithium\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 3002, \"place\": 0, \"tagged_articles\": 15801, \"entity_labelled_articles\": 29821, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 52522, \"critical_articles\": 35622, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 22:00:00\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every se"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 75,
+   "traced": 75,
+   "derived": 15,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 123,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 333,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "How many deduplicated news articles mention each term in the same date window and outlet set, and what share does each represent?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.2,
+    "sample": "{\"terms\": [\"rare earths\", \"lithium\", \"cobalt\"], \"rows\": [{\"term\": \"rare earths\", \"articles\": 9855, \"share_pct\": 13.2, \"critical\": 6923, \"direction\": \"rising\", \"growth\": 3.79, \"tone_ratio\": 0.69, \"vs_baseline\": 1.19, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 201, \"critical\": 143, \"negative\": 33, \"positive\": 164, \"mean_priority\": 6.45, \"critical_pct\": 71.1, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 205, \"critical\": 147, \"negative\": 45, \"positive\": 158, \"mean_priority\": 6.51, \"critical_pct\": 71.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 165, \"critical\": 102, \"negative\": 27, \"positive\": 133, \"mean_priority\": 6.17, \"critical_pct\": 61.8, \"partial_p"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts for each term on a common scale?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ],
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...], 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How is coverage tone defined and distributed for each term?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ..., 'lithium', 'cobalt']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which articles mention more than one of these terms, and how do common-word matches affect the counts?",
+    "args": {
+     "terms": [
+      "rare earths",
+      "lithium",
+      "cobalt"
+     ],
+     "include_overlap": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...include_overlap': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earths', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_overlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 94,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 661,
+  "charts": [
+   {
+    "id": "monthly-coverage",
+    "title": "Monthly news articles by term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "rare earth",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "lithium",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "cobalt",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly-articles.csv",
+    "how": "call",
+    "rows": 72,
+    "numeric_cells": 69,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term-summary.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "What sources and article records contribute to each term’s count, and how much is driven by common-word matches?",
+    "args": {
+     "terms": [
+      "rare earth",
+      "lithium",
+      "cobalt"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earth', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How many unique articles mention two or more of these terms?",
+    "args": {
+     "terms": [
+      "rare earth",
+      "lithium",
+      "cobalt"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.6,
+    "sample": "{\"terms\": [\"rare earth\", \"lithium\", \"cobalt\"], \"rows\": [{\"term\": \"rare earth\", \"articles\": 21173, \"share_pct\": 24.6, \"critical\": 15483, \"direction\": \"rising\", \"growth\": 4.07, \"tone_ratio\": 0.57, \"vs_baseline\": 0.98, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 379, \"critical\": 265, \"negative\": 55, \"positive\": 314, \"mean_priority\": 6.37, \"critical_pct\": 69.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 351, \"critical\": 229, \"negative\": 67, \"positive\": 279, \"mean_priority\": 6.32, \"critical_pct\": 65.2, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 335, \"critical\": 220, \"negative\": 47, \"positive\": 282, \"mean_priority\": 6.22, \"critical_pct\": 65.7, \"partial_p"
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What are the tone definitions and monthly sentiment distributions for each term?",
+    "args": {
+     "terms": [
+      "rare earth",
+      "lithium",
+      "cobalt"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earth', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which geographies account for coverage of each term?",
+    "args": {
+     "terms": [
+      "rare earth",
+      "lithium",
+      "cobalt"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['rare earth', 'lithium', 'cobalt'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which stories drove the rare-earth monthly spikes?",
+    "args": {
+     "term": "rare earth",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 25,
+   "traced": 24,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 79,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,233 @@
+{
+ "slug": "climate-finance-geo",
+ "captured_at": "2026-10-23T00:01:05+0530",
+ "calls": [
+  {
+   "tool": "global_comparison",
+   "feature": "research.geography",
+   "args": {
+    "claim": "Climate finance"
+   },
+   "seconds": 96.6,
+   "response": {
+    "ok": true,
+    "feature": "research.geography",
+    "subject": {},
+    "data": {
+     "research_authorship": {
+      "what": "country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says",
+      "rows": []
+     },
+     "news_coverage": {
+      "what": "country an article is about",
+      "rows": [
+       {
+        "country": "nigeria",
+        "articles": 4
+       },
+       {
+        "country": "france",
+        "articles": 2
+       },
+       {
+        "country": "india",
+        "articles": 2
+       },
+       {
+        "country": "pakistan",
+        "articles": 2
+       },
+       {
+        "country": "brazil",
+        "articles": 2
+       },
+       {
+        "country": "turkey",
+        "articles": 1
+       },
+       {
+        "country": "denmark",
+        "articles": 1
+       },
+       {
+        "country": "united arab emirates",
+        "articles": 1
+       }
+      ]
+     },
+     "research_publication": {
+      "what": "country of the publishing journal (the health literature index) — not where the study was done",
+      "rows": []
+     },
+     "patent_origin": {
+      "what": "assignee country",
+      "rows": []
+     }
+    },
+    "window": {},
+    "meta": {
+     "note": "three different questions; do not add them together",
+     "seconds": 96.6
+    }
+   }
+  },
+  {
+   "tool": "news_geography",
+   "feature": "news.geography",
+   "args": {
+    "term": "climate finance",
+    "since": "2024-06-01"
+   },
+   "seconds": 14.7,
+   "response": {
+    "ok": true,
+    "feature": "news.geography",
+    "subject": {
+     "term": "climate finance"
+    },
+    "data": {
+     "level": "country",
+     "rows": [
+      {
+       "label": "united states",
+       "articles": 1772,
+       "share_pct": 11.2,
+       "lift": 0.5
+      },
+      {
+       "label": "azerbaijan",
+       "articles": 1550,
+       "share_pct": 9.8,
+       "lift": 71.2
+      },
+      {
+       "label": "india",
+       "articles": 1194,
+       "share_pct": 7.5,
+       "lift": 1.1
+      },
+      {
+       "label": "brazil",
+       "articles": 981,
+       "share_pct": 6.2,
+       "lift": 9.8
+      },
+      {
+       "label": "china",
+       "articles": 941,
+       "share_pct": 5.9,
+       "lift": 1.2
+      },
+      {
+       "label": "united kingdom",
+       "articles": 721,
+       "share_pct": 4.5,
+       "lift": 0.9
+      },
+      {
+       "label": "france",
+       "articles": 582,
+       "share_pct": 3.7,
+       "lift": 2.1
+      },
+      {
+       "label": "united arab emirates",
+       "articles": 469,
+       "share_pct": 3.0,
+       "lift": 3.7
+      },
+      {
+       "label": "germany",
+       "articles": 459,
+       "share_pct": 2.9,
+       "lift": 2.3
+      },
+      {
+       "label": "nigeria",
+       "articles": 305,
+       "share_pct": 1.9,
+       "lift": 2.7
+      },
+      {
+       "label": "south africa",
+       "articles": 291,
+       "share_pct": 1.8,
+       "lift": 3.0
+      },
+      {
+       "label": "australia",
+       "articles": 287,
+       "share_pct": 1.8,
+       "lift": 0.4
+      },
+      {
+       "label": "canada",
+       "articles": 285,
+       "share_pct": 1.8,
+       "lift": 0.5
+      },
+      {
+       "label": "japan",
+       "articles": 259,
+       "share_pct": 1.6,
+       "lift": 1.1
+      },
+      {
+       "label": "kenya",
+       "articles": 248,
+       "share_pct": 1.6,
+       "lift": 5.7
+      }
+     ],
+     "placed_articles": 4142,
+     "matched_articles": 6646,
+     "placed_pct": 62.3,
+     "what": "the place an article is ABOUT, as resolved by the pipeline — not where it was published"
+    },
+    "window": {
+     "censored_at": "2026-06-01",
+     "why_censored": "news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a collapse that did not happen",
+     "from": "2024-06-01",
+     "to": "2026-05-01",
+     "to_is_exclusive": true,
+     "enrichment": {
+      "bound": "2026-05-01",
+      "note": "geography and entity labels are written by a pipeline that runs behind the crawler; months past this bound are ingested but not yet labelled, and reading them as low coverage is reading the pipeline, not the world"
+     },
+     "freshness": {
+      "available": true,
+      "checked_at": 1792693865.9556305,
+      "age_seconds": 0,
+      "default_until": "2026-06-01",
+      "cutoff_review_needed": false,
+      "note": "Measured ingest volumes. A calendar month being over does not prove its ingestion is complete. The report cutoff remains an explicit policy."
+     },
+     "past_default_cutoff": false
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693865.981816,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "caveat": "place resolution has acronym collisions — an EV query returns Central African Republic on articles about cars. Rows far down the list with a high lift and a low count are the ones to distrust",
+     "ranked_by": "article count; `lift` is on each row for comparison",
+     "seconds": 14.7
+    }
+   }
+  }
+ ]
+}

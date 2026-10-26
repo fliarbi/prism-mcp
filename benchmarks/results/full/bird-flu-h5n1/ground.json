@@ -1,0 +1,627 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 613,
+  "charts": [
+   {
+    "id": "herds-timeline",
+    "title": "Approximate cumulative US affected dairy herds at selected dates",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Cumulative herds, rough",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "herds_estimate.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is monthly news volume on H5N1 in dairy cattle since 2024-03?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "from": "2024-03-01",
+     "to": "2026-10-22",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does tone compare with the corpus baseline?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "from": "2024-03-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which publishers dominate coverage?",
+    "args": {
+     "term": "H5N1 bird flu",
+     "group_by": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are covered, and what is placed_pct?",
+    "args": {
+     "term": "H5N1 dairy"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 4.0,
+    "sample": "{\"level\": \"country\", \"rows\": [], \"placed_articles\": 0, \"matched_articles\": 1, \"placed_pct\": 0.0, \"what\": \"the place an article is ABOUT, as resolved by the pipeline — not where it was published\"}"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which headlines are most critical of the response?",
+    "args": {
+     "term": "H5N1 response",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'H5N1 response'",
+    "seconds": 3.6,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Is H5N1 human coverage rising relative to cattle coverage?",
+    "args": {
+     "terms": [
+      "H5N1 humans",
+      "H5N1 dairy cattle"
+     ],
+     "from": "2024-03-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "900 — No corpus baseline was retrieved, so I cannot compare tone or volume against the wider new",
+    "20 — - Window: events from March 2024 to about early 2025 in memory; the gap to today (2026-10-"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1043,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning 'bird flu' (selected months)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "bird_flu_monthly.csv",
+    "how": "call",
+    "rows": 8,
+    "numeric_cells": 31,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "bird_flu_geography.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many articles are about H5N1 in dairy cattle, and is that rising?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "since": "2024-03-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.8,
+    "sample": "{\"points\": [{\"period\": \"2024-03-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-04-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-05-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How many articles are about human H5N1 cases, and is that rising?",
+    "args": {
+     "term": "H5N1 human case",
+     "since": "2024-03-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.0,
+    "sample": "{\"points\": [{\"period\": \"2024-03-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-04-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-05-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What happened between June and October 2026?",
+    "args": {
+     "term": "bird flu",
+     "since": "2026-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.5,
+    "sample": "{\"points\": [{\"period\": \"2026-05-01\", \"articles\": 87, \"critical\": 77, \"negative\": 72, \"positive\": 15, \"mean_priority\": 7.41, \"critical_pct\": 88.5, \"partial_period\": false}], \"total\": 87, \"critical_total\": 77, \"trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"critical_trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"growth_note\": \"Zero-count periods included; partial boundary buckets excluded from growth.\", \"country\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What are the most critical dairy-herd headlines?",
+    "args": {
+     "term": "avian influenza dairy herds",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'avian influenza dairy herds'",
+    "seconds": 3.3,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does tone compare between the dairy and human sub-topics?",
+    "args": {
+     "terms": [
+      "H5N1 dairy cattle",
+      "H5N1 human case"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.4,
+    "sample": "{\"terms\": [\"H5N1 dairy cattle\", \"H5N1 human case\"], \"rows\": [{\"term\": \"H5N1 dairy cattle\", \"articles\": 1, \"share_pct\": 50.0, \"critical\": 0, \"direction\": \"rising\", \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\":"
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which US states drive the coverage?",
+    "args": {
+     "term": "bird flu",
+     "level": "state"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 22.8,
+    "sample": "{\"level\": \"state\", \"rows\": [{\"label\": \"pennsylvania\", \"articles\": 2930, \"share_pct\": 9.6, \"lift\": 3.3}, {\"label\": \"california\", \"articles\": 2856, \"share_pct\": 9.4, \"lift\": 2.9}, {\"label\": \"texas\", \"articles\": 1513, \"share_pct\": 5.0, \"lift\": 1.8}, {\"label\": \"louisiana\", \"articles\": 1346, \"share_pct\": 4.4, \"lift\": 17.0}, {\"label\": \"michigan\", \"articles\": 1300, \"share_pct\": 4.3, \"lift\": 2.3}, {\"label\": \"washington\", \"articles\": 1269, \"share_pct\": 4.2, \"lift\": 1.8}, {\"label\": \"colorado\", \"articles\": 1229, \"share_pct\": 4.0, \"lift\": 2.7}, {\"label\": \"new york\", \"articles\": 1147, \"share_pct\": 3.8, \"lift\": 1.4}, {\"label\": \"iowa\", \"articles\": 766, \"share_pct\": 2.5, \"lift\": 2.1}, {\"label\": \"oregon\", \"a"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 88,
+   "traced": 88,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 133,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 303,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many news items mention H5N1 in dairy cattle and humans in the selected window, by month?",
+    "args": {
+     "term": "H5N1 dairy cattle humans",
+     "window": "2024-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does tone compare with the news corpus baseline over the same window?",
+    "args": {
+     "term": "H5N1 dairy cattle humans",
+     "window": "2024-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes, organisations, people, and places appear in coverage, and what share of items have placed locations?",
+    "args": {
+     "term": "H5N1 dairy cattle humans",
+     "window": "2024-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which critical headlines are most relevant, with dates and publisher links?",
+    "args": {
+     "term": "H5N1 dairy cattle humans",
+     "window": "2024-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How concentrated is coverage among publishers, and how does the topic compare with a defined corpus baseline?",
+    "args": {
+     "term": "H5N1 dairy cattle humans",
+     "window": "2024-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...024-01-01..2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='H5N1 dairy cattle humans', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 70,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 815,
+  "charts": [
+   {
+    "id": "bird-flu-monthly-volume",
+    "title": "Monthly news articles matching “bird flu”",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "bird-flu-monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many articles specifically discuss H5N1 in dairy cattle, by month?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "since": "2024-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How many articles specifically discuss human H5N1 cases, by month?",
+    "args": {
+     "term": "H5N1 human infection",
+     "since": "2024-06-01",
+     "granularity": "monthly"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'H5N1 human infection' in this window",
+    "seconds": 29.5,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What are the latest central headlines about H5N1 in dairy cattle?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "since": "2026-01-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What are the latest central headlines about human H5N1 cases?",
+    "args": {
+     "term": "H5N1 human infection",
+     "since": "2026-01-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "How does sentiment for cattle-specific H5N1 coverage compare with its corpus baseline?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2025-12-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}], \"totals\": {\"neg\": 1, \"pos\": 0, \"neutral\": 0, \"n\": 1, \"neg_pct\": 100.0, \"pos_pct\": 0.0, \"ratio\": null}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which publishers account for cattle-specific H5N1 coverage?",
+    "args": {
+     "term": "H5N1 dairy cattle",
+     "since": "2024-06-01",
+     "compare": "publishers"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...compare': 'publishers'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='H5N1 dairy cattle', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publishers', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 22,
+   "traced": 21,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

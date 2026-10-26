@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced per-orientation series with the window stated. It quantifies the change with late_vs_early 0.67 and 0.33, names the 2018 peak, flags the 2019 gap and thin years, and decomposes by orientation.",
+    "comparison": "Early vs late contested share, 0% to 20% (+20pp), traced, with the thin-evidence caveat carried. The early/late cut-points are not defined.",
+    "chart": "One fully traced stacked-orientation chart with window, unit, source and a caption tied to a claim. It has no early vs late view.",
+    "drilldown": "Traced layers run orientation, then contribution, then papers with Prism research index ids and DOIs. None of the follow-ups executed (ceiling 3).",
+    "export": "Two traced CSVs with nulls kept blank, row ids and a provenance JSON. Capped at 3 by the script.",
+    "repro": "27/27 numbers traced, a prism-calls block with args, and interpretation labelled.",
+    "refs": "All 5 DOIs resolve, each with venue, tier, citations and the claim it supports. The only quotes are titles, and it notes that no contrary papers were retrievable.",
+    "accuracy": "Values match the record. It catches the 14-vs-17 discrepancy, oriented counts not summing to totals in 2020 and 2023, and the missing 2019.",
+    "limits": "Limits sit next to the numbers: window end and the 10-month gap, thin years, phrase match, and what the data cannot answer. It also says what would close the gap (expansion).",
+    "verdict": "Direct answer, decision, low confidence with a reason, and what would change it. It does not address the mouse-vs-human distinction.",
+    "facets": "Framing, trend and promising papers are grounded. Animal vs human evidence is not separated."
+   },
+   "B": {
+    "trend": "Memory series labelled as an estimate.",
+    "comparison": "Qualitative only.",
+    "chart": "Chart is labelled as an estimate.",
+    "drilldown": "Evidence layers come from memory, and the follow-ups did not execute.",
+    "export": "Estimate CSV only.",
+    "repro": "Memory only, labelled as such.",
+    "refs": "Only 1 of 6 references has an identifier. r5 and r6 are generic placeholders, so support cannot be checked.",
+    "accuracy": "Recalled specifics (Valles-Colomer, Zheng, Kelly) are correct and estimates are labelled. Nothing contradicts the record when it is read as a different corpus.",
+    "limits": "Specific about the memory gap and unmeasured shares, but has no data window.",
+    "verdict": "Reasonable answer that separates animal from human evidence, with low confidence. Not grounded in measured data.",
+    "facets": "All facets answered from memory."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "Declines to compare.",
+    "chart": "No chart.",
+    "drilldown": "Memory breakdown by evidence layer; the follow-ups failed.",
+    "export": "No export.",
+    "repro": "No numbers to trace.",
+    "refs": "Three real DOIs with year, venue, tier and the claim each supports. No quotes.",
+    "accuracy": "No contradictions and no fabrications.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "Clear answer and decision that separates animal from human evidence. Medium confidence is high for memory alone.",
+    "facets": "Memory only; the measured facets are explicitly not covered."
+   },
+   "D": {
+    "trend": "Traced chart and 0-to-20pp shift, with the early/late grouping flagged as undefined. The endpoint comparison uses thin single years, and it misses that 2023 orientation counts do not sum to the total.",
+    "comparison": "Promising 2 to 1 (ratio 0.5), with baseline and caveat stated, plus the contested-share delta.",
+    "chart": "Traced chart with window, unit, source and caption.",
+    "drilldown": "Contribution breakdown and papers with DOIs. 2 of 4 follow-ups executed.",
+    "export": "One traced CSV with provenance, but there is no documents table for the promising-studies facet. It claims blanks are kept, yet zeros are filled for orientation.",
+    "repro": "15/18 traced; ceiling 3.",
+    "refs": "Four resolving DOIs tied to claims, with tier and the title quoted. No contrary sources.",
+    "accuracy": "Values match the record and the 14/17 discrepancy is flagged. Calling the corpus 'large' as a reason for medium confidence is a misreading.",
+    "limits": "Window gap, coverage, phrase match and thin years are placed mostly inline.",
+    "verdict": "Answer and decision are given, but medium confidence is unjustified on 14 papers and the stated reason is wrong.",
+    "facets": "Framing, trend and promising papers are grounded. The mouse/human split is not addressed."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Volume series of about 150 to 4,000 per year is a memory estimate (labelled, unmeasured)"
+   ],
+   "C": [],
+   "D": [
+    "Confidence rationale says 'the supplied corpus is large' while the topic has 14 papers",
+    "Export says absent values are left blank, but zeros are written"
+   ]
+  },
+  "best": "A",
+  "verdict": "A and D both grounded their framing analysis in the recorded calls. A was more careful: it caught the anomaly where counts did not sum to totals, placed its limits next to the numbers, kept nulls as nulls, and calibrated confidence as low. D overstated confidence on a 14-paper base. B and C, answering from memory, correctly separated mouse transfer studies from human cohorts but could not measure framing or trends; C was the most honest about this, and B offered labelled estimates."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

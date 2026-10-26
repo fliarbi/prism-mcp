@@ -1,0 +1,573 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 549,
+  "charts": [
+   {
+    "id": "smr-interest",
+    "title": "Relative SMR research output index (2019=100)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "SMR publications, rough index",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "cfpp_price.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly share of critical vs promising SMR papers?",
+    "args": {
+     "term": "small modular reactor",
+     "from": "2019",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers are the strongest critical examples?",
+    "args": {
+     "term": "small modular reactor cost",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'small modular reactor cost' — try expand=true, or a broader phrase",
+    "seconds": 4.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers are the strongest promising examples?",
+    "args": {
+     "term": "small modular reactor",
+     "orientation": "promising",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 341, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7126211556\", \"title\": \"Optimization of Solid Oxide Electrolysis Cell for Hydrogen Production Powered by Small Modular Reactors using Artificial Intelligent\", \"authors\": [\"M. S. Elkhalafy\", \"M. A. Abd-Allah\", \"M. Elgabalawy\", \"Abdelrahman Said\"], \"venue\": null, \"year\": 2025, \"date\": \"2025-12-20\", \"doi\": \"10.1109/mepcon66918.2026.11360149\", \"url\": \"https://doi.org/10.1109/mepcon66918.2026.11360149\", \"cited_by\": 0, \"orientation\": \"promising\", \"contri"
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which years are thin in coverage?",
+    "args": {
+     "term": "small modular reactor"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'small modular reactor'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news framing compare with research?",
+    "args": {
+     "term": "small modular reactor"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'small modular reactor'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.statistics",
+    "question": "Does adding phrases like SMR or advanced reactor change the counts?",
+    "args": {
+     "term": "SMR OR advanced reactor"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...R OR advanced reactor'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='SMR OR advanced reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 13,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "100 — The chart below is an illustrative estimate, not measured counts. It shows my recollection",
+    "10 — - Window: memory through about 2025, so the gap to today (2026-10-23) is roughly 10+ month"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1091,
+  "charts": [
+   {
+    "id": "smr-positive-share",
+    "title": "Positive-framed share of SMR research papers by year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "positive_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "contested_pct",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "smr_orientation_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 63,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are the cautionary or problem-identifying ones in 2024?",
+    "args": {
+     "term": "small modular reactor",
+     "orientation": "cautionary",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 69, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4414805987\", \"title\": \"Assessment of potential proliferation risk of small modular reactors: Case study of Ghana and Nigeria\", \"authors\": [\"Simon Adu\", \"Craig M. Marianno\", \"Dany Mulyana\"], \"venue\": \"Journal of Radiation Research and Applied Sciences\", \"year\": 2025, \"date\": \"2025-10-04\", \"doi\": \"10.1016/j.jrras.2025.101978\", \"url\": \"https://doi.org/10.1016/j.jrras.2025.101978\", \"cited_by\": 1, \"orientation\": \"cautionary\", \"contribution\": \"empirical\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which critical papers exist (3 in the facet)?",
+    "args": {
+     "term": "small modular reactor"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'small modular reactor'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Do review papers lean differently from empirical ones?",
+    "args": {
+     "term": "small modular reactor",
+     "contribution": "review",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 106, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4417163063\", \"title\": \"ABOUT SOME PRACTICAL ASPECTS OF HANDLING WITH RADIOACTIVE WASTE FROM SMALL MODULAR REACTORS PARTICIPATING IN THE \\\"FIRST\\\" PROGRAM\", \"authors\": [\"Viktor Baklanov\", \"V. A. Pospelov\", \"Andrey Syssaletin\", \"Yu. Yu. Baklanova\"], \"venue\": \"NNC RK Bulletin\", \"year\": 2025, \"date\": \"2025-12-08\", \"doi\": \"10.52676/1729-7885-2025-4-168-177\", \"url\": \"https://doi.org/10.52676/1729-7885-2025-4-168-177\", \"cited_by\": 0, \"orientation\": \"comp"
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "What does news coverage say about SMR sentiment?",
+    "args": {
+     "term": "small modular reactor"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.1,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 6, \"positive\": 27, \"neutral\": 0, \"ratio\": 0.22}, {\"period\": \"2024-07-01\", \"negative\": 2, \"positive\": 39, \"neutral\": 0, \"ratio\": 0.05}, {\"period\": \"2024-08-01\", \"negative\": 1, \"positive\": 26, \"neutral\": 0, \"ratio\": 0.04}, {\"period\": \"2024-09-01\", \"negative\": 1, \"positive\": 48, \"neutral\": 1, \"ratio\": 0.02}, {\"period\": \"2024-10-01\", \"negative\": 6, \"positive\": 198, \"neutral\": 0, \"ratio\": 0.03}, {\"period\": \"2024-11-01\", \"negative\": 3, \"positive\": 52, \"neutral\": 0, \"ratio\": 0.06}, {\"period\": \"2024-12-01\", \"negative\": 5, \"positive\": 39, \"neutral\": 0, \"ratio\": 0.13}, {\"period\": \"2025-01-01\", \"negative\": 8, \"positive\": 44, \"neutral\": 0, \"ratio\": 0.18},"
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries drive the 2025 rise?",
+    "args": {
+     "term": "small modular reactor"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'small modular reactor'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.stance_trends",
+    "question": "Does widening the phrase set change the shares?",
+    "args": {
+     "term": "small modular reactor",
+     "expand": true
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"small modular reactor\", \"small modular nuclear reactor\", \"modular nuclear reactor\", \"advanced modular reactor\", \"small modular reactor deployment\"], \"points\": [{\"year\": 2017, \"total\": 343, \"orientation\": {\"problem_identifying\": 17, \"breakthrough\": 13, \"descriptive\": 41, \"promising\": 84, \"comparative\": 9, \"cautionary\": 10, \"critical\": 1}, \"stance_score\": null, \"positive\": 97, \"contested\": 28, \"positive_pct\": 28.3, \"contested_pct\": 8.2}, {\"year\": 2018, \"total\": 385, \"orientation\": {\"promising\": 85, \"comparative\": 10, \"problem_identifying\": 24, \"descriptive\": 47, \"cautionary\": 6, \"breakthrough\": 13, \"critical\": 1}, \"stance_score\": null, \"positive\":"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 73,
+   "traced": 72,
+   "derived": 2,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "828 — - Count mismatch: c1 gives 434 papers, while c2 reports 332 promising papers, 40.1% of the"
+   ]
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 365,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly orientation series for SMR research, with paper identifiers and a consistent stance rubric?",
+    "args": {
+     "term": "small modular reactor",
+     "orientation": "all"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How did promising and critical framing differ between the earliest and latest comparable periods, and which papers support each framing?",
+    "args": {
+     "term": "small modular reactor",
+     "orientation": "both"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'orientation': 'both'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='both', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "Which years have thin coverage, and how sensitive are yearly counts to expanded SMR terminology?",
+    "args": {
+     "term": "small modular reactor",
+     "include_phrase_expansion": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...hrase_expansion': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_phrase_expansion\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 83,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 806,
+  "charts": [
+   {
+    "id": "promising-trend",
+    "title": "Papers framed as promising on small modular reactors",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Promising papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "orientation-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 45,
+    "traced_share": 0.8444444444444444,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "framing-shift.csv",
+    "how": "call",
+    "rows": 1,
+    "numeric_cells": 3,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers in the early and late windows drive the framing shift?",
+    "args": {
+     "term": "small modular reactor",
+     "orientation": "cautionary",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 69, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4414805987\", \"title\": \"Assessment of potential proliferation risk of small modular reactors: Case study of Ghana and Nigeria\", \"authors\": [\"Simon Adu\", \"Craig M. Marianno\", \"Dany Mulyana\"], \"venue\": \"Journal of Radiation Research and Applied Sciences\", \"year\": 2025, \"date\": \"2025-10-04\", \"doi\": \"10.1016/j.jrras.2025.101978\", \"url\": \"https://doi.org/10.1016/j.jrras.2025.101978\", \"cited_by\": 1, \"orientation\": \"cautionary\", \"contribution\": \"empirical\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which individually identified papers are explicitly critical?",
+    "args": {
+     "term": "small modular reactor",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 3, \"papers\": [{\"id\": \"W4393180858\", \"title\": \"Simulation of Neutron Leakage Variations at Fuel Substitution in a Small Modular Reactor and Implications for Unattended Safeguards Monitoring\", \"authors\": [\"M. Preston\", \"Erik Branger\", \"Sophie Grape\", \"Olena Khotiaintseva\"], \"venue\": \"Nuclear Technology\", \"year\": 2024, \"date\": \"2024-03-26\", \"doi\": \"10.1080/00295450.2024.2304931\", \"url\": \"https://doi.org/10.1080/00295450.2024.2304931\", \"cited_by\": 0, \"orientation\": \"critical\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How does the annual orientation pattern change when the concept cluster is expanded?",
+    "args": {
+     "term": "small modular reactor",
+     "expand": true
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"small modular reactor\", \"small modular nuclear reactor\", \"modular nuclear reactor\", \"advanced modular reactor\", \"small modular reactor deployment\"], \"points\": [{\"year\": 2017, \"total\": 343, \"orientation\": {\"problem_identifying\": 15, \"cautionary\": 10, \"comparative\": 18, \"critical\": 1, \"descriptive\": 32, \"promising\": 72, \"breakthrough\": 16}, \"stance_score\": null, \"positive\": 88, \"contested\": 26, \"positive_pct\": 25.7, \"contested_pct\": 7.6}, {\"year\": 2018, \"total\": 385, \"orientation\": {\"comparative\": 9, \"promising\": 85, \"cautionary\": 6, \"breakthrough\": 13, \"descriptive\": 47, \"problem_identifying\": 24, \"critical\": 1}, \"stance_score\": null, \"positive\":"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "What publication-level evidence supports the cost and deployment claims in recent SMR papers?",
+    "args": {
+     "term": "small modular reactor cost deployment",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ployment', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='small modular reactor cost deployment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 25,
+   "traced": 16,
+   "derived": 1,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "296 — The calls cover 2017–2025, ending 31 December 2025; the gap to today, 23 October 2026, is "
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None, None]"
+  ],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 5,
+   "repro": 3,
+   "comparison": 3,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

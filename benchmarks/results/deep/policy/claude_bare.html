@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Decision briefing: sugar-sweetened beverages, obesity and type 2 diabetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f5f7;color:#1c1f26;line-height:1.4;font-size:14px}
+main{max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:4px 0}
+h2{font-size:17px;border-bottom:2px solid #123c69;padding-bottom:3px;margin-top:26px;color:#123c69}
+h3{font-size:14px;margin:12px 0 4px}
+.verdict{background:#fff;border-left:6px solid #b3261e;padding:10px 14px;margin:10px 0}
+.verdict p{margin:5px 0}
+.box{background:#fff;padding:10px 14px;margin:10px 0;border:1px solid #d9dce1}
+.limit{background:#fff8e1;border-left:4px solid #e0a800;padding:6px 10px;margin:8px 0;font-size:13px}
+.meas{border-left:4px solid #2e7d32;padding:2px 10px;margin:6px 0;background:#fff}
+.interp{border-left:4px solid #6a1b9a;padding:2px 10px;margin:6px 0;background:#fff}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:13px}
+th,td{border:1px solid #c9cdd3;padding:5px 7px;vertical-align:top;text-align:left}
+th{background:#e8edf3}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.chart{background:#fff;border:1px solid #d9dce1;padding:8px}
+.cap{font-size:12px;color:#444;margin-top:4px}
+code{background:#eef;padding:1px 3px}
+small{color:#555}
+</style>
+</head>
+<body>
+<main>
+<h1>Sugar-sweetened beverages, obesity and type 2 diabetes: decision briefing</h1>
+<small>Prepared for the Group of Secretaries (Environment, Health, Finance, Science and Technology, PMO). Prepared 2026-10-23. Built from published sources recalled from memory; no data queries were run, so the calls list is empty. Every figure is tagged [rN] (reference) or (est.). Figures marked (est.) were recalled, not retrieved, and must be checked against the cited source before they are relied on.</small>
+
+<section id="verdict" class="verdict">
+<h2 style="margin-top:0">Verdict</h2>
+<p><b>Answer:</b> Cohort evidence consistently links higher sugar-sweetened beverage (SSB) intake to higher type 2 diabetes risk: relative risk 1.26 for highest versus lowest intake [r1], and 1.13 per daily serving after adjusting for adiposity [r2]. India has a very large diabetes burden, 101 million adults [r4], but this briefing could not measure an India-specific SSB-diabetes effect or the effect of a tax.</p>
+<p><b>Decision supported:</b> Keep SSBs in the top consumption-tax tier (currently believed to be 40% (est.)), add front-of-pack warning labels, and fund India-specific measurement. Do not book diabetes reductions in the budget.</p>
+<p><b>Confidence:</b> Medium on direction of risk (consistent cohort meta-analyses [r1][r2]). Low on India-specific magnitude and on policy effect (no Indian effect estimate retrieved).</p>
+<p><b>What would change it:</b> Indian cohort estimates near 1.00 after adjustment, or evidence that taxes barely change purchases.</p>
+</section>
+
+<h2>What the data shows</h2>
+<div class="meas"><b>Measured (published estimates, not re-computed here):</b>
+<ul>
+<li>Meta-analysis of prospective cohorts: highest versus lowest SSB intake, type 2 diabetes relative risk 1.26 (95% CI 1.12 to 1.41) [r1].</li>
+<li>Meta-analysis of prospective cohorts: one serving per day, relative risk 1.18 (95% CI 1.06 to 1.32) before adjustment for adiposity, and 1.13 (95% CI 1.06 to 1.21) after [r2].</li>
+<li>India, adults: 101 million with diabetes (prevalence 11.4%) and 136 million with prediabetes (prevalence 15.3%), from the ICMR-INDIAB survey [r4] (est. for exact digits).</li>
+<li>Global modelled estimate: 184,000 deaths a year attributable to SSBs, of which 133,000 were diabetes, 45,000 cardiovascular and 6,000 cancer [r3] (est. for exact digits).</li>
+</ul></div>
+<div class="interp"><b>Interpretation (ours):</b> The drop from 1.18 to 1.13 after adiposity adjustment [r2] suggests that part of the effect runs through weight gain, and that SSBs act on diabetes both through and beyond obesity. Cohort studies cannot exclude residual confounding. Nothing retrieved here links SSB intake to diabetes within India.</div>
+<div class="limit"><b>Limit:</b> Newest sources: INDIAB (survey fieldwork to 2020, published 2023, gap to today about 3 years) [r4]; NCD-RisC (estimates for 2022, gap about 4 years) [r5]; IDF Atlas (2021, gap about 5 years) [r6]. Counts are published estimates, not our own queries.</div>
+
+<h2>Trend over time: research and news</h2>
+<div class="limit"><b>We cannot measure this.</b> No literature or news query was run, so papers per year, articles per month, growth factor, peak date and direction are not reported. Drawing a series from memory would be an invented figure, so none is drawn. The newest period of any such series must be marked as incomplete rather than shown as a collapse. Query to close the gap: see f1 and f2 under Drill-down.</div>
+
+<h2>India against the world</h2>
+<div class="chart"><div id="c_cmp"></div>
+<div class="cap"><b>Adults with diabetes, 2022, millions: India versus China.</b> Source [r5] (est.). Reading: India's count is about 1.4 times China's (212 / 148, both from [r5] (est.)), so India has the larger absolute burden.</div></div>
+<div class="limit"><b>Limit:</b> One scale and one window (adults, 2022, modelled counts). The baseline is China. Counts depend on population size; prevalence rates are not compared here. US, UK and a South Asian neighbour are not shown because I could not recall their values reliably. India's share and lift in research output, authorship and publishing were not measured (see f3).</div>
+
+<h2>Geography as a map</h2>
+<div class="limit"><b>No map is drawn.</b> Every lane (country an article is about; country of first-author affiliation; country of publishing journal; patent assignee country) is empty here, because no query was run and zero items could be placed on a country. A choropleth from memory would be invented. The map file <code>world_india_official.geojson</code> is available for the queries in f3 and f4.</div>
+
+<h2>Charts across dimensions</h2>
+<div class="grid">
+<div class="chart"><div id="c_evid"></div>
+<div class="cap"><b>Evidence magnitude: relative risk of type 2 diabetes from SSB intake.</b> Unit: relative risk, ratio. Window: studies published to 2015. Source [r1][r2]. Bars show the point estimate; lines show 95% CIs: 1.12 to 1.41 [r1], 1.06 to 1.32 and 1.06 to 1.21 [r2]. Reading: all three estimates exceed 1.00, and adjusting for adiposity lowers the per-serving risk from 1.18 to 1.13.</div></div>
+<div class="chart"><div id="c_comp"></div>
+<div class="cap"><b>Composition: modelled SSB-attributable deaths by cause, worldwide.</b> Unit: deaths per year. Window: modelled around 2010. Source [r3] (est.). Reading: diabetes accounts for 133,000 of 184,000 deaths [r3], about 72% (133,000 / 184,000), so it is the largest cause.</div></div>
+</div>
+<div class="limit"><b>Dimension coverage:</b> evidence magnitude, composition, comparison between countries, and time with forecast are shown. Geography, source mix and the literature/news trend are not shown, for the reasons given above. No two charts show the same quantity.</div>
+
+<h2>Forecast: adults with diabetes in India</h2>
+<div class="chart"><div id="c_fc"></div>
+<div class="cap"><b>Adults (20 to 79) with diabetes, India, millions.</b> Observed points: 72.9 (2017), 77.0 (2019), 74.2 (2021), all from [r6] (est.). Projection 2027 to 2029 is an <b>estimate</b>. Reading: the central path rises from 86.1 to 90.1 million (est.), with a wide band from 74.2 to 122.6 million (est.).</div></div>
+<div class="box">
+<ul>
+<li><b>Method (est.):</b> straight-line interpolation between the 2021 value (74.2 million [r6]) and the IDF projection for 2030 (92.1 million [r6] (est.)). Central 2027: 86.1, 2028: 88.1, 2029: 90.1 million (est.).</li>
+<li><b>Bounds (est.):</b> lower bound is no change from 2021 (74.2 million). Upper bound is the central path times 1.36, the ratio of INDIAB's 101 million [r4] to IDF's 74.2 million [r6] for the same year; this gives 117.1, 119.8 and 122.6 million. The bounds reflect disagreement between two sources, not a statistical interval.</li>
+<li><b>Baseline and backtest:</b> the no-change baseline was used as the lower bound. <b>No backtest was run</b>, so no error against a no-change baseline can be stated. The only in-sample check is a warning: IDF's own series fell from 77.0 to 74.2 million between 2019 and 2021 [r6] (est.), which reflects method revisions, not a real decline.</li>
+<li><b>Last observed period:</b> 2021, a gap of about 5 years to today (2026-10-23).</li>
+<li><b>Measures:</b> modelled counts of adults with diabetes (all causes). <b>Does not measure:</b> diabetes caused by SSBs, the effect of any policy, or type 1 diabetes separately.</li>
+</ul></div>
+
+<h2>The whole evidence base, connected</h2>
+<table>
+<tr><th>Source</th><th>What we have</th><th>What we do not have</th></tr>
+<tr><td>Research literature</td><td>Cohort meta-analyses with relative risks 1.26 [r1], 1.18 and 1.13 [r2].</td><td>Papers per year, India's share of papers or first authors: nothing queried.</td></tr>
+<tr><td>Clinical / health evidence</td><td>Direction: higher SSB intake, higher risk [r1][r2]. Largest per-serving effect before adjustment: 1.18 (CI 1.06 to 1.32) in pooled prospective cohort populations, mostly high-income settings [r2] (est. for population detail). Burden: 101 million adults with diabetes in India [r4].</td><td>An Indian SSB-diabetes effect size; randomised trials of hard diabetes outcomes.</td></tr>
+<tr><td>News record</td><td>Nothing: not queried.</td><td>Articles per month on SSBs, obesity or diabetes, by country.</td></tr>
+<tr><td>Patents</td><td>Nothing: not queried.</td><td>Patents on sweeteners or reformulation by assignee country; note patents publish with a lag of about 18 months (est.).</td></tr>
+</table>
+<div class="interp"><b>Connecting argument (ours):</b> The biological and epidemiological signal is consistent [r1][r2], and India's burden is among the largest in the world [r4][r5] (est.). But the evidence that links the two for India is absent from this briefing. India is therefore probably a place where the problem is large and the SSB-specific evidence is borrowed from elsewhere. Testing whether India is "reported but not studied" requires the lane comparison in f3, which has not been run.</div>
+
+<h2>Policy options</h2>
+<table id="policy-options">
+<thead><tr><th>Option</th><th>Who acts</th><th>Evidence</th><th>Cost / benefit</th><th>Trade-off</th><th>Indicator</th></tr></thead>
+<tbody>
+<tr><td>Status quo: keep SSBs in the top consumption-tax tier (believed 40% (est.)); no labels</td><td>Union Ministry of Finance (Department of Revenue) and the GST Council (Union and state finance ministers)</td><td>Risk direction established [r1][r2]; no Indian tax effect measured.</td><td>Not measured</td><td>No new cost, but no information for consumers, and no measurement of impact.</td><td>Adults with diabetes in India, modelled count ([r4], [r6]); update on each new survey or Atlas edition.</td></tr>
+<tr><td>A. Add mandatory front-of-pack warning labels on sugary drinks</td><td>FSSAI (statutory regulator under the Union Ministry of Health and Family Welfare)</td><td>Rationale: dose-response risk [r2]. No Indian labelling effect retrieved.</td><td>Not measured</td><td>Industry compliance cost and possible litigation; effect on diabetes unproven.</td><td>Share of sugary-drink products carrying a label, from FSSAI records (not in this briefing).</td></tr>
+<tr><td>B. Raise the tax on sugar content (volume-based excise)</td><td>Parliament and the GST Council; Ministry of Finance</td><td>WHO advocates SSB taxes [r7]; effect size on Indian purchases not measured.</td><td>Not measured (revenue and health benefit both unquantified)</td><td>Regressive burden on lower-income buyers; industry and employment effects; legal complexity of a sugar-content design.</td><td>Retail sales volume of sugary drinks, if obtainable; adult obesity prevalence ([r4]: generalised obesity 28.6% (est.)).</td></tr>
+<tr><td>C. Restrict sugary drinks in and near schools</td><td>State education departments; municipal bodies for local enforcement; FSSAI sets standards</td><td>Supports reducing early exposure; no Indian evidence retrieved.</td><td>Not measured</td><td>Narrow reach (school-age children only); enforcement burden on states.</td><td>Share of schools with compliant canteens, from state audits (not in this briefing).</td></tr>
+</tbody>
+</table>
+<div class="box">
+<p><b>Recommended option:</b> Status quo tax tier plus Option A (labels) plus a funded measurement programme (see f1 to f6). It follows from the verdict: the risk direction is consistent [r1][r2] but India's effect size is unmeasured, so low-cost, reversible steps are justified and a new tax rate is not yet. It also follows from the forecast: even the lowest path stays at 74.2 million (est.), and the upper path reaches 122.6 million (est.), so the burden stays large either way and measurement is worth funding.</p>
+<p><b>Strongest evidence against:</b> the association weakens after adjusting for adiposity (1.18 to 1.13 per serving [r2]) and rests on observational cohorts, so SSBs may explain only a small part of India's diabetes burden. Forecast disagreement between sources (74.2 [r6] versus 101 million [r4]) also shows we cannot attribute any change to any policy.</p>
+<p><b>Cost of being wrong:</b> not measured. If we act and the effect is small, the cost is compliance burden and some revenue distortion. If we do not act and the effect is real, the burden continues. Neither side has a traced figure.</p>
+<h3>What we do not know, and the query that would close each gap</h3>
+<ul>
+<li>How fast the literature and news have grown, and where they peak: f1, f2.</li>
+<li>Whether India is studied in proportion to its burden: f3.</li>
+<li>Whether industry patenting is moving toward reformulation: f4.</li>
+<li>The India-specific relative risk: f5.</li>
+<li>The effect of Indian taxation on purchases: f6.</li>
+</ul></div>
+
+<h2>Drill-down</h2>
+<h3>Key documents</h3>
+<table>
+<tr><th>Label</th><th>Identifier</th><th>Country / scope</th></tr>
+<tr><td>Malik 2010</td><td>doi:10.2337/dc10-1079</td><td>Meta-analysis, mainly US and European cohorts (est.)</td></tr>
+<tr><td>Imamura 2015</td><td>doi:10.1136/bmj.h3576</td><td>Meta-analysis, cohorts from several regions (est.)</td></tr>
+<tr><td>Singh 2015</td><td>doi:10.1161/CIRCULATIONAHA.114.010636</td><td>Global modelling, 51 countries including India (est.)</td></tr>
+<tr><td>Anjana 2023 (INDIAB)</td><td>doi:10.1016/S2213-8587(23)00119-5</td><td>India, states and union territories</td></tr>
+<tr><td>NCD-RisC 2024</td><td>doi:10.1016/S0140-6736(24)02317-1</td><td>Worldwide, country estimates</td></tr>
+</table>
+<div class="limit">Verbatim quotes are not given: the source texts were not available to me, and quoting from memory risks misquotation. The quote column in the exports is left empty for that reason.</div>
+<h3>Follow-up questions and exact queries (all not yet run)</h3>
+<ol>
+<li id="f1"><b>f1.</b> How many papers per year on SSBs and type 2 diabetes, over the last 15 complete years, and what is the growth factor and peak? Query in words: count papers per year whose title or abstract mentions "sugar-sweetened beverages" with "type 2 diabetes" in a bibliographic database such as Prism research index, with the current year marked incomplete.</li>
+<li id="f2"><b>f2.</b> Have news articles on SSBs and diabetes risen, by month, in the last 5 years? Query in words: count news articles per month mentioning the phrase and "diabetes" in a news archive, with the latest month marked incomplete.</li>
+<li id="f3"><b>f3.</b> What is India's share of studies, first-author affiliations and journals compared with China, the United States, the United Kingdom and Pakistan? Query in words: for the same papers as f1 and the same window, count by country of first-author affiliation and by country of the publishing journal, and report India's share and its ratio to each comparator, keeping lanes separate.</li>
+<li id="f4"><b>f4.</b> Are patents on sweeteners and reformulation rising, and who holds them? Query in words: count patent families per year on low-sugar beverage formulations by assignee country, noting the 18-month publication lag.</li>
+<li id="f5"><b>f5.</b> What is the SSB-diabetes relative risk in Indian cohorts? Query in words: search for prospective cohorts in India reporting SSB intake and incident type 2 diabetes, and extract adjusted hazard or relative risks.</li>
+<li id="f6"><b>f6.</b> How did Indian sugary-drink sales respond to the last tax change? Query in words: obtain monthly retail sales volumes of sugary drinks from industry or retail-panel data for the 24 months before and after the change, and compute the percentage change against a comparator category.</li>
+</ol>
+
+<h2>Exports (CSV)</h2>
+<div class="box">
+Files, generated from the manifest on this page: <span id="exportlinks"></span>
+<ul>
+<li><code>time_series_india_diabetes_idf.csv</code>: observed and projected adults with diabetes, India [r6]; coverage partial; exported 2026-10-23.</li>
+<li><code>country_table_diabetes_ncdrisc.csv</code>: India and China adults with diabetes, 2022 [r5]; coverage partial.</li>
+<li><code>key_documents.csv</code>: identifiers, relative risks and populations; quote column empty by design.</li>
+</ul></div>
+
+<h2>Method and limits</h2>
+<div class="limit">
+<ul>
+<li><b>Newest data and gap to today:</b> 2021 for IDF [r6] (about 5 years), 2022 for NCD-RisC [r5] (about 4 years), survey fieldwork to 2020 for INDIAB [r4] (about 6 years). Recent evidence after these dates is not included.</li>
+<li><b>What counts are:</b> published modelled estimates of adults with diabetes, not papers matching a phrase, articles about a place, or patents by assignee. Those three were not counted.</li>
+<li><b>Lanes:</b> where studied, where published, where reported and where patented are separate lanes and are never added together. All four are empty here.</li>
+<li><b>Coverage and thin evidence:</b> no Indian SSB-diabetes effect estimate; no Indian policy effect estimate. Closed by f5 and f6.</li>
+<li><b>Censored periods:</b> the latest year or month of any future literature or news series must be marked incomplete (f1, f2). Patents publish with a lag, so recent years undercount (f4).</li>
+<li><b>Recall risk:</b> figures marked (est.) were recalled and may differ in the last digit from the source. The team should verify each against its reference before the briefing.</li>
+</ul></div>
+
+<h2>References</h2>
+<ol id="reflist"></ol>
+<small>Each reference supports the claims above that carry its tag: [r1] relative risk 1.26; [r2] relative risks 1.18 and 1.13; [r3] 184,000 attributable deaths; [r4] 101 million adults with diabetes in India; [r5] country counts of adults with diabetes; [r6] observed series and 2030 projection; [r7] rationale for SSB taxation. Verbatim quotes are not provided, because the source texts were not available.</small>
+</main>
+
+<script type="application/json" id="report-manifest">
+{
+"verdict":{
+"answer":"Cohort evidence consistently links higher SSB intake to higher type 2 diabetes risk: relative risk 1.26 for highest vs lowest intake [r1], 1.13 per daily serving after adiposity adjustment [r2]. India has 101 million adults with diabetes [r4], but no India-specific SSB-diabetes effect or tax effect was measured.",
+"decision":"Keep SSBs in the top consumption-tax tier, add front-of-pack warning labels, and fund India-specific measurement; do not book diabetes reductions in the budget.",
+"confidence":"medium on direction of risk (consistent cohort meta-analyses); low on India-specific magnitude and policy effect (no Indian effect estimate retrieved)",
+"what_would_change":"Indian cohort estimates near 1.00 after adjustment, or evidence that taxes barely change purchases."
+},
+"charts":[
+{"id":"c_evid","kind":"hbar","title":"Relative risk of type 2 diabetes from SSB intake","unit":"relative risk (ratio)","window":{"from":"2010-01-01","to":"2015-12-31"},"x":{"field":"label","type":"ordinal"},
+"series":[{"name":"Relative risk","source":"ref:r1","points":[["Malik 2010: highest vs lowest intake",1.26],["Imamura 2015: per serving/day, before adiposity adjustment",1.18],["Imamura 2015: per serving/day, after adiposity adjustment",1.13]]}],
+"caption":"All three estimates exceed 1.00, and adjusting for adiposity lowers the per-serving risk from 1.18 to 1.13.",
+"supports":"Reading: all three estimates exceed 1.00, and adjusting for adiposity lowers the per-serving risk from 1.18 to 1.13."},
+{"id":"c_comp","kind":"share","title":"Modelled SSB-attributable deaths by cause, worldwide","unit":"deaths per year","window":{"from":"2010-01-01","to":"2010-12-31"},"x":{"field":"label","type":"ordinal"},
+"series":[{"name":"Attributable deaths (est.)","source":"ref:r3","points":[["Diabetes",133000],["Cardiovascular disease",45000],["Cancer",6000]]}],
+"caption":"Diabetes accounts for 133,000 of 184,000 deaths, about 72%.",
+"supports":"Reading: diabetes accounts for 133,000 of 184,000 deaths [r3], about 72% (133,000 / 184,000), so it is the largest cause."},
+{"id":"c_cmp","kind":"hbar","title":"Adults with diabetes, 2022: India vs China","unit":"millions of adults","window":{"from":"2022-01-01","to":"2022-12-31"},"x":{"field":"country","type":"ordinal"},
+"series":[{"name":"Adults with diabetes (est.)","source":"ref:r5","points":[["India",212],["China",148]]}],
+"caption":"India's count is about 1.4 times China's.",
+"supports":"Reading: India's count is about 1.4 times China's (212 / 148, both from [r5] (est.)), so India has the larger absolute burden."},
+{"id":"c_fc","kind":"forecast","title":"Adults (20 to 79) with diabetes, India: observed and projected","unit":"millions of adults","window":{"from":"2017-01-01","to":"2029-12-31"},"x":{"field":"year","type":"ordinal"},
+"series":[{"name":"Observed (IDF Atlas, est.)","source":"ref:r6","points":[[2017,72.9],[2019,77.0],[2021,74.2]]}],
+"forecast":{"method":"Linear interpolation between IDF 2021 value (74.2) and IDF 2030 projection (92.1); lower = no change from 2021; upper = central x 1.36 (INDIAB 101 / IDF 74.2). No backtest run. All values estimates.","source":"estimate","horizon":"2027 to 2029","points":[[2027,86.1,74.2,117.1],[2028,88.1,74.2,119.8],[2029,90.1,74.2,122.6]]},
+"caption":"The central path rises from 86.1 to 90.1 million (est.), with a wide band from 74.2 to 122.6 million (est.).",
+"supports":"Reading: the central path rises from 86.1 to 90.1 million (est.), with a wide band from 74.2 to 122.6 million (est.)."}
+],
+"exports":[
+{"name":"time_series_india_diabetes_idf.csv","source":"IDF Diabetes Atlas (r6), observed values recalled (est.); projection is our estimate","window":"2017..2029","unit":"millions of adults aged 20 to 79 with diabetes","coverage":"partial","csv":"year,type,central,lower,upper,source,export_date\n2017,observed,72.9,,,r6 (est.),2026-10-23\n2019,observed,77.0,,,r6 (est.),2026-10-23\n2021,observed,74.2,,,r6 (est.),2026-10-23\n2027,projection,86.1,74.2,117.1,estimate,2026-10-23\n2028,projection,88.1,74.2,119.8,estimate,2026-10-23\n2029,projection,90.1,74.2,122.6,estimate,2026-10-23"},
+{"name":"country_table_diabetes_ncdrisc.csv","source":"NCD-RisC 2024 (r5), values recalled (est.)","window":"2022..2022","unit":"millions of adults with diabetes","coverage":"partial","csv":"country,iso3,adults_with_diabetes_millions,lane,export_date\nIndia,IND,212,adults with diabetes by country of residence,2026-10-23\nChina,CHN,148,adults with diabetes by country of residence,2026-10-23\nUnited States,USA,,not recalled,2026-10-23\nUnited Kingdom,GBR,,not recalled,2026-10-23\nPakistan,PAK,,not recalled,2026-10-23"},
+{"name":"key_documents.csv","source":"References r1 to r5","window":"2010..2024","unit":"relative risk or count as stated","coverage":"partial","csv":"label,identifier,key_figure,population,verbatim_quote,export_date\nMalik 2010,doi:10.2337/dc10-1079,RR 1.26 (CI 1.12-1.41) highest vs lowest SSB intake,prospective cohorts,,2026-10-23\nImamura 2015,doi:10.1136/bmj.h3576,RR 1.18 (CI 1.06-1.32) per serving/day; 1.13 (CI 1.06-1.21) after adiposity adjustment,prospective cohorts,,2026-10-23\nSingh 2015,doi:10.1161/CIRCULATIONAHA.114.010636,184000 attributable deaths per year (133000 diabetes),global model,,2026-10-23\nAnjana 2023,doi:10.1016/S2213-8587(23)00119-5,101 million adults with diabetes in India,Indian adults,,2026-10-23\nNCD-RisC 2024,doi:10.1016/S0140-6736(24)02317-1,India 212 million adults with diabetes in 2022,worldwide adults,,2026-10-23"}
+],
+"calls":[
+{"id":"f1","question":"Papers per year on SSBs and type 2 diabetes, growth factor and peak","feature":"words","args":"Count papers per year mentioning 'sugar-sweetened beverages' and 'type 2 diabetes' in a bibliographic database, last 15 complete years, current year marked incomplete"},
+{"id":"f2","question":"News articles per month on SSBs and diabetes","feature":"words","args":"Count news articles per month mentioning the phrase and 'diabetes' in a news archive, last 5 years, latest month marked incomplete"},
+{"id":"f3","question":"India's share of research by first-author country and journal country vs China, US, UK, Pakistan","feature":"words","args":"For the f1 papers, count by country of first-author affiliation and by journal country, separately; report India's share and ratio to each comparator"},
+{"id":"f4","question":"Patents on low-sugar beverage formulation by assignee country","feature":"words","args":"Count patent families per year by assignee country, noting 18-month publication lag"},
+{"id":"f5","question":"India-specific SSB-diabetes relative risk","feature":"words","args":"Search prospective Indian cohorts reporting SSB intake and incident type 2 diabetes; extract adjusted risk ratios"},
+{"id":"f6","question":"Effect of Indian tax change on sugary drink sales","feature":"words","args":"Monthly retail sales volume of sugary drinks, 24 months before and after the change, against a comparator category"}
+],
+"references":[
+{"id":"r1","title":"Sugar-sweetened beverages and risk of metabolic syndrome and type 2 diabetes: a meta-analysis","venue":"Diabetes Care","year":2010,"doi_or_url":"https://doi.org/10.2337/dc10-1079"},
+{"id":"r2","title":"Consumption of sugar sweetened beverages, artificially sweetened beverages, and fruit juice and incidence of type 2 diabetes: systematic review, meta-analysis, and estimation of population attributable fraction","venue":"BMJ","year":2015,"doi_or_url":"https://doi.org/10.1136/bmj.h3576"},
+{"id":"r3","title":"Global, regional, and national consumption of sugar-sweetened beverages, fruit juices, and milk, and estimated burden of disease (SSB-attributable deaths)","venue":"Circulation","year":2015,"doi_or_url":"https://doi.org/10.1161/CIRCULATIONAHA.114.010636"},
+{"id":"r4","title":"Metabolic non-communicable disease health report of India: the ICMR-INDIAB national cross-sectional study","venue":"The Lancet Diabetes & Endocrinology","year":2023,"doi_or_url":"https://doi.org/10.1016/S2213-8587(23)00119-5"},
+{"id":"r5","title":"Worldwide trends in diabetes prevalence and treatment from 1990 to 2022","venue":"The Lancet (NCD Risk Factor Collaboration)","year":2024,"doi_or_url":"https://doi.org/10.1016/S0140-6736(24)02317-1"},
+{"id":"r6","title":"IDF Diabetes Atlas, 10th edition","venue":"International Diabetes Federation","year":2021,"doi_or_url":"https://diabetesatlas.org"},
+{"id":"r7","title":"Taxes on sugary drinks: Why do it?","venue":"World Health Organization","year":2017,"doi_or_url":"https://www.who.int/publications/i/item/WHO-NMH-PND-16.5"}
+]
+}
+</script>
+
+<script>
+(function(){
+var M = JSON.parse(document.getElementById('report-manifest').textContent);
+function ch(id){ return M.charts.filter(function(c){return c.id===id;})[0]; }
+function opts(){ return {actions:false}; }
+
+// references
+var rl = document.getElementById('reflist');
+M.references.forEach(function(r){
+  var li = document.createElement('li');
+  li.innerHTML = '['+r.id+'] '+r.title+'. <i>'+r.venue+'</i>, '+r.year+'. <a href="'+r.doi_or_url+'">'+r.doi_or_url+'</a>';
+  rl.appendChild(li);
+});
+
+// exports
+var el = document.getElementById('exportlinks');
+M.exports.forEach(function(e){
+  var a = document.createElement('a');
+  a.textContent = e.name; a.style.marginRight='10px';
+  a.href = URL.createObjectURL(new Blob([e.csv],{type:'text/csv'}));
+  a.download = e.name;
+  el.appendChild(a);
+});
+
+// evidence magnitude
+var ci = {"Malik 2010: highest vs lowest intake":[1.12,1.41],
+"Imamura 2015: per serving/day, before adiposity adjustment":[1.06,1.32],
+"Imamura 2015: per serving/day, after adiposity adjustment":[1.06,1.21]};
+var c1 = ch('c_evid');
+var d1 = c1.series[0].points.map(function(p){return {label:p[0],rr:p[1],lo:ci[p[0]][0],hi:ci[p[0]][1]};});
+vegaEmbed('#c_evid',{
+ $schema:'https://vega.github.io/schema/vega-lite/v5.json',
+ title:c1.title+' ('+c1.unit+')', width:420, height:150,
+ data:{values:d1},
+ encoding:{y:{field:'label',type:'nominal',title:null,sort:null,axis:{labelLimit:260}}},
+ layer:[
+  {mark:{type:'bar',color:'#123c69'},encoding:{x:{field:'rr',type:'quantitative',title:'Relative risk',scale:{domain:[1,1.5]}}}},
+  {mark:{type:'rule',color:'#b3261e',strokeWidth:3},encoding:{x:{field:'lo',type:'quantitative'},x2:{field:'hi'}}}
+ ]},opts());
+
+// composition
+var c2 = ch('c_comp');
+var d2 = c2.series[0].points.map(function(p){return {cause:p[0],deaths:p[1]};});
+vegaEmbed('#c_comp',{
+ $schema:'https://vega.github.io/schema/vega-lite/v5.json',
+ title:c2.title+' ('+c2.unit+')', width:360, height:150,
+ data:{values:d2},
+ mark:{type:'bar'},
+ encoding:{y:{field:'cause',type:'nominal',title:null,sort:null},
+  x:{field:'deaths',type:'quantitative',title:'Deaths per year (est.)'},
+  color:{field:'cause',type:'nominal',legend:null}}},opts());
+
+// comparison
+var c3 = ch('c_cmp');
+var d3 = c3.series[0].points.map(function(p){return {country:p[0],millions:p[1]};});
+vegaEmbed('#c_cmp',{
+ $schema:'https://vega.github.io/schema/vega-lite/v5.json',
+ title:c3.title+' ('+c3.unit+')', width:600, height:90,
+ data:{values:d3},
+ mark:{type:'bar',color:'#2e7d32'},
+ encoding:{y:{field:'country',type:'nominal',title:null,sort:null},
+  x:{field:'millions',type:'quantitative',title:'Millions of adults (est.)'}}},opts());
+
+// forecast
+var c4 = ch('c_fc');
+var obs = c4.series[0].points.map(function(p){return {year:p[0],v:p[1]};});
+var fc = c4.forecast.points.map(function(p){return {year:p[0],c:p[1],lo:p[2],hi:p[3]};});
+vegaEmbed('#c_fc',{
+ $schema:'https://vega.github.io/schema/vega-lite/v5.json',
+ title:c4.title+' ('+c4.unit+')', width:900, height:260,
+ layer:[
+  {data:{values:fc},mark:{type:'area',opacity:0.25,color:'#b3261e'},
+   encoding:{x:{field:'year',type:'quantitative',axis:{format:'d',tickMinStep:1},title:'Year'},y:{field:'lo',type:'quantitative',title:'Millions of adults',scale:{domain:[60,130]}},y2:{field:'hi'}}},
+  {data:{values:fc},mark:{type:'line',color:'#b3261e',strokeDash:[6,3]},
+   encoding:{x:{field:'year',type:'quantitative'},y:{field:'c',type:'quantitative'}}},
+  {data:{values:obs},mark:{type:'line',color:'#123c69',point:true},
+   encoding:{x:{field:'year',type:'quantitative'},y:{field:'v',type:'quantitative'}}}
+ ]},opts());
+})();
+</script>
+</body>
+</html>

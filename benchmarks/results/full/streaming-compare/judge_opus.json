@@ -1,0 +1,178 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 2,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full 24-month traced series for all three terms with the window stated. The Apr-26 vs Jun-24 multiples and the Apr-2026 peak are exact. The critical decomposition is added, but one critical-peak claim is wrong.",
+    "comparison": "Ratios and deltas recompute exactly and the overlap caveat is carried. The share-shift computation (Netflix -3.4pt, Prime +2.8pt) directly answers the challenger-growth contrast.",
+    "chart": "Traced monthly line for all three terms and a critical-share bar chart, each with a caption and claim. Critical share is not overlaid over time.",
+    "drilldown": "One traced layer (month × tone bucket). Only 1/6 follow-ups executed OK; nothing was folded back.",
+    "export": "Two traced CSVs with provenance attributes and a provenance JSON. Column renames are not documented.",
+    "repro": "76/77 numbers trace and the calls block has args. The 145-day gap is off by one (it is 144) and the 107.1% figure is untagged.",
+    "accuracy": "Says Prime Video's critical share 'peaked at 12.5% in Jan 2026', but July 2024 was 13.5%. Gap is 145 vs 144 days. Otherwise exact, and May 2026 is read correctly as not partial.",
+    "limits": "Window end, 144-day gap, censoring, match mode, overlap and attention-not-importance are each placed next to the numbers. States what follow-ups would close the gaps.",
+    "verdict": "Direct answer, decision, medium confidence with reason, and what would change it; names Netflix's critical skew. The verdict itself does not state the window end.",
+    "facets": "Totals, shares, trend, growth, tone/critical and most_covered are covered. Overlap is flagged as unmeasured."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "Memory index explicitly called illustrative and estimated; qualitative at best.",
+    "chart": "No chart.",
+    "drilldown": "Plan only; 0/6 follow-ups ran.",
+    "export": "Empty plan CSV labelled estimate.",
+    "repro": "Only labelled estimates.",
+    "accuracy": "Its estimate index (Disney+ 60, Prime 45) diverges from the near-parity in the record. It is labelled a guess, not a fact.",
+    "limits": "Specific about what is unmeasured, including Prime/Disney+ match ambiguity.",
+    "verdict": "Honest low-confidence non-answer.",
+    "facets": "Nothing grounded."
+   },
+   "C": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic follow-ups; 1/5 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "States it has no data, but gives few specific limits.",
+    "verdict": "Refusal, oddly with 'high' confidence.",
+    "facets": "None answered."
+   },
+   "D": {
+    "trend": "Prose and chart give only first/last points although the full series was available. Netflix growth is stated as +117.9% where the data gives 118.0%.",
+    "comparison": "Exact ratios and deltas with the overlap caveat. Does not address the share or challenger growth contrast beyond the endpoints.",
+    "chart": "Two-point line of endpoints only; no tone view.",
+    "drilldown": "0/4 follow-ups ran; no traced breakdown layer.",
+    "export": "One traced monthly CSV with provenance. Coverage is wrongly flagged as partial; column renames are not documented.",
+    "repro": "30/30 numbers trace and the calls block has args and window.",
+    "accuracy": "Misreads censoring: treats May 2026 as the censored partial month, but censored_at is 2026-06-01 and May has partial_period=false. It then excludes May on that basis.",
+    "limits": "Gives the window, 144-day gap, match mode and double counting. The censoring limit is misapplied.",
+    "verdict": "Answer, decision, confidence and what would change it are all present. Names no contrary evidence, such as the May drop or Netflix's critical share.",
+    "facets": "Tone and critical fields are reported but not compared; no share-shift reading."
+   }
+  },
+  "errors": {
+   "A": [
+    "Prime Video critical_pct peak stated as 12.5% (Jan 2026); the actual maximum is 13.5% (Jul 2024)",
+    "Gap to today stated as 145 days; it is 144"
+   ],
+   "B": [
+    "Estimated index Disney+ 60 / Prime 45 conflicts with the record's near parity (103,301 vs 99,892), though labelled an estimate"
+   ],
+   "C": [],
+   "D": [
+    "Treats May 2026 as the censored partial month; the record censors from 2026-06-01 and marks May partial_period=false",
+    "Netflix growth +117.9% should be +118.0%"
+   ]
+  },
+  "best": "A",
+  "verdict": "A gives the decision-maker the full traced monthly series for all three services. It also computes the share shift that actually tells the challenger story: Prime Video gains about 2.8 points while Netflix slips 3.4. It adds a critical-share contrast, with only a minor critical-peak slip. D's numbers trace, but it reduces the trend to two endpoints and misreads the censoring rule. B and C measured nothing, and B's estimate index points the wrong way on Disney+ vs Prime."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 2,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

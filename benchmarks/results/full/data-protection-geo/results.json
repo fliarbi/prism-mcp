@@ -1,0 +1,219 @@
+{
+ "slug": "data-protection-geo",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 27.9,
+   "plain": 27.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.4,
+    "gpt": 31.5
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 2.0,
+    "chart": 0.0,
+    "drilldown": 3.5,
+    "export": 3.5,
+    "repro": 4.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 2.5,
+    "facets": 4.0
+   },
+   "strict": 55.2,
+   "plain": 55.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 60.7,
+    "gpt": 49.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 0.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 0.5
+   },
+   "strict": 27.9,
+   "plain": 27.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.2,
+    "gpt": 33.7
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 4.0,
+    "chart": 0.0,
+    "drilldown": 2.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 64.4,
+   "plain": 64.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 63.9,
+    "gpt": 64.9
+   }
+  }
+ },
+ "judge_mad": 0.58,
+ "verdicts": {
+  "opus": "A and B both ground every number in the two calls and keep the lanes separate. B makes the sharper studied-vs-reported contrast but carries a false coverage=full label, an untraced row-floor figure and a placeholder chart window. A is narrower but clean, so it is the safer decision document. C and D honestly decline to measure, but D also misreads placed_pct and wrongly declares the patent lane empty.",
+  "gpt": "C is the strongest decision aid: it gives traceable research and news leaders, distinguishes author affiliation from journal location and article subject, and puts placement coverage and timing limits near the numbers. D offers richer drill-downs and exports, but its headline 86.7% comparison and chart combine incompatible news and research slices, so they cannot support a reliable decision."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Attributes the do-not-add caveat to c1 text that is not visible in the reference record (minor)"
+   ],
+   "claude_prism": [
+    "news CSV coverage=full contradicts placed_pct 25.0%",
+    "'row-floor check at 107.1%' is not in the reference",
+    "Chart window borrowed from c2 for c1-derived data"
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "placed_pct misdefined as share placed in a country's outlets",
+    "Patent origin asserted as explicitly empty; the reference has US 10, KR 6, DE 4 and 4 blank"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Says patent-origin rows are explicitly empty; reference c1 returns US 10, KR 6, four blank-country and DE 4 patents."
+   ],
+   "chatgpt_prism": [
+    "Describes the c2 news window as ending 2026-05-01 inclusive; the recorded window ends exclusively at 2026-06-01 and is censored there, with enrichment bound 2026-05-01."
+   ],
+   "claude_prism": [
+    "Calls US news 86.7% of listed articles from c1 and compares it with research shares as a mismatch finding, while c2 reports US share_pct 29.6% for a different term and window; the cross-lane comparison is not on one scale/window.",
+    "Uses c2's window as the chart window for c1 research rows even while acknowledging research has no stated window.",
+    "Infers countries absent from a truncated top-12 news list have fewer than 67 articles, which the source does not establish."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "comparison": "Within-lane ratios recompute exactly (24/19=1.26x, 30974/11412=2.71x, delta 19,562). Says not to add lanes. It only obliquely contrasts studied vs reported.",
+    "chart": "No chart block.",
+    "drilldown": "One traced country layer. Only 1 of 5 follow-ups executed ok. No item-level identifiers.",
+    "export": "Two traced CSVs with window, unit, coverage=partial and a provenance JSON. The blank patent country is kept as blank and the CSVs are referenced from the prose.",
+    "repro": "37/37 numbers traced. The prism-calls block has args and the windows are stated. Derived numbers are recomputable.",
+    "accuracy": "Reads fields correctly: placed_pct 25%, lift is not volume, journal country is not study site. It cautions on high-lift rows but does not name Colombia as a likely acronym collision.",
+    "limits": "Window, censoring, the 5-month gap to today, lanes, placement coverage and the missing research window are stated next to the numbers.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It ignores the strongest contrary evidence in its own data: European countries collectively dominate authorship rows.",
+    "facets": "Covers authorship, publication, news with placed_pct, patents and do-not-add. The mismatch is addressed only through relative gaps."
+   },
+   "claude_prism": {
+    "comparison": "Share-of-listed-rows contrast recomputes (86.7/24.5=3.5x, etc.) and states the denominator caveat. It directly answers studied vs reported and flags the unreconciled 86.7% vs 29.6%.",
+    "chart": "The chart's window is a placeholder borrowed from c2 for c1 data. Ceiling is 0.",
+    "drilldown": "Five of six follow-ups executed ok. Layers stop at lane and country, with no item-level identifiers.",
+    "export": "Five traced CSVs plus provenance. geo_news_term.csv is labelled coverage=full even though placed_pct is 25%, which is a hygiene error.",
+    "repro": "136/137 numbers traced. The prism-calls block and windows are given. Derived sums and shares are recomputable.",
+    "accuracy": "Mislabels news coverage as full. The '107.1% row-floor check' does not appear in the reference. The chart window is fabricated for schema purposes, though disclosed.",
+    "limits": "Rich, placed limits: the 175-day gap, enrichment bound, match mode, the health literature index's weak coverage of law journals, and listed-row truncation. The coverage label contradicts these.",
+    "verdict": "Clear answer that addresses the mismatch, with decision, confidence and conditions. Capped at 3 by the script ceiling.",
+    "facets": "All lanes, the mismatch with values, and India's presence in news but not research. The GDPR vs DPDP framing itself is not grounded."
+   },
+   "chatgpt_bare": {
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Only failing follow-up calls.",
+    "export": "None.",
+    "repro": "No numbers. Honest but not reproducible.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Declines to answer.",
+    "facets": "No facets answered."
+   },
+   "claude_bare": {
+    "comparison": "Qualitative hypotheses only.",
+    "chart": "None.",
+    "drilldown": "Layers are named generically. Only 1 of 6 follow-ups executed ok.",
+    "export": "Empty stub labelled estimate.",
+    "repro": "Untagged figure and no traced calls.",
+    "accuracy": "Misdefines placed_pct as 'placed in a country's outlets'. Asserts the patent lane is empty, but the reference has 24 patents.",
+    "limits": "Honest about being unmeasured.",
+    "verdict": "Gives a hypothesis from memory with low confidence.",
+    "facets": "Answered from memory only."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "comparison": "No numeric comparison; its proposed calls are unexecuted and do not match the recorded call arguments.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are listed, but none executed with non-empty results and several use unsupported arguments or features.",
+    "export": "No CSV export.",
+    "repro": "The deliverable is explicitly unmeasured and contains no numeric claims to reproduce; calls lack the recorded arguments and no results are supplied.",
+    "accuracy": "It avoids asserting unsupported measurements and correctly says patent data availability cannot be established from its materials.",
+    "limits": "It identifies missing windows, lanes, coverage and censoring, but does not report the applicable recorded limits because it has no retrieved data.",
+    "verdict": "Direct answer, decision, low confidence and conditions are stated, but no evidence supports a geographic answer.",
+    "facets": "It grounds none of the requested geography facets in values or a source-backed no-data result."
+   },
+   "claude_bare": {
+    "comparison": "Only a proposed comparison; no numeric contrast is measured.",
+    "chart": "No chart block.",
+    "drilldown": "The layers are generic and the proposed calls mostly fail or are off-topic; only one follow-up executed successfully.",
+    "export": "The empty schema stub is not a traced export and has no source call.",
+    "repro": "One numeric claim (GDPR date) is untagged and the calls block has no executed source results.",
+    "accuracy": "It correctly labels its geographic statements as hypotheses, but asserts patents are explicitly empty when the reference has four patent rows, including a blank-country row.",
+    "limits": "Specific caveats are detailed, but the claim of an empty patent result contradicts the available record and the stated geography remains unmeasured.",
+    "verdict": "It gives a cautious decision and conditions, but no measured evidence supports its geographic hypothesis.",
+    "facets": "Most geographic facets are hypotheses or absent rather than grounded values or a source-backed no-data result."
+   },
+   "chatgpt_prism": {
+    "comparison": "The within-lane US-to-UK ratios recompute and are traced; it keeps research and news scales separate and identifies their distinct meanings, though it does not directly compare study share with news share.",
+    "chart": "No chart block.",
+    "drilldown": "It supplies traced country rows and call identifiers, but follow-ups are largely off-topic or fail; only one of five returns on-topic non-empty data.",
+    "export": "The CSVs are referenced and mostly trace, but the research export omits source field names/definitions and the news export omits provenance fields such as placed coverage and captured date; research window is unknown.",
+    "repro": "All listed calls and windows are given and almost all numeric claims trace; the research/news exports and derived comparisons can largely be regenerated, but research has no stated window and not every derived number is fully attributable.",
+    "accuracy": "The main rankings and field meanings match the record, but it calls the news window complete through 2026-05-01 despite censoring and enrichment lag, and its comparison is not a same-window cross-lane test.",
+    "limits": "It places window, censoring, placement coverage, lane definitions and key unknowns beside the figures; it notes the five-month gap and country-resolution cautions.",
+    "verdict": "Direct answer, decision, confidence, change conditions and contrary lane distinctions are stated, with bounds; the proposed decision to focus on US and UK is supported by both rankings.",
+    "facets": "It covers research authorship/publication, news geography, placement coverage, patent rows, lane mismatch and country-resolution caveats with grounded values or explicit limits."
+   },
+   "claude_prism": {
+    "comparison": "The central cross-lane shares use different lists and windows, and the 86.7% claim conflicts with the separate term-level 29.6% share; the author acknowledges but does not resolve this mismatch.",
+    "chart": "The chart invents a common window for research and news series and its news percentages (86.7%, 4.9%, etc.) are listed-row shares from c1, not the c2 news series it purports to compare; chart values also depend on mismatched denominators.",
+    "drilldown": "It exposes multiple traced layers with country and lane identifiers and five of six follow-ups executed successfully, though the returned follow-up results are not folded into the report.",
+    "export": "The needed lane CSVs are referenced, trace to calls and preserve the blank patent row; provenance is present, but research exports lack explicit window/coverage and news coverage is mislabeled full despite 25% placement.",
+    "repro": "Calls, arguments and capture date are supplied and nearly all numeric claims trace, but one number is untraced and the chart's fabricated shared window prevents faithful regeneration.",
+    "accuracy": "It presents 86.7% US news share as a cross-lane finding from the c1 listed rows despite c2 reporting 29.6% for a different term/window; it also derives unsupported ‘under’ comparisons from absence in a truncated top-12 list.",
+    "limits": "It identifies many relevant limits, but fails to keep them attached to the main cross-lane comparison and chart, which present incompatible windows and denominators as a mismatch measure.",
+    "verdict": "The answer and decision rely on the unresolved, internally conflicting 86.7% figure; confidence and conditions do not repair that contradiction.",
+    "facets": "It addresses the implied research/news distinction, multiple geography lanes, coverage, overlap limits and explicit unknowns with source-backed information, despite misreading the comparison."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

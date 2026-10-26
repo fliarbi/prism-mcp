@@ -1,0 +1,172 @@
+{
+ "slug": "ai-regulation-pulse",
+ "claude_live": {
+  "text": "**Direct answer:** Coverage of AI regulation is rising, heavily negative, and centred on the US, UK and China. It is framed mainly as ethics and tech policy. The data stops at 31 May 2026. June onward is too thinly ingested to read.\n\n**What the data shows** (Prism news corpus, 1 Jun 2024 – 31 May 2026, term \"AI regulation\", mention match)\n- **Volume:** 4,069 articles. Monthly volume rose from 113 (Jun 2024) to 256 (May 2026, the peak). That is about 53% compound annual growth, and the late third of the window ran 1.46× the early third.\n- **Tone:** 57.1% negative against 41.0% positive. The negative-to-positive ratio is 1.39, against a corpus baseline of 0.58, so about 2.4× more negative than ordinary news. 3,638 articles (89%) are flagged critical.\n- **Countries:** Geography covers only 36.7% of articles (May 2024 – Apr 2026). Of those placed, the US has 28.4%, the UK 9.4%, China 9.0%, Colombia 4.8%, India 4.8%, France 3.9%, Canada 2.8% and Australia 2.5%. Colombia is over-indexed (lift 9.9) and Belgium's lift is 4.4. Place labels can mis-resolve, so treat those two cautiously.\n- **Themes (lift-ranked):** Ethical considerations in AI development are 21.3% of articles that carry a subcategory label. Tech policy and government regulation is 13.7% and data-privacy regulation 6.4%. Top categories are business 22%, technology 20% and politics 20%.\n- **Actors:** The most-linked organisations are OpenAI (326 articles), Meta (193) and the European Parliament (84). The most-mentioned people are Gavin Newsom (82) and Scott Wiener (34).\n- **Critical stories (Feb–May 2026):**\n  - Trump scrapped an AI executive order on 21 May, and Politico reported a split among White House staff.\n  - The EU agreed in early May to weaken or delay AI Act high-risk obligations, with a deadline of December 2027.\n  - Sam Altman called for urgent regulation and a global watchdog at the India AI Impact Summit (Feb 2026).\n  - Industry money is flowing into the 2026 US midterms.\n\n**Interpretation (mine)**\n- The US federal retreat and the EU softening are probably what drives the rising negative tone, but I did not test that causally.\n- The \"critical\" flag is very broad. At 89%, it separates little.\n- The US and UK lead partly because the corpus favours English-language sources.\n\n**Caveats:** Only about a third of the articles carry a place label. Publisher spread is wide: no outlet exceeds 4.7% of the sampled articles.",
+  "seconds": 163.9,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {},
+    "ok": false,
+    "chars": 78
+   },
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "AI regulation"
+    },
+    "ok": true,
+    "chars": 40090
+   },
+   {
+    "tool": "freshness_status",
+    "args": {},
+    "ok": true,
+    "chars": 735
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "AI regulation coverage is led by the United States, with China and the UK the next most covered countries. The main frame is political and commercial: who sets the rules, and how those rules affect technology and business.\n\n**What Prism’s data shows — 22 Oct 2025–31 May 2026:** It matched 1,591 articles to “AI regulation.” Country labels were available for 27.6% of 1,339 matched articles, so the country ranking is partial: United States 284, China 95, UK 86, India 51; Colombia and France 30 each. [Prism country coverage](https://prism)\n\nAmong labelled coverage, politics appeared in 1,045 articles, business in 1,077, technology in 850, and social issues in 654; categories overlap. [Prism themes](https://prism) Specific recurring themes included AI policy and government rules, ethics, and data privacy.\n\nCritical stories in the window include the US debate over restricting states’ power to regulate AI ([December executive order coverage](https://www.yahoo.com/news/articles/trump-says-hell-sign-executive-143924071.html)), India’s AI Impact Summit and calls for global oversight ([summit coverage](https://www.digit.in/news/general/india-ai-impact-summit-2026-openai-ceo-sam-altman-calls-for-global-ai-watchdog-as-superintelligence-nears.html)), and reported plans for stricter Indian rules on deepfakes and cybersecurity ([India coverage](https://www.startuptalky.com/news/india-govt-considers-stricter-ai-governance/)).\n\n**Interpretation:** The coverage suggests a two-track story: US federal–state conflict over regulatory authority, alongside broader debate about national rules, privacy, ethics, and coordination. The country labels cover only a subset, and Prism’s news ingest becomes sparse after May 2026; this is a bounded snapshot, not a full account through today.",
+  "seconds": 311.0,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "level": "country",
+     "limit": 15
+    },
+    "ok": true,
+    "chars": 6441
+   },
+   {
+    "tool": "news_themes",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "limit": 15
+    },
+    "ok": true,
+    "chars": 17232
+   },
+   {
+    "tool": "news_entities",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "kind": "country",
+     "limit": 15
+    },
+    "ok": true,
+    "chars": 13821
+   },
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "granularity": "month"
+    },
+    "ok": true,
+    "chars": 71245
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "AI regulation",
+     "days": 365,
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 18067
+   },
+   {
+    "tool": "freshness_status",
+    "args": {},
+    "ok": true,
+    "chars": 1709
+   },
+   {
+    "tool": "news_geography",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "level": "country",
+     "limit": 12
+    },
+    "ok": true,
+    "chars": 5993
+   },
+   {
+    "tool": "news_themes",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "limit": 12
+    },
+    "ok": true,
+    "chars": 14834
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "AI regulation",
+     "days": 220,
+     "limit": 8,
+     "match": "central"
+    },
+    "ok": true,
+    "chars": 13316
+   },
+   {
+    "tool": "recent_news",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "country": "china",
+     "limit": 5,
+     "match": "central"
+    },
+    "ok": true,
+    "chars": 5860
+   },
+   {
+    "tool": "recent_news",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "country": "united kingdom",
+     "limit": 5,
+     "match": "central"
+    },
+    "ok": true,
+    "chars": 5874
+   },
+   {
+    "tool": "recent_news",
+    "args": {
+     "term": "AI regulation",
+     "since": "2025-10-22",
+     "until": "2026-05-31",
+     "country": "india",
+     "limit": 5,
+     "match": "central"
+    },
+    "ok": true,
+    "chars": 9648
+   }
+  ]
+ }
+}

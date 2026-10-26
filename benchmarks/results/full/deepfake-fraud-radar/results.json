@@ -1,0 +1,247 @@
+{
+ "slug": "deepfake-fraud-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 3.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 40.2,
+   "plain": 40.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 36.4,
+    "gpt": 44.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 77.4,
+   "plain": 77.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 77.4,
+    "gpt": 77.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 2.5,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 34.9,
+   "plain": 34.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 25.6,
+    "gpt": 44.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 2.5,
+    "export": 3.5,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.5,
+    "facets": 3.5
+   },
+   "strict": 75.4,
+   "plain": 75.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 66.4,
+    "gpt": 84.4
+   }
+  }
+ },
+ "judge_mad": 0.59,
+ "verdicts": {
+  "opus": "C and A both grounded their numbers in the radar call. C exposed the full new-work and under-covered layers, named the peak and the censoring, and admitted that the fraud half was unmeasured, which made it the most decision-ready. D gave a knowledgeable memory synthesis with honest labels but nothing traceable. B rested on mis-cited references.",
+  "gpt": "C is the strongest decision-grade answer: it accurately quantifies research growth, distinguishes framing from truth, and clearly bounds what the data cannot say about fraud. D is close and more complete on surfaced papers, but overstates comparability for framing windows whose dates are missing; neither response measures deepfake-specific fraud outcomes."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Labels paper counts as an 'index count'",
+    "Unsupported claim that the trend does not isolate deepfake detection from fraud research"
+   ],
+   "chatgpt_bare": [
+    "DeepfakeBench attributed to CVPR 2022 with a DOI belonging to another work (it is NeurIPS 2023)",
+    "Deepfake-Eval-2024 given the wrong arXiv ID (2405.03495) and wrong venue/year (ICLR 2024)",
+    "FBI PSA title and URL appear fabricated"
+   ],
+   "claude_prism": [
+    "Comparison table places the trend thirds under the framing-window columns",
+    "coverage=full on the framing CSV is unsupported"
+   ],
+   "claude_bare": [
+    "Six untagged numbers",
+    "Trend and chart use all-cyber-crime losses rather than a deepfake quantity"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "The Deepfake-Eval-2024 performance drops, human detection rate, Deloitte forecast, Sumsub increase, and IC3 loss series are not checkable against the supplied reference record; the response labels them as recalled or named-source figures."
+   ],
+   "chatgpt_bare": [
+    "The chart's year-by-year binary coding is a qualitative selection of examples and should not be read as a measured trend."
+   ],
+   "chatgpt_prism": [
+    "The framing comparison's earlier and recent windows have no dates in the reference record, so their temporal separation cannot be assessed."
+   ],
+   "claude_prism": [
+    "The statement that the earlier and recent framing windows compare cleanly because they are similar in size is unsupported without their dates or definitions."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Endpoints are traced, the window is stated, and the change is quantified (186.7%, 2.01x, CAGR 14.1%). It does not name 2025 as the peak and does not caveat 2025 as possibly partial.",
+    "comparison": "Cautionary share 7.6 vs 9.5 with the tool's caveat; the 1.25 ratio is correct. It notes the earlier/recent windows are undefined.",
+    "chart": "One traced volume chart with window, unit and source. Framing and news are not charted, and the unit label 'index count' mislabels paper counts.",
+    "drilldown": "One traced layer (four new-work items with DOIs). Only 2 of 5 follow-ups ran.",
+    "export": "Two traced CSVs and a provenance block. There is no documents table, although DOIs are central to the answer.",
+    "repro": "24/25 numbers traced. Calls are listed with args. The derived 186.7% and 175 days recompute exactly.",
+    "refs": "All 4 DOIs resolve and each is tied to a claim with year and venue. No quotes are given, and the deliverable says so.",
+    "accuracy": "Reads papers as an 'index'. Speculates that the trend mixes in fraud research and that the news series is a 'broad index'; neither is supported by the record.",
+    "limits": "Window end, the 175-day gap, undefined framing windows and the exact-label under-coverage caveat are all placed beside the numbers.",
+    "verdict": "Direct answer, decision, confidence and what would change it, under 150 words. It acknowledges the small framing shift.",
+    "facets": "Covers research trend, framing and new work. News and under-covered topics are only described, not given values."
+   },
+   "chatgpt_bare": {
+    "trend": "A binary presence 'series' coded from memory. It is honestly labelled but is not a measured trend.",
+    "comparison": "Qualitative presence/absence only.",
+    "chart": "Memory chart, labelled qualitative.",
+    "drilldown": "The breakdown comes from memory, and only 2 of 6 follow-ups ran.",
+    "export": "A memory table labelled partial.",
+    "repro": "No calls; everything comes from memory.",
+    "refs": "The identifiers do not match their works. DeepfakeBench is NeurIPS 2023, not CVPR 2022. Deepfake-Eval-2024 is arXiv 2503.02857 from 2025, not 2405.03495 at ICLR 2024. The FBI PSA title and URL look wrong.",
+    "accuracy": "Fabricated venue, year and DOI pairings are presented as references.",
+    "limits": "Specific and honest about what is unmeasured, but the gap estimate rests on a memory window.",
+    "verdict": "The decision is reasonable, but the answer rests on memory and on mis-cited works.",
+    "facets": "Facets are answered qualitatively from memory."
+   },
+   "claude_prism": {
+    "trend": "Traced endpoints with window, peak 2025, a correct 2.87x and CAGR, and a caveat that 2025 may be partial. The news peak (5, March 2025) and its thirds are also reported.",
+    "comparison": "Framing shares with paper denominators, delta and ratio, and the tool's caveat. The table puts the trend thirds under 'earlier/recent' columns, which loosely mixes two measures.",
+    "chart": "One traced volume chart, correctly marked as endpoints only. Framing and news are not charted.",
+    "drilldown": "Two traced layers: the full 10-row new-work table with DOIs and the under-covered rows with counts. Only 1 of 6 follow-ups ran.",
+    "export": "Two traced CSVs with a provenance JSON. There is no documents CSV, and coverage=full for the framing windows is questionable.",
+    "repro": "57/57 numbers traced, with a call block and capture date. All derivations recompute.",
+    "refs": "10 DOIs resolve in the table and 4 are tied to claims. No quotes. Venue tier is not graded, and the deliverable says so.",
+    "accuracy": "Reads fields by their definitions. It flags the tiny news counts as fragile and the zero-article label artefact. It does not flag the news series' last value of 0.",
+    "limits": "Window ends, gaps to today, censoring, lane, match mode and the missing fraud lane are stated where the numbers are used, together with what would close each gap.",
+    "verdict": "Direct answer, decision, a confidence split by facet, and what would change it. It admits the fraud half is unanswered.",
+    "facets": "Trend, framing, new work, news and under-covered topics are all given grounded values, plus an explicit 'no data' for fraud."
+   },
+   "claude_bare": {
+    "trend": "The only series is FBI IC3 total cyber-crime losses. That is off the question's quantity, and the values are cited but cannot be verified here.",
+    "comparison": "Deepfake-Eval drops are from memory, numeric and plausible, but cannot be checked.",
+    "chart": "A cited public series that cannot be verified, and it is not deepfake-specific.",
+    "drilldown": "The layers are named but not populated. 3 of 7 follow-ups ran.",
+    "export": "Memory-sourced CSVs, labelled as such.",
+    "repro": "6 numbers are untagged and nothing replays.",
+    "refs": "The arXiv IDs and DOIs look genuine and are tiered. Several entries (news, Deloitte, Sumsub, IC3) lack resolvable identifiers. No quotes.",
+    "accuracy": "The specifics appear to be real public figures and are labelled as recalled. There is no contradiction with the record, but nothing is measured.",
+    "limits": "Honest and specific about what is unmeasured, including the separation of forecast, vendor and government figures.",
+    "verdict": "Expert-sounding and actionable, but it rests entirely on memory for a question where recency matters.",
+    "facets": "Broad coverage, but almost all of it is from memory."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "No measured research series; only an asserted qualitative direction.",
+    "comparison": "The detector comparison uses named but unverified figures recalled from memory.",
+    "chart": "The IC3 chart is honestly sourced to a public reference but cannot be checked against the supplied record and is not deepfake-specific.",
+    "drilldown": "It offers specific follow-up calls, but only three of seven executed successfully and there is no traced breakdown.",
+    "export": "Exports are memory-based and lack traceable recorded responses.",
+    "repro": "No numbers trace to a recorded call, and the cited figures cannot be replayed from listed calls.",
+    "refs": "Most research identifiers resolve and are tied to claims, but quotes are absent and several non-paper references are vague.",
+    "accuracy": "The deliverable distinguishes forecasts and general cybercrime from deepfake-specific evidence; no clear contradiction with the record.",
+    "limits": "It clearly labels memory, lanes, and what cannot be answered, though some limits are not consistently placed beside the claims.",
+    "verdict": "It gives a decision, confidence, and conditions, but rests on unverified performance claims.",
+    "facets": "It addresses detector research and fraud qualitatively, but provides no grounded trend or news series."
+   },
+   "chatgpt_bare": {
+    "trend": "The chart is explicitly qualitative coding of selected works, not a measured field series.",
+    "comparison": "Presence/absence coding is qualitative and gives no measured delta.",
+    "chart": "The qualitative chart is labeled as such, but the values are not a traced database series.",
+    "drilldown": "It names evidence layers and follow-ups, but only two of six calls executed successfully and no item-level results are folded in.",
+    "export": "The selected-evidence table is memory-based and its provenance has no recorded calls.",
+    "repro": "The deliverable labels its synthesis as memory-based, but cannot reproduce the chart or selected evidence through calls.",
+    "refs": "The research identifiers resolve and have metadata, but the FBI and C2PA entries lack claim-supporting quotes.",
+    "accuracy": "It avoids claiming measured fraud growth and frames the evidence as illustrative; no clear conflict with the record.",
+    "limits": "It specifies the partial window, memory selection, lane, and missing fraud measures near the discussion.",
+    "verdict": "It gives a supported direction and confidence, but the decision and conditions are incomplete under the ceiling.",
+    "facets": "It covers research direction and fraud evidence gaps, but has no grounded time series or measured fraud facet."
+   },
+   "chatgpt_prism": {
+    "trend": "The sourced endpoints, window, CAGR, and early/late totals are accurate; the chart omits the available peak and decomposition.",
+    "comparison": "The cautionary shares, percentage-point delta, ratio, and framing caveat are stated accurately and answer the framing contrast.",
+    "chart": "The traced research chart has a window and caption, but does not chart the available framing comparison or show decomposition.",
+    "drilldown": "It gives a traced paper layer and identifiers, but only two of five proposed follow-ups executed successfully.",
+    "export": "Both needed summaries are traced and referenced; the exports do not include the full available series decomposition.",
+    "repro": "Nearly all numeric claims trace and the used call is reproducible, but one numeric claim is untraced.",
+    "refs": "All four DOIs resolve and support identified claims; no verbatim abstract quotes are supplied.",
+    "accuracy": "It reads the trend and orientation definitions correctly and flags the broad news and exact-label limitations.",
+    "limits": "It places the window, lane, coverage, match-mode, and interpretation limits alongside the relevant claims.",
+    "verdict": "It gives a bounded answer, decision, confidence, and change condition consistent with its evidence.",
+    "facets": "It covers research volume and framing plus grounded no-data statements for fraud outcomes, though implicit special facets remain."
+   },
+   "claude_prism": {
+    "trend": "The endpoint increase, CAGR, peak, and third-to-third ratio are accurate; the chart itself shows only endpoints.",
+    "comparison": "The framing and volume comparisons are numerically accurate, but framing window dates are unavailable and the comparison caveat is incomplete.",
+    "chart": "The research chart is traceable and captioned, but the available framing comparison is not charted.",
+    "drilldown": "It includes identified papers and specific calls, but only one of six follow-ups executed successfully.",
+    "export": "The export is traced but has incomplete provenance and the framing window is unknown.",
+    "repro": "All numeric claims trace, the used call has args and window, and calculations can be recomputed.",
+    "refs": "All listed DOIs resolve and claims are identified, but quotes are absent and evidence tiers are not fully assessed.",
+    "accuracy": "Core research figures match; the claim that the windows compare cleanly is stronger than the record supports because their dates are unstated.",
+    "limits": "It identifies major window and lane limits, but does not consistently carry coverage and framing-window uncertainty into the comparisons.",
+    "verdict": "It gives a direct, useful decision and confidence, but does not name contrary evidence from its surfaced robustness work.",
+    "facets": "It covers research volume, framing, and grounded fraud-data gaps, but does not resolve the implied research-versus-news mismatch."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

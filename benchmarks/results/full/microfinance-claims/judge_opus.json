@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "B": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "comparison": 3,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 3,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "The contrast table is from memory and qualitative only. The script ceiling is 2, and I scored lower because nothing in it is measured.",
+    "chart": "No chart.",
+    "drilldown": "The breakdown layers are generic and from memory. Only 1 of 5 follow-ups executed.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "No calls were run. The untagged 15-36 month figure caps this at 0.",
+    "refs": "The main DOIs resolve and each reference is tied to a claim. Three entries lack identifiers ('doi not verified', a generic EPPI url) and there are no quotes.",
+    "accuracy": "The recalled findings match the literature (six-site RCTs, Hyderabad null on decision-making, Vaessen near-zero). Several specifics are memory estimates.",
+    "limits": "States honestly that it ran nothing, plus the window gap and the trial-horizon limits. These are mostly generic memory caveats.",
+    "verdict": "Ceiling 0 because of the untagged numbers in the Verdict, even though the substance is sound.",
+    "facets": "Answered from memory only."
+   },
+   "B": {
+    "comparison": "Qualitative table only.",
+    "chart": "No chart.",
+    "drilldown": "The layers are only the three cited refs. None of the follow-ups executed.",
+    "export": "No export.",
+    "repro": "The memory sourcing is acknowledged, but nothing can be regenerated.",
+    "refs": "The identifiers resolve, but [r2] is tied to a claim it does not support.",
+    "accuracy": "Says Banerjee et al. 2015 (Hyderabad) found improved women's decision-making and mobility. That RCT found no significant empowerment effect.",
+    "limits": "Notes the memory sourcing, the window gap and the asymmetry. These limits are general rather than data-specific.",
+    "verdict": "Has a structure, decision and confidence, but its 'some agency' answer leans on the misread study.",
+    "facets": "Answered from memory."
+   },
+   "C": {
+    "comparison": "The 0.54x subject-paper ratio recomputes exactly (78,834/146,493). The lane asymmetry is carried and no intersection ratio is claimed. It does not answer the effect-level contrast the question poses.",
+    "chart": "No chart.",
+    "drilldown": "Script ceiling 1: the follow-ups did not execute.",
+    "export": "One traced CSV with provenance and a provenance JSON, referenced from the prose. The missing intersection value is left blank rather than zero. Columns are renamed.",
+    "repro": "All 18 numbers trace to c1 and the calls block is complete. The derived ratio is marked.",
+    "refs": "Tool sources are listed and tied to claims, and the off-topic meta-analysis is flagged. [r1] has no identifier and there are no quotes.",
+    "accuracy": "Fields are read correctly. It catches that the strongest debt source is 'unrelated' and that contested_pct is undefined. It does not flag that the two subject counts differ for the same subject.",
+    "limits": "The empty window, the lanes, paper counts versus outcomes, and the tool's own caveat are each placed beside the numbers they bound.",
+    "verdict": "Answer, decision, confidence and what would change it are all present and bounded. It is thin on substance: the RCT wave the question names is never addressed.",
+    "facets": "The corpus facets are covered. The substantive RCT-versus-debt facet is unaddressed."
+   },
+   "D": {
+    "comparison": "Within-lane shares and deltas recompute correctly. It states that the lanes differ but leaves the mixing unresolved.",
+    "chart": "Script ceiling 0.",
+    "drilldown": "The layers trace (lane, stance, tier, reads). All 6 follow-ups failed.",
+    "export": "One traced long-format CSV with provenance JSON, referenced from the prose.",
+    "repro": "39 of 49 numbers trace. The memory claims are marked est.",
+    "refs": "c1 sources plus two recalled DOIs that resolve, each tied to a claim. No quotes.",
+    "accuracy": "Contrasts B's 78,834 subject papers with A's 376 intersection papers to call A's literature 'small' and say the tool verdict conflicts with raw volumes. A's own subject lane is 146,493, so this mixes lanes.",
+    "limits": "Strong placed limits: the empty window, lanes, tiny document reads, and the classifier-level stances.",
+    "verdict": "Low confidence with a decision and what would change it. Partly rests on the lane-mixed volume contrast.",
+    "facets": "The corpus facets are covered, with the RCT background from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "Untagged numeric range (15-36 months) in the verdict"
+   ],
+   "B": [
+    "Misstates Banerjee-Duflo-Glennerster-Kinnan 2015 as finding improved women's decision-making and mobility; the study found no significant effect"
+   ],
+   "C": [],
+   "D": [
+    "Compares B's subject-lane count (78,834) with A's intersection count (376) to call the empowerment body small, though A's own subject count is 146,493 (lane mixing)"
+   ]
+  },
+  "best": "C",
+  "verdict": "C was the only deliverable that kept every number traced and on the correct lane. It flagged the off-topic strongest source and the undefined contested share, and it gave a clean, provenance-backed export. D did more comparative arithmetic but mixed the intersection and subject lanes in its headline reading. The memory-only answers (A, B) could not measure anything, and B misreported a key RCT."
+ },
+ "scores": {
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "comparison": 3,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 3,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Air pollution — geo-intelligence dashboard (Prism)</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+<script type="application/json" id="report-manifest">{"charts":[{"id":"worldmap"},{"id":"statemap"},{"id":"citybar"},{"id":"trend"},{"id":"lanes"}]}</script>
+<style>
+:root{--bg:#fff;--fg:#1b1f24;--mut:#5b6470;--card:#f5f7fa;--bd:#d8dde3;--acc:#0b6e4f;--warn:#9a5b00}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--fg:#e8eaed;--mut:#a0a8b3;--card:#1c2026;--bd:#333a43;--acc:#4fd1a1;--warn:#f0b35a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:16px}
+h1{font-size:1.5rem;margin:.2em 0}h2{font-size:1.15rem;margin:0 0 .4em}
+section{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;margin:14px 0;overflow-x:auto}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.kpi{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:12px}
+.kpi b{display:block;font-size:1.6rem;color:var(--acc)}.kpi small,.src{color:var(--mut);font-size:.8rem;display:block}
+table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:4px 6px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}td.n,th.n{text-align:right}
+.flag{color:var(--warn);font-weight:600}button{background:var(--acc);color:var(--bg);border:0;border-radius:6px;padding:5px 10px;cursor:pointer;margin:6px 0;font-weight:600}
+.warnbox{border-left:4px solid var(--warn);padding:6px 10px;margin:8px 0;display:block}a{color:var(--acc)}
+ul{padding-left:18px}.chart{min-height:60px}
+</style></head><body><main>
+<h1>Air pollution — where it is reported, studied and patented</h1>
+<p class="src" data-source="system.status; system.freshness; system.article_store">Built 2026-10-23 from Prism MCP. News windows end at the ingest-safe cutoff (2026-06-01, exclusive); geography labels end at the enrichment bound (2026-05-01, exclusive). All index partition passed strict reads (system.status). <span class="warnbox">The article store (system.article_store) refused connections at build time. The critical-story feed still resolved 7 records; 3 more ids did not resolve.</span></p>
+
+<section aria-label="KPIs" data-source="news.resolve; news.trends; news.geography; research.browse; analysis.history"><h2>1 · Headline numbers</h2><div class="kpis">
+<div class="kpi" data-source="news.resolve" data-window="2024-06-01/2026-06-01">Total coverage<b>28,212</b><small>articles mentioning "air pollution", Jun 2024 – May 2026 · 23,291 of them priority 7+ ("critical") · src: news.resolve / news.trends</small></div>
+<div class="kpi" data-source="news.geography" data-window="2024-05-01/2026-05-01">India share · lift<b>31.2% · 4.7×</b><small>9,245 articles placed in India = 31.2% of country placements (59.3% of the 15,590 placed articles, since one article can carry several countries); lift 4.7× vs all-news baseline · May 2024 – Apr 2026 · src: news.geography (country)</small></div>
+<div class="kpi" data-source="news.geography" data-window="2024-05-01/2026-05-01">Coverage placed at all<b>54.9%</b><small>15,590 of 28,420 matched articles carry a country · state 50.2%, city 47.0% · May 2024 – Apr 2026 · src: news.geography</small></div>
+<div class="kpi" data-source="research.browse; analysis.history" data-window="2017/2025">Research volume<b>82,768</b><small>typed papers 2017–2025 (title + keywords, audited phrasings) · 36,149 with "air pollution" in the title alone · src: research.browse / analysis.history</small></div>
+</div></section>
+
+<section data-source="news.geography level=country" data-window="2024-05-01/2026-05-01"><h2>2 · Which country the coverage is about (lift over the all-news baseline)</h2>
+<div id="worldmap" class="chart"></div>
+<p class="src">Grey = not in the top 25 returned, which does not mean zero. Colour scale is log lift; 1× = the same share as news in general. Src: news.geography level=country, 2024-05-01 – 2026-05-01 (exclusive), placed 54.9%.</p>
+<button onclick="dl('countries')">Download CSV</button>
+<div id="t_countries"></div></section>
+
+<section data-source="news.geography level=state" data-window="2024-05-01/2026-05-01"><h2>3 · Indian states</h2>
+<div id="statemap" class="chart"></div>
+<p class="src">Src: news.geography level=state, 2024-05-01 – 2026-05-01 (exclusive), placed 50.2%. Lift colour on a log scale; grey = not returned in the top 40.</p>
+<button onclick="dl('states')">Download CSV</button>
+<div id="t_states"></div>
+<div class="warnbox"><b>Excluded from the map (state level returns places outside India):</b> <span id="excl_states"></span>.<br>
+<b>Not a state:</b> "national capital region" (396, lift 74.3×) is a planning region spanning Delhi, Haryana, UP and Rajasthan, so it appears in panel 4. "centre" (636, lift 16.1×) is not a place; it is almost certainly "the Centre", meaning India's union government. <b>Ambiguous:</b> "punjab" (790) could be the Indian or the Pakistani province. It is mapped to India and flagged.</div></section>
+
+<section data-source="news.geography level=city; level=state (NCR row)" data-window="2024-05-01/2026-05-01"><h2>4 · City leaderboard — Indian cities and the NCR cluster</h2>
+<div id="citybar" class="chart"></div>
+<p class="src">Src: news.geography level=city, 2024-05-01 – 2026-05-01 (exclusive), placed 47.0%. Bars = articles; label = lift. NCR rows are tinted. NCR counts overlap and are not summed.</p>
+<button onclick="dl('cities')">Download CSV</button>
+<div id="t_cities"></div>
+<div class="warnbox"><b>Artefacts caught:</b> "sirsa" (253, lift 271.6×) is very likely the surname of Delhi's environment minister, Manjinder Singh Sirsa, rather than the town of Sirsa in Haryana. It is kept but flagged. "delhi" has exactly 6,213 at both state and city level, so it is one label resolved twice. Labels returned as cities that are not cities, and are excluded: congress (728), earth (379), winter (158), california (766). Non-Indian cities excluded: <span id="excl_cities"></span>.</div></section>
+
+<section data-source="news.trends; news.trends country=india" data-window="2024-06-01/2026-05-01"><h2>5 · Monthly coverage: India vs everything else</h2>
+<div id="trend" class="chart"></div>
+<p class="src">Src: news.trends (all) and news.trends country=india, monthly, mention match, 2024-06 – 2026-04 plotted. "Everything else" = all articles minus India-placed articles, so it includes the ~45% that are not placed anywhere. <b>May 2026 dropped:</b> the all-coverage count (589) is ingested, but India shows only 6 because geography labels stop at 2026-05-01. Plotting it would show a collapse that is really the labelling pipeline catching up. Peaks: Nov 2024 (India 1,744) and Dec 2025 (India 880), the stubble-burning and winter-inversion season.</p>
+<button onclick="dl('trend')">Download CSV</button></section>
+
+<section data-source="research.geography (global_comparison)" data-window="not reported by tool"><h2>6 · Studied vs reported vs patented — four separate lanes, never added</h2>
+<div id="lanes" class="chart"></div>
+<p class="src">Src: research.geography (global_comparison, claim "air pollution"). Lanes: news = country an article is about; research authorship = the health literature index first-author affiliation; journal country = the health literature index publishing journal's country (not where the study was done); patents = assignee country. The tool reported no window for these lanes (the health literature index covers its full history; patents run to 2024). Its news lane counts India at 14,696, a different match from panel 2's 9,245, so the two are not interchangeable. India is not in the top 12 journal countries, so that bar is absent rather than zero. The largest patent bucket (1,502) has a blank assignee country.</p>
+<div class="warnbox">Tool artefact: global_comparison's "focus" block returned India research = 0 and patents = 0, but its own lanes list India with 1,319 first-author papers and IN with 39 patents. The lane rows are used here and the focus block is ignored.</div>
+<button onclick="dl('lanes')">Download CSV</button>
+<div id="t_lanes"></div></section>
+
+<section data-source="news.critical" data-window="2025-06-01/2026-06-01"><h2>7 · The critical stories</h2>
+<button onclick="dl('stories')">Download CSV</button>
+<div id="t_stories"></div>
+<p class="src">Src: news.critical, priority-band ranked, match=central, 2025-06-01 – 2026-06-01 (exclusive). 12 requested, 7 returned, 3 ids unresolved in the article store, 2 rejected as duplicates or irrelevant. Headlines are shown as published (two are in Hindi).</p></section>
+
+<section data-source="system.status; system.freshness; news.geography; news.trends; research.browse; analysis.history; research.geography"><h2>8 · Data quality — trust the map for the right reasons</h2><ul>
+<li><b>Placement:</b> only 54.9% of matched articles carry a country, 50.2% a state and 47.0% a city (news.geography). Every map shows the placed half, not all coverage.</li>
+<li><b>Share vs share:</b> share_pct is a share of <i>placements</i>. Multi-country articles count once per country, so India's 31.2% of placements equals 59.3% of placed articles.</li>
+<li><b>Windows:</b> news counts run Jun 2024 – May 2026. Geography runs May 2024 – Apr 2026, bounded by the labelling pipeline. Ingest after June 2026 is 19%, 2% and 0.4% of a normal month (system.freshness), so nothing later is used. Typed research runs 2017–2025.</li>
+<li><b>Three India numbers:</b> 9,245 (news.geography, placed), 8,291 (news.trends country=india, Jun 2024 – May 2026) and 14,696 (global_comparison news lane, window unstated). These are different matches, not contradictions.</li>
+<li><b>Artefacts:</b> "centre" as a state (most likely the union government); "sirsa" (most likely the minister's surname); "congress", "earth", "winter" and "california" as cities; "punjab" ambiguous between India and Pakistan. Cameroon (671, lift 8.6×) is a high-lift row of the kind the tool's own caveat warns about. A collision with "Centre", which is also a Cameroonian region, is plausible but not verified. Iceland (277) may be the volcanic-eruption coverage.</li>
+<li><b>Research series:</b> the typed corpus shows 14,501 papers in 2018 against 4,462 in 2017 and 6,849 in 2019, which looks like an ingest artefact. The title-only series (analysis.history) rises steadily from 2,348 (2017) to 5,158 (2025).</li>
+<li><b>Lift</b> is coverage share for this term divided by that place's share of all news. A small place with a few articles can show a huge lift.</li>
+</ul></section>
+</main>
+<script>
+const countries=[["india","IND",9245,31.2,4.7],["united states","USA",5819,19.6,0.9],["united kingdom","GBR",1244,4.2,0.8],["china","CHN",1222,4.1,0.8],["cameroon","CMR",671,2.3,8.6,"high lift, unverified (possible 'Centre' collision)"],["pakistan","PAK",663,2.2,2.2],["canada","CAN",569,1.9,0.6],["philippines","PHL",496,1.7,2.9],["france","FRA",486,1.6,0.9],["bangladesh","BGD",466,1.6,7.7],["australia","AUS",383,1.3,0.3],["germany","DEU",346,1.2,0.9],["japan","JPN",325,1.1,0.7],["iceland","ISL",277,0.9,1.7,"check: may be volcano coverage"],["thailand","THA",276,0.9,3.2],["italy","ITA",248,0.8,0.7],["vietnam","VNM",246,0.8,2.7],["indonesia","IDN",243,0.8,1.7],["spain","ESP",224,0.8,0.6],["brazil","BRA",215,0.7,1.2],["nigeria","NGA",203,0.7,1],["switzerland","CHE",197,0.7,1.5],["nepal","NPL",195,0.7,0.2],["new zealand","NZL",173,0.6,0.9],["iran","IRN",169,0.6,0.2]].map(r=>({country:r[0],iso3:r[1],articles:r[2],share_pct:r[3],lift:r[4],note:r[5]||"",source:"news.geography country 2024-05..2026-04"}));
+const statesAll=[["delhi",6213,17.5,42.8],["uttar pradesh",1870,5.3,11.1],["haryana",1763,5,42.9],["california",1241,3.5,1.1],["maharashtra",1226,3.5,4.8],["pennsylvania",1101,3.1,1.1],["texas",989,2.8,1],["arizona",794,2.2,2.3],["punjab",790,2.2,16],["centre",636,1.8,16.1],["new york",595,1.7,.6],["washington",594,1.7,.7],["england",591,1.7,.9],["rajasthan",564,1.6,7.4],["karnataka",488,1.4,4.6],["national capital region",396,1.1,74.3],["bihar",370,1,5.4],["london",354,1,1.5],["illinois",341,1,1.1],["west bengal",327,.9,2.7],["colorado",318,.9,.6],["beijing",317,.9,1.1],["wisconsin",311,.9,2.1],["michigan",308,.9,.5],["florida",303,.9,.4],["tamil nadu",292,.8,2.3],["ohio",289,.8,.6],["massachusetts",284,.8,.5],["new jersey",281,.8,.6],["gujarat",275,.8,4.1],["dhaka division",232,.7,16.4],["tennessee",216,.6,.3],["madhya pradesh",215,.6,3.8],["maryland",192,.5,.4],["north carolina",188,.5,.3],["indiana",185,.5,1.3],["kentucky",184,.5,.4],["ile de france",184,.5,1.9],["telangana",183,.5,2.2],["louisiana",182,.5,2]];
+const indianStates=new Set(["delhi","uttar pradesh","haryana","maharashtra","punjab","rajasthan","karnataka","bihar","west bengal","tamil nadu","gujarat","madhya pradesh","telangana"]);
+const states=statesAll.filter(r=>indianStates.has(r[0])).map(r=>({state:r[0],articles:r[1],share_pct:r[2],lift:r[3],note:r[0]==="punjab"?"ambiguous: India or Pakistan":"",source:"news.geography state 2024-05..2026-04"}));
+const exclStates=statesAll.filter(r=>!indianStates.has(r[0])).map(r=>`${r[0]} (${r[1]})`);
+const citiesAll=[["delhi",6213,26.9,32.5],["mumbai",959,4.1,3.9],["california",766,3.3,.9],["congress",728,3.1,2.1],["noida",527,2.3,21.6],["ghaziabad",498,2.2,35.5],["bengaluru",419,1.8,4.6],["los angeles",390,1.7,1.4],["earth",379,1.6,2.2],["london",354,1.5,1.1],["lahore",344,1.5,38.8],["faridabad",332,1.4,56.1],["new york",324,1.4,.4],["beijing",317,1.4,.8],["sirsa",253,1.1,271.6],["pune",248,1.1,5.6],["kolkata",231,1,4],["dhaka",226,1,14.5],["kanpur",222,1,21.2],["lucknow",208,.9,5.7],["patna",190,.8,12.8],["chennai",187,.8,2.4],["paris",179,.8,1.5],["winter",158,.7,4.5],["hyderabad",157,.7,2.1],["chicago",155,.7,1],["denver",145,.6,2.2],["dallas",136,.6,1.5],["singapore",136,.6,.7],["kathmandu",132,.6,10],["new york city",130,.6,.8],["jakarta",127,.5,4.8],["seattle",118,.5,1.2],["detroit",103,.4,1.5],["boston",96,.4,.9],["ahmedabad",95,.4,4.2],["sonipat",92,.4,32.9],["san francisco",92,.4,.8],["newark",92,.4,5.5],["meerut",92,.4,11.9]];
+const indianCities=new Set(["delhi","mumbai","noida","ghaziabad","bengaluru","faridabad","sirsa","pune","kolkata","kanpur","lucknow","patna","chennai","hyderabad","ahmedabad","sonipat","meerut"]);
+const ncr=new Set(["delhi","noida","ghaziabad","faridabad","sonipat","meerut"]);
+const notCity=new Set(["california","congress","earth","winter"]);
+const cities=citiesAll.filter(r=>indianCities.has(r[0])).map(r=>({place:r[0],level:"city",articles:r[1],share_pct:r[2],lift:r[3],ncr:ncr.has(r[0])?"NCR":"other",note:r[0]==="sirsa"?"likely minister's surname, not the town":"",source:"news.geography city 2024-05..2026-04"}));
+cities.push({place:"national capital region",level:"state-level label",articles:396,share_pct:1.1,lift:74.3,ncr:"NCR",note:"region label from state level",source:"news.geography state 2024-05..2026-04"});
+cities.sort((a,b)=>b.articles-a.articles);
+const exclCities=citiesAll.filter(r=>!indianCities.has(r[0])&&!notCity.has(r[0])).map(r=>`${r[0]} (${r[1]})`);
+const months=["2024-06","2024-07","2024-08","2024-09","2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04"];
+const allM=[785,824,674,1086,1767,3233,1306,1384,1139,1339,987,688,766,852,814,755,1326,1734,1974,1250,1016,908,1016];
+const indM=[104,185,118,294,811,1744,486,252,166,287,179,103,107,136,95,148,513,782,880,368,228,130,169];
+const trend=[];months.forEach((m,i)=>{trend.push({month:m,series:"India",articles:indM[i],source:"news.trends country=india"});trend.push({month:m,series:"Everything else (incl. unplaced)",articles:allM[i]-indM[i],source:"news.trends all minus country=india"});});
+const L1="News: article is about",L2="Research: first-author country (the health literature index)",L3="Research: journal country (the health literature index)",L4="Patents: assignee country";
+const lanes=[
+{lane:L1,country:"India",value:14696},{lane:L1,country:"United States",value:7140},{lane:L1,country:"China",value:1097},{lane:L1,country:"United Kingdom",value:1675},
+{lane:L2,country:"India",value:1319},{lane:L2,country:"United States",value:9792},{lane:L2,country:"China",value:11081},{lane:L2,country:"United Kingdom",value:1979},
+{lane:L3,country:"India",value:null,note:"not in top 12"},{lane:L3,country:"United States",value:13666},{lane:L3,country:"China",value:952},{lane:L3,country:"United Kingdom",value:15778,note:"returned as 'England'"},
+{lane:L4,country:"India",value:39},{lane:L4,country:"United States",value:139},{lane:L4,country:"China",value:39},{lane:L4,country:"United Kingdom",value:42}].map(r=>Object.assign({note:""},r,{source:"research.geography (global_comparison)"}));
+const stories=[
+["2026-05-18","thecsrjournal.in","India Develops Indigenous Cooking Gas Alternative in Pune Laboratory - The CSR Journal","https://thecsrjournal.in/india-develops-indigenous-cooking-gas-alternative-in-pune-laboratory/","page sidebar carries a Pakistan air-pollution story (135,000 deaths/yr); headline is off-topic"],
+["2026-04-10","dhakatribune.com","We must not accept toxic air as the norm","https://www.dhakatribune.com/opinion/editorial/407451/we-must-not-accept-toxic-air-as-the-norm",""],
+["2026-03-13","thehimalayantimes.com","Air pollution annually kills about 42,000 people in Nepal","https://thehimalayantimes.com/environment/air-pollution-annually-kills-about-42000-people-in-nepal",""],
+["2026-01-13","outlookbusiness.com","Air Pollution Puts Older Diabetics at Greater Heart Risk in India — Here’s Why","https://www.outlookbusiness.com/planet/climate/air-pollution-heart-risk-older-diabetics-india",""],
+["2025-10-24","livehindustan.com","भारत में खराब हवा के चलते साल भर में मरे 20 लाख लोग, अकाल मौतों का दूसरा बड़ा कारण: रिपोर्ट","https://www.livehindustan.com/national/20-lakh-indian-died-in-one-year-due-to-severe-air-pollution-201761292377675.html","Hindi: State of Global Air report, ~2 million Indian deaths in 2023"],
+["2025-10-23","livehindustan.com","चिंताजनक: जहरीली हवा ने देश में ली 20 लाख से अधिक लोगों की जान","https://www.livehindustan.com/ncr/new-delhi/story-air-pollution-causes-2-million-deaths-in-india-in-2023-state-of-global-air-report-201761215900234.html","Hindi: same report"],
+["2025-09-11","euronews.com","Millions breathed toxic air from Canada’s record 2023 wildfires","https://www.euronews.com/2025/09/11/canadas-2023-wildfires-linked-to-more-than-80000-early-deaths-worldwide-new-study-warns",""]
+].map(r=>({date:r[0],publisher:r[1],headline:r[2],url:r[3],priority:9,note:r[4],source:"news.critical 2025-06..2026-05"}));
+const DATA={countries,states,cities,trend,lanes,stories};
+
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function table(id,rows,cols,src){const h=cols.map(c=>`<th class="${c[2]||''}">${c[1]}</th>`).join("");
+ const b=rows.map(r=>"<tr>"+cols.map(c=>{let v=r[c[0]];if(c[0]==="headline")return `<td><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(v)}</a></td>`;
+ if(c[0]==="note"&&v)return `<td class="flag">${esc(v)}</td>`;return `<td class="${c[2]||''}">${v==null?"—":esc(typeof v==="number"?v.toLocaleString("en-IN"):v)}</td>`}).join("")+"</tr>").join("");
+ const el=document.getElementById(id);el.setAttribute("data-source",src);
+ el.innerHTML=`<table><thead><tr>${h}</tr></thead><tbody>${b}</tbody></table><span class="src">${src}</span>`;}
+function dl(k){const rows=DATA[k];const cols=Object.keys(rows.reduce((a,r)=>Object.assign(a,r),{}));
+ const csv=[cols.join(",")].concat(rows.map(r=>cols.map(c=>{const v=r[c]??"";return /[",\n]/.test(String(v))?`"${String(v).replace(/"/g,'""')}"`:v}).join(","))).join("\n");
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"}));a.download=`air_pollution_${k}.csv`;document.body.appendChild(a);a.click();a.remove();}
+table("t_countries",countries,[["country","Country"],["iso3","ISO3"],["articles","Articles","n"],["share_pct","Share %","n"],["lift","Lift ×","n"],["note","Flag"]],"Src: news.geography level=country, May 2024 – Apr 2026");
+table("t_states",states,[["state","State"],["articles","Articles","n"],["share_pct","Share %","n"],["lift","Lift ×","n"],["note","Flag"]],"Src: news.geography level=state, May 2024 – Apr 2026 · 13 Indian states of 40 rows returned");
+table("t_cities",cities,[["place","Place"],["level","Level"],["ncr","Cluster"],["articles","Articles","n"],["share_pct","Share %","n"],["lift","Lift ×","n"],["note","Flag"]],"Src: news.geography level=city (+ NCR row from level=state), May 2024 – Apr 2026");
+table("t_lanes",lanes,[["lane","Lane"],["country","Country"],["value","Count","n"],["note","Note"]],"Src: research.geography (global_comparison) · window not reported by tool");
+table("t_stories",stories,[["date","Date"],["publisher","Publisher"],["headline","Headline"],["note","Note"]],"Src: news.critical, Jun 2025 – May 2026, all priority band 9");
+document.getElementById("excl_states").textContent=exclStates.join(", ");
+document.getElementById("excl_cities").textContent=exclCities.join(", ");
+
+const dark=matchMedia("(prefers-color-scheme: dark)").matches;
+const fg=dark?"#e8eaed":"#1b1f24",grid=dark?"#333a43":"#d8dde3",empty=dark?"#2a2f36":"#e3e6ea";
+const config={background:null,axis:{labelColor:fg,titleColor:fg,gridColor:grid,domainColor:grid,tickColor:grid},legend:{labelColor:fg,titleColor:fg},title:{color:fg},header:{labelColor:fg,titleColor:fg},view:{stroke:null},text:{color:fg}};
+const W=Math.max(300,Math.min(940,document.querySelector("main").clientWidth-40));
+const opt={actions:false,renderer:"svg"};
+const geo=f=>({url:f,format:{type:"json",property:"features"}});
+
+vegaEmbed("#worldmap",{$schema:"https://vega.github.io/schema/vega-lite/v5.json",width:W,height:Math.round(W*0.5),config,
+ projection:{type:"equalEarth"},
+ layer:[{data:geo("world_india_official.geojson"),mark:{type:"geoshape",fill:empty,stroke:grid,strokeWidth:.4}},
+ {data:geo("world_india_official.geojson"),
+  transform:[{lookup:"properties.iso3",from:{data:{values:countries},key:"iso3",fields:["country","articles","share_pct","lift"]}},{filter:"datum.lift != null"}],
+  mark:{type:"geoshape",stroke:grid,strokeWidth:.4},
+  encoding:{color:{field:"lift",type:"quantitative",scale:{type:"log",domain:[0.2,50],scheme:"orangered",clamp:true},title:"Lift ×"},
+   tooltip:[{field:"properties.name",title:"Country"},{field:"articles",format:","},{field:"share_pct",title:"Share %"},{field:"lift",title:"Lift ×"}]}}]},opt);
+
+const SW=Math.min(W,560);
+vegaEmbed("#statemap",{$schema:"https://vega.github.io/schema/vega-lite/v5.json",width:SW,height:Math.round(SW*1.1),config,
+ projection:{type:"mercator"},
+ layer:[{data:geo("india_states_official.geojson"),mark:{type:"geoshape",fill:empty,stroke:grid,strokeWidth:.5}},
+ {data:geo("india_states_official.geojson"),
+  transform:[{lookup:"properties.key",from:{data:{values:states},key:"state",fields:["articles","share_pct","lift"]}},{filter:"datum.lift != null"}],
+  mark:{type:"geoshape",stroke:grid,strokeWidth:.5},
+  encoding:{color:{field:"lift",type:"quantitative",scale:{type:"log",domain:[1,50],scheme:"orangered",clamp:true},title:"Lift ×"},
+   tooltip:[{field:"properties.name",title:"State"},{field:"articles",format:","},{field:"share_pct",title:"Share %"},{field:"lift",title:"Lift ×"}]}}]},opt);
+
+vegaEmbed("#citybar",{$schema:"https://vega.github.io/schema/vega-lite/v5.json",width:Math.max(200,W-220),height:cities.length*20,config,data:{values:cities},
+ encoding:{y:{field:"place",type:"nominal",sort:"-x",title:null},x:{field:"articles",type:"quantitative",title:"Articles (May 2024 – Apr 2026)"}},
+ layer:[{mark:"bar",encoding:{color:{field:"ncr",type:"nominal",scale:{domain:["NCR","other"],range:["#d9480f","#4c78a8"]},title:"Cluster"},tooltip:[{field:"place"},{field:"articles",format:","},{field:"lift",title:"Lift ×"},{field:"note"}]}},
+ {mark:{type:"text",align:"left",dx:4,fontSize:11},encoding:{text:{field:"lift",type:"quantitative",format:".1f"}}}]},opt);
+
+vegaEmbed("#trend",{$schema:"https://vega.github.io/schema/vega-lite/v5.json",width:W-60,height:280,config,data:{values:trend},
+ mark:{type:"line",point:true},encoding:{x:{field:"month",type:"temporal",timeUnit:"yearmonth",title:null,axis:{format:"%b %y"}},
+ y:{field:"articles",type:"quantitative",title:"Articles per month"},color:{field:"series",type:"nominal",scale:{range:["#d9480f","#4c78a8"]},legend:{orient:"top",title:null}},
+ tooltip:[{field:"month",type:"temporal",timeUnit:"yearmonth"},{field:"series"},{field:"articles",format:","}]}},opt);
+
+vegaEmbed("#lanes",{$schema:"https://vega.github.io/schema/vega-lite/v5.json",config,data:{values:lanes},
+ facet:{row:{field:"lane",type:"nominal",title:null,sort:[L1,L2,L3,L4],header:{labelAngle:0,labelAlign:"left",labelAnchor:"start",labelOrient:"top",labelFontWeight:"bold"}}},
+ spec:{width:Math.max(200,W-180),height:90,
+  encoding:{y:{field:"country",type:"nominal",title:null},x:{field:"value",type:"quantitative",title:"Count (each lane in its own units)"}},
+  layer:[{mark:"bar",encoding:{color:{condition:{test:"datum.country==='India'",value:"#d9480f"},value:"#4c78a8"},tooltip:[{field:"lane"},{field:"country"},{field:"value",format:","},{field:"note"}]}},
+  {mark:{type:"text",align:"left",dx:4,fontSize:11},encoding:{text:{field:"value",type:"quantitative",format:","}}}]},
+ resolve:{scale:{x:"independent"}}},opt);
+</script></body></html>

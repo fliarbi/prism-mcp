@@ -1,0 +1,182 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 2,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 2,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Correctly says nulls prevent a numeric contrast; no measured comparison is made.",
+    "chart": "No chart block.",
+    "drilldown": "Lists follow-up questions and calls, but none executed successfully; breakdown is mostly flat.",
+    "export": "CSV preserves the five null rows and provenance, with matching source call and date; null reason is in the row.",
+    "repro": "The table result is traced, but it does not provide a reproducible source for every numeric claim or regenerate every artifact.",
+    "refs": "All four DOIs resolve and are tied to rows, but no verbatim abstract quotes are supplied.",
+    "accuracy": "Faithfully reports the nulls and lane split; its claim that the result is dated 2026-10-23 is unsupported by the empty window.",
+    "limits": "Places the empty window, mixed lanes, abstract limits, and missing system boundary next to the findings.",
+    "verdict": "Direct, bounded answer with confidence and a condition that would change it; it omits the strongest contrary item, the 350 Wh/kg target in the solid-state paper title.",
+    "facets": "Covers all five requested rows with grounded nulls, but not the implied name/overlap facets."
+   },
+   "B": {
+    "comparison": "Qualitative comparison only; the ranges are explicitly memory estimates.",
+    "chart": "No chart block.",
+    "drilldown": "Proposes calls, but none executed and no traced breakdown is provided.",
+    "export": "No CSV export.",
+    "repro": "The answer explicitly says no sources or reproducible search were used; all values are estimates.",
+    "refs": "No references are supplied.",
+    "accuracy": "The claimed general ordering is unsupported by this deliverable and the requested five-row corpus includes no matching figures; it also substitutes a broader chemistry set.",
+    "limits": "States that no corpus was searched and labels estimates, but lacks the question-specific grounded row results and their reasons.",
+    "verdict": "Answers broadly with confidence and conditions, but does not answer the specified per-chemistry research question with grounded evidence.",
+    "facets": "Only sodium-ion overlaps the requested rows, and even that is an estimate; most requested facets lack grounded values or nulls."
+   },
+   "C": {
+    "comparison": "The proposed numeric comparison uses estimates and does not resolve the requested contrast with traced values; ceiling is 3.",
+    "chart": "No chart block.",
+    "drilldown": "Lists calls that were not executed successfully; the paper layer has no identifiers attached to every breakdown item.",
+    "export": "CSV is present, but estimated figures and incomplete provenance do not meet the traced export requirements.",
+    "repro": "Some corpus claims trace to c1, while the memory estimates and ratios do not; no runnable calls reproduce those values.",
+    "refs": "DOIs resolve and are tied to claims, but verbatim abstract quotes are absent.",
+    "accuracy": "Mostly reports c1 correctly, but treats the title's 350 Wh/kg target as a sourced number despite c1 saying the abstract does not address the query, and labels the window's newest item as 146 days old based on an unstated date.",
+    "limits": "Identifies the unknown window, lane split, abstract censoring, and estimates near the claims; some details overstate what c1 establishes.",
+    "verdict": "Directly says the corpus supplies no values, but adds unsupported memory-based figures and lacks a decision condition that would change the answer.",
+    "facets": "All five requested rows receive grounded corpus results and the lane mismatch is noted; implied brand/class and overlap facets are not resolved."
+   },
+   "D": {
+    "comparison": "Ratios are memory estimates, so this is qualitative-only for the benchmark.",
+    "chart": "The chart is an explicitly labelled memory estimate, which earns 1.",
+    "drilldown": "A conceptual hierarchy is given, but no traced breakdown layer or successfully executed on-topic follow-ups.",
+    "export": "CSV is an estimate without source-call provenance; it does not export the requested corpus results.",
+    "repro": "No calls or sources reproduce the numerous numeric claims.",
+    "refs": "No references or identifiers are supplied.",
+    "accuracy": "The estimated ranges are not presented as measured, but they do not answer the requested research corpus question and the ranking is unsupported here.",
+    "limits": "Labels estimates and notes no queries, but offers only generic memory coverage rather than grounded row-specific limits.",
+    "verdict": "Provides a direct rough ranking and conditions, but it is not supported by the requested research results.",
+    "facets": "Most requested chemistries lack grounded row values or nulls; the response substitutes broader categories and estimates."
+   }
+  },
+  "errors": {
+   "A": [
+    "Says the result is dated 2026-10-23 although c1 has an empty window and no result date.",
+    "Does not mention the solid-state title's 350 Wh/kg target as contrary context; c1 says the abstract does not address the query, so it is not a matching figure."
+   ],
+   "B": [
+    "Provides unsourced memory ranges for most rows and does not cover the five requested chemistries with grounded results."
+   ],
+   "C": [
+    "Presents a 350 Wh/kg title target as the only source-tied figure even though c1 says the paper does not address the query in its abstract.",
+    "The 146-day interval and newest-item framing assume an unstated record date; c1 only gives the item date and an empty window.",
+    "Memory ranges and ratios are not research findings and cannot establish a cross-chemistry comparison."
+   ],
+   "D": [
+    "Provides a memory-based ranking and many ranges that do not answer the specified corpus-backed per-chemistry question.",
+    "Calls the date range a window despite no corpus query or source window."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid because it preserves nulls row by row, traces them to the supplied corpus response, and explains why those nulls cannot support a ranking. C covers the same rows but weakens its answer with unverified estimates and treats a title target as a relevant figure; B and D are candid about memory estimates but do not deliver grounded findings for the requested rows."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 2,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 2,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

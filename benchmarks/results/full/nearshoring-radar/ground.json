@@ -1,0 +1,635 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 758,
+  "charts": [
+   {
+    "id": "us-china-share",
+    "title": "China share of US goods imports (approx.)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "China share of US goods imports (est.)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "us_china_share.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which new papers since 2024 study reshoring versus nearshoring?",
+    "args": {
+     "term": "reshoring nearshoring",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 29, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7125497360\", \"title\": \"Enhancing the Contract-Based Competitiveness of Exporting Firms Amidst Global Supply Chain Reconfiguration in the 4IR Era\", \"authors\": [\"Chang-Bong Kim\", \"Hwang YunSeop\", \"Kyeong-Wook Jeong\", \"Chang-Bum Choi\"], \"venue\": \"Korean Academy Of International Commerce\", \"year\": 2025, \"date\": \"2025-12-30\", \"doi\": \"10.18104/kalc.2025.40.4.1\", \"url\": \"https://doi.org/10.18104/kalc.2025.40.4.1\", \"cited_by\": 0, \"orientation\": \"promising\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers are critical of reshoring benefits?",
+    "args": {
+     "term": "reshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'reshoring'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='reshoring', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "How has research volume changed by year?",
+    "args": {
+     "term": "nearshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'nearshoring'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='nearshoring', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Is framing moving toward resilience and friend-shoring?",
+    "args": {
+     "term": "supply chain resilience reshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'supply chain resilience reshoring'",
+    "seconds": 2.3,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news volume changed since 2020?",
+    "args": {
+     "term": "reshoring"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.1,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 36, \"critical\": 17, \"negative\": 8, \"positive\": 28, \"mean_priority\": 6.17, \"critical_pct\": 47.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 27, \"critical\": 16, \"negative\": 7, \"positive\": 20, \"mean_priority\": 6.41, \"critical_pct\": 59.3, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 36, \"critical\": 27, \"negative\": 9, \"positive\": 27, \"mean_priority\": 6.61, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 44, \"critical\": 31, \"negative\": 21, \"positive\": 21, \"mean_priority\": 6.7, \"critical_pct\": 70.5, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 20, \"critical\":"
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which countries dominate coverage?",
+    "args": {
+     "term": "nearshoring"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.5,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 766, \"share_pct\": 20.9, \"lift\": 0.9}, {\"label\": \"mexico\", \"articles\": 561, \"share_pct\": 15.3, \"lift\": 25.4}, {\"label\": \"china\", \"articles\": 327, \"share_pct\": 8.9, \"lift\": 1.8}, {\"label\": \"canada\", \"articles\": 228, \"share_pct\": 6.2, \"lift\": 1.8}, {\"label\": \"india\", \"articles\": 135, \"share_pct\": 3.7, \"lift\": 0.6}, {\"label\": \"vietnam\", \"articles\": 100, \"share_pct\": 2.7, \"lift\": 8.9}, {\"label\": \"japan\", \"articles\": 98, \"share_pct\": 2.7, \"lift\": 1.7}, {\"label\": \"germany\", \"articles\": 88, \"share_pct\": 2.4, \"lift\": 1.9}, {\"label\": \"united kingdom\", \"articles\": 87, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"spain\", \"articles\": 85, "
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 13,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "21% — | China share of US imports (est.) | 21% | 13% | -8 pts, ratio 0.62 |",
+    "13% — | China share of US imports (est.) | 21% | 13% | -8 pts, ratio 0.62 |",
+    "-8 — | China share of US imports (est.) | 21% | 13% | -8 pts, ratio 0.62 |",
+    "0.62 — | China share of US imports (est.) | 21% | 13% | -8 pts, ratio 0.62 |"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1415,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Papers per year on supply chain resilience (proxy topic)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Papers (endpoints only)",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "resilience_new_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "resilience_trend.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.radar",
+    "question": "What are the most-cited new papers literally on reshoring?",
+    "args": {
+     "topic": "reshoring",
+     "since_year": 2021
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 39.1,
+    "sample": "{\"new_work\": [{\"title\": \"Accounting and auditing with blockchain technology and artificial Intelligence: A literature review\", \"year\": 2022, \"venue\": \"International Journal of Accounting Information Systems\", \"tier\": \"review\", \"url\": \"https://doi.org/10.1016/j.accinf.2022.100598\"}, {\"title\": \"Stable-Baselines3: Reliable Reinforcement Learning Implementations\", \"year\": 2021, \"venue\": \"elib (German Aerospace Center)\", \"tier\": \"article\", \"url\": null}, {\"title\": \"Blockchain-based framework for supply chain traceability: A case example of textile and clothing industry\", \"year\": 2021, \"venue\": \"Computers & Industrial Engineering\", \"tier\": \"article\", \"url\": \"https://doi.org/10.1016/j.cie.2021.10713"
+   },
+   {
+    "id": "f2",
+    "feature": "research.radar",
+    "question": "Same for nearshoring?",
+    "args": {
+     "topic": "nearshoring",
+     "since_year": 2021
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.4,
+    "sample": "{\"new_work\": [{\"title\": \"Response of Arctic Black Carbon Contamination and Climate Forcing to Global Supply Chain Relocation\", \"year\": 2023, \"venue\": \"Environmental Science & Technology\", \"cited_by\": 3, \"orientation\": \"promising\", \"url\": \"https://doi.org/10.1021/acs.est.3c01443\"}, {\"title\": \"‘Divide and rule’: employment strategies of Chinese suppliers in supply chain relocation\", \"year\": 2025, \"venue\": \"Asia Pacific Business Review\", \"cited_by\": 1, \"orientation\": \"descriptive\", \"url\": \"https://doi.org/10.1080/13602381.2025.2452870\"}, {\"title\": \"Response of Arctic\\\\nBlack Carbon Contamination and\\\\nClimate Forcing to Global Supply Chain Relocation\", \"year\": 2023, \"venue\": \"Figshare\", \"cited_"
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "Which countries produce the reshoring literature?",
+    "args": {
+     "term": "reshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'reshoring'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='reshoring', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Is there critical evidence that reshoring raises costs or fails to cut risk?",
+    "args": {
+     "term": "reshoring",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'reshoring', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='reshoring', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of nearshoring changed, and where?",
+    "args": {
+     "term": "nearshoring"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.9,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 114, \"critical\": 26, \"negative\": 28, \"positive\": 82, \"mean_priority\": 5.69, \"critical_pct\": 22.8, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 105, \"critical\": 24, \"negative\": 16, \"positive\": 85, \"mean_priority\": 5.7, \"critical_pct\": 22.9, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 96, \"critical\": 38, \"negative\": 18, \"positive\": 75, \"mean_priority\": 5.98, \"critical_pct\": 39.6, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 109, \"critical\": 42, \"negative\": 24, \"positive\": 77, \"mean_priority\": 5.93, \"critical_pct\": 38.5, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 143, \"cri"
+   },
+   {
+    "id": "f6",
+    "feature": "research.stance_trends",
+    "question": "Has the stance on reshoring shifted over time?",
+    "args": {
+     "term": "reshoring"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"reshoring\", \"reshoring strategies\", \"supply chain reconfiguration\"], \"points\": [{\"year\": 2017, \"total\": 43, \"orientation\": {\"promising\": 3, \"problem_identifying\": 7, \"cautionary\": 1, \"descriptive\": 10, \"critical\": 1, \"breakthrough\": 4}, \"stance_score\": null, \"positive\": 7, \"contested\": 9, \"positive_pct\": 16.3, \"contested_pct\": 20.9}, {\"year\": 2018, \"total\": 42, \"orientation\": {\"cautionary\": 1, \"promising\": 3, \"comparative\": 2, \"problem_identifying\": 6, \"breakthrough\": 1, \"descriptive\": 5, \"critical\": 1}, \"stance_score\": null, \"positive\": 4, \"contested\": 8, \"positive_pct\": 9.5, \"contested_pct\": 19.0}, {\"year\": 2019, \"total\": 39, \"orientation\": {\""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 39,
+   "traced": 38,
+   "derived": 3,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "175 — - **Windows:** Research runs 2017 to 2025, so the gap to today (2026-10-23) is about 10 mo"
+   ]
+  },
+  "dois": {
+   "cited": 9,
+   "found_in_corpus": 9,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 131,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 740,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which recent papers directly measure reshoring and nearshoring adoption by industry and region?",
+    "args": {
+     "term": "reshoring nearshoring adoption industry region",
+     "orientation": "empirical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 18, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 10, \"papers\": [{\"id\": \"W4415671956\", \"title\": \"Reshoring strategies in the intellectual capital perspective: the case of the fashion and textile industry in Italy\", \"authors\": [\"Valentina Della Corte\", \"Giovanna Del Gaudio\", \"Simone Luongo\", \"Enrico Di Taranto\", \"M. Omar Parvez\"], \"venue\": \"Journal of Intellectual Capital\", \"year\": 2025, \"date\": \"2025-10-29\", \"doi\": \"10.1108/jic-06-2025-0241\", \"url\": \"https://doi.org/10.1108/jic-06-2025-0241\", \"cited_by\": 0, \"orientation"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has annual publication volume on reshoring and nearshoring changed, using a deduplicated corpus?",
+    "args": {
+     "term": "supply chain reshoring nearshoring",
+     "window": {
+      "from": "2015-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2015-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What evidence compares realized cost, lead time, and resilience outcomes for reshoring versus nearshoring?",
+    "args": {
+     "term": "reshoring nearshoring realized cost lead time resilience",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...silience', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='reshoring nearshoring re...st lead time resilience', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "What are the strongest counterarguments to claims that reshoring improves resilience?",
+    "args": {
+     "term": "reshoring supply chain resilience",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...esilience', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='reshoring supply chain resilience', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of reshoring and nearshoring changed over time and by region?",
+    "args": {
+     "term": "supply chain reshoring nearshoring",
+     "window": {
+      "from": "2015-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2015-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "-10 — - **Windows:** The question asks what is new as of 2026-10-23, but I have not searched a p",
+    "23 — - **Windows:** The question asks what is new as of 2026-10-23, but I have not searched a p"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 2,
+   "not_found": [
+    "10.1057/s42214-023-00148-3"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 756,
+  "charts": [
+   {
+    "id": "resilience-research-trend",
+    "title": "Indexed supply chain resilience research",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research items",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "resilience_research_endpoints.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which recent papers directly study supply chain reshoring, and what are their year, citations, orientation, and DOI?",
+    "args": {
+     "term": "supply chain reshoring",
+     "orientation": "all",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 5, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 4, \"papers\": [{\"id\": \"W4319982354\", \"title\": \"Domestic sourcing vs. Global sourcing: Impact of the exchange rate fluctuation and unreliable domestic supply chain\", \"authors\": [\"Zheng Yunyi\", \"Jiameng Ma\"], \"venue\": \"Advances in Economics and Management Research\", \"year\": 2023, \"date\": \"2023-01-31\", \"doi\": \"10.56028/aemr.3.1.202\", \"url\": \"https://doi.org/10.56028/aemr.3.1.202\", \"cited_by\": 0, \"orientation\": \"comparative\", \"contribution\": \"theoretical\", \"stance_score\": 0.2,"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which recent papers directly study supply chain nearshoring, and what are their year, citations, orientation, and DOI?",
+    "args": {
+     "term": "supply chain nearshoring",
+     "orientation": "all",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'supply chain nearshoring' — try expand=true, or a broader phrase",
+    "seconds": 2.2,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has reshoring research volume changed over time?",
+    "args": {
+     "term": "supply chain reshoring"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"domestic sourcing\"], \"points\": [{\"year\": 2018, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2019, \"total\": 1, \"orientation\": {\"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2021, \"total\": 2, \"orientation\": {\"promising\": 2}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2023, \"total\": 1, \"orientation\": {\"comparative\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has nearshoring research volume changed over time?",
+    "args": {
+     "term": "supply chain nearshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'supply chain nearshoring'",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What recent news coverage trends mention supply chain reshoring and nearshoring?",
+    "args": {
+     "term": "supply chain reshoring nearshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'supply chain reshoring nearshoring' in this window",
+    "seconds": 1.8,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries and sectors dominate recent reshoring and nearshoring research?",
+    "args": {
+     "term": "supply chain reshoring nearshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...reshoring nearshoring'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='supply chain reshoring nearshoring', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence or critical findings challenge reshoring and nearshoring benefits?",
+    "args": {
+     "term": "supply chain reshoring nearshoring"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...reshoring nearshoring'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='supply chain reshoring nearshoring', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 7,
+   "traced": 7,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 91,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

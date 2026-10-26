@@ -1,0 +1,177 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 1,
+    "facets": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 2,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "The follow-up calls are generic and 0 of 4 executed.",
+    "export": "No CSV.",
+    "repro": "No numbers are given. The refusal is honest but cannot be regenerated.",
+    "accuracy": "No contradictions because nothing is claimed.",
+    "limits": "The limits are generic: no window, coverage unknown.",
+    "verdict": "It answers 'cannot measure' with high confidence and gives no answer to the question.",
+    "facets": "No facet is answered with grounded values."
+   },
+   "B": {
+    "trend": "It charts all 24 points with the window stated, and the endpoint changes recompute exactly. It names no peaks (onion 99 in 2024-11, wheat 117 in 2025-02) or troughs.",
+    "comparison": "The ratios are on one scale, but 7145/442 = 16.165 is reported as 16.16. Tone ratio and vs_baseline are left undefined.",
+    "chart": "The full monthly series traces, with window, unit and source. There is no tone chart and no decomposition.",
+    "drilldown": "There is one traced layer (term to month). 2 of 4 follow-ups succeeded, and f1 just repeats c1.",
+    "export": "Two full traced CSVs with provenance, referenced from the prose and using the tool's field names.",
+    "repro": "33 of 35 numbers trace, there is a calls block with args and window, and derived numbers are shown.",
+    "accuracy": "The verdict says onion 'fell across the observed endpoints', but its own trend section shows +121.1% (19 to 42).",
+    "limits": "The window, censoring, 144-day gap, overlap and undefined fields are placed next to the numbers they bound.",
+    "verdict": "The verdict contradicts the deliverable's own trend data on onion direction.",
+    "facets": "Totals, shares, series and tone fields are covered. Onion seasonality and the spike months are not read."
+   },
+   "C": {
+    "trend": "No series, and only labelled estimates.",
+    "comparison": "Qualitative prior only.",
+    "chart": "A placeholder chart of null values labelled estimate.",
+    "drilldown": "There is no traced layer. 3 of 5 proposed calls executed.",
+    "export": "An empty template labelled estimate.",
+    "repro": "Nothing is reproducible, and the ceiling is 0.",
+    "accuracy": "Estimates are honestly labelled and there are no fabrications.",
+    "limits": "It is specific about what is unmeasured, including match mode and overlap.",
+    "verdict": "It gives a labelled-estimate leader with low confidence and conditions, but nothing measured.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "D": {
+    "trend": "It names peaks and troughs with dates, quantifies endpoint changes exactly, and states censoring. It flags that the tool's direction labels contradict the endpoints.",
+    "comparison": "Ratios and the critical-share delta recompute exactly, and the baseline is defined. The undefined vs_baseline is noted.",
+    "chart": "It plots only 7 selected months and omits the 2025-02 wheat spike of 117, so the chart misrepresents a spiky series its caption describes.",
+    "drilldown": "Term, month and tone layers trace, and the follow-ups are spike-specific (4 of 6 ok). There are no item-level identifiers.",
+    "export": "The totals CSV is complete, but the monthly CSV has only 8 of 24 months, and the totals CSV is flagged coverage=full, inconsistent with the censoring.",
+    "repro": "74 of 74 numbers trace and there is a calls block, but the monthly export is partial.",
+    "accuracy": "It reads the fields correctly and catches the label-versus-endpoint anomaly.",
+    "limits": "Window, censoring, the 145-day gap, lane, overlap, match mode and the common-word risk are placed and read.",
+    "verdict": "It states the tool's direction labels as findings, while its own trend section calls direction unresolved.",
+    "facets": "Totals, shares, spikes, tone and overlap are covered. Onion seasonality and India-specificity are only implied, not grounded."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "The verdict says onion coverage fell across endpoints, but its own data shows 19 to 42 (+121.1%).",
+    "7145/442 is rounded to 16.16 instead of 16.17."
+   ],
+   "C": [],
+   "D": [
+    "The verdict asserts the wheat rising / onion falling labels while the trend section calls direction unresolved.",
+    "The chart omits the 2025-02 wheat spike of 117.",
+    "The term totals CSV is marked coverage=full despite the censored window."
+   ]
+  },
+  "best": "D",
+  "verdict": "B and D both grounded every number in the single news.compare call, and A and C produced no measurements. D read the data more carefully: it named the spike months and computed critical shares. It also caught that the tool's direction labels contradict the endpoints, whereas B's verdict misstated the direction of onion coverage. D's weaknesses are a selected-months chart that drops the wheat spike and a verdict that restates the direction labels it had just questioned."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 1,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 2,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

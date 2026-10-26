@@ -1,0 +1,569 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1030,
+  "charts": [
+   {
+    "id": "events",
+    "title": "Estimated excess deaths in major heat events",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Excess deaths, recalled from published estimates",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "events.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many research papers per year link heatwaves to mortality?",
+    "args": {
+     "term": "heatwave mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'heatwave mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers contradict or qualify the effect?",
+    "args": {
+     "term": "heatwave mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'heatwave mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has stance changed over time?",
+    "args": {
+     "term": "heatwave mortality"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"heatwave mortality\", \"heat-related deaths\", \"temperature-related mortality\"], \"points\": [{\"year\": 2017, \"total\": 3, \"orientation\": {\"problem_identifying\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 33.3}, {\"year\": 2018, \"total\": 10, \"orientation\": {\"problem_identifying\": 1, \"cautionary\": 2, \"promising\": 1, \"descriptive\": 3}, \"stance_score\": null, \"positive\": 1, \"contested\": 3, \"positive_pct\": 10.0, \"contested_pct\": 30.0}, {\"year\": 2019, \"total\": 4, \"orientation\": {\"descriptive\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": "
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How much news coverage of heat deaths is there per year?",
+    "args": {
+     "term": "heatwave deaths"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 1, \"critical\": 1, \"negative\": 1, \"positive\": 0, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1, \"critical\": 1, \"negative\": 1, \"positive\": 0, \"mean_priority\": 8.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, "
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries are covered most?",
+    "args": {
+     "term": "heatwave mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'heatwave mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What are the top supporting papers with quotes?",
+    "args": {
+     "term": "heatwave mortality",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mortality', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 28,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "70,000 — | r1 | 2008, Comptes Rendus Biologies (Robine et al.), peer-reviewed | About 70,000 excess",
+    "61,600 — | r3 | 2023, Nature Medicine (Ballester et al.), peer-reviewed | About 61,600 heat-related",
+    "43 — | r5 | 2021, Lancet Planetary Health (Zhao et al.), peer-reviewed | Heat and cold attribut"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 127,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1119,
+  "charts": [
+   {
+    "id": "research_series",
+    "title": "Heatwave-mortality papers per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers (intersection lane)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "stance_counts.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are the 32 labelled contradicting?",
+    "args": {
+     "term": "heatwave mortality",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W4383105154\", \"title\": \"The footprint of human-induced climate change on heat-related deaths in the summer of 2022 in Switzerland\", \"authors\": [\"Ana M. Vicedo‐Cabrera\", \"Evan de Schrijver\", \"Dominik L. Schumacher\", \"Martina S. Ragettli\", \"Erich Fischer\", \"Sonia I. Seneviratne\"], \"venue\": \"Environmental Research Letters\", \"year\": 2023, \"date\": \"2023-07-01\", \"doi\": \"10.1088/1748-9326/ace0d0\", \"url\": \"https://doi.org/10.1088/1748-9326/ace0d0\", \"cited_by"
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "Pooled relative risk of mortality per heatwave from meta-analyses?",
+    "args": {
+     "claim": "Heatwaves increase mortality",
+     "design": "meta-analysis"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...sign': 'meta-analysis'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...sign': 'meta-analysis'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Heatwaves increase mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndesign\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='meta-analysis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "How do effects differ by age and region?",
+    "args": {
+     "claim": "Heatwaves increase mortality"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 143.7,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"China\", \"papers\": 8}, {\"country\": \"United States\", \"papers\": 4}, {\"country\": \"Canada\", \"papers\": 2}, {\"country\": \"Italy\", \"papers\": 2}, {\"country\": \"Spain\", \"papers\": 1}, {\"country\": \"Portugal\", \"papers\": 1}, {\"country\": \"Barcelona Spain\", \"papers\": 1}, {\"country\": \"Australia\", \"papers\": 1}, {\"country\": \"Japan\", \"papers\": 1}, {\"country\": \"South Africa\", \"papers\": 1}, {\"country\": \"Germany\", \"papers\": 1}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"united states\", \"articles\": 13088}, {\"count"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Is stance shifting over time?",
+    "args": {
+     "claim": "Heatwaves increase mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...es increase mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Heatwaves increase mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news coverage compare with research?",
+    "args": {
+     "term": "heatwave deaths"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'heatwave deaths'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave deaths', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What do scenarios imply for future heat deaths?",
+    "args": {
+     "term": "heatwave mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 48,
+   "traced": 46,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 453,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What are the pooled heatwave-associated mortality estimates, by population and heatwave definition?",
+    "args": {
+     "term": "heatwave mortality effect size systematic review",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...c review', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality effect size systematic review', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies report null or opposing findings, and what populations and definitions do they use?",
+    "args": {
+     "term": "heatwave mortality null findings",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...findings', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwave mortality null findings', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has research on heatwaves and mortality changed over time?",
+    "args": {
+     "term": "heatwaves mortality",
+     "window": "all"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 110,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 1104,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism-typed research papers on heatwaves and mortality",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Research corpus",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "heatwave_research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "heatwave_event_statistics.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "What population-specific relative risks and uncertainty intervals do mortality studies report?",
+    "args": {
+     "term": "heatwave exposure all-cause mortality relative risk population",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'heatwave exposure all-cause mortality relative risk population' — try expand=true, or a broader phrase",
+    "seconds": 36.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which studies report null or protective mortality findings during heatwaves?",
+    "args": {
+     "term": "heatwave mortality null results adaptation",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'heatwave mortality null results adaptation' — try expand=true, or a broader phrase",
+    "seconds": 15.6,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.citations",
+    "question": "What are the underlying observed and expected death counts for the August 2003 attribution estimate?",
+    "args": {
+     "doi": "10.1073/pnas.2503577122",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'doi': '1...503577122', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ndoi\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='10.1073/pnas.2503577122', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "How do heatwave mortality effects vary by age, location, and socioeconomic vulnerability?",
+    "args": {
+     "claim": "heatwaves mortality effect modifiers age geography socioeconomic",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...economic', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...economic', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='heatwaves mortality effe...geography socioeconomic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 27,
+   "traced": 27,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 4,
+   "not_found": [
+    "10.17159/sajs.2022/12047`"
+   ],
+   "year_mismatch": [
+    "10.1073/pnas.2503577122"
+   ]
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 115,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

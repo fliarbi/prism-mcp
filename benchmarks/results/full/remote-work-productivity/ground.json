@@ -1,0 +1,623 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1021,
+  "charts": [
+   {
+    "id": "effect-by-study-year",
+    "title": "Estimated productivity effect of remote or hybrid work by study year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Reported effect (percent)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "effects.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Which randomized studies report remote work productivity effects?",
+    "args": {
+     "term": "remote work productivity randomized"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...oductivity randomized'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity randomized', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers find negative effects?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ote work productivity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has stance shifted over time?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"remote work productivity\"], \"points\": [{\"year\": 2021, \"total\": 1, \"orientation\": {\"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2022, \"total\": 2, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 50.0, \"contested_pct\": 0.0}, {\"year\": 2024, \"total\": 2, \"orientation\": {\"descriptive\": 2}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2025, \"total\": 5, \"orientation\": {\"promising\": 2, \"comparative\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 2, \"cont"
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What effect sizes are reported and for what populations?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ote work productivity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How does news coverage volume compare to research?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.7,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 1, \"critical\": 0, \"negative\": 1, \"posit"
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Where is the evidence concentrated geographically?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ote work productivity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 17,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "1,612 — - Hybrid randomized trial, Trip.com, 1,612 employees: no significant difference in perform",
+    "-33 — The points are 2015 call center [r2], 2020 IT firm [r5], 2022 data entry [r3], and 2024 hy",
+    "33 — The spread is about 33 points between the best and worst case. A ratio is not meaningful b"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1593,
+  "charts": [
+   {
+    "id": "research_series",
+    "title": "Papers on remote work and productivity per year (intersection lane)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "stance_tally.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers frame remote work cautiously or critically on productivity?",
+    "args": {
+     "term": "remote work productivity",
+     "orientation": "cautionary",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'remote work productivity' — try expand=true, or a broader phrase",
+    "seconds": 10.6,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers are the 5 critical-orientation papers?",
+    "args": {
+     "term": "remote work productivity",
+     "orientation": "critical",
+     "limit": 5
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'remote work productivity' — try expand=true, or a broader phrase",
+    "seconds": 1.9,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "What do randomised or administrative-data studies find?",
+    "args": {
+     "term": "remote work productivity randomized field experiment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ized field experiment'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ized field experiment'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity...omized field experiment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Do hybrid arrangements differ from fully remote?",
+    "args": {
+     "claim": "Hybrid work does not reduce productivity compared with fully in-office work",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 121.9,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 1397, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 3, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 2, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"co"
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "How does stance shift over time?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"remote work productivity\"], \"points\": [{\"year\": 2021, \"total\": 1, \"orientation\": {\"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2022, \"total\": 2, \"orientation\": {\"promising\": 2}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2024, \"total\": 2, \"orientation\": {\"descriptive\": 2}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2025, \"total\": 5, \"orientation\": {\"comparative\": 1, \"descriptive\": 2, \"promising\": 2}, \"stance_score\": null, \"positive\": 2, \"con"
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What do news articles say about return-to-office and productivity?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'remote work productivity'",
+    "seconds": 6.4,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.geography",
+    "question": "Which countries do the studies come from?",
+    "args": {
+     "term": "remote work productivity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ote work productivity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 38,
+   "traced": 38,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 11,
+   "found_in_corpus": 11,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 803,
+  "charts": [
+   {
+    "id": "selected-studies",
+    "title": "Selected remote-work productivity studies by publication year",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Selected studies",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "selected_studies.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What is the pooled effect of remote work on productivity, by study design and occupation?",
+    "args": {
+     "term": "remote work productivity effect size occupation study design"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...cupation study design'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity...occupation study design', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "Which studies find productivity gains from remote work, and what populations and measures do they use?",
+    "args": {
+     "term": "remote work productivity gains output performance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ns output performance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity...ains output performance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which studies find productivity losses from remote work, and what populations and measures do they use?",
+    "args": {
+     "term": "remote work productivity losses output performance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...es output performance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity...sses output performance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has research on remote-work productivity changed over time?",
+    "args": {
+     "term": "remote work productivity",
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of remote-work productivity changed over time?",
+    "args": {
+     "term": "remote work productivity",
+     "window": "2010-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2010-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 2,
+   "not_found": [
+    "10.1287/mnsc.2023.03506"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 998,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Indexed research papers on remote work and performance",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Prism typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which higher-tier empirical studies directly estimate remote work’s productivity effect, and what are their effect sizes?",
+    "args": {
+     "term": "remote work productivity causal effect",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'remote work productivity causal effect' — try expand=true, or a broader phrase",
+    "seconds": 14.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "What study designs and productivity measures appear in the direct evidence?",
+    "args": {
+     "claim": "Remote work productivity effect",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...y effect', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...y effect', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Remote work productivity effect', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=20, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.brief",
+    "question": "How do direct findings vary by occupation, hybrid versus fully remote work, and pandemic versus non-pandemic settings?",
+    "args": {
+     "claim": "remote work productivity effects by job type and arrangement"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ... type and arrangement'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='remote work productivity...ob type and arrangement', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What are the annual research and news series with complete-period coverage and explicit censoring?",
+    "args": {
+     "term": "remote work productivity",
+     "window": "2019-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 32,
+   "traced": 32,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

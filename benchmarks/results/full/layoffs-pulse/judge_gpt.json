@@ -1,0 +1,186 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 5,
+    "export": 5,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; the chart is empty.",
+    "comparison": "No measured counts or baseline to compare.",
+    "chart": "The only chart has no plotted values.",
+    "drilldown": "Follow-ups are generic, have placeholder windows, and none executed successfully.",
+    "export": "No data-backed CSV is supplied.",
+    "repro": "No measured numbers or reproducible calls.",
+    "refs": "No references support measured claims.",
+    "accuracy": "It avoids inventing measurements and accurately states that none are available in its own record.",
+    "limits": "It identifies the missing corpus, window, censoring, and match details.",
+    "verdict": "The abstention is direct and supported, but offers no measured answer.",
+    "facets": "It grounds only that the requested measurements are unavailable."
+   },
+   "B": {
+    "trend": "The monthly series is present, but the trend ceiling is 1.",
+    "comparison": "The sentiment ratio and corpus baseline are defined and the delta and ratio recompute.",
+    "chart": "The chart ceiling is 0.",
+    "drilldown": "One follow-up executed with non-empty results; breakdowns and further calls are provided.",
+    "export": "Monthly and geography CSVs are traced, sourced, windowed, and accompanied by provenance.",
+    "repro": "The figures trace to the overview call and the regenerate call includes arguments and window.",
+    "refs": "No resolving article or paper references are supplied; the ceiling is 1.",
+    "accuracy": "The counts, tone comparison, place shares, censoring, and caveats align with the record.",
+    "limits": "Specific limits are discussed, though several are consolidated in the method section rather than placed beside each result.",
+    "verdict": "It gives a supported answer, decision, confidence, and condition, but does not clearly name the strongest contrary evidence in the verdict.",
+    "facets": "Volume, tone, places, and the lack of reliable employer identification are addressed; implied overlap and research-versus-news facets are not."
+   },
+   "C": {
+    "trend": "Traced monthly volume and critical-share series include quantified changes, peaks, and decomposition.",
+    "comparison": "The negative-to-positive ratio is compared with a defined corpus baseline and recomputes.",
+    "chart": "Both volume and critical-share charts trace to the source and support stated claims.",
+    "drilldown": "It exposes multiple breakdowns and identifiers, with four successful question-specific follow-ups.",
+    "export": "Monthly and country tables are traced and accompanied by provenance.",
+    "repro": "The call, arguments, window, and capture date support regenerating the reported figures.",
+    "refs": "No resolving article or paper references are supplied; the ceiling is 1.",
+    "accuracy": "Most readings align, but the stated 145-day gap is one day too long; the source dates imply 144 days.",
+    "limits": "It covers censoring, match mode, partial geography enrichment, and interpretation, but some caveats are grouped in the method section.",
+    "verdict": "The verdict is supported but exceeds 150 words, so the rubric caps it at 3.",
+    "facets": "It addresses volume, tone, companies, places, and noise, but not all implied overlap and research-versus-news facets."
+   },
+   "D": {
+    "trend": "The chart is an explicitly labelled estimate, not a measured coverage trend.",
+    "comparison": "Only an estimated comparison of layoff totals is offered, not coverage.",
+    "chart": "The memory chart is labelled estimate, earning the estimate-only anchor.",
+    "drilldown": "It offers a breakdown outline, but no traced layers or successful question-specific follow-ups.",
+    "export": "The CSV is explicitly an estimate and describes layoffs, not coverage.",
+    "repro": "Figures are labelled as recollections and cannot be reproduced.",
+    "refs": "A generic tracker link is given, without checked records or claim-supporting metadata.",
+    "accuracy": "It avoids claiming measured coverage, but its recalled figures and company/place generalizations are unsupported specifics.",
+    "limits": "It states that the corpus was not queried, but the applicable coverage measures remain unmeasured.",
+    "verdict": "It states that the question cannot be measured, but the confidence and proposed change are scoped only as a scoping note.",
+    "facets": "Most requested facets are unmeasured or guessed rather than grounded."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "The window from 2026-06-01 to 2026-10-23 is 144 days, not 145."
+   ],
+   "D": [
+    "Recalled annual tech layoff totals and company/place generalizations do not measure news coverage."
+   ]
+  },
+  "best": "C",
+  "verdict": "C best equips a decision-maker: it quantifies the volume and tone trends, shows the critical-share pattern, and surfaces the sports-heavy noise and place-coverage limits. B is careful and reproducible, but its chart and trend ceilings sharply limit the evidence presentation; C’s main weaknesses are its overlong verdict and a one-day gap calculation error."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 1,
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 5,
+   "export": 5,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

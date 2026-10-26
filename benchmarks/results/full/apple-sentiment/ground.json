@@ -1,0 +1,630 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 618,
+  "charts": [
+   {
+    "id": "apple-tone-trend",
+    "title": "Apple coverage tone by month (not measured)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Apple tone (no data)",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "apple_tone_monthly.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What is Apple's tone relative to the corpus baseline?",
+    "args": {
+     "term": "Apple",
+     "baseline": "corpus",
+     "from": "2025-10-01",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-22'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Apple', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How has monthly Apple tone moved?",
+    "args": {
+     "term": "Apple",
+     "interval": "month",
+     "metric": "tone"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmetric\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='tone', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which headlines are most critical?",
+    "args": {
+     "term": "Apple",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.7,
+    "sample": "{\"articles\": [{\"target_id\": \"69bb467ca2269239ea25fdc0\", \"url\": \"https://nypost.com/2026/02/05/us-news/nyc-career-criminal-finally-locked-up-after-allegedly-raping-teen-as-horrific-new-details-emerge/\", \"title\": \"NYC career criminal finally locked up after allegedly raping teen – as horrific new details emerge\", \"excerpt\": \"A career criminal who has been in and out of court-ordered counseling programs was finally taken off Big Apple streets this week — as prosecutors revealed stomach-turning new details of his alleged rape of a teen girl that finally got him locked up.\", \"publisher\": \"nypost.com\", \"published\": \"2026-02-05 23:14:33\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-02-05 23:"
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "What themes and entities dominate?",
+    "args": {
+     "term": "Apple"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 63.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"Apple\", \"type\": \"organization\", \"type_evidence\": {\"person\": 471, \"organization\": 14145, \"place\": 955, \"tagged_articles\": 613766, \"entity_labelled_articles\": 485941, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 668190, \"critical_articles\": 214293, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:55:01\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close e"
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Where is coverage placed, and what is placed_pct?",
+    "args": {
+     "term": "Apple"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 259040, \"share_pct\": 31.8, \"lift\": 1.4}, {\"label\": \"united kingdom\", \"articles\": 59512, \"share_pct\": 7.3, \"lift\": 1.5}, {\"label\": \"south korea\", \"articles\": 52828, \"share_pct\": 6.5, \"lift\": 8.6}, {\"label\": \"china\", \"articles\": 50055, \"share_pct\": 6.1, \"lift\": 1.2}, {\"label\": \"india\", \"articles\": 46724, \"share_pct\": 5.7, \"lift\": 0.9}, {\"label\": \"colombia\", \"articles\": 26907, \"share_pct\": 3.3, \"lift\": 6.8}, {\"label\": \"australia\", \"articles\": 23986, \"share_pct\": 2.9, \"lift\": 0.6}, {\"label\": \"canada\", \"articles\": 22761, \"share_pct\": 2.8, \"lift\": 0.8}, {\"label\": \"france\", \"articles\": 20462, \"share_pct\": 2.5, \"lift\": 1.4}, {\"labe"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage by publisher?",
+    "args": {
+     "term": "Apple",
+     "group_by": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "analysis.history",
+    "question": "How does the long-run tone history look?",
+    "args": {
+     "term": "Apple"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'Apple'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Apple', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1246,
+  "charts": [
+   {
+    "id": "critical-pct-monthly",
+    "title": "Share of Apple articles flagged critical, monthly",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "critical_pct",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "neg-pos-ratio-monthly",
+    "title": "Negative-to-positive article ratio, monthly",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "neg/pos ratio",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "apple_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 120,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "apple_summary.csv",
+    "how": "call",
+    "rows": 1,
+    "numeric_cells": 3,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which headlines drove the 2025-01 negative peak (ratio 0.63)?",
+    "args": {
+     "term": "apple inc",
+     "since": "2025-01-01",
+     "until": "2025-02-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "Why was 2025-03 so positive (ratio 0.12, critical 21%)?",
+    "args": {
+     "term": "apple inc",
+     "since": "2025-03-01",
+     "until": "2025-04-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.9,
+    "sample": "{\"points\": [{\"period\": \"2025-03-01\", \"negative\": 48, \"positive\": 412, \"neutral\": 1, \"ratio\": 0.12}], \"totals\": {\"neg\": 48, \"pos\": 412, \"neutral\": 1, \"n\": 461, \"neg_pct\": 10.4, \"pos_pct\": 89.4, \"ratio\": 0.12}, \"corpus_baseline_ratio\": 0.53, \"vs_baseline\": 0.23, \"reading\": \"markedly more positive than ordinary news coverage\"}"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does Apple compare with Microsoft, Alphabet and Meta on the same scale?",
+    "args": {
+     "terms": [
+      "apple inc",
+      "microsoft",
+      "alphabet",
+      "meta platforms"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 24.3,
+    "sample": "{\"terms\": [\"apple inc\", \"microsoft\", \"alphabet\", \"meta platforms\"], \"rows\": [{\"term\": \"apple inc\", \"articles\": 9343, \"share_pct\": 1.6, \"critical\": 4752, \"direction\": \"rising\", \"growth\": 1.47, \"tone_ratio\": 0.36, \"vs_baseline\": 0.62, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 290, \"critical\": 204, \"negative\": 70, \"positive\": 218, \"mean_priority\": 7.08, \"critical_pct\": 70.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 274, \"critical\": 204, \"negative\": 87, \"positive\": 182, \"mean_priority\": 7.11, \"critical_pct\": 74.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 313, \"critical\": 221, \"negative\": 111, \"positive\": 197, \"mean_priority\": 6.98, \"critical_pct\""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What has happened since 2026-06-01?",
+    "args": {
+     "term": "apple inc",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'apple inc' in this window",
+    "seconds": 0.4,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Is the tone different when Apple is the central entity rather than a mention?",
+    "args": {
+     "term": "apple inc",
+     "match_mode": "entity_central",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nmatch_mode\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='entity_central', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which regions and publishers are the most critical?",
+    "args": {
+     "term": "apple inc",
+     "since": "2024-06-01",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 106,
+   "traced": 104,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 116,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 289,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How did Apple coverage volume and sentiment change month by month, and how do they compare with the same corpus baseline?",
+    "args": {
+     "query": "Apple",
+     "baseline": "same-corpus average news",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...', 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Apple', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same-corpus average news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "What are the themes, organisations, people, and places in Apple coverage, including place coverage percentage?",
+    "args": {
+     "query": "Apple"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'Apple'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Apple', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical Apple headlines appeared, on what dates, and from which publishers and URLs?",
+    "args": {
+     "query": "Apple"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'Apple'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Apple', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which publishers account for Apple coverage, and how concentrated is the source mix?",
+    "args": {
+     "query": "Apple",
+     "dimension": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...imension': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Apple', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 90,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 596,
+  "charts": [
+   {
+    "id": "apple-tone-ratio",
+    "title": "Apple coverage negative-to-positive article ratio",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Negative-to-positive ratio",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "apple_monthly_tone.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 120,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which publishers contribute the most Apple coverage across the full window?",
+    "args": {
+     "term": "apple inc",
+     "since": "2024-06-01",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='apple inc', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "Which critical Apple headlines appeared in the latest complete months?",
+    "args": {
+     "term": "apple inc",
+     "since": "2026-03-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does Apple’s monthly tone compare with the corpus baseline over time?",
+    "args": {
+     "term": "apple inc",
+     "since": "2024-06-01",
+     "baseline": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are associated with Apple coverage, with placement coverage by country?",
+    "args": {
+     "term": "apple inc",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 3341, \"share_pct\": 34.2, \"lift\": 1.5}, {\"label\": \"china\", \"articles\": 1223, \"share_pct\": 12.5, \"lift\": 2.5}, {\"label\": \"india\", \"articles\": 862, \"share_pct\": 8.8, \"lift\": 1.3}, {\"label\": \"united kingdom\", \"articles\": 645, \"share_pct\": 6.6, \"lift\": 1.3}, {\"label\": \"colombia\", \"articles\": 404, \"share_pct\": 4.1, \"lift\": 8.5}, {\"label\": \"south korea\", \"articles\": 362, \"share_pct\": 3.7, \"lift\": 4.9}, {\"label\": \"japan\", \"articles\": 240, \"share_pct\": 2.5, \"lift\": 1.6}, {\"label\": \"canada\", \"articles\": 178, \"share_pct\": 1.8, \"lift\": 0.5}, {\"label\": \"australia\", \"articles\": 175, \"share_pct\": 1.8, \"lift\": 0.4}, {\"label\": \"germany\", \"a"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Which Apple themes changed most in the latest complete year?",
+    "args": {
+     "term": "apple inc",
+     "since": "2025-06-01",
+     "group_by": "category"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='category', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 28,
+   "traced": 27,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 100,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

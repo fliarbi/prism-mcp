@@ -1,0 +1,251 @@
+{
+ "slug": "air-pollution-mortality",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 25.4,
+   "plain": 25.4,
+   "invented": true,
+   "by_judge": {
+    "opus": 28.6,
+    "gpt": 22.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 3.5,
+    "chart": 3.0,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 3.5,
+    "refs": 3.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 65.2,
+   "plain": 65.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 72.6,
+    "gpt": 57.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 1.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 24.1,
+   "plain": 24.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 23.6,
+    "gpt": 24.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 79.1,
+   "plain": 79.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.0,
+    "gpt": 85.2
+   }
+  }
+ },
+ "judge_mad": 0.48,
+ "verdicts": {
+  "opus": "C and D were both grounded in the recorded Prism responses and both flagged the 7-paper intersection limit. A and B relied on memory, and B's citations did not match its effect sizes. C edged D by covering more facets: the full trend with peak and CAGR, the news thirds, and a traced cause-specific effect chart. D was slightly cleaner on accuracy but charted and exported only research volume.",
+  "gpt": "A best supports a decision: it pairs traceable mortality effect estimates with clear limits on what the selected corpus can establish, and it makes the policy implication conditional on observational evidence. B includes more material but introduces an unresolved, directionally inconsistent news trend and an unsupported study window; C and D rely on unverified memory estimates and conflicting reference details."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "Pope 2002 cardiopulmonary ~13% per 10 µg/m³ overstated (est. labelled)",
+    "Untagged number in the Verdict (script)"
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1056/NEJMoa0803894 metadata mismatch (title is the 2002 JAMA paper)",
+    "Hoek cited as 2014 EHP but DOI is 2013 Environ Health",
+    "HR 1.07 and RR 1.08 misattributed to these sources"
+   ],
+   "claude_prism": [
+    "China '0 to 62 μg/m³' claimed quote not present in the supplied record",
+    "2025 called censored but plotted unmarked",
+    "Provenance JSON omits claim args for c2 and c3"
+   ],
+   "chatgpt_prism": [
+    "Censored 2025 point plotted without a marker"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The evidence record reports two unread, ungrounded documents; saying there are no contradicting documents overstates what the selected retrieval establishes."
+   ],
+   "claude_prism": [
+    "News is described as rising, but the supplied series summary’s first-to-last values are 10 to 3; its trend summary itself is internally inconsistent.",
+    "The chart labels the Medicare study window 2000–2016, which the reference record does not provide.",
+    "The claimed China 0–62 μg/m³ risk curve is absent from the supplied statistics record."
+   ],
+   "claude_bare": [
+    "The verdict contains an untagged number, 10.",
+    "The recalled pooled estimate, study synthesis, and guideline trend are not supported by the supplied record; the meta-analysis reference is explicitly unverified."
+   ],
+   "chatgpt_bare": [
+    "The Pope reference combines a 2009 NEJM study/DOI with a 2002 JAMA title, and the CSV assigns it 2009.",
+    "The Hoek reference is inconsistent: prose says Environmental Health Perspectives, 2014, while the listed DOI/reference identifies Environmental Health, 2013."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Only series is the WHO guideline (10 to 5 µg/m³), a cited public figure that is not the quantity the question asks about.",
+    "comparison": "Memory hazard ratios compared on one scale with est labels; capped at 2.",
+    "chart": "Single chart of a public guideline series the benchmark cannot verify.",
+    "drilldown": "Layers named generically; only 1 of 6 follow-ups executed ok.",
+    "export": "CSV honestly labelled estimate.",
+    "repro": "All numbers from memory and labelled est.",
+    "refs": "Mostly real DOIs, but r1 has no identifier and there are no quotes.",
+    "accuracy": "Mostly right from memory; Pope 2002 cardiopulmonary ~13% is overstated; marked est.",
+    "limits": "Specific about what it cannot measure; no data limits beyond that.",
+    "verdict": "Script ceiling 0 (untagged number in the Verdict).",
+    "facets": "Answered from memory."
+   },
+   "chatgpt_bare": {
+    "trend": "No series; states that a trend cannot be measured.",
+    "comparison": "Memory comparison whose cited sources do not match the figures.",
+    "chart": "Estimate-labelled memory chart; attributes both points to r1.",
+    "drilldown": "Breakdown from memory only; follow-ups not executed.",
+    "export": "Estimate-labelled table.",
+    "repro": "Script ceiling 0.",
+    "refs": "r1 DOI resolves to Pope 2009 on life expectancy but carries the 2002 JAMA title. r2 is called a 2014 EHP paper while its DOI is Hoek 2013 in Environ Health.",
+    "accuracy": "Effect sizes are misattributed: HR 1.07 is not from the 2009 NEJM paper, and Hoek's pooled estimate is about 1.06, not 1.08.",
+    "limits": "Honest and specific about what was unmeasured.",
+    "verdict": "Clear answer, decision, confidence and conditions, but it rests on misattributed citations.",
+    "facets": "Memory only."
+   },
+   "claude_prism": {
+    "trend": "Full traced series with CAGR 6.6%, 2023 peak, 1.47x late vs early and the news thirds. 2025 is called censored but plotted unmarked.",
+    "comparison": "Ratios 1.76x and 3.5x recompute; baseline defined; caveat on differing outcome definitions given.",
+    "chart": "Two traced charts tied to claims. The Medicare window is an estimate and the censored year is not marked.",
+    "drilldown": "Corpus, stance, document and DOI layers; 2 of 6 follow-ups ok.",
+    "export": "Two CSVs with provenance; medicare window=unknown; at script ceiling 3.",
+    "repro": "All numbers traced and calls listed. The provenance JSON drops the claim args for c2 and c3.",
+    "refs": "7 of 7 DOIs found, verified quotes for the read papers, unread items flagged.",
+    "accuracy": "Accurate overall. The China '0 to 62 μg/m³' claimed quote does not appear in the supplied record. 'Tier rank 3' is an inferred label.",
+    "limits": "Window gaps, lane, coverage, censoring and match mode are placed next to the numbers, with what would close each gap.",
+    "verdict": "Direct and bounded; carries the 7-paper intersection caveat and the empty contrary list.",
+    "facets": "Volumes, stance, tally, effect sizes, series and contrary evidence all covered."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with a 66% change that recomputes. Peak and 2024 dip not named; series not decomposed.",
+    "comparison": "Subtraction deltas exact with all-cause as the baseline and a single-study caveat.",
+    "chart": "One traced chart, of research volume only; effect sizes are not charted and the censored year is unmarked.",
+    "drilldown": "Corpus, lane and stance layers with values; 1 of 5 follow-ups ok.",
+    "export": "Single traced CSV with full provenance; effect sizes not exported.",
+    "repro": "All numbers traced, calls listed with args, provenance block present.",
+    "refs": "3 of 3 DOIs resolve, verbatim quote verified, tier stated, contrary set reported as empty.",
+    "accuracy": "Faithful to the record; notes the sample-size ambiguity and the linear vs non-linear model sensitivity.",
+    "limits": "Precise gap arithmetic, lane, coverage, match mode and censoring placed at the numbers.",
+    "verdict": "Clear answer, decision, confidence and conditions. Says 'strong' with medium confidence, which is explained by the narrow selection.",
+    "facets": "Most facets grounded, including tally, contrary set, series and volumes."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced annual series, quantified 66% change, and correctly says it measures publication volume, not evidence strength; omits the peak and full trend summary.",
+    "comparison": "The same Medicare study’s relative mortality estimates share a scale; baseline is defined and differences recompute exactly.",
+    "chart": "The research chart traces all points and states window, unit, source, and reading; it lacks the peak/decomposition detail.",
+    "drilldown": "Provides traced corpus, lane, stance, and DOI layers, but only one of five follow-up calls executed successfully.",
+    "export": "The annual series CSV is traced and referenced, but the needed effect-size table is absent and provenance is incomplete.",
+    "repro": "All measured numbers trace to listed calls with args and windows; derived figures can be recomputed.",
+    "refs": "All three DOIs resolve, claims are linked to references, and the verified quotes match; it also identifies contrary/unrelated evidence and tiers.",
+    "accuracy": "Mostly careful, but calls the selected documents ‘Contradicting documents: none’ despite the record having two unread documents and no basis to rule out contrary evidence.",
+    "limits": "Places relevant lane, window, censoring, coverage, match-mode, and retrieval limits alongside the figures; identifies the gap to today and what evidence would close it.",
+    "verdict": "Direct, supported answer with confidence, decision, and a condition that could change it; it underplays the record’s strongest qualification that only 7 papers cover both claim sides.",
+    "facets": "Covers effect sizes, study evidence, counter-evidence limits, research trend, corpus matching, and key retrieval caveats with grounded values."
+   },
+   "claude_prism": {
+    "trend": "Research series and 6.6% CAGR are traced, but the news trend direction is wrong: the monthly trend summary says rising while first-to-last falls, and B says it rose without resolving that anomaly.",
+    "comparison": "Effect values are traced, but the chart invents an unreported study window and compares outcomes across different studies without a sufficiently resolved common baseline.",
+    "chart": "Research chart traces fully, but the cause-effects chart has an estimated window not supplied by the source, so the minimum chart score is limited.",
+    "drilldown": "Names useful layers and follow-ups, but only two of six follow-up calls returned on-topic data and the breakdown does not consistently link items to identifiers.",
+    "export": "Exports research and Medicare values, but the Medicare period is unknown and provenance is incomplete; no full source window is available.",
+    "repro": "Several claims are traceable, but the calls block drops required args for some calls and has inconsistent windows; the unreported chart window is not reproducible.",
+    "refs": "Most identifiers resolve, but the Medicare effect quote is explicitly unverified and some references are not tied to a supported claim with a verified quote.",
+    "accuracy": "Misstates the news trend as rising despite first-to-last decline, and presents the Medicare population/period and a China risk curve beyond what the reference record supports.",
+    "limits": "States many relevant limits, but does not correctly handle the news trend anomaly and leaves some claimed study details unverified.",
+    "verdict": "Gives an actionable answer and confidence, but the confidence claim leans on an incomplete read sample and misses the inconsistent news trend in its own evidence.",
+    "facets": "Covers most relevant facets with grounded counts and effect sizes, but trend reading and study-detail reliability leave material gaps."
+   },
+   "claude_bare": {
+    "trend": "The WHO guideline comparison is not a time series of mortality evidence or research volume, and its source is not verifiable within the supplied record.",
+    "comparison": "The estimates are explicitly memory-based and cannot be checked as a common-scale comparison.",
+    "chart": "Chart uses recalled guideline values and does not address a supported mortality-evidence trend.",
+    "drilldown": "Follow-ups were not executed successfully enough to provide a traced breakdown; proposed calls do not substitute for results.",
+    "export": "CSV contains estimated memory values rather than traced records.",
+    "repro": "No recorded calls, and most numeric claims are untraced; the one untagged verdict number is invented-looking.",
+    "refs": "At least one citation is explicitly unverified, and the recalled effect estimates lack source-verifiable quotes and claim support.",
+    "accuracy": "Presents a strong, specific consensus claim and effect range unsupported by the record; memory estimates are not penalized for absence, but the asserted synthesis and figures are unreliable.",
+    "limits": "Explicitly labels memory estimates and states missing corpus data and knowledge limits, though the age of evidence is not consistently tied to the figures.",
+    "verdict": "Verdict ceiling is zero because the untagged ‘10’ is an invented specific; it also overstates evidence strength relative to its unsourced claims.",
+    "facets": "Some effect and limitation facets are discussed from memory, but most requested measurable facets lack grounded values."
+   },
+   "chatgpt_bare": {
+    "trend": "No mortality or publication time series; correctly says it cannot be measured, but supplies a chart of two recalled estimates instead.",
+    "comparison": "Comparison uses memory estimates that cannot be established as one checked scale; the cited years and methods conflict with its own references.",
+    "chart": "The chart is memory-based and its window does not represent a traced source series.",
+    "drilldown": "Provides only generic breakdown dimensions and unexecuted calls, with no returned item layer.",
+    "export": "CSV rows are estimated memory figures and contain a fabricated study-year attribution.",
+    "repro": "Numbers are untraced and the listed calls have no reproducible results; the reference metadata conflicts with the prose.",
+    "refs": "The Pope citation’s 2009 year and DOI identify a different work than the 2002 JAMA Pope paper described; the Hoek citation metadata also conflicts with the reference list’s stated year/venue.",
+    "accuracy": "The source-year/venue/DOI details conflict, and the remembered estimates are presented as evidence for a high-confidence verdict without reliable identification.",
+    "limits": "Clearly labels memory and missing measurements, but does not reconcile the inconsistent study metadata or bound the estimates with verifiable source limits.",
+    "verdict": "Direct answer and decision are stated, but high confidence is unsupported by the two memory estimates and the deliverable lacks grounded contrary evidence or verified sources.",
+    "facets": "Most corpus, trend, and evidence-strength facets are explicitly unavailable; only a small memory-based effect summary is supplied."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

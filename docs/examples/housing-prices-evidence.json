@@ -1,0 +1,1392 @@
+{
+ "slug": "housing-prices-evidence",
+ "captured_at": "2026-10-22T23:55:30+0530",
+ "calls": [
+  {
+   "tool": "find_evidence",
+   "feature": "research.evidence",
+   "args": {
+    "claim": "Rising interest rates reduce house prices",
+    "limit": 10
+   },
+   "seconds": 94.5,
+   "response": {
+    "ok": true,
+    "feature": "research.evidence",
+    "subject": {
+     "claim": "Rising interest rates reduce house prices"
+    },
+    "data": {
+     "volumes": {
+      "research": {
+       "n": 64,
+       "window": "2017-2025",
+       "lane": "subject",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 59,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 1,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 22397,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "subject",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 0,
+       "window": "2005-2024",
+       "lane": "subject",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 1,
+       "window": "2005-2025",
+       "lane": "subject",
+       "what": "preprints"
+      }
+     },
+     "corpus_stance": {
+      "available": true,
+      "papers": 64,
+      "window": "2017-2025",
+      "lane": "subject",
+      "orientation": {
+       "descriptive": 22,
+       "problem_identifying": 15,
+       "cautionary": 14,
+       "promising": 7,
+       "critical": 3,
+       "comparative": 2,
+       "breakthrough": 1
+      },
+      "contribution": {
+       "empirical": 45,
+       "position": 12,
+       "review": 4,
+       "methodological": 2,
+       "theoretical": 1
+      },
+      "sides": {
+       "supporting": 8,
+       "qualifying": 29,
+       "contradicting": 3,
+       "neutral": 24
+      },
+      "contested_pct": 50.0,
+      "mean_stance": -0.047,
+      "reading": "the literature on this is actively contested — a large share of papers frame it as a problem, a caution or a criticism",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "documents": [
+      {
+       "id": "prism:W3136279202",
+       "source": "research",
+       "title": "The effect of rising interest rates on Swedish condominium prices.",
+       "abstract": null,
+       "authors": [
+        "Emil Bengtsson",
+        "Simon Påhlman"
+       ],
+       "venue": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
+       "year": 2021,
+       "doi": null,
+       "cited_by": 1,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "http://hdl.handle.net/2077/67637",
+       "institutions": [],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "supports",
+       "claimed_stance": null,
+       "quote": "The inverse relationship between interest rates and condominium prices are in line with general economic theory that describes the relationship between capital goods and real interest rates.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Shows higher rates linked to lower condo prices, matching claim.",
+       "confidence": "high",
+       "proposed_stance": "supports",
+       "source_fit": {
+        "passed": true,
+        "method": "separate model review; not independent fact-check",
+        "reason": "supports claim"
+       }
+      },
+      {
+       "id": "prism:W4393370934",
+       "source": "research",
+       "title": "Book Value Risk Management of Banks: Limited Hedging, HTM Accounting, and Rising Interest Rates",
+       "abstract": null,
+       "authors": [
+        "João Granja",
+        "Erica Xuewei Jiang",
+        "Gregor Matvos",
+        "Tomasz Piskorski",
+        "Amit Seru"
+       ],
+       "venue": "National Bureau of Economic Research",
+       "year": 2024,
+       "doi": "10.3386/w32293",
+       "cited_by": 8,
+       "type": "report",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.3386/w32293",
+       "institutions": [
+        "National Bureau of Economic Research",
+        "Northwestern University",
+        "Palo Alto University",
+        "Stanford University",
+        "University of Chicago"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "In the face of rising interest rates in 2022, banks mitigated interest rate exposure of the accounting value of their assets but left the vast majority of their long-duration assets exposed to interest rate risk.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Focuses on bank asset risk, not house prices.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2563077170",
+       "source": "research",
+       "title": "Rising Interest Rates",
+       "abstract": null,
+       "authors": [
+        "Steven D. Dolvin"
+       ],
+       "venue": "Digital Commons @ Butler University (Butler University)",
+       "year": 2014,
+       "doi": null,
+       "cited_by": 1,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://digitalcommons.butler.edu/jmdallchapters/89",
+       "institutions": [],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Interest rates have remained at historically low levels since 2008; however, with the recovering economy and the prospect of the Fed reducing its intervention, it is likely that interest rates will rise.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Discusses bond and equity effects, not house prices.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W4400989533",
+       "source": "research",
+       "title": "The effect of high inflation and rising interest rates on real estate values and valuation approach",
+       "abstract": null,
+       "authors": [
+        "Christian Luft"
+       ],
+       "venue": "Journal of building survey, appraisal & valuation",
+       "year": 2023,
+       "doi": "10.69554/hcdt7364",
+       "cited_by": 1,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.69554/hcdt7364",
+       "institutions": [
+        "Japan Lifeline (Japan)"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "This paper looks at how rising inflation and interest rates affect values and also how valuers need to develop new skills and understanding in valuing real estate assets in increasingly interconnected global financial markets.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Abstract mentions effect but provides no result on price direction.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W4320504673",
+       "source": "research",
+       "title": "Rising interest rates reduce inflation: an empirical study for the Republic of North Macedonia",
+       "abstract": null,
+       "authors": [
+        "Milica Milosheska Gavrovska"
+       ],
+       "venue": "HORIZONS A",
+       "year": 2022,
+       "doi": "10.20544/horizons.a.30.1.22.p10",
+       "cited_by": 0,
+       "type": "article",
+       "tier": "article",
+       "strength": "moderate",
+       "tier_rank": 3,
+       "why_tier": "peer-reviewed research article",
+       "url": "https://doi.org/10.20544/horizons.a.30.1.22.p10",
+       "institutions": [
+        "Agency for Electronic Communications"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "An increase in interest rates reduces inflation.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Examines inflation, not house prices.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2973108871",
+       "source": "research",
+       "title": "Effects of US Interest Rate Hikes and Global Risk on Daily Capital Flows in Emerging Market Countries",
+       "abstract": null,
+       "authors": [
+        "Eiji Ogawa",
+        "Junko Shimizu",
+        "Pengfei Luo"
+       ],
+       "venue": "RePEc: Research Papers in Economics",
+       "year": 2019,
+       "doi": null,
+       "cited_by": 4,
+       "type": "preprint",
+       "tier": "preprint",
+       "strength": "low",
+       "tier_rank": 2,
+       "why_tier": "not yet peer reviewed",
+       "url": null,
+       "institutions": [],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "The interest rate hikes in the United States and higher global risk aversion have increased capital outflows from emerging market countries in recent years.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Analyzes capital flows and equity prices, not house prices.",
+       "confidence": "high"
+      }
+     ],
+     "tally": {
+      "counts": {
+       "supports": 1,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 5,
+       "unread": 0
+      },
+      "tier_weighted": {
+       "supports": 3,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 1,
+      "ungrounded": 0
+     },
+     "health_evidence": null,
+     "read_note": "few titles carry both sides of this claim, so the documents read were chosen by the subject in the title and the outcome in the abstract",
+     "query": {
+      "subject": "interest rates",
+      "domain": "business",
+      "claim_type": "causal",
+      "assertion": "strong",
+      "poles": {
+       "subject": {
+        "phrases": [
+         "interest rate hikes",
+         "rising interest rates"
+        ],
+        "terms": [],
+        "mesh": []
+       },
+       "outcome": {
+        "phrases": [
+         "house prices",
+         "property values"
+        ],
+        "terms": [
+         "housing market and economics"
+        ],
+        "mesh": []
+       }
+      },
+      "lane": "subject",
+      "lane_counts": {
+       "subject": 64,
+       "outcome": 54269,
+       "intersection": 9
+      },
+      "lane_note": "only 9 papers cover both sides of this claim, so the evidence below is about interest rate hikes, rising interest rates alone and does not establish the connection the claim asserts",
+      "phrase_audit": [
+       {
+        "phrase": "housing market and economics",
+        "n": 53860
+       },
+       {
+        "phrase": "house prices",
+        "n": 1131
+       },
+       {
+        "phrase": "property values",
+        "n": 446
+       },
+       {
+        "phrase": "interest rate hikes",
+        "n": 35
+       },
+       {
+        "phrase": "rising interest rates",
+        "n": 29
+       },
+       {
+        "phrase": "rising interest",
+        "n": 0
+       },
+       {
+        "phrase": "interest hikes",
+        "n": 0
+       }
+      ],
+      "dropped": [
+       {
+        "phrase": "rising interest",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       },
+       {
+        "phrase": "interest hikes",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       }
+      ],
+      "corpus_topics": [
+       {
+        "topic": "Global Financial Crisis and Policies",
+        "papers": 11
+       },
+       {
+        "topic": "Monetary Policy and Economic Impact",
+        "papers": 11
+       },
+       {
+        "topic": "Banking stability, regulation, efficiency",
+        "papers": 10
+       },
+       {
+        "topic": "Housing Market and Economics",
+        "papers": 9
+       },
+       {
+        "topic": "Market Dynamics and Volatility",
+        "papers": 8
+       },
+       {
+        "topic": "Credit Risk and Financial Regulations",
+        "papers": 5
+       },
+       {
+        "topic": "Insurance and Financial Risk Management",
+        "papers": 5
+       },
+       {
+        "topic": "European Monetary and Fiscal Policies",
+        "papers": 5
+       },
+       {
+        "topic": "Economic Theory and Policy",
+        "papers": 4
+       },
+       {
+        "topic": "Capital Investment and Risk Analysis",
+        "papers": 4
+       },
+       {
+        "topic": "Financial Literacy, Pension, Retirement Analysis",
+        "papers": 3
+       },
+       {
+        "topic": "COVID-19 Pandemic Impacts",
+        "papers": 3
+       }
+      ]
+     }
+    },
+    "window": {
+     "period": {
+      "corpora": {
+       "research": "2017-2025",
+       "readable_papers": "1990-2025",
+       "pubmed": "1990-2025",
+       "news": "2019-01-01..2026-06-01",
+       "patents": "2005-2024",
+       "arxiv": "2005-2025"
+      }
+     }
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792693520.2378874,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792693520.2404757,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693520.477829,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693520.265703,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693520.2725813,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693520.2730327,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "subject",
+     "lane_note": "only 9 papers cover both sides of this claim, so the evidence below is about interest rate hikes, rising interest rates alone and does not establish the connection the claim asserts",
+     "seconds": 94.5
+    }
+   }
+  },
+  {
+   "tool": "find_counter_evidence",
+   "feature": "research.counter_evidence",
+   "args": {
+    "claim": "Rising interest rates reduce house prices",
+    "limit": 8
+   },
+   "seconds": 2.3,
+   "response": {
+    "ok": true,
+    "feature": "research.counter_evidence",
+    "subject": {
+     "claim": "Rising interest rates reduce house prices"
+    },
+    "data": {
+     "supporting": [
+      {
+       "id": "prism:W3136279202",
+       "title": "The effect of rising interest rates on Swedish condominium prices.",
+       "year": 2021,
+       "venue": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
+       "tier": "article",
+       "strength": "moderate",
+       "stance": "supports",
+       "quote": "The inverse relationship between interest rates and condominium prices are in line with general economic theory that describes the relationship between capital goods and real interest rates.",
+       "grounded": true,
+       "why": "Shows higher rates linked to lower condo prices, matching claim.",
+       "url": "http://hdl.handle.net/2077/67637",
+       "cited_by": 1,
+       "doi": null
+      }
+     ],
+     "contradicting": [],
+     "tally": {
+      "counts": {
+       "supports": 1,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 6,
+       "unread": 0
+      },
+      "tier_weighted": {
+       "supports": 3,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 1,
+      "ungrounded": 0
+     },
+     "corpus_mix": {
+      "available": true,
+      "papers": 64,
+      "window": "2017-2025",
+      "lane": "subject",
+      "orientation": {
+       "descriptive": 22,
+       "problem_identifying": 15,
+       "cautionary": 14,
+       "promising": 7,
+       "critical": 3,
+       "comparative": 2,
+       "breakthrough": 1
+      },
+      "contribution": {
+       "empirical": 45,
+       "position": 12,
+       "review": 4,
+       "methodological": 2,
+       "theoretical": 1
+      },
+      "sides": {
+       "supporting": 8,
+       "qualifying": 29,
+       "contradicting": 3,
+       "neutral": 24
+      },
+      "contested_pct": 50.0,
+      "mean_stance": -0.047,
+      "reading": "the literature on this is actively contested — a large share of papers frame it as a problem, a caution or a criticism",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "health_evidence": null,
+     "recommendation": "The documents read support the claim; this selected sample does not establish scientific consensus."
+    },
+    "window": {},
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792693520.2378874,
+        "age_seconds": 2.56,
+        "expires_in_seconds": 27.44,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792693520.2404757,
+        "age_seconds": 2.56,
+        "expires_in_seconds": 27.44,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693520.477829,
+        "age_seconds": 2.32,
+        "expires_in_seconds": 27.68,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693520.265703,
+        "age_seconds": 2.53,
+        "expires_in_seconds": 27.47,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693520.2725813,
+        "age_seconds": 2.52,
+        "expires_in_seconds": 27.48,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792693520.2730327,
+        "age_seconds": 2.52,
+        "expires_in_seconds": 27.48,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "subject",
+     "lane_note": "only 9 papers cover both sides of this claim, so the evidence below is about interest rate hikes, rising interest rates alone and does not establish the connection the claim asserts",
+     "seconds": 2.3
+    }
+   }
+  },
+  {
+   "tool": "find_statistics",
+   "feature": "research.statistics",
+   "args": {
+    "claim": "Rising interest rates reduce house prices",
+    "limit": 6
+   },
+   "seconds": 7.9,
+   "response": {
+    "ok": false,
+    "feature": "research.statistics",
+    "subject": {},
+    "data": {
+     "stats": [],
+     "rejected": [],
+     "candidate_sentences": 3,
+     "candidates": [
+      {
+       "doc_id": "prism:W4393370934",
+       "title": "Book Value Risk Management of Banks: Limited Hedging, HTM Accounting, and Rising Interest Rates",
+       "year": 2024,
+       "tier": "article",
+       "venue": "National Bureau of Economic Research",
+       "url": "https://doi.org/10.3386/w32293",
+       "sentence": "In the face of rising interest rates in 2022, banks mitigated interest rate exposure of the accounting value of their assets but left the vast majority of their long-duration assets exposed to interest rate risk.Data from call reports and SEC filings shows that only 6% of U.S."
+      },
+      {
+       "doc_id": "prism:W4230986825",
+       "title": "Fixed versus floating: vulnerability to rising interest rates",
+       "year": 2018,
+       "tier": "article",
+       "venue": "Economic Outlook",
+       "url": "https://doi.org/10.1111/1468-0319.12339",
+       "sentence": "▀ A rise of 100bp in short‐term interest rates would raise the debt service ratio after one year by around 2.5% of GDP in Hong Kong, with increases of 1.5–1.7% of GDP in Sweden, China and Australia."
+      },
+      {
+       "doc_id": "prism:W4230986825",
+       "title": "Fixed versus floating: vulnerability to rising interest rates",
+       "year": 2018,
+       "tier": "article",
+       "venue": "Economic Outlook",
+       "url": "https://doi.org/10.1111/1468-0319.12339",
+       "sentence": "A similar rate rise would take debt service ratios in Sweden, South Korea and Australia close to, or above, previous peaks."
+      }
+     ],
+     "research_series": {
+      "available": true,
+      "corpus": "research_typed",
+      "unit": "year",
+      "window": "2017-2025",
+      "lane": "subject",
+      "points": [
+       {
+        "period": "2017",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2018",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2019",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2020",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2021",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2022",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2023",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2024",
+        "n": 24,
+        "partial_period": false
+       },
+       {
+        "period": "2025",
+        "n": 11,
+        "partial_period": false
+       }
+      ],
+      "total": 64,
+      "trend": {
+       "available": true,
+       "from": "2017",
+       "to": "2025",
+       "first": 2,
+       "last": 11,
+       "peak": 24,
+       "peak_period": "2024",
+       "early_third": 11,
+       "late_third": 46,
+       "elapsed_years": 8.0,
+       "multiple": 5.5,
+       "direction": "rising",
+       "late_vs_early": 4.18
+      },
+      "censored_at": "2025",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "research_typed": {
+         "corpus": "research_typed",
+         "rows": 105553750,
+         "expected": 98602364,
+         "pct": 107.0,
+         "partial": false,
+         "checked_at": 1792693520.2378874,
+         "age_seconds": 3.73,
+         "expires_in_seconds": 26.27,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "news_series": {
+      "available": true,
+      "corpus": "news",
+      "unit": "month",
+      "window": "2019-01..2026-06-01 (exclusive)",
+      "lane": "subject",
+      "points": [
+       {
+        "period": "2019-01-01",
+        "n": 135,
+        "partial_period": false
+       },
+       {
+        "period": "2019-02-01",
+        "n": 57,
+        "partial_period": false
+       },
+       {
+        "period": "2019-03-01",
+        "n": 71,
+        "partial_period": false
+       },
+       {
+        "period": "2019-04-01",
+        "n": 32,
+        "partial_period": false
+       },
+       {
+        "period": "2019-05-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2019-06-01",
+        "n": 13,
+        "partial_period": false
+       },
+       {
+        "period": "2019-07-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2019-08-01",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2019-09-01",
+        "n": 20,
+        "partial_period": false
+       },
+       {
+        "period": "2019-10-01",
+        "n": 12,
+        "partial_period": false
+       },
+       {
+        "period": "2019-11-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2019-12-01",
+        "n": 27,
+        "partial_period": false
+       },
+       {
+        "period": "2020-01-01",
+        "n": 11,
+        "partial_period": false
+       },
+       {
+        "period": "2020-02-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-03-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020-04-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020-05-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020-06-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-07-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020-08-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-09-01",
+        "n": 10,
+        "partial_period": false
+       },
+       {
+        "period": "2020-10-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2020-11-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2020-12-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2021-01-01",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2021-02-01",
+        "n": 22,
+        "partial_period": false
+       },
+       {
+        "period": "2021-03-01",
+        "n": 67,
+        "partial_period": false
+       },
+       {
+        "period": "2021-04-01",
+        "n": 16,
+        "partial_period": false
+       },
+       {
+        "period": "2021-05-01",
+        "n": 30,
+        "partial_period": false
+       },
+       {
+        "period": "2021-06-01",
+        "n": 91,
+        "partial_period": false
+       },
+       {
+        "period": "2021-07-01",
+        "n": 18,
+        "partial_period": false
+       },
+       {
+        "period": "2021-08-01",
+        "n": 15,
+        "partial_period": false
+       },
+       {
+        "period": "2021-09-01",
+        "n": 27,
+        "partial_period": false
+       },
+       {
+        "period": "2021-10-01",
+        "n": 63,
+        "partial_period": false
+       },
+       {
+        "period": "2021-11-01",
+        "n": 53,
+        "partial_period": false
+       },
+       {
+        "period": "2021-12-01",
+        "n": 100,
+        "partial_period": false
+       },
+       {
+        "period": "2022-01-01",
+        "n": 340,
+        "partial_period": false
+       },
+       {
+        "period": "2022-02-01",
+        "n": 309,
+        "partial_period": false
+       },
+       {
+        "period": "2022-03-01",
+        "n": 295,
+        "partial_period": false
+       },
+       {
+        "period": "2022-04-01",
+        "n": 562,
+        "partial_period": false
+       },
+       {
+        "period": "2022-05-01",
+        "n": 849,
+        "partial_period": false
+       },
+       {
+        "period": "2022-06-01",
+        "n": 1134,
+        "partial_period": false
+       },
+       {
+        "period": "2022-07-01",
+        "n": 906,
+        "partial_period": false
+       },
+       {
+        "period": "2022-08-01",
+        "n": 890,
+        "partial_period": false
+       },
+       {
+        "period": "2022-09-01",
+        "n": 967,
+        "partial_period": false
+       },
+       {
+        "period": "2022-10-01",
+        "n": 1069,
+        "partial_period": false
+       },
+       {
+        "period": "2022-11-01",
+        "n": 1061,
+        "partial_period": false
+       },
+       {
+        "period": "2022-12-01",
+        "n": 1143,
+        "partial_period": false
+       },
+       {
+        "period": "2023-01-01",
+        "n": 1006,
+        "partial_period": false
+       },
+       {
+        "period": "2023-02-01",
+        "n": 955,
+        "partial_period": false
+       },
+       {
+        "period": "2023-03-01",
+        "n": 997,
+        "partial_period": false
+       },
+       {
+        "period": "2023-04-01",
+        "n": 760,
+        "partial_period": false
+       },
+       {
+        "period": "2023-05-01",
+        "n": 673,
+        "partial_period": false
+       },
+       {
+        "period": "2023-06-01",
+        "n": 801,
+        "partial_period": false
+       },
+       {
+        "period": "2023-07-01",
+        "n": 721,
+        "partial_period": false
+       },
+       {
+        "period": "2023-08-01",
+        "n": 644,
+        "partial_period": false
+       },
+       {
+        "period": "2023-09-01",
+        "n": 569,
+        "partial_period": false
+       },
+       {
+        "period": "2023-10-01",
+        "n": 495,
+        "partial_period": false
+       },
+       {
+        "period": "2023-11-01",
+        "n": 468,
+        "partial_period": false
+       },
+       {
+        "period": "2023-12-01",
+        "n": 301,
+        "partial_period": false
+       },
+       {
+        "period": "2024-01-01",
+        "n": 315,
+        "partial_period": false
+       },
+       {
+        "period": "2024-02-01",
+        "n": 197,
+        "partial_period": false
+       },
+       {
+        "period": "2024-03-01",
+        "n": 190,
+        "partial_period": false
+       },
+       {
+        "period": "2024-04-01",
+        "n": 137,
+        "partial_period": false
+       },
+       {
+        "period": "2024-05-01",
+        "n": 153,
+        "partial_period": false
+       },
+       {
+        "period": "2024-06-01",
+        "n": 87,
+        "partial_period": false
+       },
+       {
+        "period": "2024-07-01",
+        "n": 104,
+        "partial_period": false
+       },
+       {
+        "period": "2024-08-01",
+        "n": 98,
+        "partial_period": false
+       },
+       {
+        "period": "2024-09-01",
+        "n": 107,
+        "partial_period": false
+       },
+       {
+        "period": "2024-10-01",
+        "n": 102,
+        "partial_period": false
+       },
+       {
+        "period": "2024-11-01",
+        "n": 74,
+        "partial_period": false
+       },
+       {
+        "period": "2024-12-01",
+        "n": 86,
+        "partial_period": false
+       },
+       {
+        "period": "2025-01-01",
+        "n": 123,
+        "partial_period": false
+       },
+       {
+        "period": "2025-02-01",
+        "n": 84,
+        "partial_period": false
+       },
+       {
+        "period": "2025-03-01",
+        "n": 105,
+        "partial_period": false
+       },
+       {
+        "period": "2025-04-01",
+        "n": 106,
+        "partial_period": false
+       },
+       {
+        "period": "2025-05-01",
+        "n": 75,
+        "partial_period": false
+       },
+       {
+        "period": "2025-06-01",
+        "n": 60,
+        "partial_period": false
+       },
+       {
+        "period": "2025-07-01",
+        "n": 124,
+        "partial_period": false
+       },
+       {
+        "period": "2025-08-01",
+        "n": 142,
+        "partial_period": false
+       },
+       {
+        "period": "2025-09-01",
+        "n": 44,
+        "partial_period": false
+       },
+       {
+        "period": "2025-10-01",
+        "n": 51,
+        "partial_period": false
+       },
+       {
+        "period": "2025-11-01",
+        "n": 41,
+        "partial_period": false
+       },
+       {
+        "period": "2025-12-01",
+        "n": 62,
+        "partial_period": false
+       },
+       {
+        "period": "2026-01-01",
+        "n": 53,
+        "partial_period": false
+       },
+       {
+        "period": "2026-02-01",
+        "n": 120,
+        "partial_period": false
+       },
+       {
+        "period": "2026-03-01",
+        "n": 251,
+        "partial_period": false
+       },
+       {
+        "period": "2026-04-01",
+        "n": 192,
+        "partial_period": false
+       },
+       {
+        "period": "2026-05-01",
+        "n": 257,
+        "partial_period": false
+       }
+      ],
+      "total": 22397,
+      "trend": {
+       "available": true,
+       "from": "2019-01-01",
+       "to": "2026-05-01",
+       "first": 135,
+       "last": 257,
+       "peak": 1143,
+       "peak_period": "2022-12-01",
+       "early_third": 575,
+       "late_third": 3540,
+       "elapsed_years": 7.328767,
+       "cagr_pct": 9.2,
+       "rate_unit": "annual",
+       "direction": "rising",
+       "late_vs_early": 6.16
+      },
+      "censored_at": "2026-06-01",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "news": {
+         "corpus": "news",
+         "rows": 255586690,
+         "expected": 238603270,
+         "pct": 107.1,
+         "partial": false,
+         "checked_at": 1792693520.265703,
+         "age_seconds": 3.71,
+         "expires_in_seconds": 26.29,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "volumes": {
+      "research": {
+       "n": 64,
+       "window": "2017-2025",
+       "lane": "subject",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 59,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 1,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 22397,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "subject",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 0,
+       "window": "2005-2024",
+       "lane": "subject",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 1,
+       "window": "2005-2025",
+       "lane": "subject",
+       "what": "preprints"
+      }
+     },
+     "context_deferred": false
+    },
+    "window": {},
+    "error": {
+     "kind": "no_data",
+     "reason": "the retrieved abstracts carry figures, but none of them measures what this claim asserts"
+    },
+    "meta": {
+     "lane": "subject",
+     "seconds": 7.9
+    }
+   }
+  }
+ ]
+}

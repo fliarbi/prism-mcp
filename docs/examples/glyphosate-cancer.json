@@ -1,0 +1,1633 @@
+{
+ "slug": "glyphosate-cancer",
+ "captured_at": "2026-10-23T00:05:00+0530",
+ "calls": [
+  {
+   "tool": "find_evidence",
+   "feature": "research.evidence",
+   "args": {
+    "claim": "Glyphosate exposure causes cancer",
+    "limit": 10
+   },
+   "seconds": 166.8,
+   "response": {
+    "ok": true,
+    "feature": "research.evidence",
+    "subject": {
+     "claim": "Glyphosate exposure causes cancer"
+    },
+    "data": {
+     "volumes": {
+      "research": {
+       "n": 27109,
+       "window": "2017-2025",
+       "lane": "subject",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 366,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 3886,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 158,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "subject",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 23,
+       "window": "2005-2024",
+       "lane": "subject",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 1,
+       "window": "2005-2025",
+       "lane": "subject",
+       "what": "preprints"
+      }
+     },
+     "corpus_stance": {
+      "available": true,
+      "papers": 27109,
+      "window": "2017-2025",
+      "lane": "subject",
+      "orientation": {
+       "promising": 9963,
+       "descriptive": 7459,
+       "cautionary": 4195,
+       "comparative": 1910,
+       "problem_identifying": 1813,
+       "breakthrough": 1544,
+       "critical": 225
+      },
+      "contribution": {
+       "empirical": 23236,
+       "methodological": 1678,
+       "review": 1485,
+       "position": 592,
+       "theoretical": 118
+      },
+      "sides": {
+       "supporting": 11507,
+       "qualifying": 6008,
+       "contradicting": 225,
+       "neutral": 9369
+      },
+      "contested_pct": 23.0,
+      "mean_stance": 0.232,
+      "reading": "mostly positive framing, with a substantial cautionary minority",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "documents": [
+      {
+       "id": "prism:W2304755090",
+       "source": "research",
+       "title": "Systematic review and meta-analysis of glyphosate exposure and risk of lymphohematopoietic cancers",
+       "abstract": null,
+       "authors": [
+        "Ellen T. Chang",
+        "Elizabeth Delzell"
+       ],
+       "venue": "Journal of Environmental Science and Health Part B",
+       "year": 2016,
+       "doi": "10.1080/03601234.2016.1142748",
+       "cited_by": 71,
+       "type": "review",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "tier_rank": 6,
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "url": "https://doi.org/10.1080/03601234.2016.1142748",
+       "institutions": [
+        "Exponent (United States)",
+        "Stanford University"
+       ],
+       "country": null,
+       "lane": "review",
+       "stance": "contradicts",
+       "claimed_stance": null,
+       "quote": "Thus, a causal relationship has not been established between glyphosate exposure and risk of any type of LHC.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Abstract reports no causal link to cancer types.",
+       "confidence": "high",
+       "proposed_stance": "contradicts",
+       "source_fit": {
+        "passed": true,
+        "method": "separate model review; not independent fact-check",
+        "reason": "meta-analysis compares glyphosate use vs no use for cancer outcomes; quote explicitly states no causal relationship established"
+       }
+      },
+      {
+       "id": "prism:W4402616373",
+       "source": "research",
+       "title": "Overview of human health effects related to glyphosate exposure",
+       "abstract": null,
+       "authors": [
+        "Flavia Silvia Galli",
+        "Marta Mollari",
+        "Valentina Tassinari",
+        "Cristian Alimonti",
+        "Alessandro Ubaldi",
+        "Camilla Cuva",
+        "Daniele Marcoccia"
+       ],
+       "venue": "Frontiers in Toxicology",
+       "year": 2024,
+       "doi": "10.3389/ftox.2024.1474792",
+       "cited_by": 60,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.3389/ftox.2024.1474792",
+       "institutions": [
+        "Istituto Zooprofilattico Sperimentale delle Regioni Lazio e Toscana",
+        "University of Rome Tor Vergata"
+       ],
+       "country": null,
+       "lane": "current",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "In 2015, the IARC (International Agency for Research on Cancer) classified glyphosate and its derivatives in Group 2A, as probable human carcinogens.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Claims only probable carcinogenicity, not definitive causation.",
+       "confidence": "high",
+       "proposed_stance": "qualifies",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "review cites IARC classification without direct comparative study of exposure versus non‑exposure"
+       }
+      },
+      {
+       "id": "prism:W3217506233",
+       "source": "research",
+       "title": "Pleiotropic Outcomes of Glyphosate Exposure: From Organ Damage to Effects on Inflammation, Cancer, Reproduction and Development",
+       "abstract": null,
+       "authors": [
+        "Marianna Marino",
+        "Elena Mele",
+        "Andrea Viggiano",
+        "Stefania Lucia Nori",
+        "Rosaria Meccariello",
+        "Antonietta Santoro"
+       ],
+       "venue": "International Journal of Molecular Sciences",
+       "year": 2021,
+       "doi": "10.3390/ijms222212606",
+       "cited_by": 54,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.3390/ijms222212606",
+       "institutions": [
+        "Parthenope University of Naples",
+        "University of Salerno"
+       ],
+       "country": null,
+       "lane": "current",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "has been found to induce the generation of reactive oxygen species (ROS) and several cytotoxic and genotoxic effects in vitro and in animal models",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Describes mechanistic potential, not proven cancer causation.",
+       "confidence": "high",
+       "proposed_stance": "qualifies",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "provides mechanistic in‑vitro/animal findings, no comparator or epidemiological cancer outcome"
+       }
+      },
+      {
+       "id": "pubmed:41073347",
+       "source": "pubmed",
+       "title": "[Research progress on population load and hepatotoxicity of glyphosate].",
+       "abstract": null,
+       "authors": [
+        "Lu J",
+        "Wang B S",
+        "Zhu B L"
+       ],
+       "venue": "Zhonghua lao dong wei sheng zhi ye bing za zhi = Zhonghua laodong weisheng zhiyebing zazhi = Chinese journal of industrial hygiene and occupational diseases",
+       "year": 2025,
+       "doi": "10.3760/cma.j.cn121094-20240422-00174",
+       "cited_by": 0,
+       "type": "Journal Article, Review, English Abstract",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.3760/cma.j.cn121094-20240422-00174",
+       "institutions": [
+        "Key Laboratory of Environmental Medicine Engineering of Ministry of Education, Southeast University, Nanjing 210009, China.",
+        "Key Laboratory of Environmental Medicine Engineering of Ministry of Education, Southeast University, Nanjing 210009, China Jiangsu Provincial Center for Disease Control and Prevention (Jiangsu Provincial Academy of Preventive Medicine), Nanjing 210000, China."
+       ],
+       "country": "China",
+       "lane": "guideline",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "is associated with the occurrence and development of different types of cancer",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Reports association only, not direct causation.",
+       "confidence": "high",
+       "proposed_stance": "qualifies",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "states general association with cancer but lacks direct comparative evidence or specific outcome data"
+       }
+      },
+      {
+       "id": "pubmed:40072826",
+       "source": "pubmed",
+       "title": "Re-Evaluating the Use of Glyphosate-based Herbicides: Implications on Fertility.",
+       "abstract": null,
+       "authors": [
+        "Stone Alexandra M",
+        "Camp Olivia G",
+        "Biernat Mia M",
+        "Bai David",
+        "Awonuga Awoniyi O",
+        "Abu-Soud Husam M"
+       ],
+       "venue": "Reproductive sciences (Thousand Oaks, Calif.)",
+       "year": 2025,
+       "doi": "10.1007/s43032-025-01834-6",
+       "cited_by": 0,
+       "type": "Journal Article, Review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.1007/s43032-025-01834-6",
+       "institutions": [
+        "Departments of Obstetrics and Gynecology and Biochemistry and Molecular Biology, the C.S. Mott Center for Human Growth and Development, Wayne State University School of Medicine, Detroit, MI, 48201, USA.",
+        "Department of Physiology, Wayne State University School of Medicine, Detroit, MI, 48201, USA."
+       ],
+       "country": "United States",
+       "lane": "guideline",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "recent studies on exposure have suggested association with cancer, metabolic disorders, endocrine disruption and infertility",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Mentions association, not proven causal effect.",
+       "confidence": "high",
+       "proposed_stance": "qualifies",
+       "source_fit": {
+        "passed": false,
+        "method": "separate model review; not independent fact-check",
+        "reason": "abstract only notes association with cancer, not direct evidence of causation"
+       }
+      },
+      {
+       "id": "pubmed:36065034",
+       "source": "pubmed",
+       "title": "Effects of glyphosate on zebrafish: a systematic review and meta-analysis.",
+       "abstract": null,
+       "authors": [
+        "Ames Jaíne",
+        "Miragem Antônio Azambuja",
+        "Cordeiro Marcos Freitas",
+        "Cerezer Felipe Osmari",
+        "Loro Vania Lucia"
+       ],
+       "venue": "Ecotoxicology (London, England)",
+       "year": 2022,
+       "doi": "10.1007/s10646-022-02581-z",
+       "cited_by": 0,
+       "type": "Journal Article, Meta-Analysis, Systematic Review",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "tier_rank": 6,
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "url": "https://doi.org/10.1007/s10646-022-02581-z",
+       "institutions": [
+        "Programa de Pós-Graduação em Ciências Biológicas: Bioquímica Toxicológica, Universidade Federal de Santa Maria, Santa Maria, RS, Brazil.",
+        "Laboratório de Análises Biológicas, Instituto Federal de Educação, Ciência e Tecnologia Farroupilha, Santa Rosa, RS, 98787-740, Brazil."
+       ],
+       "country": "United States",
+       "lane": "outcome_anchor_pm",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "We concluded that glyphosate causes damage in the embryonic, larval and adult stages of this species.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Focuses on fish toxicity, not cancer.",
+       "confidence": "high"
+      },
+      {
+       "id": "pubmed:33636765",
+       "source": "pubmed",
+       "title": "Is glyphosate toxic to bees? A meta-analytical review.",
+       "abstract": null,
+       "authors": [
+        "Battisti Lucas",
+        "Potrich Michele",
+        "Sampaio Amanda Roberta",
+        "de Castilhos Ghisi Nédia",
+        "Costa-Maia Fabiana Martins",
+        "Abati Raiza",
+        "Dos Reis Martinez Claudia Bueno",
+        "Sofia Silvia Helena"
+       ],
+       "venue": "The Science of the total environment",
+       "year": 2021,
+       "doi": "10.1016/j.scitotenv.2021.145397",
+       "cited_by": 0,
+       "type": "Journal Article, Meta-Analysis",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "tier_rank": 6,
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "url": "https://doi.org/10.1016/j.scitotenv.2021.145397",
+       "institutions": [
+        "Universidade Estadual de Londrina (UEL), Programa de Pós-Graduação em Ciências Biológicas, Rodovia Celso Garcia Cid, PR 445 km 380, Campus Universitário, 86057-970 Londrina, PR, Brazil.",
+        "Universidade Tecnológica Federal do Paraná, UTFPR, Campus Dois Vizinhos, LABCON, Estrada para Boa Esperança, km 04, Comunidade São Cristóvão, 86660-000 Dois Vizinhos, PR, Brazil. Electronic address: michelepotrich@utfpr.edu.br."
+       ],
+       "country": "Netherlands",
+       "lane": "outcome_anchor_pm",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Therefore, GLY can be considered toxic to bees.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Addresses bee mortality, not cancer.",
+       "confidence": "high"
+      },
+      {
+       "id": "pubmed:16479946",
+       "source": "pubmed",
+       "title": "Comparison of broiler performance when fed diets containing corn grain with insect-protected (corn rootworm and European corn borer) and herbicide-tolerant (glyphosate) traits, control corn, or commercial reference corn--revisited.",
+       "abstract": null,
+       "authors": [
+        "Taylor M L",
+        "Hartnell G",
+        "Nemeth M",
+        "Karunanandaa K",
+        "George B"
+       ],
+       "venue": "Poultry science",
+       "year": 2005,
+       "doi": "10.1093/ps/84.12.1893",
+       "cited_by": 0,
+       "type": "Comparative Study, Corrected and Republished Article, Journal Article, Randomized Controlled Trial",
+       "tier": "trial",
+       "strength": "high",
+       "tier_rank": 5,
+       "why_tier": "randomised or controlled — the design that can establish an effect",
+       "url": "https://doi.org/10.1093/ps/84.12.1893",
+       "institutions": [
+        "Monsanto Company, 800 N. Lindbergh Blvd., St. Louis, Missouri 63167, USA. Mary.L.Taylor@monsanto.com"
+       ],
+       "country": "England",
+       "lane": "trial",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "No differences among diets were observed (P > 0.05) in performance (final live weights, feed intake, feed conversion, and adjusted feed conversion), carcass yield...",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Evaluates broiler performance, not cancer.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W2127416253",
+       "source": "research",
+       "title": "Developmental and Reproductive Outcomes in Humans and Animals After Glyphosate Exposure: A Critical Analysis",
+       "abstract": null,
+       "authors": [
+        "Amy Lavin Williams",
+        "Rebecca Watson",
+        "John M. DeSesso"
+       ],
+       "venue": "Journal of Toxicology and Environmental Health Part B",
+       "year": 2011,
+       "doi": "10.1080/10937404.2012.632361",
+       "cited_by": 151,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.1080/10937404.2012.632361",
+       "institutions": [
+        "Exponent (United States)",
+        "Georgetown University",
+        "Shin Nippon Biomedical Laboratories (United States)"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "In conclusion, the available literature shows no solid evidence linking glyphosate exposure to adverse developmental or reproductive effects at environmentally realistic exposure concentrations.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Discusses developmental/reproductive outcomes, not cancer.",
+       "confidence": "high"
+      },
+      {
+       "id": "prism:W3072185115",
+       "source": "research",
+       "title": "Human Biomonitoring of Glyphosate Exposures: State-of-the-Art and Future Research Challenges",
+       "abstract": null,
+       "authors": [
+        "Alison Connolly",
+        "Marie A. Coggins",
+        "Holger M. Koch"
+       ],
+       "venue": "Toxics",
+       "year": 2020,
+       "doi": "10.3390/toxics8030060",
+       "cited_by": 98,
+       "type": "review",
+       "tier": "review",
+       "strength": "moderate",
+       "tier_rank": 4,
+       "why_tier": "summarises a field rather than adding a measurement",
+       "url": "https://doi.org/10.3390/toxics8030060",
+       "institutions": [
+        "Institute for Prevention and Occupational Medicine",
+        "National University of Ireland"
+       ],
+       "country": null,
+       "lane": "outcome_anchor",
+       "stance": "unrelated",
+       "claimed_stance": null,
+       "quote": "Glyphosate continues to attract controversial debate following the International Agency for Research on Cancer carcinogenicity classification in 2015.",
+       "claimed_quote": null,
+       "grounded": true,
+       "quote_verified": true,
+       "verification_scope": "Quotation verified, not independent validation of the interpretation.",
+       "why": "Mentions classification but provides no cancer outcome data.",
+       "confidence": "high"
+      }
+     ],
+     "tally": {
+      "counts": {
+       "supports": 0,
+       "contradicts": 1,
+       "qualifies": 0,
+       "unrelated": 9,
+       "unread": 0
+      },
+      "tier_weighted": {
+       "supports": 0,
+       "contradicts": 6,
+       "qualifies": 0
+      },
+      "read": 1,
+      "ungrounded": 0
+     },
+     "health_evidence": {
+      "available": false,
+      "reason": "no extracted factor claims match this"
+     },
+     "read_note": "few titles carry both sides of this claim, so the documents read were chosen by the subject in the title and the outcome in the abstract",
+     "query": {
+      "subject": "Glyphosate exposure",
+      "domain": "health",
+      "claim_type": "causal",
+      "assertion": "strong",
+      "poles": {
+       "subject": {
+        "phrases": [
+         "glyphosate exposure",
+         "glyphosate application",
+         "glyphosate residues"
+        ],
+        "terms": [
+         "weed control and herbicide applications"
+        ],
+        "mesh": [
+         "Glyphosate"
+        ]
+       },
+       "outcome": {
+        "phrases": [
+         "cancer risk",
+         "cancer incidence",
+         "tumor development"
+        ],
+        "terms": [
+         "global cancer incidence and screening",
+         "cancer risks and factors",
+         "economic and financial impacts of cancer"
+        ],
+        "mesh": [
+         "Tumor Burden"
+        ]
+       }
+      },
+      "lane": "subject",
+      "lane_counts": {
+       "subject": 27109,
+       "outcome": 280989,
+       "intersection": 6
+      },
+      "lane_note": "only 6 papers cover both sides of this claim, so the evidence below is about glyphosate exposure, glyphosate application alone and does not establish the connection the claim asserts",
+      "phrase_audit": [
+       {
+        "phrase": "global cancer incidence and screening",
+        "n": 57565
+       },
+       {
+        "phrase": "cancer risks and factors",
+        "n": 37932
+       },
+       {
+        "phrase": "economic and financial impacts of cancer",
+        "n": 31456
+       },
+       {
+        "phrase": "cancer risk",
+        "n": 16054
+       },
+       {
+        "phrase": "cancer incidence",
+        "n": 4479
+       },
+       {
+        "phrase": "tumor development",
+        "n": 1140
+       },
+       {
+        "phrase": "glyphosate exposure",
+        "n": 103
+       },
+       {
+        "phrase": "glyphosate application",
+        "n": 76
+       },
+       {
+        "phrase": "glyphosate residues",
+        "n": 68
+       }
+      ],
+      "dropped": [
+       {
+        "phrase": "glyphosate exposure",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       },
+       {
+        "phrase": "glyphosate residues",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       },
+       {
+        "phrase": "glyphosate application",
+        "n": 0,
+        "kind": "term",
+        "why": "no curated topic label contains this term"
+       }
+      ],
+      "corpus_topics": [
+       {
+        "topic": "Weed Control and Herbicide Applications",
+        "papers": 26971
+       },
+       {
+        "topic": "Allelopathy and phytotoxic interactions",
+        "papers": 7223
+       },
+       {
+        "topic": "Pesticide and Herbicide Environmental Studies",
+        "papers": 6327
+       },
+       {
+        "topic": "Agronomic Practices and Intercropping Systems",
+        "papers": 3973
+       },
+       {
+        "topic": "Biological Control of Invasive Species",
+        "papers": 2697
+       },
+       {
+        "topic": "Plant tissue culture and regeneration",
+        "papers": 1476
+       },
+       {
+        "topic": "Plant Parasitism and Resistance",
+        "papers": 1377
+       },
+       {
+        "topic": "Soil Management and Crop Yield",
+        "papers": 1249
+       },
+       {
+        "topic": "Seed Germination and Physiology",
+        "papers": 1142
+       },
+       {
+        "topic": "Growth and nutrition in plants",
+        "papers": 1086
+       },
+       {
+        "topic": "Agricultural Science and Fertilization",
+        "papers": 1029
+       },
+       {
+        "topic": "Legume Nitrogen Fixing Symbiosis",
+        "papers": 1001
+       }
+      ]
+     }
+    },
+    "window": {
+     "period": {
+      "corpora": {
+       "research": "2017-2025",
+       "readable_papers": "1990-2025",
+       "pubmed": "1990-2025",
+       "news": "2019-01-01..2026-06-01",
+       "patents": "2005-2024",
+       "arxiv": "2005-2025"
+      }
+     }
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792694058.0226362,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792694058.0502372,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694058.43826,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "disease_factors": {
+        "corpus": "disease_factors",
+        "rows": 55545265,
+        "expected": 55545265,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694059.7974906,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792694058.0203676,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694058.027075,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694058.0171804,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "subject",
+     "lane_note": "only 6 papers cover both sides of this claim, so the evidence below is about glyphosate exposure, glyphosate application alone and does not establish the connection the claim asserts",
+     "seconds": 166.8
+    }
+   }
+  },
+  {
+   "tool": "find_counter_evidence",
+   "feature": "research.counter_evidence",
+   "args": {
+    "claim": "Glyphosate exposure causes cancer",
+    "limit": 8
+   },
+   "seconds": 23.4,
+   "response": {
+    "ok": true,
+    "feature": "research.counter_evidence",
+    "subject": {
+     "claim": "Glyphosate exposure causes cancer"
+    },
+    "data": {
+     "supporting": [],
+     "contradicting": [],
+     "tally": {
+      "counts": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 8,
+       "unread": 0
+      },
+      "tier_weighted": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0
+      },
+      "read": 0,
+      "ungrounded": 0
+     },
+     "corpus_mix": {
+      "available": true,
+      "papers": 27109,
+      "window": "2017-2025",
+      "lane": "subject",
+      "orientation": {
+       "promising": 9963,
+       "descriptive": 7459,
+       "cautionary": 4195,
+       "comparative": 1910,
+       "problem_identifying": 1813,
+       "breakthrough": 1544,
+       "critical": 225
+      },
+      "contribution": {
+       "empirical": 23236,
+       "methodological": 1678,
+       "review": 1485,
+       "position": 592,
+       "theoretical": 118
+      },
+      "sides": {
+       "supporting": 11507,
+       "qualifying": 6008,
+       "contradicting": 225,
+       "neutral": 9369
+      },
+      "contested_pct": 23.0,
+      "mean_stance": 0.232,
+      "reading": "mostly positive framing, with a substantial cautionary minority",
+      "caveat": "orientation is a label on the paper's own framing, not a verdict on the claim; this corpus starts in 2017"
+     },
+     "health_evidence": {
+      "available": false,
+      "reason": "no extracted factor claims match this"
+     },
+     "recommendation": "No verified document verdict supports a wording recommendation for this claim."
+    },
+    "window": {},
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792694058.0226362,
+        "age_seconds": 25.21,
+        "expires_in_seconds": 4.79,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792694058.0502372,
+        "age_seconds": 25.18,
+        "expires_in_seconds": 4.82,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694058.43826,
+        "age_seconds": 24.79,
+        "expires_in_seconds": 5.21,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "disease_factors": {
+        "corpus": "disease_factors",
+        "rows": 55545265,
+        "expected": 55545265,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694059.7974906,
+        "age_seconds": 23.44,
+        "expires_in_seconds": 6.56,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792694058.0203676,
+        "age_seconds": 25.21,
+        "expires_in_seconds": 4.79,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "patents": {
+        "corpus": "patents",
+        "rows": 108034545,
+        "expected": 108034545,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694058.027075,
+        "age_seconds": 25.21,
+        "expires_in_seconds": 4.79,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "arxiv": {
+        "corpus": "arxiv",
+        "rows": 3034675,
+        "expected": 3034675,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792694058.0171804,
+        "age_seconds": 25.22,
+        "expires_in_seconds": 4.78,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "lane": "subject",
+     "lane_note": "only 6 papers cover both sides of this claim, so the evidence below is about glyphosate exposure, glyphosate application alone and does not establish the connection the claim asserts",
+     "seconds": 23.4
+    }
+   }
+  },
+  {
+   "tool": "find_statistics",
+   "feature": "research.statistics",
+   "args": {
+    "claim": "Glyphosate exposure causes cancer",
+    "limit": 6
+   },
+   "seconds": 17.6,
+   "response": {
+    "ok": true,
+    "feature": "research.statistics",
+    "subject": {},
+    "data": {
+     "stats": [
+      {
+       "value": "meta-RR = 1.3, 95% confidence interval (CI) = 1.0-1.6",
+       "measures": "association between any versus no use of glyphosate and risk of NHL",
+       "population": "based on six studies",
+       "period": null,
+       "caveat": "marginally statistically significant",
+       "sentence": "Meta-relative risks (meta-RRs) were positive and marginally statistically significant for the association between any versus no use of glyphosate and risk of NHL (meta-RR = 1.3, 95% confidence interval (CI) = 1.0-1.6, based on six studies) and MM (meta-RR = 1.4, 95% CI = 1.0-1.9; four studies).",
+       "source": {
+        "id": "prism:W2304755090",
+        "title": "Systematic review and meta-analysis of glyphosate exposure and risk of lymphohematopoietic cancers",
+        "year": 2016,
+        "venue": "Journal of Environmental Science and Health Part B",
+        "tier": "meta_analysis",
+        "strength": "very_high",
+        "url": "https://doi.org/10.1080/03601234.2016.1142748",
+        "doi": "10.1080/03601234.2016.1142748"
+       }
+      },
+      {
+       "value": "meta-RR = 1.1, 95% CI = 0.7-1.6",
+       "measures": "association between any versus no use of glyphosate and risk of HL",
+       "population": "two studies",
+       "period": null,
+       "caveat": "statistically null",
+       "sentence": "Associations were statistically null for HL (meta-RR = 1.1, 95% CI = 0.7-1.6; two studies), leukemia (meta-RR = 1.0, 95% CI = 0.6-1.5; three studies), and NHL subtypes except B-cell lymphoma (two studies each).",
+       "source": {
+        "id": "prism:W2304755090",
+        "title": "Systematic review and meta-analysis of glyphosate exposure and risk of lymphohematopoietic cancers",
+        "year": 2016,
+        "venue": "Journal of Environmental Science and Health Part B",
+        "tier": "meta_analysis",
+        "strength": "very_high",
+        "url": "https://doi.org/10.1080/03601234.2016.1142748",
+        "doi": "10.1080/03601234.2016.1142748"
+       }
+      }
+     ],
+     "rejected": [],
+     "candidate_sentences": 24,
+     "research_series": {
+      "available": true,
+      "corpus": "research_typed",
+      "unit": "year",
+      "window": "2017-2025",
+      "lane": "subject",
+      "points": [
+       {
+        "period": "2017",
+        "n": 2634,
+        "partial_period": false
+       },
+       {
+        "period": "2018",
+        "n": 2848,
+        "partial_period": false
+       },
+       {
+        "period": "2019",
+        "n": 3043,
+        "partial_period": false
+       },
+       {
+        "period": "2020",
+        "n": 3135,
+        "partial_period": false
+       },
+       {
+        "period": "2021",
+        "n": 3149,
+        "partial_period": false
+       },
+       {
+        "period": "2022",
+        "n": 2839,
+        "partial_period": false
+       },
+       {
+        "period": "2023",
+        "n": 2790,
+        "partial_period": false
+       },
+       {
+        "period": "2024",
+        "n": 2909,
+        "partial_period": false
+       },
+       {
+        "period": "2025",
+        "n": 3762,
+        "partial_period": false
+       }
+      ],
+      "total": 27109,
+      "trend": {
+       "available": true,
+       "from": "2017",
+       "to": "2025",
+       "first": 2634,
+       "last": 3762,
+       "peak": 3762,
+       "peak_period": "2025",
+       "early_third": 8525,
+       "late_third": 9461,
+       "elapsed_years": 8.0,
+       "cagr_pct": 4.6,
+       "rate_unit": "annual",
+       "direction": "flat",
+       "late_vs_early": 1.11
+      },
+      "censored_at": "2025",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "research_typed": {
+         "corpus": "research_typed",
+         "rows": 105553750,
+         "expected": 98602364,
+         "pct": 107.0,
+         "partial": false,
+         "checked_at": 1792694090.3143542,
+         "age_seconds": 0,
+         "expires_in_seconds": 30.0,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "news_series": {
+      "available": true,
+      "corpus": "news",
+      "unit": "month",
+      "window": "2019-01..2026-06-01 (exclusive)",
+      "lane": "subject",
+      "points": [
+       {
+        "period": "2019-01-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-02-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-03-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-04-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-05-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2019-06-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-07-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-08-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-09-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2019-10-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2019-11-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2019-12-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020-01-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2020-02-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2020-03-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2020-04-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2020-05-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-06-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2020-07-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2020-08-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-09-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2020-10-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2020-11-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2020-12-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2021-01-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2021-02-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2021-03-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2021-04-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2021-05-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2021-06-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2021-07-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2021-08-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2021-09-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2021-10-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2021-11-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2021-12-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2022-01-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2022-02-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2022-03-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2022-04-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2022-05-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2022-06-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2022-07-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2022-08-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2022-09-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2022-10-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2022-11-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2022-12-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2023-01-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2023-02-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2023-03-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2023-04-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2023-05-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2023-06-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2023-07-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2023-08-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2023-09-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2023-10-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2023-11-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2023-12-01",
+        "n": 6,
+        "partial_period": false
+       },
+       {
+        "period": "2024-01-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2024-02-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2024-03-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2024-04-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2024-05-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2024-06-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2024-07-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2024-08-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2024-09-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2024-10-01",
+        "n": 2,
+        "partial_period": false
+       },
+       {
+        "period": "2024-11-01",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2024-12-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2025-01-01",
+        "n": 5,
+        "partial_period": false
+       },
+       {
+        "period": "2025-02-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2025-03-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2025-04-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2025-05-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2025-06-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2025-07-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2025-08-01",
+        "n": 1,
+        "partial_period": false
+       },
+       {
+        "period": "2025-09-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2025-10-01",
+        "n": 7,
+        "partial_period": false
+       },
+       {
+        "period": "2025-11-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2025-12-01",
+        "n": 0,
+        "partial_period": false
+       },
+       {
+        "period": "2026-01-01",
+        "n": 8,
+        "partial_period": false
+       },
+       {
+        "period": "2026-02-01",
+        "n": 3,
+        "partial_period": false
+       },
+       {
+        "period": "2026-03-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2026-04-01",
+        "n": 4,
+        "partial_period": false
+       },
+       {
+        "period": "2026-05-01",
+        "n": 1,
+        "partial_period": false
+       }
+      ],
+      "total": 158,
+      "trend": {
+       "available": true,
+       "from": "2019-01-01",
+       "to": "2026-05-01",
+       "first": 0,
+       "last": 1,
+       "peak": 8,
+       "peak_period": "2026-01-01",
+       "early_third": 26,
+       "late_third": 83,
+       "elapsed_years": 7.328767,
+       "direction": "rising",
+       "late_vs_early": 3.19
+      },
+      "censored_at": "2026-06-01",
+      "why_censored": "the newest period is excluded because ingest lags publication; including it would print a collapse that did not happen",
+      "coverage": {
+       "tables": {
+        "news": {
+         "corpus": "news",
+         "rows": 255586690,
+         "expected": 238603270,
+         "pct": 107.1,
+         "partial": false,
+         "checked_at": 1792694090.3166533,
+         "age_seconds": 0,
+         "expires_in_seconds": 30.0,
+         "strict_shard_read": true,
+         "completeness": "reachability and historical row floor, not an ingest completeness proof"
+        }
+       },
+       "partial": false,
+       "note": "all listed tables passed strict index partition reads and historical row floors"
+      }
+     },
+     "volumes": {
+      "research": {
+       "n": 27109,
+       "window": "2017-2025",
+       "lane": "subject",
+       "what": "Prism-typed research papers"
+      },
+      "readable_papers": {
+       "n": 366,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "papers carrying a real abstract, title-anchored"
+      },
+      "pubmed": {
+       "n": 3886,
+       "window": "1990-2025",
+       "lane": "subject",
+       "what": "the health literature index records — study designs available here"
+      },
+      "news": {
+       "n": 158,
+       "window": "2019-01-01..2026-06-01",
+       "lane": "subject",
+       "what": "news articles mentioning this"
+      },
+      "patents": {
+       "n": 23,
+       "window": "2005-2024",
+       "lane": "subject",
+       "what": "patents whose title matches"
+      },
+      "arxiv": {
+       "n": 1,
+       "window": "2005-2025",
+       "lane": "subject",
+       "what": "preprints"
+      }
+     },
+     "context_deferred": false
+    },
+    "window": {},
+    "meta": {
+     "lane": "subject",
+     "note": "every figure is copied from the source sentence shown and verified against the abstract it came from",
+     "seconds": 17.6
+    }
+   }
+  }
+ ]
+}

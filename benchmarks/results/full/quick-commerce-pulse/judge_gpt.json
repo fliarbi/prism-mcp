@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 0
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series or quantified change.",
+    "comparison": "No measured baseline or contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Names follow-up questions and calls, but provides no traced breakdown layer.",
+    "export": "No data-backed CSV.",
+    "repro": "No measurements or reproducible source calls.",
+    "refs": "No references consulted.",
+    "accuracy": "Does not contradict the record; it correctly avoids unsupported claims.",
+    "limits": "Clearly states missing corpus and measurement limits, but cannot give the record-specific window or censoring details.",
+    "verdict": "Gives a direct, cautious recommendation and what would change it, but it is unsupported by the available record.",
+    "facets": "Does not answer the news, brand, regulation, trend, or tone facets with grounded findings."
+   },
+   "B": {
+    "trend": "The chart and change are explicitly estimates from memory, earning the estimate anchor only.",
+    "comparison": "Numeric brand comparison is explicitly estimated and cannot be checked against a shared recorded scale.",
+    "chart": "Estimate-labelled chart earns the memory-chart anchor only.",
+    "drilldown": "Themes are qualitative memory claims; proposed calls do not supply a traced breakdown and most did not execute successfully.",
+    "export": "Estimate-labelled market-size CSV earns the memory-table anchor only.",
+    "repro": "No recorded calls reproduce the figures.",
+    "refs": "No resolvable supporting references are provided.",
+    "accuracy": "Figures are labelled estimates, but the many specific market, funding, store and regulatory claims are not independently supported.",
+    "limits": "Distinguishes estimates from measurement and notes the data gap, but lacks applicable corpus-specific limits.",
+    "verdict": "Direct recommendation, low confidence, and a clear condition for revising it; it acknowledges profitability uncertainty.",
+    "facets": "Most requested facets, including trend, tone and dark-store regulation, are not answered with grounded values."
+   },
+   "C": {
+    "trend": "Full monthly series is exported, the peak and end values are named, the late/early comparison is quantified, and the conflicting CAGR and flat direction are handled.",
+    "comparison": "Compares negative-to-positive ratios on a defined corpus baseline and provides further same-scale brand attention ratios.",
+    "chart": "The monthly chart traces to the record, but the requested tone facet is not charted and the plotted monthly series omits points.",
+    "drilldown": "Provides traced categories and entities plus item-level headlines, but only three proposed follow-ups executed successfully, limiting the follow-up coverage.",
+    "export": "The monthly CSV is traced and referenced, but the question would benefit from a separate sentiment or item-level export; the supplied tables do not cover every needed facet.",
+    "repro": "Nearly all numeric claims trace and the main call is replayable; one numeric claim fails the trace check, so it falls short of full traceability.",
+    "refs": "News items have URLs, but there are no independently sourced references or claim-linked citations meeting the rubric.",
+    "accuracy": "Reads critical separately from negative, notes machine-label and geography anomalies, and correctly flags the tool's flat-direction/CAGR tension.",
+    "limits": "Places window, censoring, enrichment lag, match mode, coverage and interpretation limits next to the relevant claims.",
+    "verdict": "Direct, supported answer with confidence, decision and revision condition; it names the limits, though the contrary evidence and bounds could be tighter in the verdict itself.",
+    "facets": "Covers many grounded facets, but does not resolve brand-versus-generic/class overlap, seasonality, or the research-versus-news mismatch."
+   },
+   "D": {
+    "trend": "Names endpoints and peak but does not quantify the endpoint change or state the late/early ratio; the chart alone does not meet the trend anchor.",
+    "comparison": "The ratio delta is correctly computed and the baseline is defined, but the prose could carry more of the tool's comparison caveat.",
+    "chart": "The monthly chart is fully traced, but no tone chart is provided and the chart is a bare monthly level series.",
+    "drilldown": "Has multiple overview breakdowns and identifiers, but only one of five proposed follow-ups executed successfully.",
+    "export": "Both needed monthly and sentiment tables are traced, referenced, and carry provenance, window, unit and coverage information.",
+    "repro": "All numeric claims trace; the call includes arguments and window, and the exports and charts can be regenerated from it.",
+    "refs": "The record is cited, but no claim-linked, independently resolvable news references with dates and URLs are supplied.",
+    "accuracy": "Mostly reads the fields correctly; minor imprecision remains in describing the geography denominator and the comparison caveat.",
+    "limits": "States the cutoff gap, censoring, lane, match modes, sample scope and label limits alongside the affected figures.",
+    "verdict": "Direct answer and decision with confidence and a revision condition; it could name the strongest contrary evidence more explicitly.",
+    "facets": "Strong grounded overview, but leaves brand overlap, seasonality, research-versus-news comparison and specific dark-store regulation coverage unresolved."
+   }
+  },
+  "errors": {
+   "A": [
+    "No direct factual contradiction; the deliverable is an honest non-measurement response."
+   ],
+   "B": [
+    "No direct reference-record contradiction is established; the market, funding, store-count and regulatory specifics are unverified memory claims."
+   ],
+   "C": [
+    "The proposed IPO/valuation follow-up uses news.trends with a term query, which does not establish an IPO share result; the script also found one numeric claim that did not trace."
+   ],
+   "D": [
+    "The trend prose omits a quantified change despite naming the endpoint values; the prose also risks implying the geography share and placed percentage use the same denominator."
+   ]
+  },
+  "best": "C",
+  "verdict": "C best combines a quantified trend, tone comparison, grounded themes and entities, and a clear warning that “critical” is not the same as negative. D has cleaner exports and stronger reproducibility, but its trend reading is less complete and its follow-up drill-downs mostly did not execute; neither deliverable fully resolves dark-store regulation or the brand-versus-generic comparison."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 3
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

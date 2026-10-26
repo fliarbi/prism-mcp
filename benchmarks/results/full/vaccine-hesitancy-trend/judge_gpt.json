@@ -1,0 +1,180 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Explicitly labels its unmeasured series as estimates, so it earns only the estimate anchor.",
+    "comparison": "The baseline contrast is qualitative/numeric but all values are estimates.",
+    "chart": "The chart is explicitly an estimate, which earns 1.",
+    "drilldown": "It names generic breakdown layers but gives no measured breakdown; only two of six follow-ups executed successfully.",
+    "export": "Both CSVs are estimates, not traced exports.",
+    "repro": "No numbers trace to recorded calls and the call list cannot reproduce them.",
+    "accuracy": "The asserted thousands-per-year series conflicts with the reference title-match counts, while being clearly labeled as estimates.",
+    "limits": "Specific limits around window, censoring, scope, and unrun backtest are stated.",
+    "verdict": "It gives a decision and confidence, but the answer rests on estimates that contradict the reference series and its own forecast table differs from the headline range.",
+    "facets": "Growth and projection are estimated; grounded coverage of requested facets is minimal."
+   },
+   "B": {
+    "trend": "No series or measured trend is supplied.",
+    "comparison": "No measured comparison is supplied.",
+    "chart": "No chart block.",
+    "drilldown": "Generic proposed calls only; none executed successfully.",
+    "export": "No data export.",
+    "repro": "No measured numbers; calls are not a reproducible recipe for results.",
+    "accuracy": "It makes no unsupported measured claims and correctly states it cannot measure the trend from memory.",
+    "limits": "It identifies missing scope and coverage limits but has no measured window or source-specific caveats.",
+    "verdict": "It declines the requested answer and offers a commissioning decision, without a supported projection or conditions tied to evidence.",
+    "facets": "Neither growth nor the three-year range is answered with grounded values."
+   },
+   "C": {
+    "trend": "Complete traced series and correct peak and decline; exact change is given, but the percentage decline is marked estimate and the full decomposition is limited.",
+    "comparison": "Traced, same-scale baseline comparison with ratio and delta; the title-only and record-count scope is clear.",
+    "chart": "The traced observed series has window, unit, source, and a matching claim; no forecast bounds are charted despite the projection being central to the question.",
+    "drilldown": "One traced series layer, but no item-level breakdown; only one of four follow-ups executed successfully.",
+    "export": "The observed CSV is traced and referenced, but no scenario table CSV is supplied and the coverage/provenance fields are incomplete for anchor 4.",
+    "repro": "Most numeric claims trace; two do not, so it remains below the top ceiling. Calls and windows are listed and derived arithmetic is mostly reproducible.",
+    "accuracy": "The reference series and scenario values are largely reported correctly, but the 2025-to-2022 percentage is labeled estimate and some unexecuted follow-up claims are not evidence.",
+    "limits": "Several relevant scope and forecast limits are stated, but the 296-day gap is marked estimate and limits are not consistently placed beside every projection figure.",
+    "verdict": "Direct answer, decision, confidence, conditions, and caveats are present; the deliverable does not clearly identify the strongest contrary evidence in its own backtest.",
+    "facets": "It covers the observed trend and forecast, but does not resolve implied facets such as term overlap, seasonality, or research-versus-news mismatch with grounded findings."
+   },
+   "D": {
+    "trend": "Traced full series with window, peak, changes, and central scenario; it omits the projection bounds from the chart, limiting decomposition.",
+    "comparison": "Same-scale period comparison with defined baseline and recomputable ratios and deltas.",
+    "chart": "Observed and central scenario are charted with source, unit, window, and a clear caption; sensitivity bounds are not charted.",
+    "drilldown": "Provides scenario-year breakdown and executable follow-ups that passed, though it lacks an item-level paper breakdown.",
+    "export": "History and scenario CSVs are supplied, but provenance/coverage fields are incomplete and coverage is overstated in the prose.",
+    "repro": "Most figures trace and calls are listed; a few numeric claims are untagged or not traceable, keeping it below the top ceiling.",
+    "accuracy": "It repeats the reference counts and scenarios, but overstates the row-floor check as 'full coverage' and adds an unsupported exact coverage percentage.",
+    "limits": "Most applicable limits are stated near the findings, including title matching, unnormalized counts, window gap, and scenario caveats; coverage is still overstated elsewhere.",
+    "verdict": "The answer is direct and bounded, but 'mature, post-pandemic plateau or decline' is stronger than the measured title-match series supports, and it omits the strongest contrary evidence that 2025 remains well above 2019.",
+    "facets": "It addresses trend, scenario range, backtest, and several implied limits, though not all implied facets have grounded results."
+   }
+  },
+  "errors": {
+   "A": [
+    "Estimated annual counts and the 2026–2028 scenario values diverge substantially from the recorded title-match series and conditional scenarios; they are explicitly labeled estimates, not measurements.",
+    "The headline projection range of 5,500–9,000 does not match the deliverable's own scenario table."
+   ],
+   "B": [],
+   "C": [
+    "The 46.8% decline is explicitly marked estimate despite being arithmetic from the traced counts.",
+    "The stated 296-day gap is marked estimate; the reference window ends 2025-12-31 and the as-of date is 2026-10-23.",
+    "One proposed follow-up uses a history_id that differs from the recorded ID."
+   ],
+   "D": [
+    "The 104.2% expected-row-floor figure and 'full coverage' characterization are unsupported by the reference record, which says reachability and historical-row-floor checks do not prove completeness.",
+    "The projected 2026 central value is treated as a potential overestimate if decline continues; that is labeled interpretation, not a recorded result."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid: it traces the full observed series, gives the three-year central path and sensitivity bounds, compares periods on one scale, and states the limits and follow-up calls. C is careful and largely accurate but omits the forecast bounds from its chart and lacks a second export; D loses ground by overstating coverage and framing a mature plateau as a stronger conclusion than the series alone warrants."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

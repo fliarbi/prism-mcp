@@ -1,0 +1,645 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 870,
+  "charts": [
+   {
+    "id": "ccs-capacity",
+    "title": "Approx. global operating CO2 capture capacity",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Operating capture capacity (rounded estimate)",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ccs_capacity_est.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many research papers per year address CCS, and how has the volume trended?",
+    "args": {
+     "term": "carbon capture and storage"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...n capture and storage'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture and storage', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What does critical literature say about CCS performance gaps?",
+    "args": {
+     "term": "carbon capture and storage",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...d storage', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture and storage', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has news coverage of CCS moved year by year?",
+    "args": {
+     "term": "carbon capture"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 482, \"critical\": 417, \"negative\": 47, \"positive\": 432, \"mean_priority\": 6.84, \"critical_pct\": 86.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 469, \"critical\": 422, \"negative\": 62, \"positive\": 404, \"mean_priority\": 6.93, \"critical_pct\": 90.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 477, \"critical\": 411, \"negative\": 58, \"positive\": 413, \"mean_priority\": 6.84, \"critical_pct\": 86.2, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 432, \"critical\": 384, \"negative\": 42, \"positive\": 387, \"mean_priority\": 6.88, \"critical_pct\": 88.9, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\":"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries dominate CCS coverage?",
+    "args": {
+     "term": "carbon capture"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.2,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 3626, \"share_pct\": 23.2, \"lift\": 1.0}, {\"label\": \"united kingdom\", \"articles\": 1592, \"share_pct\": 10.2, \"lift\": 2.0}, {\"label\": \"canada\", \"articles\": 1029, \"share_pct\": 6.6, \"lift\": 1.9}, {\"label\": \"india\", \"articles\": 778, \"share_pct\": 5.0, \"lift\": 0.8}, {\"label\": \"norway\", \"articles\": 671, \"share_pct\": 4.3, \"lift\": 10.5}, {\"label\": \"china\", \"articles\": 665, \"share_pct\": 4.3, \"lift\": 0.8}, {\"label\": \"australia\", \"articles\": 622, \"share_pct\": 4.0, \"lift\": 0.8}, {\"label\": \"japan\", \"articles\": 494, \"share_pct\": 3.2, \"lift\": 2.1}, {\"label\": \"germany\", \"articles\": 418, \"share_pct\": 2.7, \"lift\": 2.2}, {\"label\": \"france\", \"articl"
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "How has sentiment on CCS shifted?",
+    "args": {
+     "term": "carbon capture"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.6,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 47, \"positive\": 432, \"neutral\": 3, \"ratio\": 0.11}, {\"period\": \"2024-07-01\", \"negative\": 62, \"positive\": 404, \"neutral\": 3, \"ratio\": 0.15}, {\"period\": \"2024-08-01\", \"negative\": 58, \"positive\": 413, \"neutral\": 6, \"ratio\": 0.14}, {\"period\": \"2024-09-01\", \"negative\": 42, \"positive\": 387, \"neutral\": 3, \"ratio\": 0.11}, {\"period\": \"2024-10-01\", \"negative\": 79, \"positive\": 555, \"neutral\": 3, \"ratio\": 0.14}, {\"period\": \"2024-11-01\", \"negative\": 40, \"positive\": 351, \"neutral\": 3, \"ratio\": 0.11}, {\"period\": \"2024-12-01\", \"negative\": 28, \"positive\": 402, \"neutral\": 3, \"ratio\": 0.07}, {\"period\": \"2025-01-01\", \"negative\": 45, \"positive\": 415, \"neutral\": 4, "
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What are the key supporting studies on storage permanence?",
+    "args": {
+     "term": "CO2 geological storage permanence",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ermanence', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CO2 geological storage permanence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.stance_trends",
+    "question": "How does stance on CCS in power vs industry differ over time?",
+    "args": {
+     "term": "carbon capture and storage"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"carbon capture and storage\", \"co2 sequestration\", \"geologic carbon storage\", \"carbon capture technology\", \"carbon capture and sequestration\"], \"points\": [{\"year\": 2017, \"total\": 530, \"orientation\": {\"critical\": 6, \"problem_identifying\": 56, \"breakthrough\": 16, \"cautionary\": 20, \"descriptive\": 57, \"comparative\": 21, \"promising\": 82}, \"stance_score\": null, \"positive\": 98, \"contested\": 82, \"positive_pct\": 18.5, \"contested_pct\": 15.5}, {\"year\": 2018, \"total\": 431, \"orientation\": {\"problem_identifying\": 66, \"breakthrough\": 18, \"promising\": 74, \"comparative\": 18, \"cautionary\": 22, \"critical\": 2, \"descriptive\": 24}, \"stance_score\": null, \"positive\": 92"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 27,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 12,
+   "untagged_examples": [
+    "90% — - Real capture rates (often well below the 90%+ design claim) and upstream methane leakage",
+    "60 — - Policy dependence: US 45Q credits (about USD 85/t for geological storage after the 2022 ",
+    "90 — - Policy dependence: US 45Q credits (about USD 85/t for geological storage after the 2022 ",
+    "50 — | Operating capacity today | 50 Mt/yr | 1x |",
+    "400 — | Announced pipeline (all stages) | roughly 400–500 Mt/yr | ~8–10x |",
+    "500 — | Announced pipeline (all stages) | roughly 400–500 Mt/yr | ~8–10x |",
+    "10 — | Announced pipeline (all stages) | roughly 400–500 Mt/yr | ~8–10x |",
+    "1,000 — | IEA net-zero scenario, 2030 | roughly 1,000 Mt/yr | ~20x |"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 133,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1165,
+  "charts": [
+   {
+    "id": "news_monthly",
+    "title": "Monthly news articles mentioning carbon capture",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_monthly.csv",
+    "how": "call",
+    "rows": 7,
+    "numeric_cells": 14,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "corpus_volumes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which papers make up the 1,169 contradicting papers?",
+    "args": {
+     "term": "carbon capture",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...n capture', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has the stance mix changed by year?",
+    "args": {
+     "term": "carbon capture"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"carbon capture\", \"carbon capture and storage\", \"co2 sequestration\", \"greenhouse gas capture\", \"negative emissions technologies\"], \"points\": [{\"year\": 2017, \"total\": 714, \"orientation\": {\"breakthrough\": 25, \"cautionary\": 39, \"problem_identifying\": 65, \"promising\": 109, \"critical\": 2, \"descriptive\": 87, \"comparative\": 23}, \"stance_score\": null, \"positive\": 134, \"contested\": 106, \"positive_pct\": 18.8, \"contested_pct\": 14.8}, {\"year\": 2018, \"total\": 536, \"orientation\": {\"descriptive\": 45, \"cautionary\": 24, \"problem_identifying\": 53, \"critical\": 3, \"comparative\": 10, \"promising\": 72, \"breakthrough\": 35}, \"stance_score\": null, \"positive\": 107, \"contes"
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What drove the October 2024 and February 2026 news spikes?",
+    "args": {
+     "term": "carbon capture",
+     "since": "2024-10-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 64.6,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"carbon capture\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 49, \"place\": 0, \"tagged_articles\": 5332, \"entity_labelled_articles\": 6121, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 8875, \"critical_articles\": 7532, \"first_seen\": \"2024-10-01 00:00:00\", \"last_seen\": \"2026-05-31 22:30:02\", \"window\": {\"from\": \"2024-10-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "What does critical news coverage say?",
+    "args": {
+     "term": "carbon capture",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which countries drive news coverage over time?",
+    "args": {
+     "term": "carbon capture"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 3626, \"share_pct\": 23.2, \"lift\": 1.0}, {\"label\": \"united kingdom\", \"articles\": 1592, \"share_pct\": 10.2, \"lift\": 2.0}, {\"label\": \"canada\", \"articles\": 1029, \"share_pct\": 6.6, \"lift\": 1.9}, {\"label\": \"india\", \"articles\": 778, \"share_pct\": 5.0, \"lift\": 0.8}, {\"label\": \"norway\", \"articles\": 671, \"share_pct\": 4.3, \"lift\": 10.5}, {\"label\": \"china\", \"articles\": 665, \"share_pct\": 4.3, \"lift\": 0.8}, {\"label\": \"australia\", \"articles\": 622, \"share_pct\": 4.0, \"lift\": 0.8}, {\"label\": \"japan\", \"articles\": 494, \"share_pct\": 3.2, \"lift\": 2.1}, {\"label\": \"germany\", \"articles\": 418, \"share_pct\": 2.7, \"lift\": 2.2}, {\"label\": \"france\", \"articl"
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What do scenarios say about 2050 storage needs?",
+    "args": {
+     "topic": "carbon capture and storage"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture and storage', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 69,
+   "traced": 69,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 6,
+   "found_in_corpus": 6,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 129,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 743,
+  "charts": [
+   {
+    "id": "ccs-scenario",
+    "title": "Indicative global CO₂ capture in the IEA Net Zero Emissions scenario",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "IEA NZE scenario (approximate reading)",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ccs_scenario.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which operating CCS projects report independently verified annual capture and storage volumes?",
+    "args": {
+     "term": "operating CCS projects verified annual capture storage volumes",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'operating CCS projects verified annual capture storage volumes' — try expand=true, or a broader phrase",
+    "seconds": 7.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What lifecycle emissions and capture rates are reported by sector and technology?",
+    "args": {
+     "term": "CCS lifecycle emissions capture rate sector technology"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ate sector technology'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='CCS lifecycle emissions ... rate sector technology', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What are the strongest counter-evidence findings on CCS performance, cost, and permanence?",
+    "args": {
+     "term": "carbon capture storage performance cost permanence"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mance cost permanence'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture storage p...ormance cost permanence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How do recent news counts about CCS change by year, and which outlets are covered?",
+    "args": {
+     "term": "carbon capture and storage",
+     "window": "2020-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries host operating CCS facilities and what volumes do they report?",
+    "args": {
+     "term": "operating carbon capture storage facilities reported volumes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ties reported volumes'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='operating carbon capture...lities reported volumes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 5,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "2,000 — - IPCC, 2005, *Special Report on Carbon Dioxide Capture and Storage*, assessment report, [",
+    "24 — Windows: the scenario chart spans 2020-01-01 through 2050-12-31; the brief is prepared on ",
+    "69 — Windows: the scenario chart spans 2020-01-01 through 2050-12-31; the brief is prepared on "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 969,
+  "charts": [
+   {
+    "id": "research-growth",
+    "title": "Prism-typed carbon capture research records",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research records",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which recent operating projects report independently verified capture, transport, and stored volumes?",
+    "args": {
+     "term": "carbon capture storage operating project verified annual tonnes",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'carbon capture storage operating project verified annual tonnes' — try expand=true, or a broader phrase",
+    "seconds": 17.6,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What evidence compares lifecycle emissions and costs across CCS pathways?",
+    "args": {
+     "term": "carbon capture storage lifecycle emissions cost comparison"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sions cost comparison'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture storage l...issions cost comparison', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "How do geological monitoring studies quantify leakage risk over time?",
+    "args": {
+     "term": "geological CO2 storage monitoring leakage permanence"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ng leakage permanence'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='geological CO2 storage m...ring leakage permanence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What do current sources estimate for global operating CCS capacity and annual stored volume?",
+    "args": {
+     "term": "global operating carbon capture storage capacity annual stored volume"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... annual stored volume'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='global operating carbon ...ty annual stored volume', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries dominate research authorship versus news coverage in a defined recent window?",
+    "args": {
+     "term": "carbon capture",
+     "geo": ""
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...on capture', 'geo': ''}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbon capture', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 29,
+   "traced": 27,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 108,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None, None]"
+  ],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 4,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 5,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "None given.",
+    "chart": "No chart.",
+    "drilldown": "Follow-up calls are prospective with placeholder args, and all 4 failed.",
+    "export": "No export.",
+    "repro": "No numbers and nothing to regenerate.",
+    "accuracy": "Honest refusal with no contradictions; scored 3 per the anchor.",
+    "limits": "Specific about what is unmeasured (window, coverage, match mode), but has no data to bound.",
+    "verdict": "Declines to answer; the decision and confidence rest on having no data.",
+    "facets": "No facet answered with grounded values or a tool-grounded 'no data'."
+   },
+   "B": {
+    "trend": "No series; candidate topics come from memory (ceiling 0).",
+    "comparison": "Defines a baseline but gives no figures.",
+    "chart": "No chart.",
+    "drilldown": "Only 2 of 6 follow-ups ran; the breakdown layers are generic.",
+    "export": "Estimate-labelled table with empty cells.",
+    "repro": "Nothing traces.",
+    "accuracy": "Memory candidates are labelled est.; no contradictions.",
+    "limits": "States the knowledge-cutoff gap and that counts are not impact; has no data window to place limits on.",
+    "verdict": "Memory watchlist with low confidence and stated conditions; not supported by measured numbers.",
+    "facets": "Facets are answered from memory or as 'cannot measure'."
+   },
+   "C": {
+    "trend": "Two-window change is quantified with the window stated, but it charts only the off-topic top riser and gives no decomposition.",
+    "comparison": "One traced ratio (1.90x) with a defined baseline; no caveat on label overlap.",
+    "chart": "Traced, with window, unit and source, but it charts an out-of-scope topic rather than the finance core the verdict relies on.",
+    "drilldown": "One traced layer; follow-ups executed but are mostly reruns of c1.",
+    "export": "Single traced table with provenance JSON; coverage=partial looks inconsistent with the tool's reachability note.",
+    "repro": "25/26 numbers trace and c1 is listed with args and window.",
+    "accuracy": "Numbers match and the off-topic rows are flagged; minor coverage-flag inconsistency.",
+    "limits": "States the 144-day gap and placed coverage caveats (ceiling 3).",
+    "verdict": "Direct, hedged answer with decision, low confidence and its reason, and what would change it; it barely names which finance topics rose.",
+    "facets": "Rising, newly covered (none), biggest, and window are all grounded."
+   },
+   "D": {
+    "trend": "Two-point comparison stated as such; deltas and ratios recompute exactly; split into finance core versus small-base risers.",
+    "comparison": "Table of ratio plus delta that recomputes exactly; baseline defined; 'labels overlap, do not sum' caveat; contrasts ratio against absolute volume.",
+    "chart": "Traced grouped bars across both windows with window, unit, source and caption tied to the verdict claim.",
+    "drilldown": "Grouped layers come from c1, but all 6 follow-up calls failed (ceiling 1).",
+    "export": "Full traced table with provenance JSON, referenced from the prose.",
+    "repro": "94/95 numbers trace; derived deltas are recomputable.",
+    "accuracy": "Catches the small-base fragility, possible classification artifacts and label overlap rather than reporting them as findings.",
+    "limits": "Window, 144-day gap, censoring thresholds, match mode and coverage are placed and read (ceiling 3).",
+    "verdict": "Answer, decision, low confidence with reasons, and what would change it; names the strongest contrary evidence; bounded by the window.",
+    "facets": "All facets grounded, plus overlap and the small-base implied facet."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Export coverage=partial while the tool reports partial=false (minor)."
+   ],
+   "D": []
+  },
+  "best": "D",
+  "verdict": "C and D both used the same measured run and flagged its 144-day staleness. D separated the fragile small-base risers (robotics, chemicals, disease labels) from the finance core (stock moves 1.9x, funding 1.82x), using exact deltas, an overlap caveat and a chart that supports its verdict. C stopped at noting that the category fit was questionable. A and B honestly declined to measure, so they offer a decision-maker nothing beyond a prompt to go get data."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 5,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

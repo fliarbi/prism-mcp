@@ -1,0 +1,13 @@
+[Unit]
+Description=Prism MCP + REST server (:8790 on localhost; MCP at /mcp, REST at /v1)
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/prism-mcp
+Environment=PRISM_MCP_HOST=127.0.0.1 PRISM_MCP_PORT=8790 PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 %h/prism-mcp/prism_mcp.py --http --port 8790
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,249 @@
+{
+ "slug": "remote-work-productivity",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 1.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 31.5,
+   "plain": 31.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.0,
+    "gpt": 32.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 3.0,
+    "export": 3.5,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 73.4,
+   "plain": 73.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 79.0,
+    "gpt": 67.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 32.2,
+   "plain": 32.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.4,
+    "gpt": 34.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.5,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 74.0,
+   "plain": 74.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 66.2,
+    "gpt": 81.8
+   }
+  }
+ },
+ "judge_mad": 0.55,
+ "verdicts": {
+  "opus": "A was the only deliverable that read its own data honestly. It surfaced that zero read papers supported the claim and flagged the rejected 13-22% statistic and the framing-label trap. It also gave a low-confidence verdict noting that RCTs were absent from the pull. C used the same data but misstated it as 'both sides' and had no working follow-ups. B and D carried the substantive RCT-vs-pandemic content from memory, but with misattributed venues and effect sizes.",
+  "gpt": "A is the strongest decision-grade deliverable: it gives a cautious, actionable answer while tracing its corpus figures, chart, references and limitations. B is more comprehensive, but it turns unsupported study-design claims and a rejected effect-size quote into evidence; C and D offer useful context but rely on memory estimates rather than reproducible measurements."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "'All tables passed reachability checks' is not supported by the reference record"
+   ],
+   "chatgpt_bare": [
+    "Gibbs, Mengel, Siemroth is cited as Management Science 2024 with an unresolvable DOI; it was published in JPE Microeconomics 2023",
+    "Bloom et al. is dated 2013 in the chart but 2015 elsewhere"
+   ],
+   "chatgpt_prism": [
+    "The verdict claims papers 'on both sides', but the targeted reads found 0 supporting",
+    "'Research window ends 1 year ago' overstates the ~10-month gap"
+   ],
+   "claude_bare": [
+    "Yang et al. (Nature Human Behaviour 2022) is credited with an 8-19% output fall; that study measured collaboration, and the 8-19% figure belongs to Gibbs et al.",
+    "The Gibbs et al. 'output per hour fell about 20%' figure is misstated",
+    "A line chart joins non-comparable studies as a trend"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Says the 2025 research and June 2026 news periods are censored for ingest lag; the record excludes the newest period from trend interpretation, not those count windows as a whole."
+   ],
+   "claude_prism": [
+    "Presents the rejected 13%–22% sentence as a study claim despite the extractor rejecting it.",
+    "Attributes cross-sectional/self-report designs, randomised and administrative-data gaps, and settings/generalizability assertions beyond the supplied record.",
+    "Says the main pull is a small sample of papers supporting/contradicting the claim, though its five classified papers are marked unrelated in the reference tally."
+   ],
+   "claude_bare": [
+    "Presents several recalled numeric findings as concrete study effects despite no verification; the chart treats unlike studies as a trend.",
+    "Misstates the data-entry study year and gives unsupported effect estimates and evidence tallies."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1287/mnsc.2023.03506 is not found by the benchmark.",
+    "Presents selected study findings and tiers from memory without resolvable supporting quotes; no measured corpus or series is provided."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Traced research series with its window. It quantifies the change (CAGR 36.6%, late/early ratio 6.19) and reads the news series separately. The censoring note is carried but 2025 is not visibly marked.",
+    "comparison": "Main pull vs counter pull on one scale, with tier weights defined. Correctly flags that the counter pull is asymmetric by design.",
+    "chart": "One fully traced chart, but it shows volume only. The stance tally, which bears directly on the question, is not charted.",
+    "drilldown": "Orientation, contribution and documents carry Prism ids and DOIs. Only 2 of 7 follow-ups executed; at ceiling.",
+    "export": "Two traced CSVs with provenance JSON. No documents/DOI table.",
+    "repro": "38/38 numbers traced, full prism-calls block. Memory background is explicitly labelled and not relied on.",
+    "refs": "All 11 DOIs resolve, quotes are verbatim, tier is stated, and the rejected 13-22% figure is flagged. No contrary-side sources exist to tier.",
+    "accuracy": "Catches the anomalies: the 755 'supporting' count is a framing label, and the 13-22% extraction was rejected. The 'reachability checks' line is not in the record.",
+    "limits": "Gap to today, censoring, lane breadth, self-report and pandemic sampling are placed near the numbers. It says what it cannot answer.",
+    "verdict": "Direct answer with decision, low confidence with reason, and change condition. Notes that RCTs are absent from the pull."
+   },
+   "chatgpt_bare": {
+    "trend": "Chart of study years labelled estimate.",
+    "comparison": "Qualitative only.",
+    "chart": "Labelled estimate.",
+    "drilldown": "Memory breakdown; follow-ups 0/5 executed.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Memory only.",
+    "refs": "The Gibbs DOI/venue is not found, which caps refs at 1. The Emanuel-Harrington reference has no identifier.",
+    "accuracy": "Gibbs et al. is misattributed to Management Science 2024 (it is JPE Micro). The chart puts Bloom in 2013 while the CSV says 2015.",
+    "limits": "Specific about what is unmeasured, but no data limits are possible.",
+    "verdict": "Reasonable 'it varies' answer with decision, confidence and change condition. Supported only by memory studies with venue errors.",
+    "facets": "Memory-based."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with exact delta (+621, 12.1x) and censoring noted. No CAGR is given.",
+    "comparison": "0 vs 5 on the targeted-read baseline, defined, with a not-representative caveat. Omits the counter-pull design bias.",
+    "chart": "Traced volume chart only.",
+    "drilldown": "0/4 follow-ups executed; ceiling 1.",
+    "export": "Single traced CSV with provenance JSON; no documents table.",
+    "repro": "Fully traced. The 'research window ends 1 year ago' is imprecise (~10 months).",
+    "refs": "3 DOIs resolve, quotes are verbatim and tiers are given.",
+    "accuracy": "The verdict says targeted reads 'found papers on both sides', but no read paper supported the claim. This contradicts its own data.",
+    "limits": "Lane, windows, gap and censoring are stated, and it declines to use the rejected figure.",
+    "verdict": "The decision, confidence and change condition are present. The 'both sides' framing is inconsistent with the deliverable's evidence.",
+    "facets": "Corpus facets are covered; the RCT vs pandemic tension is barely addressed."
+   },
+   "claude_bare": {
+    "trend": "Cross-study effect sizes are plotted as a 'trend', labelled estimate.",
+    "comparison": "Memory numbers across non-comparable baselines; the mismatch is acknowledged.",
+    "chart": "Labelled estimate.",
+    "drilldown": "Generic memory layers. Some follow-ups ran, but no traced layer.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Memory only; 3 numbers untagged.",
+    "refs": "3/7 have DOIs, which resolve. Others lack identifiers, and no quotes are given.",
+    "accuracy": "Attributes an 8-19% output fall to Yang et al. (a collaboration study). It appears to have swapped figures with Gibbs et al. (productivity fell 8-19%, hours up ~30%).",
+    "limits": "Honest about memory, selection and window, but no data limits are possible.",
+    "verdict": "Addresses hybrid RCTs vs fully remote directly, with decision and confidence. Rests partly on misattributed numbers.",
+    "facets": "Memory-based."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced annual series, quantified growth and CAGR, with 2025 censoring; no decomposition shown.",
+    "comparison": "Same-pull counts, baseline and delta are stated; the zero-support ratio is not informative but correct.",
+    "chart": "The complete traced research series has a fitting chart, source, window, unit and caption; the censored period is marked.",
+    "drilldown": "Shows breakdowns and documents, but proposed follow-ups did not execute successfully.",
+    "export": "The series CSV traces, but the question needs document-level evidence too; the export omits that table.",
+    "repro": "All numeric claims are traced, calls include arguments and windows, and the recipe supports rebuilding the deliverable.",
+    "refs": "All cited DOIs resolve; references identify works and their claims, with corpus-verified quotes.",
+    "accuracy": "Carefully distinguishes targeted abstract classifications from causal evidence; minor issue: calls the research and news periods censored although only the newest period is excluded from trend interpretation.",
+    "limits": "Places lane, windows, lag, coverage and interpretation limits with the relevant claims, including the gap to today.",
+    "verdict": "Direct, bounded answer with decision, confidence, contrary evidence and conditions that would change it.",
+    "facets": "Addresses the mixed evidence and research/news availability, but does not provide a grounded news trend or executable follow-up results."
+   },
+   "claude_prism": {
+    "trend": "Research series and change are traced and quantified with censoring; it omits the full-series decomposition in prose and has a chart reading issue about steepest growth.",
+    "comparison": "Provides same-scale tallies, deltas, defines the zero-denominator ratio, and flags counter-pull asymmetry.",
+    "chart": "Traced research chart includes window, unit and source and is tied to a claim; the partial news series is described with its censoring.",
+    "drilldown": "Has breakdowns and seven specific calls, but only two follow-ups executed successfully with on-topic data.",
+    "export": "Series CSV traces, but the required document-level evidence export is missing and the tally CSV has incomplete provenance.",
+    "repro": "Most numbers trace and the principal calls are listed, but some claims about designs, samples and evidence properties are unsupported by the record.",
+    "refs": "DOIs resolve and works are tied to claims, but quotes for some entries are not verified and one quoted claim was rejected by the extractor.",
+    "accuracy": "Treats the rejected 13–22% sentence as if it were a returned study finding and overstates evidence about study designs, self-report and settings.",
+    "limits": "Notes windows, lane and coverage caveats, but presents unsupported match-mode and study-design assertions as established limits or findings.",
+    "verdict": "Direct policy answer, but its central claim that no read paper supports the claim conflicts with the supplied tally, which classifies all five as unrelated or contradicting rather than establishing the broader conclusion; confidence and decision support are weakened by unsupported premises.",
+    "facets": "Covers research framing, counts and windows, but the design, occupation and effect-size questions remain unanswered and news findings are thin."
+   },
+   "claude_bare": {
+    "trend": "The chart is explicitly a memory estimate and compares unlike studies; it is not a measured time series.",
+    "comparison": "Study effects are memory figures across unlike populations and outcomes; the incompatibility is acknowledged but figures remain unverified.",
+    "chart": "Estimate-labelled memory chart earns the estimate anchor; it is not a traced series and is not a valid trend chart.",
+    "drilldown": "Provides only generic, unexecuted proposed calls and no traceable item-level breakdown.",
+    "export": "The effects CSV is explicitly an estimate from memory, so it earns the estimate anchor only.",
+    "repro": "No recorded calls; study figures are recalled and not reproducible from the deliverable.",
+    "refs": "Includes identifiers, but at least one citation is mismatched: the data-entry study is an NBER paper from 2023, not the described 2022 study; quote and claim support are not provided.",
+    "accuracy": "Several study details and claims are inaccurate or ungrounded, including the data-entry year and the characterization of the Trip.com performance result as zero effect.",
+    "limits": "Clearly labels memory and coverage limits, but cannot supply specific corpus windows, censoring or match-mode limits.",
+    "verdict": "Gives a direct answer and decision, but relies on unsupported recalled effects and does not acknowledge evidence limitations within the verdict sufficiently for a stronger score.",
+    "facets": "Addresses arrangement and study context from memory, but does not ground the evidence or answer corpus and news facets."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured trend; the selected-study count chart is labelled estimate and is not a productivity series.",
+    "comparison": "Explicitly declines to combine incomparable study estimates; no measured contrast is supplied.",
+    "chart": "Estimate-labelled selected-study counts earn the estimate anchor, but do not measure the requested trend.",
+    "drilldown": "The setting/design breakdown is memory-selected and proposed follow-ups were not executed.",
+    "export": "The selected-studies CSV is explicitly an estimate from memory and is not a harmonized effect table.",
+    "repro": "No calls or reproducible numeric evidence; the CSV and study descriptions are memory-based.",
+    "refs": "One DOI fails to resolve per the benchmark and the remaining references lack verifiable quotes; fabricated-identifier ceiling applies.",
+    "accuracy": "The claimed Gibbs Management Science DOI does not resolve in the reference check, and the evidence claims are not grounded in the supplied record.",
+    "limits": "Specifically acknowledges memory, absent corpus coverage, differing measures and the gap to today, but lacks measured-data caveats.",
+    "verdict": "Clear answer, decision, confidence and conditions for change; it acknowledges mixed findings and the limits of its selected examples.",
+    "facets": "Recognizes the absence of corpus and news data, but does not ground evidence facets with a verified read or measured series."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

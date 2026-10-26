@@ -1,0 +1,735 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 603,
+  "charts": [],
+  "tables": [
+   {
+    "name": "coverage_plan.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are per-term totals and shares, and what is the combined_articles count?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ],
+     "window": "2024-10-23..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly series for each term on one scale?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What is the tone per term?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ['Zomato', 'Swiggy']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which stories are most_covered for each term?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ],
+     "sort": "most_covered",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ..._covered', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsort\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='most_covered', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical stories drive negative tone?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ],
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'Swiggy'], 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which regions cover each firm most?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ['Zomato', 'Swiggy']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.compare",
+    "question": "How much does adding the Eternal alias change Zomato's count?",
+    "args": {
+     "terms": [
+      "Zomato OR Eternal",
+      "Swiggy"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.7,
+    "sample": "{\"terms\": [\"Zomato OR Eternal\", \"Swiggy\"], \"rows\": [{\"term\": \"Zomato OR Eternal\", \"articles\": null, \"share_pct\": 0.0, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"Swiggy\", \"articles\": 21854, \"share_pct\": 100.0, \"critical\": 12286, \"direction\": \"falling\", \"growth\": 0.65, \"tone_ratio\": 0.27, \"vs_baseline\": 0.47, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 602, \"critical\": 325, \"negative\": 104, \"positive\": 496, \"mean_priority\": 6.33, \"critical_pct\": 54.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 757, \"critical\": 413, \"negative\": 119, \"positive\": 625, \"mean_priority\": 6.31, \"cri"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "1.0 — No common scale or baseline can be defined without counts. The intended comparison, once m"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1269,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly news articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "zomato",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "swiggy",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "critical-pct",
+    "title": "Critical articles as share of each term's monthly articles",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "zomato",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "swiggy",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_compare.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 192,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which stories drove Zomato's Jan 2026 critical spike (74.2%)?",
+    "args": {
+     "term": "zomato",
+     "since": "2026-01-01",
+     "until": "2026-02-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "Which stories drove Swiggy's Mar 2026 critical share (65.9%)?",
+    "args": {
+     "term": "swiggy",
+     "since": "2026-03-01",
+     "until": "2026-04-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which publishers supply most of each term's volume (common-word and syndication check)?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Where in the world is each term's coverage concentrated?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is the sentiment breakdown per term for the last 6 months?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2025-12-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2025-12-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "Is the Nov 2024 peak a one-off, and how does it compare with earlier years?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2022-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2022-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.compare",
+    "question": "Does adding the parent name 'eternal' change Zomato's count?",
+    "args": {
+     "terms": [
+      "zomato",
+      "eternal",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.0,
+    "sample": "{\"terms\": [\"zomato\", \"eternal\", \"swiggy\"], \"rows\": [{\"term\": \"zomato\", \"articles\": 22619, \"share_pct\": 31.0, \"critical\": 12538, \"direction\": \"falling\", \"growth\": 0.51, \"tone_ratio\": 0.33, \"vs_baseline\": 0.57, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 822, \"critical\": 519, \"negative\": 194, \"positive\": 621, \"mean_priority\": 6.54, \"critical_pct\": 63.1, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 857, \"critical\": 464, \"negative\": 211, \"positive\": 638, \"mean_priority\": 6.35, \"critical_pct\": 54.1, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1330, \"critical\": 755, \"negative\": 263, \"positive\": 1053, \"mean_priority\": 6.43, \"critical_pct\": 56.8, \"partial_per"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 88,
+   "traced": 82,
+   "derived": 24,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 125,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 340,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "For the same window and source coverage, how many articles match Zomato and Swiggy, and what share does each represent?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"Zomato\", \"Swiggy\"], \"rows\": [{\"term\": \"Zomato\", \"articles\": 22619, \"share_pct\": 50.9, \"critical\": 12538, \"direction\": \"falling\", \"growth\": 0.51, \"tone_ratio\": 0.33, \"vs_baseline\": 0.57, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 822, \"critical\": 519, \"negative\": 194, \"positive\": 621, \"mean_priority\": 6.54, \"critical_pct\": 63.1, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 857, \"critical\": 464, \"negative\": 211, \"positive\": 638, \"mean_priority\": 6.35, \"critical_pct\": 54.1, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1330, \"critical\": 755, \"negative\": 263, \"positive\": 1053, \"mean_priority\": 6.43, \"critical_pct\": 56.8, \"partial_period\": false"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts for both terms on the same scale, and how did each change over the window?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ],
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...], 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What tone categories and definitions apply to coverage of each term?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ['Zomato', 'Swiggy']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which term is most covered, and how many combined articles mention either or both terms?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ['Zomato', 'Swiggy']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which outlets or regions account for the coverage, and how does that breakdown differ by term?",
+    "args": {
+     "terms": [
+      "Zomato",
+      "Swiggy"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ['Zomato', 'Swiggy']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['Zomato', 'Swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 84,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 735,
+  "charts": [
+   {
+    "id": "monthly-news-volume",
+    "title": "Monthly news articles matching Zomato and Swiggy",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Zomato",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Swiggy",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly-comparison.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "term-totals.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 13,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which sources and exact mentions contribute to each company’s news volume, and how much is common-word noise?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Which stories or events drove the largest monthly peaks for each company?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What definitions and article-level evidence underlie critical, positive, negative, and tone_ratio fields?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How many unique stories mention both companies, after deduplication?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01",
+     "include_overlap": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\ninclude_overlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "How do the coverage patterns vary by geography?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['zomato', 'swiggy'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "What does a refreshed comparison show after the latest month is fully ingested?",
+    "args": {
+     "terms": [
+      "zomato",
+      "swiggy"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"zomato\", \"swiggy\"], \"rows\": [{\"term\": \"zomato\", \"articles\": 22619, \"share_pct\": 50.9, \"critical\": 12538, \"direction\": \"falling\", \"growth\": 0.51, \"tone_ratio\": 0.33, \"vs_baseline\": 0.57, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 822, \"critical\": 519, \"negative\": 194, \"positive\": 621, \"mean_priority\": 6.54, \"critical_pct\": 63.1, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 857, \"critical\": 464, \"negative\": 211, \"positive\": 638, \"mean_priority\": 6.35, \"critical_pct\": 54.1, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 1330, \"critical\": 755, \"negative\": 263, \"positive\": 1053, \"mean_priority\": 6.43, \"critical_pct\": 56.8, \"partial_period\": false"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 34,
+   "traced": 32,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

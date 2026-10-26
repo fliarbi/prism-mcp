@@ -1,0 +1,181 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly points and endpoint changes, but charts and export show only selected months despite a full series being available; it also misstates the censored month.",
+    "comparison": "Same-window ratios and deltas are stated and generally recompute; overlap caveat is recognized, though the deduplicated total is not established.",
+    "chart": "The plotted values trace and support the prose, but the chart is sampled and does not visibly mark the source's partial newest month.",
+    "drilldown": "Term and month breakdowns are traced, and three follow-up calls executed successfully; no item-level results are included.",
+    "export": "Totals and monthly CSVs have provenance, but the monthly file is sampled rather than the full series needed for the trend.",
+    "repro": "Most numeric claims trace and the primary call is reproducible; selected exports and a few unsupported details keep it below full reproducibility.",
+    "accuracy": "It presents a 107.1% coverage check as measured although that does not appear in the reference, and says June is censored even though the response contains data through May.",
+    "limits": "Several relevant limits are discussed, but the censoring description is wrong and the matching mode/coverage evidence is overstated.",
+    "verdict": "Direct answer, decision, confidence, and conditions are present; confidence rests partly on an unsupported coverage claim.",
+    "facets": "Volume, shares, trends, comparison, and caveats are covered, but overlap, tone meaning, and Google-wide attention remain unresolved."
+   },
+   "B": {
+    "trend": "No measured series; the directional claims are explicitly estimates.",
+    "comparison": "Only a qualitative memory-based ordering, with no measured common-scale contrast.",
+    "chart": "Empty placeholder chart is honestly labelled unmeasured, capped at the estimate ceiling.",
+    "drilldown": "Calls are proposed but not executed and use unsupported or generic arguments.",
+    "export": "Empty estimate CSV has no measured rows.",
+    "repro": "No source call or reproducible measured numbers.",
+    "accuracy": "It avoids direct factual contradictions by clearly marking its claims as estimates.",
+    "limits": "It states no data was fetched, but the intended window is not a measured window and the limits remain generic.",
+    "verdict": "Direct but unsupported ordering and no confidence in a measured result; the decision is appropriately cautious.",
+    "facets": "Most facets are unmeasured; the memory ordering is explicitly estimated."
+   },
+   "C": {
+    "trend": "No series; the chart is an empty estimate placeholder.",
+    "comparison": "No measured comparison or ratio.",
+    "chart": "No measured values; the placeholder earns only the estimate ceiling.",
+    "drilldown": "Proposed calls were not executed and arguments contain placeholders rather than runnable window values.",
+    "export": "No measured export; blank estimate rows only.",
+    "repro": "No recorded calls; claims are limited to inability to measure.",
+    "accuracy": "No contradiction or fabricated measurement, but there is no factual result to validate.",
+    "limits": "It identifies missing corpus and query details, but provides no concrete applicable window or coverage limits.",
+    "verdict": "A cautious decision is given, but there is no measured answer or confidence tied to evidence.",
+    "facets": "It names the unavailable facets but supplies no grounded measured values."
+   },
+   "D": {
+    "trend": "Full monthly series is charted through April and endpoints are quantified; the partial May caveat is handled, though endpoint changes are not computed as explicit growth ratios.",
+    "comparison": "Same-window share gaps and count ratios are stated, recompute correctly, and the overlap limitation is explicit.",
+    "chart": "The traced chart supports the trend claim and marks the partial newest month by omitting it; it shows volume but not the critical-share decomposition available in the data.",
+    "drilldown": "Monthly breakdown is traced and calls are specific, but there are no item-level results folded into the report.",
+    "export": "Full monthly CSV is traceable, referenced, and carries provenance; no separate per-term summary export is supplied.",
+    "repro": "The main call and most figures reproduce, but one numeric claim does not trace, so it falls short of complete regeneration.",
+    "accuracy": "Core counts and definitions are read carefully; the claim that May is the incomplete newest month is consistent with the response's partial-period caveat, with minor imprecision in describing it as omitted from the source.",
+    "limits": "Window, lane, coverage, matching limits, and partial-period caveat are placed with the relevant claims; the response could more clearly state the gap to today and how to close it.",
+    "verdict": "A supported answer, decision, confidence, and conditions are given, but the verdict omits the strongest contrary evidence: Anthropic's much faster reported growth.",
+    "facets": "Volume, share, trend, tone caveats, overlap, and limits are covered; seasonality and broader Google coverage are not measured."
+   }
+  },
+  "errors": {
+   "A": [
+    "Claims a 107.1% coverage check passed, which is not in the supplied reference record.",
+    "Says June 2026 is the censored newest month although the response includes May 2026 points and the exclusive cutoff is June 1, 2026.",
+    "Treats combined_articles as a per-term sum while acknowledging the response does not establish unique-article deduplication."
+   ],
+   "B": [
+    "Calls combined_articles the deduplicated union, which is not established by the reference record.",
+    "Defines the tone output and matching behavior without supporting source evidence."
+   ],
+   "C": [
+    "Proposed calls use placeholder windows and unsupported arguments, so they are not reproducible as written."
+   ],
+   "D": [
+    "Calls May omitted because it is incomplete, although May appears in the response's monthly data; the source caveat concerns the newest included month and is not clearly reconciled with the partial_period field."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid: it compares all three terms on a shared scale, shows the monthly pattern, and carries the ingest caveat into its reading. A covers more caveats and follow-up questions, but its sampled trend export and unsupported coverage claim weaken trust; D still needs item-level evidence and a clearer reconciliation of May's partial status."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

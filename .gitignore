@@ -1,0 +1,38 @@
+# runtime state
+cache/
+out/
+backups/
+trials/
+__pycache__/
+*.pyc
+*.bak
+*.bak.*
+showcase/logs/
+docs/examples/.*.part
+docs/comparisons/*.part
+# WordPress test site: only the Prism plugin and the compose file are ours
+wordpress/*
+!wordpress/docker-compose.yml
+!wordpress/wp-content/
+wordpress/wp-content/*
+!wordpress/wp-content/plugins/
+wordpress/wp-content/plugins/*
+!wordpress/wp-content/plugins/prism-research/
+.env
+*.sqlite3
+# benchmark v2: PDFs and full-page captures are hosted on fliarbi.com, not versioned
+docs/benchmark_v2/**/*.pdf
+docs/benchmark_v2/*.pdf
+docs/benchmark_v2/**/*.png
+docs/benchmark_v2/**/prism_benchmark_v2_full.html
+docs/benchmark_v2/**/benchmark_v2_pilot.html
+docs/benchmark_v2/prism_benchmark_v2_full.html
+docs/benchmark_v2/benchmark_v2_pilot.html
+deploy/public.env
+docs/topics/*/page/*.geojson
+docs/diseases/*/page/*.geojson
+# internal: engineering notes, probes and infrastructure detail stay out of the public repo
+docs/engineering/
+showcase/probe/
+# benchmark PDFs are hosted on fliarbi.com (the README links there); not versioned
+benchmarks/results/**/*.pdf

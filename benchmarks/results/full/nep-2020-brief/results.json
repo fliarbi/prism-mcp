@@ -1,0 +1,240 @@
+{
+ "slug": "nep-2020-brief",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 24.9,
+   "plain": 24.9,
+   "invented": true,
+   "by_judge": {
+    "opus": 24.6,
+    "gpt": 25.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 3.0,
+    "chart": 4.0,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 71.6,
+   "plain": 71.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 70.0,
+    "gpt": 73.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 2.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 32.6,
+   "plain": 32.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 28.8,
+    "gpt": 36.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 4.0,
+    "limits": 3.5,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 73.0,
+   "plain": 73.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 65.6,
+    "gpt": 80.4
+   }
+  }
+ },
+ "judge_mad": 0.48,
+ "verdicts": {
+  "opus": "A and B both ground their claims in the recorded data. B goes further: it reads the rising research trend and the critical-share decomposition, catches the Indiana and off-country anomalies, and states plainly that the evidence base is thin (one review, one the health literature index record). Against that, B wrongly compares news 'critical' with research 'contested' as if they were one scale, and misreads a demographic quote. A is cleaner but narrower and never says the literature is thin. C and D are honest about having no data, but they deliver policy content and memory estimates rather than a measured brief.",
+  "gpt": "D is the strongest decision brief: its measured comparisons, repeatable calls, and concise recommendation are well bounded by what the corpus can show. C covers more facets and evidence layers, but has weaker drill-down execution and a less decisive verdict; neither establishes implementation or educational impact."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "Misreads ∼25% of world population as 25% of world's under-25s",
+    "Compares news 'critical' with research 'contested' as one scale despite lane and classifier mismatch",
+    "Describes research authorship as '1 record' although the rows total about 50",
+    "Claims 'corpus is mostly Indian-journal commentary' without measurement",
+    "Marks the news CSV coverage=full although the series is censored"
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Spending-share time series and state positions given from memory (labelled est.), not traceable"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Presents unverified spending, GER, and implementation claims from memory; the script flags an untagged 6% verdict figure."
+   ],
+   "claude_prism": [
+    "Calls the recent news pattern flat and reports the 0.94 recent-window ratio; the prose should keep that window distinct from the 1.21 ratio in the longer brief."
+   ],
+   "chatgpt_prism": [
+    "The CSV labels coverage as partial but does not explain that the latest plotted month is May 2026 and the censored June bucket is excluded from the series."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Traced monthly news series. It states the window and the censoring (in the limits section), names the peak (802, 2025-03), gives the first/last delta (52%) and correctly reads early/late thirds as flat. It does not decompose critical vs total and omits the rising research trend (10.4% CAGR).",
+    "comparison": "The June 2024 vs May 2026 comparison is traced and the arithmetic is exact (1.52x). A single month as baseline is noisy, and the stated caveat is generic.",
+    "chart": "One fully traced chart with window, unit, source and caption. It shows volume only; the critical share and the research series were available but not charted.",
+    "drilldown": "Ceiling is 1: no follow-up returned data, and there is no breakdown layer beyond corpus counts.",
+    "export": "One traced CSV with full provenance, coverage=partial and a provenance JSON. Only one table; the stance mix was also needed.",
+    "repro": "All 32 numbers trace. The prism-calls block includes args, and derived figures are recomputable.",
+    "refs": "3/3 DOIs resolve and each is tied to a claim. The 6% quote is verbatim. Tiers are stated.",
+    "accuracy": "No contradictions; the 144-day gap is correct. It does not catch the reference's anomalies (Indiana lift, Cameroon row).",
+    "limits": "Window, censoring, gap to today and lane are all stated. It never says plainly that the evidence base is thin (62 readable papers, 1 the health literature index record, 1 review), and most limits sit in a footer.",
+    "verdict": "Answer, decision, confidence and conditions are all present. It uses no numbers and does not engage the 50.5% contested share as contrary evidence.",
+    "facets": "Covers volumes, stance, news trend and geography. Misses the research trend and the critical share."
+   },
+   "claude_prism": {
+    "trend": "Research trend (25 to 55, 10.4% CAGR, 1.8x) and news trend (1.21x, 0.94x, peak 802 in 2025-03, historic peak 473 in 2020-08) are both traced and read correctly. Critical vs total is decomposed and the censoring is stated.",
+    "comparison": "Compares news 'critical' at 70.4% with research qualifying+contradicting at 50.5%. This mixes lanes and classifiers; the caveat is stated but the mismatch is not resolved.",
+    "chart": "Traced chart of volume with critical overlaid, with window, unit, source and caption. The research series is not charted, and the censored month is excluded rather than marked.",
+    "drilldown": "Stance and geography layers are traced, but they do not reach items with identifiers. Only 2 of 7 follow-ups executed.",
+    "export": "Two traced CSVs and a provenance JSON (ceiling 3). The news CSV is marked coverage=full even though the series is censored.",
+    "repro": "All 64 numbers trace, calls are listed with args, and computed ratios recompute (3.9x, 2.6x, 18.9%).",
+    "refs": "7/7 DOIs resolve and are tied to claims. Both quotes are verbatim.",
+    "accuracy": "Catches the Indiana name-collision and flags off-topic country matches. However, it misreads '∼25% of world population' as 'world's under-25s', treats news 'critical' as comparable to research 'contested', describes authorship as '1 record' when the rows total about 50, and calls the corpus 'mostly Indian-journal commentary' without measurement.",
+    "limits": "Specific limits: research silent on 2026, news gap 4.7 months, mention match mode, top-rows denominator, different classifiers, only one the health literature index record and one review. It lists what cannot be answered.",
+    "verdict": "Ceiling 3. Direct answer with numbers, decision and confidence; the verdict is long.",
+    "facets": "Covers research and news trends, stance, critical share, geography, institutions and thin evidence."
+   },
+   "chatgpt_bare": {
+    "trend": "No series; it honestly says it cannot measure one.",
+    "comparison": "Only the structural 5+3+3+4 vs 10+2 contrast, which is not a measurement.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown; the follow-ups did not execute.",
+    "export": "No export.",
+    "repro": "Numbers come from the policy document as a named source, but nothing is regenerable.",
+    "refs": "One official document with a URL, tied to claims, with no quotes.",
+    "accuracy": "The policy facts are correct and nothing is fabricated.",
+    "limits": "Specific about what is unmeasured. It does not address how thin the literature is.",
+    "verdict": "Clear answer, decision, confidence and conditions; no contrary evidence.",
+    "facets": "Policy content only; none of the measured facets."
+   },
+   "claude_bare": {
+    "trend": "Spending series from memory, labelled est.",
+    "comparison": "Memory figures compared with the target; they cannot be checked.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Generic layers; only 2 of 6 follow-ups executed.",
+    "export": "Estimate CSV.",
+    "repro": "Nothing traces.",
+    "refs": "Links go to agency homepages rather than the documents; no quotes.",
+    "accuracy": "The memory specifics (26.3% baseline, 28.4% GER, Tamil Nadu funds dispute) appear plausible and are labelled est. Many memory specifics remain.",
+    "limits": "Honest and specific about what was not measured.",
+    "verdict": "Ceiling 0. The verdict rests on untraced figures.",
+    "facets": "Mostly memory."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured series; it clearly says the trend cannot be measured.",
+    "comparison": "Only a qualitative comparison of proposed school structures; no measured common-scale contrast.",
+    "chart": "No chart included.",
+    "drilldown": "Names possible questions and calls, but has no traced breakdown or executed result.",
+    "export": "No CSV or provenance record.",
+    "repro": "The policy source is named, but no corpus calls or repeatable research measurements are provided.",
+    "refs": "One resolvable official policy reference supports its claims, but the evidence base is very limited.",
+    "accuracy": "Carefully distinguishes policy proposals from achieved outcomes and makes no unsupported measured claims.",
+    "limits": "States the missing corpus, lane, window, coverage and implementation evidence beside the claims.",
+    "verdict": "Gives a decision, confidence, and what evidence would change it, bounded by the lack of implementation data.",
+    "facets": "Covers policy design and targets, but leaves the thin-literature question and measured trends unanswered."
+   },
+   "claude_bare": {
+    "trend": "The expenditure chart is explicitly an estimate from memory, earning the estimate-only anchor.",
+    "comparison": "Numeric target-versus-estimate comparisons are stated, but the actuals are unverified.",
+    "chart": "The chart is honestly labelled as an approximate memory estimate.",
+    "drilldown": "Provides generic breakdown layers and follow-up calls; only two of six calls executed successfully.",
+    "export": "The CSV is explicitly estimated and lacks traceable measured rows.",
+    "repro": "Several numeric claims are untagged and no recorded calls reproduce the deliverable.",
+    "refs": "References are generic report links without item-level evidence or supporting quotes.",
+    "accuracy": "Memory claims about implementation and recent developments go beyond the reference record as measured findings.",
+    "limits": "Acknowledges missing corpus data and estimate status, but does not give the specific limits for each claimed figure.",
+    "verdict": "The script flags an untagged 6% figure in the verdict, triggering its zero ceiling.",
+    "facets": "Most coverage, research, and trend facets are memory claims or omitted."
+   },
+   "claude_prism": {
+    "trend": "Research change is quantified and the monthly news series is traced, but the chart does not visibly mark the censoring boundary.",
+    "comparison": "The critical-share comparison is numeric and caveated for differing classifiers, though it does not fully answer a like-for-like contrast.",
+    "chart": "The traced monthly chart supports a stated claim, but the censoring caveat is not visibly marked on the chart.",
+    "drilldown": "Includes stance and monthly breakdowns, but only two of seven proposed follow-ups executed successfully.",
+    "export": "Provides traced monthly and stance CSVs, but not every table needed for the stated claims.",
+    "repro": "Recorded calls and arguments support the core measures; some narrative-derived values and the full regeneration recipe fall short of the top anchor.",
+    "refs": "Identifiers resolve and several quotes are supplied, but not every cited item has a verbatim supporting quote.",
+    "accuracy": "Mostly reads fields correctly and separates windows; it does not flag all reference-record anomalies.",
+    "limits": "Places specific windows, censoring, match mode, coverage, classification limits, and the outcome-data gap near the relevant claims.",
+    "verdict": "Direct and bounded, but the script's ceiling reflects a support or consistency limitation in the verdict.",
+    "facets": "Covers most implied facets, but overlap, seasonality, and some research-versus-news implications remain incomplete."
+   },
+   "chatgpt_prism": {
+    "trend": "The full monthly series and change are traced, but censoring is explained in the method rather than visibly marked on the chart.",
+    "comparison": "The June 2024 to May 2026 comparison recomputes exactly and is clearly limited to mention volume.",
+    "chart": "The series is fully traced and tied to a claim, but the censoring boundary is not visibly marked.",
+    "drilldown": "No proposed follow-up call executed successfully, and there is no item-level breakdown.",
+    "export": "The monthly CSV is traced and has provenance, but the deliverable omits an export for other needed research figures.",
+    "repro": "Calls, arguments, windows, and provenance support regeneration of the reported measurements.",
+    "refs": "All listed identifiers resolve and are tied to claims; the references do not include the full tiered and contrary-source treatment for the top anchor.",
+    "accuracy": "Claims match the record and distinguish corpus attention from policy outcomes, though it does not catch every anomaly.",
+    "limits": "States the relevant windows, censoring, lane, match mode, and coverage limits; the implications of the gap are only partly developed.",
+    "verdict": "Gives a supported decision, confidence, conditions that would change it, and a bounded reading of the evidence.",
+    "facets": "Addresses evidence thinness and research-news differences, but omits some implied facets such as term overlap and seasonality."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

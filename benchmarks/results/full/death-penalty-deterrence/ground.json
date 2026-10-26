@@ -1,0 +1,650 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1187,
+  "charts": [
+   {
+    "id": "us-exec-vs-murder",
+    "title": "US executions per year (approximate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "US executions",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "us_executions_approx.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "murder_rate_2019.csv",
+    "how": "ref",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many research papers on death penalty deterrence per year, and by stance?",
+    "args": {
+     "term": "death penalty deterrence homicide"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"deterrent effect of capital punishment\"], \"points\": [{\"year\": 2017, \"total\": 1, \"orientation\": {\"critical\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2020, \"total\": 2, \"orientation\": {\"problem_identifying\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 50.0}], \"totals\": {\"critical\": 1, \"problem_identifying\": 1, \"descriptive\": 1}, \"papers\": 3, \"per_orientation_trend\": {\"critical\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three p"
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "Which papers provide the strongest evidence of a deterrent effect?",
+    "args": {
+     "term": "capital punishment deterrence",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...eterrence', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='capital punishment deterrence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which papers contradict deterrence?",
+    "args": {
+     "term": "capital punishment deterrence",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...eterrence', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='capital punishment deterrence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What effect sizes are reported and for which populations?",
+    "args": {
+     "term": "executions homicide elasticity"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...s homicide elasticity'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='executions homicide elasticity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news coverage of deterrence compare with the research?",
+    "args": {
+     "term": "death penalty deterrent"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ath penalty deterrent'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty deterrent', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries produce the research?",
+    "args": {
+     "term": "death penalty deterrence"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...th penalty deterrence'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty deterrence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 21,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "105 — (about 105 words)",
+    "100,000 — Baseline: states without the death penalty, 2019, murder rate per 100,000 population.",
+    "100,000 — | Group | Murder rate per 100,000 | Source |"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 132,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 105"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1259,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Papers on death penalty and homicide per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers (intersection lane)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_volume.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "stance_counts.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which empirical papers since 2017 contradict deterrence?",
+    "args": {
+     "term": "death penalty homicide deterrence",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 39.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W3122239228\", \"title\": \"Dead Man Walking: An Empirical Reassessment of the Deterrent Effect of Capital Punishment Using the Bounds Testing Approach to Cointegration\", \"authors\": [\"Paresh Kumar Narayan\", \"Russell Smyth\"], \"venue\": \"SSRN Electronic Journal\", \"year\": 2017, \"date\": \"2017-01-01\", \"doi\": \"10.26180/5080990\", \"url\": \"https://doi.org/10.26180/5080990\", \"cited_by\": 3, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4"
+   },
+   {
+    "id": "f2",
+    "feature": "research.citations",
+    "question": "Which papers cite the 2003 panel study, and do they replicate it?",
+    "args": {
+     "doc_id": "prism:W3121587907"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'doc_id': 'prism:W3121587907'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ndoc_id\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='prism:W3121587907', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has the stance mix shifted by year?",
+    "args": {
+     "term": "death penalty deterrence"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"deterrent effect of capital punishment\"], \"points\": [{\"year\": 2017, \"total\": 1, \"orientation\": {\"critical\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2020, \"total\": 2, \"orientation\": {\"problem_identifying\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 50.0}], \"totals\": {\"critical\": 1, \"problem_identifying\": 1, \"descriptive\": 1}, \"papers\": 3, \"per_orientation_trend\": {\"critical\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three p"
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which countries do the deterrence studies cover?",
+    "args": {
+     "term": "death penalty homicide"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'death penalty homicide'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty homicide', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news coverage frame deterrence?",
+    "args": {
+     "term": "death penalty deterrence"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...th penalty deterrence'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty deterrence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What would a moratorium or abolition scenario imply?",
+    "args": {
+     "term": "death penalty abolition homicide"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty abolition homicide', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 39,
+   "traced": 39,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 149,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 701,
+  "charts": [
+   {
+    "id": "deterrence-evidence-trend",
+    "title": "Measured trend in death-penalty deterrence evidence",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "No corpus series retrieved",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "deterrence-trend.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which studies estimate a deterrent effect, and what populations, periods, and methods do they use?",
+    "args": {
+     "term": "death penalty deterrence homicide causal estimates",
+     "orientation": "supporting",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 3, \"papers\": [{\"id\": \"W3083945240\", \"title\": \"Deterrent Effect of Capital Punishment in Japan: An Analysis Using Nonstationary Time-Series Data\", \"authors\": [\"Daisuke Mori\"], \"venue\": \"Supreme Court Economic Review\", \"year\": 2020, \"date\": \"2020-09-08\", \"doi\": \"10.1086/709805\", \"url\": \"https://doi.org/10.1086/709805\", \"cited_by\": 2, \"orientation\": \"descriptive\", \"contribution\": \"empirical\", \"stance_score\": 0.0, \"topics\": [\"Crime Patterns and Interventions\", \"Housing Market"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which studies find no deterrent effect or a possible adverse effect, and what populations and methods do they use?",
+    "args": {
+     "term": "death penalty deterrence homicide null adverse effect",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 2, \"papers\": [{\"id\": \"W4409393255\", \"title\": \"THE EFFECTIVENESS OF THE DEATH PENALTY AS A DETERRENT: A CRITICAL ANALYSIS OF ITS IMPACT ON CRIME RATES\", \"authors\": [\"Rajni Bala\"], \"venue\": \"International Journal of Research -GRANTHAALAYAH\", \"year\": 2025, \"date\": \"2025-04-12\", \"doi\": \"10.29121/granthaalayah.v13.i3.2025.6030\", \"url\": \"https://doi.org/10.29121/granthaalayah.v13.i3.2025.6030\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"review\", \"stance_score\": "
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What are the reported effect sizes and uncertainty ranges by jurisdiction and study design?",
+    "args": {
+     "term": "capital punishment deterrence homicide effect size confidence interval population"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e interval population'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='capital punishment deter...nce interval population', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has the research literature's stance changed over time?",
+    "args": {
+     "term": "death penalty deterrence homicide"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"deterrent effect of capital punishment\"], \"points\": [{\"year\": 2017, \"total\": 1, \"orientation\": {\"critical\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2020, \"total\": 2, \"orientation\": {\"problem_identifying\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 50.0}], \"totals\": {\"critical\": 1, \"problem_identifying\": 1, \"descriptive\": 1}, \"papers\": 3, \"per_orientation_trend\": {\"critical\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three p"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What has news coverage reported over time and across regions?",
+    "args": {
+     "term": "death penalty deterrence murder"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'death penalty deterrence murder' in this window",
+    "seconds": 3.3,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which news sources compare claims about deterrence and what evidence do they cite?",
+    "args": {
+     "term": "death penalty deterrence murder"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...lty deterrence murder'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty deterrence murder', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 953,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism-typed research papers on death-penalty deterrence",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Intersection-lane papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "corpus-volumes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "research-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "What other high-tier studies support or contradict a homicide deterrence effect?",
+    "args": {
+     "term": "death penalty execution homicide deterrence causal effect",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W3122239228\", \"title\": \"Dead Man Walking: An Empirical Reassessment of the Deterrent Effect of Capital Punishment Using the Bounds Testing Approach to Cointegration\", \"authors\": [\"Paresh Kumar Narayan\", \"Russell Smyth\"], \"venue\": \"SSRN Electronic Journal\", \"year\": 2017, \"date\": \"2017-01-01\", \"doi\": \"10.26180/5080990\", \"url\": \"https://doi.org/10.26180/5080990\", \"cited_by\": 3, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What effect sizes and populations do the principal studies estimate?",
+    "args": {
+     "claim": "The death penalty deters murder; extract effect sizes with population and uncertainty",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 38.4,
+    "sample": "{\"stats\": [{\"value\": \"five to ten percent\", \"measures\": \"prevalence of mental illness among death row inmates\", \"population\": \"all inmates on death row\", \"period\": null, \"caveat\": null, \"sentence\": \"It is conservatively estimated that some five to ten percent of all inmates on death row suffer from some form of mental illness.\", \"source\": {\"id\": \"prism:W2592976024\", \"title\": \"The Death Penalty and Mental Illness in International Human Rights Law: Toward Abolition\", \"year\": 2016, \"venue\": \"Washington and Lee law review\", \"tier\": \"article\", \"strength\": \"moderate\", \"url\": null, \"doi\": null}}, {\"value\": \"0.57 percent\", \"measures\": \"chance of being sentenced to death\", \"population\": \"white on whi"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers drive changes in research attention over time?",
+    "args": {
+     "term": "death penalty deterrence homicide",
+     "orientation": "descriptive",
+     "limit": 12
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 28.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W3083945240\", \"title\": \"Deterrent Effect of Capital Punishment in Japan: An Analysis Using Nonstationary Time-Series Data\", \"authors\": [\"Daisuke Mori\"], \"venue\": \"Supreme Court Economic Review\", \"year\": 2020, \"date\": \"2020-09-08\", \"doi\": \"10.1086/709805\", \"url\": \"https://doi.org/10.1086/709805\", \"cited_by\": 2, \"orientation\": \"descriptive\", \"contribution\": \"empirical\", \"stance_score\": 0.0, \"topics\": [\"Crime Patterns and Interventions\", \"Housing Market"
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "What do the matching news articles report and when?",
+    "args": {
+     "topic": "death penalty deterrence murder",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...e murder', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='death penalty deterrence murder', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 18,
+   "traced": 18,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 6,
+   "found_in_corpus": 3,
+   "not_found": [
+    "10.1093/aler/ahg021**",
+    "10.1111/1745-9133.12601**",
+    "10.17226/13363**"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 115,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

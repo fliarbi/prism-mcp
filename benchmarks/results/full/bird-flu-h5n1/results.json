@@ -1,0 +1,231 @@
+{
+ "slug": "bird-flu-h5n1",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 34.0,
+   "plain": 34.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 28.8,
+    "gpt": 39.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 4.0,
+    "export": 2.5,
+    "repro": 4.5,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 73.7,
+   "plain": 73.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.6,
+    "gpt": 71.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.5,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 2.5,
+    "verdict": 2.0,
+    "facets": 0.5
+   },
+   "strict": 21.2,
+   "plain": 21.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 14.2,
+    "gpt": 28.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "refs": 0.5,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 4.0,
+    "facets": 3.0
+   },
+   "strict": 63.2,
+   "plain": 63.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 63.6,
+    "gpt": 62.8
+   }
+  }
+ },
+ "judge_mad": 0.59,
+ "verdicts": {
+  "opus": "A and B both read the measured series correctly: bird-flu coverage peaked in Feb 2025 and is falling. A went further. It quantified the critical-share trend, gave dated headlines with urls, caught entity mislabels, and honestly flagged that dairy and human coverage was not isolated. B was cleaner on the full series but thinner on drill-down and slightly misread censoring. C refused, and D offered labelled memory about the outbreak rather than coverage.",
+  "gpt": "B is the strongest decision aid: it quantifies the broad bird-flu attention decline, decomposes total and critical volume, and supplies useful breakdowns and reproducible calls. Its main flaw is a material inconsistency about the censored May endpoint; C is more cautious but also mislabels that endpoint and omits the critical-share decomposition, while neither can establish cattle- or human-specific coverage from the broad query."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [],
+   "chatgpt_prism": [
+    "States May 2026 is a partial/censored month; reference marks partial_period false (censoring is at 2026-06-01)."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Herd counts and human case figures are from memory, unverified (labelled est.)."
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Presents specific herd and human case estimates, a death, and response timing without resolvable sources; all are labeled estimates but unsupported.",
+    "Estimated herd timeline is unrelated to the requested news coverage trend."
+   ],
+   "claude_prism": [
+    "Says the series is complete and that no month is partial, while the source explicitly warns the newest month is a fraction of a normal month and censors it.",
+    "Claims a 145-day gap from May 31 to October 23; the date difference is 144 days.",
+    "The selected-month chart and CSV omit many available monthly rows."
+   ],
+   "chatgpt_prism": [
+    "Calls the May 2026 endpoint a partial period although its source point has partial_period=false; the broader ingest-censoring warning still applies.",
+    "Treats the endpoint-versus-peak decline as a precise trend result without distinguishing the source's reported trend metrics."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Traced series with window and peak (2,127, Feb 2025). It quantifies late/early 0.32 and CAGR -67.5%, and gives critical late/early 0.30. The chart and text use selected months only, and there is no critical_pct series.",
+    "comparison": "Tone ratio 8.09 vs a defined baseline of 0.58 (13.95x), early-vs-late thirds, and the monthly ratio range 3.68–20.93 all recompute. It does not compare dairy vs human.",
+    "chart": "One traced line with window, unit and source, but only 9 of 24 months. There is no critical overlay or tone chart.",
+    "drilldown": "Gives themes, taxonomy and entities, plus dated headlines with urls. Five of six follow-ups executed and cover the dairy and human facets.",
+    "export": "Two traced CSVs and a provenance JSON. The monthly CSV is a subset of months, which caps this score.",
+    "repro": "88/88 numbers traced, there is a calls block with args, and derived numbers are recomputable (82.4%).",
+    "refs": "Script ceiling of 1. The news items carry urls, but the benchmark cannot verify them.",
+    "accuracy": "Fields are read correctly. It catches entity mislabels (cult of the dead cow, aceyalone, the who). It correctly notes May is not flagged partial and gets the geography window right.",
+    "limits": "Window end, the 145-day gap, enrichment lag with fill percentages, match modes and the topic-vs-subject gap all sit next to the numbers. It names what would close each gap.",
+    "verdict": "Direct answer with decision, confidence and reason, and what would change it. It does not name the Nov 2025 and Feb 2026 rebounds inside the verdict itself.",
+    "facets": "Volume, trend, tone, themes, geography and headlines are grounded. Dairy and human counts are given as an explicit grounded 'no data' with proxies."
+   },
+   "chatgpt_prism": {
+    "trend": "Full 24-point traced series with peak, -95.9% from peak and late/early 32%. It has no critical decomposition.",
+    "comparison": "Tone vs baseline is traced and recomputes, and the baseline is defined.",
+    "chart": "Full traced volume chart only. There is no tone or critical facet, and the censored month is not marked.",
+    "drilldown": "There is no traced item layer: no headlines or urls. Only 2 of 6 follow-ups executed.",
+    "export": "Full monthly CSV with provenance block, but it is the only table.",
+    "repro": "21/22 traced and the calls block has args.",
+    "refs": "No news items with identifiers.",
+    "accuracy": "Calls May 2026 a 'partial, censored ingest month'. The reference has partial_period false and censoring at 2026-06-01.",
+    "limits": "Window, gap, match modes, sample and classifier limits are stated. Some sit in a footer.",
+    "verdict": "Clear answer, decision, confidence and conditions.",
+    "facets": "Dairy and human facets are named as unmeasurable, but there are no headlines or proxies. Themes are thin."
+   },
+   "chatgpt_bare": {
+    "accuracy": "Refusal with no contradictions.",
+    "limits": "States what is missing but nothing about specific windows.",
+    "verdict": "Declines to answer.",
+    "drilldown": "Follow-ups use invalid args. None executed.",
+    "facets": "No facets answered."
+   },
+   "claude_bare": {
+    "trend": "Memory herd estimate, labelled, not coverage.",
+    "chart": "Estimate-labelled memory chart.",
+    "export": "Estimate-labelled table.",
+    "comparison": "Memory herds vs human cases on non-equivalent units.",
+    "accuracy": "Event facts are broadly plausible and labelled est.",
+    "limits": "Honest about what is unmeasured.",
+    "verdict": "Does not answer the coverage question. Gives low confidence with a reason.",
+    "facets": "Mostly memory."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "Coverage trend is explicitly unmeasured; the chart is an estimate of herd counts, not news.",
+    "comparison": "Only a qualitative comparison of estimated herd and human counts; no measured news contrast.",
+    "chart": "The estimate chart is honestly labeled, so it earns the memory-chart anchor only.",
+    "drilldown": "Follow-ups are listed but none executed; no traced breakdown.",
+    "export": "Only an estimate CSV, not a sourced news export.",
+    "repro": "No measured claims trace to reproducible calls.",
+    "refs": "No resolvable references support the event claims.",
+    "accuracy": "Clearly separates estimates from measurement and does not assert a news trend; event specifics remain unsupported.",
+    "limits": "States the memory window, unknown gap, and unmeasured coverage facets where relevant.",
+    "verdict": "Direct answer, decision, low confidence, and conditions are provided, bounded by the admitted lack of measurement.",
+    "facets": "Most requested coverage facets are expressly unmeasured; no grounded values."
+   },
+   "claude_prism": {
+    "trend": "Full monthly series, peak, endpoint, early/late ratio, annualized decline, critical-series decomposition, and censoring caveat are reported consistently with c1.",
+    "comparison": "Negative-positive ratio and baseline, plus early/late volume ratio, are traced and interpreted with appropriate caveats.",
+    "chart": "The plotted selected months trace and have labels, but the monthly export/chart omits available intervening points and does not visibly mark censoring.",
+    "drilldown": "Includes traced theme and entity breakdowns and specific executed follow-ups; the sixth call failed and headlines are not consistently tied to identifiers.",
+    "export": "CSV is a selected-month subset rather than the full monthly series; geography is a partial subset, so needed rows are missing.",
+    "repro": "Numeric claims trace to c1 or disclosed calculations; the source call and arguments are supplied.",
+    "refs": "The only reference is the database call; headlines lack sufficiently checked claim-supporting references, and the script ceiling is 1.",
+    "accuracy": "Strong broad-topic caveats, but it calls the May endpoint complete in the verdict and says no month is partial despite the record's explicit newest-month censoring; it also misstates the 145-day gap (the date difference is 144 days).",
+    "limits": "Most limits are placed near the numbers, but the May censoring is contradicted and the gap is off by a day.",
+    "verdict": "Direct answer, decision, confidence, and what would change it are present; the false completeness claim weakens support and boundedness.",
+    "facets": "Addresses trend, tone, themes, geography, sources, and the broad-query mismatch, but does not ground cattle- and human-specific coverage."
+   },
+   "chatgpt_prism": {
+    "trend": "Reports the peak and quantified decline, but describes May 2026 as a partial/censored month when the record's monthly point is marked partial_period=false; the chart omits the critical-share series available in the data.",
+    "comparison": "Traced tone ratio and baseline comparison recompute; the baseline is defined and the classifier caveat is stated.",
+    "chart": "Full monthly volume points trace with window, unit, source, and caption, but it omits critical share decomposition and marks the endpoint as censored in a way inconsistent with the point record.",
+    "drilldown": "Breakdown layers are named, but only two of six proposed follow-ups executed successfully, below the required three.",
+    "export": "Full monthly series and provenance are supplied and referenced; the export retains identifiers and provenance.",
+    "repro": "Most numeric claims trace and the source call is listed; one numeric claim does not trace, and the output does not provide a full regenerate recipe.",
+    "refs": "Only c1 is cited; no resolving article references or supporting verbatim quotes.",
+    "accuracy": "The key May point is incorrectly called partial/censored (the record warns of the newest-month ingest caveat but marks this point non-partial); the claimed 95.9% peak-to-end decline is also not the record's stated trend measure.",
+    "limits": "Covers window, broad mention matching, lane, sampling, and enrichment limits, but overstates the endpoint's partial-period status and omits the exact gap in its trend reading.",
+    "verdict": "Direct, appropriately qualified answer with decision, confidence, and what would change it; the endpoint characterization is inconsistent with the record.",
+    "facets": "Covers broad trend, tone, themes, geography and source sample, but not specific cattle/human coverage or critical-share trend."
+   },
+   "chatgpt_bare": {
+    "trend": "No series or quantified trend.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are unexecuted and use a generic combined query with unsupported window arguments.",
+    "export": "No data export.",
+    "repro": "No measured numeric claims or executable reproducibility record.",
+    "refs": "No references.",
+    "accuracy": "Does not fabricate measurements or contradict the record; explicitly states it cannot measure.",
+    "limits": "Clearly says measurements are unavailable, but gives no corpus-specific window or applicable source limits.",
+    "verdict": "A direct refusal with a decision and conditions, but no evidence-based confidence reason beyond the absence of data.",
+    "facets": "Most facets are acknowledged as unavailable, but none are grounded in the supplied record."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

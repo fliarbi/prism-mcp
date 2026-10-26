@@ -1,0 +1,195 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 2,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 2,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The research series is traced and quantified, but its news trend is only summarized and the research endpoint is treated as usable despite the censoring note.",
+    "comparison": "The outcome estimates share the RR=1 baseline, arithmetic is correct, and the marginal/null findings are distinguished.",
+    "chart": "The annual research chart traces every point, has a window and unit, and supports a stated claim.",
+    "drilldown": "It gives multiple breakdowns and item references, but only one of six proposed follow-ups executed successfully.",
+    "export": "The values trace, but the effect-size export assigns an unsupported 1990–2016 window and provenance is incomplete.",
+    "repro": "All numeric claims are tagged and the listed core calls include arguments and windows.",
+    "refs": "One of six DOIs is not found in the research corpus, capping the score at 1.",
+    "accuracy": "The causal conclusion is appropriately bounded, but the export window and endpoint handling are questionable.",
+    "limits": "It places important lane, coverage, window, and retrieval limits near the relevant claims.",
+    "verdict": "It answers directly with confidence, a decision, conditions that could change it, and contrary evidence; the evidence base is explicitly narrow.",
+    "facets": "It addresses the disagreement, study estimates, corpus limits, and the research-versus-news distinction."
+   },
+   "B": {
+    "trend": "It explicitly says the requested research trend cannot be quantified; the cohort chart is not a time series.",
+    "comparison": "It gives numeric estimates, but the cohort and meta-analysis are not on a sufficiently comparable scale and the comparison is labeled invalid.",
+    "chart": "The chart is an estimate from public sources that the benchmark cannot verify.",
+    "drilldown": "The proposed calls failed, and the breakdown stays at exposure groups without linked study-level items.",
+    "export": "The estimate table is sourced to references rather than recorded calls and lacks complete provenance.",
+    "repro": "It states no Prism calls were run, so its figures cannot be regenerated from listed calls.",
+    "refs": "One cited DOI is not found in the corpus, triggering the fabricated-identifier cap.",
+    "accuracy": "It distinguishes hazard assessment from dose-specific risk and does not directly contradict the reference record.",
+    "limits": "It states the cohort window, lane distinctions, partial coverage, and limits on individual-risk inference.",
+    "verdict": "It gives a decision, confidence, reason, and what evidence would change the conclusion.",
+    "facets": "It covers the main disagreement and cohort/meta-analysis contrast but lacks measured corpus facets."
+   },
+   "C": {
+    "trend": "It says no measured trend is available and provides selected study estimates, not a time series of the quantity asked about.",
+    "comparison": "It compares reported RRs and labels study differences, but the figures are memory-based and not benchmark-checkable.",
+    "chart": "The chart is an openly memory-based estimate, so it earns the estimate-only score.",
+    "drilldown": "Its layers and proposed calls are generic for this question, and none of the follow-ups executed successfully.",
+    "export": "The table is memory-based and its provenance block contains no calls.",
+    "repro": "The script found no numeric claims traceable to recorded calls and 13 untagged claims.",
+    "refs": "The main identifiers resolve and references are tied to claims with publication details, but quotes are absent or not verified verbatim.",
+    "accuracy": "Numerous specific figures and regulatory claims are unsupported by the supplied record, and several are untagged.",
+    "limits": "It identifies memory use and missing corpus data, but does not consistently bind limits to the figures.",
+    "verdict": "It answers directly and names conditions that could change the view, but the confidence and recommendation rely substantially on unverified recalled evidence.",
+    "facets": "It discusses IARC, regulators, and study disagreement, but the numeric and corpus facets are mostly ungrounded."
+   },
+   "D": {
+    "trend": "The research points and change are traced, but the series endpoint is presented despite the source's censoring note.",
+    "comparison": "The RR baseline and estimates are correct, with an appropriate caveat that relative risk is not absolute risk.",
+    "chart": "The research chart is traced, but the endpoint treatment conflicts with the censoring note, lowering the chart score.",
+    "drilldown": "The proposed follow-ups did not execute, and the report does not provide a deeper linked breakdown.",
+    "export": "The annual values trace, but the risk table has an unknown window and incomplete provenance fields.",
+    "repro": "All numbers trace to listed calls with arguments, and the provenance block supports replay.",
+    "refs": "The three DOIs resolve and quotes are verified, but the references are not fully ranked with tier reasons.",
+    "accuracy": "The answer is measured carefully overall, but it treats the censored 2025 endpoint as a valid trend endpoint.",
+    "limits": "It covers lane, coverage, matching, and timing, but the endpoint caveat is not reflected consistently in the trend reading.",
+    "verdict": "It gives a direct answer, confidence, decision, conditions for revision, and contrary evidence while acknowledging the narrow record.",
+    "facets": "It covers the core evidence and corpus limits, but does not resolve all implied disagreement facets with grounded breakdowns."
+   }
+  },
+  "errors": {
+   "A": [
+    "The references include DOI 10.3760/cma.j.cn121094-20240422-00174, which the script could not find in the corpus.",
+    "The effect-size CSV assigns a 1990–2016 window that is not supplied by the statistics response.",
+    "The research trend uses 2025 as its endpoint despite the response's note that the newest period is excluded because of ingest lag."
+   ],
+   "B": [
+    "The IARC DOI 10.1002/14356007.w112.pub2 was not found in the research corpus.",
+    "The chart and effect-size export rely on published-source figures that are not traceable to the recorded database responses."
+   ],
+   "C": [
+    "The deliverable contains many untagged numeric claims and estimates from memory, including cohort and regulatory figures.",
+    "The proposed follow-up calls did not execute successfully."
+   ],
+   "D": [
+    "The chart and trend treat 2025 as a valid endpoint even though the source says the newest period is excluded because of ingest lag.",
+    "The relative-risk export uses an unknown window and omits complete provenance."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is strongest for a decision-maker because it combines the most complete traced evidence, quantified comparisons, and explicit limits, while directly answering the causation question. Its unsupported export window, censored endpoint handling, and one unresolvable DOI keep the deliverable short of fully reliable."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 2,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 2,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

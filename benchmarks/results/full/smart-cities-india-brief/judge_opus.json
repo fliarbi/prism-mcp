@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 2,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Only a single cumulative snapshot, which A itself says is not a series. No trend is given.",
+    "comparison": "The completed-vs-ongoing ratio (7,188/829 ≈ 8.7) recomputes, but rests on unverifiable memory or press figures.",
+    "chart": "A one-point chart from a cited public source the benchmark cannot verify.",
+    "drilldown": "No breakdown layer, and 0/5 follow-ups returned data.",
+    "export": "The status CSV cites a source that cannot be checked.",
+    "repro": "The named sources are homepage URLs (pib.gov.in, smartcities.gov.in), so no figure can be regenerated.",
+    "refs": "Both references point to generic homepages, not to specific documents, so neither resolves to its work. The quotes cannot be checked.",
+    "accuracy": "No contradiction with the reference. However, the prism-calls block lists c1/c2 as if used while the provenance shows calls:[], and precise memory figures are presented as program-reported fact.",
+    "limits": "States the window end, the gap to today, partial coverage, and that output does not equal outcome. Specific about what is unmeasured.",
+    "verdict": "Direct answer, decision, confidence and what would change it. All rest on unverified figures.",
+    "facets": "Most research-brief facets are not covered: corpus volumes, trend, contested share, geography, institutions."
+   },
+   "B": {
+    "trend": "The full monthly series traces, with window and peak (47 in Mar-2025). The early/late change (+3.3%) recomputes, and censoring is noted. The research trend (24→75, CAGR 15.3%) and the critical decomposition were left unused.",
+    "comparison": "221/387=57.1%, 1.33x and 14.2pp all recompute, and the top-rows caveat is carried.",
+    "chart": "One fully traced volume chart with window, unit and caption. Tone (critical) and the research trend were not charted, although the data supported both.",
+    "drilldown": "No executed follow-up returned data (0/5). Layers are named but not traced to items beyond the references.",
+    "export": "A full monthly CSV with critical/neg/pos columns and a provenance block. There is only one table, and no bibliography or volumes table.",
+    "repro": "40/40 numbers trace, calls are listed with args, and the 144-day gap recomputes.",
+    "refs": "7/7 DOIs resolve with year, venue and tier. Support is topic-level only, with no quotes and no ranking.",
+    "accuracy": "No contradictions, and fields are read correctly (authorship India 1 of 7). Off-topic non-India papers and the focus-row anomaly are not flagged.",
+    "limits": "Gives windows, censoring, gap to today, mention mode and coverage. Most limits sit in the footer section, and the off-topic key numbers are only partly bounded.",
+    "verdict": "Direct answer, decision, confidence with reason and what would change it, under 150 words. It omits the rising research trend.",
+    "facets": "Covers volumes, contested mix, news trend and geography. Misses the research trend, institutions and the tone trend reading."
+   },
+   "C": {
+    "trend": "The series is an explicitly labelled estimate from memory.",
+    "comparison": "A memory ratio (0.28) labelled as an estimate.",
+    "chart": "An estimate-labelled memory chart.",
+    "drilldown": "Layers are named generically, and 1/7 follow-ups worked.",
+    "export": "An estimate-labelled CSV.",
+    "repro": "All figures are memory estimates.",
+    "refs": "No references, where the pattern needs them. This is honest, but there is nothing to check.",
+    "accuracy": "No contradiction with the record, and estimates are labelled throughout.",
+    "limits": "Clear about what is unmeasured and why. Gives the mission end date and the gap.",
+    "verdict": "Direct answer with low confidence and conditions, resting on estimates.",
+    "facets": "Facets are answered from memory."
+   },
+   "D": {
+    "trend": "Gives the research trend (24→75, CAGR 15.3%, 2.51x), broad news falling (0.63x, peak 7 in Jan-2020), mission news flat (1.03x, peak 47), and a critical decomposition. However, 'critical share fell' is an endpoint reading, while the tool reports the critical trend as flat.",
+    "comparison": "India/US 4.8x and India/Singapore 9.6x recompute on one scale, with the top-rows caveat. Early vs late thirds are also given.",
+    "chart": "Both charts trace, with window, unit and caption. The critical_pct chart samples 7 of 24 months, and there is no mission volume chart.",
+    "drilldown": "Traced layers cover geography, institutions with lift, stance mix, and documents with DOIs. 2/6 follow-ups executed ok.",
+    "export": "The CSVs trace, but the news export holds only 3 selected months and is flagged coverage=full. The c1 provenance window is empty.",
+    "repro": "58/58 numbers trace, calls are listed with args, and derived ratios recompute.",
+    "refs": "7/7 DOIs resolve with tier/strength stated. A verbatim quote matches the key_numbers sentence. The papers are tied to claims.",
+    "accuracy": "Measured values match the reference. It flags the key numbers as non-India single-source items, and flags the research-geo India 0 as an artefact. The minor slips are the 'critical fell' reading and calling the 0 a top-row count while the authorship rows show 1.",
+    "limits": "States windows with gaps to today, mention mode, censoring, coverage, thin evidence (7 readable papers), and what cannot be answered. Some limits are placed inline (top rows, lift).",
+    "verdict": "Direct answer, scoping decision, low confidence with reason, and what would change it, all consistent with its data.",
+    "facets": "Covers volumes, contested mix, research and news trends, critical share, geography, institutions and references."
+   }
+  },
+  "errors": {
+   "A": [
+    "The prism-calls block lists c1/c2 'used_for' entries although no calls were run (provenance calls:[]).",
+    "Reference URLs are generic homepages, so the precise program figures are unverifiable."
+   ],
+   "B": [
+    "The term 'smart cities mission' series is described as India-specific without geo filtering being shown.",
+    "Non-India technical papers are listed without flagging them as off-scope."
+   ],
+   "C": [
+    "The year-by-year completion series (20→92%) is fabricated-looking, though labelled as an estimate."
+   ],
+   "D": [
+    "Says the critical share 'fell' (68.0→43.5) while the tool's critical_trend direction is flat.",
+    "The news export is flagged coverage=full while holding only 3 of 24 months.",
+    "States 'India appears with 0 papers in the research top rows', but the research_authorship rows show India with 1 paper."
+   ]
+  },
+  "best": "D",
+  "verdict": "B and D both grounded every number in the recorded database responses, while A and C relied on memory; C labelled its estimates honestly, and A dressed unverifiable figures in generic citations. D edged ahead of B by covering the facets B omitted: the research trend, the critical-share decomposition and institutions. D also flagged the off-topic key numbers and the geography artefact. B had the cleaner full-series chart and export."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 2,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

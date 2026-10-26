@@ -1,0 +1,165 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "States no measured contrast. It only describes the comparison it would run.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups are generic, with no traced breakdown layer.",
+    "export": "The CSV has empty cells and is labelled estimate. It is honest but unmeasured.",
+    "repro": "The only figures are memory or policy anchors, and no calls were run.",
+    "accuracy": "Misdefines placed_pct as 'prominent positions'. Asserts that patent rows are 'Empty' without querying them.",
+    "limits": "Generic statements about what is unmeasured. Also misstates a field definition.",
+    "verdict": "Gives a low-confidence scoping answer that rests on estimates.",
+    "facets": "Facets are covered only from memory or left blank."
+   },
+   "B": {
+    "comparison": "Gives US vs Azerbaijan as 1,772 vs 1,550, a delta of 222 and a ratio of 1.14. This recomputes. Explains why a research-vs-news delta cannot be made, keeps the do-not-add caveat and treats lift as undefined.",
+    "chart": "No chart block.",
+    "drilldown": "One traced country layer. Three of the follow-ups repeat the identical research.geography call. The news.critical call for Azerbaijan is specific.",
+    "export": "Traced news CSV with source, window, unit, coverage and a provenance block, referenced in the prose. It is the only table, which is reasonable because the research rows are empty.",
+    "repro": "15 of 16 numbers trace. Calls are listed with args, and the 144-day gap recomputes.",
+    "accuracy": "Reads fields correctly: subject is not publication, and empty is not zero. Misses the small news_coverage block in c1.",
+    "limits": "Window, censoring, enrichment lag, the 144-day gap, placed_pct, lanes and acronym collisions are all stated near the numbers.",
+    "verdict": "Gives an answer, a decision, a reason and what would change it. 'Medium' confidence is slightly generous given the research side is empty.",
+    "facets": "All facets are answered with grounded values or a grounded empty result."
+   },
+   "C": {
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups only, and 1 of 5 runs.",
+    "export": "No export.",
+    "repro": "No numbers.",
+    "accuracy": "Empty deliverable with no contradictions.",
+    "limits": "Specific about what it cannot measure.",
+    "verdict": "'Cannot measure' with no answer.",
+    "facets": "No grounded facets."
+   },
+   "D": {
+    "comparison": "Gives the same correct US/Azerbaijan delta and ratio, defines the lift baseline and states that the research-vs-news mismatch cannot be tested. The COP29 reading is labelled as interpretation.",
+    "chart": "One fully traced hbar with window, unit, source, caption and the claim it supports. It shows levels only, with no comparison or decomposition.",
+    "drilldown": "The country layer is traced. The month and article layers are only named. Follow-ups are diverse, and 4 of 6 run.",
+    "export": "Traced CSV with a provenance JSON. The unit attribute omits the share and lift units.",
+    "repro": "45 of 45 numbers trace. Calls are listed with args, and the derived 37.7% and 5.7 months are shown.",
+    "accuracy": "Correct readings throughout. Catches the separate small news_coverage block in c1 and declines to combine it. 'Row-floor checks' is not in the reference.",
+    "limits": "Limits sit in place and change the reading: research cannot be answered, and a broader research source would close the gap. Match mode is noted as unstated.",
+    "verdict": "Gives an answer, a decision, low confidence with its reason and what would change it, all bounded by the empty research lane.",
+    "facets": "All facets are grounded, including the c1 news block."
+   }
+  },
+  "errors": {
+   "A": [
+    "placed_pct defined as share of prominent placement (wrong)",
+    "patent rows asserted 'Empty' without a query"
+   ],
+   "B": [
+    "omits c1 news_coverage block"
+   ],
+   "C": [],
+   "D": [
+    "'passed its row-floor checks' not supported by reference"
+   ]
+  },
+  "best": "D",
+  "verdict": "B and D both grounded the news geography correctly and recognised the empty research lanes, so they did not invent a studied-vs-reported gap. D is the stronger of the two: it adds a traced chart, catches the small news block inside c1, and gives a properly bounded low-confidence verdict. A answered from memory and misdefined placed_pct, while C was honest but empty."
+ },
+ "scores": {
+  "claude_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

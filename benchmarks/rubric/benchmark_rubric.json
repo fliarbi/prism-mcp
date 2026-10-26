@@ -1,0 +1,1126 @@
+{
+ "version": "2.0-draft",
+ "date": "2026-10-23",
+ "scope": "Scoring rubric for Prism MCP benchmark v2. Same four setups as v1 (claude_bare, chatgpt_bare, claude_prism, chatgpt_prism), same 113 scenarios in showcase/scenarios.py, but the deliverable is a full report with chart specs and exports, and the score measures what is true, traceable and decision-useful in it rather than how it is written.",
+ "why_v2": [
+  "v1 capped every answer at 280 words of plain text, so nothing a decision-maker would actually use (a series, a chart, a table, a next step) was ever produced inside the contest.",
+  "v1's judge scored writing quality (specificity, verifiability, currency, calibration, accuracy) and was told not to penalise omissions, so a confident memory answer with no measurement could tie a measured one.",
+  "v1 charts and pages were built by build_pages.py outside the contest; the judge never saw them.",
+  "v2 scores the deliverable: measured trend, measured comparison, charts whose every point traces to a source, drill-down a reader can execute, exports with provenance, reproducibility, traceable references, and a decision-grade verdict; plus the two v1 criteria that still earn a place (accuracy, calibration-as-limits) and a facet-coverage check so omissions now cost."
+ ],
+ "patterns": [
+  "pulse",
+  "evidence",
+  "stance",
+  "brief",
+  "compare",
+  "claims",
+  "radar",
+  "table",
+  "audit",
+  "geo",
+  "trending",
+  "history",
+  "citations",
+  "improve",
+  "library"
+ ],
+ "families": {
+  "A_measured_content": {
+   "label": "Measured content (what plain models cannot honestly produce)",
+   "parameters": [
+    "trend",
+    "comparison",
+    "chart",
+    "drilldown",
+    "export"
+   ],
+   "weight_total": 42
+  },
+  "B_trust": {
+   "label": "Trust (is it true and can it be checked)",
+   "parameters": [
+    "repro",
+    "refs",
+    "accuracy",
+    "limits"
+   ],
+   "weight_total": 40
+  },
+  "C_decision_value": {
+   "label": "Decision value",
+   "parameters": [
+    "verdict",
+    "facets"
+   ],
+   "weight_total": 18
+  }
+ },
+ "scale_convention": {
+  "range": "0-5 integer per parameter",
+  "general_anchor_pattern_for_measured_parameters": "0 = absent or invented (values with no source that is not labelled estimate); 1 = present but honestly unmeasured (labelled estimate/memory) or named-but-uncheckable; 2 = partly grounded or grounded with missing provenance; 3 = grounded with provenance but incomplete for the question; 4 = grounded, complete, provenance full; 5 = 4 plus read correctly for the decision (consistent, bounded, decomposed)",
+  "grounded_means": "a value matches a leaf in a recorded tool response (exact after rounding to the precision shown, or derivable by a stated formula from two such leaves), or a citation-sourced public figure the judge confirms as real; citation-sourced grounding is capped at 3 on script-scored parameters because the benchmark cannot replay it",
+  "na_rule": "N/A is decided by the scenario's pattern, never by what a setup produced. A missing applicable component scores 0. N/A parameters are excluded from numerator and denominator."
+ },
+ "parameters": [
+  {
+   "key": "trend",
+   "name": "Measured trend",
+   "family": "A_measured_content",
+   "weight": 10,
+   "definition": "A time series of the quantity the question is about (articles per month, papers per year, orientation shares per year, scenario values per year), over a stated window, with the change quantified (growth factor, CAGR, delta, peak with its date) and the direction read correctly.",
+   "why_it_matters": "A decision-maker acts on direction and rate of change, not on a level. 'Coverage is high' is not actionable; 'coverage rose 1.83x between the first and last third of Jun-2024..May-2026, peaking at 15,514 in Feb 2026' is. Memory can only assert direction.",
+   "scale_anchors": {
+    "0": "No series; or a series whose values have no source and are not labelled estimate (invented); or a series presented as measured with a window or unit that does not match its source.",
+    "1": "A direction is asserted ('rising') with no series; or a series explicitly labelled estimate/from memory with no named source.",
+    "2": "A series with a named public source whose values the benchmark cannot check (cited-unverified); or a traced series (>=90% of points match) with the window missing or the granularity wrong.",
+    "3": "Traced series, window stated; but the change is not quantified, or the censoring/partial-period caveat the tool carries is dropped, or only first/last values are given when the full points were available.",
+    "4": "Traced series with window and censoring, change quantified exactly as the tool reports or as correctly recomputed (growth, CAGR, delta), the decisive points named with values and dates (peak, trough, inflection).",
+    "5": "4 plus every statement about the trend in the prose passes the direction-consistency check, recomputed figures are exact, and the series is decomposed where the data allows (critical vs total, negative vs positive, orientation split, scenario central vs bounds) with the decomposition also traced."
+   },
+   "verification": {
+    "method": "script + judge-lower-only",
+    "script_checkable": true,
+    "details": [
+     "Parse every prism-chart block with a temporal x and every csv block whose first column is period/year; resolve each series' `source` (call:<feature>#<n>) to the recorded tool response; match points to the tool's points array (news: data.points / data.rows[i].points keyed by period; research: data.points keyed by year; history: data.series keyed by year; scenarios: data.scenarios keyed by year). Grounded share = matched points / plotted points.",
+     "Window check: the chart/csv window equals the tool window (from, to, to_is_exclusive, censored_at) or the stated sub-window of it.",
+     "Change check: recompute growth factor (mean of last third / mean of first third), peak (max value + period), CAGR where the tool reports one; compare with the figures in the Trend section within rounding.",
+     "Direction-consistency check: extract direction words (rising, falling, flat, growing, declining, accelerating, slowing) attached to a named series in the Trend and Verdict sections; compare with the sign of late-third minus early-third and with the tool's own `trend`/`direction` field; any contradiction fails anchor 5 and caps at 3.",
+     "Censoring check: no point at or after window.censored_at plotted as a full period; partial_period=true points must be marked or dropped.",
+     "Citation-sourced series (bare models): the judge states whether the named source is real and the values plausible; optional corpus cross-check where the definition is replicable (e.g. a yearly title-phrase count via analysis.history) gives an order-of-magnitude band."
+    ]
+   },
+   "anti_gaming": "Plain models: a series without a resolvable source scores 0, not 1; an honest 'estimate' label earns 1 and nothing more. Prism-backed: pasting the points array is not a trend; anchors 3-5 require the change quantified and read; a series copied with its censored month plotted as a collapse caps at 2; more than two series charts of the same quantity count once.",
+   "applies_to_patterns": [
+    "pulse",
+    "compare",
+    "stance",
+    "brief",
+    "evidence",
+    "radar",
+    "history",
+    "trending"
+   ],
+   "na_patterns": {
+    "claims": "research.compare returns tallies, not a series",
+    "audit": "claim statuses, no series",
+    "geo": "country rows, no time axis",
+    "citations": "bibliography",
+    "improve": "a rewrite and an evidence card",
+    "library": "topic gaps, no series"
+   }
+  },
+  {
+   "key": "comparison",
+   "name": "Measured comparison",
+   "family": "A_measured_content",
+   "weight": 7,
+   "definition": "A measured contrast on one scale and one window: against a baseline (corpus tone baseline, previous window), between comparators (term A vs term B, claim A vs claim B, research lane vs news lane), or between periods (early vs late, observed vs scenario range), with the ratio or delta stated and the caveat the tool attaches carried.",
+   "why_it_matters": "'Which is bigger, which is growing, by how much, since when' is the shape of most intelligence questions. A level without a baseline cannot be judged (aviation news is negative by default); a ratio across different windows or lanes is a wrong answer dressed as a number.",
+   "scale_anchors": {
+    "0": "No comparison; or a comparison between untraced numbers; or numbers from different windows, units or lanes combined as one scale (e.g. adding research_authorship rows to news_coverage rows).",
+    "1": "Qualitative only ('far more', 'much more negative').",
+    "2": "Numeric comparison whose figures cannot be checked (memory); or traced figures from mixed windows/lanes with the mixing stated but not resolved.",
+    "3": "Traced comparison on one scale and window with the ratio/delta stated, but recomputation finds an arithmetic slip, or the baseline is used without its definition (tone_ratio, critical, lift used undefined).",
+    "4": "Traced, one scale, ratios/deltas recompute exactly, baseline defined, and the tool's own caveat carried (overlap between terms, 'three different questions; do not add them together', placed_pct).",
+    "5": "4 plus the comparison answers the contrast the question actually poses (attention vs sales; studied vs reported; promising vs cautious) and states what the data can and cannot test about it."
+   },
+   "verification": {
+    "method": "script + judge-lower-only",
+    "script_checkable": true,
+    "details": [
+     "Recompute from the recorded responses every ratio or share in the Comparison section: share_pct = articles / combined_articles; growth = late/early thirds; delta_pct_points from stance framing_shift; vs_baseline and corpus_baseline_ratio from news.sentiment; tier_weighted supports vs contradicts from evidence tallies; growth_x from trending previous vs articles; scenario central vs observed last value from analysis.scenarios.",
+     "Lane-mixing check: any arithmetic that combines values traced to responses with different `what`, `lane`, `unit` or `window` fields is flagged; the global_comparison meta.note 'do not add them together' is enforced literally.",
+     "Baseline-definition check: if a field name appears (tone_ratio, critical, lift, vs_baseline) the deliverable must define it in the words of the tool's `how`/`what`/`reading` field or in the Method section.",
+     "Judge: whether the contrast matches the question's contrast and whether the limits of the test are stated."
+    ]
+   },
+   "anti_gaming": "A comparison of two memory numbers earns at most 2 even if both are real public figures, because the benchmark cannot establish they are on one scale. Prism-backed: restating the tool's `most_covered` or `framing_shift.reading` without the numbers behind it caps at 3; mixing lanes to produce a bigger-looking number scores 0.",
+   "applies_to_patterns": [
+    "pulse",
+    "compare",
+    "stance",
+    "brief",
+    "claims",
+    "radar",
+    "geo",
+    "trending",
+    "history",
+    "evidence",
+    "table"
+   ],
+   "na_patterns": {
+    "audit": "claim-by-claim status, not a contrast",
+    "citations": "bibliography",
+    "improve": "rewrite",
+    "library": "gap list"
+   }
+  },
+  {
+   "key": "chart",
+   "name": "Visualisation from counted data",
+   "family": "A_measured_content",
+   "weight": 10,
+   "definition": "Chart specifications whose every plotted value traces to a recorded source, with window, unit and source line, each chart supporting a specific claim in the prose. A chart of invented numbers scores zero.",
+   "why_it_matters": "A chart is how a trend or comparison reaches a meeting. It is also the easiest artefact to fake: a plausible curve with no numbers behind it is worse than no chart, because it will be believed.",
+   "scale_anchors": {
+    "0": "No chart block; or any chart whose series do not resolve to a source and are not labelled estimate (invented); or a chart whose values contradict the source it names.",
+    "1": "Chart from memory labelled estimate (honest, unmeasured); or a chart with a cited public series the benchmark cannot verify.",
+    "2": "Charts trace (>=90% of points) but lack window, unit or source line; or the chart kind does not fit (pie of a time series, line of unordered categories); or the chart is an orphan (no claim in the prose uses it).",
+    "3": "Charts trace 100% with window, unit and source, each tied to a claim; but the question asked for views the data supported and the deliverable did not chart (only volume when tone was asked; only one term of a comparison); or axis/labels are wrong.",
+    "4": "A fully traced chart for each facet the question asks that the data supports (volume and tone; A vs B on one scale; research vs news geography; claim statuses; rows with values), each with a caption stating the reading.",
+    "5": "4 plus the charts show comparison or decomposition rather than bare levels (critical share overlaid on volume; early vs late; central with bounds; both lanes side by side) and censored/partial periods are visibly marked rather than plotted as a collapse."
+   },
+   "verification": {
+    "method": "script + judge-lower-only",
+    "script_checkable": true,
+    "details": [
+     "Parse every ```prism-chart block as JSON against the deliverable_spec.chart_schema; reject malformed blocks (count as absent).",
+     "For each series: resolve `source`; locate the tool array by `path` if given, else by matching the series' x keys to any period/year/label-keyed array in the response; diff values (exact after rounding to the precision shown); grounded share per chart.",
+     "Window/unit/source presence check; kind-suitability check (temporal x => line/bars; categorical => bars/hbar; shares => stacked/share bar; a pie is rejected for time).",
+     "Usage check: the chart's `supports` sentence must appear (fuzzy, >=0.8 token overlap) in the prose; orphans do not count.",
+     "Censoring check as in `trend`.",
+     "Relevance: judge marks each counted chart relevant/irrelevant to the question; only relevant charts count; at most 4 charts count.",
+     "Estimate-labelled charts: `source` = \"estimate\" => score 1 for that chart; the parameter score is the minimum over counted charts, so one invented chart zeroes the parameter."
+    ]
+   },
+   "anti_gaming": "The parameter is the MINIMUM over counted charts, not the mean: one invented chart zeroes it. Duplicate charts of the same series count once. More than four charts: only the four the judge marks most relevant count. Prism-backed: a chart of a panel the question did not ask about (publishers for a 'how has it trended' question) is irrelevant and does not raise the score. Plain models: an estimate label is the only honest way to include a memory chart and earns exactly 1.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "library"
+   ],
+   "na_patterns": {
+    "citations": "a bibliography has nothing to plot",
+    "improve": "a rewrite has nothing to plot"
+   }
+  },
+  {
+   "key": "drilldown",
+   "name": "Exploration and drill-down",
+   "family": "A_measured_content",
+   "weight": 7,
+   "definition": "The deliverable exposes the next layer under its headline numbers (total -> breakdown -> item: volume -> themes -> the headline; claim -> documents -> verbatim quote with DOI; country rows -> articles) with identifiers a renderer can link, and names concrete follow-up questions each paired with an executable call (feature + args) that returns on-topic data when run.",
+   "why_it_matters": "A dashboard is used by clicking into the number that surprised you. A report that stops at the total forces the reader back to square one. Graph-like exploration (entity -> related entities -> their coverage) is the difference between a summary and an intelligence product.",
+   "scale_anchors": {
+    "0": "A flat summary: no breakdown layer, no follow-ups; or a breakdown with invented values.",
+    "1": "'Where to look next' named generically (a database, 'media monitoring tools'); or a breakdown from memory labelled as such.",
+    "2": "One traced breakdown layer (themes, countries, documents) but no stated way to go further; or follow-up calls that are generic (the tool catalogue) or that fail / return empty when executed.",
+    "3": "One traced breakdown layer plus at least three specific follow-up questions each with a concrete call that executed ok with non-empty on-topic data; or two traced layers without executable follow-ups.",
+    "4": "Two or more traced layers reaching an item (a headline with date/publisher/url; a paper with DOI and quote; a subcategory with its count) and executable follow-ups that cover the question's open facets (what drove the spike; which publisher; which contrary study).",
+    "5": "4 plus every breakdown item carries its own identifier (url, DOI, Prism research index id, subcategory label, country) and at least one follow-up was executed by the setup itself and its result folded back into the report with traced values (e.g. the spike month's critical headlines)."
+   },
+   "verification": {
+    "method": "script + judge-lower-only",
+    "script_checkable": true,
+    "details": [
+     "Parse the ```prism-calls block: each entry needs feature (must exist in REGISTRY feature names), args (must pass the registered function's validate_call), and a one-line question.",
+     "Execute each proposed call through REGISTRY (12-hour cache makes replays cheap) with a per-call budget; record ok, data non-empty, window; the judge marks each result on-topic/off-topic for the stated follow-up question.",
+     "Layer detection: tables or lists in the Drill-down/Evidence/Geography sections whose rows (label + value, or title + DOI/url) match rows in a recorded response (data.themes.subcategories.rows, data.entities.*.rows, data.geography.rows, data.documents, data.critical.articles, data.claims, data.rows). Count distinct matched layers and whether a leaf item with an identifier is reached.",
+     "Identifier check: urls/DOIs/ids in breakdown rows must appear in the recorded responses (or resolve in the corpus for citation-sourced rows).",
+     "Plain models: layers count when their values are citation-grounded (judge-confirmed); executable calls are impossible for them, so anchors 3-5 are reachable only through grounded layers, which is the honest structural gap."
+    ]
+   },
+   "anti_gaming": "Listing the tool catalogue is not drill-down (score 2 at most). Follow-ups must be specific to the question's facets; off-topic or failing calls do not count. Prism-backed: pasting every panel of news.overview is one layer, not several; a layer counts only if its values trace. A breakdown without identifiers caps at 4.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "library"
+   ],
+   "na_patterns": {
+    "citations": "the deliverable is the leaf",
+    "improve": "a single sentence and its card"
+   }
+  },
+  {
+   "key": "export",
+   "name": "Data export with provenance",
+   "family": "A_measured_content",
+   "weight": 8,
+   "definition": "At least one CSV block the question needs (monthly series, per-term summary, documents with DOIs and quotes, per-row table with nulls preserved, bibliography) whose rows trace to a recorded response, carrying provenance: source call, window, unit, coverage flag, counted/captured date.",
+   "why_it_matters": "The numbers leave the report and go into a spreadsheet, a model or a slide. A table that does not say what it is and when it was counted is a liability a month later; a table of memory ranges is a fabrication once pasted into a sheet.",
+   "scale_anchors": {
+    "0": "No export; or rows that do not trace and are not labelled estimate (invented); or an export whose numbers differ from the chart or prose for the same quantity.",
+    "1": "A table labelled estimate/from memory (honest, unmeasured); or a CSV with neither window nor source.",
+    "2": "A traced CSV (>=90% of cells match) with incomplete provenance (missing any of source, window, unit, coverage); or a dump of every table in the tool output with no prose reference to most of them.",
+    "3": "Traced CSV with full provenance attributes, but only one table when the question needs two (per-term monthly plus summary; documents plus figures), or the file is never referenced from the prose.",
+    "4": "Every table the question needs, each 100% traced, full provenance, referenced from the prose, column names equal to the tool's field names or documented renames.",
+    "5": "4 plus decision-ready hygiene: nulls kept as nulls with the tool's reason column (not zeros), row identifiers (DOI, url, Prism research index id, period) included so rows link back, and a provenance JSON block in the shape tools/prism_export.py writes (feature, args, window, coverage, exported_at)."
+   },
+   "verification": {
+    "method": "script",
+    "script_checkable": true,
+    "details": [
+     "Parse ```csv blocks with their info-string attributes (name, source, window, unit, coverage); parse the body with the csv module; reject unparsable blocks.",
+     "Resolve `source` to a recorded response; match rows by key column (period/year/term/row/title/doi) and diff cells; cell-grounded share per table.",
+     "Provenance completeness: all five attributes present and the window equal to the source's window.",
+     "Cross-consistency: the same quantity in chart, csv and prose must agree (period+value triples).",
+     "Null hygiene: for research.table and any row with value null in the source, the csv must keep an empty/null cell and the reason, never 0.",
+     "Usage: the csv `name` must appear in the prose; unreferenced tables are ignored (not penalised unless invented). Cap: five tables count."
+    ]
+   },
+   "anti_gaming": "A memory table labelled estimate earns 1; unlabelled it is invented and earns 0 and triggers the invention gate. Prism-backed: dumping all eight overview panels as CSV with no prose reference is scored as 2 regardless of size; rows must be the ones the question needs. Zero-filling nulls scores 0 on anchor 5 and is reported as a hygiene error.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "citations",
+    "library"
+   ],
+   "na_patterns": {
+    "improve": "a rewrite is not tabular"
+   }
+  },
+  {
+   "key": "repro",
+   "name": "Reproducibility",
+   "family": "B_trust",
+   "weight": 12,
+   "definition": "Every number in the prose traces to a recorded call (feature + args + window) or to a named public source, derived numbers show or allow their recomputation, and the listed calls, replayed, reproduce the numbers within rounding. A third party could regenerate the deliverable.",
+   "why_it_matters": "A number that cannot be regenerated cannot be defended in a review, an audit or a court. v1's 'specificity' rewarded precise numbers regardless of origin; this rewards only numbers with an origin.",
+   "scale_anchors": {
+    "0": "Numbers presented as measured with no source and no way to regenerate them; or replay of the listed calls gives materially different numbers that the deliverable presents as exact without a window.",
+    "1": "Numbers labelled memory/estimate (honest, not reproducible); or sources named only generically ('the review literature', 'industry reports').",
+    "2": "Fewer than 60% of numeric claims trace; or calls are listed without args so the run cannot be repeated.",
+    "3": "60-89% of numeric claims trace; the calls are listed with args; replay matches on the listed calls.",
+    "4": ">=90% trace; every call listed with args and window; replay reproduces every traced number within rounding; derived numbers are recomputable from listed values.",
+    "5": "4 plus 100% of numbers trace or are explicitly marked interpretation, and the deliverable carries a regenerate recipe (prism-calls block with every call used, plus capture date) from which the renderer rebuilds every chart and table without the prose."
+   },
+   "verification": {
+    "method": "script + judge for citation-sourced numbers",
+    "script_checkable": true,
+    "details": [
+     "Numeric extraction from prose: integers with separators, decimals, percentages, ratios (1.83x, 0.89x), ranges; strip years that are dates not quantities; attach each to its sentence and any inline [c1]/[r1] tag.",
+     "Value index: every numeric leaf in every recorded response with its JSON path, window and feature; derived index: shares, ratios, growths, deltas between leaves of the same array.",
+     "Match: exact after rounding to the precision shown; derived with a stated or obvious formula; a near-miss (same path, different value) is recorded as a mismatch and passed to the accuracy judge.",
+     "Replay: run the prism-calls entries (and, in captured mode, the scenario's recorded calls) through REGISTRY; compare envelope.data leaf-by-leaf with the recorded response; cache makes this instant; a live difference beyond rounding is reported with the window so the judge can decide whether the deliverable's window statement covers it.",
+     "Citation-sourced numbers (bare models): the judge classifies each as real-source-plausible / unverifiable / wrong; real-source-plausible counts as traced but the parameter is capped at 3 because the benchmark cannot replay it; optional corpus cross-check where the definition is replicable."
+    ]
+   },
+   "anti_gaming": "Precision is not evidence: an unsourced '232,502 articles' is worse than 'about 230k [c1]' only if the tag resolves. Marking everything 'interpretation' to dodge tracing drops facet coverage and verdict instead. Prism-backed: numbers that appear in the response but are quoted out of their window (a 2017-2025 research count beside a 2024-2026 news count as if one window) are mismatches.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "citations",
+    "improve",
+    "library"
+   ],
+   "na_patterns": {}
+  },
+  {
+   "key": "refs",
+   "name": "Traceable references",
+   "family": "B_trust",
+   "weight": 8,
+   "definition": "Documents the deliverable relies on (papers, articles, headlines) carry identifiers that resolve (DOI or Prism research index id in the research tables; url in the news table; or on the web), metadata that matches the identifier, the claim each supports, and verbatim quotes that are found in the source abstract.",
+   "why_it_matters": "This is v1's 'verifiability' made mechanical. Models invent DOIs and misdate trials; a reader who follows one dead DOI stops trusting the rest. For evidence, audit and citation questions the references are the product.",
+   "scale_anchors": {
+    "0": "No references where the pattern needs them; or the majority of identifiers fabricated (do not resolve, or metadata does not match).",
+    "1": "References present but at least one fabricated identifier (a DOI/URL that resolves to nothing or to a different work), or none of them resolvable.",
+    "2": ">=80% resolve but the fields needed to check support are missing (no year/venue/tier, no quote, no statement of which claim each supports).",
+    "3": ">=90% resolve, each tied to a claim, with year/venue/tier; quotes absent or not found verbatim in the source abstract.",
+    "4": "100% resolve; each tied to a claim; every quote given is found verbatim in the corpus abstract; tier/strength stated as the tool states it.",
+    "5": "4 plus the set is ranked or tiered with the reason (meta-analysis above cohort above case series), contrary sources appear with the same traceability, and news items carry date + publisher + url that resolve."
+   },
+   "verification": {
+    "method": "script against the corpus + judge for claim-tie",
+    "script_checkable": true,
+    "details": [
+     "Extract DOIs (regex 10.\\d{4,9}/\\S+), Prism research index ids (W\\d+), urls; look each up offline: DOI/Prism research index in the research works tables (the index), url in the news table; fall back to an HTTP HEAD on doi.org / the url with a cache, rate-limited.",
+     "Metadata match: for a resolved DOI compare the cited title (fuzzy >=0.85) and year (+-1) with the corpus record; a mismatch is 'fabricated-looking' and scored as anchor 1.",
+     "Quote check: any text in quotation marks attributed to a paper must be a substring (whitespace-normalised) of the corpus abstract or of the tool's `quote` field.",
+     "Claim-tie: judge checks that each reference is attached to a specific claim in the deliverable, not listed at the end.",
+     "Ranking/tier check: tiers named must equal the tool's `tier` field for that document."
+    ]
+   },
+   "anti_gaming": "One fabricated identifier caps the parameter at 1 regardless of how many others are real. Citation count does not raise the score; a reference list longer than eight entries is scored on the eight tied most directly to claims. Prism-backed: copying the tool's citation block without tying entries to claims caps at 2.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "citations",
+    "improve",
+    "library"
+   ],
+   "na_patterns": {
+    "compare": "news.compare returns counts, not articles",
+    "geo": "country rows only",
+    "trending": "topic rows only",
+    "history": "a counted series and its SQL provenance; no documents"
+   }
+  },
+  {
+   "key": "accuracy",
+   "name": "Accuracy against the corpus",
+   "family": "B_trust",
+   "weight": 12,
+   "definition": "No contradiction with the reference record (the recorded Prism responses for the scenario), no fabricated-looking specifics presented as measured, and fields read by their definitions (critical is not negative; lane subject is not lane claim; share_pct has the stated denominator). Kept from v1, sharpened with the script's mismatch list.",
+   "why_it_matters": "A traced chart beside a wrong sentence is still a wrong report. Omissions are no longer excused here, but they are charged under facets, not under accuracy.",
+   "scale_anchors": {
+    "0": "Multiple contradictions with the reference, or fabricated specifics presented as measured.",
+    "1": "One clear contradiction, or one fabricated-looking specific presented as fact.",
+    "2": "No direct contradiction but field misreadings (critical = negative; mixing lanes; wrong denominator) or claims beyond what the data supports presented as measured.",
+    "3": "No contradictions, no fabrications; minor imprecision only (rounding; 'roughly four times' for 4.5x).",
+    "4": "Everything measured stated as the reference has it, fields read by their definitions, interpretation labelled as such.",
+    "5": "4 plus the deliverable catches the reference's own anomalies (truncated monthly array vs trend summary, acronym place collisions such as Colombia/Cameroon, off-topic rows, 'critical' undefined) rather than repeating them as findings."
+   },
+   "verification": {
+    "method": "judge, seeded with the script's mismatch list",
+    "script_checkable": false,
+    "details": [
+     "The judge receives: the deliverable, the full reference record (compacted as v1's digest but with every panel), and the ground script's list of near-miss numbers (same path, different value) and lane/field misuse flags.",
+     "The judge lists contradictions and fabricated-looking specifics per deliverable, as in v1, then scores.",
+     "A script-detected numeric mismatch counts as a contradiction unless the judge finds the deliverable explained it (e.g. a recomputed figure with its formula).",
+     "Anomaly credit (anchor 5) requires naming the anomaly and its consequence for the reading."
+    ]
+   },
+   "anti_gaming": "Saying nothing is not accuracy: an empty or refusing deliverable scores 3 here (no contradictions) and 0 on the measured family, which is the correct trade. Copying the tool output verbatim scores 4 at most; anchor 5 needs the anomalies caught. Hedging every sentence does not remove a contradiction.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "citations",
+    "improve",
+    "library"
+   ],
+   "na_patterns": {}
+  },
+  {
+   "key": "limits",
+   "name": "Calibration and limits",
+   "family": "B_trust",
+   "weight": 8,
+   "definition": "The specific limits that apply are stated where the numbers are used: window with its end and censoring, the gap between window end and today, lane (subject vs claim), coverage flag, enrichment lag, match mode, thin evidence; measured is separated from interpreted; where the corpus has nothing the deliverable says so instead of filling the gap. Absorbs v1's calibration and currency.",
+   "why_it_matters": "The three ways this cluster has produced confident wrong answers (lane, coverage, window) are all limits. A decision-maker needs to know that a series ending 2026-05-31 cannot answer 'right now' on 2026-10-22, and that 'papers about heart disease' is not 'papers about coffee and heart disease'.",
+   "scale_anchors": {
+    "0": "Presents memory as measurement, or counts as real-world quantities (articles as sales, papers as adoption), or states no limits at all.",
+    "1": "Generic hedges only ('may be out of date', 'estimates vary').",
+    "2": "States uncertainty but not the specific limits that apply (window end vs today, lane, coverage, censoring, keyword matching).",
+    "3": "States the window and what the counts are; separates measured from interpretation; misses one limit that matters for this question (the months to today; research_authorship is the health literature index-affiliation only; patents publish 18 months late).",
+    "4": "Every applicable limit stated where the number is used, not in a footer: window + censoring, lane, coverage flag, enrichment lag, match mode, thin evidence; honest 'the corpus does not state one' where so.",
+    "5": "4 plus the limits change the reading ('this cannot answer right now; the last five months are unmeasured'; 'the row is null, not zero') and the deliverable says what would close the gap (a fresher ingest, a full-text screen, a different lane)."
+   },
+   "verification": {
+    "method": "script for presence + judge for placement and reading",
+    "script_checkable": true,
+    "details": [
+     "Window check: every window string in the deliverable (from..to) must equal a recorded window or a sub-window; the Method section must state the end date of the newest data and the number of days/months to TODAY.",
+     "Coverage check: if any recorded meta.coverage.partial is true the deliverable must say so; if false, claiming partial coverage is a contradiction.",
+     "Lane check: when a response carries meta.lane_note or data.query.lane, the deliverable must name the lane next to the count.",
+     "Enrichment/censoring: if window.censored_at or window.enrichment exists, the deliverable must mention censoring where the series is used.",
+     "Honest-empty check: where a response says available:false, answered:0, value:null, or tally.read:0, the deliverable must say the corpus has nothing rather than supply a number; the judge checks that no number was supplied in its place.",
+     "Judge: placement (beside the number vs footer), and whether the limits alter the verdict's bounds."
+    ]
+   },
+   "anti_gaming": "A disclaimer paragraph at the end scores 2; limits must sit next to the numbers they bound. Plain models cannot earn 4-5 by hedging more: anchor 4 requires the specific limits of the data used, and an honest 'I cannot measure this' earns 3 if it is specific about what is unmeasured. Prism-backed: repeating every caveat field verbatim is a footer and caps at 3 unless the caveats are placed and read.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "citations",
+    "improve",
+    "library"
+   ],
+   "na_patterns": {}
+  },
+  {
+   "key": "verdict",
+   "name": "Decision-grade verdict",
+   "family": "C_decision_value",
+   "weight": 12,
+   "definition": "A direct answer to the question, the decision it supports, a confidence level with its reason, and what would change it; consistent with every chart and table in the same deliverable; acknowledging the strongest contrary evidence the deliverable itself contains; bounded by the data's limits.",
+   "why_it_matters": "This is what the reader came for. v1 rewarded 'lead with the direct answer' as a style; v2 checks that the answer rests on the deliverable's own numbers and does not contradict them.",
+   "scale_anchors": {
+    "0": "No verdict; or a verdict that contradicts the deliverable's own data (says rising while its series falls); or a verdict resting on invented numbers.",
+    "1": "Restates the question or hedges to nothing ('it depends'); or a data dump with no answer.",
+    "2": "A direct answer not supported by the numbers in the deliverable, or with no confidence level and no conditions.",
+    "3": "Direct answer supported by traced numbers, with a confidence level; but the decision it supports is not stated, or 'what would change it' is missing, or it ignores a contrary finding present in its own evidence.",
+    "4": "Direct answer + decision + confidence with reason + what would change it; consistent with every chart and table; names the strongest contrary evidence in the deliverable.",
+    "5": "4 plus bounded by the data's limits (window end, lane, coverage), measured separated from interpreted inside the verdict, and the verdict a domain expert would sign without edits (judge)."
+   },
+   "verification": {
+    "method": "script for structure and consistency + judge for support and expert sign-off",
+    "script_checkable": true,
+    "details": [
+     "Structure: the Verdict section must be first and contain the four labelled lines (Answer, Decision, Confidence, What would change it); missing lines cap at 3.",
+     "Consistency: direction words in the verdict vs the series' computed direction and the tool's trend/direction field; numbers in the verdict must trace (reuse the repro index).",
+     "Invented-basis check: if any number in the Verdict section is unsourced and unlabelled, score 0.",
+     "Judge: is the answer supported by the deliverable's evidence; is the strongest contrary item in the deliverable acknowledged; would an expert sign it; is it bounded by the stated limits."
+    ]
+   },
+   "anti_gaming": "A Verdict section longer than 150 words caps at 3 (a verdict is not a summary). Restating the headline counts ('Tesla has 215,756 articles') without answering the question is anchor 1. Plain models can score 4 here on questions where memory suffices (established literatures); they cannot score 5 on measured questions because the bounds require the window. Prism-backed: a verdict that ignores the tool's own contradicting documents or empty rows caps at 3.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "citations",
+    "improve",
+    "library"
+   ],
+   "na_patterns": {}
+  },
+  {
+   "key": "facets",
+   "name": "Facet coverage",
+   "family": "C_decision_value",
+   "weight": 6,
+   "definition": "The share of the facets the question asks (and the pattern implies) that are answered with grounded values or with a grounded 'no data' (the tool's own available:false / null with reason). This is where omissions, excused in v1, are charged.",
+   "why_it_matters": "'Volume, tone, themes and the critical stories' is four deliverables, not one. A beautiful trend chart that skips tone has answered a different question.",
+   "scale_anchors": {
+    "0": "Fewer than a quarter of the facets answered with grounded values.",
+    "1": "Facets answered mostly from memory or estimate.",
+    "2": "About half the facets answered with grounded values.",
+    "3": "About three quarters.",
+    "4": "All facets answered with grounded values or an explicit grounded 'no data' with the tool's reason.",
+    "5": "4 plus the facets the scenario implies but does not name (scenarios.py `special`: brand vs generic vs class names; overlap between terms; seasonality; the research-vs-news mismatch) are addressed with grounded values."
+   },
+   "verification": {
+    "method": "script via the grounding map + judge confirmation",
+    "script_checkable": true,
+    "details": [
+     "Each pattern has a facet checklist (facet_checklists below) mapped to response paths; a facet is satisfied when at least one grounded number or row traced to that path appears in the deliverable, or when the deliverable states the tool's own empty/unavailable result for it.",
+     "Judge confirms satisfied facets have a reading sentence, not just a pasted number, and marks the implied facet (anchor 5).",
+     "Plain models: a facet answered by a judge-confirmed cited public figure counts as grounded (cap 3 as elsewhere); a facet answered by estimate counts as anchor-1 material."
+    ]
+   },
+   "anti_gaming": "Pasting every panel satisfies the path check but not the reading-sentence check; the judge may lower. Facets are fixed per pattern; a setup cannot redefine the question to fewer facets. An honest grounded 'no data' counts as covered; an invented value for a facet counts as uncovered and triggers the invention gate.",
+   "applies_to_patterns": [
+    "pulse",
+    "evidence",
+    "stance",
+    "brief",
+    "compare",
+    "claims",
+    "radar",
+    "table",
+    "audit",
+    "geo",
+    "trending",
+    "history",
+    "citations",
+    "improve",
+    "library"
+   ],
+   "na_patterns": {}
+  }
+ ],
+ "facet_checklists": {
+  "pulse": [
+   "volume with window (profile.articles / trends.total)",
+   "monthly series and direction (trends.points, trends.trend)",
+   "tone vs corpus baseline (sentiment.totals, corpus_baseline_ratio, vs_baseline)",
+   "themes (themes.categories/subcategories rows)",
+   "entities: organisations and people (entities.*.rows)",
+   "places with placed_pct caveat (geography.rows)",
+   "critical headlines with date/publisher/url (critical.articles)",
+   "source concentration (sources.publishers, concentration)"
+  ],
+  "compare": [
+   "per-term totals and share (rows[].articles, share_pct)",
+   "per-term monthly series on one scale (rows[].points)",
+   "growth / direction per term (rows[].growth, direction)",
+   "tone per term (tone_ratio, critical_pct) with definitions",
+   "overlap / common-word caveat",
+   "most_covered and combined_articles"
+  ],
+  "evidence": [
+   "volumes by corpus with lane (volumes.*)",
+   "supporting documents with quote, tier, DOI (documents / supporting)",
+   "contradicting documents with the same (contradicting)",
+   "tier-weighted tally and read/unread counts (tally)",
+   "effect sizes with population (statistics.stats)",
+   "research and news series (research_series, news_series)"
+  ],
+  "stance": [
+   "yearly orientation series (points[].orientation)",
+   "framing shift early vs late (framing_shift)",
+   "promising / critical examples with ids (browse papers)",
+   "thin years and phrase expansion caveat (thin_years, phrases)"
+  ],
+  "brief": [
+   "volumes per corpus with lane and window (volumes)",
+   "what is established with sources",
+   "what is contested with the contested share",
+   "key numbers with sources",
+   "news trend series",
+   "geo scope applied (focus / scoped counts) when geo given"
+  ],
+  "claims": [
+   "both claims' volumes and lanes",
+   "both tallies (tier-weighted)",
+   "which claim has more / stronger evidence and why",
+   "asymmetry caveat (intersection vs subject lane)"
+  ],
+  "radar": [
+   "new work list with year, citations, orientation, DOI",
+   "momentum / trend since year",
+   "framing shift",
+   "under-covered topics",
+   "news trend"
+  ],
+  "audit": [
+   "claims detected and research-checkable count",
+   "status per claim with subject/both-poles counts",
+   "deep-read tallies for the weakest claims",
+   "citation coverage / issues",
+   "needs_attention with suggested wording"
+  ],
+  "geo": [
+   "research authorship rows (first-author affiliation)",
+   "research publication rows (journal country)",
+   "news coverage rows with placed_pct",
+   "patent origin rows or explicit empty",
+   "the mismatch between where studied and where reported",
+   "do-not-add-lanes caveat"
+  ],
+  "trending": [
+   "rising topics with growth_x and previous",
+   "newly covered topics",
+   "biggest topics",
+   "window and its staleness vs today"
+  ],
+  "history": [
+   "yearly series with scope/match_field",
+   "scenarios: central with sensitivity bounds per year",
+   "backtest method and MAE vs no-change baseline",
+   "limitations (record counts, title match, no normalisation)"
+  ],
+  "citations": [
+   "entries rendered in the requested style with DOI/url",
+   "tier / strength per entry",
+   "ranking rationale (source_ranking)",
+   "stance of each entry relative to the claim"
+  ],
+  "improve": [
+   "rewritten sentence",
+   "evidence card: strongest grounded document or honest none",
+   "corpus mix with its caveat",
+   "what the evidence tier allows the verb to be"
+  ],
+  "library": [
+   "topics covered by the list",
+   "highly cited missing with relevance filter",
+   "recent missing",
+   "suggested additions with ids"
+  ]
+ },
+ "scoring": {
+  "per_parameter": "integer 0-5 or NA (by pattern)",
+  "weighted_score": "100 * sum(w_i * s_i over applicable i) / (5 * sum(w_i over applicable i))",
+  "family_scores": "same formula restricted to the family's parameters",
+  "script_first_rule": "script-scored parameters get their score from the script; the judge may LOWER a script score with a stated reason, never raise it; judge-only parameters (accuracy, verdict support, facet reading) are scored by the judge",
+  "gates": {
+   "invention_gate": "if any chart series, csv table or Verdict number is unsourced and not labelled estimate (invented), the scenario's weighted score is capped at 40 and the record is flagged invented=true",
+   "dump_gate": "if the judge marks the deliverable a dump (Verdict fields missing and more than 60% of non-fenced lines are table rows or pasted field names), verdict <= 2 and facets <= 3",
+   "variants_reported": [
+    "strict (gates applied, the headline)",
+    "plain (no gates, for sensitivity)"
+   ]
+  },
+  "capability_matrix": {
+   "produce_rate": "share of applicable scenarios where the parameter score >= 2 (something real exists)",
+   "quality_when_produced": "mean score over scenarios where score >= 2",
+   "cell_format": "'73% · 4.1' = produce rate · quality when produced"
+  }
+ },
+ "rejected": [
+  {
+   "key": "specificity_v1",
+   "reason": "Rewards precise numbers regardless of origin; v1 bare answers scored 4.4 by quoting memory figures ('tens of thousands a month', 'the health literature index 7,000-9,000 in 2020'). Replaced by repro (only numbers with an origin count)."
+  },
+  {
+   "key": "verifiability_v1",
+   "reason": "Right idea, judged by impression. Replaced by two mechanical parameters: repro (numbers trace and replay) and refs (identifiers resolve in the corpus, quotes found)."
+  },
+  {
+   "key": "currency_v1",
+   "reason": "Unverifiable without ground truth of events after the window, and it conflated corpus freshness (ends 2026-05/06) with answer quality, penalising honest window statements. Folded into limits: state the end date and the gap to today and what it means."
+  },
+  {
+   "key": "writing_quality_length_structure",
+   "reason": "Formatting, not substance. The deliverable spec fixes the structure and the renderer makes every setup look the same."
+  },
+  {
+   "key": "dashboard_aesthetics_interactivity",
+   "reason": "claude -p and codex exec emit text; interactivity comes from the shared renderer, identically for all four. What matters (real links, executable drill-down) is scored under drilldown and refs."
+  },
+  {
+   "key": "tool_efficiency_latency_cost",
+   "reason": "Not value to the reader; reported as metadata (seconds, tool calls, tokens) but not scored. Scoring it would punish long tools and reward abstention."
+  },
+  {
+   "key": "uses_prism_tools_correctly",
+   "reason": "Measures the product, not the deliverable; unfair to the bare setups; the ground script already reports call choice for the engineering flags."
+  },
+  {
+   "key": "forecast_accuracy",
+   "reason": "The future is not available. History scenarios are scored on method disclosure (series traced, scenario bounds and backtest MAE stated under trend/limits), not on being right."
+  },
+  {
+   "key": "novelty_insight",
+   "reason": "Judge taste; unverifiable; rewards confident narrative, which is the failure mode v2 exists to stop."
+  },
+  {
+   "key": "citation_count_source_breadth",
+   "reason": "Count gaming; invented DOIs would raise it. Replaced by resolvable share with a cap of eight counted entries under refs."
+  },
+  {
+   "key": "chart_count",
+   "reason": "Gaming; chart is scored as the minimum over at most four counted relevant charts."
+  },
+  {
+   "key": "word_count_compliance",
+   "reason": "The 280-word rule was the problem. A prose cap of 1,800 words remains only to keep dumps parseable; it is a gate, not a score."
+  },
+  {
+   "key": "sentiment_tone_correctness_standalone",
+   "reason": "Redundant: tone is a facet (facets) and a comparison against the baseline (comparison); misreading critical as negative is an accuracy anchor."
+  },
+  {
+   "key": "presentable_clickable_dashboard_standalone",
+   "reason": "Split: 'presentable' is formatting (rejected); 'clickable' is drilldown anchor 5 (identifiers on every breakdown item) and refs (resolving links)."
+  },
+  {
+   "key": "graph_like_exploration_standalone",
+   "reason": "Merged into drilldown (layers reaching items with identifiers, executable follow-ups) rather than a separate score that would double-count."
+  }
+ ],
+ "deliverable_spec": {
+  "format": "one markdown document emitted as plain text (works for `claude -p` and `codex exec`), with typed fenced blocks a script parses; the same spec is given verbatim to all four setups",
+  "prose_cap_words": 1800,
+  "counted_limits": {
+   "charts": 4,
+   "tables": 5,
+   "references": 8,
+   "drilldown_calls": 8
+  },
+  "sections_in_order": [
+   {
+    "heading": "## Verdict",
+    "required": true,
+    "lines": [
+     "- Answer: <one or two sentences>",
+     "- Decision: <what this supports a decision-maker doing>",
+     "- Confidence: high|medium|low - <reason>",
+     "- What would change it: <one line>"
+    ],
+    "max_words": 150
+   },
+   {
+    "heading": "## What the data shows",
+    "required": true,
+    "rule": "every number carries an inline tag [cN] (call), [rN] (reference) or (est.) (estimate); untagged numbers are treated as unsourced"
+   },
+   {
+    "heading": "## Trend",
+    "required_for_patterns": [
+     "pulse",
+     "compare",
+     "stance",
+     "brief",
+     "evidence",
+     "radar",
+     "history",
+     "trending"
+    ],
+    "rule": "at least one prism-chart with a temporal x, plus the quantified change"
+   },
+   {
+    "heading": "## Comparison",
+    "required_for_patterns": [
+     "pulse",
+     "compare",
+     "stance",
+     "brief",
+     "claims",
+     "radar",
+     "geo",
+     "trending",
+     "history",
+     "evidence",
+     "table"
+    ],
+    "rule": "the contrast on one scale with ratio/delta and the baseline defined"
+   },
+   {
+    "heading": "## Geography",
+    "required_for_patterns": [
+     "geo"
+    ],
+    "optional_for": [
+     "pulse",
+     "brief"
+    ]
+   },
+   {
+    "heading": "## Evidence",
+    "required_for_patterns": [
+     "evidence",
+     "claims",
+     "brief",
+     "radar",
+     "table",
+     "audit",
+     "citations",
+     "improve",
+     "library",
+     "stance"
+    ],
+    "rule": "documents with year, venue, tier, identifier [rN], the claim each supports, verbatim quote where available"
+   },
+   {
+    "heading": "## Drill-down",
+    "required_for_patterns": [
+     "pulse",
+     "evidence",
+     "stance",
+     "brief",
+     "compare",
+     "claims",
+     "radar",
+     "table",
+     "audit",
+     "geo",
+     "trending",
+     "history",
+     "library"
+    ],
+    "rule": "breakdown layers with identifiers, then a prism-calls block of 3-8 follow-up questions each with the call that answers it"
+   },
+   {
+    "heading": "## Exports",
+    "required_for_patterns": [
+     "pulse",
+     "evidence",
+     "stance",
+     "brief",
+     "compare",
+     "claims",
+     "radar",
+     "table",
+     "audit",
+     "geo",
+     "trending",
+     "history",
+     "citations",
+     "library"
+    ],
+    "rule": "one or more csv blocks with info-string provenance; a provenance JSON block"
+   },
+   {
+    "heading": "## Method and limits",
+    "required": true,
+    "rule": "windows with end dates and the gap to today; lanes; coverage; censoring; match mode; what the counts are and are not; what is interpretation"
+   },
+   {
+    "heading": "## References",
+    "required": true,
+    "rule": "[rN] Title. Venue/publisher, year. doi:... or url; news items with date and publisher"
+   }
+  ],
+  "source_reference_grammar": {
+   "call": "call:<feature>#<n> - the nth call of that feature in the run (n defaults to 1); feature names are the Prism feature ids (news.compare, research.evidence, analysis.history ...)",
+   "ref": "ref:r<N> - an entry in ## References",
+   "estimate": "estimate - a value from memory, honestly labelled; earns anchor 1 on measured parameters and no accuracy penalty",
+   "inline_tags": "[c1] [c2] ... map to call:<feature>#<n> declared in the prism-calls block; [r1] ... map to References"
+  },
+  "chart_schema": {
+   "fence": "```prism-chart",
+   "json": {
+    "id": "string, unique in the document",
+    "kind": "line | bars | hbar | stacked | share | range",
+    "title": "names the quantity and subject",
+    "unit": "e.g. articles per month, papers per year, percent of typed papers",
+    "window": {
+     "from": "YYYY-MM-DD",
+     "to": "YYYY-MM-DD",
+     "to_is_exclusive": true,
+     "censored_at": "optional"
+    },
+    "x": {
+     "field": "period|year|label",
+     "type": "temporal|ordinal"
+    },
+    "series": [
+     {
+      "name": "string",
+      "source": "call:<feature>#<n> | ref:rN | estimate",
+      "path": "optional JSON path in the response, e.g. data.rows[1].points",
+      "points": [
+       [
+        "2024-06",
+        6425
+       ],
+       [
+        "2024-07",
+        7012
+       ]
+      ]
+     }
+    ],
+    "bounds": "optional, for kind=range: [[year, lower, upper], ...] with source",
+    "caption": "one sentence stating the reading",
+    "supports": "the sentence in the prose this chart backs (verbatim)",
+    "vega_lite": "optional full Vega-Lite spec; values are still verified from `series`"
+   },
+   "rendering": "the harness renders every prism-chart with one renderer (showcase/svgchart.py or Vega-Lite) into the same HTML dashboard for all setups; presentation is therefore identical and unscored"
+  },
+  "csv_block": {
+   "fence": "```csv name=<file.csv> source=call:<feature>#<n> window=<from>..<to> unit=<unit> coverage=full|partial|unknown",
+   "body": "RFC 4180 CSV with a header row; nulls as empty cells; keep the tool's field names or document renames in the prose",
+   "provenance_block": {
+    "fence": "```provenance",
+    "json": {
+     "exported_at": "ISO date",
+     "calls": [
+      {
+       "feature": "...",
+       "args": {},
+       "window": {},
+       "coverage": {
+        "partial": false
+       }
+      }
+     ],
+     "note": "matches the sidecar tools/prism_export.py writes"
+    }
+   }
+  },
+  "calls_block": {
+   "fence": "```prism-calls",
+   "json": [
+    {
+     "id": "c1",
+     "feature": "news.compare",
+     "args": {
+      "terms": [
+       "tesla",
+       "byd"
+      ],
+      "since": "2024-06-01"
+     },
+     "used_for": "trend, comparison, monthly.csv"
+    },
+    {
+     "id": "f1",
+     "question": "what drove BYD's October 2025 spike?",
+     "feature": "news.critical",
+     "args": {
+      "term": "byd",
+      "since": "2025-10-01",
+      "until": "2025-11-01"
+     }
+    }
+   ],
+   "rule": "entries with `used_for` declare the calls the deliverable rests on (ids cN); entries with `question` are follow-ups (ids fN). In Prism setups the harness compares cN entries with the calls it actually recorded; self-reported calls that were not made are ignored and flagged. Bare setups may omit this block or fill it with ref/estimate sources only."
+  },
+  "prompts": {
+   "common": "Today is {today}. Produce the deliverable described below for the question. The reader is a decision-maker who will act on it. Every number must carry a source tag; a chart or table whose values have no source and are not labelled estimate will be scored as invented. State what the data cannot answer rather than filling the gap.",
+   "bare": "Answer from your own knowledge only; do not run commands or browse. You may include charts and tables from your knowledge, with each series' source given as a named published source (ref:rN) or as estimate.",
+   "prism_captured": "You called tools on the Prism MCP server; their full results follow, each labelled with its call id (c1..cN), feature, args and window. Use them as primary evidence; keep their windows and caveats; label background knowledge as such.",
+   "prism_live": "You are connected to the Prism MCP server; choose and call whichever tools fit. The harness records every call and its full response; refer to calls by feature name."
+  },
+  "modes": {
+   "captured": "all four setups; Prism setups receive the scenario's recorded calls (docs/examples/<slug>.json) with ids; controls for retrieval; cheap; the main 113-scenario run",
+   "live": "Prism setups choose their own calls over MCP; the harness saves full responses (not digests); used for the pilot and flagships because drilldown anchor 5 and repro anchor 5 are about calls the model chose",
+   "harness_rule": "save every tool response in full in the run record; v1's digest truncation (monthly arrays cut at 2025-01) made the models look wrong about the reference"
+  },
+  "renderer": "showcase/render_v2.py (to be written): parses the document, renders charts, tables and links into one HTML page per deliverable with the same template; the judge sees the rendered text, the script sees the parsed blocks"
+ },
+ "fairness": {
+  "same_request": "all four setups get the same deliverable spec, the same prose cap, the same right to include charts and tables; the bare prompt explicitly allows memory charts and tables with ref/estimate sources",
+  "honesty_is_rewarded_not_measurement_faked": "an honest estimate label earns 1 on measured parameters and full credit on accuracy and limits; an invented value earns 0 and trips the invention gate; so a bare model that declines to fabricate finishes above one that fabricates",
+  "citation_sourced_grounding": "bare models can earn up to 3 on script-scored parameters with real public figures the judge confirms; the cap exists because the benchmark cannot replay them, and it is stated in every anchor it affects",
+  "script_first_judge_lower_only": "most of the score is computed before any model reads the deliverable; the judge can only lower script scores with a reason, which limits house-style bias",
+  "judge_bias_controls": "blind A-D shuffle as v1; rendered identically; the judge receives the script report rather than raw responses for grounding; a second judge model (GPT via codex exec) scores the pilot and agreement (per-parameter weighted kappa, mean absolute difference) is reported",
+  "expected_prism_losses": [
+   {
+    "where": "evidence/claims questions on old, well-known literatures (minimum-wage-employment, death-penalty-deterrence, glyphosate-cancer, ubi-evidence, policing-body-cameras, remote-work-productivity, housing-prices-evidence)",
+    "why": "v1 showed Prism retrieval thin or off-topic there while bare Claude names the landmark studies; refs (if its DOIs resolve), accuracy and verdict may favour bare Claude; Prism keeps trend/export/drilldown"
+   },
+   {
+    "where": "radar questions where 'new' means milestones (alzheimers-drugs-radar, quantum-computing-radar, coral-bleaching-radar, pfizer-pipeline-radar)",
+    "why": "new_work is citation-ranked and misses 2024-2026 milestones; a bare model with a mid-2026 cutoff may win verdict and facets"
+   },
+   {
+    "where": "table questions the corpus cannot fill (ev-battery-table, crop-yields-climate-table, cancer-immunotherapy-table)",
+    "why": "Prism answers 0 of 5 honestly (full marks on limits, 0 on export/chart); a bare model's estimate-labelled table earns 1 on export and may win verdict; the weighted total may still go to the bare model, which is the correct result for a corpus gap"
+   },
+   {
+    "where": "improve / citations / library patterns",
+    "why": "v1 Prism output was thin or garbled (one citation, off-field classics); bare models write better rewrites and know canonical citations, though invented DOIs will cost them under refs"
+   },
+   {
+    "where": "'right now' questions (fintech-trending, cybersecurity-trending) and post-May-2026 events (antitrust-big-tech remedies, copyright-ai-pulse)",
+    "why": "the corpus ends 2026-05/06; a bare model with later knowledge may give a better verdict; Prism's trend/export still score"
+   },
+   {
+    "where": "ChatGPT+Prism in live mode on slow tools (research.table, research.compare, research.evidence cold)",
+    "why": "codex ends its turn before long calls return; ChatGPT+Prism may finish below Claude alone until the request/poll path is automatic"
+   },
+   {
+    "where": "audit questions",
+    "why": "bare Claude knew the real effect sizes (BMJ 2017 umbrella review) where Prism's deep reads were off-topic; expect a split: Prism wins drilldown/export/refs-if-grounded, bare may win verdict/accuracy"
+   }
+  ]
+ },
+ "pilot_slugs": [
+  {
+   "slug": "tesla-vs-byd",
+   "pattern": "compare",
+   "stresses": "two monthly series on one scale; growth and share recomputation; export of monthly + summary; the attention-vs-sales contrast the data cannot test (comparison anchor 5); bare models have real 2024 delivery figures (citation-sourced grounding)"
+  },
+  {
+   "slug": "nvidia-pulse",
+   "pattern": "pulse",
+   "stresses": "eight facets; drill-down layers (themes -> subcategories -> headline); the truncated monthly array vs trend summary and the Colombia place artefact (accuracy anchor 5); window end vs today (limits)"
+  },
+  {
+   "slug": "crispr-history",
+   "pattern": "history",
+   "stresses": "yearly series with scenario bounds (range chart); backtest MAE disclosure; bare models produce plausible memory series (chart grounding and the citation cap); forecast not scored on correctness"
+  },
+  {
+   "slug": "ev-battery-table",
+   "pattern": "table",
+   "stresses": "corpus returns 0 of 5; honest nulls vs invented ranges; the case where Prism is expected to lose the total while winning limits; live record exists"
+  },
+  {
+   "slug": "audit-coffee-draft",
+   "pattern": "audit",
+   "stresses": "claim-level drill-down; references that must resolve; off-topic deep reads; bare Claude's strong memory of the real literature; live record exists"
+  },
+  {
+   "slug": "dengue-geography",
+   "pattern": "geo",
+   "stresses": "four lanes that must not be added; research authorship vs news coverage mismatch as the comparison; placed_pct caveat; no time axis (trend N/A)"
+  },
+  {
+   "slug": "metformin-cancer-risk",
+   "pattern": "evidence",
+   "stresses": "supporting vs contradicting with tier weights; verbatim quote check; DOI resolution; research/news series; live record exists"
+  },
+  {
+   "slug": "gen-ai-education-stance",
+   "pattern": "stance",
+   "stresses": "yearly orientation shares (stacked chart); framing_shift early vs late as the comparison; post-2023 literature where memory is thin; live record exists"
+  }
+ ],
+ "pilot_reserves": [
+  "fintech-trending (stale window; where Prism should lose on verdict)",
+  "minimum-wage-employment (claims; asymmetric matching; ChatGPT live timeouts)"
+ ],
+ "reporting": {
+  "run_record": {
+   "path": "docs/comparisons_v2/<slug>.json",
+   "per_setup": [
+    "deliverable (raw text)",
+    "calls [{id, feature, args, response (full), seconds, ok}]",
+    "rendered_path",
+    "ground {parsed blocks, grounded shares, mismatches, unresolved refs, replay diffs, direction checks, facet map, executed followups}",
+    "judge {labels, raw, per-parameter scores and reasons, lowered-from}",
+    "scores {per parameter 0-5/NA, family, weighted_strict, weighted_plain, gates}",
+    "meta {model, seconds, tool_calls, tokens}"
+   ]
+  },
+  "aggregates": {
+   "overall": "mean weighted score (strict and plain) per setup; wins/ties per scenario; invention rate (share of deliverables with invented=true) per setup",
+   "per_parameter": "mean score per setup; produce rate; quality when produced; N/A count",
+   "capability_matrix": "setups x parameters, cell = 'produce% · quality' plus the honest-abstention count (score 1 with estimate label) separately from invented (0)",
+   "per_category": "17 categories: mean weighted per setup, best setup, gain of best-Prism over best-alone",
+   "per_pattern": "15 patterns: same, because the N/A rules make patterns the natural unit",
+   "head_to_head_same_model": "claude_prism vs claude_bare and chatgpt_prism vs chatgpt_bare: wins/ties/losses and mean delta per parameter; this controls for model strength and is the headline Prism effect",
+   "best_vs_best": "best Prism-backed vs best memory-only per scenario, as v1's 86 of 113",
+   "judge_agreement": "pilot only: second judge; per-parameter weighted kappa and mean absolute difference; disagreements over 2 points listed",
+   "engineering_flags_v2": "every scenario where a Prism-backed setup scores below the same model alone, with the parameters lost and the script's diagnosis (empty rows, off-topic docs, truncated series, failed replay), appended to docs/ENGINEERING_FLAGS.md style"
+  },
+  "page_outputs": [
+   "docs/COMPARISON_V2.md with the tables above and SVG scoreboards built by showcase/svgchart.py",
+   "per-scenario pages under docs/use-cases/ gain a 'Deliverables' section linking the four rendered dashboards and the parameter table"
+  ],
+  "not_scored_but_reported": [
+   "seconds per deliverable",
+   "tool calls made and failed",
+   "tokens",
+   "prose word count",
+   "number of charts/tables/references offered vs counted"
+  ]
+ },
+ "harness_notes": [
+  "Files to add later (not in this change): showcase/compare_v2.py (prompts, modes, full-response capture, call ids), showcase/ground_v2.py (parser, value index, matching, replay, DOI/URL corpus lookups, direction checks, facet map), showcase/render_v2.py (one HTML template), showcase/judge_v2.py (blind judge seeded with the ground report; lower-only), showcase/report_v2.py (aggregates and COMPARISON_V2.md).",
+  "The 12-hour Prism cache makes replay and follow-up execution nearly free on the same day; record cache hits so replay diffs are attributable.",
+  "Keep v1's docs/comparisons intact; v2 writes to docs/comparisons_v2.",
+  "Run the pilot in both modes before the full run; fix parser and anchor ambiguities found there; freeze the rubric version before the 113-scenario run."
+ ]
+}

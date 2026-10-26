@@ -1,0 +1,952 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 4278,
+  "charts": [
+   {
+    "id": "chart_rr",
+    "title": "Relative risk of type 2 diabetes by SSB exposure contrast",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "RR point estimate",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     },
+     {
+      "name": "Lower 95% CI",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     },
+     {
+      "name": "Upper 95% CI",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "series_yearly_monthly.csv",
+    "how": "none",
+    "rows": 2,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_lanes.csv",
+    "how": "none",
+    "rows": 16,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "ref",
+    "rows": 5,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "none (query in words)",
+    "question": "Papers per year on SSB and T2D",
+    "args": "Prism research index works with title/abstract containing (sugar-sweetened beverage* OR sugar sweetened beverage* OR sugary drink* OR soft drink*) AND (type 2 diabetes OR diabetes mellitus), grouped by publication year, 2000 to last complete year, current year flagged incomplete",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f2",
+    "feature": "none (query in words)",
+    "question": "News articles per month",
+    "args": "News archive (GDELT or Media Cloud), same phrases, grouped by month, last 10 years, newest month flagged incomplete",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f3",
+    "feature": "none (query in words)",
+    "question": "Study tier shares",
+    "args": "Classify f1 records by publication-type/design (RCT, cohort, meta-analysis, cross-sectional, modelling) and report share of each",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f4",
+    "feature": "none (query in words)",
+    "question": "Where is it studied",
+    "args": "f1 records grouped by first-author affiliation country; place India, United States, China, United Kingdom, Brazil",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f5",
+    "feature": "none (query in words)",
+    "question": "Where is it reported",
+    "args": "f2 articles grouped by country the article is about; compare rank with f4",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f6",
+    "feature": "none (query in words)",
+    "question": "Where is it patented",
+    "args": "Patent database, claims/abstract containing sweetened beverage with a diabetes term, grouped by assignee country and publication year, noting publication lag",
+    "ok": false,
+    "why": "unknown feature"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 97,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 30,
+   "untagged_examples": [
+    "95% — Chart 1. Relative risk of T2D by SSB exposure, with 95% CI. Unit: relative risk. Window: p",
+    "10.1001 — | RR 1.83 [r4] | Nurses' Health Study II, women; first-author cohort study | doi:10.1001/j",
+    "10.2337 — | RR 1.26 [r1] | Meta-analysis, T2D and metabolic syndrome | doi:10.2337/dc10-1079",
+    "1079 — | RR 1.26 [r1] | Meta-analysis, T2D and metabolic syndrome | doi:10.2337/dc10-1079",
+    "10.1136 — | RR 1.18 / 1.13 [r2] | Meta-analysis incl. artificially sweetened beverages and fruit jui",
+    "10.1136 — | 0.8 kg [r6] | RCT and cohort synthesis on sugars and weight | doi:10.1136/bmj.e7492",
+    "10.1136 — | 6% [r9] | Mexico excise tax, store purchase data | doi:10.1136/bmj.h6704",
+    "10 — - f2. News articles per month. Query: in a news archive (e.g. GDELT or Media Cloud), the s"
+   ]
+  },
+  "dois": {
+   "cited": 13,
+   "found_in_corpus": 13,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 102,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "map": 0,
+   "forecast": 1,
+   "dimensions": 1,
+   "crossdomain": 1,
+   "integrity": 5,
+   "article": 3
+  },
+  "deep": {
+   "maps": [],
+   "forecasts": [],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "evidence magnitude"
+   ],
+   "corpora_traced": [],
+   "connecting_sentences": 0,
+   "manifest_error": "",
+   "html_bytes": 43844,
+   "article": {
+    "present": true,
+    "sections_found": 7,
+    "in_order": true,
+    "words": 2658,
+    "abstract_words": 264,
+    "results_numbers": 17,
+    "results_tagged": 17
+   }
+  },
+  "render": {
+   "rendered_views": 1,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 48379,
+   "manifest_charts": 1
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 5663,
+  "charts": [
+   {
+    "id": "ch_research",
+    "title": "Research records with an SSB phrase in the title, per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "records",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_news",
+    "title": "News articles per month mentioning sugar-sweetened beverages",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 28,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_index",
+    "title": "Research titles and news articles, indexed 2017 = 100",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "research titles",
+      "how": "call",
+      "points": 9,
+      "traced_share": 0.1111111111111111
+     },
+     {
+      "name": "news articles",
+      "how": "call",
+      "points": 9,
+      "traced_share": 0.3333333333333333
+     }
+    ]
+   },
+   {
+    "id": "ch_ratio",
+    "title": "News articles per 100 first-author papers (derived)",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "ratio",
+      "how": "call",
+      "points": 5,
+      "traced_share": 0.0
+     }
+    ]
+   },
+   {
+    "id": "ch_orient",
+    "title": "Orientation of 283 typed papers on the subject",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 7,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_rr",
+    "title": "Pooled risk ratios for type 2 diabetes (SSB intake)",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "RR",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch_mix",
+    "title": "Records on the claim's subject by source (units differ, never summed)",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "records",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "series_yearly_monthly.csv",
+    "how": "call",
+    "rows": 56,
+    "numeric_cells": 56,
+    "traced_share": 0.42857142857142855,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_lanes.csv",
+    "how": "call",
+    "rows": 45,
+    "numeric_cells": 37,
+    "traced_share": 0.5945945945945946,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 0,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "projection.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 10,
+    "traced_share": 0.5,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Is Nigeria's news prominence policy-driven?",
+    "args": {
+     "term": "sugar-sweetened beverages",
+     "country": "nigeria",
+     "granularity": "monthly",
+     "since": "2024-01-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.8,
+    "sample": "{\"points\": [{\"period\": \"2024-01-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-02-01\", \"articles\": 3, \"critical\": 3, \"negative\": 2, \"positive\": 1, \"mean_priority\": 7.33, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-03-01\", \"articles\": 3, \"critical\": 3, \"negative\": 2, \"positive\": 1, \"mean_priority\": 7.67, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-04-01\", \"articles\": 1, \"critical\": 1, \"negative\": 1, \"positive\": 0, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-05-01\", \"articles\": 3, \"critical\": 3, \"negative\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "How many pooled estimates exist for incident diabetes by tier?",
+    "args": {
+     "claim": "sugar-sweetened beverage intake and incident type 2 diabetes meta-analysis",
+     "limit": 40,
+     "read": true
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 27.7,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 121, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 138, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 3258, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 105, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"availabl"
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "Is the patent lane truly empty?",
+    "args": {
+     "claim": "sugar reduction beverage reformulation"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.2,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"United States\", \"papers\": 4705}, {\"country\": \"China\", \"papers\": 1777}, {\"country\": \"United Kingdom\", \"papers\": 1497}, {\"country\": \"Australia\", \"papers\": 1138}, {\"country\": \"Spain\", \"papers\": 1003}, {\"country\": \"Brazil\", \"papers\": 970}, {\"country\": \"Japan\", \"papers\": 830}, {\"country\": \"Canada\", \"papers\": 610}, {\"country\": \"Germany\", \"papers\": 590}, {\"country\": \"Italy\", \"papers\": 575}, {\"country\": \"Netherlands\", \"papers\": 418}, {\"country\": \"France\", \"papers\": 412}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"row"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How does India compare on stance?",
+    "args": {
+     "term": "sugar-sweetened beverages",
+     "geo": "India",
+     "geo_mode": "from"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.3,
+    "sample": "{\"scope\": \"India\", \"geo_mode\": \"from\", \"phrases\": [\"sugar-sweetened beverages\", \"sugar-sweetened drinks\", \"sugar-sweetened soft drinks\", \"sugar-sweetened beverage consumption\"], \"points\": [{\"year\": 2020, \"total\": 3, \"orientation\": {\"descriptive\": 1, \"promising\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 1, \"positive_pct\": 33.3, \"contested_pct\": 33.3}, {\"year\": 2022, \"total\": 9, \"orientation\": {\"descriptive\": 4, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 11.1}, {\"year\": 2023, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1,"
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "Does research move with taxation news?",
+    "args": {
+     "terms": [
+      "sugar-sweetened beverages",
+      "sugar tax"
+     ],
+     "granularity": "monthly",
+     "since": "2024-01-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.3,
+    "sample": "{\"terms\": [\"sugar-sweetened beverages\", \"sugar tax\"], \"rows\": [{\"term\": \"sugar-sweetened beverages\", \"articles\": 612, \"share_pct\": 43.6, \"critical\": 448, \"direction\": \"rising\", \"growth\": 1.59, \"tone_ratio\": 0.92, \"vs_baseline\": 1.59, \"points\": [{\"period\": \"2024-01-01\", \"articles\": 25, \"critical\": 16, \"negative\": 10, \"positive\": 13, \"mean_priority\": 6.44, \"critical_pct\": 64.0, \"partial_period\": false}, {\"period\": \"2024-02-01\", \"articles\": 16, \"critical\": 14, \"negative\": 10, \"positive\": 6, \"mean_priority\": 7.0, \"critical_pct\": 87.5, \"partial_period\": false}, {\"period\": \"2024-03-01\", \"articles\": 29, \"critical\": 20, \"negative\": 19, \"positive\": 8, \"mean_priority\": 6.76, \"critical_pct\": 69.0, \"par"
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "What is the journal-country count for India?",
+    "args": {
+     "claim": "sugar-sweetened beverage consumption",
+     "country": "India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.3,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"United States\", \"papers\": 1991}, {\"country\": \"China\", \"papers\": 1983}, {\"country\": \"United Kingdom\", \"papers\": 522}, {\"country\": \"Japan\", \"papers\": 439}, {\"country\": \"India\", \"papers\": 421}, {\"country\": \"Germany\", \"papers\": 418}, {\"country\": \"Australia\", \"papers\": 401}, {\"country\": \"Brazil\", \"papers\": 308}, {\"country\": \"Spain\", \"papers\": 275}, {\"country\": \"Canada\", \"papers\": 262}, {\"country\": \"France\", \"papers\": 262}, {\"country\": \"Italy\", \"papers\": 220}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"co"
+   },
+   {
+    "id": "f7",
+    "feature": "research.radar",
+    "question": "What has changed since 2024?",
+    "args": {
+     "topic": "sugar-sweetened beverages type 2 diabetes",
+     "since_year": 2024
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.7,
+    "sample": "{\"new_work\": [{\"title\": \"Global burden of high sugar-sweetened beverage consumption among young adults\", \"year\": 2025, \"venue\": \"Diabetology & Metabolic Syndrome\", \"cited_by\": 10, \"orientation\": \"descriptive\", \"url\": \"https://doi.org/10.1186/s13098-025-01845-y\"}, {\"title\": \"Combination of sugar-sweetened beverage consumption, screen-based sedentary time, and sleep duration and their association with South Korean adolescents' mental health\", \"year\": 2024, \"venue\": \"Frontiers in Public Health\", \"cited_by\": 7, \"orientation\": \"problem_identifying\", \"url\": \"https://doi.org/10.3389/fpubh.2023.1293505\"}, {\"title\": \"Association of sugar-sweetened beverage consumption and sleep quality with anxiety s"
+   }
+  ],
+  "followups_ok": 7,
+  "numbers": {
+   "total": 371,
+   "traced": 367,
+   "derived": 18,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 8,
+   "found_in_corpus": 8,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 96,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "map": 5,
+   "forecast": 5,
+   "dimensions": 5,
+   "crossdomain": 5,
+   "integrity": 5,
+   "article": 5
+  },
+  "deep": {
+   "maps": [
+    {
+     "title": "Lane 1: first-author affiliation country (top 12)",
+     "points": 12,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    },
+    {
+     "title": "Lane 3: country news articles are about (top 15)",
+     "points": 15,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    }
+   ],
+   "forecasts": [
+    {
+     "title": "Research records with an SSB phrase in the title: observed and no-change projection",
+     "source": "call:analysis.scenarios#1",
+     "periods": 3,
+     "traced_share": 1.0,
+     "bounds": true,
+     "method": true
+    }
+   ],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "forecast",
+    "geography",
+    "source mix",
+    "time"
+   ],
+   "corpora_traced": [
+    "compose",
+    "health",
+    "news",
+    "patents",
+    "research",
+    "system"
+   ],
+   "connecting_sentences": 110,
+   "manifest_error": "",
+   "html_bytes": 76295,
+   "article": {
+    "present": true,
+    "sections_found": 7,
+    "in_order": true,
+    "words": 3122,
+    "abstract_words": 274,
+    "results_numbers": 111,
+    "results_tagged": 111
+   }
+  },
+  "render": {
+   "rendered_views": 10,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 96870,
+   "manifest_charts": 10
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 2772,
+  "charts": [
+   {
+    "id": "chart-evidence",
+    "title": "Published association estimates",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Imamura et al. 2015, adiposity-adjusted",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     },
+     {
+      "name": "Greenwood et al. 2014",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "yearly_monthly_series.csv",
+    "how": "none",
+    "rows": 1,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_tables_by_lane.csv",
+    "how": "none",
+    "rows": 1,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "none",
+    "rows": 1,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 20,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "10.1136 — - Imamura, F., O’Connor, L., Ye, Z., Mursu, J., Hayashino, Y., Bhupathiraju, S. N., & Foro",
+    "10.1017 — - Greenwood, D. C., Threapleton, D. E., Evans, C. E. L., Cleghorn, C. L., Nykjaer, C., Woo"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 234,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "map": 0,
+   "forecast": 1,
+   "dimensions": 1,
+   "crossdomain": 1,
+   "integrity": 5,
+   "article": 2
+  },
+  "deep": {
+   "maps": [],
+   "forecasts": [],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "evidence magnitude"
+   ],
+   "corpora_traced": [],
+   "connecting_sentences": 0,
+   "manifest_error": "",
+   "html_bytes": 28546,
+   "article": {
+    "present": true,
+    "sections_found": 7,
+    "in_order": true,
+    "words": 1624,
+    "abstract_words": 178,
+    "results_numbers": 8,
+    "results_tagged": 8
+   }
+  },
+  "render": {
+   "rendered_views": 1,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 32429,
+   "manifest_charts": 1
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 4174,
+  "charts": [
+   {
+    "id": "research-time",
+    "title": "Annual title-matched research records",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Prism research index",
+      "how": "call",
+      "points": 26,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "news-time",
+    "title": "News trend landmarks",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Monthly news mentions",
+      "how": "call",
+      "points": 8,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "effect-size",
+    "title": "Reported review effect estimates",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Reported RR",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "composition",
+    "title": "Typed subject literature framing",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Orientation",
+      "how": "call",
+      "points": 7,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "annual_research.csv",
+    "how": "call",
+    "rows": 26,
+    "numeric_cells": 26,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_monthly_landmarks.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "countries_by_lane.csv",
+    "how": "call",
+    "rows": 29,
+    "numeric_cells": 26,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 0,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 156,
+   "traced": 156,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 242,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [
+   "chart 'News trend landmarks' values match a different call of the cited feature than #n",
+   "declared calls that were never made: ['research.evidence; research.counter_evidence', 'system.status; system.freshness', 'analysis.history; system.status']"
+  ],
+  "ceiling": {
+   "chart": 1,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 3,
+   "accuracy": 5,
+   "map": 5,
+   "forecast": 5,
+   "dimensions": 5,
+   "crossdomain": 5,
+   "integrity": 5,
+   "article": 5
+  },
+  "deep": {
+   "maps": [
+    {
+     "title": "First-author affiliation records by country",
+     "points": 12,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    }
+   ],
+   "forecasts": [
+    {
+     "title": "Conditional projection of annual title-matched records",
+     "source": "call:analysis.scenarios#1",
+     "periods": 3,
+     "traced_share": 1.0,
+     "bounds": true,
+     "method": true
+    }
+   ],
+   "dimensions": [
+    "composition",
+    "evidence magnitude",
+    "forecast",
+    "geography",
+    "source mix",
+    "time"
+   ],
+   "corpora_traced": [
+    "health",
+    "news",
+    "patents",
+    "research",
+    "system"
+   ],
+   "connecting_sentences": 53,
+   "manifest_error": "",
+   "html_bytes": 53280,
+   "article": {
+    "present": true,
+    "sections_found": 7,
+    "in_order": true,
+    "words": 2238,
+    "abstract_words": 222,
+    "results_numbers": 52,
+    "results_tagged": 52
+   }
+  },
+  "render": {
+   "rendered_views": 6,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 58309,
+   "manifest_charts": 6
+  }
+ }
+}

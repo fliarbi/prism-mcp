@@ -1,0 +1,693 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 984,
+  "charts": [
+   {
+    "id": "antiamyloid-effect",
+    "title": "Relative slowing of decline in pivotal anti-amyloid trials (percent vs placebo)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Aducanumab EMERGE, CDR-SB (high dose)",
+      "how": "estimate",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Lecanemab Clarity AD, CDR-SB",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Donanemab TRAILBLAZER-ALZ 2, iADRS (low/medium tau)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "effect_sizes.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which 2025-2026 papers drive the rise in anti-amyloid research, with citations?",
+    "args": {
+     "term": "Alzheimer's anti-amyloid antibody",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 2, \"papers\": [{\"id\": \"W4406081077\", \"title\": \"Challenges of Anti-Amyloid Immunotherapy for the Treatment of Alzheimer’s Disease\", \"authors\": [\"Gustavo Alves Andrade dos Santos\"], \"venue\": \"Archives of Pharmacy & Pharmacology Research\", \"year\": 2025, \"date\": \"2025-01-03\", \"doi\": \"10.33552/appr.2025.04.000595\", \"url\": \"https://doi.org/10.33552/appr.2025.04.000595\", \"cited_by\": 0, \"orientation\": \"cautionary\", \"contribution\": \"position\", \"stance_score\": -0.2, \"topics\": [\"Alzh"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has critical orientation toward anti-amyloid therapy changed by year?",
+    "args": {
+     "term": "lecanemab donanemab"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"lecanemab and donanemab\", \"anti-amyloid monoclonal antibodies\", \"disease-modifying therapies for alzheimer's\"], \"points\": [{\"year\": 2020, \"total\": 1, \"orientation\": {\"cautionary\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2022, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2023, \"total\": 5, \"orientation\": {\"promising\": 2, \"cautionary\": 1}, \"stance_score\": null, \"positive\": 2, \"contested\": 1, \"positive_pct\": 40.0, \"contested_pct\": 20.0}, {\"year\": 2024, \"total\": 6"
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "Which topics are under-covered (e.g. tau therapies, non-amyloid targets, ARIA management)?",
+    "args": {
+     "term": "Alzheimer's disease drug"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': \"...heimer's disease drug\"}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=\"Alzheimer's disease drug\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What is the monthly news volume on Alzheimer's drugs since 2023?",
+    "args": {
+     "term": "Alzheimer's drug"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 29, \"critical\": 28, \"negative\": 8, \"positive\": 21, \"mean_priority\": 7.69, \"critical_pct\": 96.6, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 19, \"critical\": 19, \"negative\": 4, \"positive\": 15, \"mean_priority\": 7.74, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 9, \"critical\": 9, \"negative\": 4, \"positive\": 5, \"mean_priority\": 7.89, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 6, \"critical\": 6, \"negative\": 2, \"positive\": 4, \"mean_priority\": 7.67, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 8, \"critical\": 8, "
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news sentiment differ between lecanemab and semaglutide coverage?",
+    "args": {
+     "terms": [
+      "lecanemab",
+      "semaglutide Alzheimer's"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.4,
+    "sample": "{\"terms\": [\"lecanemab\", \"semaglutide Alzheimer's\"], \"rows\": [{\"term\": \"lecanemab\", \"articles\": 2383, \"share_pct\": 100.0, \"critical\": 2271, \"direction\": \"flat\", \"growth\": 1.01, \"tone_ratio\": 0.15, \"vs_baseline\": 0.26, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 75, \"critical\": 72, \"negative\": 9, \"positive\": 66, \"mean_priority\": 7.33, \"critical_pct\": 96.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 132, \"critical\": 132, \"negative\": 22, \"positive\": 109, \"mean_priority\": 7.65, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 161, \"critical\": 156, \"negative\": 32, \"positive\": 124, \"mean_priority\": 7.48, \"critical_pct\": 96.9, \"partial_per"
+   },
+   {
+    "id": "f6",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence exists on clinical meaningfulness of the antibody benefit?",
+    "args": {
+     "term": "lecanemab clinical meaningfulness"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...inical meaningfulness'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='lecanemab clinical meaningfulness', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.geography",
+    "question": "Which countries lead blood-biomarker research?",
+    "args": {
+     "term": "plasma p-tau217"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'plasma p-tau217'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='plasma p-tau217', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 32,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 17,
+   "untagged_examples": [
+    "+13 — The change from the 2021 aducanumab figure to lecanemab is +5 percentage points, a ratio o",
+    "1.6 — The change from the 2021 aducanumab figure to lecanemab is +5 percentage points, a ratio o",
+    "0% — Baseline: placebo decline over the trial period, set to 0% slowing. All values are relativ",
+    "0% — | Placebo | any | 0% | 0 | definition |",
+    "1.3 — Donanemab is 1.3 times the lecanemab figure (35/27), but the endpoints and populations dif",
+    "35 — Donanemab is 1.3 times the lecanemab figure (35/27), but the endpoints and populations dif",
+    "27% — | [r1] | 2023, NEJM, peer-reviewed RCT | 27% slowing on CDR-SB; ARIA-E 12.6% | not reprodu",
+    "12.6% — | [r1] | 2023, NEJM, peer-reviewed RCT | 27% slowing on CDR-SB; ARIA-E 12.6% | not reprodu"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1027,
+  "charts": [
+   {
+    "id": "papers_trend",
+    "title": "Annual papers on Alzheimer's disease treatment (endpoints only)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "papers_by_year.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "window_compare.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "framing.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which anti-amyloid antibody papers and trials drove the recent growth?",
+    "args": {
+     "term": "lecanemab donanemab amyloid antibody",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 32.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 21, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4415045389\", \"title\": \"Anti-amyloid monoclonal antibody therapies in Alzheimer’s disease – a scoping review\", \"authors\": [\"Shahd Elamin\", \"Amar Al Shibli\", \"Abdullah Shaito\", \"Mazyona Al-Maadhadi\", \"Monica Zolezzi\", \"Shona Pedersen\"], \"venue\": \"Neuroscience\", \"year\": 2025, \"date\": \"2025-10-10\", \"doi\": \"10.1016/j.neuroscience.2025.10.011\", \"url\": \"https://doi.org/10.1016/j.neuroscience.2025.10.011\", \"cited_by\": 1, \"orientation\": \"problem_identifying"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What does the critical literature say about the safety of anti-amyloid therapy?",
+    "args": {
+     "term": "anti-amyloid antibody ARIA safety"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... antibody ARIA safety'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='anti-amyloid antibody ARIA safety', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What is the year-by-year paper count since 2017?",
+    "args": {
+     "term": "alzheimer disease treatment",
+     "from": 2017
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...eatment', 'from': 2017}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='alzheimer disease treatment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has stance on tau- and amyloid-targeted therapy shifted?",
+    "args": {
+     "term": "alzheimer disease treatment"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"alzheimer disease treatment\", \"therapeutic strategies for alzheimer's disease\", \"disease-modifying therapies for alzheimer's\", \"amyloid-targeting therapies\"], \"points\": [{\"year\": 2017, \"total\": 1, \"orientation\": {\"breakthrough\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2019, \"total\": 1, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2020, \"total\": 2, \"orientation\": {\"promising\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 1, \"positive_pct\": 50.0, \""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What drives the 2026 news peak?",
+    "args": {
+     "query": "Alzheimer's drug",
+     "from": "2025-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ..., 'from': '2025-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=\"Alzheimer's drug\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Which countries lead the research?",
+    "args": {
+     "term": "alzheimer disease treatment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mer disease treatment'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='alzheimer disease treatment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.sentiment",
+    "question": "How negative is news coverage of Alzheimer's drugs?",
+    "args": {
+     "query": "Alzheimer's drug"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': \"Alzheimer's drug\"}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=\"Alzheimer's drug\", input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 61,
+   "traced": 61,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 134,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 744,
+  "charts": [
+   {
+    "id": "trial-relative-slowing",
+    "title": "Relative slowing of decline in pivotal antibody trials",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Lecanemab, 18-month primary endpoint",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Donanemab, low/medium tau population, 76 weeks",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Donanemab, combined population, 76 weeks",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "trial_results.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drove the recent year-by-year rise in Alzheimer's drug research?",
+    "args": {
+     "term": "Alzheimer disease drug research",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'Alzheimer disease drug research' — try expand=true, or a broader phrase",
+    "seconds": 5.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How have research stances on amyloid, tau, and other targets changed by year?",
+    "args": {
+     "term": "Alzheimer disease drug targets",
+     "window": "recent years"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='recent years', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "What topics are under-covered relative to clinical need?",
+    "args": {
+     "term": "Alzheimer disease drug research coverage gaps"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...esearch coverage gaps'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Alzheimer disease drug research coverage gaps', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has Alzheimer’s drug news coverage changed over time?",
+    "args": {
+     "term": "Alzheimer disease drug research"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'Alzheimer disease drug research' in this window",
+    "seconds": 27.8,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How do recent news frames compare across amyloid and non-amyloid treatments?",
+    "args": {
+     "term": "Alzheimer disease amyloid non-amyloid treatments"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...on-amyloid treatments'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Alzheimer disease amyloid non-amyloid treatments', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 13,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "18 — - **2022, New England Journal of Medicine, tier: phase three randomized trial, identifier ",
+    "35% — - **2023, JAMA, tier: phase three randomized trial, identifier [r2].** Supports donanemab’",
+    "22% — - **2023, JAMA, tier: phase three randomized trial, identifier [r2].** Supports donanemab’"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 785,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Indexed Alzheimer’s treatment research trend",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research trend",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research-trend.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which clinical-stage Alzheimer’s drug candidates and trial outcomes appeared by year?",
+    "args": {
+     "term": "Alzheimer disease drug clinical trial",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'Alzheimer disease drug clinical trial' — try expand=true, or a broader phrase",
+    "seconds": 16.8,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers drove the rise in indexed research volume after 2022?",
+    "args": {
+     "term": "Alzheimer disease treatment",
+     "orientation": "breakthrough",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W2997489246\", \"title\": \"[Amyloid Positron Emission Tomography in the Therapeutic Strategies for Alzheimer's Disease].\", \"authors\": [\"Kenji Ishii\"], \"venue\": \"the health literature index\", \"year\": 2017, \"date\": \"2017-07-01\", \"doi\": null, \"url\": null, \"cited_by\": 1, \"orientation\": \"breakthrough\", \"contribution\": \"methodological\", \"stance_score\": 0.9, \"topics\": [\"Alzheimer\"], \"institutions\": [\"Tokyo Metropolitan Institute of Gerontology\"]}], \"facets\": {\"orientation\": [{\"ori"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How did research framing change by year and treatment mechanism?",
+    "args": {
+     "topic": "Alzheimer disease treatment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...mer disease treatment'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Alzheimer disease treatment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which Alzheimer’s treatment topics receive little news coverage using ordinary news terms?",
+    "args": {
+     "topic": "Alzheimer treatment research"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...er treatment research'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Alzheimer treatment research', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What recent news stories explain the 2026 news-series peak?",
+    "args": {
+     "topic": "Alzheimer drug research"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...zheimer drug research'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Alzheimer drug research', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 19,
+   "traced": 19,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 119,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

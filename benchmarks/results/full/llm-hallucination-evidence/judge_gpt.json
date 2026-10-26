@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 0,
+    "chart": 5,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 5,
+    "refs": 5,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 5,
+    "facets": 4
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 0,
+    "chart": 5,
+    "drilldown": 1,
+    "export": 2,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The traced annual series, dates, quantified 3.65× change and censoring are correct, but it is broad research volume rather than fabrication frequency.",
+    "comparison": "The research and news counts use different windows and corpus types, so the ratio is not a valid same-scale comparison.",
+    "chart": "The chart traces all annual points, gives source, unit and window, and clearly says it measures broad subject research volume.",
+    "drilldown": "Breakdowns are present, but none reaches relevant rate-measuring items and the proposed follow-up calls returned no data.",
+    "export": "The annual CSV traces to the series and has provenance, but the needed data is only a broad volume table, not a fabrication-rate export.",
+    "repro": "Calls and arguments are listed; traced chart and prose figures are reproducible, with the broad-volume limitation made explicit.",
+    "refs": "All three DOIs resolve, metadata matches, and each reference is tied to an explanation of why it does not support a rate.",
+    "accuracy": "It consistently distinguishes corpus coverage and retrieval tallies from a fabrication rate and catches that the evidence is unrelated.",
+    "limits": "Specific windows, censoring, lane and matching limits are discussed, but coverage caveats are not fully grounded in the supplied record.",
+    "verdict": "It gives a bounded answer, decision, confidence rationale and evidence threshold that would change the conclusion.",
+    "facets": "It grounds the absence of a rate and addresses broad coverage and research/news mismatch, but lacks grounded model/task rates and other implied facets."
+   },
+   "B": {
+    "trend": "The research series is correct, but the news peak/last point and late-versus-early figures are not a complete, correctly read traced trend; the stated last point conflicts with the supplied trend summary.",
+    "comparison": "The proposed GPT rate contrast is memory-based, while the research/news figures are not a valid same-scale comparison.",
+    "chart": "The annual research chart traces and is properly labelled as field volume, not fabrication frequency.",
+    "drilldown": "The script ceiling is 3, but only one of six follow-ups executed with on-topic data and the breakdown does not reach identified rate studies.",
+    "export": "The corpus CSV has mismatched window provenance and omits per-row window fields; no rate dataset is provided.",
+    "repro": "Nearly all numeric claims trace, and calls are listed, but some news trend statements mismatch the reference record and memory estimates are not reproducible.",
+    "refs": "Identifiers resolve, but entries are not all tied to rate claims with verified supporting quotes; the cited works here are unrelated Prism results.",
+    "accuracy": "It correctly states that Prism did not measure the rate, but memory estimates and an unsupported GPT-3.5/GPT-4 contrast invite a measured-sounding answer.",
+    "limits": "It states the lane, windows, censoring, coverage and matching limits near the relevant figures, and labels memory estimates.",
+    "verdict": "It gives a decision and confidence, but its default unreliability advice is stronger than the supplied evidence and the contrary evidence is not meaningfully evaluated.",
+    "facets": "It covers the grounded no-rate result, corpus counts, phrase audit and broad research/news limits, while explicitly identifying unavailable rate facets."
+   },
+   "C": {
+    "trend": "No sourced series is provided; the empty chart does not establish a trend.",
+    "comparison": "No measured comparison is given.",
+    "chart": "The chart has no plotted values.",
+    "drilldown": "No traced breakdown or executed follow-up is supplied.",
+    "export": "Only a header-only, unknown-coverage CSV is provided.",
+    "repro": "No calls or measurements are listed; the answer is explicitly memory-limited.",
+    "refs": "No references are supplied, appropriate to its stated inability to verify sources but insufficient for this pattern.",
+    "accuracy": "It avoids unsupported rate claims and correctly says it cannot measure one.",
+    "limits": "It candidly states the lack of sources and measurement, but does not discuss the reference record's specific windows, lane or coverage.",
+    "verdict": "It gives a practical decision and confidence, but does not answer with a measured rate or state the strongest evidence-based change condition in sufficient detail.",
+    "facets": "It covers the grounded no-rate conclusion, but provides no grounded corpus or trend values."
+   },
+   "D": {
+    "trend": "The chart is memory-based and the listed values are unverified; the ceiling also limits trend to 2.",
+    "comparison": "The within-study comparisons are memory figures and cannot be checked against the supplied record.",
+    "chart": "The chart is an unverified memory chart, which earns only the estimate ceiling.",
+    "drilldown": "No traced layers or executed follow-ups are provided.",
+    "export": "The CSV is labelled partial but lacks resolvable provenance, and the script ceiling is 1.",
+    "repro": "No Prism calls or reproducible source record; 17 numeric claims are untagged and one invented-looking verdict figure is flagged.",
+    "refs": "At least one reference lacks a DOI, and the script only establishes that listed DOIs resolve, not that they support the claimed rates with verified quotes.",
+    "accuracy": "It presents numerous unverified rates as factual and includes the explicitly flagged untagged 5% figure.",
+    "limits": "It labels figures as from memory and notes varying tasks and missing 2026 coverage, but its specifics are not verified and limits do not cure unsupported numbers.",
+    "verdict": "The verdict relies on unverified rates and the untagged 5% threshold, exceeding the script's zero ceiling.",
+    "facets": "The answer's rates and incident claims are ungrounded, and it does not provide grounded corpus or trend facets."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "The news-series trend statement gives a last point of 1 for 2026-05 and presents the series as rising, while the supplied trend summary reports first 10, last 1, direction rising; this is internally inconsistent with the endpoint direction and the series is incomplete in the reference excerpt.",
+    "Memory-based rate ranges and cross-model contrast are unverified and do not establish a general frequency."
+   ],
+   "C": [],
+   "D": [
+    "Presents several unverified study-specific rates as facts despite claiming they are from memory.",
+    "The verdict includes an untagged 5% threshold, flagged by the script as invented-looking.",
+    "Claims peer-reviewed evidence, incident counts and a tier-weighted tally without reproducible calls or verified supporting citations.",
+    "Reference r4 has no DOI, and several referenced incident/news claims lack resolving item URLs."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision-grade response because it refuses to turn broad subject-corpus counts into a fabrication rate, and it clearly states what evidence would be needed to answer the question. B adds memory-based rate estimates that are labelled honestly, but they remain unverified and its news-trend reading is inconsistent; C is cautious but offers little usable measurement. D appears most numerically decisive, yet its unsupported specifics make it the least reliable basis for a decision."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 0,
+   "chart": 5,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 5,
+   "refs": 5,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 5,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 0,
+   "chart": 5,
+   "drilldown": 1,
+   "export": 2,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

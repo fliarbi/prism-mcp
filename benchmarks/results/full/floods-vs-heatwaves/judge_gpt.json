@@ -1,0 +1,180 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 2,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly series and seasonal peaks, but does not correctly quantify the tool’s trend and leaves its reported directions unresolved; the two-period split is useful but not a full reconciliation.",
+    "comparison": "Same-window totals, ratios and deltas recompute, with the overlap caveat; tone comparisons rely on an explicitly uncertain interpretation of tone_ratio.",
+    "chart": "All plotted monthly points trace to the call, with unit, window, source and a claim-specific caption; it shows seasonal patterns and the January spike.",
+    "drilldown": "Provides term, month and tone breakdowns and six specific proposed calls, but only two executed follow-ups succeeded and no item-level stories are exposed.",
+    "export": "Both needed CSVs trace, include provenance and coverage metadata, are referenced, and retain row identifiers and the required monthly and summary fields.",
+    "repro": "The source call and args are listed, but derived year-over-year calculations and other numbers are not fully regenerable from the listed recipe; only 74/81 numeric claims trace.",
+    "accuracy": "The totals and monthly values are sound, but the coverage calculation is wrong: 255,586,690/238,603,270 is about 107.1%, yet the report presents it as a row-floor result without a recorded source; it also asserts all months are non-partial despite the May 2026 value being censored.",
+    "limits": "Places relevant window, censoring, lane, matching and overlap limits near the findings; the unsupported coverage metadata and incomplete treatment of the censored May value weaken this.",
+    "verdict": "Direct and decision-oriented with confidence, conditions and contrary evidence, but the ‘steady’ characterization conflicts with pronounced seasonal variation and the tone claim depends on an undefined ratio.",
+    "facets": "Covers volume, seasonality, tone fields, overlap risk and news-lane limits, but lacks grounded source-level evidence and resolved overlap."
+   },
+   "B": {
+    "trend": "No measured series; the empty estimate chart does not establish a trend.",
+    "comparison": "No measured same-window comparison or grounded values.",
+    "chart": "The empty chart is honestly labeled as estimate and communicates no measurement.",
+    "drilldown": "Names follow-up questions and proposed calls, but none executed and there are no breakdown results.",
+    "export": "No CSV export.",
+    "repro": "No measured numeric claims or replayable calls; the deliverable is transparent that it cannot measure.",
+    "accuracy": "Makes no unsupported measured claims and does not contradict the record.",
+    "limits": "Clearly states that no dataset, window or matching method is available, but cannot provide source-specific measurement caveats.",
+    "verdict": "Gives a clear decision, confidence and conditions for changing it; the non-measurement conclusion is supported.",
+    "facets": "Explicitly identifies most facets as unmeasured, but supplies no grounded findings."
+   },
+   "C": {
+    "trend": "Seasonal index is explicitly an estimate from memory, earning only the estimate anchor.",
+    "comparison": "Ordinal comparison is a stated memory prior without measured counts.",
+    "chart": "Illustrative chart is labeled estimate and therefore earns the estimate anchor only.",
+    "drilldown": "Breakdown layers and calls are proposed, but none are traced or executed.",
+    "export": "CSV is explicitly an estimate, with no measured export.",
+    "repro": "Four numeric chart values are untagged by the script and no source call or regeneration recipe exists.",
+    "accuracy": "The claim that combined_articles would be a deduplicated count conflicts with the record, where it is exactly the sum of the three term counts; the flood-first ordering is also an unsupported prior, not a measured finding.",
+    "limits": "Clearly distinguishes estimates from data and states that no real measurement or news-lane coverage was queried.",
+    "verdict": "States a cautious answer and decision, but the answer rests on an unsupported ordinal prior and lacks a meaningful condition tied to evidence.",
+    "facets": "Identifies missing measurement facets, but the illustrative seasonal shape and ranking are not grounded."
+   },
+   "D": {
+    "trend": "Traced monthly points and identifies peaks, but does not quantify the change over the stated window; the prose also says May is censored while the chart omits May and claims to stop at April.",
+    "comparison": "Reported totals and same-window ratios recompute, and the overlap and non-deduplication caveat is carried.",
+    "chart": "The chart is sourced and supports a claim, but its stated window ends at May 1 while it plots only through April; the caption and support text also claim May 2026 rises, though May is absent from the chart.",
+    "drilldown": "Lists possible layers and five proposed calls, but no follow-up executed successfully and no item-level breakdown is provided.",
+    "export": "Exported CSV includes May although the prose says it contains values only through April; its coverage is marked partial and required source/window/unit provenance is incomplete.",
+    "repro": "The primary call and args are listed and the 19/19 numeric claims trace; the prose avoids unsupported derived trend rates.",
+    "accuracy": "Reported totals and caveats are accurate, but the chart and export descriptions conflict about May and the plotted window; it also states coverage metadata not present in the supplied reference record.",
+    "limits": "Explains the window, censoring, lane, coverage caveat, term matching, overlap and tone-definition limits alongside the findings.",
+    "verdict": "Clear decision, confidence and conditions, but it omits the strong seasonal patterns visible in its own monthly values and does not quantify the trend.",
+    "facets": "Covers the three hazards, monthly seasonality, relative totals, tone-field limitations and overlap caveat, but does not provide a grounded source-level breakdown."
+   }
+  },
+  "errors": {
+   "A": [
+    "Coverage row-count and expected-count figures are not in the reference record and are presented as measured.",
+    "States all 24 months are non-partial despite the censored newest month."
+   ],
+   "B": [],
+   "C": [
+    "Defines combined_articles as a deduplicated count, contrary to the reference record’s sum of per-term totals.",
+    "Presents flood-first coverage ordering as an estimate, unsupported by the supplied measurement record."
+   ],
+   "D": [
+    "Claims the export ends at April although it includes May values.",
+    "Chart window ends at 2026-05-01 but omits the available April-to-May data, while its caption/support text refers to May.",
+    "Coverage metadata about strict index partition reads and historical row floors is absent from the supplied reference record."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the most decision-ready because it combines traced seasonal data, quantified same-window comparisons, complete exports and explicit caveats, though its trend reconciliation and unsupported coverage figures need correction. D is strong on the measured totals and limits but has inconsistent May handling; B is honest but offers no measurements, while C adds unsupported estimates."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 2,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

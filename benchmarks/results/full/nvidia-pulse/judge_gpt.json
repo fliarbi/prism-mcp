@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured time series or source.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart supplied.",
+    "drilldown": "Follow-up calls are generic placeholders and did not return data.",
+    "export": "No CSV or provenance export.",
+    "repro": "No source calls were executed or recorded.",
+    "refs": "No references supplied.",
+    "accuracy": "The refusal makes no unsupported measured claims.",
+    "limits": "Clearly states that corpus, window, lane, matching and censoring are unavailable, though the actual limits of a known corpus are not applicable here.",
+    "verdict": "Gives a decision, confidence and conditions, but cannot answer the substantive question or acknowledge contrary evidence.",
+    "facets": "Explicitly identifies the unmeasured facets, but supplies no grounded values."
+   },
+   "B": {
+    "trend": "The only plotted series is explicitly an estimate of market-cap milestones, not coverage volume.",
+    "comparison": "No measured contrast on a common scale.",
+    "chart": "Estimate chart earns the honest estimate anchor only.",
+    "drilldown": "The outline is memory-based and calls did not yield adequate on-topic results.",
+    "export": "CSV is explicitly estimated and does not measure a requested facet.",
+    "repro": "No numeric claims trace to executed calls or named sources.",
+    "refs": "No sources cited.",
+    "accuracy": "Estimates are labelled, but the answer does not ground the requested coverage findings.",
+    "limits": "Mentions missing corpus and window, but limits are generic and some claims are framed as directional expectations.",
+    "verdict": "Provides a cautious scoping recommendation, but no measured answer or contrary evidence.",
+    "facets": "Most requested facets are estimates or unmeasured."
+   },
+   "C": {
+    "trend": "Complete traced monthly series; quantified first-to-last growth, CAGR, late/early ratio and peak, with censoring caveat.",
+    "comparison": "Tone ratio compared to a defined corpus baseline with exact delta and ratio; caveats are stated.",
+    "chart": "The traced volume chart has window, unit and source, but no separate chart for tone or other supported facets.",
+    "drilldown": "Multiple breakdown layers and item details are present, but calls lack execution results and identifiers for many rows.",
+    "export": "Monthly CSV is traced and referenced, but needed summary/breakdown exports and full provenance are incomplete.",
+    "repro": "Most figures trace, but one numeric claim fails and a declared call was never made; replay recipe is incomplete.",
+    "refs": "No resolvable source references for the surfaced headline or other relied-on documents.",
+    "accuracy": "Main measurements are consistent; the claims are bounded, with only minor limitations in headline and breakdown traceability.",
+    "limits": "Censoring, enrichment lag, match mode and coverage limits are mostly placed near figures, but the parameter ceiling is 3.",
+    "verdict": "Direct, supported answer with confidence and conditions; decision is stated, though contrary evidence is not strongly developed.",
+    "facets": "Covers volume, tone, themes, related organizations/people, places, publishers, headlines and implied facets with grounded values or no-data."
+   },
+   "D": {
+    "trend": "Traced full monthly volume and critical series, quantified growth and decisive points, and decomposed critical from total.",
+    "comparison": "Defined baseline and exact sentiment delta/ratio, with monthly context and caveats.",
+    "chart": "Both traced series are charted with units, window and source, and show the critical share decomposition.",
+    "drilldown": "Breakdown layers exist, but only two of six follow-ups executed successfully; no returned results are folded into the report.",
+    "export": "The monthly and country CSVs are useful and traced, but provenance is incomplete and needed breakdown tables are absent.",
+    "repro": "All numeric claims trace and the recorded call includes arguments and window; values and derived figures are reproducible.",
+    "refs": "No resolvable external references or linked news-item evidence in a reference list.",
+    "accuracy": "Measurements largely match the record and distinguish critical from negative; the in-line date correction and some inferred interpretations reduce polish.",
+    "limits": "Specific caveats are stated near results, but the script ceiling limits this parameter to 3.",
+    "verdict": "Answers directly with decision, confidence and conditions and acknowledges critical coverage; it overstates completeness and does not fully bound the interpretation by coverage limits.",
+    "facets": "Covers all named facets and implied overlap, seasonality, matching and news-versus-research limits."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "The market-cap milestones and listed themes, companies and places are explicitly estimates, not grounded findings about coverage.",
+    "The market-cap chart is a proxy, not a measured series of the quantity asked about."
+   ],
+   "C": [
+    "The report says the source panel is a recent sample and gives a surfaced headline, but the reference extract does not provide enough visible record here to independently verify its details; references are not resolvable from the deliverable.",
+    "One of 35 numeric claims did not trace according to the script; declared calls include an unmade call."
+   ],
+   "D": [
+    "The trend prose briefly says the series ends May 2025, then corrects it to May 2026 in the same sentence.",
+    "The verdict calls the window's counts complete, although the record describes measured ingest volumes and explicitly warns that calendar completion does not prove ingestion completeness."
+   ]
+  },
+  "best": "D",
+  "verdict": "D gives the strongest decision-ready account: it traces both total and critical volume, compares tone against a defined baseline, and distinguishes critical flags from negative polarity while covering themes, entities and places. C is close, but D provides a fuller traced trend decomposition and export; its main weaknesses are the claim of completeness and limited successful drill-downs."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

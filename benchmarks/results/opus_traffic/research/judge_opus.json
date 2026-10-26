@@ -1,0 +1,135 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 0,
+    "dimensions": 4,
+    "map": 4,
+    "forecast": 2,
+    "drilldown": 4,
+    "export": 0,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 5,
+    "integrity": 5,
+    "verdict": 4,
+    "crossdomain": 5,
+    "article": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "dimensions": 1,
+    "map": 1,
+    "forecast": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "integrity": 5,
+    "verdict": 0,
+    "crossdomain": 1,
+    "article": 3
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Both lanes are traced from c3, c5 and c4. Growth is quantified (+115%, +145%, CAGR 11.9%, peak 959 in 2026-04). The censored months from 2026-06 are excluded, not plotted, and the critical share is decomposed.",
+    "comparison": "India's studied share (8.8%) against its reported share (54.9%) gives a ratio of 6.2, which recomputes. Lanes are kept apart and lift 4.7 is read beside share 30.7%. Shares are computed from truncated top-N lists, though nulls are handled.",
+    "chart": "Script ceiling is 0: at least one counted chart did not trace.",
+    "dimensions": "Seven dimensions are present, but because the chart minimum failed, not every dimension rests on a chart scoring at least 3.",
+    "map": "Two traced lanes are mapped with placed_pct 63.3%, and India and comparators are present. The publication and patent lanes appear in a bar chart, not a map. The England row is merged into United Kingdom rather than flagged as an artefact.",
+    "forecast": "Script ceiling is 2. MAE, the baseline, sensitivity framing and observed_through are all stated, but the forecast traced at only 89%.",
+    "drilldown": "The layers run themes→subcategories, stance shares and key documents with DOIs, plus a news item with its id. There are 6 follow-ups and all executed ok, but none was folded back into the page.",
+    "export": "Script ceiling is 0: some CSV cells do not trace (for example rows in country_lanes).",
+    "repro": "332 of 335 numbers trace. Calls are declared with arguments, and the derived correlations recompute (the first-difference r is approximately 0).",
+    "refs": "All 15 DOIs resolve and quotes are mostly verbatim from the tool. Some author metadata looks recalled (for example r6), and one r1 quote is not in the tool's quote field.",
+    "accuracy": "No contradictions with the record. Minor issues: the gap is 145 days where 144 is correct, and the 18-month patent lag is attributed to c1, which does not state it.",
+    "limits": "Limits sit beside the numbers they bound: censoring, gap, top-N nulls, placed_pct, no-country patents, sensitivity bands that are not CIs, and title matching. The page says what would close each gap.",
+    "integrity": "10 of 10 views render with 0 console errors.",
+    "verdict": "All four fields are present, traced and bounded by the evidence's limits.",
+    "crossdomain": "All four corpora are used. Several connecting sentences link them (news growth against intersection count; India's news share against its studied share), and the mismatch is quantified and drives the decision.",
+    "article": "Seven sections in order, 3,045 words, Results 101 of 101 tagged, honest methods, and nulls reported (no disease-factor claims; tier-weighted 4 vs 5)."
+   },
+   "B": {
+    "trend": "No series; the page honestly reports that nothing was measured.",
+    "comparison": "Memory TomTom figures only; the studied-versus-reported mismatch is not measured.",
+    "chart": "Script ceiling is 1: all charts are memory or reference coding.",
+    "dimensions": "Only estimate or reference-coded charts.",
+    "map": "Map of the reference list coded from memory; script ceiling is 1.",
+    "forecast": "Explicitly not produced.",
+    "drilldown": "Memory breakdown, labelled; the follow-ups were not executable.",
+    "export": "Script ceiling is 0.",
+    "repro": "0 of 105 numbers trace.",
+    "refs": "12 of 12 DOIs found and claims are tied, but there are no verbatim quotes.",
+    "accuracy": "Recalled figures look plausible and are labelled for verification; nothing is fabricated as measured.",
+    "limits": "Thorough, specific statements of what is not measured, with what would close each gap.",
+    "integrity": "Renders cleanly.",
+    "verdict": "Script ceiling is 0: the verdict numbers are untraced.",
+    "crossdomain": "No corpora traced.",
+    "article": "Honest literature review; capped at the plain-setup ceiling of 3."
+   }
+  },
+  "errors": {
+   "A": [
+    "Gap from 2026-06-01 to 2026-10-23 is stated as 145 days (actually 144)",
+    "Patent lag of 18 months attributed to [c1], which does not state it",
+    "England journal-country row treated as United Kingdom without flagging the artefact"
+   ],
+   "B": [
+    "Effect sizes and TomTom values recalled from memory, not extracted (labelled for verification)"
+   ]
+  },
+  "best": "A",
+  "verdict": "A ran the database queries across all four corpora, so its trends, maps, forecast and article Results trace and are connected into a quantified studied-versus-reported argument. B was transparently honest but measured nothing: its numbers are recalled and its charts describe only its own reference list. For a researcher whose reviewers will check every number, A is the only usable deliverable, despite its untraced export cells and chart."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 0,
+   "dimensions": 4,
+   "map": 4,
+   "forecast": 2,
+   "drilldown": 4,
+   "export": 0,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 5,
+   "integrity": 5,
+   "verdict": 4,
+   "crossdomain": 5,
+   "article": 4
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "dimensions": 1,
+   "map": 1,
+   "forecast": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "integrity": 5,
+   "verdict": 0,
+   "crossdomain": 1,
+   "article": 3
+  }
+ },
+ "clamped": {}
+}

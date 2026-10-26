@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Names follow-up calls, but 0 of 4 executed.",
+    "export": "No CSV.",
+    "repro": "No numbers; honest about absence.",
+    "refs": "No news items, although the question needs them.",
+    "accuracy": "Empty deliverable with no contradictions, so 3 by rule.",
+    "limits": "States what is unknown only in generic terms.",
+    "verdict": "'Cannot determine' is an empty answer.",
+    "facets": "No facet answered."
+   },
+   "B": {
+    "trend": "Traced 24-month ratio series with window and censoring. Change quantified (-0.08, high 0.63, low 0.12, volume peak 697 in 2026-04). Not decomposed.",
+    "comparison": "0.36 vs a defined 0.58 baseline, delta and 0.62x recompute exactly. Launch vs regulation contrast not tested.",
+    "chart": "One fully traced ratio chart. No volume, critical-share or baseline overlay.",
+    "drilldown": "One traced layer and one headline without a URL. Only 1 of 5 follow-ups ran ok.",
+    "export": "One traced CSV with provenance, but no summary table. The prose reference is a leftover instruction line.",
+    "repro": "27 of 28 numbers traced; call listed with args and window.",
+    "refs": "Headline has no URL; capped at 1.",
+    "accuracy": "Values match the reference. Does not catch Colombia or explain what 'critical' means.",
+    "limits": "Gives the 144-day gap, censoring, match mode, sample basis of concentration and placed_pct. Mostly in the Method section.",
+    "verdict": "Direct answer, decision, confidence and trigger, consistent with its data. Contrary months are not named in the verdict.",
+    "facets": "Most facets grounded. Critical share and launch/regulation spikes not addressed."
+   },
+   "C": {
+    "trend": "Empty chart; no direction asserted.",
+    "comparison": "Qualitative estimate from memory only.",
+    "chart": "Chart with zero points does not count as a chart.",
+    "drilldown": "Breakdown layers named but none from data. 3 of 7 follow-ups ran ok.",
+    "export": "Header-only template.",
+    "repro": "Memory estimate, labelled as such.",
+    "refs": "None.",
+    "accuracy": "Its memory guess is consistent with the reference and nothing is fabricated.",
+    "limits": "Specific about what is unmeasured and about fruit/homonym matching.",
+    "verdict": "Low-confidence memory answer with a decision and a trigger.",
+    "facets": "Facets answered from memory or left as unmeasured."
+   },
+   "D": {
+    "trend": "Two traced series: critical_pct and ratio. CAGR 25.5%, late/early 1.47 and flat critical series quoted correctly. The first-six-month average is 0.45, not 0.42 as stated (est.). One caption is garbled.",
+    "comparison": "Baseline defined, delta and ratio exact. Notes the baseline window is unstated and that critical share has no baseline.",
+    "chart": "Two traced charts that decompose tone (critical vs polarity). No volume chart and no baseline line; one caption garbled.",
+    "drilldown": "Two traced layers (themes to subcategories; headlines with URLs). Only 2 of 6 follow-ups ran ok.",
+    "export": "Monthly and summary CSVs with provenance. coverage=full is questionable given censoring and 48% placement.",
+    "repro": "104 of 106 numbers traced; derived values marked est. One slip (0.42).",
+    "refs": "Headlines carry date, publisher and URL; capped at 2.",
+    "accuracy": "Reads critical as distinct from negative, flags Colombia and the enrichment lag. One averaging slip.",
+    "limits": "Limits sit next to the numbers: 145-day gap, label fill, match-mode split, sample basis. States what cannot be answered.",
+    "verdict": "Answer, decision, confidence with reason and trigger, bounded by window end. Above-baseline months (2025-01, 2025-05) not named in the verdict.",
+    "facets": "Volume, tone, baseline, critical, themes, entities, places and sources all grounded. Launch spikes not tied to events."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Leftover instruction text in the prose ('Mention the exported file...')"
+   ],
+   "C": [],
+   "D": [
+    "The first-six-month ratio average is given as ~0.42; recomputed it is 0.45, so the fall is ~0.15, not 0.12",
+    "Garbled caption: 'except none above'",
+    "The export labels coverage 'full' despite censoring and 48% placement"
+   ]
+  },
+  "best": "D",
+  "verdict": "B and D both answer with traced numbers that Apple coverage is markedly more positive than the corpus baseline (0.36 vs 0.58). D goes further:\n- It separates the 'critical' flag from negative polarity.\n- It quantifies volume and critical trends.\n- It flags the Colombia anomaly and the label-fill lag.\n- It gives news items with URLs.\n\nD has one averaging slip. A and C offer no measurement; C's honestly labelled memory guess happens to point the right way."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

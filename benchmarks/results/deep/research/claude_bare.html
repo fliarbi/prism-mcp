@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sugar-sweetened beverages and type 2 diabetes: evidence report (literature-only run)</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+<style>
+body{font-family:Georgia,serif;max-width:960px;margin:2em auto;padding:0 1em;line-height:1.5;color:#222}
+h1,h2,h3{font-family:Arial,sans-serif}
+.box{border:1px solid #999;padding:.8em 1em;background:#f6f6f2;margin:1em 0}
+.warn{border-left:4px solid #b35900;padding:.4em .8em;background:#fff6ea}
+table{border-collapse:collapse;width:100%;font-size:.9em}
+td,th{border:1px solid #bbb;padding:3px 6px;text-align:left;vertical-align:top}
+pre{background:#f0f0f0;padding:.6em;overflow:auto;font-size:.8em}
+.small{font-size:.85em;color:#444}
+</style>
+</head>
+<body>
+
+<h1>Sugar-sweetened beverages (SSB), obesity and type 2 diabetes (T2D)</h1>
+<p class="small">Export date 2026-10-23. Prepared for a workshop on the science of science and health policy. <strong>Scope of this run:</strong> no database, news, patent or bibliometric queries were run (the calls list is empty). All numbers come from published papers listed in References, each tagged [rN]. Nothing was computed by me. Where a research question needs a query that was not run, the page says "not measured" and gives the query that would measure it.</p>
+
+<div class="box" id="verdict">
+<h2>A. Verdict</h2>
+<p><strong>Answer:</strong> Prospective-cohort meta-analyses put the SSB–T2D relative risk above one (RR 1.26 for highest vs lowest intake [r1]; RR 1.18 per daily serving, 1.13 after adiposity adjustment [r2]). That supports an association, but residual confounding and industry-funding bias remain open [r10][r11]. Attention, geography, patent and forecast questions were not measured.</p>
+<p><strong>Decision:</strong> Fund measurement of the missing lanes first, India especially, and prioritise trials or natural experiments over more cohorts.</p>
+<p><strong>Confidence:</strong> Low overall. The health-evidence slice is consistent, but four of five questions had no data.</p>
+<p><strong>What would change it:</strong> Run the queries in section D, or find a large randomised trial with a T2D endpoint.</p>
+</div>
+
+<h2>B. Analytical report</h2>
+<p class="warn">Of the seven chart dimensions, only <em>evidence magnitude</em> can be charted from sourced values. The other six (time, geography, comparison, composition, forecast, source mix) would need query results I do not have, and I will not plot invented values. This falls short of the five-dimension target, and the reason is stated here rather than hidden.</p>
+
+<h3>RQ1 Attention (papers per year, news per month)</h3>
+<p><strong>Measured:</strong> nothing. No yearly paper counts or monthly news counts were retrieved, so neither the change in each series nor their co-movement can be quantified. <strong>Interpretation:</strong> none offered. The queries are f1 and f2 in section D. Newest-period censoring would have to be flagged when they are run.</p>
+
+<h3>RQ2 Evidence</h3>
+<p><strong>Measured (from published sources):</strong></p>
+<ul>
+<li>Nurses' Health Study II, women: RR 1.83 (95% CI 1.42–2.36) for one or more SSB per day vs less than one per month [r4].</li>
+<li>Meta-analysis, highest vs lowest intake: RR 1.26 (1.12–1.41) for T2D [r1].</li>
+<li>Meta-analysis of prospective cohorts: RR 1.18 (1.06–1.32) per daily serving, and RR 1.13 (1.06–1.21) after adjustment for adiposity [r2].</li>
+<li>Weight outcome: in ad libitum trials, higher sugar intake raised body weight by about 0.8 kg [r6].</li>
+</ul>
+<p><img alt="" width="0" height="0"> The strongest effect size in this set is the cohort estimate of RR 1.83 [r4]. The pooled estimates are smaller, 1.26 [r1] and 1.18 [r2], and the adiposity-adjusted estimate is smaller still at 1.13 [r2]. The three exposure contrasts differ (≥1/day vs &lt;1/month; highest vs lowest; per serving), so the bars are not directly comparable.</p>
+<div id="chart_rr"></div>
+<p class="small"><strong>Chart 1.</strong> Relative risk of T2D by SSB exposure, with 95% CI. Unit: relative risk. Window: publication years 2004–2015. Sources: [r4][r1][r2]. Reading: every estimate and every interval lies above one, and adjusting for adiposity shrinks but does not remove the association [r2].</p>
+<p><strong>Balance of supporting vs contradicting documents weighted by tier:</strong> not measured. No document tally was built. The risk-factor claim-direction tally was not run either.</p>
+<p><strong>Where it is contested (interpretation, with sources):</strong></p>
+<ul>
+<li>Nutritional epidemiology is vulnerable to confounding and measurement error [r10].</li>
+<li>Reviews with industry financial ties were about five times more likely to conclude there was no positive association with weight gain [r11].</li>
+<li>Adiposity partly mediates the association, since the estimate falls from 1.18 to 1.13 on adjustment [r2].</li>
+</ul>
+<p>Policy evidence: in Mexico, purchases of taxed beverages fell by an average of 6% in the first year of the excise tax [r9]. This is a purchasing outcome, not a T2D outcome.</p>
+
+<h3>RQ3 Geography</h3>
+<p><strong>Measured:</strong> nothing. The four lanes (first-author affiliation, journal country, country reported on, patent assignee country) were not queried. There is no map, because plotting any country value would be invented. The mismatch between where SSB are studied and where they are reported cannot be quantified. The India and comparator rows are empty in export <code>country_lanes.csv</code>. Background only: a published assessment covers beverage intake in 187 countries [r8]. It measures consumption, not research or news geography.</p>
+
+<h3>RQ4 Trajectory</h3>
+<p><strong>Not projected.</strong> No measured series was obtained, so there are no observed points, central path, bounds, backtest error, last-observed period or gap to today. A projection from memory would be an invention, so none is drawn. Once a yearly paper series exists (f1), the method to apply is a damped-trend or log-linear fit, chosen over a no-change baseline by rolling-origin backtest, with the incomplete current year excluded.</p>
+
+<h3>RQ5 Synthesis</h3>
+<p>The one argument the data in hand support is narrow. Published cohort syntheses consistently put the SSB–T2D association above null (1.26 [r1]; 1.13–1.18 [r2]), and the association is partly but not wholly explained by adiposity [r2]. Combining two sources: the 6% average fall in taxed-beverage purchases in Mexico [r9] shows that exposure can be changed at population scale, while the association estimates [r1][r2] are the reason the change might matter for T2D. Those two sources together make the next evidence gap a T2D outcome after a tax, not another cohort. Funding priority is therefore natural-experiment and trial designs, plus the unmeasured attention and geography lanes. The conflict-of-interest finding [r11] and the confounding critique [r10] together argue for independent funding and pre-specified analyses.</p>
+
+<h2>D. Drill-down</h2>
+<table>
+<tr><th>Headline number</th><th>Next layer</th><th>Identifier</th></tr>
+<tr><td>RR 1.83 [r4]</td><td>Nurses' Health Study II, women; first-author cohort study</td><td>doi:10.1001/jama.292.8.927</td></tr>
+<tr><td>RR 1.26 [r1]</td><td>Meta-analysis, T2D and metabolic syndrome</td><td>doi:10.2337/dc10-1079</td></tr>
+<tr><td>RR 1.18 / 1.13 [r2]</td><td>Meta-analysis incl. artificially sweetened beverages and fruit juice</td><td>doi:10.1136/bmj.h3576</td></tr>
+<tr><td>0.8 kg [r6]</td><td>RCT and cohort synthesis on sugars and weight</td><td>doi:10.1136/bmj.e7492</td></tr>
+<tr><td>6% [r9]</td><td>Mexico excise tax, store purchase data</td><td>doi:10.1136/bmj.h6704</td></tr>
+</table>
+<p><strong>Follow-up questions and exact queries (no tool was available; queries are given in words):</strong></p>
+<ol>
+<li id="f1">f1. Papers per year on SSB and T2D. Query: in Prism research index, works whose title or abstract contains ("sugar-sweetened beverage*" OR "sugar sweetened beverage*" OR "sugary drink*" OR "soft drink*") AND ("type 2 diabetes" OR "diabetes mellitus"), grouped by publication year, 2000 to the last complete year, current year flagged incomplete.</li>
+<li id="f2">f2. News articles per month. Query: in a news archive (e.g. GDELT or Media Cloud), the same phrases, grouped by month, last 10 years, newest month flagged incomplete.</li>
+<li id="f3">f3. Study tier shares. Query: classify the f1 records by design (RCT, cohort, meta-analysis, cross-sectional, modelling) using publication-type tags, and report the share of each.</li>
+<li id="f4">f4. Where studied. Query: for the f1 records, group by first-author affiliation country, with India, United States, China, United Kingdom and Brazil placed explicitly.</li>
+<li id="f5">f5. Where reported. Query: for the f2 articles, group by the country the article is about, then compare rank with f4.</li>
+<li id="f6">f6. Patents. Query: in a patent database, claims or abstracts containing "sugar-sweetened beverage" or "sweetened beverage" with a diabetes term, grouped by assignee country and by publication year, noting the 18-month publication lag.</li>
+</ol>
+
+<h2>E. Exports</h2>
+<p>Three CSV tables, with the same content embedded in the manifest: <code>series_yearly_monthly.csv</code> (empty, because the series were not measured), <code>country_lanes.csv</code> (empty values, structure only) and <code>key_documents.csv</code> (identifiers, tiers, effects; quote column empty, see below).</p>
+<p class="small">Quote column: verbatim quotes were not retrieved because no source access was available in this run, and I will not reproduce quotes from memory. Fill the column from the source PDFs before submission.</p>
+<h3>series_yearly_monthly.csv</h3>
+<pre>series,period,value,unit,source,window,coverage,export_date
+papers_per_year,,,papers,not queried,,unknown,2026-10-23
+news_per_month,,,articles,not queried,,unknown,2026-10-23</pre>
+<h3>country_lanes.csv</h3>
+<pre>lane,country,value,unit,source,window,coverage,export_date
+first_author_affiliation,India,,papers,not queried,,unknown,2026-10-23
+first_author_affiliation,United States,,papers,not queried,,unknown,2026-10-23
+first_author_affiliation,China,,papers,not queried,,unknown,2026-10-23
+first_author_affiliation,United Kingdom,,papers,not queried,,unknown,2026-10-23
+journal_country,India,,papers,not queried,,unknown,2026-10-23
+journal_country,United States,,papers,not queried,,unknown,2026-10-23
+journal_country,China,,papers,not queried,,unknown,2026-10-23
+journal_country,United Kingdom,,papers,not queried,,unknown,2026-10-23
+news_about_country,India,,articles,not queried,,unknown,2026-10-23
+news_about_country,United States,,articles,not queried,,unknown,2026-10-23
+news_about_country,China,,articles,not queried,,unknown,2026-10-23
+news_about_country,United Kingdom,,articles,not queried,,unknown,2026-10-23
+patent_assignee_country,India,,patents,not queried,,unknown,2026-10-23
+patent_assignee_country,United States,,patents,not queried,,unknown,2026-10-23
+patent_assignee_country,China,,patents,not queried,,unknown,2026-10-23
+patent_assignee_country,United Kingdom,,patents,not queried,,unknown,2026-10-23</pre>
+<h3>key_documents.csv</h3>
+<pre>id,title,doi,tier,population,effect,unit,quote,source,window,coverage,export_date
+r4,Sugar-sweetened beverages and weight gain and T2D in women (JAMA),10.1001/jama.292.8.927,prospective cohort,Nurses Health Study II women,1.83 (1.42-2.36),RR,,ref:r4,2004,partial,2026-10-23
+r1,SSB and metabolic syndrome and T2D meta-analysis (Diabetes Care),10.2337/dc10-1079,meta-analysis of cohorts,pooled adults,1.26 (1.12-1.41),RR highest vs lowest,,ref:r1,2010,partial,2026-10-23
+r2,SSB and incidence of T2D meta-analysis (BMJ),10.1136/bmj.h3576,meta-analysis of cohorts,pooled adults,1.18 (1.06-1.32); adiposity-adjusted 1.13 (1.06-1.21),RR per serving/day,,ref:r2,2015,partial,2026-10-23
+r6,Dietary sugars and body weight (BMJ),10.1136/bmj.e7492,systematic review of RCTs and cohorts,adults and children,0.8,kg weight change,,ref:r6,2013,partial,2026-10-23
+r9,Beverage purchases under the Mexico excise tax (BMJ),10.1136/bmj.h6704,observational natural experiment,Mexican households,6,% fall in taxed purchases,,ref:r9,2016,partial,2026-10-23</pre>
+
+<h2>F. Method and limits beside the numbers</h2>
+<ul>
+<li><strong>Newest data and gap to today:</strong> the newest source here is a 2022 review [r7]. The newest effect-size source is 2016 [r9] and the newest pooled T2D estimate is 2015 [r2]. The gap to today (2026-10-23) is therefore years, and papers after 2022 are unreviewed. Closing it needs f1 and a rescan.</li>
+<li><strong>What each count is:</strong> RR values are pooled or cohort associations, not causal effects, and they use different exposure contrasts. The 0.8 kg value is a weight change in trials [r6], not a T2D outcome. The 6% value is a purchase change, not consumption or disease [r9].</li>
+<li><strong>Lanes, coverage, censoring, patent lag:</strong> not applicable because not measured. When f6 is run, patent publication lag means recent years are undercounted, and the same applies to the current year in f1 and f2.</li>
+<li><strong>Thin evidence:</strong> trial evidence with a T2D endpoint is not represented in my reference set. Closing the gap needs a registry search for randomised trials.</li>
+</ul>
+
+<article id="research-article">
+<h2>Abstract</h2>
+<p>Background: Sugar-sweetened beverage (SSB) consumption is widely proposed as a modifiable risk factor for obesity and type 2 diabetes (T2D). We examined what published meta-analyses and cohort studies imply about this claim, and what a research-funding decision would need beyond them. Methods: This is a literature-based synthesis without new database analysis. We relied on a fixed set of published sources, listed in References, covering cohort studies, meta-analyses, a systematic review of trials and a natural experiment on a beverage tax. No bibliometric, news, patent or geographic queries were executed, and no forecasts were fitted. Results: Pooled prospective estimates put the T2D relative risk above one: 1.26 for highest versus lowest intake [r1], 1.18 per daily serving, falling to 1.13 after adjustment for adiposity [r2]. A large cohort of women reported 1.83 for one or more servings daily versus less than one monthly [r4]. Trials of higher sugar intake showed about 0.8 kg more weight [r6], and a beverage tax in Mexico was followed by an average 6% fall in taxed purchases [r9]. Studies funded by industry were reported to reach null conclusions much more often [r11]. Conclusions: The association with T2D is consistent in direction and partly mediated by adiposity, which is compatible with, but does not prove, causation. We could not measure research attention, news attention, geography, patents or trajectory. Priorities for evidence-synthesis groups are therefore to measure those lanes and to support designs less exposed to confounding, such as natural experiments and trials with T2D endpoints. All conclusions are limited by the age of the sources and the absence of new analysis.</p>
+
+<h2>Introduction</h2>
+<p>Type 2 diabetes and obesity are leading drivers of the chronic disease burden worldwide, and sugar-sweetened beverages are among the most studied dietary exposures linked to them. A review of the role of SSB in global epidemics of obesity and chronic diseases summarises the mechanisms and epidemiology and frames SSB as a target for policy [r7]. Early epidemiologic reviews had already argued that SSB intake was associated with weight gain and diabetes risk [r3]. The argument rests on two ideas. First, liquid sugar delivers calories with weak satiety, so energy intake rises. Second, rapidly absorbed sugars and fructose may act on glycaemic and hepatic pathways independently of body weight. The central claim examined here is that SSB consumption increases the risk of T2D.</p>
+<p>The claim has policy weight. Beverage taxes and labelling have been adopted in several countries, and the Mexican excise tax provides a well-known example of how purchases respond [r9]. Global consumption of SSB varies widely across countries; a systematic assessment covered beverage intake in 187 countries [r8], and a cross-national analysis linked soft-drink consumption to overweight, obesity and diabetes across 75 countries [r12]. Such ecological analyses cannot, however, establish individual-level causation.</p>
+<p>The claim is also contested. Nutritional epidemiology depends on self-reported intake and observational designs, and critics have argued that effect sizes are often small and fragile [r10]. Industry funding is a further concern: a systematic review of reviews found that those with financial conflicts were far more likely to report no positive association between SSB and weight gain [r11]. Advocates, in turn, have argued that the evidence is sufficient to justify action even without long-term trials [r13].</p>
+<p>This manuscript is designed as a science-of-science contribution. It asks how much of the evidence base, and how much of its attention, geography and innovation footprint, can be documented transparently. In the present version, only the evidence component is populated, from published sources. We state plainly which research questions were not measured. The aim is to give reviewers a template where every number is traceable and every empty cell is declared empty rather than filled with a plausible figure.</p>
+<p>We pose five questions. First, how has attention to the subject moved in the research literature and in the news, and do the two move together? Second, what do clinical and health literatures say about the central claim, and where is it contested? Third, where is the subject studied, published, reported and patented? Fourth, what is a three-year trajectory of a measured series? Fifth, what single argument do the sources support, and what does it change for decisions about what to study or fund next? In this version, the second and fifth questions receive substantive answers, while the first, third and fourth are reported as not measured, with the queries needed to measure them.</p>
+
+<h2>Data and methods</h2>
+<p><strong>Data sources.</strong> The only data sources used are the published articles listed in References: cohort studies [r4], meta-analyses [r1][r2], a systematic review and meta-analysis of weight outcomes in trials and cohorts [r6], an earlier meta-analysis of weight gain [r5], narrative and epidemiologic reviews [r3][r7], a global consumption assessment [r8], a cross-national analysis [r12], a natural experiment on a beverage tax [r9], and methodological or bias-focused commentary [r10][r11][r13]. No database was queried. No web search, news archive, patent database or bibliometric index was accessed in this run, and no code was executed.</p>
+<p><strong>Query, phrases, lanes, window and matching rule.</strong> None were used, because no retrieval was performed. We therefore define no search window, no title-matching rule and no geographic lane assignment for this version. The planned lanes (first-author affiliation, journal country, country an article is about, patent assignee country) appear only as empty rows in the country table export, and the lanes are never to be summed. The planned phrase set, if the queries are later run, is: "sugar-sweetened beverage", "sugar sweetened beverage", "sugary drink" and "soft drink", each combined with "type 2 diabetes" or "diabetes mellitus".</p>
+<p><strong>Extraction.</strong> Effect sizes were taken as reported in the cited abstracts, from memory of those publications, and must be re-verified against the originals before submission. Study tiers were assigned by me from the design named in each title or abstract: meta-analysis of cohorts, prospective cohort, systematic review of trials, natural experiment. These tier labels are my classification, not a published grading.</p>
+<p><strong>Analysis.</strong> No new statistical analysis was performed. The one chart plots point estimates and confidence intervals as published. We did not pool, re-weight or adjust any estimate. No forecast was fitted, no backtest was run and no baseline comparison was made.</p>
+<p><strong>What was not done.</strong> We did not count papers or news items, tally supporting versus contradicting documents, map any country values, count patents, or project any series.</p>
+
+<h2>Results</h2>
+<p><strong>Association with T2D.</strong> The Nurses' Health Study II reported a relative risk of 1.83 (95% CI 1.42–2.36) for women consuming one or more SSB per day compared with less than one per month [r4]. A meta-analysis of prospective cohorts reported a pooled relative risk of 1.26 (1.12–1.41) for the highest versus lowest category of intake [r1]. A later meta-analysis expressed the association per daily serving: 1.18 (1.06–1.32) before, and 1.13 (1.06–1.21) after, adjustment for adiposity [r2]. The reduction from 1.18 to 1.13 indicates that adiposity accounts for part of the association, but the adjusted interval still excludes one [r2].</p>
+<p><strong>Weight.</strong> A systematic review and meta-analysis of trials and cohorts found that, in ad libitum trials, higher sugar intake was associated with about 0.8 kg greater body weight [r6]. An earlier meta-analysis likewise addressed SSB and weight gain in children and adults [r5].</p>
+<p><strong>Policy response.</strong> After the Mexican excise tax, purchases of taxed beverages declined by an average of 6% in the first year [r9]. This is a purchasing outcome and no T2D outcome was reported there.</p>
+<p><strong>Bias and contestation.</strong> Reviews with industry financial ties were about five times more likely to conclude that SSB are not positively associated with weight gain [r11]. A methodological commentary argues that nutritional epidemiology needs reform because of confounding and measurement problems [r10].</p>
+<p><strong>Not measured.</strong> The change in papers per year, change in news articles per month, their co-movement, the study-tier shares across all documents, the supporting-versus-contradicting balance, the four geographic lanes with India and comparators, the patent footprint and the three-year projection were not measured. Hence no finding is reported for them.</p>
+<p><strong>Cross-source argument.</strong> Combining the association estimates [r1][r2] with the tax response [r9] shows that exposure is reducible at population scale and that, if the association is causal, the reduction should matter for T2D. The T2D consequence of any such reduction is not shown by the sources in hand.</p>
+
+<h2>Discussion</h2>
+<p>The principal finding is that the association between SSB and T2D is consistent in direction across a cohort study, two meta-analyses and trial-based weight evidence [r4][r1][r2][r6]. This agrees with the framing in reviews that treat SSB as a contributor to the global obesity and chronic disease burden [r7][r3]. The attenuation after adjustment for adiposity [r2] is compatible with the mechanism described in these reviews, in which weight gain mediates part of the effect, while the remaining association suggests either a direct pathway or residual confounding. The data here cannot distinguish the two.</p>
+<p>The weight evidence [r6][r5] is relevant because it is the part of the chain most amenable to randomised designs. If higher sugar intake raises body weight in trials, and weight is a recognised risk factor for T2D, the chain is plausible. However, plausibility is not demonstration, and no trial with a T2D endpoint appears in our source set. That is a specific evidence gap.</p>
+<p>The conflict-of-interest finding [r11] affects how to read the literature as a whole. If industry-linked reviews systematically understate association, then the pooled association from independent work is probably the better guide, but the analysis in [r11] concerns weight gain and not T2D, so its transfer to T2D is an assumption. Likewise, the methodological critique [r10] cuts in both directions: it warns that observational associations of modest size can be artefacts, and it warns equally that null reviews can be produced by bias. Advocacy papers that argue the evidence suffices for action [r13] should be read with the same caution.</p>
+<p>The policy evidence from Mexico [r9] is informative about behaviour. A reduction in taxed purchases of about 6% on average is a modest change, so any downstream T2D effect would be small and slow to detect. This argues for modelling and long-run surveillance rather than short-term trial endpoints. Global intake patterns [r8] and cross-national associations [r12] suggest that exposure differs widely between countries, which raises a geographic question this version cannot answer: whether research effort is concentrated in high-income countries while exposure growth is elsewhere, including India. That hypothesis is the main reason to run the four-lane analysis (f4, f5, f6) and is not a result.</p>
+<p>For a reader deciding what to study or fund, the sources support three points. First, further cohort replications add little, because the direction is already consistent. Second, designs that are harder to confound (natural experiments around taxes, trials on intermediate outcomes, mendelian-style analyses) would add more. Third, the attention and geography lanes should be measured before assuming where the gaps are. The decision to prioritise measurement is weaker than a decision based on measured gaps, which is why the confidence statement for this version is low.</p>
+<p>The identifiers for the discussed works are resolvable through their DOIs in the reference list, for example https://doi.org/10.2337/dc10-1079 [r1], https://doi.org/10.1136/bmj.h3576 [r2] and https://doi.org/10.1136/bmj.h6704 [r9].</p>
+
+<h2>Limitations</h2>
+<p><strong>Data end date and gap to today.</strong> The newest source used is a 2022 review [r7], so all literature after that year is absent. Today is 2026-10-23, so the gap is several years. Newer trials, cohorts or policy evaluations could change the conclusions, in particular if a trial with a T2D endpoint has appeared.</p>
+<p><strong>No new analysis.</strong> No queries were run. Effect sizes were recalled from the cited publications and need verification against the originals. Verbatim quotes were not retrieved. Any digit-level discrepancy is mine.</p>
+<p><strong>Lane and coverage.</strong> The four geographic lanes were not measured, so nothing can be said about mismatch between where the subject is studied and where it is reported, or about India versus comparators. Coverage of the literature is a convenience set of well-known sources, not a systematic sample, so selection bias toward prominent and English-language papers is likely.</p>
+<p><strong>Title matching and censoring.</strong> No title-matching rule was applied because no retrieval occurred. When queries are run, phrase-based matching will miss papers that use other terms (for example "sweetened drinks") and will include papers where the terms appear incidentally. The newest year and month in any count will be incomplete and must be flagged rather than read as a decline.</p>
+<p><strong>Patent publication lag.</strong> Patents were not counted. When counted, applications publish after a delay of roughly a year and a half (est.), so recent years will be undercounted.</p>
+<p><strong>Comparability of effect sizes.</strong> The relative risks use different exposure contrasts and populations, so they should not be averaged or ranked as if equivalent. The cohort estimate of 1.83 [r4] concerns women only.</p>
+<p><strong>Causal inference.</strong> Observational estimates remain open to confounding and measurement error [r10], and funding bias affects the reviews [r11]. A properly pre-registered trial or a well-identified natural experiment with a T2D outcome would change the conclusion toward or away from causation.</p>
+<p><strong>What would change the conclusions.</strong> Running f1 to f6 would replace the "not measured" statements with data. A rescan of post-2022 evidence could move the confidence statement. A strong geographic mismatch finding would shift the funding recommendation toward under-studied countries.</p>
+
+<h2>References</h2>
+<ol>
+<li id="ref-r1">[r1] Malik VS, Popkin BM, Bray GA, Després JP, Willett WC, Hu FB. Sugar-sweetened beverages and risk of metabolic syndrome and type 2 diabetes: a meta-analysis. <em>Diabetes Care</em>, 2010. <a href="https://doi.org/10.2337/dc10-1079">doi:10.2337/dc10-1079</a>. Claim: pooled RR for T2D, highest vs lowest intake.</li>
+<li id="ref-r2">[r2] Imamura F, et al. Consumption of sugar sweetened beverages, artificially sweetened beverages, and fruit juice and incidence of type 2 diabetes: systematic review, meta-analysis, and estimation of population attributable fraction. <em>BMJ</em>, 2015. <a href="https://doi.org/10.1136/bmj.h3576">doi:10.1136/bmj.h3576</a>. Claim: RR per serving, before and after adiposity adjustment.</li>
+<li id="ref-r3">[r3] Hu FB, Malik VS. Sugar-sweetened beverages and risk of obesity and type 2 diabetes: epidemiologic evidence. <em>Physiology &amp; Behavior</em>, 2010. <a href="https://doi.org/10.1016/j.physbeh.2010.01.036">doi:10.1016/j.physbeh.2010.01.036</a>. Claim: early epidemiologic framing of the association.</li>
+<li id="ref-r4">[r4] Schulze MB, et al. Sugar-sweetened beverages, weight gain, and incidence of type 2 diabetes in young and middle-aged women. <em>JAMA</em>, 2004. <a href="https://doi.org/10.1001/jama.292.8.927">doi:10.1001/jama.292.8.927</a>. Claim: cohort RR in women.</li>
+<li id="ref-r5">[r5] Malik VS, Pan A, Willett WC, Hu FB. Sugar-sweetened beverages and weight gain in children and adults: a systematic review and meta-analysis. <em>American Journal of Clinical Nutrition</em>, 2013. <a href="https://doi.org/10.3945/ajcn.113.058362">doi:10.3945/ajcn.113.058362</a>. Claim: SSB and weight gain synthesis.</li>
+<li id="ref-r6">[r6] Te Morenga L, Mallard S, Mann J. Dietary sugars and body weight: systematic review and meta-analyses of randomised controlled trials and cohort studies. <em>BMJ</em>, 2013. <a href="https://doi.org/10.1136/bmj.e7492">doi:10.1136/bmj.e7492</a>. Claim: about 0.8 kg weight difference in ad libitum trials.</li>
+<li id="ref-r7">[r7] Malik VS, Hu FB. The role of sugar-sweetened beverages in the global epidemics of obesity and chronic diseases. <em>Nature Reviews Endocrinology</em>, 2022. <a href="https://doi.org/10.1038/s41574-021-00627-6">doi:10.1038/s41574-021-00627-6</a>. Claim: review framing SSB as a policy target.</li>
+<li id="ref-r8">[r8] Singh GM, et al. Global, regional, and national consumption of sugar-sweetened beverages, fruit juices, and milk: a systematic assessment of beverage intake in 187 countries. <em>PLoS ONE</em>, 2015. <a href="https://doi.org/10.1371/journal.pone.0124845">doi:10.1371/journal.pone.0124845</a>. Claim: intake varies across countries.</li>
+<li id="ref-r9">[r9] Colchero MA, Popkin BM, Rivera JA, Ng SW. Beverage purchases from stores in Mexico under the excise tax on sugar sweetened beverages: observational study. <em>BMJ</em>, 2016. <a href="https://doi.org/10.1136/bmj.h6704">doi:10.1136/bmj.h6704</a>. Claim: average 6% fall in taxed purchases.</li>
+<li id="ref-r10">[r10] Ioannidis JPA. The challenge of reforming nutritional epidemiologic research. <em>JAMA</em>, 2018. <a href="https://doi.org/10.1001/jama.2018.11025">doi:10.1001/jama.2018.11025</a>. Claim: nutritional epidemiology is vulnerable to confounding and fragility.</li>
+<li id="ref-r11">[r11] Bes-Rastrollo M, Schulze MB, Ruiz-Canela M, Martinez-Gonzalez MA. Financial conflicts of interest and reporting bias regarding the association between sugar-sweetened beverages and weight gain: a systematic review of systematic reviews. <em>PLoS Medicine</em>, 2013. <a href="https://doi.org/10.1371/journal.pmed.1001578">doi:10.1371/journal.pmed.1001578</a>. Claim: industry-linked reviews about five times more likely to report no association.</li>
+<li id="ref-r12">[r12] Basu S, McKee M, Galea G, Stuckler D. Relationship of soft drink consumption to global overweight, obesity, and diabetes: a cross-national analysis of 75 countries. <em>American Journal of Public Health</em>, 2013. <a href="https://doi.org/10.2105/AJPH.2012.300974">doi:10.2105/AJPH.2012.300974</a>. Claim: cross-national association (ecological).</li>
+<li id="ref-r13">[r13] Hu FB. Resolved: there is sufficient scientific evidence that decreasing sugar-sweetened beverage consumption will reduce the prevalence of obesity and obesity-related diseases. <em>Obesity Reviews</em>, 2013. <a href="https://doi.org/10.1111/obr.12040">doi:10.1111/obr.12040</a>. Claim: argument that evidence suffices for action.</li>
+</ol>
+</article>
+
+<script type="application/json" id="report-manifest">
+{
+"verdict":{
+"answer":"Prospective-cohort meta-analyses put the SSB-T2D relative risk above one (RR 1.26 highest vs lowest [r1]; RR 1.18 per daily serving, 1.13 after adiposity adjustment [r2]), supporting an association; confounding and industry-funding bias remain open [r10][r11]. Attention, geography, patent and forecast questions were not measured.",
+"decision":"Fund measurement of the missing lanes first, India especially, and prioritise trials or natural experiments over more cohorts.",
+"confidence":"low - health-evidence slice is consistent but four of five research questions had no data",
+"what_would_change":"Running the follow-up queries f1-f6, or a large randomised trial with a T2D endpoint."
+},
+"charts":[
+{"id":"chart_rr","kind":"hbar","title":"Relative risk of type 2 diabetes by SSB exposure contrast","unit":"relative risk (95% CI)","window":{"from":"2004-01-01","to":"2015-12-31"},"x":{"field":"label","type":"ordinal"},
+"series":[
+{"name":"RR point estimate","source":"ref:r4; ref:r1; ref:r2","points":[["Schulze 2004 cohort (>=1/day vs <1/month)",1.83],["Malik 2010 meta-analysis (highest vs lowest)",1.26],["Imamura 2015 meta-analysis (per serving/day)",1.18],["Imamura 2015 adiposity-adjusted (per serving/day)",1.13]]},
+{"name":"Lower 95% CI","source":"ref:r4; ref:r1; ref:r2","points":[["Schulze 2004 cohort (>=1/day vs <1/month)",1.42],["Malik 2010 meta-analysis (highest vs lowest)",1.12],["Imamura 2015 meta-analysis (per serving/day)",1.06],["Imamura 2015 adiposity-adjusted (per serving/day)",1.06]]},
+{"name":"Upper 95% CI","source":"ref:r4; ref:r1; ref:r2","points":[["Schulze 2004 cohort (>=1/day vs <1/month)",2.36],["Malik 2010 meta-analysis (highest vs lowest)",1.41],["Imamura 2015 meta-analysis (per serving/day)",1.32],["Imamura 2015 adiposity-adjusted (per serving/day)",1.21]]}
+],
+"caption":"Every estimate and every interval lies above one, and adjusting for adiposity shrinks but does not remove the association.",
+"supports":"The strongest effect size in this set is the cohort estimate of RR 1.83 [r4]."}
+],
+"exports":[
+{"name":"series_yearly_monthly.csv","source":"not queried","window":"..","unit":"papers per year; articles per month","coverage":"unknown","csv":"series,period,value,unit,source,window,coverage,export_date\npapers_per_year,,,papers,not queried,,unknown,2026-10-23\nnews_per_month,,,articles,not queried,,unknown,2026-10-23"},
+{"name":"country_lanes.csv","source":"not queried","window":"..","unit":"papers; articles; patents","coverage":"unknown","csv":"lane,country,value,unit,source,window,coverage,export_date\nfirst_author_affiliation,India,,papers,not queried,,unknown,2026-10-23\nfirst_author_affiliation,United States,,papers,not queried,,unknown,2026-10-23\nfirst_author_affiliation,China,,papers,not queried,,unknown,2026-10-23\nfirst_author_affiliation,United Kingdom,,papers,not queried,,unknown,2026-10-23\njournal_country,India,,papers,not queried,,unknown,2026-10-23\njournal_country,United States,,papers,not queried,,unknown,2026-10-23\njournal_country,China,,papers,not queried,,unknown,2026-10-23\njournal_country,United Kingdom,,papers,not queried,,unknown,2026-10-23\nnews_about_country,India,,articles,not queried,,unknown,2026-10-23\nnews_about_country,United States,,articles,not queried,,unknown,2026-10-23\nnews_about_country,China,,articles,not queried,,unknown,2026-10-23\nnews_about_country,United Kingdom,,articles,not queried,,unknown,2026-10-23\npatent_assignee_country,India,,patents,not queried,,unknown,2026-10-23\npatent_assignee_country,United States,,patents,not queried,,unknown,2026-10-23\npatent_assignee_country,China,,patents,not queried,,unknown,2026-10-23\npatent_assignee_country,United Kingdom,,patents,not queried,,unknown,2026-10-23"},
+{"name":"key_documents.csv","source":"ref:r4; ref:r1; ref:r2; ref:r6; ref:r9","window":"2004..2016","unit":"as stated per row","coverage":"partial","csv":"id,title,doi,tier,population,effect,unit,quote,source,window,coverage,export_date\nr4,Sugar-sweetened beverages and weight gain and T2D in women (JAMA),10.1001/jama.292.8.927,prospective cohort,Nurses Health Study II women,1.83 (1.42-2.36),RR,,ref:r4,2004,partial,2026-10-23\nr1,SSB and metabolic syndrome and T2D meta-analysis (Diabetes Care),10.2337/dc10-1079,meta-analysis of cohorts,pooled adults,1.26 (1.12-1.41),RR highest vs lowest,,ref:r1,2010,partial,2026-10-23\nr2,SSB and incidence of T2D meta-analysis (BMJ),10.1136/bmj.h3576,meta-analysis of cohorts,pooled adults,1.18 (1.06-1.32); adiposity-adjusted 1.13 (1.06-1.21),RR per serving/day,,ref:r2,2015,partial,2026-10-23\nr6,Dietary sugars and body weight (BMJ),10.1136/bmj.e7492,systematic review of RCTs and cohorts,adults and children,0.8,kg weight change,,ref:r6,2013,partial,2026-10-23\nr9,Beverage purchases under the Mexico excise tax (BMJ),10.1136/bmj.h6704,observational natural experiment,Mexican households,6,% fall in taxed purchases,,ref:r9,2016,partial,2026-10-23"}
+],
+"calls":[
+{"id":"f1","question":"Papers per year on SSB and T2D","feature":"none (query in words)","args":"Prism research index works with title/abstract containing (sugar-sweetened beverage* OR sugar sweetened beverage* OR sugary drink* OR soft drink*) AND (type 2 diabetes OR diabetes mellitus), grouped by publication year, 2000 to last complete year, current year flagged incomplete"},
+{"id":"f2","question":"News articles per month","feature":"none (query in words)","args":"News archive (GDELT or Media Cloud), same phrases, grouped by month, last 10 years, newest month flagged incomplete"},
+{"id":"f3","question":"Study tier shares","feature":"none (query in words)","args":"Classify f1 records by publication-type/design (RCT, cohort, meta-analysis, cross-sectional, modelling) and report share of each"},
+{"id":"f4","question":"Where is it studied","feature":"none (query in words)","args":"f1 records grouped by first-author affiliation country; place India, United States, China, United Kingdom, Brazil"},
+{"id":"f5","question":"Where is it reported","feature":"none (query in words)","args":"f2 articles grouped by country the article is about; compare rank with f4"},
+{"id":"f6","question":"Where is it patented","feature":"none (query in words)","args":"Patent database, claims/abstract containing sweetened beverage with a diabetes term, grouped by assignee country and publication year, noting publication lag"}
+],
+"references":[
+{"id":"r1","title":"Sugar-sweetened beverages and risk of metabolic syndrome and type 2 diabetes: a meta-analysis","venue":"Diabetes Care","year":2010,"doi_or_url":"https://doi.org/10.2337/dc10-1079"},
+{"id":"r2","title":"Consumption of sugar sweetened beverages, artificially sweetened beverages, and fruit juice and incidence of type 2 diabetes: systematic review, meta-analysis, and estimation of population attributable fraction","venue":"BMJ","year":2015,"doi_or_url":"https://doi.org/10.1136/bmj.h3576"},
+{"id":"r3","title":"Sugar-sweetened beverages and risk of obesity and type 2 diabetes: epidemiologic evidence","venue":"Physiology & Behavior","year":2010,"doi_or_url":"https://doi.org/10.1016/j.physbeh.2010.01.036"},
+{"id":"r4","title":"Sugar-sweetened beverages, weight gain, and incidence of type 2 diabetes in young and middle-aged women","venue":"JAMA","year":2004,"doi_or_url":"https://doi.org/10.1001/jama.292.8.927"},
+{"id":"r5","title":"Sugar-sweetened beverages and weight gain in children and adults: a systematic review and meta-analysis","venue":"American Journal of Clinical Nutrition","year":2013,"doi_or_url":"https://doi.org/10.3945/ajcn.113.058362"},
+{"id":"r6","title":"Dietary sugars and body weight: systematic review and meta-analyses of randomised controlled trials and cohort studies","venue":"BMJ","year":2013,"doi_or_url":"https://doi.org/10.1136/bmj.e7492"},
+{"id":"r7","title":"The role of sugar-sweetened beverages in the global epidemics of obesity and chronic diseases","venue":"Nature Reviews Endocrinology","year":2022,"doi_or_url":"https://doi.org/10.1038/s41574-021-00627-6"},
+{"id":"r8","title":"Global, regional, and national consumption of sugar-sweetened beverages, fruit juices, and milk: a systematic assessment of beverage intake in 187 countries","venue":"PLoS ONE","year":2015,"doi_or_url":"https://doi.org/10.1371/journal.pone.0124845"},
+{"id":"r9","title":"Beverage purchases from stores in Mexico under the excise tax on sugar sweetened beverages: observational study","venue":"BMJ","year":2016,"doi_or_url":"https://doi.org/10.1136/bmj.h6704"},
+{"id":"r10","title":"The challenge of reforming nutritional epidemiologic research","venue":"JAMA","year":2018,"doi_or_url":"https://doi.org/10.1001/jama.2018.11025"},
+{"id":"r11","title":"Financial conflicts of interest and reporting bias regarding the association between sugar-sweetened beverages and weight gain: a systematic review of systematic reviews","venue":"PLoS Medicine","year":2013,"doi_or_url":"https://doi.org/10.1371/journal.pmed.1001578"},
+{"id":"r12","title":"Relationship of soft drink consumption to global overweight, obesity, and diabetes: a cross-national analysis of 75 countries","venue":"American Journal of Public Health","year":2013,"doi_or_url":"https://doi.org/10.2105/AJPH.2012.300974"},
+{"id":"r13","title":"Resolved: there is sufficient scientific evidence that decreasing sugar-sweetened beverage consumption will reduce the prevalence of obesity and obesity-related diseases","venue":"Obesity Reviews","year":2013,"doi_or_url":"https://doi.org/10.1111/obr.12040"}
+]
+}
+</script>
+
+<script>
+var lbl=["Schulze 2004 cohort (>=1/day vs <1/month)","Malik 2010 meta-analysis (highest vs lowest)","Imamura 2015 meta-analysis (per serving/day)","Imamura 2015 adiposity-adjusted (per serving/day)"];
+var vals=[{label:lbl[0],rr:1.83,lo:1.42,hi:2.36},{label:lbl[1],rr:1.26,lo:1.12,hi:1.41},{label:lbl[2],rr:1.18,lo:1.06,hi:1.32},{label:lbl[3],rr:1.13,lo:1.06,hi:1.21}];
+var yenc={field:"label",type:"nominal",sort:null,title:null,axis:{labelLimit:340}};
+vegaEmbed('#chart_rr',{
+"$schema":"https://vega.github.io/schema/vega-lite/v5.json",
+"title":"Relative risk of type 2 diabetes by SSB exposure contrast (95% CI)",
+"width":420,"height":180,
+"data":{"values":vals},
+"layer":[
+{"mark":"rule","encoding":{"y":yenc,"x":{"field":"lo","type":"quantitative","scale":{"domain":[0.9,2.5]},"title":"Relative risk (unit: RR; 2004-2015; sources r4, r1, r2)"},"x2":{"field":"hi"}}},
+{"mark":{"type":"point","filled":true,"size":90},"encoding":{"y":yenc,"x":{"field":"rr","type":"quantitative"},"tooltip":[{"field":"rr","title":"RR"},{"field":"lo","title":"Lower"},{"field":"hi","title":"Upper"}]}},
+{"data":{"values":[{"x":1}]},"mark":{"type":"rule","strokeDash":[4,4],"color":"gray"},"encoding":{"x":{"field":"x","type":"quantitative"}}}
+]
+});
+</script>
+</body>
+</html>

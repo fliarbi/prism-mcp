@@ -1,0 +1,596 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 976,
+  "charts": [
+   {
+    "id": "amr-deaths",
+    "title": "Global deaths attributable to bacterial AMR (millions)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Attributable deaths (1990, 2021 observed-model; 2050 forecast)",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "amr_deaths.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which papers dispute the 10M-by-2050 projection?",
+    "args": {
+     "term": "antimicrobial resistance 2050 deaths projection"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...050 deaths projection'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antimicrobial resistance 2050 deaths projection', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has research volume on AMR changed by year?",
+    "args": {
+     "term": "antimicrobial resistance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"antimicrobial resistance\", \"antibiotic resistance\", \"drug-resistant infections\", \"multidrug-resistant bacteria\", \"antimicrobial stewardship\"], \"points\": [{\"year\": 2017, \"total\": 6894, \"orientation\": {\"breakthrough\": 233, \"descriptive\": 1633, \"critical\": 41, \"promising\": 855, \"problem_identifying\": 501, \"cautionary\": 321, \"comparative\": 143}, \"stance_score\": null, \"positive\": 1088, \"contested\": 863, \"positive_pct\": 15.8, \"contested_pct\": 12.5}, {\"year\": 2018, \"total\": 8188, \"orientation\": {\"critical\": 30, \"problem_identifying\": 809, \"comparative\": 185, \"breakthrough\": 407, \"cautionary\": 363, \"descriptive\": 1407, \"promising\": 733}, \"stance_score\":"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has news coverage of AMR trended?",
+    "args": {
+     "term": "antimicrobial resistance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 595, \"critical\": 550, \"negative\": 138, \"positive\": 437, \"mean_priority\": 7.19, \"critical_pct\": 92.4, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 379, \"critical\": 341, \"negative\": 113, \"positive\": 252, \"mean_priority\": 7.04, \"critical_pct\": 90.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 424, \"critical\": 389, \"negative\": 112, \"positive\": 288, \"mean_priority\": 7.1, \"critical_pct\": 91.7, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 739, \"critical\": 687, \"negative\": 304, \"positive\": 405, \"mean_priority\": 7.32, \"critical_pct\": 93.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"article"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which regions dominate coverage and research?",
+    "args": {
+     "term": "antimicrobial resistance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.9,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 1399, \"share_pct\": 18.5, \"lift\": 0.8}, {\"label\": \"india\", \"articles\": 750, \"share_pct\": 9.9, \"lift\": 1.5}, {\"label\": \"united kingdom\", \"articles\": 745, \"share_pct\": 9.9, \"lift\": 2.0}, {\"label\": \"china\", \"articles\": 238, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 220, \"share_pct\": 2.9, \"lift\": 1.7}, {\"label\": \"australia\", \"articles\": 219, \"share_pct\": 2.9, \"lift\": 0.6}, {\"label\": \"norway\", \"articles\": 200, \"share_pct\": 2.6, \"lift\": 6.5}, {\"label\": \"nigeria\", \"articles\": 193, \"share_pct\": 2.6, \"lift\": 3.6}, {\"label\": \"germany\", \"articles\": 191, \"share_pct\": 2.5, \"lift\": 2.0}, {\"label\": \"canada\", \"articles"
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "What are the key statistics on pathogen-level resistance?",
+    "args": {
+     "term": "carbapenem-resistant"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'carbapenem-resistant'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='carbapenem-resistant', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What does evidence show on agricultural antibiotic use and human resistance?",
+    "args": {
+     "term": "livestock antibiotic use human resistance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... use human resistance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='livestock antibiotic use human resistance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 39,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1499,
+  "charts": [
+   {
+    "id": "news_monthly",
+    "title": "Monthly news articles mentioning antimicrobial resistance",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "deaths_2019",
+    "title": "Global bacterial AMR deaths, 2019",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "deaths (millions)",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "burden_2019.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 12,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "corpus_volumes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which papers dispute the 2050 projection or the burden models?",
+    "args": {
+     "term": "antimicrobial resistance deaths projection 2050",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...tion 2050', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antimicrobial resistance deaths projection 2050', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has the cautionary share of papers changed by year?",
+    "args": {
+     "term": "antimicrobial resistance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"antimicrobial resistance\", \"antibiotic resistance\", \"drug-resistant infections\", \"multidrug-resistant bacteria\", \"antimicrobial stewardship\"], \"points\": [{\"year\": 2017, \"total\": 6894, \"orientation\": {\"comparative\": 143, \"critical\": 31, \"descriptive\": 1194, \"breakthrough\": 233, \"problem_identifying\": 501, \"promising\": 855, \"cautionary\": 226}, \"stance_score\": null, \"positive\": 1088, \"contested\": 758, \"positive_pct\": 15.8, \"contested_pct\": 11.0}, {\"year\": 2018, \"total\": 8188, \"orientation\": {\"critical\": 48, \"breakthrough\": 407, \"promising\": 733, \"cautionary\": 267, \"problem_identifying\": 639, \"descriptive\": 1831, \"comparative\": 185}, \"stance_score\":"
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What drove the January 2025 news spike?",
+    "args": {
+     "term": "antimicrobial resistance",
+     "since": "2025-01-01",
+     "until": "2025-02-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 35.4,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"antimicrobial resistance\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 890, \"entity_labelled_articles\": 133, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 1520, \"critical_articles\": 1417, \"first_seen\": \"2025-01-01 00:00:00\", \"last_seen\": \"2025-01-31 05:46:40\", \"window\": {\"from\": \"2025-01-01\", \"to\": \"2025-02-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every s"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries get critical coverage?",
+    "args": {
+     "term": "antimicrobial resistance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 1399, \"share_pct\": 18.5, \"lift\": 0.8}, {\"label\": \"india\", \"articles\": 750, \"share_pct\": 9.9, \"lift\": 1.5}, {\"label\": \"united kingdom\", \"articles\": 745, \"share_pct\": 9.9, \"lift\": 2.0}, {\"label\": \"china\", \"articles\": 238, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 220, \"share_pct\": 2.9, \"lift\": 1.7}, {\"label\": \"australia\", \"articles\": 219, \"share_pct\": 2.9, \"lift\": 0.6}, {\"label\": \"norway\", \"articles\": 200, \"share_pct\": 2.6, \"lift\": 6.5}, {\"label\": \"nigeria\", \"articles\": 193, \"share_pct\": 2.6, \"lift\": 3.6}, {\"label\": \"germany\", \"articles\": 191, \"share_pct\": 2.5, \"lift\": 2.0}, {\"label\": \"canada\", \"articles"
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "Which study designs support the prescribing-resistance link?",
+    "args": {
+     "term": "antibiotic prescribing resistance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...rescribing resistance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antibiotic prescribing resistance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Regional burden of AMR?",
+    "args": {
+     "term": "antimicrobial resistance burden"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ial resistance burden'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antimicrobial resistance burden', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 115,
+   "traced": 112,
+   "derived": 32,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 8,
+   "found_in_corpus": 8,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 5,
+   "export": 1,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 807,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "Which pathogens and infection syndromes contribute most to bacterial-AMR mortality, and how sensitive are estimates to the counterfactual?",
+    "args": {
+     "term": "global bacterial antimicrobial resistance mortality pathogen syndrome counterfactual",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...rfactual', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='global bacterial antimic...syndrome counterfactual', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has resistance changed over time for priority bacterial pathogens in countries with comparable surveillance?",
+    "args": {
+     "term": "antimicrobial resistance surveillance time trends priority pathogens",
+     "window": "2015-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which findings challenge or qualify the global bacterial-AMR mortality estimates?",
+    "args": {
+     "term": "global burden bacterial antimicrobial resistance mortality estimates limitations",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...itations', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='global burden bacterial ...y estimates limitations', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What is the recent news coverage trend on antimicrobial resistance, and which events explain peaks?",
+    "args": {
+     "term": "antimicrobial resistance",
+     "window": "2024-01-01..2026-10-23",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 7,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 738,
+  "charts": [
+   {
+    "id": "amr-news-volume",
+    "title": "Monthly news articles mentioning antimicrobial resistance",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "amr_news_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How do resistance prevalence and attributable burden vary by pathogen and antibiotic class?",
+    "args": {
+     "topic": "antimicrobial resistance",
+     "group_by": "pathogen,drug_class,year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...hogen,drug_class,year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antimicrobial resistance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='pathogen,drug_class,year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies challenge the leading global burden estimates, and on what assumptions?",
+    "args": {
+     "topic": "global bacterial antimicrobial resistance burden",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...e burden', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='global bacterial antimicrobial resistance burden', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "What are comparable country-level resistance and burden estimates?",
+    "args": {
+     "topic": "antimicrobial resistance",
+     "measure": "prevalence and attributable deaths"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...d attributable deaths'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antimicrobial resistance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='prevalence and attributable deaths', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "What drove the January 2025 news peak?",
+    "args": {
+     "term": "antimicrobial resistance",
+     "periods": [
+      "2025-01",
+      "2024-12",
+      "2025-02"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... '2024-12', '2025-02']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='antimicrobial resistance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nperiods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['2025-01', '2024-12', '2025-02'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 31,
+   "traced": 30,
+   "derived": 9,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "144 — Prism’s brief reports research volumes for 2017–2025, readable-paper and the health literature index volumes fo"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

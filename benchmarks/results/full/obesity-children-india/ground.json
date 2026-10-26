@@ -1,0 +1,669 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 785,
+  "charts": [
+   {
+    "id": "u5-overweight",
+    "title": "Under-5 overweight prevalence, India (NFHS rounds)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Overweight (weight-for-height >+2 SD)",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "u5_overweight.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "obese_count.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many studies on childhood obesity in India appeared per year since 2010?",
+    "args": {
+     "term": "childhood obesity India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 22.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"childhood overweight\", \"adolescent obesity\"], \"points\": [{\"year\": 2017, \"total\": 86, \"orientation\": {\"problem_identifying\": 11, \"cautionary\": 1, \"breakthrough\": 1, \"critical\": 1, \"promising\": 4, \"comparative\": 1, \"descriptive\": 22}, \"stance_score\": null, \"positive\": 5, \"contested\": 13, \"positive_pct\": 5.8, \"contested_pct\": 15.1}, {\"year\": 2018, \"total\": 88, \"orientation\": {\"problem_identifying\": 10, \"descriptive\": 19, \"promising\": 6, \"cautionary\": 4, \"comparative\": 1, \"critical\": 1}, \"stance_score\": null, \"positive\": 6, \"contested\": 15, \"positive_pct\": 6.8, \"contested_pct\": 17.0}, {\"year\": 2019, \"total\": 117, \"orientation\": {\"descriptive\": 26, \""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies dispute prevalence levels because of definition choice?",
+    "args": {
+     "term": "childhood obesity India prevalence cutoffs"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ia prevalence cutoffs'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity India prevalence cutoffs', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What is the news volume trend on childhood obesity in India?",
+    "args": {
+     "term": "childhood obesity India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'childhood obesity India' in this window",
+    "seconds": 8.8,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which states are covered most in news and research?",
+    "args": {
+     "term": "childhood obesity India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ildhood obesity India'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "What key statistics are reported in recent papers?",
+    "args": {
+     "term": "childhood obesity India prevalence"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sity India prevalence'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity India prevalence', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "What do scenarios project to 2030?",
+    "args": {
+     "term": "childhood obesity India 2030"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity India 2030', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 29,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 7,
+   "untagged_examples": [
+    "10% — - Answer: Childhood overweight and obesity in India is a rising but still minority problem",
+    "2.1% — | NFHS-4 under-5 overweight | 2.1% | 1.0x |",
+    "1.0 — | NFHS-4 under-5 overweight | 2.1% | 1.0x |",
+    "3.4% — | NFHS-5 under-5 overweight | 3.4% | 1.6x |",
+    "1.6 — | NFHS-5 under-5 overweight | 3.4% | 1.6x |",
+    "12 — | Urban private-school 5-19 overweight+obesity | ~15-25% [r5] (est.) | ~7-12x |",
+    "4.5 — - Windows: surveys end in 2021 (NFHS-5), CNNS in 2018, NCD-RisC in 2022. The gap to today "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 132,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 10%"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1065,
+  "charts": [
+   {
+    "id": "news-monthly",
+    "title": "Monthly news articles mentioning childhood obesity (not India-restricted)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_country.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What do Indian-authored studies report for prevalence?",
+    "args": {
+     "term": "childhood obesity prevalence India",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...nce India', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity prevalence India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which Indian states are covered in the literature?",
+    "args": {
+     "term": "childhood obesity",
+     "country": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...y', 'country': 'india'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What is the India-only news trend?",
+    "args": {
+     "term": "childhood obesity",
+     "country": "india",
+     "since": "2019-01-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.2,
+    "sample": "{\"points\": [{\"period\": \"2019-01-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2019-02-01\", \"articles\": 1, \"critical\": 1, \"negative\": 0, \"positive\": 1, \"mean_priority\": 7.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2019-03-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2019-04-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2019-05-01\", \"articles\": 1, \"critical\": 1, \"negative\": 1, \"po"
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Which papers criticise or contradict prevalence claims?",
+    "args": {
+     "term": "childhood obesity India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ildhood obesity India'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "What interventions have been tested in Indian schools?",
+    "args": {
+     "term": "school-based obesity intervention India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ty intervention India'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='school-based obesity intervention India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "How is India news coverage framed?",
+    "args": {
+     "term": "childhood obesity",
+     "country": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 59,
+   "traced": 59,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 138,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 617,
+  "charts": [
+   {
+    "id": "under5_overweight",
+    "title": "Overweight among children under five in India",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Overweight (weight-for-height)",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "india_under5_overweight.csv",
+    "how": "ref",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What are the latest nationally representative BMI-based overweight and obesity estimates by child age group and sex in India?",
+    "args": {
+     "term": "India child adolescent overweight obesity prevalence nationally representative age sex latest"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...tative age sex latest'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India child adolescent o...entative age sex latest', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which Indian states have comparable child obesity estimates across survey rounds?",
+    "args": {
+     "term": "India state child obesity overweight survey comparable rounds"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...vey comparable rounds'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India state child obesit...urvey comparable rounds', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What evidence supports or challenges the claim that childhood obesity is increasing in India?",
+    "args": {
+     "term": "India childhood obesity trend prevalence survey estimates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ence survey estimates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India childhood obesity ...alence survey estimates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has Indian news coverage of childhood obesity changed over time?",
+    "args": {
+     "term": "childhood obesity India",
+     "window": "2015-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "Which interventions have evidence of reducing childhood obesity in India?",
+    "args": {
+     "term": "India childhood obesity prevention intervention school community systematic review"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ity systematic review'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India childhood obesity ...unity systematic review', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 17,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 10,
+   "untagged_examples": [
+    "0.1% — For ages 5–19, the NCD Risk Factor Collaboration estimated that obesity prevalence in Indi",
+    "3.1% — For ages 5–19, the NCD Risk Factor Collaboration estimated that obesity prevalence in Indi",
+    "0.1% — For ages 5–19, the NCD Risk Factor Collaboration estimated that obesity prevalence in Indi",
+    "3.7% — For ages 5–19, the NCD Risk Factor Collaboration estimated that obesity prevalence in Indi",
+    "19 — - **[r2] “Worldwide trends in body-mass index, underweight, overweight, and obesity from 1",
+    "10.1016 — - **[r2] “Worldwide trends in body-mass index, underweight, overweight, and obesity from 1",
+    "6736 — - **[r2] “Worldwide trends in body-mass index, underweight, overweight, and obesity from 1",
+    "17 — - **[r2] “Worldwide trends in body-mass index, underweight, overweight, and obesity from 1"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 843,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism-indexed childhood-obesity research papers",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Subject-lane annual counts",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_volume.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_trend.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "What nationally representative Indian child obesity prevalence estimates are available by age and sex?",
+    "args": {
+     "topic": "childhood obesity",
+     "geo": "India",
+     "population": "children",
+     "measures": [
+      "prevalence",
+      "BMI"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ... ['prevalence', 'BMI']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\npopulation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='children', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasures\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['prevalence', 'BMI'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "How do Indian childhood obesity estimates vary by state and urban or rural residence?",
+    "args": {
+     "topic": "childhood obesity",
+     "geo": "India",
+     "population": "children",
+     "breakdown": [
+      "state",
+      "urban_rural"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...state', 'urban_rural']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\npopulation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='children', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['state', 'urban_rural'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which India-based studies report comparable childhood obesity trends over time?",
+    "args": {
+     "term": "childhood obesity India prevalence trend",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'childhood obesity India prevalence trend' — try expand=true, or a broader phrase",
+    "seconds": 7.5,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Which India-specific intervention studies report child weight outcomes?",
+    "args": {
+     "topic": "childhood obesity prevention",
+     "geo": "India",
+     "population": "children"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...opulation': 'children'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity prevention', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\npopulation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='children', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "Which evidence challenges the effectiveness or interpretation of childhood obesity interventions?",
+    "args": {
+     "topic": "childhood obesity interventions",
+     "geo": "India",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...: 'India', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='childhood obesity interventions', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 25,
+   "traced": 25,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

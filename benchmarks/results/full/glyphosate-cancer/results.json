@@ -1,0 +1,254 @@
+{
+ "slug": "glyphosate-cancer",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 2.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 32.6,
+   "plain": 32.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 33.4,
+    "gpt": 31.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 72.3,
+   "plain": 72.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.4,
+    "gpt": 75.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 2.0
+   },
+   "strict": 34.4,
+   "plain": 34.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 29.8,
+    "gpt": 39.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 67.6,
+   "plain": 67.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.2,
+    "gpt": 67.0
+   }
+  }
+ },
+ "judge_mad": 0.48,
+ "verdicts": {
+  "opus": "B and C both grounded their numbers in the recorded calls. B read the research series correctly as flat, added the news trend and all four cancer-specific RRs, and gave a confidence level justified by the 6-paper intersection; C misread the series direction and dropped news. The memory-only deliverables A and D gave reasonable narrative answers but carried unverifiable or wrong specifics, and A had a fabricated IARC DOI.",
+  "gpt": "A is strongest for a decision-maker because it combines the most complete traced evidence, quantified comparisons, and explicit limits, while directly answering the causation question. Its unsupported export window, censored endpoint handling, and one unresolvable DOI keep the deliverable short of fully reliable."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "IARC DOI 10.1002/14356007.w112.pub2 is fabricated or does not resolve",
+    "AHS window stated as 1993–2001 (follow-up ran to ~2012–13)",
+    "prism-calls block claims c1/c2 were used despite 'no Prism calls were run'"
+   ],
+   "claude_prism": [
+    "States that three reviews carried a 'qualifies' proposed stance; the record shows four",
+    "Claims the tool lists the Exponent institution; the record has no affiliation field",
+    "effect_sizes.csv window '1990..2016' is not from the source"
+   ],
+   "chatgpt_prism": [
+    "Reads the research series as 'rises 1.43×' while the tool reports direction 'flat' (late_vs_early 1.11)",
+    "Omits the censoring flag on the 2025 point"
+   ],
+   "claude_bare": [
+    "Ninth Circuit 2022 described as vacating on ecological and procedural grounds; it vacated the human-health finding",
+    "Leon 2019 NHL meta-RR given as 1.12 (0.94–1.34), likely incorrect",
+    "Many specifics (AML RR, settlement size) are from memory"
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "The references include DOI 10.3760/cma.j.cn121094-20240422-00174, which the script could not find in the corpus.",
+    "The effect-size CSV assigns a 1990–2016 window that is not supplied by the statistics response.",
+    "The research trend uses 2025 as its endpoint despite the response's note that the newest period is excluded because of ingest lag."
+   ],
+   "chatgpt_bare": [
+    "The IARC DOI 10.1002/14356007.w112.pub2 was not found in the research corpus.",
+    "The chart and effect-size export rely on published-source figures that are not traceable to the recorded database responses."
+   ],
+   "claude_bare": [
+    "The deliverable contains many untagged numeric claims and estimates from memory, including cohort and regulatory figures.",
+    "The proposed follow-up calls did not execute successfully."
+   ],
+   "chatgpt_prism": [
+    "The chart and trend treat 2025 as a valid endpoint even though the source says the newest period is excluded because of ingest lag.",
+    "The relative-risk export uses an unknown window and omits complete provenance."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "A openly says it cannot quantify a trend, so there is no series.",
+    "comparison": "It compares two remembered relative risks, AHS 0.85 and Zhang 1.41, and caveats them, but neither can be traced.",
+    "chart": "Its relative-risk bars cite a public source the benchmark cannot verify.",
+    "drilldown": "The follow-up calls failed (0/4), and the only breakdown is from memory.",
+    "export": "Its single CSV comes from memory, and the window is wrong.",
+    "repro": "Nothing traces to a recorded call. The prism-calls block lists c1/c2 as 'used' even though A says no calls were run.",
+    "refs": "The IARC DOI 10.1002/14356007.w112.pub2 does not resolve to the monograph, so the ceiling of 1 applies.",
+    "accuracy": "The cohort window is given as 1993–2001, but AHS follow-up ran to about 2012–13. The IARC DOI is fabricated, and the call block contradicts the 'no calls' statement.",
+    "limits": "It is honest and specific about what it cannot measure, but the limits are memory-based.",
+    "verdict": "It has an answer, decision, confidence and what would change it, but the verdict rests partly on a fabricated reference.",
+    "facets": "Facets are answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Research series has its window, CAGR 4.6% and late/early 1.11, read correctly as flat. The news thirds 26→83 (3.19×) and the Jan-2026 peak of 8 are traced. It flags the 2025 point as non-partial despite the censoring.",
+    "comparison": "A table of RR vs the 1.0 baseline for four outcomes, with deltas that recompute exactly and the caveat carried.",
+    "chart": "One traced volume chart with a correct caption. Neither the effect sizes nor the news series is charted.",
+    "drilldown": "Layers by cancer type, tier and lane are traced, but only 1 of 6 follow-ups executed.",
+    "export": "Two CSVs plus a provenance JSON, both referenced from the prose. The effect_sizes window '1990..2016' is invented.",
+    "repro": "All 62 numbers trace, and the calls are listed with args.",
+    "refs": "The script ceiling is 1 because one DOI was not found in the corpus, though it appears in the reference record.",
+    "accuracy": "Most figures are right and it catches the 2025 censoring anomaly. However, it says three reviews proposed 'qualifies' when there are four, and claims the tool lists the Exponent affiliation, which the record does not contain.",
+    "limits": "Window ends with gaps to today, the lane intersection of 6, and the stance-label caveat all sit next to the numbers. It says what would close the gap.",
+    "verdict": "Low confidence with a concrete reason (6 papers in the intersection, 1 document read). It names IARC as the contrary evidence and states the decision and what would change it.",
+    "facets": "Covers volumes, effect sizes, contrary evidence, and both research and news trends, with grounded 'not retrieved' notes."
+   },
+   "chatgpt_prism": {
+    "trend": "Says the series 'rises' 1.43×, but the tool calls it flat (CAGR 4.6%, late/early 1.11). It drops the 2025 censoring note and omits the news series.",
+    "comparison": "RR vs the no-use baseline for NHL, MM and HL is traced and caveated, but leukemia is omitted.",
+    "chart": "One traced volume chart. Effect sizes and news are not charted.",
+    "drilldown": "The 0/4 follow-ups give a ceiling of 1.",
+    "export": "Two traced CSVs with provenance, including an honest 'unknown' window.",
+    "repro": "All 31 numbers trace, with a calls block and capture date.",
+    "refs": "All three DOIs resolve, the quotes are verbatim, and each reference is tied to a claim.",
+    "accuracy": "No fabrications, but the trend direction contradicts the tool's 'flat' reading.",
+    "limits": "Window ends, a gap to today of about 4 months 22 days, the lane intersection and the coverage caveat are placed with the numbers.",
+    "verdict": "It is direct, consistent and acknowledges the contrary meta-analysis conclusion.",
+    "facets": "News trend and leukemia are missing."
+   },
+   "claude_bare": {
+    "trend": "Study RRs plotted by year are presented as a trend, labelled as memory.",
+    "comparison": "Its RR comparison uses remembered values that cannot be checked.",
+    "chart": "Its RR bars are labelled as coming from memory.",
+    "drilldown": "The follow-ups failed (0/6), and the layers are generic.",
+    "export": "Its CSV comes from memory.",
+    "repro": "No numbers trace, and 13 are untagged.",
+    "refs": "The DOIs that are given resolve, but r5 has no DOI, r2 and r3 have generic URLs, and no quotes are given.",
+    "accuracy": "The Ninth Circuit 2022 ruling is mischaracterised; it vacated EPA's human-health finding. The Leon 2019 NHL meta-RR 1.12 (0.94–1.34) looks wrong.",
+    "limits": "It is honest about the memory-based gap, but cannot cite data limits.",
+    "verdict": "A balanced IARC vs regulator answer with decision, confidence and conditions. This is an established literature, so memory suffices here.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "The research series is traced and quantified, but its news trend is only summarized and the research endpoint is treated as usable despite the censoring note.",
+    "comparison": "The outcome estimates share the RR=1 baseline, arithmetic is correct, and the marginal/null findings are distinguished.",
+    "chart": "The annual research chart traces every point, has a window and unit, and supports a stated claim.",
+    "drilldown": "It gives multiple breakdowns and item references, but only one of six proposed follow-ups executed successfully.",
+    "export": "The values trace, but the effect-size export assigns an unsupported 1990–2016 window and provenance is incomplete.",
+    "repro": "All numeric claims are tagged and the listed core calls include arguments and windows.",
+    "refs": "One of six DOIs is not found in the research corpus, capping the score at 1.",
+    "accuracy": "The causal conclusion is appropriately bounded, but the export window and endpoint handling are questionable.",
+    "limits": "It places important lane, coverage, window, and retrieval limits near the relevant claims.",
+    "verdict": "It answers directly with confidence, a decision, conditions that could change it, and contrary evidence; the evidence base is explicitly narrow.",
+    "facets": "It addresses the disagreement, study estimates, corpus limits, and the research-versus-news distinction."
+   },
+   "chatgpt_bare": {
+    "trend": "It explicitly says the requested research trend cannot be quantified; the cohort chart is not a time series.",
+    "comparison": "It gives numeric estimates, but the cohort and meta-analysis are not on a sufficiently comparable scale and the comparison is labeled invalid.",
+    "chart": "The chart is an estimate from public sources that the benchmark cannot verify.",
+    "drilldown": "The proposed calls failed, and the breakdown stays at exposure groups without linked study-level items.",
+    "export": "The estimate table is sourced to references rather than recorded calls and lacks complete provenance.",
+    "repro": "It states no Prism calls were run, so its figures cannot be regenerated from listed calls.",
+    "refs": "One cited DOI is not found in the corpus, triggering the fabricated-identifier cap.",
+    "accuracy": "It distinguishes hazard assessment from dose-specific risk and does not directly contradict the reference record.",
+    "limits": "It states the cohort window, lane distinctions, partial coverage, and limits on individual-risk inference.",
+    "verdict": "It gives a decision, confidence, reason, and what evidence would change the conclusion.",
+    "facets": "It covers the main disagreement and cohort/meta-analysis contrast but lacks measured corpus facets."
+   },
+   "claude_bare": {
+    "trend": "It says no measured trend is available and provides selected study estimates, not a time series of the quantity asked about.",
+    "comparison": "It compares reported RRs and labels study differences, but the figures are memory-based and not benchmark-checkable.",
+    "chart": "The chart is an openly memory-based estimate, so it earns the estimate-only score.",
+    "drilldown": "Its layers and proposed calls are generic for this question, and none of the follow-ups executed successfully.",
+    "export": "The table is memory-based and its provenance block contains no calls.",
+    "repro": "The script found no numeric claims traceable to recorded calls and 13 untagged claims.",
+    "refs": "The main identifiers resolve and references are tied to claims with publication details, but quotes are absent or not verified verbatim.",
+    "accuracy": "Numerous specific figures and regulatory claims are unsupported by the supplied record, and several are untagged.",
+    "limits": "It identifies memory use and missing corpus data, but does not consistently bind limits to the figures.",
+    "verdict": "It answers directly and names conditions that could change the view, but the confidence and recommendation rely substantially on unverified recalled evidence.",
+    "facets": "It discusses IARC, regulators, and study disagreement, but the numeric and corpus facets are mostly ungrounded."
+   },
+   "chatgpt_prism": {
+    "trend": "The research points and change are traced, but the series endpoint is presented despite the source's censoring note.",
+    "comparison": "The RR baseline and estimates are correct, with an appropriate caveat that relative risk is not absolute risk.",
+    "chart": "The research chart is traced, but the endpoint treatment conflicts with the censoring note, lowering the chart score.",
+    "drilldown": "The proposed follow-ups did not execute, and the report does not provide a deeper linked breakdown.",
+    "export": "The annual values trace, but the risk table has an unknown window and incomplete provenance fields.",
+    "repro": "All numbers trace to listed calls with arguments, and the provenance block supports replay.",
+    "refs": "The three DOIs resolve and quotes are verified, but the references are not fully ranked with tier reasons.",
+    "accuracy": "The answer is measured carefully overall, but it treats the censored 2025 endpoint as a valid trend endpoint.",
+    "limits": "It covers lane, coverage, matching, and timing, but the endpoint caveat is not reflected consistently in the trend reading.",
+    "verdict": "It gives a direct answer, confidence, decision, conditions for revision, and contrary evidence while acknowledging the narrow record.",
+    "facets": "It covers the core evidence and corpus limits, but does not resolve all implied disagreement facets with grounded breakdowns."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,141 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "export": 1,
+    "repro": 1,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "C": {
+    "export": 3,
+    "repro": 2,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "export": 1,
+    "repro": 0,
+    "refs": 4,
+    "accuracy": 1,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "export": "CSV is tied to a recorded ranking call, but omits the tool’s title and why_tier fields, lacks row identifiers beyond local refs, and has no source-call provenance JSON in the required shape.",
+    "repro": "All numeric claims are tagged to listed calls and the recipe includes both recorded calls and arguments; the extra follow-ups are proposed, not used. The export and chart largely reproduce the ranking response.",
+    "refs": "DOIs resolve, but the sources are not all tied to specific supporting claims with abstract quotes; most have only title-based or unmeasured stance.",
+    "accuracy": "Mostly faithful to the returned records, but it treats all eight returned entries as support for exercise reducing depression despite several being associations or broader outcomes, and describes the citation result’s coverage check though that detail is absent from the reference record.",
+    "limits": "States the unwindowed results, incomplete citation return, matching limits, and missing effect sizes and contrary-evidence search near the relevant claims.",
+    "verdict": "Gives a decision, medium confidence, and conditions that could change it, but does not adequately acknowledge the strongest contrary evidence or bound the recommendation to the returned population-specific evidence.",
+    "facets": "Addresses ranking and citation style, but does not provide author-complete Vancouver citations for most entries and leaves stance, effects, and contrary evidence unresolved."
+   },
+   "B": {
+    "export": "The memory-based CSV is honestly identified as qualitative and partial, earning the estimate-level anchor.",
+    "repro": "The claims and references are explicitly memory-based, with no reproducible calls.",
+    "refs": "The three DOIs and metadata appear valid; each source is tied to a claim and quoted, but quotes are not verified here against the abstract and the set lacks a ranked evidence-weight rationale beyond broad tier labels.",
+    "accuracy": "The cited reviews and their general conclusions are plausible and no reference-record contradiction is evident; it openly says this is a knowledge-only selection.",
+    "limits": "It identifies the lack of search, partial coverage, and publication-date gap, but does not state all applicable source-specific limits alongside each claim.",
+    "verdict": "Directly answers, supports a practical decision, gives confidence and conditions that could change it, and bounds the evidence as qualitative rather than a uniform effect comparison.",
+    "facets": "Provides a grounded memory-based ranking of three syntheses, but omits several facets such as contrary evidence and detailed population-specific scope."
+   },
+   "C": {
+    "export": "The CSV traces to the recorded ranking response and preserves blank stance values, but omits source-call/window provenance attributes and is not referenced with a full export provenance block.",
+    "repro": "It lists the two used calls and arguments, but numeric claims are not traceable at the required level and the regenerate recipe is incomplete.",
+    "refs": "All listed DOIs resolve and claims are connected to sources, but quotes are absent and most references lack authors, so the abstract-support check is incomplete.",
+    "accuracy": "Carefully distinguishes the single qualifying prevention record from the broader claim and does not invent effect estimates; minor issue: it calls the remaining population-specific records less relevant without evidence on their findings.",
+    "limits": "Notes missing windows, coverage details, match mode, and effect estimates, but these limits are not fully situated next to each bounded result.",
+    "verdict": "Provides a qualified direct answer, decision, confidence, and what evidence would change the conclusion; the scope is bounded to prevention in older adults.",
+    "facets": "Covers the returned evidence tiers and population scope, but does not supply complete Vancouver citations or resolve stance, effects, and contrary findings."
+   },
+   "D": {
+    "export": "CSV is explicitly labelled an estimate from memory, which earns the estimate-level anchor.",
+    "repro": "Seven numeric claims are presented without recorded calls or named-source traceability; the proposed calls were not run and have no windows.",
+    "refs": "DOIs resolve and the ranked sources carry metadata, but no claims are supported with verified abstract quotes; some source titles or bibliographic details appear mismatched.",
+    "accuracy": "Presents multiple specific effect estimates and trial counts as memory estimates, and the Heissel source is misdescribed as an umbrella review despite its cited title identifying a systematic review and meta-analysis with meta-regression.",
+    "limits": "Generic memory and currency limits are disclosed, but specific claims lack source windows and verifiable support.",
+    "verdict": "Offers a decision and confidence, but the recommendation rests on unsupported effect estimates and does not establish what evidence would change it with traceable sources.",
+    "facets": "Provides a memory-based ranking, but its numeric evidence is ungrounded and it does not resolve the requested Vancouver citations with evidence-weighted, verifiable support."
+   }
+  },
+  "errors": {
+   "A": [
+    "Claims the citation result passed a typed-index coverage check with 105,553,750 rows against 98,602,364; that information is not in the reference record.",
+    "Treats eight records as evidence for the broad causal claim, although several concern association, psychological distress, or narrow populations and their stance was not returned."
+   ],
+   "B": [],
+   "C": [],
+   "D": [
+    "Reports Cooney's trial count and SMDs, including a bias-restricted estimate, as estimates without a traceable source call or named source passage.",
+    "Mislabels Heissel 2023 as an umbrella review; the cited title is a systematic review and meta-analysis with meta-regression.",
+    "Presents several specific effect sizes and conclusions as measured-looking evidence despite acknowledging they are unverified from memory."
+   ]
+  },
+  "best": "C",
+  "verdict": "C best preserves the distinction between the one directly returned prevention citation, whose stance qualifies, and the population-specific records that do not establish a universal treatment effect. B gives a useful, plausible memory-based answer with a practical decision, while A overstates what its retrieved records support and D relies on unverified numeric specifics."
+ },
+ "scores": {
+  "claude_prism": {
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "export": 1,
+   "repro": 1,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "export": 3,
+   "repro": 2,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "export": 1,
+   "repro": 0,
+   "refs": 4,
+   "accuracy": 1,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

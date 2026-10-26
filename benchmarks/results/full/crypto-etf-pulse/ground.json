@@ -1,0 +1,661 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 630,
+  "charts": [
+   {
+    "id": "t1",
+    "title": "Relative Bitcoin ETF coverage intensity (index, peak=100)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Coverage intensity (estimate)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "coverage_index_estimate.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Monthly article volume for Bitcoin ETF, 2021–2026?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "granularity": "month",
+     "from": "2021-01-01",
+     "to": "2026-10-22"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2021-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "Tone versus corpus baseline?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "baseline": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "Tone compared with general crypto coverage?",
+    "args": {
+     "a": "Bitcoin ETF",
+     "b": "cryptocurrency"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'a': 'Bit... 'b': 'cryptocurrency'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\na\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Bitcoin ETF', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nb\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cryptocurrency', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which critical headlines, with date, publisher and URL?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.8,
+    "sample": "{\"articles\": [{\"target_id\": \"69e8e2ee9baafc7356dddec0\", \"url\": \"https://bitcoinethereumnews.com/tech/blackrock-ibit-leads-664m-etf-inflows-with-284m-daily-surge/\", \"title\": \"BlackRock IBIT Leads $664M ETF Inflows with $284M Daily Surge\", \"excerpt\": \"BlackRock IBIT records $284M inflow as eight-day Bitcoin accumulation hits $1.34B. Spot Bitcoin ETFs log $664M daily inflow with IBIT leading and FBTC following. Sheri Biggs discloses up to $250K purchase in BlackRock Bitcoin ETF shares. BlackRock’s spot Bitcoin exchange-traded fund recorded a major\", \"publisher\": \"bitcoinethereumnews.com\", \"published\": \"2026-04-18 15:36:16\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-04-18 15:36:16\", \"pr"
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which countries are covered, and what is placed_pct?",
+    "args": {
+     "term": "Bitcoin ETF"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 25.3,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 6027, \"share_pct\": 43.1, \"lift\": 1.9}, {\"label\": \"ireland\", \"articles\": 4223, \"share_pct\": 30.2, \"lift\": 42.6}, {\"label\": \"china\", \"articles\": 515, \"share_pct\": 3.7, \"lift\": 0.7}, {\"label\": \"united kingdom\", \"articles\": 334, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"canada\", \"articles\": 264, \"share_pct\": 1.9, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 222, \"share_pct\": 1.6, \"lift\": 0.3}, {\"label\": \"iran\", \"articles\": 205, \"share_pct\": 1.5, \"lift\": 0.5}, {\"label\": \"italy\", \"articles\": 173, \"share_pct\": 1.2, \"lift\": 1.0}, {\"label\": \"japan\", \"articles\": 164, \"share_pct\": 1.2, \"lift\": 0.8}, {\"label\": \"germany\", \"articles"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which outlets, entities and themes dominate?",
+    "args": {
+     "term": "Bitcoin ETF"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 56.1,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"Bitcoin ETF\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 3071, \"entity_labelled_articles\": 8994, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 12577, \"critical_articles\": 8745, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 17:16:36\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 10,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 7,
+   "untagged_examples": [
+    "100 — The chart is an illustrative, estimated index of relative coverage intensity, not article ",
+    "100 — The chart is an illustrative, estimated index of relative coverage intensity, not article ",
+    "100 — Estimated change: 2024 versus 2022 is about 5x (100 / 20, est.). The 2025 level is about 4",
+    "20 — Estimated change: 2024 versus 2022 is about 5x (100 / 20, est.). The 2025 level is about 4",
+    "296 — - Window: the series covers 2021 to 2025. The end is 2025-12-31, which is 296 days before ",
+    "11 — - What the counts are: the chart values are my index estimates, not article counts. The 20",
+    "50 — - What the counts are: the chart values are my index estimates, not article counts. The 20"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 122,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 933,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning bitcoin etf",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "neg-pos-ratio",
+    "title": "Negative-to-positive article ratio",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "ratio",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_series.csv",
+    "how": "call",
+    "rows": 7,
+    "numeric_cells": 28,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "publishers.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "What drove the Nov 2025 and Feb 2026 negative spikes?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2025-11-01",
+     "until": "2026-03-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-11-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "Has June–October 2026 continued the souring?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no scored article mentions 'bitcoin etf'",
+    "seconds": 0.3,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Why is Ireland so prominent?",
+    "args": {
+     "term": "bitcoin etf",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 6027, \"share_pct\": 43.1, \"lift\": 1.9}, {\"label\": \"ireland\", \"articles\": 4223, \"share_pct\": 30.2, \"lift\": 42.6}, {\"label\": \"china\", \"articles\": 515, \"share_pct\": 3.7, \"lift\": 0.7}, {\"label\": \"united kingdom\", \"articles\": 334, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"canada\", \"articles\": 264, \"share_pct\": 1.9, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 222, \"share_pct\": 1.6, \"lift\": 0.3}, {\"label\": \"iran\", \"articles\": 205, \"share_pct\": 1.5, \"lift\": 0.5}, {\"label\": \"italy\", \"articles\": 173, \"share_pct\": 1.2, \"lift\": 1.0}, {\"label\": \"japan\", \"articles\": 164, \"share_pct\": 1.2, \"lift\": 0.8}, {\"label\": \"germany\", \"articles"
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does tone differ for BlackRock vs Grayscale?",
+    "args": {
+     "terms": [
+      "blackrock bitcoin etf",
+      "grayscale bitcoin etf"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 45.9,
+    "sample": "{\"terms\": [\"blackrock bitcoin etf\", \"grayscale bitcoin etf\"], \"rows\": [{\"term\": \"blackrock bitcoin etf\", \"articles\": 156, \"share_pct\": 90.7, \"critical\": 124, \"direction\": \"flat\", \"growth\": 0.95, \"tone_ratio\": 0.26, \"vs_baseline\": 0.45, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 3, \"critical\": 3, \"negative\": 0, \"positive\": 3, \"mean_priority\": 8.0, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 1, \"critical\": 0, \"negative\": 0, \"positive\": 1, \"mean_priority\": 6.0, \"critical_pct\": 0.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 5, \"critical\": 3, \"negative\": 1, \"positive\": 4, \"mean_priority\": 7.0, \"critical_pct\": 60.0, \"partial_perio"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What is the volume trend after May 2026?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2026-05-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"points\": [{\"period\": \"2026-05-01\", \"articles\": 654, \"critical\": 421, \"negative\": 216, \"positive\": 437, \"mean_priority\": 6.95, \"critical_pct\": 64.4, \"partial_period\": false}], \"total\": 654, \"critical_total\": 421, \"trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"critical_trend\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"growth_note\": \"Zero-count periods included; partial boundary buckets excluded from growth.\", \"country\": null}"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 73,
+   "traced": 73,
+   "derived": 5,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 139,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 503,
+  "charts": [
+   {
+    "id": "coverage-milestones",
+    "title": "Bitcoin ETF coverage volume",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Measured coverage volume",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly article volume for Bitcoin ETF coverage, and how does it change over time?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does Bitcoin ETF coverage tone compare with the full news corpus over the same dates?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "baseline": "all news",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...', 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Bitcoin ETF', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes, organisations, and people appear most in Bitcoin ETF coverage?",
+    "args": {
+     "term": "Bitcoin ETF"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"Bitcoin ETF\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 3071, \"entity_labelled_articles\": 8994, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 12577, \"critical_articles\": 8745, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 17:16:36\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are associated with Bitcoin ETF coverage, and what share of articles are placed?",
+    "args": {
+     "term": "Bitcoin ETF"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 6027, \"share_pct\": 43.1, \"lift\": 1.9}, {\"label\": \"ireland\", \"articles\": 4223, \"share_pct\": 30.2, \"lift\": 42.6}, {\"label\": \"china\", \"articles\": 515, \"share_pct\": 3.7, \"lift\": 0.7}, {\"label\": \"united kingdom\", \"articles\": 334, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"canada\", \"articles\": 264, \"share_pct\": 1.9, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 222, \"share_pct\": 1.6, \"lift\": 0.3}, {\"label\": \"iran\", \"articles\": 205, \"share_pct\": 1.5, \"lift\": 0.5}, {\"label\": \"italy\", \"articles\": 173, \"share_pct\": 1.2, \"lift\": 1.0}, {\"label\": \"japan\", \"articles\": 164, \"share_pct\": 1.2, \"lift\": 0.8}, {\"label\": \"germany\", \"articles"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical Bitcoin ETF headlines appeared, with dates, publishers, and URLs?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.0,
+    "sample": "{\"articles\": [{\"target_id\": \"69e8e2ee9baafc7356dddec0\", \"url\": \"https://bitcoinethereumnews.com/tech/blackrock-ibit-leads-664m-etf-inflows-with-284m-daily-surge/\", \"title\": \"BlackRock IBIT Leads $664M ETF Inflows with $284M Daily Surge\", \"excerpt\": \"BlackRock IBIT records $284M inflow as eight-day Bitcoin accumulation hits $1.34B. Spot Bitcoin ETFs log $664M daily inflow with IBIT leading and FBTC following. Sheri Biggs discloses up to $250K purchase in BlackRock Bitcoin ETF shares. BlackRock’s spot Bitcoin exchange-traded fund recorded a major\", \"publisher\": \"bitcoinethereumnews.com\", \"published\": \"2026-04-18 15:36:16\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-04-18 15:36:16\", \"pr"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which publishers account for the largest share of Bitcoin ETF coverage?",
+    "args": {
+     "term": "Bitcoin ETF",
+     "breakdown": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 845,
+  "charts": [
+   {
+    "id": "monthly-volume",
+    "title": "Monthly Bitcoin ETF news articles",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Matched articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "bitcoin_etf_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which publishers contributed the most Bitcoin ETF coverage across the full window?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "dimension": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...imension': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='bitcoin etf', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does monthly Bitcoin ETF sentiment compare with the corpus baseline over time?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 107, \"positive\": 379, \"neutral\": 3, \"ratio\": 0.28}, {\"period\": \"2024-07-01\", \"negative\": 56, \"positive\": 334, \"neutral\": 2, \"ratio\": 0.17}, {\"period\": \"2024-08-01\", \"negative\": 129, \"positive\": 507, \"neutral\": 6, \"ratio\": 0.25}, {\"period\": \"2024-09-01\", \"negative\": 163, \"positive\": 504, \"neutral\": 4, \"ratio\": 0.32}, {\"period\": \"2024-10-01\", \"negative\": 125, \"positive\": 626, \"neutral\": 5, \"ratio\": 0.2}, {\"period\": \"2024-11-01\", \"negative\": 89, \"positive\": 662, \"neutral\": 9, \"ratio\": 0.13}, {\"period\": \"2024-12-01\", \"negative\": 113, \"positive\": 524, \"neutral\": 3, \"ratio\": 0.22}, {\"period\": \"2025-01-01\", \"negative\": 76, \"positive\": 460, \"neutral\":"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What critical Bitcoin ETF headlines appeared in each quarter, with dates and publishers?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "limit": 50
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries are represented after checking whether resolved place labels are relevant?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.6,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 5784, \"share_pct\": 43.1, \"lift\": 1.9}, {\"label\": \"ireland\", \"articles\": 4054, \"share_pct\": 30.2, \"lift\": 42.6}, {\"label\": \"china\", \"articles\": 471, \"share_pct\": 3.5, \"lift\": 0.7}, {\"label\": \"united kingdom\", \"articles\": 318, \"share_pct\": 2.4, \"lift\": 0.5}, {\"label\": \"canada\", \"articles\": 252, \"share_pct\": 1.9, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 217, \"share_pct\": 1.6, \"lift\": 0.3}, {\"label\": \"iran\", \"articles\": 205, \"share_pct\": 1.5, \"lift\": 0.5}, {\"label\": \"italy\", \"articles\": 171, \"share_pct\": 1.3, \"lift\": 1.0}, {\"label\": \"japan\", \"articles\": 161, \"share_pct\": 1.2, \"lift\": 0.8}, {\"label\": \"germany\", \"articles"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "Which specific themes explain the monthly volume peaks and declines?",
+    "args": {
+     "term": "bitcoin etf",
+     "since": "2024-06-01",
+     "until": "2026-06-01",
+     "granularity": "monthly",
+     "dimension": "theme"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='theme', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 29,
+   "traced": 28,
+   "derived": 1,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "144 — Window: June 2024 through May 2026; the end date is exclusive at June 1, 2026 [c1]. That c"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 123,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [
+   "declared calls that were never made: [None]"
+  ],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 4,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

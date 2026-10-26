@@ -1,0 +1,189 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "D": {
+    "trend": 2,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Two traced series. Research 100 to 200 with 9.1% CAGR; news flat at a 0.91 late/early ratio, peak 142 in Feb 2025, critical-tone ratio 0.92 also given. Not decomposed in a chart.",
+    "comparison": "India vs US and UK news counts recompute exactly (0.14 and 0.50). Baseline is defined and the 'absence from top rows is not zero' caveat is carried.",
+    "chart": "One fully traced news chart with window, unit and caption. No research chart and no critical overlay.",
+    "drilldown": "Institution and country layers are traced but lack identifiers. Only 1 of 6 follow-ups executed.",
+    "export": "Two traced CSVs plus a provenance JSON, referenced from the prose. This is at the ceiling.",
+    "repro": "59/59 numbers traced, and the calls are listed with args.",
+    "refs": "All 4 DOIs resolve, each with year, venue and tier. The quote is verbatim. r4 is honestly flagged as adult evidence.",
+    "accuracy": "Catches that the 'India' brief returns global evidence, and flags the conflict between the n=0 research row and the institution-lift row. Missed the Indiana University 'india' match collision. Says May may be incomplete although the tool flags it non-partial; this is minor.",
+    "limits": "Places the window end and the gap to today, mention mode, documents-not-prevalence, and the India vs non-India scope next to the numbers.",
+    "verdict": "Direct answer, decision, low confidence with a reason, and what would change it, all consistent with the data.",
+    "facets": "Prevalence is given as a grounded 'not returned'. Volumes, trend, geography, evidence and contested share are covered."
+   },
+   "B": {
+    "trend": "Research doubling is quantified. The news trend is not quantified (no 0.91 ratio), and May 2026 is mislabelled as the censored month.",
+    "comparison": "The 2017 vs 2025 ratio is traced but only restates the trend endpoints. There is no India contrast.",
+    "chart": "Traced research chart with only two endpoints. The available news series is not charted.",
+    "drilldown": "Ceiling 1. No follow-ups executed.",
+    "export": "Two traced CSVs with provenance JSON, referenced from the prose.",
+    "repro": "All 25 numbers traced, and the calls are listed.",
+    "refs": "Two references with a resolving DOI and PMID. The quote is verbatim.",
+    "accuracy": "No contradictions. Misreads the censoring (May labelled censored rather than June excluded). Misses the institution-row anomaly.",
+    "limits": "Specific limits are well placed: 144-day gap, mention match, top-row caveat, stance classification.",
+    "verdict": "Has decision and confidence, but does not engage the strongest contrary evidence in its own data (India news rank vs absent research rows).",
+    "facets": "Roughly three quarters of facets grounded. No institution layer."
+   },
+   "C": {
+    "trend": "Memory series labelled estimate.",
+    "comparison": "Memory ratios that mix ages and definitions.",
+    "chart": "Chart labelled estimate.",
+    "drilldown": "Generic layers. Follow-ups mostly failed.",
+    "export": "Estimate-labelled CSVs.",
+    "repro": "Ceiling 0. Nothing traced.",
+    "refs": "No identifiers. Nothing is resolvable.",
+    "accuracy": "Honest est. labels, but some specifics look shaky: 17M obese by 2030 (Atlas figure recalled as ~27M), and the NFHS-3 1.9% value. Untagged 10% in the verdict.",
+    "limits": "Gives specific gaps (NFHS-5 is 4.5 years old, no corpus queried).",
+    "verdict": "Ceiling 0. Rests on an untraced number.",
+    "facets": "Answered from memory."
+   },
+   "D": {
+    "trend": "Cited public NFHS series that the benchmark cannot verify.",
+    "comparison": "Memory comparison, 1.62x.",
+    "chart": "Chart from a cited public source that cannot be verified.",
+    "drilldown": "No executed follow-ups.",
+    "export": "Cited memory CSV.",
+    "repro": "Ceiling 0.",
+    "refs": "The Lancet DOI resolves and the NFHS URL is plausible. No verifiable quote.",
+    "accuracy": "NFHS figures match public reports. The NCD-RisC values are unchecked but plausible. Interpretation is carefully bounded.",
+    "limits": "Honest about the unmeasured corpus and modelled estimates. Does not use database windows.",
+    "verdict": "Sensible and bounded, but rests on memory figures for a measured question.",
+    "facets": "Memory only. No volumes, news or geography."
+   }
+  },
+  "errors": {
+   "A": [
+    "States May 2026 may be incomplete although the tool marks it non-partial (minor)"
+   ],
+   "B": [
+    "Calls May 2026 the censored month; the censoring is at 2026-06-01"
+   ],
+   "C": [
+    "World Obesity Atlas 2030 projection likely misremembered (17M)",
+    "Untagged 10% in the verdict"
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A traced every number. It quantified both the research and news trends and flagged that the 'India' query returned global evidence, including its conflicting institution and research-row signals. Its decision is honest: get national survey data before sizing the problem. B was similarly traced but thinner, and it misread the censoring. C and D gave plausible prevalence figures from memory that a decision-maker cannot verify; C also has questionable specifics."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 2,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,177 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced series with a window. Change is given only as endpoint values with no factor or peak. May 2026 is wrongly dropped as censored.",
+    "comparison": "Share deltas (54.9pp, 72.5pp) and ratios (3.63x, 23.09x) recompute exactly, with the overlap caveat carried. The share-versus-growth contrast over time is not computed.",
+    "chart": "One fully traced volume chart with window, unit and caption. There is no share or critical-share view, and May is omitted on a misreading.",
+    "drilldown": "One traced month layer and 4/6 follow-ups ok. No item-level layer. f5 repeats c1.",
+    "export": "Full monthly CSV, traced, with provenance JSON and a prose reference. There is no per-term totals table.",
+    "repro": "Numbers trace (25/26), calls listed with args, provenance block present.",
+    "accuracy": "Treats May 2026 as the censored month. censored_at 2026-06-01 marks June, and May is flagged partial_period false.",
+    "limits": "Window, days to today, coverage, common-word and undefined fields are stated near the numbers.",
+    "verdict": "Direct answer with decision, confidence and what would change it. The decision leans on volume and underplays the growth story the question flags.",
+    "facets": "Totals, shares, series and tone fields are covered. The changing share over time is not analysed."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "Empty placeholder chart with no values.",
+    "drilldown": "Follow-ups failed (0/5).",
+    "export": "Empty CSV labelled estimate.",
+    "repro": "Honest that nothing was measured.",
+    "accuracy": "No contradictions.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Honest refusal with a decision but no answer.",
+    "facets": "No facets answered."
+   },
+   "C": {
+    "trend": "Growth is quantified (2.2x, 9.3x, 2.0x), with peaks, the trough and the Feb-2026 step (3.5x). The chart and CSV are subsampled to 11 of 24 months.",
+    "comparison": "The Anthropic:OpenAI ratio narrows from 7.9:1 to 1.9:1, which recomputes exactly and directly answers the share-versus-volume contrast. Baseline is defined and the overlap is stated.",
+    "chart": "Traced with window, unit and caption. It shows selected months only and charts volume only.",
+    "drilldown": "Term and month layers, 3/6 follow-ups ok, no item layer.",
+    "export": "Totals plus monthly tables with provenance, but the monthly table is subsampled and totals are labelled coverage=full.",
+    "repro": "66/67 traced. Derived figures are marked and recomputable.",
+    "accuracy": "Correct censoring read, correct observation that combined = sum, and anomalies caught (pos+neg≠articles, 'anthropic' as a common word). Calling critical share 'tone' is minor but hedged.",
+    "limits": "Window, gap to today, lane, coverage, match mode and overlap are all specified, plus what cannot be answered.",
+    "verdict": "Answers the question, including the challenger framing, with decision, confidence and conditions.",
+    "facets": "Totals, share, series, growth, tone fields, overlap and the DeepMind/Google naming issue are all addressed."
+   },
+   "D": {
+    "trend": "Direction from memory only, labelled est.",
+    "comparison": "Qualitative ordering only.",
+    "chart": "Empty placeholder.",
+    "drilldown": "Follow-ups failed.",
+    "export": "Empty estimate CSV.",
+    "repro": "An untagged number. Nothing is reproducible.",
+    "accuracy": "No contradiction. The orderings are labelled estimates.",
+    "limits": "Honest about being unmeasured, but the window is invented.",
+    "verdict": "Low-confidence hypothesis.",
+    "facets": "Memory-based only."
+   }
+  },
+  "errors": {
+   "A": [
+    "Treats May 2026 as the censored/incomplete month and drops it from the trend, but the tool censors from 2026-06-01 and May is partial_period=false."
+   ],
+   "B": [],
+   "C": [
+    "Monthly chart and CSV are subsampled (11 of 24 months) although the full series was available.",
+    "Totals CSV is labelled coverage=full."
+   ],
+   "D": [
+    "Invented analysis window 2025-10-01..2026-09-30 not tied to any data."
+   ]
+  },
+  "best": "C",
+  "verdict": "C answered the hard part: OpenAI has the most volume, but Anthropic's gap to OpenAI narrowed from about 7.9:1 to 1.9:1. The ratios recompute exactly, the censoring is read correctly, and the anomalies are flagged. A had cleaner full-series exports and exact share arithmetic, but it misread May as censored and framed its decision around volume alone. B and D were honest but unmeasured."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,196 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Gives no series and explicitly declines to give one.",
+    "comparison": "Compares one memory SMR to a 1.0 baseline. This is uncheckable, so it caps at 2.",
+    "chart": "No chart.",
+    "drilldown": "Names breakdowns only generically. None of its 5 follow-up calls executed.",
+    "export": "A one-row CSV with no traced values. This is the ceiling.",
+    "repro": "All numbers come from memory and are untraced. None of its 12 numbers traced.",
+    "refs": "The two DOIs resolve and the NTP URL is given. Quotes are fragments and the list has no tiering.",
+    "accuracy": "No contradiction with the record. However, the worker SMR 1.16 (0.86-1.51) is a precise memory specific that cannot be checked.",
+    "limits": "It is honest that no corpus was queried and states the gap to today. These are limits of a memory answer, not of measured data.",
+    "verdict": "The verdict has an answer, a decision, a confidence level with its reason, and what would change it. It notes the null worker result. It is sound for an established literature.",
+    "facets": "The facets are answered from memory."
+   },
+   "B": {
+    "trend": "The research series is traced, with its window and censoring stated. It quantifies the change correctly (7.5x; late vs early third 4.38x) and correctly calls the news series too sparse for a trend.",
+    "comparison": "Uses RR baseline 1.00 with exact deltas of -0.05 and -0.02. It explicitly refuses to compute a PFAS vs PM2.5 ratio across units.",
+    "chart": "One traced chart with window, unit and source. It shows bare levels only, the censoring is not marked, and the outcome facets are not charted.",
+    "drilldown": "Breaks down by site, tier and compound, with DOIs. 5 of 6 specific follow-ups executed. No follow-up result was folded back into the report.",
+    "export": "Two traced CSVs. It labels coverage 'full', which the tool never states. There is no document table carrying DOIs. This is the ceiling.",
+    "repro": "All 56 numbers traced, and the calls are listed with args and a capture date. The reachability-check claim does not appear in the record.",
+    "refs": "All 4 DOIs resolve, quotes are verbatim, and tiers are stated. The contrary meta-analysis is traced the same way.",
+    "accuracy": "Catches the off-topic unread documents, the failed statistics call and the empty counter-evidence result. Minor issues are the unsupported 'coverage full' label and the reachability statement.",
+    "limits": "Limits sit next to the numbers they bound: window end vs today, lane, censoring, match mode and 4 readable papers. It also states what would close the gap.",
+    "verdict": "Honest and bounded: cancer only, unsettled, low confidence, with the strongest contrary evidence named. It is weak on the broader harm question.",
+    "facets": "Cancer is grounded. Other outcomes get an explicit 'no data from these calls'."
+   },
+   "C": {
+    "trend": "Traced, with window and censoring stated. Quantifies 7.5x and 8 vs 35.",
+    "comparison": "A table with RR 1.00 defined as the baseline and the CI caveat carried.",
+    "chart": "One traced chart with caption. Shows levels only.",
+    "drilldown": "None of its 5 follow-up calls executed. This is the ceiling.",
+    "export": "Two traced CSVs with coverage marked partial and a provenance JSON block, referenced from the prose. There are no row identifiers or document table.",
+    "repro": "All 35 numbers traced and the calls are listed with args. Includes an untraced reachability claim.",
+    "refs": "The 4 DOIs resolve, each with tier and claim. One quote is altered with a bracketed substitution.",
+    "accuracy": "Correctly flags the off-topic statistics candidates. The read/unread tally sentence is garbled.",
+    "limits": "Thorough, but capped at 3.",
+    "verdict": "A 'Yes, harms' answer at medium confidence rests on cancer-only corpus data in which the top-tier paper contradicts the claim. The answer goes beyond its own evidence.",
+    "facets": "Cancer is grounded. Other outcomes are acknowledged as not covered."
+   },
+   "D": {
+    "trend": "A memory series honestly labelled estimate.",
+    "comparison": "A regulatory-limit comparison from memory. It does not compare health effects.",
+    "chart": "A memory chart labelled estimate.",
+    "drilldown": "Layers are named generically. Only 2 of 6 follow-ups executed.",
+    "export": "CSVs labelled estimate.",
+    "repro": "No call traces. This is the ceiling.",
+    "refs": "No DOIs. Citations are approximate, one is self-described as approximate, and the dates are inconsistent.",
+    "accuracy": "The regulatory facts are broadly right. It says the Faroe result came in 2018 but cites a 2012 paper, and it gives memory effect sizes.",
+    "limits": "Honest about using memory only and states the data-end gaps.",
+    "verdict": "Clear, decision-ready, and names confounding as contrary evidence.",
+    "facets": "Covers many outcomes, but from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "The worker kidney SMR 1.16 (0.86-1.51) is an unverifiable precise memory specific, and its Epidemiology 2017 attribution is uncertain."
+   ],
+   "B": [
+    "States that coverage tables passed reachability checks, which is not in the record.",
+    "Labels CSV coverage 'full', but the tool reports no coverage flag.",
+    "Did not flag that the 2025 point is plotted although censored_at is 2025."
+   ],
+   "C": [
+    "Gives a 'Yes' verdict at medium confidence that the corpus evidence it cites does not support.",
+    "States the reachability claim, which is not in the record.",
+    "Alters a quote with the bracketed '[six named PFAS]'."
+   ],
+   "D": [
+    "The Faroe cohort is dated 2018 in the text but cited as Grandjean 2012.",
+    "The Steenland 2018 citation is admittedly approximate.",
+    "Effect sizes are given from memory."
+   ]
+  },
+  "best": "B",
+  "verdict": "B and C both grounded their numbers in the same cancer-only Prism calls. B was the only one to read that evidence honestly: the top-tier meta-analysis contradicts the claim, the statistics and counter-evidence calls failed, and confidence is therefore low. B also paired this with executable outcome-specific follow-ups. C reached a 'Yes' verdict that outran its data and offered no working follow-ups. A and D gave plausible memory answers that a decision-maker cannot verify or regenerate."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,127 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "repro": 2,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "C": {
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "D": {
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "repro": "No numeric claims need tracing; calls and arguments are listed, but follow-up replay succeeded for only 2 of 3 and no regenerate recipe rebuilds a result.",
+    "refs": "No source documents or resolvable study identifiers are provided; Prism call IDs are not document references.",
+    "accuracy": "Faithfully reports the assessment, unrelated and unread counts, subject lane, and the limits of the corpus mix without inventing human cancer findings.",
+    "limits": "Notes the empty time window, lane, unread documents, and unspecified match method, but omits the applicable months-to-today gap as an explicit limit.",
+    "verdict": "Gives a direct rewrite, decision, medium confidence and reason, and what would change it; it is bounded by the review, though it does not name contrary evidence from its own results.",
+    "facets": "Covers the claim review, corpus mix, lane, coverage and missing evidence card; it does not address the animal and cell evidence the question specifically highlights."
+   },
+   "B": {
+    "repro": "No measured numbers or calls; the answer openly states it is memory-based and has no regenerate recipe.",
+    "refs": "No verified references are supplied.",
+    "accuracy": "Does not contradict the record or present invented specifics; clearly distinguishes its cautious rewrite from a measured review.",
+    "limits": "Specifically says no corpus search or window was run, but provides only general limits and does not discuss the animal and cell evidence.",
+    "verdict": "Direct rewrite, decision, confidence and a condition that would change it; lacks a grounded review and contrary evidence, so support is limited.",
+    "facets": "Addresses the human-causation claim and explicitly says corpus evidence is unavailable, but omits the animal and cell evidence and related evidence distinction."
+   },
+   "C": {
+    "repro": "No database calls were run, and the two numeric estimates are explicitly estimates; no regeneration recipe is given.",
+    "refs": "The NEJM DOI is real, but the IARC URL and generic review references do not provide claim-tied, verifiable support; quotes are absent.",
+    "accuracy": "Adds unsupported specifics that no cancer study exists and prescribes a regulatory posture; its recalled examples do not establish the claim, and it does not ground the animal and cell evidence.",
+    "limits": "Clearly labels memory and estimates and states its knowledge gap, but the applicable source and evidence limits are not tied to verified material.",
+    "verdict": "Provides a direct answer, decision, confidence and conditions, but the recommendation and supporting account rest on unverified recollection and do not establish the requested evidence basis.",
+    "facets": "Discusses human evidence and study types from memory, without grounded values or a grounded no-data result for the implied evidence facets."
+   },
+   "D": {
+    "repro": "Most numeric claims trace to c1, but the c2 description of 11 documents conflicts with the reference, and only 2 of 5 follow-ups replayed successfully.",
+    "refs": "No research documents with resolvable identifiers or claim-linked source metadata are cited; Prism call IDs are not document references.",
+    "accuracy": "Accurately distinguishes topic-level corpus counts from direct claim evidence, but says c2 read 11 documents when the reference returns no data and no document count.",
+    "limits": "Places the empty window, subject lane, six-paper coverage note, censoring and match-mode gaps alongside the relevant claims; identifies what the corpus cannot answer.",
+    "verdict": "Gives a direct rewrite, decision, confidence and reason, and what would change it; the answer is consistent with the assessment and appropriately bounded, though no contrary document is named.",
+    "facets": "Covers the claim assessment, broader corpus mix, lane and coverage limits, while acknowledging that animal and cell evidence is only background and uncited."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Claims from memory that no human cancer study shows causation and that cancer epidemiology is very sparse without a verified source.",
+    "Recommends precautionary exposure-reduction and research-funding policy without grounded evidence in this deliverable."
+   ],
+   "D": [
+    "States that c2 read 11 documents; the reference record says the evidence-card call returned no data."
+   ]
+  },
+  "best": "D",
+  "verdict": "D best equips a decision-maker with a cautious rewrite, a clear policy boundary, and the relevant distinction between broad topic counts and evidence directly testing human cancer causation. Its c2 document-count error and unsupported background account keep it below a clean result; A is the more internally consistent alternative but is less complete about the evidence facets."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "repro": 2,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_bare": {
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

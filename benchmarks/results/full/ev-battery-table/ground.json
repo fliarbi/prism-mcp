@@ -1,0 +1,528 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 501,
+  "charts": [
+   {
+    "id": "ed1",
+    "title": "Typical cell-level gravimetric energy density by chemistry (range midpoint)",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Midpoint (est.)",
+      "how": "estimate",
+      "points": 6,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "energy_density_est.csv",
+    "how": "estimate",
+    "rows": 7,
+    "numeric_cells": 14,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What do reviews report for commercial sodium-ion cell energy density?",
+    "args": {
+     "term": "sodium-ion cell energy density Wh/kg"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... energy density Wh/kg'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sodium-ion cell energy density Wh/kg', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies challenge solid-state energy density claims?",
+    "args": {
+     "term": "solid-state battery energy density"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...attery energy density'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='solid-state battery energy density', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has the stance on LFP energy density changed over time?",
+    "args": {
+     "term": "LFP energy density"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'LFP energy density'",
+    "seconds": 15.6,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What is the pack-level versus cell-level gap?",
+    "args": {
+     "term": "battery pack energy density"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...y pack energy density'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='battery pack energy density', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "What are the top cited papers on lithium-sulfur energy density?",
+    "args": {
+     "term": "lithium-sulfur energy density"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sulfur energy density'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='lithium-sulfur energy density', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How do recent news items compare sodium-ion with LFP?",
+    "args": {
+     "terms": [
+      "sodium-ion",
+      "LFP"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.0,
+    "sample": "{\"terms\": [\"sodium-ion\", \"LFP\"], \"rows\": [{\"term\": \"sodium-ion\", \"articles\": 2206, \"share_pct\": 12.3, \"critical\": 1931, \"direction\": \"rising\", \"growth\": 1.7, \"tone_ratio\": 0.03, \"vs_baseline\": 0.05, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 56, \"critical\": 47, \"negative\": 3, \"positive\": 53, \"mean_priority\": 6.66, \"critical_pct\": 83.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 62, \"critical\": 58, \"negative\": 2, \"positive\": 55, \"mean_priority\": 7.02, \"critical_pct\": 93.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 90, \"critical\": 78, \"negative\": 0, \"positive\": 87, \"mean_priority\": 6.77, \"critical_pct\": 86.7, \"partial_period\": false}, {\"period\": \"2"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 35,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 107,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 899,
+  "charts": [],
+  "tables": [
+   {
+    "name": "corpus_coverage.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "estimates_from_memory.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 10,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What Wh/kg do LFP cell studies report?",
+    "args": {
+     "term": "lithium iron phosphate cell energy density Wh/kg"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... energy density Wh/kg'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='lithium iron phosphate cell energy density Wh/kg', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What Wh/kg do high-nickel NMC studies report?",
+    "args": {
+     "term": "NMC cell specific energy Wh/kg"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...specific energy Wh/kg'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='NMC cell specific energy Wh/kg', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What Wh/kg do sodium-ion cells reach?",
+    "args": {
+     "term": "sodium-ion cell energy density Wh/kg"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... energy density Wh/kg'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sodium-ion cell energy density Wh/kg', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Do papers contest solid-state energy-density claims?",
+    "args": {
+     "term": "solid-state battery energy density"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...attery energy density'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='solid-state battery energy density', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "What practical Li-S cell-level energy density is reported?",
+    "args": {
+     "term": "lithium-sulfur pouch cell Wh/kg"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...lfur pouch cell Wh/kg'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='lithium-sulfur pouch cell Wh/kg', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "How has research attention to energy density changed over time?",
+    "args": {
+     "term": "battery energy density"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'battery energy density'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='battery energy density', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 19,
+   "traced": 10,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 2,
+   "comparison": 3,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 699,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What measured gravimetric and volumetric energy-density values do recent studies report for commercial lithium-ion cells, and under what test conditions?",
+    "args": {
+     "term": "commercial lithium-ion cell gravimetric volumetric energy density measured test conditions",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...onditions', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='commercial lithium-ion c...easured test conditions', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "How do peer-reviewed studies compare practical lithium-sulfur cell energy density with lithium-ion cells at matched system boundaries?",
+    "args": {
+     "term": "practical lithium-sulfur lithium-ion matched cell energy density comparison",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...omparison', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='practical lithium-sulfur...ergy density comparison', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "What energy-density values are reported for sodium-ion cells, and how do results vary by cathode chemistry?",
+    "args": {
+     "term": "sodium-ion cell energy density cathode chemistry Wh kg",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ry Wh kg', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ry Wh kg', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='sodium-ion cell energy d...cathode chemistry Wh kg', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which assumptions determine theoretical and practical lithium-air energy-density estimates?",
+    "args": {
+     "term": "lithium-air theoretical practical energy density system boundary assumptions",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'lithium-air theoretical practical energy density system boundary assumptions' — try expand=true, or a broader phrase",
+    "seconds": 12.6,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "How should flow-battery energy density be reported at electrolyte, stack, and full-system levels?",
+    "args": {
+     "term": "flow battery energy density electrolyte stack system level comparison",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'flow battery energy density electrolyte stack system level comparison' — try expand=true, or a broader phrase",
+    "seconds": 13.7,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 782,
+  "charts": [],
+  "tables": [
+   {
+    "name": "chemistry_energy_density.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 0,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What comparable cell-level Wh/kg ranges do review papers report for each listed chemistry?",
+    "args": {
+     "term": "cell-level gravimetric energy density Wh/kg lithium iron phosphate nickel manganese cobalt sodium-ion solid-state lithium-sulfur",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...m-sulfur', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='cell-level gravimetric e...id-state lithium-sulfur', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "How do reported pack-level Wh/kg values compare across these chemistries?",
+    "args": {
+     "rows": [
+      "lithium iron phosphate",
+      "nickel manganese cobalt",
+      "sodium-ion",
+      "solid-state",
+      "lithium-sulfur"
+     ],
+     "question": "pack-level gravimetric energy density Wh/kg comparable measurements"
+    },
+    "ok": false,
+    "why": "no answer in 150s"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which studies directly compare energy density across these chemistries under matched assumptions?",
+    "args": {
+     "term": "comparative battery chemistry energy density matched cell-level assumptions lithium iron phosphate NMC sodium-ion solid-state lithium-sulfur",
+     "orientation": "critical",
+     "limit": 12
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'comparative battery chemistry energy density matched cell-level assumptions lithium iron phosphate NMC sodium-ion solid-state lithium-sulfur' — try expand=true, or a broader phrase",
+    "seconds": 29.5,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 81,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 2,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

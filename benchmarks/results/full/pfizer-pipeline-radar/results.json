@@ -1,0 +1,247 @@
+{
+ "slug": "pfizer-pipeline-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 36.0,
+   "plain": 36.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 32.8,
+    "gpt": 39.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 3.5,
+    "chart": 3.5,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 78.2,
+   "plain": 78.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.8,
+    "gpt": 80.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 2.0,
+    "chart": 0.5,
+    "drilldown": 1.0,
+    "export": 0.5,
+    "repro": 0.0,
+    "refs": 0.0,
+    "accuracy": 1.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 25.2,
+   "plain": 25.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 17.4,
+    "gpt": 33.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 3.5
+   },
+   "strict": 68.8,
+   "plain": 68.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 66.4,
+    "gpt": 71.2
+   }
+  }
+ },
+ "judge_mad": 0.45,
+ "verdicts": {
+  "opus": "A and B both grounded their numbers in the radar call. A went further: it used the full thirds and news trend, recomputed exactly, and said plainly that the data cannot isolate non-COVID work, giving low confidence and naming the calls that would close the gap. B dropped the news series and overstated its confidence. C offered useful but unmeasured clinical context, honestly labelled. D attached fabricated DOIs to a confident narrative, which disqualifies it for decision use.",
+  "gpt": "D is strongest for a decision-maker: it traces the broad research and news trends, names concrete papers and themes, and clearly warns that COVID-heavy data cannot answer non-COVID momentum. Its mixed-lane growth comparison and endpoint-only chart need care; C is more disciplined about the limits of the evidence but gives a thinner trend and drilldown."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [],
+   "chatgpt_prism": [
+    "Coverage 'strict index partition reads and historical row floors' is not visible in the record (minor)"
+   ],
+   "claude_bare": [
+    "Estimated post-2022 plateau (~15k) contradicts the reference's rising series peaking at 17,102 in 2025 (labelled est.)"
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1016/S0140-6736(23)00568-2 is fabricated or incorrect; the KEYNOTE-942 Lancet paper is Weber et al., 2024",
+    "DOIs 10.1038/s41573-024-00859-3 and 10.1038/s41573-023-00782-3 are not found and the titles appear invented",
+    "Quote presented as verbatim without a resolvable source",
+    "Lists call c1 research.evidence as used although no recorded response exists"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [
+    "All three listed DOIs were not found in the corpus.",
+    "Hazard-ratio and milestone claims are not traceable to the supplied database record."
+   ],
+   "claude_bare": [
+    "The charted publication counts and growth are memory estimates, not a measured radar series.",
+    "The melanoma readout is described as 2023 in the body but its reference says 2024."
+   ],
+   "chatgpt_prism": [
+    "The trend presentation omits the available reported CAGR and peak year.",
+    "The export contains only two endpoint rows, not a full annual series."
+   ],
+   "claude_prism": [
+    "“News is growing slightly faster than research” compares ratios from different lanes and windows.",
+    "The news last-month partial-period caveat is presented as an assumption rather than a recorded fact."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Traced 2017-2025 endpoints with CAGR 19.0%, 4.0x and peak year 2025. Notes a possible partial final news month. The tool returned only endpoints, so no fuller series was possible.",
+    "comparison": "Early vs late thirds for papers, news and cautionary share, all traced and recomputing exactly, with the baseline defined. Correctly caveats that COVID dominates, so this is not non-COVID growth.",
+    "chart": "One fully traced chart with window, unit, source and caption. News and framing facets are not charted.",
+    "drilldown": "One traced layer (ten papers with DOIs). Only 3 of 6 follow-ups returned data; one traced layer plus three working calls earns 3.",
+    "export": "Two CSVs with source, window, unit and coverage, plus a provenance JSON. Capped at 3.",
+    "repro": "35/35 numbers traced, a prism-calls block with args, capture date, and interpretation labelled.",
+    "refs": "All 10 DOIs resolve, with venue, year and tier. Some entries are not tied to a claim, and no quotes were available.",
+    "accuracy": "Matches the reference record. Correctly reads the under_covered zeros and notes COVID contamination. Repeats the odd 'promising' label on the myocarditis paper without flagging it.",
+    "limits": "Window ends, gap to today, match mode, coverage and the non-COVID inability are stated. The fix is named (topic-specific calls). Most limits sit in the Method section rather than next to each number.",
+    "verdict": "Direct answer, decision, low confidence with reason, and what would change it. Honest that the data cannot isolate non-COVID work.",
+    "facets": "Trend, news, framing, new work and under-covered are each answered with grounded values or a grounded 'cannot'."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced endpoints with CAGR and 4.0x. News series values are omitted and the peak is not named.",
+    "comparison": "Framing earlier vs recent is traced, with the caveat and the undefined windows noted.",
+    "chart": "One traced chart with caption. Other facets are not charted.",
+    "drilldown": "One traced layer. Only 2 of 5 follow-ups worked.",
+    "export": "A single CSV with provenance and JSON. Only one table.",
+    "repro": "21/22 numbers traced, calls listed with args.",
+    "refs": "5 DOIs resolve, each tied to a claim, with tier. No quotes.",
+    "accuracy": "No contradictions. The 175-day gap is correct. One coverage statement is not in the record.",
+    "limits": "Window, gap, coverage and the non-COVID limit are stated clearly.",
+    "verdict": "Claims non-COVID directions such as 'other diseases' and 'medium' confidence beyond what one radar call supports. 'What would change it' is present.",
+    "facets": "News trend numbers are dropped. Under-covered is handled as a grounded 'no data'."
+   },
+   "claude_bare": {
+    "trend": "Estimate-labelled memory series. Its 2023-2024 plateau conflicts with the reference's rise to a 2025 peak.",
+    "comparison": "44% from memory. The 'delta 44 percentage points vs baseline 0%' framing is muddled.",
+    "chart": "Chart labelled as an estimate.",
+    "drilldown": "Breakdown from memory. Only some follow-ups worked.",
+    "export": "CSV labelled as an estimate.",
+    "repro": "Memory numbers, honestly labelled.",
+    "refs": "No identifiers. The cited works appear real, but nothing can be resolved.",
+    "accuracy": "Clinical specifics are plausible and real (KEYNOTE-942, mRESVIA, CMV phase 3 miss). The estimated plateau contradicts the measured trend.",
+    "limits": "Specific about memory-only sourcing, the knowledge gap and unknown coverage.",
+    "verdict": "Answers directly with low confidence and conditions. Unmeasured.",
+    "facets": "Mostly memory."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "HR 0.561 from memory, so it cannot be traced.",
+    "chart": "Empty chart with no values, so it supports no claim.",
+    "drilldown": "Generic. Only 1 of 5 follow-ups worked.",
+    "export": "Milestones CSV carries DOIs that do not resolve.",
+    "repro": "Lists a research.evidence call as used that produced no recorded data. Ceiling is 0.",
+    "refs": "All 3 DOIs are not found. The Lancet DOI and author are wrong (the paper is Weber et al., 2024).",
+    "accuracy": "Fabricated identifiers, a misattributed author and year, and a quote presented as verbatim without a source.",
+    "limits": "States that it ran no search and that coverage is selective.",
+    "verdict": "Medium confidence rests on fabricated references.",
+    "facets": "Mostly memory, with honest 'unmeasured' statements."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured series; the chart is explicitly an empty estimate.",
+    "comparison": "The same-trial hazard ratio contrast is clear, but it is not traceable to the supplied record.",
+    "chart": "Empty estimate chart; no plotted measurements.",
+    "drilldown": "Names areas and follow-ups, but only one follow-up executed successfully and no traced item breakdown is provided.",
+    "export": "Illustrative milestone CSV lacks full provenance and its DOI rows are not validated.",
+    "repro": "Listed calls do not reproduce the numbers; none of the numeric claims trace.",
+    "refs": "None of the three DOIs resolve in the corpus; this caps the score at zero.",
+    "accuracy": "The trial result may be plausible, but its central numeric claim is unsupported here and all three supplied DOIs fail lookup.",
+    "limits": "Specific about date gap, partial coverage, lanes and unmeasured trends; a few caveats are not placed beside every claim.",
+    "verdict": "Direct answer, decision, confidence and conditions are present, with limits acknowledged.",
+    "facets": "Covers several application areas, but has no grounded trend, coverage, or research/news comparison."
+   },
+   "claude_bare": {
+    "trend": "The plotted annual counts and growth are explicitly memory estimates, earning the estimate-level score.",
+    "comparison": "The reported trial comparison is numeric but memory-based and not verifiable against the record.",
+    "chart": "Memory estimate chart; no measured series.",
+    "drilldown": "Some follow-up calls return on-topic data, but the breakdown is memory-based and does not reach traced items.",
+    "export": "CSV is labelled estimate and carries no recorded source call.",
+    "repro": "Calls are listed, but do not reproduce the memory figures.",
+    "refs": "References are unverified and have no resolvable identifiers.",
+    "accuracy": "Memory is disclosed and the melanoma result is broadly consistent, but several specific program-status claims are unverified and one cited trial year differs from the stated 2023 readout.",
+    "limits": "States memory status and date gap, but lacks database-specific coverage, match, and censoring limits.",
+    "verdict": "Direct answer, decision, confidence and conditions are given; the support is explicitly memory-based.",
+    "facets": "Broad application facets are covered from memory, but not with grounded values."
+   },
+   "chatgpt_prism": {
+    "trend": "Window and direction are right and endpoint growth is quantified, but the reported CAGR and peak are omitted from the trend presentation.",
+    "comparison": "Framing figures and delta are traced and the undefined dates of the windows are disclosed.",
+    "chart": "The traced chart has a stated window, unit, source and claim; it shows endpoints rather than a decomposition.",
+    "drilldown": "Names selected themes and papers, but only two follow-ups succeeded and it does not provide a second traced drilldown layer with executable coverage.",
+    "export": "Trend CSV is traced with basic provenance, but it exports only endpoints and omits other needed summary or document rows.",
+    "repro": "The main measured claims trace to the listed radar call; the news gap calculation is reproducible from the dates.",
+    "refs": "All five DOIs resolve and entries connect to claims, but there are no abstract quotes, limiting the score.",
+    "accuracy": "Correctly distinguishes overall topic volume from non-COVID volume and interprets framing and zero news matches carefully.",
+    "limits": "Places key window, lane, selection and coverage limits near claims; does not fully state the gap between the research window end and today where using that series.",
+    "verdict": "Supported direct answer and confidence, but does not state a concrete decision condition or strongest contrary evidence.",
+    "facets": "Addresses research themes, trend, framing, coverage interpretation and the research/news mismatch with grounded data."
+   },
+   "claude_prism": {
+    "trend": "Reports the correct research growth and names peak and decisive news points with dates; the annual chart itself shows only endpoints.",
+    "comparison": "Framing contrast is accurate, but the comparison table combines research and news lanes and then compares their growth rates as if directly comparable.",
+    "chart": "Charts are traced and labelled with window, unit and source, but endpoint-only research points do not show the series shape or a visible partial-period marker.",
+    "drilldown": "Provides topic themes, identified papers and several successful follow-up calls; no follow-up result is executed and folded back into the report.",
+    "export": "Two traced CSVs have partial coverage and basic provenance, but missing values lack reason fields and the export is not fully decision-ready.",
+    "repro": "All numeric claims trace and the regenerate call is specified; the trend summary plus call permits rebuilding the report's numbers.",
+    "refs": "All ten DOIs resolve and metadata supports the claims, but no verbatim abstract quotes are included.",
+    "accuracy": "Most measurements and field meanings are handled correctly; the call does not isolate non-COVID work, which the deliverable explicitly acknowledges.",
+    "limits": "States both windows, query matching, lane and coverage limits; the partial-month explanation is only an assumption, not a returned caveat.",
+    "verdict": "Direct and bounded answer with decision, confidence, conditions and contrary COVID-heavy evidence; the mixed-lane growth comparison weakens support.",
+    "facets": "Covers themes, trend, framing, adjacent under-coverage, and the non-COVID versus COVID limitation with grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,448 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 659,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What are the strongest longitudinal studies linking screen time to ADHD?",
+    "args": {
+     "term": "screen time ADHD children",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... children', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='screen time ADHD children', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies find no association or attribute it to confounding?",
+    "args": {
+     "term": "screen time ADHD children"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...en time ADHD children'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='screen time ADHD children', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How is the causal language in this literature trending?",
+    "args": {
+     "term": "screen time ADHD"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'screen time ADHD'",
+    "seconds": 12.1,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What is the mix of study designs?",
+    "args": {
+     "term": "screen time ADHD",
+     "group_by": "design"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '..., 'group_by': 'design'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='screen time ADHD', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='design', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "How do news outlets phrase the screen time and ADHD link?",
+    "args": {
+     "term": "screen time causes ADHD"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'screen time causes ADHD'",
+    "seconds": 7.2,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.browse",
+    "question": "Which randomized trials reduced screen time and measured attention?",
+    "args": {
+     "term": "screen reduction trial attention children",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 37.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 607, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7118176186\", \"title\": \"Digital Screen Exposure and Associations with Physical and Mental Health in School-Going Children: A Cross-Sectional Study from Eastern India\", \"authors\": [\"Sayantani Nandi\", \"Yoshita Kuhu\", \"Tania Chakraborty\", \"Kailash Chandra Patra\"], \"venue\": \"Journal of Nepal Paediatric Society\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.60086/jnps.v45i3.1419\", \"url\": \"https://doi.org/10.60086/jnps.v45i3.1419\", \"cited_by\": 0, \"orie"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 4,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 117,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 867,
+  "charts": [
+   {
+    "id": "corpus-mix",
+    "title": "Corpus stance counts for the claim 'Screen time causes ADHD in children'",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Documents by stance",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Which longitudinal studies measure both screen time and later ADHD symptoms?",
+    "args": {
+     "claim": "Screen time exposure predicts later ADHD symptoms in children",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 61.2,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 2063, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 394, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 2028, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 227, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 43, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"availa"
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "Is there evidence for reverse causation (ADHD leading to more screen use)?",
+    "args": {
+     "claim": "Children with ADHD symptoms use more screen media"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 60.4,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 52559, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 78, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 73, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 3866, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 490, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"availa"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which studies contradict a screen time to ADHD link?",
+    "args": {
+     "claim": "Screen time causes ADHD in children"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 85.1,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 4, \"unread\": 0}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 605, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"orientation\": {\"descriptive\": 227, \"promising\": 192, \"problem_identifying\": 106, \"cautionary\": 28, \"comparative\": 25, \"breakthrough\": 19, \"critical\": 8}, \"contribution\": {\"empirical\": 428, \"review\": 96, \"methodological\": 50, \"position\": 23, \"theoretical\": 8}, \"sides\": {\"supporting\": 211, \"qualifying\": 134, \"contradicting\": 8, \"neutral\": 252}, \"contested_pct\": 23.5"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has the stance of the literature shifted over time?",
+    "args": {
+     "term": "screen time ADHD children"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'screen time ADHD children'",
+    "seconds": 5.5,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How do news outlets frame screen time and ADHD?",
+    "args": {
+     "term": "screen time ADHD children"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...en time ADHD children'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='screen time ADHD children', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.browse",
+    "question": "What do randomized or experimental designs show?",
+    "args": {
+     "term": "screen time reduction ADHD children randomized",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 11, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4413191956\", \"title\": \"Screen time reduction and Surya Namaskars—a comprehensive intervention for nonspecific back pain in adolescents: a study protocol\", \"authors\": [\"Gauri A. Oka\", \"Ashish Ranade\", \"Mayur Shinde\", \"Prasad Pore\"], \"venue\": \"Frontiers in Pediatrics\", \"year\": 2025, \"date\": \"2025-08-12\", \"doi\": \"10.3389/fped.2025.1582984\", \"url\": \"https://doi.org/10.3389/fped.2025.1582984\", \"cited_by\": 1, \"orientation\": \"breakthrough\", \"contribution\""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 14,
+   "traced": 9,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "11 — - Tool output [c2] (research.evidence_card): `no_data`, \"11 documents were read and none s"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 134,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 3,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 664,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What longitudinal evidence tests whether digital media use precedes changes in ADHD-related behaviors?",
+    "args": {
+     "term": "digital media use ADHD-related behaviors children adolescents longitudinal systematic review",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'critical', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='digital media use ADHD-r...dinal systematic review', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What evidence tests reverse causation, including whether pre-existing ADHD symptoms predict later screen use?",
+    "args": {
+     "term": "ADHD symptoms predict screen time reverse causation children longitudinal",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'critical', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ADHD symptoms predict sc...n children longitudinal', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Do intervention studies show that reducing screen exposure changes ADHD symptoms or diagnoses?",
+    "args": {
+     "term": "screen time reduction intervention ADHD symptoms children randomized trial",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'screen time reduction intervention ADHD symptoms children randomized trial' — try expand=true, or a broader phrase",
+    "seconds": 8.1,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "10.1016 — - **Longitudinal systematic review and meta-analysis** [r1]. *Journal of the American Acad",
+    "10.3390 — - **Systematic review and meta-analysis** [r2]. *International Journal of Environmental Re"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 1,
+   "not_found": [
+    "10.1016/j.jaac.2020.03.019"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 0,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 470,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which primary studies directly test the association between screen time and ADHD in children?",
+    "args": {
+     "term": "screen time ADHD children",
+     "orientation": "balanced",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'screen time ADHD children' — try expand=true, or a broader phrase",
+    "seconds": 0.0,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What evidence challenges a causal interpretation of screen time and ADHD in children?",
+    "args": {
+     "claim": "Screen time causes ADHD in children"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 4, \"unread\": 0}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 605, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"orientation\": {\"descriptive\": 227, \"promising\": 192, \"problem_identifying\": 106, \"cautionary\": 28, \"comparative\": 25, \"breakthrough\": 19, \"critical\": 8}, \"contribution\": {\"empirical\": 428, \"review\": 96, \"methodological\": 50, \"position\": 23, \"theoretical\": 8}, \"sides\": {\"supporting\": 211, \"qualifying\": 134, \"contradicting\": 8, \"neutral\": 252}, \"contested_pct\": 23.5"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What causal evidence, if any, supports the claim that screen time causes ADHD in children?",
+    "args": {
+     "claim": "Screen time causes ADHD in children"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.8,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 605, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 1, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 41, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 2, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"co"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 5,
+   "traced": 4,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "11 — - Prism evidence-card query. Prism MCP, year not provided, tool result [c2]. Supports the "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 83,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 3,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

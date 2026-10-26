@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full series is traced, with window, censoring, peak (614 in 2026-03) and 2.09x late-vs-early. CAGR is caveated. Critical decomposition is traced (91 to 269, 2.12x). Recomputed 68.3% is exact.",
+    "comparison": "Tone ratio 1.6 vs a defined baseline of 0.58, giving +1.02 and 2.76x; both recompute. Monthly extremes are named. Does not state what the data cannot test about rates vs coverage.",
+    "chart": "Values trace and window/unit/source are given. Only 11 of 24 months are plotted (stated). Volume only, so tone and critical share are not charted and there is no decomposition.",
+    "drilldown": "Traced layers: months, themes, entities, geography and headlines with date, publisher and URL. Only 3 of 6 follow-ups returned ok, and none was folded back into the report.",
+    "export": "One fully traced monthly CSV with provenance and JSON. No second table (themes or headlines); at the ceiling.",
+    "repro": "78 of 78 numbers trace. Prism-calls block with args and capture date.",
+    "refs": "Script ceiling is 1.",
+    "accuracy": "Matches the reference. Interpretation (Hormuz, tariffs) is labelled. It flags that the term is broader than container freight and that syndicated duplicates exist.",
+    "limits": "Window end, 145-day gap, enrichment bound, 55% placed share, mention vs central match, broad-term caveat and sample basis are all stated, mostly next to the numbers.",
+    "verdict": "Script ceiling is 3. The verdict is direct, with decision, confidence and what would change it.",
+    "facets": "Volume, tone, themes, entities, geography, headlines and concentration are all grounded."
+   },
+   "B": {
+    "trend": "Full traced series with censoring. +284 and 3.29x recompute; peak and 2.09x are given. No critical or tone decomposition.",
+    "comparison": "Baseline is defined and 2.76x recomputes. Caveat that it is not a freight-rate benchmark is included.",
+    "chart": "Full traced volume chart with window and source. No tone chart and no decomposition.",
+    "drilldown": "Headlines with dates and publishers, with URLs in the references. 4 of 5 follow-ups ok and container-specific. Themes and entities are given without counts.",
+    "export": "One traced CSV with provenance. Single column only.",
+    "repro": "25 of 25 numbers trace. Calls listed with windows and provenance.",
+    "refs": "Script ceiling is 2. News items carry date, publisher and URL.",
+    "accuracy": "No contradictions. Field definitions are respected.",
+    "limits": "Window, 144-day gap, match mode, sample basis and broad-match caveat are stated. Several of these sit in a footer section.",
+    "verdict": "Bounded answer with decision, confidence and reason, and what would change it. Explicitly separates coverage from rates.",
+    "facets": "Themes and entities are listed without values, so they are only partially grounded."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None given.",
+    "chart": "Chart has an empty series.",
+    "drilldown": "Follow-ups only, and 0 of 6 executed ok.",
+    "export": "No export.",
+    "repro": "No numbers; generic only.",
+    "refs": "None.",
+    "accuracy": "Makes no false claims, so it is non-contradicting by default.",
+    "limits": "Specific about what it cannot measure. The 'gap is zero days' statement is odd.",
+    "verdict": "Memory-based cycle answer that omits the 2024 Red Sea spike.",
+    "facets": "Nothing is grounded."
+   },
+   "D": {
+    "trend": "Recalled WCI points are labelled est.",
+    "comparison": "Memory-number ratios only.",
+    "chart": "Memory chart honestly labelled estimate.",
+    "drilldown": "Breakdown is from memory. 4 of 6 follow-ups ok.",
+    "export": "Labelled-estimate CSV.",
+    "repro": "Memory, labelled.",
+    "refs": "No traceable references.",
+    "accuracy": "Labelled estimates are roughly plausible. The early-2023 ~1,400 is imprecise.",
+    "limits": "Honest about memory and the cutoff gap. Not tied to data specifics.",
+    "verdict": "Low-confidence answer with decision and change condition. It answers about rates rather than news.",
+    "facets": "Mostly memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": [
+    "WCI ~USD 1,400 in early 2023 is imprecise (labelled est.)"
+   ]
+  },
+  "best": "A",
+  "verdict": "A and B both grounded their answers in the measured news corpus and were honest that 'freight rates' is broader than container rates. A went further, decomposing critical share, naming the tone extremes and exposing headline URLs inline. B's verdict was cleaner and better bounded, but its decomposition was thinner. C and D could not measure what the news said; D's labelled memory index path offers orientation but no news evidence."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

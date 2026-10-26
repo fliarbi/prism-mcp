@@ -1,0 +1,346 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 650,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What human epidemiology links microplastic exposure to cancer outcomes?",
+    "args": {
+     "term": "microplastics cancer human"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...plastics cancer human'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics cancer human', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies contradict or limit a causal claim?",
+    "args": {
+     "term": "microplastics cancer causal"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...lastics cancer causal'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics cancer causal', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has coverage of microplastics and cancer shifted over time?",
+    "args": {
+     "term": "microplastics cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'microplastics cancer' in this window",
+    "seconds": 5.8,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How do news outlets compare in claiming causation?",
+    "args": {
+     "term": "microplastics cause cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...plastics cause cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics cause cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "What is the study-type mix of the literature?",
+    "args": {
+     "term": "microplastics cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'microplastics cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 721,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers test microplastic exposure against human cancer incidence?",
+    "args": {
+     "term": "microplastics cancer human",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'microplastics cancer human' — try expand=true, or a broader phrase",
+    "seconds": 24.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "What are the 6 papers covering both microplastics and cancer?",
+    "args": {
+     "term": "microplastics cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'microplastics cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'microplastics cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Is there counter-evidence to a carcinogenic effect?",
+    "args": {
+     "claim": "Microplastics cause cancer in humans"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 101.9,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 12, \"unread\": 4}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 73875, \"window\": \"2017-2025\", \"lane\": \"subject\", \"orientation\": {\"promising\": 23422, \"descriptive\": 19197, \"problem_identifying\": 13781, \"breakthrough\": 7832, \"cautionary\": 6837, \"comparative\": 2342, \"critical\": 464}, \"contribution\": {\"empirical\": 47808, \"methodological\": 11671, \"review\": 10235, \"position\": 3736, \"theoretical\": 425}, \"sides\": {\"supporting\": 31254, \"qualifying\": 20618, \"contradicting\": 464, \"neutral"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has the stance on microplastics and cancer shifted over time?",
+    "args": {
+     "term": "microplastics cancer"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"microplastics and cancer\"], \"points\": [{\"year\": 2024, \"total\": 1, \"orientation\": {\"breakthrough\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2025, \"total\": 3, \"orientation\": {\"problem_identifying\": 2, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 2, \"positive_pct\": 0.0, \"contested_pct\": 66.7}], \"totals\": {\"breakthrough\": 1, \"problem_identifying\": 2, \"descriptive\": 1}, \"papers\": 4, \"per_orientation_trend\": {\"breakthrough\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three per"
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news coverage compare to the research on this claim?",
+    "args": {
+     "term": "microplastics cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'microplastics cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='microplastics cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 14,
+   "traced": 12,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 118,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 3,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 227,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 78,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 1,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 477,
+  "charts": [],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which human studies directly examine microplastic exposure and cancer outcomes?",
+    "args": {
+     "term": "microplastic exposure human cancer outcomes",
+     "orientation": "supportive",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'microplastic exposure human cancer outcomes' — try expand=true, or a broader phrase",
+    "seconds": 15.9,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What evidence argues against a causal link between microplastics and cancer in humans?",
+    "args": {
+     "claim": "Microplastics cause cancer in humans"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.7,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 12, \"unread\": 4}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 73875, \"window\": \"2017-2025\", \"lane\": \"subject\", \"orientation\": {\"promising\": 23422, \"descriptive\": 19197, \"problem_identifying\": 13781, \"breakthrough\": 7832, \"cautionary\": 6837, \"comparative\": 2342, \"critical\": 464}, \"contribution\": {\"empirical\": 47808, \"methodological\": 11671, \"review\": 10235, \"position\": 3736, \"theoretical\": 425}, \"sides\": {\"supporting\": 31254, \"qualifying\": 20618, \"contradicting\": 464, \"neutral"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What studies qualify or contextualize claims about microplastics and human cancer?",
+    "args": {
+     "claim": "Microplastics cause cancer in humans"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.8,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 73875, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 844, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 13519, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 1307, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 39, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 3, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"ava"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 74,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "repro": 2,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

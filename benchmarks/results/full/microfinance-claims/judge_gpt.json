@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 2
+   },
+   "B": {
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "D": {
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 3,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Qualitative, memory-based comparison with no common measured scale.",
+    "chart": "No chart block.",
+    "drilldown": "Names evidence layers, but proposed calls were not run and no traced item-level breakdown is provided.",
+    "export": "No quantitative export.",
+    "repro": "No measured numbers or reproducible calls; sources are named, but the research synthesis is not regenerated.",
+    "refs": "All three DOI/URL references resolve and are tied to claims with metadata; no unsupported verbatim quotes are offered.",
+    "accuracy": "Carefully distinguishes average effects from crisis evidence and does not contradict the record; claims about the research are a memory synthesis.",
+    "limits": "States the evidence window, gap, coverage, differing study designs, follow-up limits, and what cannot be measured near the relevant claims.",
+    "verdict": "Direct recommendation with medium confidence, conditions, and contrary evidence; bounded by the cited evidence, though decision support could be more explicit about its scope.",
+    "facets": "Addresses effects and debt risks qualitatively, but lacks grounded comparison of claim evidence, 2015 wave detail, and other implied facets."
+   },
+   "B": {
+    "comparison": "Traced subject-paper counts on the same reported scale; computes 78,834/146,493 as about 0.54 and explicitly carries the lane mismatch and missing comparable intersection caveat.",
+    "chart": "No chart block.",
+    "drilldown": "Provides traced breakdowns but no executable follow-up call returned non-empty results; ceiling is 1.",
+    "export": "The claim-comparison CSV and provenance trace to the call, retain the missing intersection as null, and are referenced in the prose.",
+    "repro": "All numeric claims trace to the listed call or are recomputable; the call includes args and window, and the export recipe is present.",
+    "refs": "The corpus record is identified, but the other entries lack a claim-supporting quote and the Akhuwat entry has no resolving identifier; citation support is incomplete.",
+    "accuracy": "Counts and lanes are reported correctly, including the unrelated strongest source; the corpus mix is not borrower-outcome evidence.",
+    "limits": "Covers unknown window, lane, coverage and matching limits, but does not state specific censoring or enrichment limits; these are not returned by the call.",
+    "verdict": "Gives a supported decision, confidence, condition for change, and acknowledges the strongest contrary evidence: the larger reported empowerment subject count and lane mismatch.",
+    "facets": "Covers lane mismatch, overlap absence, corpus tallies, and the research-versus-outcome distinction, but lacks seasonal or time-period evidence."
+   },
+   "C": {
+    "comparison": "Uses memory-based numeric claims and no traceable common quantitative comparison; honest estimates cap the score at 2.",
+    "chart": "No chart block.",
+    "drilldown": "Names layers but supplies no traceable breakdown; calls are mostly unexecuted or empty.",
+    "export": "The estimate CSV is explicitly memory-based, so it earns the estimate anchor only.",
+    "repro": "Six untagged numbers and no executed source calls; numeric claims cannot be regenerated.",
+    "refs": "The Schicks DOI is explicitly unverified and other entries lack verified identifiers, capping references at 1.",
+    "accuracy": "Presents a near-zero pooled empowerment result and several study specifics as fact despite no source verification; the comparison record does not substantiate them.",
+    "limits": "Clearly labels memory coverage and notes the long gap, short horizons, and missing outcome prevalence; several claims remain unverified.",
+    "verdict": "The script-checkable ceiling is 0 because its verdict contains untagged numbers 15, 36, and 10; the direct answer cannot overcome that gate.",
+    "facets": "Mostly memory claims, with no grounded comparison or measured evidence for the implied facets."
+   },
+   "D": {
+    "comparison": "Computes ratios and deltas from traced corpus counts and explains lane asymmetry, though it still compares non-equivalent denominators.",
+    "chart": "No chart block; the embedded prism-chart block is not a counted chart under the script ceiling.",
+    "drilldown": "One traced breakdown layer and no successful executable follow-ups; the reported follow-up calls did not return on-topic data.",
+    "export": "CSV rows and provenance reproduce the corpus stance counts, with lane and coverage stated and the export referenced.",
+    "repro": "Most numeric claims trace, but 10 of 49 do not and two are untagged; listed calls reproduce only the measured portion.",
+    "refs": "Some sources resolve, but the strongest-source entry lacks an identifier and memory references lack quotes or retrieved support.",
+    "accuracy": "Correctly notices the lane mismatch and unrelated top source, but its chart window implies a publication window the call did not return, and its comparison uses incompatible lane denominators.",
+    "limits": "Places the unknown window, lane mismatch, small read samples, and classifier limits next to the numbers; identifies several unanswered facets.",
+    "verdict": "Direct recommendation and low confidence with conditions, but memory assertions and the internally inconsistent comparison weaken support; ceiling 3 applies."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Presents multiple unverified study details and numeric claims from memory as factual; the tool ceiling flags six untagged numbers.",
+    "Uses an unverified DOI for Schicks and unverified identifiers for other references."
+   ],
+   "D": [
+    "Chart labels the call date as a data window even though the recorded response has an empty window.",
+    "Compares stance shares using different lane denominators, so the deltas and ratios are not like-for-like.",
+    "States from memory that debt harm is concentrated in saturated, poorly regulated markets without traced support."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it preserves the recorded corpus counts and provenance, calculates the limited same-scale comparison, and clearly explains why those counts cannot decide borrower outcomes. D offers richer calculations and a chart, but mixes incompatible lanes and adds unverified memory claims; A is careful but largely unmeasured, while C overstates unverified specifics."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "claude_prism": {
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 3,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

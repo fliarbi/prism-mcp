@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 3,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 2,
+    "repro": 3,
+    "refs": 5,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced annual series and censoring are shown, but the 5.5x change is only in the comparison, not the trend reading.",
+    "comparison": "The 2017 baseline and 2025 value are on one scale; 11/2 recomputes to 5.5x and the comparison is clearly bounded.",
+    "chart": "The research chart traces all points and states the window, unit, source, censoring, and reading; no chart covers the separately reported news trend.",
+    "drilldown": "Breakdown is reported, but declared follow-up calls were never made and no item-level follow-up results are provided.",
+    "export": "The research CSV is traced, but the second monthly export is incomplete relative to the available series and provenance is not fully tool-shaped.",
+    "repro": "Calls and args are listed, but only 11/13 numbers trace and the declared follow-ups were not run.",
+    "refs": "The supporting item has a resolving URL and metadata, but the script ceiling is 2 and the cited material is not a ranked, fully corpus-verified set.",
+    "accuracy": "The response largely distinguishes subject counts from causal evidence, though it calls the 2025 research endpoint censored while plotting it and gives imprecise date-gap figures.",
+    "limits": "Specific windows, lanes, sample limits, ingest lag, and the gap to today are stated near the evidence; some caveats are incomplete.",
+    "verdict": "It gives a bounded decision, low confidence, and a condition that would change the view, while acknowledging the selected sample's limits."
+   },
+   "B": {
+    "trend": "No sourced series; its chart is explicitly memory-estimated, earning the estimate ceiling.",
+    "comparison": "The country comparison is labeled estimated and arithmetic is plausible, but it cannot be traced to a common recorded scale.",
+    "chart": "The chart is an estimate from memory, so it earns the estimate ceiling.",
+    "drilldown": "The listed calls are generic or failed the benchmark execution check; no traced breakdown is shown.",
+    "export": "The CSV is explicitly estimate-based and has no recorded source call.",
+    "repro": "All recalled numerical claims are marked estimates and no calls were run.",
+    "refs": "References lack verified identifiers, and one title is expressly uncertain; the script caps this at 1.",
+    "accuracy": "It labels recalled figures as estimates and does not contradict the supplied record, which it did not claim to query.",
+    "limits": "It clearly identifies missing retrieval, uncertain coverage, and stale windows, though these limits do not ground the recalled country figures.",
+    "verdict": "It answers directly and gives a decision and confidence, but its medium confidence rests on unverified remembered estimates."
+   },
+   "C": {
+    "trend": "The traced annual points, quantified 5.5x change, peak, and censoring support a strong score; the news monthly trend is summarized without a corresponding chart or full export.",
+    "comparison": "The comparison uses traced news points and a defined 2019 baseline, but its sums are labeled estimates and the corpus late/early ratios do not fully spell out the compared periods.",
+    "chart": "The research chart is fully traced and supports a stated claim, but the reported news facet is not charted.",
+    "drilldown": "It supplies a traced breakdown and six specific proposed calls, one of which executed successfully with on-topic data; it does not fold a follow-up result into the report.",
+    "export": "The annual series is traced, but the tally CSV’s window/provenance is questionable and the needed monthly series is omitted.",
+    "repro": "Most figures trace and calls have args, but several comparison sums and gap figures are author-derived estimates, and the full-series export is incomplete.",
+    "refs": "The two DOI references resolve, tie to claims, and include a verified quote for the supporting item; the contrary-source and ranking requirements are not fully met.",
+    "accuracy": "It correctly flags the subject-lane mismatch and c1/c2 tally discrepancy, but reports an unsupported debt-service statistic as a candidate and does not reconcile the inconsistent tally counts.",
+    "limits": "It states windows, lane mismatch, coverage caveat, ingest lag, and what cannot be inferred; some numeric timing statements are approximate.",
+    "verdict": "It gives a direct low-confidence answer, a decision, a reason, and what would change it, while acknowledging that the sole read item is narrow."
+   },
+   "D": {
+    "trend": "It explicitly provides no sourced temporal series.",
+    "comparison": "It explains the relevant comparison but supplies no measured, sourced ratio or delta.",
+    "chart": "No chart block is provided.",
+    "drilldown": "It gives proposed calls but no executed results or traced breakdown.",
+    "export": "The CSV is an explicitly estimate-labeled evidence map, not a measured export.",
+    "repro": "No calls were made, and the cited studies are not independently verified within the deliverable.",
+    "refs": "Both DOI identifiers and metadata resolve according to the script; the references are tied to relevant claims, though quotes are absent.",
+    "accuracy": "It labels its lack of measurement and does not contradict the supplied record; its mechanism-level conclusion is framed as interpretation.",
+    "limits": "It states the absence of retrieval and the inability to estimate magnitude, timing, or local effects, but lacks limits tied to a measured corpus window.",
+    "verdict": "It gives a clear decision, confidence, and conditions that would change it, with the conclusion bounded by the absence of measured estimates."
+   }
+  },
+  "errors": {
+   "A": [
+    "Calls the 2025 research endpoint censored while including the 2025 value as an observed point; the source says the newest period is excluded because ingest lag would create a false collapse.",
+    "The monthly news export is not the complete available monthly series, despite the source call providing a longer series.",
+    "The reported research/news date gaps are imprecise."
+   ],
+   "B": [
+    "Presents unsupported remembered country price changes and rate/index values, though they are labeled estimates.",
+    "The long-run literature tally and paper descriptions are unverified and cannot substantiate the stated direction or confidence."
+   ],
+   "C": [
+    "The claimed 100bp debt-service figure is not supported by the supplied statistics response: that response contains a candidate sentence, not a validated statistic.",
+    "The supporting/unrelated tallies differ between c1 and c2; the response notices but does not resolve the discrepancy.",
+    "The 2025 research endpoint is included in the series even though the source says the newest period is excluded because of ingest lag."
+   ],
+   "D": [
+    "The directional conclusion that causal research supports the claim is stronger than the evidence presented in this response, which provides no verified estimates or quotations."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is the most useful for a decision-maker: it surfaces the crucial mismatch between the broad subject corpus and the small joint-claim intersection, gives a traced trend, and makes a suitably cautious recommendation. A is also careful and has stronger export coverage, but its missing follow-up execution and censored-endpoint handling weaken reproducibility; B and D rely on memory or provide no measured evidence."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 3,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 2,
+   "repro": 3,
+   "refs": 5,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

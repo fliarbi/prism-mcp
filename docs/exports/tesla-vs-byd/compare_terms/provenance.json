@@ -1,0 +1,31 @@
+{
+ "feature": "news.compare",
+ "subject": {},
+ "arguments": {
+  "terms": [
+   "tesla",
+   "byd"
+  ],
+  "since": "2024-06-01"
+ },
+ "window": {
+  "censored_at": "2026-06-01",
+  "why_censored": "news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a collapse that did not happen",
+  "granularity": "monthly",
+  "from": "2024-06-01",
+  "to": "2026-06-01",
+  "to_is_exclusive": true,
+  "freshness": {
+   "available": true,
+   "checked_at": 1792666725.9633293,
+   "age_seconds": 19560,
+   "default_until": "2026-06-01",
+   "cutoff_review_needed": false,
+   "note": "Measured ingest volumes. A calendar month being over does not prove its ingestion is complete. The report cutoff remains an explicit policy."
+  },
+  "past_default_cutoff": false
+ },
+ "coverage": "all listed tables passed strict index partition reads and historical row floors",
+ "exported_at": "2026-10-22T22:12:14+0530",
+ "server": "http://127.0.0.1:8790"
+}

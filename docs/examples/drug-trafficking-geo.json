@@ -1,0 +1,271 @@
+{
+ "slug": "drug-trafficking-geo",
+ "captured_at": "2026-10-22T23:57:43+0530",
+ "calls": [
+  {
+   "tool": "global_comparison",
+   "feature": "research.geography",
+   "args": {
+    "claim": "Drug trafficking"
+   },
+   "seconds": 42.0,
+   "response": {
+    "ok": true,
+    "feature": "research.geography",
+    "subject": {},
+    "data": {
+     "research_authorship": {
+      "what": "country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says",
+      "rows": [
+       {
+        "country": "United Kingdom",
+        "papers": 1
+       },
+       {
+        "country": "United States",
+        "papers": 1
+       }
+      ]
+     },
+     "news_coverage": {
+      "what": "country an article is about",
+      "rows": [
+       {
+        "country": "india",
+        "articles": 213
+       },
+       {
+        "country": "united states",
+        "articles": 138
+       },
+       {
+        "country": "philippines",
+        "articles": 52
+       },
+       {
+        "country": "pakistan",
+        "articles": 19
+       },
+       {
+        "country": "nigeria",
+        "articles": 12
+       },
+       {
+        "country": "mexico",
+        "articles": 9
+       },
+       {
+        "country": "canada",
+        "articles": 7
+       },
+       {
+        "country": "fiji",
+        "articles": 6
+       },
+       {
+        "country": "australia",
+        "articles": 4
+       },
+       {
+        "country": "afghanistan",
+        "articles": 4
+       },
+       {
+        "country": "germany",
+        "articles": 4
+       },
+       {
+        "country": "japan",
+        "articles": 3
+       }
+      ]
+     },
+     "research_publication": {
+      "what": "country of the publishing journal (the health literature index) — not where the study was done",
+      "rows": [
+       {
+        "country": "England",
+        "papers": 2
+       },
+       {
+        "country": "Germany",
+        "papers": 1
+       },
+       {
+        "country": "United States",
+        "papers": 1
+       }
+      ]
+     },
+     "patent_origin": {
+      "what": "assignee country",
+      "rows": []
+     }
+    },
+    "window": {},
+    "meta": {
+     "note": "three different questions; do not add them together",
+     "seconds": 42.0
+    }
+   }
+  },
+  {
+   "tool": "news_geography",
+   "feature": "news.geography",
+   "args": {
+    "term": "drug trafficking",
+    "since": "2024-06-01"
+   },
+   "seconds": 32.1,
+   "response": {
+    "ok": true,
+    "feature": "news.geography",
+    "subject": {
+     "term": "drug trafficking"
+    },
+    "data": {
+     "level": "country",
+     "rows": [
+      {
+       "label": "united states",
+       "articles": 20133,
+       "share_pct": 24.8,
+       "lift": 1.1
+      },
+      {
+       "label": "mexico",
+       "articles": 5996,
+       "share_pct": 7.4,
+       "lift": 12.3
+      },
+      {
+       "label": "venezuela",
+       "articles": 5267,
+       "share_pct": 6.5,
+       "lift": 31.0
+      },
+      {
+       "label": "india",
+       "articles": 4200,
+       "share_pct": 5.2,
+       "lift": 0.8
+      },
+      {
+       "label": "canada",
+       "articles": 3094,
+       "share_pct": 3.8,
+       "lift": 1.1
+      },
+      {
+       "label": "colombia",
+       "articles": 3045,
+       "share_pct": 3.8,
+       "lift": 7.7
+      },
+      {
+       "label": "china",
+       "articles": 2848,
+       "share_pct": 3.5,
+       "lift": 0.7
+      },
+      {
+       "label": "united kingdom",
+       "articles": 2364,
+       "share_pct": 2.9,
+       "lift": 0.6
+      },
+      {
+       "label": "france",
+       "articles": 2088,
+       "share_pct": 2.6,
+       "lift": 1.5
+      },
+      {
+       "label": "brazil",
+       "articles": 1646,
+       "share_pct": 2.0,
+       "lift": 3.2
+      },
+      {
+       "label": "spain",
+       "articles": 1557,
+       "share_pct": 1.9,
+       "lift": 1.6
+      },
+      {
+       "label": "australia",
+       "articles": 1485,
+       "share_pct": 1.8,
+       "lift": 0.4
+      },
+      {
+       "label": "russia",
+       "articles": 1289,
+       "share_pct": 1.6,
+       "lift": 1.9
+      },
+      {
+       "label": "ecuador",
+       "articles": 1186,
+       "share_pct": 1.5,
+       "lift": 22.7
+      },
+      {
+       "label": "nigeria",
+       "articles": 1113,
+       "share_pct": 1.4,
+       "lift": 1.9
+      }
+     ],
+     "placed_articles": 30322,
+     "matched_articles": 78671,
+     "placed_pct": 38.5,
+     "what": "the place an article is ABOUT, as resolved by the pipeline — not where it was published"
+    },
+    "window": {
+     "censored_at": "2026-06-01",
+     "why_censored": "news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a collapse that did not happen",
+     "from": "2024-06-01",
+     "to": "2026-05-01",
+     "to_is_exclusive": true,
+     "enrichment": {
+      "bound": "2026-05-01",
+      "note": "geography and entity labels are written by a pipeline that runs behind the crawler; months past this bound are ingested but not yet labelled, and reading them as low coverage is reading the pipeline, not the world"
+     },
+     "freshness": {
+      "available": true,
+      "checked_at": 1792688329.0925612,
+      "age_seconds": 5334,
+      "default_until": "2026-06-01",
+      "cutoff_review_needed": false,
+      "note": "Measured ingest volumes. A calendar month being over does not prove its ingestion is complete. The report cutoff remains an explicit policy."
+     },
+     "past_default_cutoff": false
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "news": {
+        "corpus": "news",
+        "rows": 255586690,
+        "expected": 238603270,
+        "pct": 107.1,
+        "partial": false,
+        "checked_at": 1792693663.1691465,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "caveat": "place resolution has acronym collisions — an EV query returns Central African Republic on articles about cars. Rows far down the list with a high lift and a low count are the ones to distrust",
+     "ranked_by": "article count; `lift` is on each row for comparison",
+     "seconds": 32.1
+    }
+   }
+  }
+ ]
+}

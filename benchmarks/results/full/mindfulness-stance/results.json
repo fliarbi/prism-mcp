@@ -1,0 +1,248 @@
+{
+ "slug": "mindfulness-stance",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 2.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 30.6,
+   "plain": 30.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.8,
+    "gpt": 36.4
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 4.0,
+    "chart": 4.5,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 78.2,
+   "plain": 78.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 75.0,
+    "gpt": 81.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 24.8,
+   "plain": 24.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 16.6,
+    "gpt": 33.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 3.5,
+    "export": 3.5,
+    "repro": 4.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 69.8,
+   "plain": 69.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 65.0,
+    "gpt": 74.6
+   }
+  }
+ },
+ "judge_mad": 0.55,
+ "verdicts": {
+  "opus": "C decomposed the measured series: critical share fell from 1.2% to 0.6% while total volume grew about 2.5x, and contested share fell from 10.1% to 8.3%. It also tied paper IDs and specific limits to its 'not more critical' answer. B reached the same reading but did not use the yearly totals it had. D's memory-based 'probably yes' contradicts the record, and A gave no answer.",
+  "gpt": "C gives the strongest decision-grade account: it traces the annual series, compares framing shares and orientation growth, and lays out relevant limits. Its denominator mix-up and unsupported coverage claims keep it below a clean expert-ready result; B is more cautious but leaves the supported framing comparison out of its chart and export."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Claims annual critical shares cannot be derived, although c1 gives yearly totals",
+    "States 298 days since 2025-12-31; the correct figure is 296"
+   ],
+   "claude_prism": [
+    "Compares early/late-thirds ratios against a 2017-vs-2025 endpoint growth factor (2.55x vs a thirds ratio of 1.97x), wrongly concluding that only cautionary and breakthrough outgrew the total",
+    "Pairs the 345 total with the browse facet's 1.6% (665 papers), mixing bases"
+   ],
+   "claude_bare": [
+    "Estimated critical share of 10-15% contradicts the record's roughly 1% critical and about 9% contested",
+    "'Probably yes' contradicts the measured flat critical count and falling contested share",
+    "Conflates the Kuyken 2016 relapse study with the MYRIAD trial"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "The stated 298-day gap from 2025-12-31 to 2026-10-23 is incorrect.",
+    "Says the source reports no thin years, but the supplied stance-trends response does not report a thin-year finding.",
+    "Does not include the source's annual critical shares, so absolute counts alone cannot establish whether critical framing is increasing relative to the field."
+   ],
+   "claude_prism": [
+    "Describes 345 critical papers as 1.6% of the browsed subject, mixing the c1 stance-trends total with the c2 wider matched-set denominator; c1's 20,812-paper base is the relevant denominator.",
+    "States the index passed row-floor checks and was not partial, which is not reported in the supplied c1 response.",
+    "Claims the series has no thin years flagged; this is not in the supplied c1 response.",
+    "Uses promising-filtered records as evidence of recent promising framing, which does not establish a field-wide shift."
+   ],
+   "claude_bare": [
+    "Estimated critical-share rise and publication-count trajectory are not measured; the deliverable labels them estimates.",
+    "The 'probably yes' conclusion about a rising critical tone has no measured series behind it."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown layer. Only 2 of 5 follow-ups execute, and one uses an invalid orientation ('positive').",
+    "export": "No export.",
+    "repro": "No numbers. The refusal is honest but cannot be reproduced.",
+    "refs": "No references.",
+    "accuracy": "Empty deliverable, so no contradictions, which scores 3.",
+    "limits": "Says what is unmeasured, but the statement is largely generic.",
+    "verdict": "'Can't establish' hedges to no answer.",
+    "facets": "No facets answered."
+   },
+   "chatgpt_prism": {
+    "trend": "The critical-count series traces, with its 2017-2025 window. The change is quantified (+6, about 18%) and the 2023 peak of 55 is named. It is not decomposed against totals, even though the totals are in c1.",
+    "comparison": "Contested share is compared early vs late (10.1% vs 8.3%, ratio 0.82, -1.8 pp). The baseline is defined and the 'broadly unchanged' caveat is carried. Critical share vs total growth is not resolved.",
+    "chart": "One traced chart of bare counts. It omits the share view the question needs.",
+    "drilldown": "One layer: orientation by year. Follow-ups execute, but f2 duplicates c1. No items with identifiers.",
+    "export": "Traced CSV with provenance, referenced in the prose. It is a single table and omits the total column.",
+    "repro": "19/19 numbers trace, with a calls block and a provenance block. Minor slip: 298 days stated, 296 actual.",
+    "refs": "No paper references, although the browse call returned identified papers.",
+    "accuracy": "It says annual critical shares are unavailable, but c1 carries yearly totals, so shares are computable. This misreading weakens its own analysis.",
+    "limits": "Window, coverage, phrase set and 2025 caution are placed next to the numbers they bound.",
+    "verdict": "Direct and nuanced. It has a decision, a confidence level with its reason, and what would change it, and it names the contrary count rise.",
+    "facets": "Critical trend and framing are covered, and critical examples are given as a grounded no-data. Total-volume decomposition and the replication facet are missing."
+   },
+   "claude_prism": {
+    "trend": "Contested share and critical count are both charted. The critical share is recomputed exactly (1.2% to 0.6%) and total growth (about 2.5x) is quantified. A decomposed, correct reading.",
+    "comparison": "Early vs late thirds table traces with a defined baseline. However, it compares the thirds ratios against a 2017-vs-2025 endpoint ratio (2.55). On a thirds basis, total growth is 1.97x, so promising and comparative also outgrew the total. The comparison mixes bases.",
+    "chart": "Two traced charts, share and count, with captions. A critical-share overlay would have been better.",
+    "drilldown": "Facet layers plus papers with W ids. Follow-ups are specific and 5/6 execute.",
+    "export": "At the ceiling: one traced table with provenance JSON.",
+    "repro": "76/78 numbers trace, with calls and provenance listed.",
+    "refs": "All 4 DOIs resolve and carry venue and year. There are no quotes and no contrary sources, which it admits.",
+    "accuracy": "Mostly correct. It catches the 20,812 vs 23,174 base discrepancy. It mixes thirds and endpoint ratios, and loosely combines 345 with the browse 1.6%.",
+    "limits": "Window end, 10-month gap, corpus start in 2017, missing news lane, match mode and classifier blind spots are all placed next to the numbers.",
+    "verdict": "A clear 'No' with a decision, confidence, what would change it, and the cautionary rise named as the countersignal. It is somewhat strong given that absolute counts rose.",
+    "facets": "Most facets are covered with grounded values. The replication-critique facet is stated as unmeasured."
+   },
+   "claude_bare": {
+    "trend": "Memory series labelled as an estimate.",
+    "comparison": "Guessed shares labelled as estimates.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "The breakdown is from memory. It names only generic layers.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "At the ceiling: no traced numbers.",
+    "refs": "The 2 DOIs resolve, and the set is tiered with contrary sources. Three entries lack identifiers, and r4 is conflated with MYRIAD.",
+    "accuracy": "Its guessed critical share of 10-15% contradicts the record, where critical is about 1% and contested about 9%. Its 'probably yes' runs against the measured record. It also confuses the Kuyken 2016 study with MYRIAD.",
+    "limits": "Honest that the figures are from memory, with specific gaps named.",
+    "verdict": "Rests on guessed numbers, and its direction contradicts the reference record.",
+    "facets": "Answered mostly from memory, though it does name the replication-era critiques."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured time series or quantified change.",
+    "comparison": "No measured periods or baseline to compare.",
+    "chart": "No chart provided.",
+    "drilldown": "Names specific follow-up questions, but only limited calls executed successfully and no traced breakdown is shown.",
+    "export": "No data export.",
+    "repro": "Calls are listed, but no measured results can be reproduced.",
+    "refs": "No verified document references.",
+    "accuracy": "Clearly presents the trend as unmeasured and invents no findings.",
+    "limits": "States that window, coverage, censoring, and match mode are unavailable.",
+    "verdict": "Direct, bounded answer with a decision, low confidence, and conditions that would change it.",
+    "facets": "Does not ground the trend, comparison, or paper-level evidence facets."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced annual critical counts, quantified change and peak; it does not quantify or chart the supported contested-framing series alongside volume.",
+    "comparison": "Early/late contested shares are on one scale, with a defined baseline, exact delta and ratio, and a clear caveat that this is not the critical-count measure.",
+    "chart": "The annual-count chart traces, but leaves the supported framing-share comparison uncharted.",
+    "drilldown": "Provides phrase and facet breakdowns, identified records, and executable follow-ups; no follow-up result is folded into the report.",
+    "export": "Annual series is traced and referenced, but it omits the framing-shift figures needed for this question.",
+    "repro": "Most claims trace to calls, but the stated 298-day gap is inaccurate and the full framing comparison is not rebuilt from the listed export.",
+    "refs": "The references identify tool calls, not cited documents with resolvable identifiers and supporting quotes.",
+    "accuracy": "Main reading is sound; the 298-day gap is off, and the claim that the source reports no thin years is not in the supplied response.",
+    "limits": "Places window, lane, coverage, vocabulary, and framing limits near the findings; the end-date gap is misstated.",
+    "verdict": "Direct and useful with confidence and a change condition; it underplays the contrary cautionary and problem-identifying growth in its own series.",
+    "facets": "Covers volume, framing, phrase matching and limits, but lacks critical examples and annual critical shares."
+   },
+   "claude_prism": {
+    "trend": "Traced annual series, exact growth comparisons, peak, and critical share decomposition; prose reads the direction consistently.",
+    "comparison": "Compares orientation counts on the same early/late scale and contrasts them with total growth and the framing-share shift.",
+    "chart": "Both charts trace to the series, show the relevant time comparisons, and carry captions tied to the prose.",
+    "drilldown": "Shows multiple facet layers and identified papers, but no executed follow-up result is incorporated into the report.",
+    "export": "Export is traced and referenced but omits needed orientation columns and does not preserve every relevant measure.",
+    "repro": "Most claims trace and calls are listed; two of 78 numbers fail tracing, and the export omits measures used in the analysis.",
+    "refs": "All cited DOIs resolve and are tied to claims, but quotes are absent and the cited promising examples do not establish critical evidence.",
+    "accuracy": "Mostly consistent, but it conflates the c1 total with the c2 promising-filtered matched set when describing the 1.6% share; it also treats the corpus as not partial without support.",
+    "limits": "States window, lane, phrase matching, coverage and classification limits alongside findings; it could more clearly bound the mismatched corpus bases.",
+    "verdict": "Direct, evidence-based answer with confidence, decision, conditions and contrary signals; the mistaken denominator weakens the support.",
+    "facets": "Covers time trend, framing, volume, phrase matching and research/news distinction, while lacking grounded critical examples."
+   },
+   "claude_bare": {
+    "trend": "An explicitly labeled memory estimate gives direction but no sourced series.",
+    "comparison": "Numeric early/late comparison is explicitly estimated, so it is not verifiable.",
+    "chart": "Chart is honestly labeled as an estimate, but measures are unverified.",
+    "drilldown": "Names specific questions and some calls execute, but only one breakdown layer is presented and results are not folded in.",
+    "export": "Estimate CSV is labeled, but is not a sourced export.",
+    "repro": "No calls or measured numbers can be reproduced.",
+    "refs": "Several references have bibliographic details, but quotes are absent and some records lack DOI identifiers.",
+    "accuracy": "The answer is candid about estimates, but its 'probably yes' conclusion is not established by its evidence and conflicts with the supplied 2017–2025 framing record if read as a measured trend.",
+    "limits": "Clearly labels estimates and notes absent live data, though the specific limitations of the supplied research record are not discussed.",
+    "verdict": "Offers a direct answer and decision, but low confidence and memory-only evidence do not support the trend claim.",
+    "facets": "Most trend facets are estimates; the deliverable does not ground the post-2017 replication-critique trend."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 5,
+    "repro": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full monthly series, censored month excluded, and endpoint changes quantified; it does not name the decisive semiconductor and TSMC peaks or fully decompose the trend.",
+    "comparison": "Ratios and deltas use one article-count scale and defined semiconductor baseline; overlap and query-breadth caveats are stated.",
+    "chart": "The plotted volume series traces to the call with window, unit, and source, but the chart omits the supported tone and critical-share comparison.",
+    "drilldown": "Monthly counts are one traced breakdown layer; the proposed follow-ups were mostly not executed and no item-level results are included.",
+    "export": "Both needed tables are fully traced with provenance, dates, units, coverage, and a referenced CSV export.",
+    "repro": "Most numbers trace, but two do not; the declared calls were not all made and there is no complete replayable call set for every claimed result.",
+    "accuracy": "The report treats an undefined tone ratio as evidence of a strongly negative-coded topic, which goes beyond the recorded fields.",
+    "limits": "It states window, censoring, lag, matching uncertainty, and coverage caveats, but does not place all relevant limitations alongside each affected comparison.",
+    "verdict": "It answers the comparison, names a monitoring decision, gives confidence and conditions, and acknowledges overlap and matching limits.",
+    "facets": "It covers relative volume, trends, tone limits, overlap, and the export-control spike, but lacks a grounded source or article-level breakdown."
+   },
+   "B": {
+    "trend": "The indexed series and changes are explicitly estimates from memory, so they earn the estimate anchor only.",
+    "comparison": "The relative index is an honest memory estimate without a checkable common-scale source.",
+    "chart": "The chart is explicitly an illustrative estimate, which earns the estimate anchor only.",
+    "drilldown": "It proposes layers but provides no traced breakdown; most calls were not executed successfully.",
+    "export": "The CSV is explicitly a memory estimate, not a traced export.",
+    "repro": "No recorded calls support the figures, and the listed calls cannot reproduce the estimates.",
+    "accuracy": "It clearly labels estimates and does not present them as measured findings.",
+    "limits": "It names unknown window, lane, coverage, censoring, and matching limits, but these estimates do not have corpus-specific limits to report.",
+    "verdict": "It directly says the comparison cannot be measured, gives a decision, confidence, and what evidence would change that.",
+    "facets": "It addresses overlap, possible spikes, and tone as unmeasured, but offers no grounded coverage values."
+   },
+   "C": {
+    "trend": "No measured series or estimate is supplied.",
+    "comparison": "No numeric comparison is supplied.",
+    "chart": "No chart block is supplied.",
+    "drilldown": "It offers follow-up calls, but no traced breakdown and the calls are not shown to return useful results.",
+    "export": "No data export is supplied.",
+    "repro": "No measurements are reported; proposed calls lack a defined window and do not reproduce any results.",
+    "accuracy": "It makes no conflicting or fabricated measured claims.",
+    "limits": "It clearly says the window and corpus limits are unavailable, though it cannot give corpus-specific bounds.",
+    "verdict": "It gives a cautious direct answer and decision, but confidence is not grounded in a measured record and no contrary evidence is discussed.",
+    "facets": "It says the core measurements are unavailable but gives no grounded values or tool-reported reasons for the gaps."
+   },
+   "D": {
+    "trend": "It quantifies endpoint changes and names the export-controls peak, but the chart is sparse and the report does not trace every trend claim with full monthly decomposition.",
+    "comparison": "The means, ratios, and deltas are recomputable on one window; it distinguishes attention from importance and carries overlap caveats.",
+    "chart": "The chart points trace, but it samples months, omits the semiconductor line, and its caption support points to critical share rather than the plotted volume claim.",
+    "drilldown": "It exposes term, month, and tone layers and supplies specific follow-ups, but no returned headline or article-level item is folded into the report.",
+    "export": "The totals table is traced, but the monthly CSV is only a selected-month sample, so it does not provide the full series needed for the trend.",
+    "repro": "Most numbers trace and calls include arguments and a window, but four claims are untagged and the exports do not rebuild the full chart series.",
+    "accuracy": "It conflates the critical classifier with tone in the verdict and presents the unsupported chip-specific interpretation of generic export-controls matches as a risk signal.",
+    "limits": "It places the window, censoring, ingest lag, coverage caveat, matching uncertainty, lane, and overlap limits near the relevant claims.",
+    "verdict": "The recommendation is supported in part, but its negative-tone characterization overstates the data and it does not acknowledge contrary evidence to that interpretation.",
+    "facets": "It addresses relative volumes, trend, tone fields, overlap, seasonality/spike, and research-versus-news scope with traced values or explicit limits."
+   }
+  },
+  "errors": {
+   "A": [
+    "Calls export-controls coverage strongly negative-coded based on an undefined tone ratio; the record does not establish that interpretation."
+   ],
+   "B": [
+    "Memory estimates are clearly labelled; no measured contradiction identified."
+   ],
+   "C": [
+    "No measured claims to contradict; proposed calls lack a defined window."
+   ],
+   "D": [
+    "Conflates the tool's critical field with tone in the verdict; the reference does not define critical as negative.",
+    "Calls export-controls coverage a chip-specific policy-risk signal despite the record warning that generic terms may over-count and not identifying chip relevance.",
+    "States combined shares are shares of mentions without a defined share denominator in the reference."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it provides the complete traced monthly series, comparable totals, and caveats, while avoiding D’s unsupported reading of critical coverage as negative tone. D covers more facets and offers stronger limits, but its sparse chart and partial monthly export weaken auditability, and its verdict overstates what the tone and generic export-controls match can show."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 5,
+   "repro": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

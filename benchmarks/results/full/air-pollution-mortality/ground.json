@@ -1,0 +1,651 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1026,
+  "charts": [
+   {
+    "id": "who-guideline",
+    "title": "WHO annual-mean PM2.5 guideline value",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "WHO annual guideline",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "pm25_hr.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "who_guideline.csv",
+    "how": "ref",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which studies find null or weak PM2.5-mortality associations?",
+    "args": {
+     "term": "PM2.5 mortality",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mortality', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What are the pooled effect sizes by study?",
+    "args": {
+     "term": "PM2.5 all-cause mortality hazard ratio"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ortality hazard ratio'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 all-cause mortality hazard ratio', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has publication volume changed by year?",
+    "args": {
+     "term": "PM2.5 mortality"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"pm2.5 mortality\", \"fine particulate matter mortality\", \"air pollution health effects\"], \"points\": [{\"year\": 2018, \"total\": 2, \"orientation\": {\"promising\": 2}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2019, \"total\": 3, \"orientation\": {\"problem_identifying\": 1, \"descriptive\": 2}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 33.3}, {\"year\": 2020, \"total\": 4, \"orientation\": {\"descriptive\": 1, \"critical\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 2, \"positive_pct\": 0.0, \"contested_pct\": 50.0}, {\"year\":"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How much news coverage is there, and where?",
+    "args": {
+     "term": "PM2.5 deaths"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'PM2.5 deaths' in this window",
+    "seconds": 3.3,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "Which supporting papers have DOIs and quotes?",
+    "args": {
+     "term": "PM2.5 mortality",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...mortality', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.browse",
+    "question": "What do the low-concentration studies show?",
+    "args": {
+     "term": "PM2.5 below 10 µg/m3 mortality",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'PM2.5 below 10 µg/m3 mortality' — try expand=true, or a broader phrase",
+    "seconds": 9.1,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 39,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 7,
+   "untagged_examples": [
+    "10 — - Confidence: high for the direction and rough size of the association. Medium for exact m",
+    "10 — Baseline: all-cause mortality hazard ratio per 10 µg/m³ of long-term PM2.5, where 1.00 mea",
+    "1.00 — Baseline: all-cause mortality hazard ratio per 10 µg/m³ of long-term PM2.5, where 1.00 mea",
+    "10 — | Study | Population | HR per 10 µg/m³ | Excess vs baseline |",
+    "+6% — | ACS CPS-II [r4] | ~1.2M US adults | ~1.06 (est.) | +6% |",
+    "+7.3% — | Medicare cohort [r2] | ~60M US adults 65+ | ~1.073 (est.) | +7.3% |",
+    "+8% — | Meta-analysis [r1] | pooled cohorts | ~1.08 (est.) | +8% |"
+   ]
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 10"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1262,
+  "charts": [
+   {
+    "id": "research-series",
+    "title": "Typed research papers per year, PM2.5/aerosol subject lane",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "cause-effects",
+    "title": "Mortality increase per 10 μg/m³ PM2.5, US Medicare",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "% increase",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "medicare_effects.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which studies are critical of the PM2.5-mortality link?",
+    "args": {
+     "term": "PM2.5 mortality",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W3081639742\", \"title\": \"Should air pollution health effects assumptions be tested? Fine particulate matter and COVID-19 mortality as an example\", \"authors\": [\"Louis Anthony Cox\", \"Douglas A. Popken\"], \"venue\": \"Global Epidemiology\", \"year\": 2020, \"date\": \"2020-09-01\", \"doi\": \"10.1016/j.gloepi.2020.100033\", \"url\": \"https://doi.org/10.1016/j.gloepi.2020.100033\", \"cited_by\": 7, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4,"
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "Are there reviews or meta-analyses with pooled estimates?",
+    "args": {
+     "claim": "PM2.5 mortality meta-analysis"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...rtality meta-analysis'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...rtality meta-analysis'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 mortality meta-analysis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.geography",
+    "question": "How do effect sizes differ by country?",
+    "args": {
+     "term": "PM2.5 mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PM2.5 mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has stance on the claim shifted over time?",
+    "args": {
+     "claim": "PM2.5 air pollution increases mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...n increases mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 air pollution increases mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "How is news sentiment about PM2.5 deaths trending?",
+    "args": {
+     "term": "PM2.5 mortality"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.1,
+    "sample": "{\"points\": [{\"period\": \"2024-12-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}], \"totals\": {\"neg\": 1, \"pos\": 0, \"neutral\": 0, \"n\": 1, \"neg_pct\": 100.0, \"pos_pct\": 0.0, \"ratio\": null}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "What do the highly cited papers say?",
+    "args": {
+     "term": "PM2.5 mortality"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'PM2.5 mortality'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 mortality', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 70,
+   "traced": 70,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 137,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 700,
+  "charts": [
+   {
+    "id": "pm25-mortality-estimates",
+    "title": "Estimated relative mortality increase per 10 μg/m³ higher long-term PM2.5",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "All-cause mortality estimate",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "pm25_mortality_estimates.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which large cohort studies report PM2.5 mortality estimates by age and cause of death?",
+    "args": {
+     "term": "PM2.5 mortality cohort age cause-specific",
+     "orientation": "supporting",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'PM2.5 mortality cohort age cause-specific' — try expand=true, or a broader phrase",
+    "seconds": 5.4,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "What studies report null or inverse PM2.5 mortality associations, and how do they address exposure error and confounding?",
+    "args": {
+     "term": "PM2.5 all-cause mortality null inverse association",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sociation', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 all-cause mortalit...ull inverse association', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How have systematic review estimates of PM2.5 mortality changed over time?",
+    "args": {
+     "term": "PM2.5 long-term mortality systematic review",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=8, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "What does recent reporting say about PM2.5 mortality evidence and policy?",
+    "args": {
+     "term": "PM2.5 air pollution mortality evidence policy",
+     "window": "recent"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...y', 'window': 'recent'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 air pollution mortality evidence policy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='recent', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 19,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 4,
+   "untagged_examples": [
+    "1.07 — - **Supporting — 2009, New England Journal of Medicine, cohort study, tier: primary observ",
+    "10 — - **Supporting — 2009, New England Journal of Medicine, cohort study, tier: primary observ",
+    "1.08 — - **Supporting — 2014, Environmental Health Perspectives, systematic review and meta-analy",
+    "10 — - **Supporting — 2014, Environmental Health Perspectives, systematic review and meta-analy"
+   ]
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 2,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 97,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 1032,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism-indexed PM2.5 research volume",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Indexed papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "pm25_research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "What does a systematic evidence synthesis conclude about long-term PM2.5 and all-cause mortality?",
+    "args": {
+     "term": "PM2.5 long-term exposure all-cause mortality systematic review meta-analysis",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'PM2.5 long-term exposure all-cause mortality systematic review meta-analysis' — try expand=true, or a broader phrase",
+    "seconds": 4.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which null or inverse mortality findings exist, and how do their populations and designs compare?",
+    "args": {
+     "claim": "long-term PM2.5 exposure increases all-cause mortality",
+     "limit": 12
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 76.7,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 9, \"unread\": 3}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 15706, \"window\": \"2017-2025\", \"lane\": \"subject\", \"orientation\": {\"descriptive\": 7154, \"problem_identifying\": 2745, \"promising\": 2361, \"cautionary\": 1685, \"breakthrough\": 816, \"comparative\": 540, \"critical\": 405}, \"contribution\": {\"empirical\": 11892, \"review\": 1627, \"methodological\": 1329, \"position\": 711, \"theoretical\": 147}, \"sides\": {\"supporting\": 3177, \"qualifying\": 4430, \"contradicting\": 405, \"neutral\": 7694}, \""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What pooled relative risks and confidence intervals are reported by exposure increment and cause of death?",
+    "args": {
+     "claim": "long-term PM2.5 exposure mortality pooled relative risk confidence interval",
+     "limit": 12
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 55.8,
+    "sample": "{\"stats\": [], \"rejected\": [{\"value\": \"0.30 [95% confidence interval (CI): 0.10, 0.50]\", \"why\": \"sentence not found in that abstract\"}, {\"value\": \"0.69 (95% CI: 0.55, 0.83)\", \"why\": \"sentence not found in that abstract\"}], \"candidate_sentences\": 24, \"research_series\": {\"available\": true, \"corpus\": \"research_typed\", \"unit\": \"year\", \"window\": \"2017-2025\", \"lane\": \"intersection\", \"points\": [{\"period\": \"2017\", \"n\": 2, \"partial_period\": false}, {\"period\": \"2018\", \"n\": 1, \"partial_period\": false}, {\"period\": \"2019\", \"n\": 2, \"partial_period\": false}, {\"period\": \"2020\", \"n\": 0, \"partial_period\": false}, {\"period\": \"2021\", \"n\": 2, \"partial_period\": false}, {\"period\": \"2022\", \"n\": 3, \"partial_period\": "
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "How do mortality associations vary by age, region, exposure duration, and socioeconomic status?",
+    "args": {
+     "claim": "PM2.5 exposure mortality effect modification population subgroup",
+     "limit": 12
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...subgroup', 'limit': 12}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...subgroup', 'limit': 12}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 exposure mortality...ion population subgroup', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=12, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "Which news stories correspond to major research findings, and how are they framed?",
+    "args": {
+     "term": "PM2.5 mortality research",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...research', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='PM2.5 mortality research', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 52,
+   "traced": 52,
+   "derived": 8,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 138,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

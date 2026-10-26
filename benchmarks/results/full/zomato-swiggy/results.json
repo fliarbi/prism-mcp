@@ -1,0 +1,235 @@
+{
+ "slug": "zomato-swiggy",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 22.1,
+   "plain": 22.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 20.2,
+    "gpt": 23.9
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.5,
+    "drilldown": 2.0,
+    "export": 4.5,
+    "repro": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 76.0,
+   "plain": 76.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 84.6,
+    "gpt": 67.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.5,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 23.8,
+   "plain": 23.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 17.2,
+    "gpt": 30.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 2.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "accuracy": 2.0,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 3.0
+   },
+   "strict": 58.3,
+   "plain": 58.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 60.0,
+    "gpt": 56.5
+   }
+  }
+ },
+ "judge_mad": 0.45,
+ "verdicts": {
+  "opus": "A read the full traced series correctly. It named the peaks, computed exact declines and lead changes, decomposed tone, and flagged the Eternal rename and the overlap. C used the same data but compared only endpoints and misread the censoring, treating May 2026 as incomplete. B and D measured nothing; B also misdescribed combined_articles.",
+  "gpt": "A is the most decision-ready: it gives the strongest traced volume and tone comparison, useful charts, and complete exports, though its recent-lead count and coverage claim need correction. D is close on the core comparison, but its false claim that May 2026 is censored materially distorts the trend and exports. B is careful but offers no measured comparison; C adds unsupported memory claims."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Coverage figure of 107.1% is not visible in the reference record."
+   ],
+   "claude_bare": [
+    "Calls combined_articles a de-duplicated union; it equals the sum of the two term totals.",
+    "Calls 'Zomato' a common first word in other contexts."
+   ],
+   "chatgpt_prism": [
+    "Claims the latest displayed month (2026-05) is incomplete; the reference marks it partial_period:false, and the censored month is 2026-06.",
+    "Labels both exports coverage=partial."
+   ],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "claude_prism": [
+    "The claim that Swiggy led in 6 of the last 8 months is incorrect; it led in 4, Zomato led in 2, and March 2026 was tied.",
+    "The stated 107.1% coverage figure is not in the reference record.",
+    "The verdict describes coverage as complete and the censor as clean without support from the recorded response."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Claims Zomato would be undercounted by searching only that term, without evidence in the record.",
+    "Presents recalled relative size and profitability as estimates, not verified news findings."
+   ],
+   "chatgpt_prism": [
+    "Calls May 2026 incomplete and says the source marks it so; the reference marks May partial_period false and censors the following June period.",
+    "Marks the exports as partial coverage even though the included monthly points are not marked partial."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full traced 24-month series with the window stated. Both Nov 2024 peaks are named and peak-to-latest falls (64.7%, 48.1%) recompute exactly. Critical share is decomposed and also traced.",
+    "comparison": "Same call and window throughout. Ratios and deltas recompute (1.035, +765, 0.65), the baseline is defined, the overlap caveat is carried, and the reading says this is attention, not business performance.",
+    "chart": "Volume chart and critical-share chart are both fully traced, overlaid per term, with window, unit and source. The censored month is correctly excluded.",
+    "drilldown": "One traced layer (period and tone class). Only 1 of 7 follow-ups executed, and no item-level identifiers.",
+    "export": "Monthly and summary CSVs are fully traced, with source, window, unit and coverage. Period ids are included, the provenance JSON is present, and both files are referenced.",
+    "repro": "82 of 88 numbers traced, the call is listed with args, and derived figures are shown. A few figures (coverage 107.1%, the Eternal note) are not in the reference.",
+    "accuracy": "Peaks, lead counts (13/24, 6 of last 8), the critical percentages and the 144-day gap all check. Undefined fields are flagged and the tone_ratio inference is labelled. No anomaly beyond that is caught.",
+    "limits": "Window, censoring, gap to today, match mode, overlap and the Eternal alias are each stated next to the numbers they bound.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It names the contrary recent Swiggy lead and stays under 150 words.",
+    "facets": "Volume, share, trend, tone, overlap and the Eternal rename are all addressed. The overlap and the alias are not measurable from the data."
+   },
+   "claude_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups only, and most fail.",
+    "export": "An empty table labelled estimate.",
+    "repro": "Memory, labelled estimate.",
+    "accuracy": "Two misreadings: it calls combined_articles a de-duplicated union (it is the plain sum), and it treats 'Zomato' as a common word.",
+    "limits": "Specific about what is unmeasured, and the Eternal alias is a good catch.",
+    "verdict": "Low-confidence memory answer.",
+    "facets": "Facets come mostly from memory or are left blank."
+   },
+   "chatgpt_prism": {
+    "trend": "Uses only the first and last points although all were available. The peak is not named. The endpoint change is wrongly called provisional because of an 'incomplete' month.",
+    "comparison": "Traced 1.035 ratio and 765 delta with the baseline defined and the attention caveat carried.",
+    "chart": "Volume chart only. Tone was available but is not charted.",
+    "drilldown": "One aggregate layer, and follow-ups mostly fail.",
+    "export": "Traced CSVs with provenance, but coverage=partial is mislabelled and the window end is given as inclusive of 2026-06.",
+    "repro": "32 of 34 traced, with the call and args listed.",
+    "accuracy": "Misreads censoring: it claims May 2026 is incomplete, but May is partial_period:false and June was already censored.",
+    "limits": "The window and gap to today are stated, but the censoring limit is misapplied.",
+    "verdict": "Supported answer, but its confidence rests on a misread incomplete month. It does not cover tone.",
+    "facets": "Tone is only lightly read. Eternal is not addressed."
+   },
+   "chatgpt_bare": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic proposed calls only.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "A refusal with no answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Traced monthly series with quantified peak-to-latest declines and named peaks; the chart omits the final June cutoff caveat and the prose miscounts Swiggy's leads in the last eight months.",
+    "comparison": "Same-window term totals and ratios recompute; the baseline is defined, but overlap is unmeasured and some interpretations overreach.",
+    "chart": "Both traced charts have units, windows, sources, and prose claims; the series are not fully decomposed into the comparison's key tone reading.",
+    "drilldown": "Provides traced monthly and tone breakdowns, but most specific follow-up calls did not return usable results and no item-level layer is present.",
+    "export": "Exports the monthly series and summary with provenance and identifiers, but the coverage flag and some field naming/provenance details are incomplete or inaccurate.",
+    "repro": "Most numbers trace and the call is replayable, but several claims are unsupported or wrong, including the coverage percentage and recent lead count.",
+    "accuracy": "The 6-of-8 recent lead claim is wrong, and the 107.1% coverage figure is not in the reference record; tone-ratio interpretation is appropriately labeled as inference.",
+    "limits": "Censoring and the gap to today are covered, but it incorrectly claims complete coverage and a clean censor while omitting applicable ingestion and match-mode uncertainty near its numbers.",
+    "verdict": "Direct, decision-oriented verdict with confidence and conditions, but it inherits the erroneous recent-lead claim and overstates coverage confidence."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or quantified change.",
+    "comparison": "States that a comparable numeric contrast is unavailable; no measured comparison is supplied.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are proposed but generic and unexecuted; no traced breakdown is shown.",
+    "export": "No data-backed CSV export.",
+    "repro": "No measurements to reproduce; numbers are honestly withheld.",
+    "accuracy": "No contradiction or invented measurement; the refusal is accurate about the absence of supplied data.",
+    "limits": "Names the missing window, corpus, matching rules, and censoring information, but has no measured result to bound.",
+    "verdict": "Gives a direct cautious answer, decision, confidence, and condition that would change it, within its stated limits.",
+    "facets": "Most requested facets are explicitly unmeasured, with no grounded values."
+   },
+   "claude_bare": {
+    "trend": "No measured series; the estimate label does not supply a sourced trend.",
+    "comparison": "No measured common-scale comparison; the suggested ratio is a plan, not a result.",
+    "chart": "No chart block.",
+    "drilldown": "Lists proposed calls and breakdown categories, but provides no traced layer or executed useful follow-up.",
+    "export": "CSV is explicitly an estimate/plan with no measured rows.",
+    "repro": "No numeric claims are reproducible; calls are unexecuted and include unsupported arguments.",
+    "accuracy": "The Eternal rename is correct, but claiming Zomato will be undercounted and discussing company size as recalled fact are unsupported; alias handling is asserted without evidence.",
+    "limits": "Clearly separates memory from measurement and states that no window or lane was queried, but the analysis supplies no measured result.",
+    "verdict": "The answer is cautious about missing news data, but its direct comparison rests on unverified business claims and lacks a grounded confidence basis.",
+    "facets": "The requested measured facets are mostly acknowledged as unavailable, but no tool-grounded results cover them."
+   },
+   "chatgpt_prism": {
+    "trend": "Monthly points trace and endpoint change is quantified, but it treats May 2026 as censored/incomplete even though the record marks each included month complete and excludes June.",
+    "comparison": "Same-window totals, ratios, and deltas recompute and the baseline is defined; it appropriately cautions that term matches are not unique stories.",
+    "chart": "Series are traced and labeled, but the caption falsely calls the final included month incomplete.",
+    "drilldown": "Shows aggregate breakdowns but no item-level identifiers; the proposed follow-up calls did not yield enough usable results.",
+    "export": "CSV values mostly trace, but the coverage flag is incorrectly marked partial and the stated partial-month caveat does not match the recorded response.",
+    "repro": "The primary call is listed with arguments and window; most numeric claims trace, though the report repeats an incorrect censoring claim.",
+    "accuracy": "The main clear error is treating May as an incomplete month and saying the source marks it so; the reference excludes the censored June period and marks May complete.",
+    "limits": "States the cutoff and general ingest limitation, but misapplies censoring to May and mislabels the export coverage.",
+    "verdict": "Answers the comparison and gives a decision and confidence, but the verdict relies on a false latest-month caveat and does not name a specific condition that would change the conclusion.",
+    "facets": "Grounds volume and trend facets, but tone is not interpreted, overlap and alias implications remain unresolved, and it omits the research-versus-news mismatch."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {
+   "claude_bare": [
+    "repro 1->0"
+   ]
+  },
+  "gpt": {}
+ }
+}

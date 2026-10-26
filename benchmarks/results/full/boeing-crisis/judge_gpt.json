@@ -1,0 +1,189 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 2
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 5
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series or named source; explicitly declines to estimate.",
+    "comparison": "No measured baseline comparison.",
+    "chart": "No chart block with data.",
+    "drilldown": "No breakdown or executable follow-up calls.",
+    "export": "No data export.",
+    "repro": "Calls block is empty; the refusal is candid but not reproducible.",
+    "refs": "No references supplied.",
+    "accuracy": "Makes no contradictory factual claims; accurately states its lack of evidence.",
+    "limits": "Clearly says the window, censoring, match mode, and baseline are unknown, but has no measured values to bound.",
+    "verdict": "Directly advises against using the response as evidence, gives high confidence with a reason, and states what would change it; no contrary evidence exists in its report.",
+    "facets": "Grounded no-data statements cover several requested facets, but no measured answer or trend."
+   },
+   "B": {
+    "trend": "Only an explicitly unmeasured, empty chart and memory-based direction; ceiling 1.",
+    "comparison": "No numeric measured comparison; expectation is labeled as estimate.",
+    "chart": "Null chart is explicitly not measured; ceiling 1.",
+    "drilldown": "Several calls are proposed but only 2/5 succeeded, and the breakdown is only a plan.",
+    "export": "Single estimate CSV with no measured rows; ceiling 1.",
+    "repro": "No calls were run; numeric recollections are untraceable and the ceiling is 0.",
+    "refs": "No resolvable references; dated event claims are memory-based.",
+    "accuracy": "Memory themes are plausible and labeled estimates, but the claimed January 2024 peak contradicts the reference series’ June 2025 peak.",
+    "limits": "Names the missing window, coverage, censoring and match mode, but does not give limits alongside measured values because none were measured.",
+    "verdict": "Gives a cautious qualitative answer and conditions, but has no supporting measurements and low confidence.",
+    "facets": "Most facets are unmeasured or memory-based; only the gaps are stated."
+   },
+   "C": {
+    "trend": "Traced monthly volume, polarity and critical-share series with quantified peaks, troughs and changes; decomposition and censoring are handled.",
+    "comparison": "Same-scale ratio and baseline comparisons recompute, but the baseline window is explicitly unstated, so it misses the full anchor.",
+    "chart": "Both charts trace and support claims, but the charts do not visibly mark the censored boundary and their window ends are presented as May 31 rather than the source's exclusive June 1.",
+    "drilldown": "Breakdown includes headline items, but no more than 2/7 proposed calls executed successfully; identifiers do not establish two reliable traced follow-up layers.",
+    "export": "Monthly CSV is comprehensive, but the needed tone summary is absent and geography is an additional partial table; thus export is incomplete for the decision question.",
+    "repro": "All numeric claims trace and the regenerate block carries the overview call, args, window and capture date.",
+    "refs": "The supplied headlines have URLs, but the script found 0/0 corpus DOIs and the reference items are not all tied to supporting verbatim source quotes; ceiling 2.",
+    "accuracy": "The report calls the June 2025 crash link and headlines out as interpretation, but states a subcategory fill of 59.2% that does not match the reference record and misattributes the lower boundary of the trend window.",
+    "limits": "Covers the exclusive end, censoring, match-mode differences, lagging enrichment, thin headlines and the 145-day gap near the affected claims; some limits remain in the method section.",
+    "verdict": "Direct and supported with confidence and conditions, but the verdict exceeds 150 words and does not fully bound its headline conclusion by the missing 145-day period.",
+    "facets": "Addresses tone baseline, trend, themes, source sample, headlines, geography, matching, overlap and the research/news gap with grounded values or explicit limits."
+   },
+   "D": {
+    "trend": "Traced volume series and correctly identifies flat direction and peak, but gives no quantified growth/delta for the series and omits the censored partial-period marker in the chart.",
+    "comparison": "Numeric same-scale ratio and delta, defined baseline, and correct contrast answer the question; caveats on polarity are included.",
+    "chart": "The volume chart traces and supports the trend claim, but the question asks tone versus normal and no tone comparison chart is provided.",
+    "drilldown": "Headline sample and breakdowns are present, but only one of four proposed follow-up calls executed successfully.",
+    "export": "Monthly volume CSV traces with provenance, but the deliverable needs a tone series or summary export as well; it is not included.",
+    "repro": "Most numeric claims trace and the call is replayable, but 2/35 numbers are untraced, preventing a higher score.",
+    "refs": "No external references and no linkable article URLs in the report; ceiling 1.",
+    "accuracy": "No clear contradiction in the stated values; it correctly distinguishes negative share from critical flags and says publisher figures are a sample.",
+    "limits": "Gives the window and several data limits, but the date gap is misstated as 144 rather than 145 days and caveats are not consistently adjacent to the values they bound.",
+    "verdict": "Direct answer, decision, confidence and change conditions are present and consistent; it omits the strongest contrary evidence that positive items slightly exceed negative items, despite stating it.",
+    "facets": "Covers the core tone and trend plus several supporting facets, but lacks a tone chart/export and robust executable follow-ups."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Claims a January 2024 coverage peak from memory; the reference series peaks in June 2025."
+   ],
+   "C": [
+    "States subcategory fill is 59.2%, which is not in the reference record.",
+    "Uses May 31, 2026 as the trend window endpoint rather than the source's exclusive June 1 endpoint."
+   ],
+   "D": [
+    "States the cutoff was 144 days before October 23, 2026; the interval from June 1 is 144 days, but the stated last data date May 31 is 145 days before today, making the phrasing ambiguous."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid: it directly answers the baseline comparison with a defined ratio and delta, then bounds the interpretation with window, matching, and sample caveats. C offers richer traced trend and facet detail, but its subcategory-fill error and overlong verdict weaken reliability; neither report supplies the needed tone comparison as a chart."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

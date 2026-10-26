@@ -1,0 +1,632 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 725,
+  "charts": [
+   {
+    "id": "mrna-pubs",
+    "title": "Approximate mRNA vaccine/therapeutic publications per year (rough estimate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "mRNA publications (est.)",
+      "how": "estimate",
+      "points": 7,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "mrna_pubs_est.csv",
+    "how": "estimate",
+    "rows": 7,
+    "numeric_cells": 7,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which non-COVID mRNA papers since 2022 are most cited?",
+    "args": {
+     "term": "mRNA vaccine cancer OR influenza OR RSV",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 63, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4416955595\", \"title\": \"Engineering Anti-Tumor Immunity: An Immunological Framework for mRNA Cancer Vaccines\", \"authors\": [\"Olivier Roy\", \"Karen Anderson\"], \"venue\": \"Vaccines\", \"year\": 2025, \"date\": \"2025-12-03\", \"doi\": \"10.3390/vaccines13121222\", \"url\": \"https://doi.org/10.3390/vaccines13121222\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"review\", \"stance_score\": -0.3, \"topics\": [\"RNA Interference and Gene Delivery\", \"Im"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has publication momentum changed since 2020?",
+    "args": {
+     "term": "mRNA vaccine"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"mrna vaccine\", \"messenger rna vaccine\", \"nucleoside-modified mrna vaccine\", \"self-amplifying mrna vaccine\", \"lipid nanoparticle mrna vaccine\"], \"points\": [{\"year\": 2017, \"total\": 8, \"orientation\": {\"descriptive\": 1, \"breakthrough\": 2, \"comparative\": 1, \"promising\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 3, \"contested\": 1, \"positive_pct\": 37.5, \"contested_pct\": 12.5}, {\"year\": 2018, \"total\": 11, \"orientation\": {\"breakthrough\": 3, \"promising\": 3, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 6, \"contested\": 1, \"positive_pct\": 54.5, \"contested_pct\": 9.1}, {\"year\": 2019, \"total\": 18, \"orientation\": {\"descripti"
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which findings are critical or negative?",
+    "args": {
+     "term": "mRNA cancer vaccine"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'mRNA cancer vaccine'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA cancer vaccine', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage shifted?",
+    "args": {
+     "term": "mRNA vaccine cancer"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Where is the research geographically concentrated?",
+    "args": {
+     "term": "mRNA vaccine"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'mRNA vaccine'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccine', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.radar",
+    "question": "What topics are under-covered?",
+    "args": {
+     "term": "self-amplifying RNA"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'self-amplifying RNA'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='self-amplifying RNA', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 10,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "942 — Baseline: the 2023 KEYNOTE-942 hazard reduction versus pembrolizumab alone."
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 129,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 889,
+  "charts": [
+   {
+    "id": "mrna_papers",
+    "title": "Research papers on mRNA vaccine, endpoints only",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers (first and last year only; intermediate years not returned)",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "mrna_trend.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "mrna_thirds.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which cancer mRNA vaccine papers drive growth?",
+    "args": {
+     "term": "mRNA cancer vaccine",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 67, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4416955595\", \"title\": \"Engineering Anti-Tumor Immunity: An Immunological Framework for mRNA Cancer Vaccines\", \"authors\": [\"Olivier Roy\", \"Karen Anderson\"], \"venue\": \"Vaccines\", \"year\": 2025, \"date\": \"2025-12-03\", \"doi\": \"10.3390/vaccines13121222\", \"url\": \"https://doi.org/10.3390/vaccines13121222\", \"cited_by\": 0, \"orientation\": \"problem_identifying\", \"contribution\": \"review\", \"stance_score\": -0.3, \"topics\": [\"RNA Interference and Gene Delivery\", \"Im"
+   },
+   {
+    "id": "f2",
+    "feature": "research.radar",
+    "question": "How fast is influenza mRNA vaccine research growing?",
+    "args": {
+     "topic": "influenza mRNA vaccine",
+     "since_year": 2023
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 17.8,
+    "sample": "{\"new_work\": [{\"title\": \"An influenza mRNA vaccine protects ferrets from lethal infection with highly pathogenic avian influenza A(H5N1) virus\", \"year\": 2024, \"venue\": \"Science Translational Medicine\", \"cited_by\": 33, \"orientation\": \"promising\", \"url\": \"https://doi.org/10.1126/scitranslmed.ads1273\"}, {\"title\": \"Protective efficacy of a universal influenza mRNA vaccine against the challenge of H1 and H5 influenza A viruses in mice\", \"year\": 2023, \"venue\": \"mLife\", \"cited_by\": 13, \"orientation\": \"breakthrough\", \"url\": \"https://doi.org/10.1002/mlf2.12085\"}, {\"title\": \"An mRNA Influenza Vaccine — Could It Deliver?\", \"year\": 2023, \"venue\": \"New England Journal of Medicine\", \"cited_by\": 11, \"orien"
+   },
+   {
+    "id": "f3",
+    "feature": "analysis.history",
+    "question": "What is the yearly paper trend for mRNA vaccine excluding COVID?",
+    "args": {
+     "term": "mRNA vaccine NOT COVID-19"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... vaccine NOT COVID-19'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccine NOT COVID-19', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Which critical papers address LNP safety or stability?",
+    "args": {
+     "term": "mRNA lipid nanoparticle"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...NA lipid nanoparticle'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA lipid nanoparticle', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "How does news tone on mRNA vaccines change over time?",
+    "args": {
+     "term": "mRNA vaccine"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 15, \"positive\": 80, \"neutral\": 0, \"ratio\": 0.19}, {\"period\": \"2024-07-01\", \"negative\": 15, \"positive\": 99, \"neutral\": 2, \"ratio\": 0.15}, {\"period\": \"2024-08-01\", \"negative\": 25, \"positive\": 97, \"neutral\": 0, \"ratio\": 0.26}, {\"period\": \"2024-09-01\", \"negative\": 22, \"positive\": 122, \"neutral\": 1, \"ratio\": 0.18}, {\"period\": \"2024-10-01\", \"negative\": 22, \"positive\": 96, \"neutral\": 1, \"ratio\": 0.23}, {\"period\": \"2024-11-01\", \"negative\": 12, \"positive\": 92, \"neutral\": 0, \"ratio\": 0.13}, {\"period\": \"2024-12-01\", \"negative\": 23, \"positive\": 108, \"neutral\": 2, \"ratio\": 0.21}, {\"period\": \"2025-01-01\", \"negative\": 18, \"positive\": 170, \"neutral\": 0, \"rati"
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Where is non-COVID mRNA research produced?",
+    "args": {
+     "term": "mRNA vaccine"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'mRNA vaccine'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccine', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 35,
+   "traced": 35,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 721,
+  "charts": [
+   {
+    "id": "trend-unmeasured",
+    "title": "Non-COVID mRNA research momentum",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Annual count",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "milestones.csv",
+    "how": "ref",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.citations",
+    "question": "Which non-COVID mRNA vaccine papers have the highest citation counts by year?",
+    "args": {
+     "term": "mRNA vaccines excluding COVID-19",
+     "year_from": 2017,
+     "year_to": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 2017, 'year_to': 2026}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccines excluding COVID-19', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "How has research framing shifted between infectious disease, cancer, and protein replacement?",
+    "args": {
+     "term": "mRNA research excluding COVID-19",
+     "year_from": 2017,
+     "year_to": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "Which non-COVID mRNA vaccine topics are under-covered relative to publication volume?",
+    "args": {
+     "term": "mRNA vaccine research excluding COVID-19",
+     "year_from": 2017,
+     "year_to": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 2017, 'year_to': 2026}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccine research excluding COVID-19', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of non-COVID mRNA research changed over time?",
+    "args": {
+     "term": "mRNA vaccine excluding COVID-19",
+     "year_from": 2017,
+     "year_to": 2026
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nyear_from\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "Which papers drove any recent rise in non-COVID mRNA research?",
+    "args": {
+     "term": "mRNA vaccine excluding COVID-19",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 3, \"papers\": [{\"id\": \"W4381166198\", \"title\": \"Neutralizing activity and T-cell response after bivalent fifth dose of messenger RNA vaccine in people living with HIV\", \"authors\": [\"Alessandra Vergori\", \"Giulia Matusali\", \"Alessandro Cozzi Lepri\", \"Eleonora Cimini\", \"Marisa Fusto\", \"Francesca Colavita\", \"Roberta Gagliardini\", \"Stefania Notari\"], \"venue\": \"International Journal of Infectious Diseases\", \"year\": 2023, \"date\": \"2023-06-19\", \"doi\": \"10.1016/j.ijid.2023.06.010\", "
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 6,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "44% — - **2023, *The Lancet*, randomized phase 2b, NCT03897881 [r1].** Supports the melanoma adj",
+    "19 — - **2024, *Nature Reviews Drug Discovery*, review [r3].** Supports the broader landscape o",
+    "43.9% — The requested end date is 2026-10-23; the evidence cited spans 2023–2024, leaving a two-ye"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 0,
+   "not_found": [
+    "10.1016/s0140-6736(23)00568-2",
+    "10.1038/s41573-023-00782-3",
+    "10.1038/s41573-024-00859-3"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 117,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 0,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 852,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Indexed research papers for mRNA vaccine topic",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Indexed papers",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_trend.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which non-COVID mRNA vaccine papers drove the annual rise, by disease area and year?",
+    "args": {
+     "term": "mRNA vaccine",
+     "orientation": "promising",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1239, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7117141492\", \"title\": \"Rational design and in silico characterization of a multiepitope mRNA vaccine candidate against human metapneumovirus (hMPV) using reverse vaccinology and immunoinformatics approaches\", \"authors\": [\"Mohammad Asrar Izhari\", \"Ahmed R. A. Gosady\", \"Fahad Alghamdi\", \"Wael A. Alghamdi\", \"Mahtab Hadadi\", \"Ahmad H. A. Almontasheri\", \"Daifallah M. M. Dardari\", \"A Salem\"], \"venue\": \"Scientific Reports\", \"year\": 2025, \"date\": \"2025-"
+   },
+   {
+    "id": "f2",
+    "feature": "research.brief",
+    "question": "What clinical trial phases and outcomes are reported for mRNA cancer vaccines?",
+    "args": {
+     "topic": "mRNA cancer vaccine clinical trials"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 82.9,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 55904, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 52, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 41660, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 236, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 17, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"what_is_established\": ["
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has publication volume changed by non-COVID disease area since 2017?",
+    "args": {
+     "topic": "mRNA vaccine",
+     "since_year": 2017
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...e', 'since_year': 2017}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccine', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2017, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "What evidence challenges the promise of non-COVID mRNA vaccines?",
+    "args": {
+     "topic": "non-COVID mRNA vaccines"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...n-COVID mRNA vaccines'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='non-COVID mRNA vaccines', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news attention to non-COVID mRNA vaccines changed over time?",
+    "args": {
+     "query": "mRNA vaccine cancer influenza RSV"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ... cancer influenza RSV'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='mRNA vaccine cancer influenza RSV', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 22,
+   "traced": 21,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 2,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 1,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Series is explicitly an estimate from memory, with no resolvable source.",
+    "comparison": "Estimated figures are labeled, but the rupee comparison is not traceable to one recorded source.",
+    "chart": "Estimate chart earns the memory-chart anchor only.",
+    "drilldown": "Breakdown is generic and only 1 of 7 proposed calls executed successfully.",
+    "export": "CSV is labeled estimate and has no traced source call.",
+    "repro": "No calls or reproducible sources; figures are explicitly estimates.",
+    "refs": "No retrieved references or resolvable identifiers.",
+    "accuracy": "No clear contradiction with the supplied record; estimates are identified as estimates.",
+    "limits": "Clearly marks missing corpus data, approximate outputs, and the distinction between outputs and outcomes.",
+    "verdict": "Gives a decision and confidence, but the answer rests on unverified estimates and lacks a strong evidence basis.",
+    "facets": "Most requested research facets are absent or answered with ungrounded estimates."
+   },
+   "B": {
+    "trend": "Full monthly series and window are shown; quantified peak and early-to-late change are correct, though the latest-month censoring description is inconsistent with plotting May.",
+    "comparison": "India versus the displayed top-country rows is measured, arithmetic is correct, and the top-row denominator caveat is stated.",
+    "chart": "Complete monthly values, window, unit, source, and claim are supplied; no visible marking of the censored boundary limits the score.",
+    "drilldown": "Lists layers and follow-up questions, but none of the five follow-up calls returned data.",
+    "export": "Monthly rows trace with provenance and are referenced; the required export is present, though not every useful table is exported.",
+    "repro": "Both calls have feature, args, and windows; all reported numbers trace and the provenance block gives a capture date.",
+    "refs": "DOIs resolve and claims are tied to papers with metadata, but most entries lack supporting abstract quotes.",
+    "accuracy": "Most figures match the record; the May censoring account is imprecise, and the broad conclusion is appropriately bounded.",
+    "limits": "States windows, lane, matching, coverage, and ingest lag near the relevant figures, with a few limits less precisely applied.",
+    "verdict": "Direct, decision-relevant conclusion with confidence, conditions, and contrary cautionary framing; it acknowledges absent outcome evidence.",
+    "facets": "Covers research, news, geography, stance, evidence, and data limits, but leaves follow-up drilldown unanswered."
+   },
+   "C": {
+    "trend": "Quantified research and news changes match the summaries; the charts themselves use sampled or endpoint values rather than full series.",
+    "comparison": "Top-row country comparisons have stated denominators and correct ratios, with caveats.",
+    "chart": "Charts trace to calls and support claims, but the research chart has endpoints only and the other chart samples selected months.",
+    "drilldown": "Provides traced categories and specific follow-ups, but only 2 of 6 calls succeeded and no results are folded back in.",
+    "export": "Exports are traced but omit most periods and do not provide the full monthly series needed to reproduce the trend.",
+    "repro": "Core calls and numeric claims are mostly reproducible, but the listed windows and partial exports do not rebuild every displayed chart and table.",
+    "refs": "Identifiers resolve and are tied to claims, but most sources have no abstract quote and tier/strength detail is incomplete.",
+    "accuracy": "The headline says 221 of 251 news articles are India-tagged, although the record’s 221 is from 387 top country rows; it also says India has 0 research-authorship papers when the record shows 1.",
+    "limits": "Explains windows, mention matching, censoring, coverage, and the limits of the sparse the health literature index evidence.",
+    "verdict": "The answer’s main news statistic is inconsistent with the record, weakening the verdict despite a useful decision and confidence statement.",
+    "facets": "Addresses many facets, but the geography and headline comparison misread the record, and several implied facets remain unanswered."
+   },
+   "D": {
+    "trend": "A single 2024 snapshot is not a time series; citing a public source does not make it a trend.",
+    "comparison": "The status ratio is calculated from cited counts, but the source is not verified by the script and the comparison is narrow.",
+    "chart": "One sourced snapshot is presented, not a trend chart; it earns only the cited-public-series anchor.",
+    "drilldown": "Follow-up calls did not execute successfully, and no traced item-level breakdown is supplied.",
+    "export": "CSV is based on cited but untraced source figures and lacks a source call provenance block.",
+    "repro": "The public sources are named, but calls and windows do not regenerate the figures.",
+    "refs": "References are present with metadata and URLs, but the script found no DOI matches and the URLs are not verified in the supplied record.",
+    "accuracy": "No direct contradiction with the reference record; the mission figures are attributed to public sources rather than presented as corpus measurements.",
+    "limits": "Clearly distinguishes reported project status from outcomes and states the source window and its age.",
+    "verdict": "Provides a direct decision, confidence, conditions, and a clear warning that completion is not impact evidence.",
+    "facets": "Covers program context and outcome limits, but does not measure the India-specific research and news facets."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Describes May 2026 as censored and excluded from the trend while its chart and export include May 2026."
+   ],
+   "C": [
+    "Uses 221/251 as the India-tagged share, though 221 is the India count among 387 top country rows.",
+    "States India has 0 research-authorship papers; the record reports 1."
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision brief: its traced series, comparisons, exports, and reproducibility make the evidence usable, while it limits its conclusion to what the corpus can establish. C is similarly rich but misstates two central geography figures; A and D offer more limited, largely unmeasured coverage."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 2,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 1,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

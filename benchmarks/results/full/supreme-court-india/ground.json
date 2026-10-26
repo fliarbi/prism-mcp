@@ -1,0 +1,665 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 550,
+  "charts": [
+   {
+    "id": "trend-none",
+    "title": "Monthly articles mentioning India's Supreme Court (not measured)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "No data - call not run",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "themes_estimate.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly volume and direction since Jan 2026?",
+    "args": {
+     "term": "Supreme Court of India",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "granularity must be one of ['daily', 'weekly', 'monthly', 'quarterly', 'yearly']",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does tone compare with the corpus baseline?",
+    "args": {
+     "term": "Supreme Court of India",
+     "baseline": "all_news"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'baseline': 'all_news'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Supreme Court of India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all_news', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical headlines appeared, with date, publisher, url?",
+    "args": {
+     "term": "Supreme Court of India",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 20.9,
+    "sample": "{\"articles\": [{\"target_id\": \"69e8500c5cfa3e5ba5e63873\", \"url\": \"https://medicaldialogues.in/news/health/doctors/gurugram-child-sexual-assault-max-hospital-doctor-denies-changing-medical-opinion-168316\", \"title\": \"Gurugram Child Sexual Assault: Max Hospital doctor denies changing medical opinion\", \"excerpt\": \"New Delhi: In connection with the alleged sexual assault of a 4-year-old girl in Gurugram, the head of the paediatrics department at Max Healthcare, who was issued a show cause notice, has submitted her response to the Supreme Court of India, denying allegations that she changed her medical opinion \", \"publisher\": \"medicaldialogues.in\", \"published\": \"2026-04-09 12:02:45\", \"partition\": \"f"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are covered and what is placed_pct?",
+    "args": {
+     "term": "Supreme Court of India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 46.8,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 4847, \"share_pct\": 54.5, \"lift\": 8.3}, {\"label\": \"united states\", \"articles\": 1079, \"share_pct\": 12.1, \"lift\": 0.5}, {\"label\": \"cameroon\", \"articles\": 533, \"share_pct\": 6.0, \"lift\": 22.8}, {\"label\": \"united kingdom\", \"articles\": 241, \"share_pct\": 2.7, \"lift\": 0.5}, {\"label\": \"canada\", \"articles\": 158, \"share_pct\": 1.8, \"lift\": 0.5}, {\"label\": \"austria\", \"articles\": 132, \"share_pct\": 1.5, \"lift\": 5.0}, {\"label\": \"ghana\", \"articles\": 129, \"share_pct\": 1.5, \"lift\": 4.2}, {\"label\": \"france\", \"articles\": 121, \"share_pct\": 1.4, \"lift\": 0.8}, {\"label\": \"pakistan\", \"articles\": 120, \"share_pct\": 1.4, \"lift\": 1.3}, {\"label\": \"egypt\", \"articl"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "How concentrated are sources?",
+    "args": {
+     "term": "Supreme Court of India",
+     "breakdown": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "Sentiment by theme (bail, collegium, environment)?",
+    "args": {
+     "term": "Supreme Court of India",
+     "themes": [
+      "bail",
+      "collegium",
+      "pollution"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nthemes\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['bail', 'collegium', 'pollution'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1188,
+  "charts": [
+   {
+    "id": "monthly-volume",
+    "title": "Monthly articles mentioning the Supreme Court of India",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "categories.csv",
+    "how": "call",
+    "rows": 7,
+    "numeric_cells": 14,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove the February 2026 spike of 868 articles?",
+    "args": {
+     "term": "supreme court of india",
+     "granularity": "daily",
+     "since": "2026-02-01",
+     "until": "2026-03-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.2,
+    "sample": "{\"points\": [{\"period\": \"2026-02-01\", \"articles\": 8, \"critical\": 7, \"negative\": 5, \"positive\": 3, \"mean_priority\": 7.5, \"critical_pct\": 87.5, \"partial_period\": false}, {\"period\": \"2026-02-02\", \"articles\": 12, \"critical\": 10, \"negative\": 8, \"positive\": 4, \"mean_priority\": 7.08, \"critical_pct\": 83.3, \"partial_period\": false}, {\"period\": \"2026-02-03\", \"articles\": 19, \"critical\": 19, \"negative\": 17, \"positive\": 2, \"mean_priority\": 7.89, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2026-02-04\", \"articles\": 20, \"critical\": 19, \"negative\": 16, \"positive\": 2, \"mean_priority\": 7.65, \"critical_pct\": 95.0, \"partial_period\": false}, {\"period\": \"2026-02-05\", \"articles\": 17, \"critical\": 16,"
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "Which critical articles are about the court itself rather than case subject matter?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has coverage moved since June 2026?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'supreme court of india' in this window",
+    "seconds": 0.4,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Is the sentiment gap specific to this court or shared with other courts?",
+    "args": {
+     "terms": [
+      "supreme court of india",
+      "high court"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.8,
+    "sample": "{\"terms\": [\"supreme court of india\", \"high court\"], \"rows\": [{\"term\": \"supreme court of india\", \"articles\": 7646, \"share_pct\": 3.7, \"critical\": 6797, \"direction\": \"rising\", \"growth\": 1.6, \"tone_ratio\": 2.13, \"vs_baseline\": 3.67, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 159, \"critical\": 134, \"negative\": 96, \"positive\": 54, \"mean_priority\": 7.4, \"critical_pct\": 84.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 269, \"critical\": 246, \"negative\": 162, \"positive\": 100, \"mean_priority\": 7.57, \"critical_pct\": 91.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 404, \"critical\": 343, \"negative\": 230, \"positive\": 158, \"mean_priority\": 7.41, \"critical_pct\": 84."
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Is the Cameroon place count an artefact?",
+    "args": {
+     "term": "supreme court of india",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 4847, \"share_pct\": 54.5, \"lift\": 8.3}, {\"label\": \"united states\", \"articles\": 1079, \"share_pct\": 12.1, \"lift\": 0.5}, {\"label\": \"cameroon\", \"articles\": 533, \"share_pct\": 6.0, \"lift\": 22.8}, {\"label\": \"united kingdom\", \"articles\": 241, \"share_pct\": 2.7, \"lift\": 0.5}, {\"label\": \"canada\", \"articles\": 158, \"share_pct\": 1.8, \"lift\": 0.5}, {\"label\": \"austria\", \"articles\": 132, \"share_pct\": 1.5, \"lift\": 5.0}, {\"label\": \"ghana\", \"articles\": 129, \"share_pct\": 1.5, \"lift\": 4.2}, {\"label\": \"france\", \"articles\": 121, \"share_pct\": 1.4, \"lift\": 0.8}, {\"label\": \"pakistan\", \"articles\": 120, \"share_pct\": 1.4, \"lift\": 1.3}, {\"label\": \"egypt\", \"articl"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which themes lead in the NEET and exam cases?",
+    "args": {
+     "term": "neet supreme court",
+     "since": "2026-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no article between 2026-01-01 and 2026-06-01 mentions 'neet supreme court'",
+    "seconds": 8.2,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 104,
+   "traced": 104,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 136,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 273,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What was monthly Supreme Court coverage volume and how did it change?",
+    "args": {
+     "query": "India Supreme Court",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...', 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which themes dominate coverage in the selected window?",
+    "args": {
+     "query": "India Supreme Court"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'India Supreme Court'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does coverage tone compare with the corpus baseline?",
+    "args": {
+     "query": "India Supreme Court",
+     "compare_to": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...'compare_to': 'corpus'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_to\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which organisations and people appear most often?",
+    "args": {
+     "query": "India Supreme Court",
+     "entities": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...urt', 'entities': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nentities\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which places are mentioned, and what share of coverage has a place assigned?",
+    "args": {
+     "query": "India Supreme Court"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'India Supreme Court'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which critical headlines appeared, with dates, publishers, and URLs?",
+    "args": {
+     "query": "India Supreme Court"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': 'India Supreme Court'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.compare",
+    "question": "How concentrated is coverage among publishers?",
+    "args": {
+     "query": "India Supreme Court",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'query': ...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquery\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Supreme Court', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 92,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 792,
+  "charts": [
+   {
+    "id": "monthly-volume",
+    "title": "Monthly articles mentioning the Supreme Court of India",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_volume.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "theme_signals.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which specific cases and rulings account for the largest share of coverage?",
+    "args": {
+     "terms": [
+      "supreme court rulings and decisions",
+      "constitutional law interpretations"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 11.9,
+    "sample": "{\"terms\": [\"supreme court rulings and decisions\", \"constitutional law interpretations\"], \"rows\": [{\"term\": \"supreme court rulings and decisions\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}, {\"term\": \"constitutional law interpretations\", \"articles\": null, \"share_pct\": null, \"critical\": null, \"direction\": null, \"growth\": null, \"tone_ratio\": null, \"vs_baseline\": null, \"points\": [], \"available\": false}], \"combined_articles\": 0, \"most_covered\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "Which stories drove the February 2026 volume peak?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2026-02-01",
+     "granularity": "daily"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.6,
+    "sample": "{\"points\": [{\"period\": \"2026-02-01\", \"articles\": 8, \"critical\": 7, \"negative\": 5, \"positive\": 3, \"mean_priority\": 7.5, \"critical_pct\": 87.5, \"partial_period\": false}, {\"period\": \"2026-02-02\", \"articles\": 12, \"critical\": 10, \"negative\": 8, \"positive\": 4, \"mean_priority\": 7.08, \"critical_pct\": 83.3, \"partial_period\": false}, {\"period\": \"2026-02-03\", \"articles\": 19, \"critical\": 19, \"negative\": 17, \"positive\": 2, \"mean_priority\": 7.89, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2026-02-04\", \"articles\": 20, \"critical\": 19, \"negative\": 16, \"positive\": 2, \"mean_priority\": 7.65, \"critical_pct\": 95.0, \"partial_period\": false}, {\"period\": \"2026-02-05\", \"articles\": 17, \"critical\": 16,"
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How does sentiment vary by theme and month?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2024-06-01",
+     "group_by": "category"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='category', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "Which publishers dominate coverage over the full window, rather than the recent sample?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2024-06-01",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='supreme court of india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which people and organisations are substantively involved in the leading cases?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2024-06-01",
+     "panel": "entities"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\npanel\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='entities', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which high-priority critical headlines should be reviewed with article context?",
+    "args": {
+     "term": "supreme court of india",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 44,
+   "traced": 44,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

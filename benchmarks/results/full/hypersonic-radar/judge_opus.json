@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series and no direction asserted; the chart has empty points.",
+    "comparison": "Explicitly declines to compare.",
+    "chart": "The chart block has no plotted values, so there is nothing to score even as an estimate.",
+    "drilldown": "Breakdown categories come from general knowledge and are labelled as such. Only 1 of 5 follow-ups executed.",
+    "export": "The CSV is an empty schema with no rows.",
+    "repro": "No numbers at all; the response is honest but not reproducible.",
+    "refs": "No references.",
+    "accuracy": "No contradictions and no fabrications.",
+    "limits": "Specific about what is unmeasured (corpus, window, lanes), but none of it is grounded.",
+    "verdict": "Gives an answer, decision, confidence and what would change it, but the answer rests on no evidence.",
+    "facets": "Most facets are answered with 'cannot measure' rather than a grounded no-data."
+   },
+   "B": {
+    "trend": "Capped at 1 by the script. Only early and late thirds are given, with no yearly series.",
+    "comparison": "Research vs news late/early ratios (1.15 vs 3.27) are traced. The deltas 2,376 and 286 and the ratio 2.8x recompute exactly. The baseline is defined and the different-window caveat is carried.",
+    "chart": "Two traced bar charts (research and news) with window, unit, source and a caption giving the reading. Both show the early-vs-late comparison. The news chart's 'supports' line does not match what the chart plots.",
+    "drilldown": "Trend leads to ten papers with DOIs. 3 of 6 follow-ups executed. No follow-up was run and folded back into the report.",
+    "export": "Ceiling 3. Two traced CSVs with provenance and a provenance JSON. There is little prose reference to them.",
+    "repro": "All 45 numbers trace. The call is listed with args, derived values are shown, and the capture date is given.",
+    "refs": "10 of 10 DOIs resolve. Each is tied to a claim with year, venue and the tool's tier. No quotes are invented.",
+    "accuracy": "Everything matches the record. It catches that the under-covered rows are off-topic taxonomy strings and flags citation-age bias.",
+    "limits": "Gives the gap to today (10 months and 5.7 months), the partial last value, match-mode bias, and states that counts are not capability. Mostly placed in the Method section rather than next to the numbers.",
+    "verdict": "Direct answer, decision, low confidence with a reason, and what would change it. Under 150 words. Names the control-skew caveat.",
+    "facets": "All facets are covered, including a grounded no-data for under-covered topics and the research-vs-news mismatch."
+   },
+   "C": {
+    "trend": "Traced research series with window, CAGR, and the 2024 peak with its value. The line jumps across the 2018–2023 gap. No decomposition.",
+    "comparison": "Only research early vs late, plus framing. It omits the research-vs-news contrast that the data supports.",
+    "chart": "A single traced research chart. The news trend asked for in the question is not charted.",
+    "drilldown": "One layer (the paper list). Only 1 of 5 follow-ups executed.",
+    "export": "Two CSVs with provenance. The trend CSV has malformed rows: 4 fields under a 3-column header.",
+    "repro": "All 23 numbers trace, and the estimate of 'six months' is marked. The call is listed with args.",
+    "refs": "Capped at 1 by the script, because the DOIs are wrapped in backticks and failed resolution.",
+    "accuracy": "Matches the record and catches the taxonomy-label anomaly. 'Medium' confidence on a single call is slightly generous.",
+    "limits": "Specific limits are placed in the text: window gap, title matching, unit not defined by the tool, and the ingestion-check caveat.",
+    "verdict": "Answer, decision, confidence and what would change it. Contrary evidence is not explicitly named.",
+    "facets": "All five facets are addressed with grounded values or a grounded no-data. The research-vs-news contrast is not drawn."
+   },
+   "D": {
+    "trend": "A labelled estimate series. Its doubling contradicts the record's flat 5,269→6,048.",
+    "comparison": "Mach speeds are memory estimates set against a definitional baseline; this is not the question's contrast.",
+    "chart": "A memory chart labelled estimate.",
+    "drilldown": "Generic layers. Only 2 of 7 follow-ups executed.",
+    "export": "The milestones CSV is labelled estimate.",
+    "repro": "Memory numbers are labelled est. and named references have no identifiers.",
+    "refs": "Real works are cited, but none has a resolvable identifier.",
+    "accuracy": "The estimated publication trend (×2.2) contradicts the measured flat trend. Programme specifics are memory but labelled.",
+    "limits": "Honest and specific about having no lanes, the memory window and censoring.",
+    "verdict": "Direct answer with decision, confidence and conditions, but it rests on memory and covers programme news rather than research.",
+    "facets": "Facets are answered from memory or not at all."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Malformed rows in hypersonic_radar_trends.csv (extra column)",
+    "DOIs wrapped in backticks failed resolution"
+   ],
+   "D": [
+    "Estimated publication trend (2,500→5,500, ×2.2) contradicts the record's flat 5,269→6,048 (CAGR 1.7%)",
+    "Programme speeds and dates presented from memory (labelled est.)"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and C both grounded their answers in the radar call, but B covered every facet. It contrasted research output (flat, 1.15x) with news attention (3.27x) using correct arithmetic, flagged the off-topic under-covered rows, and gave resolvable references with honest limits. C was accurate but charted only research and broke its DOIs and CSV formatting. A and D answered from memory; D's estimated publication doubling contradicts the measured flat trend."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 1,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,185 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 24-month series with its window. Change is quantified correctly: +101%, 44.0% CAGR, 1.83x, and the peak 15,514 in 2026-02. Censoring is noted. There is no critical/total or negative/positive decomposition.",
+    "comparison": "0.35 vs the 0.58 baseline, a delta of 0.23 or 0.60x, with the baseline defined and the caveat carried. It does not test any deeper contrast.",
+    "chart": "One fully traced volume chart. Tone was asked for and supported by the data but not charted.",
+    "drilldown": "Traced layers cover themes, entities, places and publishers. Identifiers are only 'c1', and the one headline has no URL. 4 of 5 follow-ups executed.",
+    "export": "One monthly CSV with provenance and a JSON block. A single table only.",
+    "repro": "34 of 35 numbers trace and the call carries its args. This is at the ceiling.",
+    "refs": "One headline with date and publisher but no URL. At the ceiling.",
+    "accuracy": "Everything stated matches the reference, and 144 days to the report date is correct. It repeats Colombia as a place without flagging the collision anomaly.",
+    "limits": "Window, censoring, enrichment lag, match mode and sample limits are all stated. Capped at the ceiling.",
+    "verdict": "Direct answer with decision, confidence and conditions. It ignores contrary evidence in its own data: rising critical volume and the April 2025 negative spike.",
+    "facets": "Volume, tone, themes, organizations, people and places are all grounded. Implied anomalies are not addressed."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups use placeholder args, and 0 of 6 executed.",
+    "export": "No export.",
+    "repro": "No numbers. The honest refusal is not reproducible.",
+    "refs": "No references.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Specific about what is unmeasured, which earns the honest-refusal score.",
+    "verdict": "Declines to answer the question.",
+    "facets": "No facet answered."
+   },
+   "C": {
+    "trend": "The only series is market cap labelled as an estimate. It is not coverage volume.",
+    "comparison": "The comparison is described but none is made.",
+    "chart": "Memory chart honestly labelled as an estimate.",
+    "drilldown": "Memory breakdown labelled as such. 2 of 7 follow-ups executed.",
+    "export": "Estimate-labelled table.",
+    "repro": "Numbers come from memory and include one untagged figure.",
+    "refs": "None.",
+    "accuracy": "Memory milestones are plausible and clearly labelled. No measured claims are made.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "Memory-based hypothesis with low confidence.",
+    "facets": "Answered from memory only."
+   },
+   "D": {
+    "trend": "Total and critical series are decomposed and traced. CAGR, late-vs-early ratios, the peak and the 80.1% critical-share peak are all correct. The censoring of the newest month is not stated next to the trend, and there is a sloppy 'correction' slip in the prose.",
+    "comparison": "Baseline defined, delta -0.23 and 0.6x. The monthly range 0.19–0.69 and the April 2025 exception are both correct.",
+    "chart": "Traced overlay of volume and critical counts. The tone ratio is not charted.",
+    "drilldown": "Many traced layers and the one headline has a URL. At the ceiling, with 2 of 6 follow-ups ok.",
+    "export": "Monthly and country CSVs with provenance. At the ceiling.",
+    "repro": "102 of 102 numbers trace, with a calls block and capture date. Derived numbers such as 70.6% recompute.",
+    "refs": "One headline with URL. At the ceiling.",
+    "accuracy": "Correctly separates critical from negative, flags Colombia and the Vera Rubin label, and reads placed_pct correctly. The verdict calls the counts 'complete for the window', which contradicts the tool's own ingest note.",
+    "limits": "Limits are placed beside the numbers. At the ceiling.",
+    "verdict": "Answer, decision and confidence bounded by the window end. It names the 70.6% critical share as contrary evidence. Slight overclaim on completeness.",
+    "facets": "All facets grounded, plus the implied ones: the critical-vs-negative distinction, the place collision, match-mode differences and enrichment fill."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [],
+   "D": [
+    "Verdict calls counts 'complete for the window', but the tool says row-floor checks do not prove ingest completeness.",
+    "Self-correcting prose slip ('May 2025... correction')."
+   ]
+  },
+  "best": "D",
+  "verdict": "A and D both delivered measured answers from the same overview call. D went further: it decomposed volume into critical and total, distinguished critical from negative, flagged the Colombia place-resolution artefact, and exported both the monthly and the country tables. B and C honestly declined to measure, but that left a decision-maker with no usable figures. C's market-cap proxy does not measure coverage."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

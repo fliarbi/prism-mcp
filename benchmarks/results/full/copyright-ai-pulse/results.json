@@ -1,0 +1,243 @@
+{
+ "slug": "copyright-ai-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 30.9,
+   "plain": 30.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 34.8,
+    "gpt": 27.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 5.0,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 4.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 79.3,
+   "plain": 79.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 77.8,
+    "gpt": 80.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.5,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 2.0,
+    "limits": 2.5,
+    "verdict": 1.0,
+    "facets": 0.5
+   },
+   "strict": 18.2,
+   "plain": 18.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.2,
+    "gpt": 14.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 3.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 72.5,
+   "plain": 72.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.8,
+    "gpt": 73.2
+   }
+  }
+ },
+ "judge_mad": 0.36,
+ "verdicts": {
+  "opus": "A and C both grounded the answer in the traced news series and correctly said it measures topic attention, not lawsuits. A went further: it identified the Feb 2026 spike as an off-topic syndicated cluster (and the Colombia artefact) and recomputed trend and tone without it, making it decision-grade. D supplied the recent litigation facts from labelled memory but measured no coverage, and B declined entirely.",
+  "gpt": "B is the strongest decision aid: it quantifies the news trend, exposes the anomalous February spike, and separates topic mentions from actual lawsuit counts. A is also careful about that core limitation, but B better uses the critical-series decomposition and covers more of the available facets."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Critical share stated to range from 28.6% minimum; the series includes 0% (Jul 2024) and 0.6% (Feb 2026)"
+   ],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "Case-count series (1/15/35/55) is a memory estimate presented as a chart, not measured coverage"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The coverage series is topic mention matching and cannot establish lawsuit counts; the verdict correctly states this limitation."
+   ],
+   "claude_prism": [
+    "Calling the February cluster mostly off-topic syndicated material is an interpretation, not a database finding; the deliverable labels it as interpretation.",
+    "The supplied source record does not establish that the recent compliance article was positive-polarity."
+   ],
+   "claude_bare": [
+    "The 50–60 case count, cumulative series, and case-specific settlement and ruling details are memory estimates, not verified coverage measurements."
+   ],
+   "chatgpt_bare": [
+    "Claims that no dataset was supplied and that browsing was prohibited contradict the prompt."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full traced series with window and censoring. Quantifies the multiples and recomputes ex-Feb (63 vs 34, 1.9x). The claim that critical share 'ranged from 28.6%' is wrong: Jul 2024 is 0% and Feb 2026 is 0.6%.",
+    "comparison": "Tone ratio 5.54 vs a defined baseline of 0.58 (9.55x, delta +4.96). The ex-Feb recomputation is exact. Reads the contrast against what lawsuit coverage can and cannot show.",
+    "chart": "Traced articles and critical series overlaid, with window, unit, source and caption. The Feb anomaly is explained in prose but not marked on the chart.",
+    "drilldown": "Traced theme, entity and place layers with labels. Only 2 of 6 follow-ups executed ok, and there is no item-level url.",
+    "export": "Two traced CSVs with provenance and a JSON block, both referenced from the prose. The tone CSV omits neutral.",
+    "repro": "98/98 numbers traced. Derivations are shown and the prism-calls block includes args.",
+    "refs": "No refs. The single news item is given without a url.",
+    "accuracy": "Catches the Feb 2026 off-topic cluster, the Colombia artefact and the one-article publisher sample. One misstatement on the critical-share range.",
+    "limits": "Window, censoring, the 144-day gap, lane, match-mode differences, enrichment lag and coverage are each placed where used. The limits change the reading.",
+    "verdict": "Concise answer, decision, low confidence with reason, and what would change it. It names the anomaly. The verdict omits the window end.",
+    "facets": "All facets answered with grounded values or a grounded 'cannot', including the critical subset."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "Empty chart with no points.",
+    "drilldown": "Generic calls, none of which executed ok.",
+    "export": "Header-only CSV labelled estimate.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "No contradictions, but empty.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "A refusal that does not address the question's recency.",
+    "facets": "No facets answered."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window. Quantifies 6.59x and the peak, and flags that the Feb spike dominates. No decomposition.",
+    "comparison": "Traced tone vs baseline with 9.55x and the caveat. Does not test the attention-vs-litigation contrast numerically.",
+    "chart": "Single traced volume chart. The critical/tone view, which the data supports, is not charted.",
+    "drilldown": "Panel names given as identifiers. 3/6 follow-ups ok. No item layer.",
+    "export": "Two traced CSVs with provenance JSON, referenced from the prose.",
+    "repro": "28/29 traced, and the calls are listed with args.",
+    "refs": "No refs. The recent article is given without a url.",
+    "accuracy": "No contradictions. Flags the spike as possibly a matching effect but misses the Colombia anomaly.",
+    "limits": "Gap, censoring, lane, match mode and coverage stated. Mostly placed in the Method section.",
+    "verdict": "Clear, bounded answer with decision, confidence and conditions.",
+    "facets": "Most facets grounded."
+   },
+   "claude_bare": {
+    "trend": "Memory estimate series labelled est.",
+    "comparison": "Memory figure compared against the statute. The arithmetic is correct but the figures are unverifiable.",
+    "chart": "Estimate chart labelled honestly.",
+    "drilldown": "Breakdown from memory. Follow-ups mostly run.",
+    "export": "Estimate table labelled.",
+    "repro": "Ten numbers untagged, none traced.",
+    "refs": "One statute URL resolves. There are no case references.",
+    "accuracy": "Labelled memory facts, broadly correct (Bartz, Kadrey, $1.5B settlement). It measures litigation, not coverage.",
+    "limits": "States the knowledge cutoff and gap. Generic otherwise.",
+    "verdict": "Direct and useful on recency, but it rests on estimates and does not answer the coverage question.",
+    "facets": "Mostly memory. The coverage facets are unmeasured."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced monthly series, quantified 6.59× late-versus-early change, and names the February peak; it omits the available critical-series decomposition.",
+    "comparison": "The 5.54 sentiment ratio versus the defined 0.58 corpus baseline recomputes to 9.55×, with the lane limitation stated.",
+    "chart": "The monthly volume chart traces to c1 and has a unit, window, and claim, but does not chart the available critical or sentiment series and does not visibly mark censoring.",
+    "drilldown": "Provides traced theme, entity, and geography layers plus specific follow-up questions; only three of six calls executed successfully, and no item-level headline layer is available.",
+    "export": "Both needed summary and monthly tables are referenced and trace; provenance is present, but export hygiene falls short of the complete documented provenance shape and full capture details.",
+    "repro": "Nearly all numbers trace and the call and window are listed; 28 of 29 traced prevents full reproducibility credit.",
+    "refs": "No external documents or resolving identifiers support the discussion; the only reference is the data call.",
+    "accuracy": "Measured claims mostly match the record and interpretations are identified; the recent-article description is not independently established in the supplied excerpt.",
+    "limits": "Specific window, censoring, mention mode, lane, and geography caveats are placed near the claims; not every applicable coverage and pipeline limit is carried through.",
+    "verdict": "Directly explains that the data measures topic news rather than lawsuits, gives a decision, confidence, and what would change it; it does not name contrary evidence from the available coverage signals.",
+    "facets": "Covers volume, trend, tone, themes, entities, geography, and source-panel limits, but leaves some implied facets and decompositions underused."
+   },
+   "claude_prism": {
+    "trend": "Traced full monthly volume and critical series, quantifies the reported multiples, names decisive points, and carries the censoring caveat.",
+    "comparison": "The sentiment ratio and defined corpus baseline are compared on one scale with correctly recomputed ratio and delta, plus the February-exclusion caveat.",
+    "chart": "Both monthly volume and critical subset are traced, labeled, and tied to claims; the chart does not visibly mark the censored boundary and tone is not charted.",
+    "drilldown": "Monthly, theme, and entity layers are presented, but the executed follow-ups and available item-level evidence do not establish two traced layers reaching an identified headline.",
+    "export": "Monthly volume and tone tables are traced and referenced, but provenance and decision-ready hygiene do not fully meet the top anchor.",
+    "repro": "All numeric claims trace, calls have arguments and windows, and the export carries a regenerate recipe with capture date.",
+    "refs": "No external documents are supplied with resolving identifiers; the result relies on the data call.",
+    "accuracy": "Numbers and field definitions largely agree with the record; the February cluster explanation and policy-debate interpretation are appropriately marked as readings, not measured findings.",
+    "limits": "States the window, censoring, lane, match modes, enrichment lag, and placement caveats near the figures; the remaining limits are not uniformly attached to every relevant number.",
+    "verdict": "Gives a direct bounded answer, decision, confidence, and condition for change, while acknowledging the anomalous month; it could state the strongest contrary evidence more explicitly.",
+    "facets": "Addresses volume, critical share, tone, themes, entities, geography, source limits, and the mismatch between topic mentions and lawsuit coverage."
+   },
+   "claude_bare": {
+    "trend": "The series is explicitly an estimate from memory, which earns only the estimate anchor.",
+    "comparison": "A numeric settlement-to-statutory-damages comparison is offered, but the settlement figure is an unverified memory estimate.",
+    "chart": "The chart is explicitly labeled estimate and has no traced source.",
+    "drilldown": "Breakdown layers are recalled estimates and are not traceable; listing follow-up calls does not supply a traced breakdown.",
+    "export": "The CSV is explicitly an estimate, with unknown coverage.",
+    "repro": "No calls were run and the central figures are memory estimates.",
+    "refs": "One statutory citation is supplied, but the relied-on case and settlement claims lack resolvable supporting references.",
+    "accuracy": "The deliverable labels estimates, but presents specific case and settlement assertions without enough verification to establish them against the record.",
+    "limits": "Clearly states the memory cutoff and unmeasured facets, but cannot provide corpus-specific limits for the estimates.",
+    "verdict": "It answers the legal-risk question with a decision and confidence, but does not answer coverage and its conditions rely on unverified figures.",
+    "facets": "Several lawsuit facts are estimated from memory; coverage-specific facets are explicitly unmeasured."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or direction is available.",
+    "comparison": "No measured, common-scale comparison is provided.",
+    "chart": "The empty chart is explicitly marked as an estimate/no-observation display, earning the estimate anchor only.",
+    "drilldown": "It provides generic proposed calls, none run successfully, and no breakdown layer.",
+    "export": "The empty CSV is marked unknown rather than a measured zero, but contains no exportable observations.",
+    "repro": "No calls or source-backed numbers are provided.",
+    "refs": "No references are provided despite the supplied reference record and the topic's need for sourced evidence.",
+    "accuracy": "It says no dataset was supplied and that browsing was prohibited, although the prompt supplies a database record and contains no such prohibition.",
+    "limits": "It identifies some relevant limits, but incorrectly claims no news lane or corpus was supplied.",
+    "verdict": "The refusal is grounded in a false premise about the available information and does not use the supplied evidence.",
+    "facets": "It gives no grounded coverage values despite the supplied news record."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {
+   "claude_bare": [
+    "repro 1->0"
+   ]
+  }
+ }
+}

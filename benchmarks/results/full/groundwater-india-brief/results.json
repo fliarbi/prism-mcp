@@ -1,0 +1,253 @@
+{
+ "slug": "groundwater-india-brief",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 30.7,
+   "plain": 30.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.8,
+    "gpt": 29.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 3.5,
+    "chart": 3.5,
+    "drilldown": 2.5,
+    "export": 1.0,
+    "repro": 4.5,
+    "refs": 3.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 71.8,
+   "plain": 71.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.0,
+    "gpt": 74.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 2.0,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 25.1,
+   "plain": 25.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.0,
+    "gpt": 26.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 2.5,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 70.5,
+   "plain": 70.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.2,
+    "gpt": 73.8
+   }
+  }
+ },
+ "judge_mad": 0.39,
+ "verdicts": {
+  "opus": "B and D both grounded their figures in the database, but B covered more ground. It carried the research trend with CAGR, the critical-share decomposition and the contested mix, and it flagged the off-topic California source. D had the cleanest single news series and export but misread the geography focus block. Only memory-based A named Punjab and Haryana explicitly, but its numbers are unverifiable estimates. C sidestepped the geography entirely.",
+  "gpt": "A is the strongest decision brief because its figures, charts, and calls are traceable, and it quantifies the research and news trends while stating several relevant limits. Its main weakness is that it misses the requested Punjab and Haryana geography; D is also well sourced, but its trend measures broad news attention and its comparison joins estimates that are not like-for-like."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "r1 citation conflates Rodell/Famiglietti work as a 2012 Nature paper",
+    "r4 identifier unverified"
+   ],
+   "claude_prism": [
+    "Institution order is not the lift order",
+    "Implies the authorship rows come from 7 the health literature index records"
+   ],
+   "chatgpt_bare": [
+    "Garbled '59.理%'",
+    "239.16 bcm (2022 assessment) mixed with 2023 unit counts"
+   ],
+   "chatgpt_prism": [
+    "India '3 of 37' authorship misreads the focus block (rows sum to 32; research share 0)",
+    "'index partition checks' claim not in the reference record"
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "Does not name Punjab or Haryana despite the geography requirement.",
+    "Calls the research series rising without showing all available annual values; the charts use selected points.",
+    "Describes disagreement as mostly about magnitude and drivers without direct support in the reference summary."
+   ],
+   "chatgpt_bare": [
+    "The reported extraction stage is malformed as “59.理%.”",
+    "Does not name Punjab or Haryana or provide a sourced regional comparison."
+   ],
+   "claude_bare": [
+    "The state extraction figures and historical national series are memory estimates, not traced measurements.",
+    "The supposed 2023 projection citation is vague and unverified; the listed reference details are not established.",
+    "Does not provide verbatim quotes or reproducible source calls."
+   ],
+   "chatgpt_prism": [
+    "Does not name Punjab or Haryana despite the geography requirement.",
+    "Compares a northern India estimate with an India-wide range despite different periods, methods, and geographic scope; it flags this caveat but the comparison remains non-like-for-like.",
+    "The news chart is about mentions of groundwater, not groundwater depletion itself."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Stage-of-extraction series is honestly labelled estimate but has no measured source.",
+    "comparison": "State-vs-national ratios come from memory and cannot be checked.",
+    "chart": "Chart is from memory and labelled estimate.",
+    "drilldown": "Layers are named generically; only 1 of 6 follow-ups executed ok.",
+    "export": "CSVs are labelled estimate.",
+    "repro": "Numbers are from memory with no recorded calls (script ceiling 0).",
+    "refs": "Only r3 (Rodell 2009) resolves; r1 and r4 are vague, with muddled metadata.",
+    "accuracy": "Figures are plausible CGWB recollections and the Rodell 2009 numbers are correct, but none are measured.",
+    "limits": "It is specific about what is unmeasured and about the window ending 2024.",
+    "verdict": "The verdict is complete and names Punjab and Haryana as the hard part requires, but it rests on estimates.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "claude_prism": {
+    "trend": "Research series has CAGR 13.5%, late/early 2.25 and peak 253 in 2023, all traced, plus the critical-share decomposition. It omits that the news 'last' value is 0 (multiple 0.0).",
+    "comparison": "17 vs 189 km³ gives 11.1x, correctly computed and caveated. The cross-check mixes regions and is flagged.",
+    "chart": "Charts are traced with window, unit and source. The research line has only 3 points, and the critical-share chart shows selected months only.",
+    "drilldown": "Institution and geography layers are traced, but most follow-ups failed.",
+    "export": "At script ceiling 1. The depletion CSV attributes all rows to source=ref:r1, although rows come from r2 and r4.",
+    "repro": "63 of 63 numbers traced, calls listed with args, and a provenance block included.",
+    "refs": "8 of 8 DOIs resolve, quotes are verbatim, and tier is stated. No contrary sources are given.",
+    "accuracy": "Mostly exact, and it catches the off-topic California paper. Minor slips: the institution order is not the lift order, and it implies the authorship rows come from 7 records.",
+    "limits": "Window gap, censoring, match mode and thin readable coverage are placed next to the numbers they bound.",
+    "verdict": "The verdict is complete and bounded, but it says 'north/northwest' without naming Punjab and Haryana.",
+    "facets": "Volumes, trend, tone, contested share and geography are all grounded. State-level gaps are honestly flagged."
+   },
+   "chatgpt_bare": {
+    "trend": "No series (script ceiling 0).",
+    "comparison": "Only a qualitative baseline discussion.",
+    "chart": "No chart.",
+    "drilldown": "Breakdown layers are named but no rows given; follow-ups failed.",
+    "export": "No export.",
+    "repro": "Named public sources only.",
+    "refs": "Two report URLs, each tied to a claim; no DOIs.",
+    "accuracy": "Shows a garbled '59.理%' and mixes the 239.16 bcm figure (2022 assessment) with 2023 unit counts.",
+    "limits": "It is specific about what it cannot measure.",
+    "verdict": "It avoids naming any geography, which is exactly the hard part of the question.",
+    "facets": "Few facets answered with grounded values."
+   },
+   "chatgpt_prism": {
+    "trend": "Full monthly series is traced. The +143 (30.0%) change, the peak of 805 in Aug-2025 and the tool's 'flat' reading are all correct, and censoring is carried. No decomposition.",
+    "comparison": "450/199 to 450/122 gives 2.3–3.7x, correctly computed, but it compares different scopes; this is caveated as not like-for-like.",
+    "chart": "One fully traced chart with a caption. Critical share and research volume are not charted.",
+    "drilldown": "No traced item layer; all follow-ups failed.",
+    "export": "Full traced CSV with provenance, but only one table.",
+    "repro": "40 of 40 numbers traced, with calls and provenance listed.",
+    "refs": "4 of 4 DOIs resolve and quotes are verbatim.",
+    "accuracy": "'India has 3 of 37 top-row records' misreads the data: the authorship rows sum to 32, and the focus share is 0. The 'index partition checks' detail is not in the record.",
+    "limits": "Window, the 144-day gap (correct), censoring, mention matching and lanes are all placed in context.",
+    "verdict": "The verdict is complete and bounded, but it does not name Punjab or Haryana.",
+    "facets": "Research trend and tone facets are omitted; the state geography gap is acknowledged."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Traced research and news changes are quantified with peaks; the charts show selected points rather than the full available series.",
+    "comparison": "The 189/17 ratio and delta recompute, and the brief flags unequal periods and incompatible regional methods.",
+    "chart": "The charts are sourced and tied to claims, but omit full available points and do not show supported critical-share decomposition.",
+    "drilldown": "It gives breakdown layers and specific calls, but only one of six follow-ups executed successfully.",
+    "export": "The ceiling is 1; exports are incomplete and omit provenance/rows needed for the brief.",
+    "repro": "The listed calls and capture date support the traced figures and charts; derived arithmetic is reproducible.",
+    "refs": "Identifiers resolve, but several cited items lack verbatim abstract quotes and claim-level support details.",
+    "accuracy": "Most figures match the record; the claim that disagreement is mostly about magnitude and drivers goes beyond the recorded framing summary.",
+    "limits": "It places key window, lane, coverage, and match limits near the findings, though some data limits are incomplete.",
+    "verdict": "Direct and actionable with confidence and a change condition, but it omits the requested Punjab and Haryana geography and does not name contrary evidence in the verdict.",
+    "facets": "Covers measured evidence and corpus context, but does not identify Punjab or Haryana and leaves state-level geography unanswered."
+   },
+   "chatgpt_bare": {
+    "trend": "No sourced time series or quantified change is provided.",
+    "comparison": "It explains an extraction-stage definition but provides no measured comparison.",
+    "chart": "No chart block is provided.",
+    "drilldown": "Breakdowns are described without rows, and none of the proposed calls returned usable data.",
+    "export": "No export is provided.",
+    "repro": "Numeric claims lack reproducible calls; sources are named but do not regenerate the claims as presented.",
+    "refs": "References are resolvable public sources, but the record does not verify the cited figures or provide claim-checking quotes.",
+    "accuracy": "The extraction-stage figure contains the malformed “59.理%,” and the other specifics are unsupported by the reference record.",
+    "limits": "It distinguishes extraction from storage loss and states assessment limitations, but omits applicable data-specific coverage and timing limits.",
+    "verdict": "It offers a decision and conditions, but the answer is not supported by traced figures and omits Punjab and Haryana.",
+    "facets": "Provides general risk and limits, but lacks grounded trend, comparison, and named hotspot geography."
+   },
+   "claude_bare": {
+    "trend": "The chart is explicitly estimated from memory, which earns the estimate-level score only.",
+    "comparison": "The state comparison is labeled estimate, but its figures cannot be checked against the record.",
+    "chart": "The chart is a memory estimate and is honestly labeled as such.",
+    "drilldown": "It names possible breakdown layers but gives no traced rows or successful follow-up results.",
+    "export": "The tables are memory estimates rather than traced exports.",
+    "repro": "Most numeric claims are untraced; citations and listed calls do not reproduce them.",
+    "refs": "The cited set includes unverified or vague entries, including an incomplete projection-study reference.",
+    "accuracy": "It supplies state extraction values and a 2023 projection absent from the record, and presents them as approximate factual findings despite memory labels.",
+    "limits": "It clearly labels its figures as memory estimates and states important coverage limits, but provides no measured window or data-specific coverage.",
+    "verdict": "It gives a direct recommendation and confidence, but relies on unverified numbers and does not acknowledge contrary evidence from its own cited material.",
+    "facets": "It names Punjab and Haryana, but most requested facets are estimates and the corpus findings are explicitly unavailable."
+   },
+   "chatgpt_prism": {
+    "trend": "The complete traced monthly series and endpoint change are shown with the peak and censoring caveat; it does not decompose critical versus total coverage or provide the research trend.",
+    "comparison": "The arithmetic is correct, but the national and regional estimates have different windows, methods, and scopes, so the comparison is not like-for-like.",
+    "chart": "The full sourced monthly series is charted and supports a claim, but the chart covers news volume rather than groundwater depletion and omits available critical-share comparison.",
+    "drilldown": "It lists breakdowns and proposed calls, but no follow-up call executed successfully.",
+    "export": "The monthly CSV is traced and carries source, window, unit, and coverage; it is the only needed table included, with provenance recorded.",
+    "repro": "Both calls and their arguments/windows are provided, and the monthly figures and derived change can be replayed or recomputed.",
+    "refs": "All four identifiers resolve and are tied to claims; the set includes quotes, though not every claim has a verbatim abstract quote.",
+    "accuracy": "The traced figures are accurately described, but the comparison risks overemphasizing non-comparable estimates and the named state geography is missing.",
+    "limits": "It states windows, lag/censoring, lanes, match mode, and corpus limits near the findings; it could better explain what coverage flags imply.",
+    "verdict": "The decision, confidence, and change condition are clear and bounded, but it omits Punjab and Haryana and does not name contrary evidence in the verdict.",
+    "facets": "It covers regional risk and data limits, but gives no Punjab/Haryana-specific geography and does not provide a measured state ranking."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

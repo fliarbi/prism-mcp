@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 2,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 4,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Only gives a direction-level prior; its estimates are not a sourced series.",
+    "comparison": "The lithium-index estimates are explicitly memory-based, not a measured comparison.",
+    "chart": "No chart is provided.",
+    "drilldown": "Names possible breakdowns and calls, but mostly proposes generic or unexecuted next steps.",
+    "export": "CSV contains only explicitly estimated indices and lacks a measured source window.",
+    "repro": "No measured numeric claims trace to a call or named source.",
+    "accuracy": "Clearly labels estimates and states that measured coverage is unavailable; no direct reference contradiction.",
+    "limits": "Specific about the absent window, lane, censoring, match mode, and what remains unmeasured.",
+    "verdict": "Gives a clear scoping decision, low confidence, and what would change it, but relies on no grounded comparison.",
+    "facets": "Most requested facets are acknowledged as unavailable, but no grounded values or database-backed no-data results are supplied."
+   },
+   "B": {
+    "trend": "Uses the traced monthly series, names the rare-earth peak, quantifies endpoint changes, and carries censoring; selected plotted points and an inaccurate growth interpretation keep it below 5.",
+    "comparison": "Same-window ratios and deltas recompute, with a defined lithium baseline and relevant caveats about overlap and attention.",
+    "chart": "The plotted points trace and support a claim, but the chart is sparse and does not show all monthly values or visibly mark censoring.",
+    "drilldown": "Provides traced term and month layers and several specific follow-up questions; it lacks item-level records, and only four of six proposed calls executed successfully.",
+    "export": "Includes totals and selected months, but the monthly table is not complete and export provenance/coverage is incomplete.",
+    "repro": "Most figures trace and the primary call has arguments and window, but some claims are unsupported or misread, and the recipe does not rebuild every plotted/exported value.",
+    "accuracy": "Misstates combined_articles as a deduplicated union and asserts overlap/double-counting; the reference does not define that field as a union or establish this claim.",
+    "limits": "Mentions the window gap and censoring, but asserts an unsupported coverage percentage and treats coverage/overlap details as established.",
+    "verdict": "Direct and actionable with confidence and conditions, but its claim about the combined count and overlap is not supported by the reference.",
+    "facets": "Grounds volume, trend, and reported tone indicators, but does not resolve key overlap, seasonality, and research-versus-news facets."
+   },
+   "C": {
+    "trend": "Full traced monthly chart and window are present, but it does not quantify the change and incorrectly says counts rise unevenly for all three.",
+    "comparison": "Same-window volume ratios and deltas are correctly calculated and answer which term leads, with limits stated.",
+    "chart": "The complete monthly series traces, has window, unit, source and caption, and visibly compares all three terms; the chart does not mark the censored boundary.",
+    "drilldown": "Breakdowns are described, but most follow-up calls are unverified or fail; there are no item-level identifiers.",
+    "export": "Monthly and summary CSVs trace and are referenced, with provenance and period identifiers; coverage is marked partial.",
+    "repro": "The main call and window are listed and figures largely trace, but one numeric claim is untraced and the recipe omits details needed to rebuild every artifact.",
+    "accuracy": "Core totals and field caveats match; however, it says overlap and unique counts are unavailable without acknowledging the reported combined total and its caveat, and misses the monthly-array truncation anomaly.",
+    "limits": "States window, censoring, lane and ingest caveat, but places some limits broadly and does not fully resolve the coverage flag or match mode.",
+    "verdict": "Gives a supported answer and decision with confidence and conditions, but omits the strongest contrary evidence in its own monthly data and is not bounded enough for a measured verdict.",
+    "facets": "Covers the main volume, trend and comparison facets but leaves overlap, seasonality, term variants and research-versus-news mismatch unresolved."
+   },
+   "D": {
+    "trend": "No measured series or quantified trend.",
+    "comparison": "No measured ratio, delta, or shared-window baseline.",
+    "chart": "No chart is provided.",
+    "drilldown": "Provides proposed calls, but they are not executed and several arguments are incomplete or unsupported.",
+    "export": "No CSV export.",
+    "repro": "Numbers are honestly absent, but the proposed calls lack sufficient arguments and do not reproduce a result.",
+    "accuracy": "Does not invent measurements or contradict the reference; its refusal is accurate about its own evidence.",
+    "limits": "Names the absence of window and coverage details, but does not apply the reference’s specific censoring and ingest limits.",
+    "verdict": "Makes a cautious decision but offers no measured answer or confidence grounded in comparison data.",
+    "facets": "Lists unmeasured facets without grounded values or database-backed no-data results."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Claims combined_articles is a de-duplicated union and equals the sum, then infers that overlap is not deduplicated; the reference does not define combined_articles that way.",
+    "Claims the coverage check passed at 107.1% of an expected row floor; that figure is absent from the reference record."
+   ],
+   "C": [
+    "Says monthly counts rise unevenly for all three, although lithium falls from 2,175 in June 2024 to 1,867 in May 2026 and cobalt falls from 457 to 412.",
+    "Claims overlap and a deduplicated unique-article count are unavailable without accurately addressing the reported combined_articles field."
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C gives the strongest decision-ready comparison: its complete traced chart and exports show lithium’s volume lead and rare earths’ spikes, with useful limits. B quantifies the trend and offers deeper follow-up, but its unsupported interpretation of the combined count and overlap weakens trust; C also has a direction error in its trend prose."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 2,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 4,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

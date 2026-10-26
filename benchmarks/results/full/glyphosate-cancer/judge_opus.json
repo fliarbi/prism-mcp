@@ -1,0 +1,197 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "A openly says it cannot quantify a trend, so there is no series.",
+    "comparison": "It compares two remembered relative risks, AHS 0.85 and Zhang 1.41, and caveats them, but neither can be traced.",
+    "chart": "Its relative-risk bars cite a public source the benchmark cannot verify.",
+    "drilldown": "The follow-up calls failed (0/4), and the only breakdown is from memory.",
+    "export": "Its single CSV comes from memory, and the window is wrong.",
+    "repro": "Nothing traces to a recorded call. The prism-calls block lists c1/c2 as 'used' even though A says no calls were run.",
+    "refs": "The IARC DOI 10.1002/14356007.w112.pub2 does not resolve to the monograph, so the ceiling of 1 applies.",
+    "accuracy": "The cohort window is given as 1993–2001, but AHS follow-up ran to about 2012–13. The IARC DOI is fabricated, and the call block contradicts the 'no calls' statement.",
+    "limits": "It is honest and specific about what it cannot measure, but the limits are memory-based.",
+    "verdict": "It has an answer, decision, confidence and what would change it, but the verdict rests partly on a fabricated reference.",
+    "facets": "Facets are answered from memory."
+   },
+   "B": {
+    "trend": "Research series has its window, CAGR 4.6% and late/early 1.11, read correctly as flat. The news thirds 26→83 (3.19×) and the Jan-2026 peak of 8 are traced. It flags the 2025 point as non-partial despite the censoring.",
+    "comparison": "A table of RR vs the 1.0 baseline for four outcomes, with deltas that recompute exactly and the caveat carried.",
+    "chart": "One traced volume chart with a correct caption. Neither the effect sizes nor the news series is charted.",
+    "drilldown": "Layers by cancer type, tier and lane are traced, but only 1 of 6 follow-ups executed.",
+    "export": "Two CSVs plus a provenance JSON, both referenced from the prose. The effect_sizes window '1990..2016' is invented.",
+    "repro": "All 62 numbers trace, and the calls are listed with args.",
+    "refs": "The script ceiling is 1 because one DOI was not found in the corpus, though it appears in the reference record.",
+    "accuracy": "Most figures are right and it catches the 2025 censoring anomaly. However, it says three reviews proposed 'qualifies' when there are four, and claims the tool lists the Exponent affiliation, which the record does not contain.",
+    "limits": "Window ends with gaps to today, the lane intersection of 6, and the stance-label caveat all sit next to the numbers. It says what would close the gap.",
+    "verdict": "Low confidence with a concrete reason (6 papers in the intersection, 1 document read). It names IARC as the contrary evidence and states the decision and what would change it.",
+    "facets": "Covers volumes, effect sizes, contrary evidence, and both research and news trends, with grounded 'not retrieved' notes."
+   },
+   "C": {
+    "trend": "Says the series 'rises' 1.43×, but the tool calls it flat (CAGR 4.6%, late/early 1.11). It drops the 2025 censoring note and omits the news series.",
+    "comparison": "RR vs the no-use baseline for NHL, MM and HL is traced and caveated, but leukemia is omitted.",
+    "chart": "One traced volume chart. Effect sizes and news are not charted.",
+    "drilldown": "The 0/4 follow-ups give a ceiling of 1.",
+    "export": "Two traced CSVs with provenance, including an honest 'unknown' window.",
+    "repro": "All 31 numbers trace, with a calls block and capture date.",
+    "refs": "All three DOIs resolve, the quotes are verbatim, and each reference is tied to a claim.",
+    "accuracy": "No fabrications, but the trend direction contradicts the tool's 'flat' reading.",
+    "limits": "Window ends, a gap to today of about 4 months 22 days, the lane intersection and the coverage caveat are placed with the numbers.",
+    "verdict": "It is direct, consistent and acknowledges the contrary meta-analysis conclusion.",
+    "facets": "News trend and leukemia are missing."
+   },
+   "D": {
+    "trend": "Study RRs plotted by year are presented as a trend, labelled as memory.",
+    "comparison": "Its RR comparison uses remembered values that cannot be checked.",
+    "chart": "Its RR bars are labelled as coming from memory.",
+    "drilldown": "The follow-ups failed (0/6), and the layers are generic.",
+    "export": "Its CSV comes from memory.",
+    "repro": "No numbers trace, and 13 are untagged.",
+    "refs": "The DOIs that are given resolve, but r5 has no DOI, r2 and r3 have generic URLs, and no quotes are given.",
+    "accuracy": "The Ninth Circuit 2022 ruling is mischaracterised; it vacated EPA's human-health finding. The Leon 2019 NHL meta-RR 1.12 (0.94–1.34) looks wrong.",
+    "limits": "It is honest about the memory-based gap, but cannot cite data limits.",
+    "verdict": "A balanced IARC vs regulator answer with decision, confidence and conditions. This is an established literature, so memory suffices here.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "IARC DOI 10.1002/14356007.w112.pub2 is fabricated or does not resolve",
+    "AHS window stated as 1993–2001 (follow-up ran to ~2012–13)",
+    "prism-calls block claims c1/c2 were used despite 'no Prism calls were run'"
+   ],
+   "B": [
+    "States that three reviews carried a 'qualifies' proposed stance; the record shows four",
+    "Claims the tool lists the Exponent institution; the record has no affiliation field",
+    "effect_sizes.csv window '1990..2016' is not from the source"
+   ],
+   "C": [
+    "Reads the research series as 'rises 1.43×' while the tool reports direction 'flat' (late_vs_early 1.11)",
+    "Omits the censoring flag on the 2025 point"
+   ],
+   "D": [
+    "Ninth Circuit 2022 described as vacating on ecological and procedural grounds; it vacated the human-health finding",
+    "Leon 2019 NHL meta-RR given as 1.12 (0.94–1.34), likely incorrect",
+    "Many specifics (AML RR, settlement size) are from memory"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and C both grounded their numbers in the recorded calls. B read the research series correctly as flat, added the news trend and all four cancer-specific RRs, and gave a confidence level justified by the 6-paper intersection; C misread the series direction and dropped news. The memory-only deliverables A and D gave reasonable narrative answers but carried unverifiable or wrong specifics, and A had a fabricated IARC DOI."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

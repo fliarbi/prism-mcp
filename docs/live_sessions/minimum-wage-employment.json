@@ -1,0 +1,66 @@
+{
+ "slug": "minimum-wage-employment",
+ "claude_live": {
+  "text": "**Direct answer:** Prism's evidence doesn't show that minimum wage increases reduce employment in general. Moderate increases most often show small or no job losses. The evidence is thin, though, and it doesn't settle the question.\n\n**What the data shows**\n- The only paper Prism read in full for the \"reduces employment\" claim contradicts it. It is Bishop (2018), a non-peer-reviewed preprint on Australian award wages. He reports \"no evidence that these small, incremental increases… have an adverse effect on hours worked or the job destruction rate.\"\n- Prism's typed-paper corpus (2017–2025) has 1,158 papers on both minimum wage increases and job loss. By their own framing, 222 support the claim, 389 qualify it, 57 contradict it and 490 are neutral. 38.5% are contested.\n- For \"raises wages without job loss\", 32,221 papers cover both sides. 6,789 support the claim, 10,300 qualify it, 2,286 contradict it and 12,846 are neutral. 39.1% are contested.\n- Prism's tool judged the second claim to have more evidence behind it. Its strongest source is Are the Effects of Minimum Wage Increases Always Small? (2012), a case study of New York State, which it tagged as contradicting the claim.\n- Prism read only 1 paper for the first claim and 10 for the second, and none came back as \"supports.\"\n\n**Interpretation (mine, not measured)**\n- The better-supported conclusion is that the average effect of moderate increases on employment is small. Effects likely depend on how large the increase is relative to local wages and on the labor market.\n- Neither claim is clean. \"No job loss\" is too strong, and \"reduces employment\" is too strong for modest increases.\n- The 2017–2025 corpus is mostly framing labels, not effect sizes. The two claims also matched very different pools of papers, with different breadth of subject and outcome terms. Prism's own caveat is that more evidence doesn't mean more true.\n\n**Gaps:** I found no extracted elasticities, no meta-analysis and no the health literature index designs. Before publishing, check the leading US studies and meta-analyses directly.",
+  "seconds": 692.3,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "find_evidence",
+    "args": {
+     "claim": "Minimum wage increases reduce employment",
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 7209
+   },
+   {
+    "tool": "compare_claims",
+    "args": {
+     "claim_a": "Minimum wage increases reduce employment",
+     "claim_b": "Minimum wage increases raise wages without job loss"
+    },
+    "ok": true,
+    "chars": 1735
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Direct answer:** Minimum wage increases reliably raise pay for affected workers, but “without job loss” is too categorical. Employment effects are often small or hard to detect on average, yet some studies find losses for particular groups or measures.\n\n**What the data shows:** Prism’s research statistics include a 2022 study estimating that a 10% increase in the binding minimum wage reduced vacancies 2.4% immediately and potentially 4.5% one year later; vacancies are a hiring measure, not a count of jobs lost. A 2024 study found a 10% increase associated with one fewer weekly work hour for minimum wage workers. By contrast, a study using U.S. Current Population Survey data from 2004 and 2006 estimated a 20.2–21.8% employment reduction among less-skilled, less-educated workers after New York’s increase, with the largest effects for ages 16–24. That is a specific subgroup and setting, not a general estimate. ([Prism-linked 2022 study](https://doi.org/10.26509/frbc-wp-201930r), [2024 study](https://doi.org/10.1111/ecca.12555), [New York study](https://doi.org/10.1177/001979391206500207))\n\n**Interpretation:** The evidence supports neither “always cuts jobs” nor “never costs jobs.” Outcomes vary by the size of the increase, local conditions, and who is studied; employers may also adjust through hours or vacancies rather than layoffs. The figures above establish employment-side effects, but Prism’s retrieved statistics did not provide a comparable wage-gain estimate, so they cannot quantify the “raises wages” part of the claim.",
+  "seconds": 292.9,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "Effects of minimum wage increases on wages and employment, including evidence for no job loss",
+     "include_context": true,
+     "include_trend": false,
+     "limit": 10
+    },
+    "ok": true,
+    "chars": 13607
+   },
+   {
+    "tool": "compare_claims",
+    "args": {
+     "claim_a": "Minimum wage increases reduce employment",
+     "claim_b": "Minimum wage increases raise wages without job loss",
+     "read": true
+    },
+    "ok": true,
+    "chars": 3916
+   },
+   {
+    "tool": "find_statistics",
+    "args": {
+     "claim": "minimum wage increases raise earnings or wages for low-wage workers",
+     "include_context": true,
+     "limit": 8
+    },
+    "ok": false,
+    "chars": 13715
+   }
+  ]
+ }
+}

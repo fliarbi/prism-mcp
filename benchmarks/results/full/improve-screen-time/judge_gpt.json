@@ -1,0 +1,128 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "repro": "All recalled figures are labeled estimates, with no traceable calls or sources; ceiling 1.",
+    "refs": "No identifiers or verified references; ceiling 1.",
+    "accuracy": "No contradiction with the record; the rewrite correctly downgrades causation to association.",
+    "limits": "Clearly labels memory estimates and states the absent search, coverage, and time gap limits.",
+    "verdict": "Direct rewrite, decision, confidence, and conditions are given; the decision is bounded, though evidence is memory-based.",
+    "facets": "Provides no grounded corpus or study-level values; most relevant evidence facets remain unanswered."
+   },
+   "B": {
+    "repro": "Four of five numeric claims trace, but calls and windows do not support full regeneration; ceiling 3.",
+    "refs": "No bibliographic identifiers or research references; ceiling 1.",
+    "accuracy": "Faithfully reports the assessment, lane note, corpus classifications, and empty evidence-card result.",
+    "limits": "Places the missing windows, subject lane, corpus-count meaning, and coverage limits alongside the claims.",
+    "verdict": "Answers directly with a decision, confidence, and a change condition; acknowledges the empty evidence card and bounds the conclusion.",
+    "facets": "Grounds the rewrite and corpus mix, but omits study-design, temporal, news, and other implied facets."
+   },
+   "C": {
+    "repro": "Nine of fourteen numeric claims trace; several claims and call details remain unreproducible; ceiling 3.",
+    "refs": "No bibliographic research identifiers or source references; ceiling 1.",
+    "accuracy": "Mostly matches the record, but says the tool read 11 documents when the evidence-card call only reports no result; the 11-document tally belongs to improve.",
+    "limits": "States the empty windows, subject lane, coverage, matching uncertainty, and absent news/trend calls where relevant.",
+    "verdict": "Gives a direct rewrite, decision, low confidence, and change condition, and acknowledges no grounded document; however, it overstates the evidence-card result as an 11-document read.",
+    "facets": "Addresses implied facets with grounded no-data statements and distinguishes the topic-level corpus from claim evidence, while naming missing news and trend data."
+   },
+   "D": {
+    "repro": "No reported numbers trace to calls or named measured sources; ceiling 0.",
+    "refs": "One DOI fails to resolve to the claimed work, capping refs at 1.",
+    "accuracy": "The first cited review identifier does not match the claimed review, so its specific title, venue, year, and attributed finding are unsupported.",
+    "limits": "States that no current search was run, but omits several applicable source and coverage limits; ceiling 3.",
+    "verdict": "Direct answer and conditions are present, but confidence lacks a grounded record and depends on an invalid citation.",
+    "facets": "Provides no grounded corpus values or tool-backed no-data for the implied facets."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Evidence-card quote is not the recorded response: c2 returned ok:false with null data, not the quoted 11-document statement."
+   ],
+   "C": [
+    "Attributes an 11-document tally to the evidence-card call; the reference record shows that call returned no data. The 11-document tally appears only in the improve result."
+   ],
+   "D": [
+    "DOI 10.1016/j.jaac.2020.03.019 was not found in the research corpus, and the script flags it as unresolved; the review details and quoted conclusion are therefore unsupported by the record."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the most decision-ready: it gives a clear noncausal rewrite and accurately reports the assessment, lane caveat, corpus classifications, and missing evidence card. C covers more implied facets, but misattributes the 11-document tally to the empty evidence-card call; A is candid but largely memory-based, while D relies on an unresolved DOI."
+ },
+ "scores": {
+  "claude_bare": {
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison made.",
+    "chart": "No chart.",
+    "drilldown": "Has specific follow-up calls, but only 2 of 5 executed and there is no breakdown.",
+    "export": "No export.",
+    "repro": "No numbers; an honest empty deliverable.",
+    "refs": "No references.",
+    "accuracy": "No contradictions; empty deliverable.",
+    "limits": "Specific about what is unmeasured (coding rules, phrase expansion), but no data limits are applied.",
+    "verdict": "A decision and confidence are given, but the answer is 'cannot establish'.",
+    "facets": "No facet answered with grounded values."
+   },
+   "B": {
+    "trend": "Full positive_pct and contested_pct series for 2017-2025, with deltas exact (+11.8, -8.1). It names the 2025 step. The verdict mislabels positive_pct as the 'promising' share.",
+    "comparison": "2017 vs 2025 on one scale; ratios recompute (1.94, 0.68, 0.51 to 1.44). The c2 bucketing is flagged as not to be mixed. Does not address the distributional dimension.",
+    "chart": "Traced share chart with the positive vs contested decomposition and window, unit and source. No volume chart, and no tone or volume overlay.",
+    "drilldown": "Contribution, topic and phrase layers, plus paper ids and DOIs. Follow-ups 4/6 ok, none folded back.",
+    "export": "Script ceiling 3. Two traced CSVs plus provenance JSON.",
+    "repro": "87/87 traced; calls block with args, plus capture date.",
+    "refs": "4 DOIs resolve and are tied to claims with venue and year. No quotes, no contrary sources.",
+    "accuracy": "The verdict calls positive_pct (promising+breakthrough) 'the promising share', a field misreading. Otherwise exact. Catches the carbon-fibers false matches.",
+    "limits": "Window gap, lane, phrase audit with false-match evidence, framing-not-truth and thin critical class are each placed next to their numbers.",
+    "verdict": "Direct answer, decision, medium confidence with reason, and a change condition. Acknowledges the tool's 'broadly unchanged' reading.",
+    "facets": "Trend, shares, examples, thin years and phrase expansion are grounded. The distributional-critique angle is not addressed."
+   },
+   "C": {
+    "trend": "Memory guess series labelled estimate.",
+    "comparison": "Compares two guessed endpoints.",
+    "chart": "Estimate-labelled guess chart. Its 'supports' line points to an unrelated claim.",
+    "drilldown": "Follow-ups proposed, only 2/6 ok; no traced layer.",
+    "export": "Estimate CSV.",
+    "repro": "All numbers are memory or estimate.",
+    "refs": "Real papers recalled, but no resolvable identifiers.",
+    "accuracy": "No direct contradiction of the reference. The guessed critical-share level (~28-35%) is far from the corpus (~2-5%) but labelled a guess.",
+    "limits": "Honest about what is unmeasured, but generic otherwise.",
+    "verdict": "Qualitative answer that engages the distributional critique, with low confidence and a change condition. Unmeasured.",
+    "facets": "Facets answered from memory."
+   },
+   "D": {
+    "trend": "Traced counts for promising and critical, window stated, change quantified (6.5x, 2020 critical peak 28). Shares only first/last in prose; full shares in CSV.",
+    "comparison": "2025 promising vs critical, 214 vs 15 (14.3:1), baseline defined. Carries the -2.2 pt 'broadly unchanged' caveat.",
+    "chart": "Traced, but plots raw counts while volume tripled. No share or volume view, so tone is not normalised in the chart.",
+    "drilldown": "Phrase audit and example items with DOIs and ids. Follow-up f2 duplicates c1; 3/4 ok.",
+    "export": "Two traced CSVs with provenance and a JSON block. The phrase audit is oddly flagged coverage=partial.",
+    "repro": "24/25 traced; derived values marked and recomputable. The day gap is off by one (296, not 297).",
+    "refs": "2 DOIs resolve and are tied to claims. Tier is not supplied, no quotes, no contrary sources.",
+    "accuracy": "Shares and ratios recompute (9.7%, 19.0%, 4.7%, 1.3%, 6.5x, 14.3). Minor off-by-one in the date gap. Notes off-topic examples.",
+    "limits": "Window gap, lane, match mode and the framing-not-validity caveat are placed in context. Does not say what would close the gap.",
+    "verdict": "Nuanced answer (latest-year favourable vs balance unchanged), with decision, confidence with reason, and a change condition.",
+    "facets": "Trend, comparison, examples, thin years and phrase expansion are grounded. Distribution is not addressed."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Verdict labels positive_pct (promising+breakthrough) as 'promising share'"
+   ],
+   "C": [
+    "Illustrative critical-share values (28-35%) bear no relation to the corpus (critical ~1-6%), though labelled as guesses"
+   ],
+   "D": [
+    "Gap to today stated as 297 days; 2025-12-31 to 2026-10-23 is 296"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both grounded their answers in the 2017-2025 stance series and both recompute correctly. B charted the right quantity (positive vs contested shares), flagged that the shift is concentrated in 2025, and caught false phrase matches. D plotted raw counts in a growing corpus. A and C were honest about having no measurement but gave a decision-maker nothing traceable. C's guessed series also mis-levels the critical share, and none of the four tested the distributional-critique claim directly."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

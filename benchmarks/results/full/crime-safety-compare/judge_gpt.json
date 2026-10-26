@@ -1,0 +1,182 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 0,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 2,
+    "comparison": 5,
+    "chart": 2,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 3,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series or quantified change; the estimate label earns no more than 1, but the ceiling is 1 and the deliverable gives no estimate series.",
+    "comparison": "No measured contrast; planned ratios are not results.",
+    "chart": "No chart block.",
+    "drilldown": "Breakdown and calls are proposed, but no traced layer or executed on-topic result is supplied.",
+    "export": "Empty template, not a traced export.",
+    "repro": "No measured numbers or replayable recorded calls.",
+    "accuracy": "Refuses measurement and labels its qualitative prior as unverified; no contradiction with the record.",
+    "limits": "Clearly states no query, unmeasured facets, intended window, and interpretation limits, though it misses the actual corpus cutoff and its specific censoring caveat.",
+    "verdict": "Directly advises against acting on an unsupported ranking and gives confidence and conditions, but does not answer from evidence.",
+    "facets": "Most requested facets are withheld; overlap is discussed only qualitatively."
+   },
+   "B": {
+    "trend": "No observations; the empty chart is explicitly estimate and cannot establish a trend.",
+    "comparison": "No measured comparison.",
+    "chart": "Estimate chart with no points, matching the honest-memory anchor.",
+    "drilldown": "Calls are proposed but not executed, and they use unsupported generic window arguments.",
+    "export": "Empty estimate CSV without source observations.",
+    "repro": "No measured claims or reproducible recorded calls; estimates are honestly withheld.",
+    "accuracy": "No contradiction or fabricated measurement; the response accurately says it lacks data.",
+    "limits": "States corpus/source uncertainty and unknown censoring, but not the applicable recorded window, cutoff, or corpus caveats.",
+    "verdict": "Gives a cautious decision and confidence, but no evidence-based answer or explicit evidence that would change the decision.",
+    "facets": "Coverage, trend, tone, and overlap are mostly unmeasured; no grounded facet values."
+   },
+   "C": {
+    "trend": "Monthly points are traced, but the change is not quantified in the chart caption and the prose gives endpoint changes rather than the tool's growth definition; the ceiling is 1.",
+    "comparison": "Same-window totals, ratios, and deltas recompute; overlap caveat and the attention-versus-incidence distinction are stated.",
+    "chart": "The ceiling is 0: the chart window omits the tool's exclusive end/censoring metadata and points through May do not constitute the recorded window as charted.",
+    "drilldown": "One traced term-to-month layer, but proposed follow-up calls did not execute successfully.",
+    "export": "Monthly CSV traces and has provenance, but omits the required per-term summary table and does not preserve the full tool field set.",
+    "repro": "Most numeric claims trace and the base call has args/window, but some claims and derivations are untraced and no full regeneration recipe rebuilds every artifact.",
+    "accuracy": "Mostly aligned, but says first-to-last counts rose for all terms as though that characterizes trend, despite the record's flat direction labels; also presents combined_articles without resolving whether it is unique.",
+    "limits": "Notes cutoff, ingest caveat, keyword matching, and ambiguous fields, but misses the recorded coverage/freshness details where relevant.",
+    "verdict": "Answers the coverage ranking with a decision and confidence, but does not state what evidence would change the decision clearly enough and does not fully resolve contrary trend signals.",
+    "facets": "Covers volume, tone, trend, and some overlap caveats, but leaves source-level, seasonality, and term-overlap measurements ungrounded."
+   },
+   "D": {
+    "trend": "The traced monthly series has a stated window and censored cutoff, but prose change calculations include an incorrect murder sum and omit robbery's full comparison; series interpretation is inconsistent.",
+    "comparison": "Same-window volume ratios and deltas recompute, baseline is defined, and the report distinguishes attention from incidence while acknowledging overlap.",
+    "chart": "The chart traces points but has a window/unit mismatch: its end is given as May 31 rather than the exclusive June 1 cutoff; trend claims in its caption also conflict with the flat direction labels.",
+    "drilldown": "One traced term-to-month layer; follow-ups are listed but only two of six executed successfully and returned on-topic data.",
+    "export": "Totals CSV traces with provenance, but the monthly table needed for the trend is not exported or referenced as an export.",
+    "repro": "Most figures trace and the base call is reproducible, but six numeric claims are untagged and the incorrect hand-summed trend figures fail reproduction.",
+    "accuracy": "The murder first-year sum is wrong, robbery's period comparison is left incomplete, and the caption asserts a rise inconsistent with the tool's flat overall directions.",
+    "limits": "Some key caveats are present, but coverage is mischaracterized as full and the tool's censoring/cutoff warning is not correctly carried through the chart and trend reading.",
+    "verdict": "Ranking is supported, but its trend rationale is internally inconsistent and its confidence/conditions do not repair the incorrect change figures.",
+    "facets": "Grounded coverage, criticality, and monthly facets are addressed; implied overlap and seasonality are discussed, though not resolved with measurements."
+   }
+  },
+  "errors": {
+   "A": [
+    "Uses an unsupported 2024-10-23 to 2026-10-22 window as a proposed measurement rather than the recorded 2024-06-01 to 2026-06-01 window."
+   ],
+   "B": [
+    "Describes a two-year window ending 2026-10-23 as an estimate without any corpus measurement; proposed calls use unsupported window and grouping arguments."
+   ],
+   "C": [
+    "Treats endpoint increases as rising trends while the reference labels each term flat overall.",
+    "Does not establish whether the reported combined_articles total is deduplicated."
+   ],
+   "D": [
+    "The stated murder first-12-month sum (276,562) is incorrect; the recorded monthly points sum to 276,290.",
+    "The chart labels the window end 2026-05-31 instead of the exclusive 2026-06-01 cutoff.",
+    "Claims all series rose together from 2026-02 and characterizes overall trend as a rise, while the reference labels all three directions flat.",
+    "Calls coverage full despite the recorded response's ingest-completeness caveat."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the most decision-useful because it compares all three topics on the same measured scale, exposes criticality alongside volume, and supplies the monthly series and provenance. Its trend arithmetic and coverage interpretation need correction; C is more cautious about limits but does not quantify trend adequately and leaves key comparison facets unresolved."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 0,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 1,
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 2,
+   "comparison": 5,
+   "chart": 2,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 3,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

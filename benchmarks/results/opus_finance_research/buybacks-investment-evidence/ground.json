@@ -1,0 +1,439 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1600,
+  "charts": [
+   {
+    "id": "spx-buybacks",
+    "title": "S&P 500 annual share buybacks",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "S&P 500 buybacks (recalled from S&P DJI releases)",
+      "how": "estimate",
+      "points": 10,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "gross-vs-net",
+    "title": "Shareholder payouts as % of net income: gross vs net of issuance",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Gross, S&P 500 2003-2012",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Net, all public firms 2007-2016",
+      "how": "estimate",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "spx_buybacks.csv",
+    "how": "estimate",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "evidence_tally.csv",
+    "how": "estimate",
+    "rows": 9,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many papers on buybacks and investment exist by lane, and what share are supporting vs critical?",
+    "args": {
+     "term": "share repurchases corporate investment",
+     "from": "2000-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2000-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which peer-reviewed papers find buybacks do NOT reduce investment, with DOIs and quotes?",
+    "args": {
+     "claim": "share buybacks reduce corporate investment",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.1,
+    "sample": "{\"supporting\": [], \"contradicting\": [{\"id\": \"prism:W4412698133\", \"title\": \"The (Non-)equivalence of dividends and share buybacks\", \"year\": 2025, \"venue\": \"Mathematics and Financial Economics\", \"tier\": \"article\", \"strength\": \"moderate\", \"stance\": \"contradicts\", \"quote\": \"both dividend payouts and share buybacks result in the same shareholder welfare, distribution ratio and firm’s investment level.\", \"grounded\": true, \"why\": \"states buybacks do not change investment, opposing claim of reduction\", \"url\": \"https://doi.org/10.1007/s11579-025-00396-0\", \"cited_by\": 0, \"doi\": \"10.1007/s11579-025-00396-0\"}], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 1, \"qualifies\": 0, \"unrelated\": 7, \"unread"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has news coverage volume and tone on buybacks shifted since the 2022 excise tax?",
+    "args": {
+     "term": "stock buybacks investment",
+     "from": "2021-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2021-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What effect sizes (capex/R&D elasticity to repurchases) are reported, and in which populations?",
+    "args": {
+     "term": "repurchase investment elasticity capex R&D"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... elasticity capex R&D'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='repurchase investment elasticity capex R&D', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "Did the 2023 US 1% buyback excise tax change firm investment?",
+    "args": {
+     "claim": "buyback excise tax increased corporate investment",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 57.1,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 4874, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 0, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"co"
+   },
+   {
+    "id": "f6",
+    "feature": "research.citations",
+    "question": "Which papers cite Almeida, Fos and Kronlund (2016) and do they replicate the crowd-out?",
+    "args": {
+     "doi": "10.1016/j.jfineco.2015.08.008"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'doi': '1...j.jfineco.2015.08.008'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ndoi\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='10.1016/j.jfineco.2015.08.008', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.geography",
+    "question": "How do buyback-investment findings differ across US, Europe and Japan?",
+    "args": {
+     "term": "share repurchases investment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...epurchases investment'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='share repurchases investment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 26,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 5,
+   "untagged_examples": [
+    "54% — - **Quote (from memory; verify):** firms \"used 54% of their earnings—a total of $2.4 trill",
+    "2.4 — - **Quote (from memory; verify):** firms \"used 54% of their earnings—a total of $2.4 trill",
+    "10 — | Supporting | 4 | 3A, 1C | 10 |",
+    "10 — The near-balance (10 vs 9, est.) reflects the fact that the two sides answer different que",
+    "22 — - The buyback series ends on 2024-12-31, about 22 months before today (2026-10-23)."
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1632,
+  "charts": [
+   {
+    "id": "research-series",
+    "title": "Research papers per year on buybacks x investment (intersection lane)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Prism-typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "news-series",
+    "title": "News articles per year mentioning buybacks and investment (intersection lane)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "News articles (2026 = Jan–May only)",
+      "how": "call",
+      "points": 8,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "sides",
+    "title": "Stance of buyback-investment papers toward 'buybacks reduce investment'",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Corpus framing labels (n=27)",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Documents read, tier-weighted",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_series_yearly.csv",
+    "how": "call",
+    "rows": 8,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "stance_tally.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 12,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "Do EPS-motivated repurchases reduce capex and R&D (Almeida-Fos-Kronlund line)?",
+    "args": {
+     "claim": "Share repurchases to meet EPS forecasts reduce investment and employment",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 50.2,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 278, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 377, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 1, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 1331, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 1, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"available\""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers in the 'Firm Innovation and Growth' cluster link repurchases to R&D?",
+    "args": {
+     "term": "stock repurchase R&D innovation",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'stock repurchase R&D innovation' — try expand=true, or a broader phrase",
+    "seconds": 6.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "Does recall improve with 'repurchase' wording instead of 'buyback'?",
+    "args": {
+     "claim": "Stock repurchases crowd out capital expenditure",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 24.8,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 76, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 223, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 3, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 3139, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 2, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"available\":"
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "What drove the 2025-04 and 2026-02 news peaks (e.g., buyback excise tax debate)?",
+    "args": {
+     "term": "share buybacks investment",
+     "from": "2025-01-01",
+     "to": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "Has the stance of research shifted since the 2022 US buyback excise tax?",
+    "args": {
+     "term": "share buybacks investment"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"share buybacks\", \"stock repurchases\", \"share repurchase programs\", \"share buyback announcements\"], \"points\": [{\"year\": 2017, \"total\": 6, \"orientation\": {\"comparative\": 1, \"cautionary\": 1, \"descriptive\": 1, \"problem_identifying\": 1, \"breakthrough\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 2, \"positive_pct\": 16.7, \"contested_pct\": 33.3}, {\"year\": 2018, \"total\": 10, \"orientation\": {\"promising\": 1, \"critical\": 1, \"cautionary\": 2, \"descriptive\": 3}, \"stance_score\": null, \"positive\": 1, \"contested\": 3, \"positive_pct\": 10.0, \"contested_pct\": 30.0}, {\"year\": 2019, \"total\": 9, \"orientation\": {\"problem_identifying\": 1, \"promising\": 1, \"cautio"
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What do news sources critical of buybacks claim, and with what evidence?",
+    "args": {
+     "term": "share buybacks investment"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'share buybacks investment'",
+    "seconds": 2.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 32,
+   "traced": 29,
+   "derived": 1,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "296 — - Research ends 2025. That is a 296-day gap from 2025-12-31.",
+    "144 — - News ends 2026-06-01 (exclusive). That is a 144-day gap."
+   ]
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 143,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

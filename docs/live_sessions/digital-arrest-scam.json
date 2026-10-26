@@ -1,0 +1,72 @@
+{
+ "slug": "digital-arrest-scam",
+ "claude_live": {
+  "text": "**Direct answer:** Indian news treats \"digital arrest\" scams as a persistent, escalating cybercrime problem. Coverage is almost entirely negative, and the government response has moved from police cases to telecom and platform controls.\n\n**What the data shows** (Prism news corpus, Jun 2024–May 2026, mention match)\n- **Volume:** 686 articles, of which 653 (95%) are flagged critical. The first one appeared in July 2024.\n- **Trend:** Monthly counts rose from 3 in Jul 2024 to 33 in Oct 2024. They peaked at 75 in Apr 2026. The late third of the window had 1.75× the articles of the early third.\n- **Tone:** 94.3% of articles are negative and 5.6% positive. That is roughly 29× more negative than the corpus baseline.\n- **Geography:** 67% of articles with a place label are placed in India. Cambodia (30), Myanmar (13) and Laos (7) also appear, which suggests coverage of offshore scam compounds. Place labels are noisy, and the Cameroon count (29) is probably a labelling artefact.\n- **Themes:** The articles cluster under cybercrime law and digital forensics, and under public-safety technology. The most frequent organisation labels are TRAI, CBI and MeitY.\n- **Typical stories (Feb–May 2026):**\n  - Fake police, ED or NIA officers extort victims, many of them elderly. Cases include ₹4.11 crore from an 85-year-old in Thrissur, ₹1.6 crore from a 77-year-old woman in Pune, and ₹60 lakh from a Mumbai widow.\n  - Delhi Police busted a network tied to 190+ complaints and suspected proceeds above ₹100 crore (mid-day, Feb 2026).\n  - Policy actions reported:\n    - The government ordered WhatsApp to block device IDs used in these scams (India Today, 21 Mar 2026).\n    - The government told the Supreme Court that fraudulent SIMs can be blocked within 2–3 hours and that WhatsApp banned 9,400 accounts (Navbharat Times, 29 Apr 2026).\n- **Outlets:** Coverage is spread across many publishers. The top outlet, Hindustan Times, has about 10% of the sample.\n\n**Interpretation (mine)**\n- The April 2026 spike seems to follow the Supreme Court and regulatory activity rather than a verified rise in cases. The corpus counts articles, not victims or losses.\n- The stories point to a shift toward targeting the elderly, larger sums and physical cash collection.\n\n**Caveats**\n- The data ends 31 May 2026, and the newest months are thinly labelled, so I can't speak to June–October 2026.\n- Entity labels are machine-assigned. For example, \"Surya Kant\" and \"Immanuel Kant\" appear as people, so I would not rely on them.\n- I found no official national loss statistics in these results.",
+  "seconds": 182.1,
+  "model": "claude-sonnet",
+  "tool_calls": [
+   {
+    "tool": "prism_overview",
+    "args": {},
+    "ok": false,
+    "chars": 78
+   },
+   {
+    "tool": "prism_overview",
+    "args": {
+     "term": "digital arrest scam"
+    },
+    "ok": true,
+    "chars": 39825
+   },
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "digital arrest scam",
+     "limit": 6
+    },
+    "ok": true,
+    "chars": 5371
+   }
+  ]
+ },
+ "chatgpt_live": {
+  "text": "**Indian reporting depicts “digital arrest” as coercive impersonation fraud:** scammers pose as police or federal investigators, accuse targets of links to crimes, keep them on video calls, and pressure them to transfer money. Reports describe large losses among older victims, investigations and arrests, and at least one case involving prolonged intimidation.\n\n**What Prism’s data shows:** Its India-filtered news series counted **2,990 matching articles from January 2024 through May 2026**; **2,693 were scored “critical”** (priority 7+). Coverage peaked at **706 articles in October–December 2024**, then reached **440 in January–March 2026**. Prism’s latest quarter, April–June 2026, is partial and censored at June 1, so it should not be compared as a full quarter. In the latest-year feed, reports included a **₹32.69 lakh** loss by a Mumbai retiree (Mid-Day, March 30, 2026) and a CBI operation with **three arrests** in Andhra Pradesh and Telangana (The Better Andhra, April 18, 2026). [Mid-Day](https://www.mid-day.com/mumbai/mumbai-crime-news/article/digital-arrest-scam-63-year-old-mumbai-teacher-loses-over-rs-32-lakh-23623364) · [The Better Andhra](https://thebetterandhra.com/news/cbi-digital-arrest-scam-andhra-telangana/)\n\n**Interpretation:** The sustained, largely negative coverage and recurring reports of substantial losses suggest a persistent public-safety concern. But article counts measure media attention, not the number of scams or victims; Prism’s news results alone cannot establish the fraud’s true prevalence or whether incidents are increasing.",
+  "seconds": 179.8,
+  "model": "gpt-6-luna",
+  "tool_calls": [
+   {
+    "tool": "critical_news",
+    "args": {
+     "term": "digital arrest",
+     "match": "central",
+     "days": 365,
+     "limit": 8
+    },
+    "ok": true,
+    "chars": 15900
+   },
+   {
+    "tool": "news_trends",
+    "args": {
+     "term": "digital arrest",
+     "country": "India",
+     "granularity": "quarterly",
+     "since": "2024-01-01"
+    },
+    "ok": true,
+    "chars": 7787
+   },
+   {
+    "tool": "recent_news",
+    "args": {
+     "term": "digital arrest scams India",
+     "limit": 10,
+     "since": "2025-01-01"
+    },
+    "ok": false,
+    "chars": 1843
+   }
+  ]
+ }
+}

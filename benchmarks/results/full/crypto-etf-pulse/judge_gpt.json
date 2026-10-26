@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 2
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; the empty chart is explicitly an estimate and cannot establish direction.",
+    "comparison": "Explains why a measured tone comparison cannot be made, but provides no contrast.",
+    "chart": "Only an empty estimate chart; no traced values.",
+    "drilldown": "Names missing breakdowns and gives specific calls, but only three of six executed successfully and no traced layer is shown.",
+    "export": "No CSV export.",
+    "repro": "Calls are proposed, not recorded results that can reproduce findings.",
+    "refs": "References are resolvable and identify claims, but no quotes or year/venue/tier support the cited chronology.",
+    "accuracy": "Does not invent measured findings and appropriately says the coverage cannot be measured from its inputs.",
+    "limits": "Clearly places the missing window, coverage, match-mode, and censoring information next to the claims.",
+    "verdict": "Direct, cautious answer with confidence and what would change it; no decision-grade measured finding is possible.",
+    "facets": "Covers several requested facets as explicitly unmeasured, but does not ground the source concentration or tone."
+   },
+   "B": {
+    "trend": "A clearly labelled estimate series earns the estimate anchor only; it is not measured.",
+    "comparison": "Tone comparison is qualitative and explicitly unmeasured.",
+    "chart": "Estimated index chart, with its status disclosed; no corpus-traced values.",
+    "drilldown": "Lists follow-up questions and calls, but no traced breakdown and only three of six calls succeeded.",
+    "export": "CSV is honestly labelled as an estimate, so it earns the estimate anchor only.",
+    "repro": "No numeric claims trace to recorded calls, and the calls block is empty.",
+    "refs": "No references are supplied, despite specific historical and market claims.",
+    "accuracy": "Admits the figures are memory estimates, but presents several specific recalled claims without resolvable support.",
+    "limits": "Labels the trend as an estimate and states the absent corpus, window gap, and unknown coverage; some recalled claims lack claim-level sourcing.",
+    "verdict": "Gives an answer and confidence with conditions, but the stated tone shift is unmeasured and remains a hypothesis.",
+    "facets": "Most facets, including publisher concentration and measured tone, are missing or only qualitative."
+   },
+   "C": {
+    "trend": "Monthly series traces, states the window and censoring, quantifies the change, names peaks and troughs, and decomposes volume and tone; prose also notes flat thirds versus positive CAGR.",
+    "comparison": "The negative-to-positive ratio comparison is on a defined shared baseline and window, with exact delta and relative difference plus the baseline caveat.",
+    "chart": "The traced volume chart has window, unit, source and claim; however tone, another requested supported facet, is not charted.",
+    "drilldown": "Shows several overview breakdowns, but no item-level headline identifiers and only two of five proposed calls executed successfully.",
+    "export": "Monthly series CSV is fully traced and referenced, but a second export for the tone comparison or source sample is needed for the facets reported.",
+    "repro": "Most numeric claims trace, but one is untagged and the declared call list is incomplete; listed replay information does not regenerate every table and chart.",
+    "refs": "No external/news item references with resolving URLs and claim-tied metadata are supplied; the internal call citation alone does not meet the reference standard.",
+    "accuracy": "Mostly reads the fields correctly, but describes the corpus coverage check as passed when the record says it is not proof of complete ingestion.",
+    "limits": "States key window, match, classifier and sample limits, but misses the specific gap from the cutoff to today where the numbers are used.",
+    "verdict": "Direct answer, decision, confidence and change condition are present and broadly supported; it does not acknowledge the strongest contrary evidence that negative counts exceed positive in February 2026.",
+    "facets": "Addresses trend, tone, themes, entities, geography, and concentration with grounded values, but does not cover implied seasonality/overlap or the full source breakdown."
+   },
+   "D": {
+    "trend": "Traced monthly volume and tone series include window and censoring, quantified change, and decisive points; however the chart caption falsely says the volume peaked in late 2024, and the positive CAGR conflicts with the source's flat direction unless carefully framed.",
+    "comparison": "Ratio and delta recompute, the baseline is defined, and the discussion answers how tone compares while distinguishing critical from negative.",
+    "chart": "Both requested facets are charted with traced values, units, windows, sources and captions; the volume caption contains an erroneous peak claim, preventing a perfect score.",
+    "drilldown": "Provides breakdown layers through publisher and headline examples with identifiers and three successful follow-ups; lacks a fully traced follow-up result folded back with headline identifiers/URLs.",
+    "export": "Exports are traced and referenced, but the monthly series is only an excerpt, so the needed full monthly table is absent.",
+    "repro": "All numbers trace to the recorded call and the provenance includes feature, args, window and capture date, enabling regeneration.",
+    "refs": "News headlines are named but URLs and full claim-linked metadata are missing for most items; no external references resolve the full cited set.",
+    "accuracy": "Strong anomaly handling, but the chart's claim that volume peaked in late 2024 contradicts the April 2026 peak; the stated central matching for critical lists is not supported by the reference record.",
+    "limits": "Covers cutoff, censoring, match mode, sample and enrichment lag, but the gap to today is only in the verdict and some limits are not attached to every affected number.",
+    "verdict": "Answers directly with confidence, decision and conditions, but calls coverage steady while also highlighting souring without fully bounding the contradictory timing and chart error.",
+    "facets": "Grounds trend, tone, publisher concentration, headlines, themes, places and key implied limits, including seasonality and incomplete enrichment."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Specific recalled claims (fund launch count and cumulative inflows) have no resolvable references, though labelled estimates.",
+    "References section supplies no citations despite the historical claims."
+   ],
+   "C": [
+    "Calls the corpus coverage check 'passed'; the reference says the coverage floor is not proof of complete ingestion.",
+    "Trend prose says negative counts exceeded positive in February 2026, which is correct, but the conclusion that the overall tone is more positive should remain clearly bounded as classifier polarity."
+   ],
+   "D": [
+    "Chart caption says the volume peaked in late 2024; the recorded peak is April 2026.",
+    "Says the critical-headline examples use central matching; the reference describes mention matching for overview panels and does not establish that claim.",
+    "Says it has 'full coverage checks'; the reference explicitly warns the coverage floor does not prove completeness."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is the strongest decision aid because it combines traced volume and tone series, a defined baseline comparison, source concentration, headline examples, and explicit limits. Its incorrect peak caption and a few unsupported coverage or match-mode claims need correction; C is cleaner in its trend interpretation but omits a tone chart and offers less usable drill-down."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

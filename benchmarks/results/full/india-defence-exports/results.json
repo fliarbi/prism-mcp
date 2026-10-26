@@ -1,0 +1,245 @@
+{
+ "slug": "india-defence-exports",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 22.0,
+   "plain": 22.0,
+   "invented": true,
+   "by_judge": {
+    "opus": 23.2,
+    "gpt": 20.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 2.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 74.8,
+   "plain": 74.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 85.2,
+    "gpt": 64.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 0.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 0.5
+   },
+   "strict": 21.3,
+   "plain": 21.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.2,
+    "gpt": 24.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 4.0,
+    "repro": 4.5,
+    "refs": 1.5,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 74.2,
+   "plain": 74.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.6,
+    "gpt": 74.8
+   }
+  }
+ },
+ "judge_mad": 0.45,
+ "verdicts": {
+  "opus": "A and D both grounded their answers in the same overview call, but A went further. It added the tone comparison chart, the substantive export claims (Rs 38,424 crore, 25-fold), a correct reading of 'critical', and executable follow-ups. B gave plausible official figures from memory and did not measure the news at all, and C declined to answer.",
+  "gpt": "A is the strongest decision aid: it grounds the positive tone against a defined corpus baseline, shows that article volume is volatile and flat overall, and separates news claims from verified export performance. B has more breakdowns and charts, but unsupported export and story specifics, plus a misreported window, weaken its reliability; C and D do not provide measured news evidence."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [],
+   "claude_bare": [
+    "Untagged number in the verdict",
+    "Memory-based destination and theme claims; omits the FY26 record figure present in the record"
+   ],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Verdict frames 'ends below opening month' although the tool's direction is flat (endpoint reading)"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "Calls the feed's tone positive without a sourced feed-level polarity result; positive tone counts for the overall corpus do not establish the tone of the critical-headline feed."
+   ],
+   "claude_prism": [
+    "States FY26 exports were Rs 38,424 crore and up 62.66%, plus private-sector share and BrahMos/Vietnam/103% CAGR claims, which are not established by the supplied reference record.",
+    "Says the window ends 2026-05-30 and that the last five months are not covered; the measured window extends through May 2026, with data censored at 2026-06-01.",
+    "Calls critical high-priority or analytical despite the tool providing no definition; this is an unsupported field interpretation.",
+    "Claims Armenia is a buyer-side market and says coverage repeats ministry releases/Rubix report without support in the recorded response."
+   ],
+   "claude_bare": [
+    "Presents memory export amounts and importer ranking as specifics, including an unverified export series, while the requested news facets are unmeasured.",
+    "Concludes coverage is broadly positive from memory without a news corpus measure."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full monthly series traced with its window. Peak 89 (2026-04) and late/early 1.18 are quantified. The flat label is read correctly and the CAGR distortion is flagged. No tone-over-time decomposition is charted.",
+    "comparison": "Tone ratio 0.18 vs baseline 0.58 is defined. The -0.40 delta and 0.31x recompute, and the negative months are named. The contrast is not fully framed against export reality.",
+    "chart": "Volume and tone charts are both traced and captioned. The tone chart shows bare levels, and censoring is not visibly marked.",
+    "drilldown": "Theme, entity, place and publisher layers are traced, with dated URL items. The 6/6 follow-ups ran, but none was folded back into the report.",
+    "export": "One traced CSV and a provenance JSON. Capped at 3.",
+    "repro": "81/81 numbers traced. The calls block and capture date are present.",
+    "refs": "Ceiling 2. News items carry dates, publishers and URLs.",
+    "accuracy": "Values match the record. A correctly notes that critical is undefined and not negative, and that the CAGR is endpoint-distorted.",
+    "limits": "Gives the five-month gap, enrichment bound, placed_pct, sample size, match mode, and what would close each gap.",
+    "verdict": "Direct answer, decision, confidence with reason, and change conditions. Notes import dependence and the window bound, and stays concise.",
+    "facets": "Volume, tone, themes, entities, places, critical items and sources are all grounded."
+   },
+   "claude_bare": {
+    "trend": "A fiscal-year official series from memory with generic PIB refs. It is not the news series the question asks for.",
+    "comparison": "Ratios computed on memory export values, not on news coverage.",
+    "chart": "Memory chart citing an unverifiable source.",
+    "drilldown": "Only 1/5 follow-ups returned. The breakdowns are from memory.",
+    "export": "Memory table.",
+    "repro": "Ceiling 0. Untagged numbers and no calls were run.",
+    "refs": "Generic pib.gov.in references with no resolvable URLs.",
+    "accuracy": "Figures are plausible public values. However, it omits the FY26 Rs 38,424 crore record the record shows, and the destination claims are estimates.",
+    "limits": "Honest and specific about what was unmeasured, but memory-based.",
+    "verdict": "Ceiling 0 because an untagged number appears in the verdict.",
+    "facets": "Mostly memory or 'cannot measure'."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups were named but 0/5 executed.",
+    "export": "None.",
+    "repro": "No numbers. Honest, but nothing is reproducible.",
+    "refs": "None.",
+    "accuracy": "No claims, so no contradictions.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "A refusal that does not answer the question.",
+    "facets": "No facets answered."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with an exclusive window. -8 / -26.7% recompute correctly, with the peak and thirds given. The verdict leans on the endpoint decline despite the tool's flat label.",
+    "comparison": "0.18 vs 0.58, delta 0.40 and 0.31x are correct, and the baseline is defined.",
+    "chart": "Only a volume chart. Tone was asked for but not charted.",
+    "drilldown": "Some layers are given, but only 2/5 follow-ups executed. Theme layers lack counts.",
+    "export": "Traced monthly CSV with a provenance block, referenced from the prose.",
+    "repro": "32/33 traced. Calls and capture date are present.",
+    "refs": "Ceiling 2. URLs with dates and publishers.",
+    "accuracy": "Matches the record. The 144-day gap is correct. It does not define 'critical' and calls the critical feed positive.",
+    "limits": "Covers censoring, the 144-day gap, lane, match mode, sample size and placed_pct, each placed next to its number.",
+    "verdict": "Clear answer, decision, confidence and change conditions. Import dependence is not raised as contrary evidence within the verdict.",
+    "facets": "Themes and entities are thin on values. The other facets are grounded."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced monthly series, window, peak, and endpoint change are given; it omits the censoring caveat beside the plotted series and does not quantify the tool's trend summary.",
+    "comparison": "Tone ratio and baseline are defined and the delta recomputes, but the reported 0.31× uses the tool's rounded 0.31 rather than the exact 0.18/0.58 ≈ 0.31; comparison is sound.",
+    "chart": "The full monthly chart traces and supports the volume claim, but tone, the key facet of the question, is not charted.",
+    "drilldown": "Has themes, geography, and sample layers, but only two of five proposed calls executed successfully and no linked article-level breakdown is exposed in the deliverable.",
+    "export": "Monthly CSV is traced with provenance and referenced, but the question needs the tone comparison too and no corresponding export is supplied.",
+    "repro": "The used call, full args/window, provenance, and derived calculations are reproducible; 32/33 numeric claims trace and the remaining claim is interpreted rather than an untagged measurement.",
+    "refs": "News URLs are listed, but no claim-linked reference metadata or source quotes are provided; script ceiling is 2.",
+    "accuracy": "Mostly matches the record and correctly distinguishes critical from negative. It incorrectly says the recent feed is positive in tone and presents the Outlook item as 2026-05-06 despite the record's recent-headline date being 2026-05-06 only insofar as that headline appears in the record; the feed's critical flag itself does not establish tone.",
+    "limits": "Good limits on window, lag, lanes, sample and label quality, but the May censoring and incomplete newest month are not carried next to all trend uses.",
+    "verdict": "Direct, calibrated answer and decision with confidence, conditions, and a contrary import-dependence caveat; it does not fully bound the verdict by the stale window and coverage limits.",
+    "facets": "Covers volume, tone, trend, themes, geography and source concentration, but does not ground BrahMos-specific attention or seasonality/overlap."
+   },
+   "claude_prism": {
+    "trend": "Series and tool direction are stated, but the series' window is misrepresented as ending May 31 and the censoring caveat is missing from chart and trend reading.",
+    "comparison": "Same-window tone comparison has a defined baseline, correct delta and ratio, and answers the positive-versus-ordinary-coverage contrast.",
+    "chart": "Both volume and tone are charted with traced values and claims, but the charts omit the tool's censoring marker and misstate the window end.",
+    "drilldown": "Multiple breakdown layers and six successful, specific follow-up calls cover major open facets, though the response does not fold a follow-up result back in.",
+    "export": "CSV is traced and linked, but its window/source provenance is incomplete in the JSON and the export does not include all needed breakdown tables.",
+    "repro": "All 81 numeric claims trace and calls are replayable with args; the deliverable includes a regenerate block and capture date.",
+    "refs": "News links resolve with date, publisher, and claim context; no verbatim quotes are required for news references, reaching the script ceiling of 2? Actually news identifiers resolve and claims are tied; research-corpus check found no DOIs, so the ceiling is 2.",
+    "accuracy": "Several concrete statements contradict or exceed the record: it misreads the unprovided FY26 export figures, labels critical as undefined but then attributes it to high priority, claims a private-sector share, BrahMos Vietnam story, and 103% CAGR not present in the supplied record, and says last five months are not covered despite window through May 2026.",
+    "limits": "Mentions the stale window and sample, but misses the explicit June 1 censoring and describes May coverage in ways that obscure the partial newest month; some limits are relegated to method notes.",
+    "verdict": "Clear decision and confidence, but it relies on unsupported export figures and says the last five months are uncovered despite the recorded window ending May 2026; this undermines support.",
+    "facets": "Addresses trend, sentiment, themes, entities, geography, publisher sample, and BrahMos, but several specific claims are unsupported and seasonality/term overlap are not handled."
+   },
+   "claude_bare": {
+    "trend": "The plotted annual series is memory-derived and has no resolvable source; even with estimate labels, it is not a sourced news trend.",
+    "comparison": "Numeric comparisons are memory figures from different measures and do not answer news tone or coverage.",
+    "chart": "Memory chart is explicitly sourced only to unverified references and does not chart the news view requested; ceiling is 1.",
+    "drilldown": "Proposes calls but only one executed successfully; breakdowns are largely estimates and no traceable item layer is supplied.",
+    "export": "Memory table is labelled partial but lacks a reproducible recorded source call and does not export the needed news measures.",
+    "repro": "No measured claims trace to recorded calls; the script marks 10 numeric claims untagged and the annual values cannot be regenerated from the listed empty call set.",
+    "refs": "References are incomplete and lack resolving URLs/identifiers and claim-verifying quotes.",
+    "accuracy": "No direct contradiction to the supplied news record, but it substitutes export statistics and memory themes for the requested news evidence and makes unsupported specifics.",
+    "limits": "It clearly states that news was not queried and separates memory from measurement, though the applicable corpus-specific limits cannot be supplied.",
+    "verdict": "The answer is explicitly memory-only and its positive-news conclusion is not supported by the evidence it presents; no measured confidence or decision-grade news basis.",
+    "facets": "Most requested news facets are marked unmeasured, with only qualitative memory coverage."
+   },
+   "chatgpt_bare": {
+    "trend": "No series or measured direction is supplied.",
+    "comparison": "No measured comparison is supplied.",
+    "chart": "No chart block is supplied.",
+    "drilldown": "Calls are proposed but none executed and the argument names do not match the recorded interface, so they are not usable breakdowns.",
+    "export": "No data export is supplied.",
+    "repro": "No measurements are claimed, but proposed calls are not reproducible against the recorded call schema; honest nonmeasurement earns only the low ceiling.",
+    "refs": "No resolving news references are supplied.",
+    "accuracy": "It makes no factual claims that contradict the record; it accurately states that evidence is absent.",
+    "limits": "Clearly says what cannot be measured, but gives no applicable corpus window, censoring, coverage, or match-mode limits.",
+    "verdict": "Direct refusal with a decision and confidence, but no evidence-based answer or contrary evidence; it is appropriately bounded by lack of data.",
+    "facets": "Almost all requested facets are explicitly unmeasured, so the deliverable does not answer the news question."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {
+   "claude_prism": [
+    "refs 4->2"
+   ]
+  }
+ }
+}

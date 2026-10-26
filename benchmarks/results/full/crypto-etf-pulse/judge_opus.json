@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full traced monthly series with window and censoring. The change is quantified correctly: 654/489 is +33.7%, late vs early third is 0.91, and peak and trough are named. Volume is not decomposed into tone or critical.",
+    "comparison": "Ratio 0.31 vs a defined baseline of 0.58. The delta 0.27 and '47% below' recompute correctly, and the baseline caveat is stated.",
+    "chart": "Only the volume chart is given. Tone was asked for and supported by the data but not charted.",
+    "drilldown": "There is no item layer (no headlines with ids). Only 2 of 5 follow-ups executed ok.",
+    "export": "One full monthly CSV with provenance JSON. There is no tone or publisher table, though the question needs them.",
+    "repro": "28 of 29 numbers traced. The call and args are listed.",
+    "refs": "No headlines with date, publisher or url, although critical examples are discussed.",
+    "accuracy": "States that negative counts exceeded positive in Feb 2026. The record has 271 = 271, so this is a clear contradiction.",
+    "limits": "Window, 144-day gap, censoring, mention match mode, sampled publishers and placed share are all stated near the numbers. At the ceiling.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. Names the late rise in negative coverage. The concentration finding is only lightly read.",
+    "facets": "Volume, tone, themes, entities, geography and concentration are all grounded. The publisher identities are not read."
+   },
+   "B": {
+    "trend": "No series, and no direction is asserted.",
+    "comparison": "None.",
+    "chart": "An empty chart with no points supports no claim.",
+    "drilldown": "No breakdown. It lists follow-up calls only, and only 3 of 6 executed ok.",
+    "export": "None.",
+    "repro": "No measured numbers. It names public sources for the chronology only.",
+    "refs": "SEC and Reuters URLs are given. Some Reuters slugs are unverifiable, and none is tied to a specific measured claim.",
+    "accuracy": "No contradictions, and no fabricated measured specifics.",
+    "limits": "Honest and specific about what is unmeasured. It does not say what would close the gap beyond 'a corpus'.",
+    "verdict": "An honest 'cannot measure' that does not answer the question.",
+    "facets": "No facet is answered with grounded values."
+   },
+   "C": {
+    "trend": "Traced volume plus a decomposed tone-ratio series, with window and censoring. CAGR and third-split are carried. The late-period mean is given as 0.54; the recomputed value is about 0.51, so the stated 2.3x should be about 2.2x.",
+    "comparison": "Delta -0.27 and 0.53 of baseline are correct, the baseline is defined, and the months above baseline (Nov 2025, Feb 2026) are identified correctly. It states what the data cannot test (investor sentiment).",
+    "chart": "Volume and tone-ratio charts, fully traced, with captions. The volume caption says volume 'peaked in late 2024', but the peak is Apr 2026.",
+    "drilldown": "Month, publisher and headline layers, with dates and publishers and one url. Specific follow-ups, 3 of 5 ok. Results are not folded back.",
+    "export": "The monthly CSV is an excerpt of 7 of 24 months. It adds a publisher CSV and a provenance block.",
+    "repro": "73 of 73 numbers traced, with a calls block. One derived mean slip.",
+    "refs": "Headlines carry date and publisher, but only one has a url.",
+    "accuracy": "Reads 'critical' correctly as not hostile and flags entity mislabels and the Ireland anomaly. There is a minor slip in the derived mean and a caption inconsistency.",
+    "limits": "Window, ~145-day gap, mention vs central match, enrichment bound, sample size and syndication are all covered. At the ceiling.",
+    "verdict": "Direct answer with tone souring, a decision, confidence citing the gap, and what would change it. Bounded by the window.",
+    "facets": "All facets are grounded, and it addresses anomalies: mislabels, Ireland lift, and critical ≠ negative."
+   },
+   "D": {
+    "trend": "Estimate index explicitly labelled.",
+    "comparison": "Qualitative impression only.",
+    "chart": "Labelled estimate chart.",
+    "drilldown": "Generic layers named, with follow-ups at 3 of 6 ok. No traced breakdown.",
+    "export": "Labelled estimate CSV.",
+    "repro": "No traceable numbers.",
+    "refs": "None.",
+    "accuracy": "Recalled facts are plausible, and nothing contradicts the record.",
+    "limits": "Honest about being unmeasured, and states the window gap.",
+    "verdict": "Hypothesis only, with low confidence. Not grounded.",
+    "facets": "Answered from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "Claims negative exceeded positive in Feb 2026; the record has 271 negative = 271 positive"
+   ],
+   "B": [],
+   "C": [
+    "Late-period mean ratio stated as ~0.54 (recomputes to ~0.51) and 2.3x (≈2.2x)",
+    "Volume chart caption says peak in late 2024; the series peak is Apr 2026 (978)",
+    "Typo '4,4% share' for 4.4%"
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C and A both traced a flat two-year volume series and a tone ratio well below the corpus baseline. Only C charted tone, showing the souring after Sept 2025, and only C named the concentrated publishers, gave dated headlines and flagged label anomalies. A misread February 2026 as net-negative and had no headline layer. B and D honestly declined to measure anything, which leaves a decision-maker without the volume, tone or concentration answer."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

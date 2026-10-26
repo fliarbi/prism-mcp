@@ -1,0 +1,643 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1062,
+  "charts": [
+   {
+    "id": "fab_trend",
+    "title": "Share of generated citations that were fabricated, by audit year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "GPT-3.5 (Walters & Wilder)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "GPT-4 (Walters & Wilder; Chelli)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "GPT-4 (Chelli, systematic reviews)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "GPT-4o (Linardon)",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "fab_rates.csv",
+    "how": "ref",
+    "rows": 7,
+    "numeric_cells": 7,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "What do 2025-2026 audits report for frontier models?",
+    "args": {
+     "term": "LLM fabricated citations audit",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'LLM fabricated citations audit' — try expand=true, or a broader phrase",
+    "seconds": 20.4,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "Which papers report effect sizes with named populations?",
+    "args": {
+     "term": "hallucinated references rate"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...nated references rate'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hallucinated references rate', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Does retrieval grounding reduce fabrication?",
+    "args": {
+     "term": "retrieval augmented citation accuracy"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ted citation accuracy'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='retrieval augmented citation accuracy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has research stance shifted since 2023?",
+    "args": {
+     "term": "LLM reference fabrication"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'LLM reference fabrication'",
+    "seconds": 2.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How much news coverage of fabricated citations exists per month?",
+    "args": {
+     "term": "AI fabricated citations"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'AI fabricated citations' in this window",
+    "seconds": 1.8,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which incidents in courts and consultancies drove coverage?",
+    "args": {
+     "term": "AI hallucinated references report"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'AI hallucinated references report'",
+    "seconds": 2.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 47,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 17,
+   "untagged_examples": [
+    "5% — - What would change it: Current audits (2026) of frontier models with web retrieval on a c",
+    "3.5 — | [r1] | GPT-3.5: 55% | GPT-4: 18% | 37 pts | 3.1x |",
+    "55% — | [r1] | GPT-3.5: 55% | GPT-4: 18% | 37 pts | 3.1x |",
+    "18% — | [r1] | GPT-3.5: 55% | GPT-4: 18% | 37 pts | 3.1x |",
+    "37 — | [r1] | GPT-3.5: 55% | GPT-4: 18% | 37 pts | 3.1x |",
+    "3.1 — | [r1] | GPT-3.5: 55% | GPT-4: 18% | 37 pts | 3.1x |",
+    "91.4% — | [r3] | Bard: 91.4% | GPT-4: 28.6% | 62.8 pts | 3.2x |",
+    "28.6% — | [r3] | Bard: 91.4% | GPT-4: 28.6% | 62.8 pts | 3.2x |"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 142,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "an untagged number in the Verdict: 5%"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1038,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Typed research papers on large/transformer language models per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "volumes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers audit ChatGPT reference accuracy against bibliographic databases?",
+    "args": {
+     "term": "ChatGPT fabricated references accuracy",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'ChatGPT fabricated references accuracy' — try expand=true, or a broader phrase",
+    "seconds": 2.0,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "What reference hallucination rates are reported in medical literature?",
+    "args": {
+     "claim": "ChatGPT references hallucinated medical literature percentage",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "the retrieved abstracts carry figures, but none of them measures what this claim asserts",
+    "seconds": 26.5,
+    "sample": "{\"stats\": [], \"rejected\": [], \"candidate_sentences\": 1, \"candidates\": [{\"doc_id\": \"prism:W6906397970\", \"title\": \"Assessing the accuracy of ChatGPT references in head and neck and ENT disciplines\", \"year\": 2023, \"tier\": \"article\", \"venue\": \"Data Archiving and Networked Services (DANS)\", \"url\": \"https://doi.org/10.17632/y6wbt9snv7.1\", \"sentence\": \"The generated references were categorized as “true,” “erroneous,” or “inexistent” based on congruence with existing records in scientific databases.\"}], \"research_series\": {\"available\": true, \"corpus\": \"research_typed\", \"unit\": \"year\", \"window\": \"2017-2025\", \"lane\": \"subject\", \"points\": [{\"period\": \"2017\", \"n\": 0, \"partial_period\": false}, {\"period\":"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How did fabrication rates change between GPT-3.5 and GPT-4 class models?",
+    "args": {
+     "term": "hallucinated references GPT-4"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'hallucinated references GPT-4'",
+    "seconds": 2.4,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Does retrieval augmentation reduce fabricated citations?",
+    "args": {
+     "claim": "Retrieval-augmented generation reduces fabricated citations",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 33.2,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 6, \"unread\": 2}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 1}, \"corpus_mix\": {\"available\": true, \"papers\": 415807, \"window\": \"2017-2025\", \"lane\": \"subject\", \"orientation\": {\"breakthrough\": 130880, \"descriptive\": 116735, \"promising\": 93136, \"problem_identifying\": 25286, \"cautionary\": 20667, \"comparative\": 17121, \"critical\": 11982}, \"contribution\": {\"empirical\": 160802, \"methodological\": 135106, \"theoretical\": 97637, \"review\": 12821, \"position\": 9441}, \"sides\": {\"supporting\": 224016, \"qualifying\": 45953, \"contradicting\": 1"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How much news covers fake citations in legal filings?",
+    "args": {
+     "term": "fake citations AI court filing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'fake citations AI court filing' in this window",
+    "seconds": 5.9,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What does news coverage say about fabricated references in academic publishing?",
+    "args": {
+     "term": "AI fabricated references journals"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'AI fabricated references journals'",
+    "seconds": 6.2,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 39,
+   "traced": 38,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 321,
+  "charts": [
+   {
+    "id": "reference-fabrication-trend",
+    "title": "Reference fabrication rate",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": []
+   }
+  ],
+  "tables": [
+   {
+    "name": "reference_fabrication.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What reference fabrication rates do controlled studies report by model and task?",
+    "args": {
+     "term": "large language model fabricated references citation hallucination rate controlled study",
+     "orientation": "supportive",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...pportive', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='large language model fab...n rate controlled study', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='supportive', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which studies report lower or null rates, and under what checking criteria?",
+    "args": {
+     "term": "LLM fabricated citations reference hallucination rate evaluation",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...aluation', 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='LLM fabricated citations...ination rate evaluation', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "What are the measured rates, denominators, and populations in the relevant studies?",
+    "args": {
+     "term": "fabricated references LLM citation accuracy denominator population"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...enominator population'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='fabricated references LL... denominator population', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How have research publications on fabricated LLM references changed over time?",
+    "args": {
+     "term": "large language model fabricated references citations",
+     "window": {
+      "from": "2020-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2020-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What news coverage documents incidents or measured rates of fabricated references?",
+    "args": {
+     "term": "AI chatbot fabricated references citations study",
+     "window": {
+      "from": "2020-01-01",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2020-01-01', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 93,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 850,
+  "charts": [
+   {
+    "id": "subject-research-volume",
+    "title": "Prism subject-lane research papers on the broad topic",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "subject_research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which empirical studies report fabricated-reference counts with denominators by model and task?",
+    "args": {
+     "term": "large language model fabricated citations empirical rate denominator model task",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'large language model fabricated citations empirical rate denominator model task' — try expand=true, or a broader phrase",
+    "seconds": 3.5,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "What peer-reviewed studies measure nonexistent or inaccurate references, and what are their reported rates?",
+    "args": {
+     "term": "LLM hallucinated references nonexistent citations percentage study",
+     "orientation": "supporting",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'LLM hallucinated references nonexistent citations percentage study' — try expand=true, or a broader phrase",
+    "seconds": 2.0,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Are there studies finding low or zero fabricated-reference rates under defined conditions?",
+    "args": {
+     "term": "LLM citation accuracy fabricated references zero rate benchmark",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'LLM citation accuracy fabricated references zero rate benchmark' — try expand=true, or a broader phrase",
+    "seconds": 2.0,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How have research publications measuring fabricated citations changed over time?",
+    "args": {
+     "claim": "large language models fabricate citations",
+     "orientation": "all"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ..., 'orientation': 'all'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='large language models fabricate citations', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which news reports quantify fabricated citations and identify the model, task, and denominator?",
+    "args": {
+     "term": "large language models fabricated citations measured rate",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'large language models fabricated citations measured rate'",
+    "seconds": 2.1,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 23,
+   "traced": 21,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 103,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

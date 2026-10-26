@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 5
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 0,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Gives only a direction from memory, labelled est., with no series.",
+    "comparison": "Proposes a baseline definition but gives no values; qualitative only.",
+    "chart": "The chart block has an empty series and an honest 'estimate' label. It earns the honest-label floor.",
+    "drilldown": "Follow-ups are mostly generic and only 2 of 5 executed ok. No breakdown layer.",
+    "export": "The CSV is empty and labelled as an estimate.",
+    "repro": "Contains memory claims only. Nothing is reproducible.",
+    "refs": "No references.",
+    "accuracy": "No contradictions. Dated memory specifics are labelled est.",
+    "limits": "Specific about what is unmeasured and about the knowledge cutoff, but measures nothing.",
+    "verdict": "Says tone is 'likely more negative' with no grounding. Low confidence is stated honestly.",
+    "facets": "Facets are covered only from memory or as 'cannot measure'."
+   },
+   "B": {
+    "trend": "Full traced monthly ratio and critical_pct series over a stated window. Gives late_vs_early 0.95/0.88, the June 2025 peak, the April 2026 trough and a 15/24 count (recomputes correctly). Decomposes negative vs positive.",
+    "comparison": "Ratio 0.93 vs baseline 0.58, i.e. 1.6x and +0.35. Adds peak and quietest-month contrasts that recompute exactly. Defines the baseline and notes its window is unstated. States the critical share has no comparator.",
+    "chart": "Ratio chart with baseline overlay and a critical_pct chart, both traced and captioned. Volume is not charted itself (only in the CSV).",
+    "drilldown": "At the ceiling: critical headlines with date, publisher and URL, plus themes and entities layers. Only 2 of 7 follow-ups executed ok.",
+    "export": "Two traced CSVs (monthly with all fields, geography) with provenance attributes, period identifiers, a provenance JSON and prose references.",
+    "repro": "128/128 numbers traced. Prism-calls block with args and capture date. Derived figures are shown.",
+    "refs": "Capped at 2. Headline URLs, dates and publishers are given, but the set is limited and tied to the tool's critical panel.",
+    "accuracy": "Matches the record. Catches anomalies: name-collision people (JFK, Thales), the re-dated PBS item, the 1982 BA 747 story caught by the critical flag, May enrichment lag and acronym-collision rows.",
+    "limits": "Window end, the 145-day gap, censoring, match mode split, enrichment lag and placed_pct sit next to the numbers. States what would close the gap.",
+    "verdict": "Capped at 3. Direct, grounded and bounded, and it names the contrary evidence (not majority-negative).",
+    "facets": "Volume, trend, tone vs baseline, themes, entities, places, headlines and sources are all grounded, with the critical-vs-negative distinction drawn."
+   },
+   "C": {
+    "trend": "Traced volume series with window, peak and early/late thirds. No tone decomposition over time.",
+    "comparison": "0.93 vs 0.58, 1.6x and +0.35, with the baseline defined. Does not explore what the data cannot test beyond brief caveats.",
+    "chart": "A single traced volume chart. Tone, the facet the question centres on, is not charted.",
+    "drilldown": "One traced layer. Headline items lack URLs. Only 1 of 4 follow-ups executed ok.",
+    "export": "Only the monthly volume CSV. No tone table although tone is the question.",
+    "repro": "33/35 numbers traced. Calls are listed with args and a capture date.",
+    "refs": "Headlines are cited without URLs; at the ceiling.",
+    "accuracy": "Correct figures. Presents the PBS item as a 2026 report without flagging the likely re-dated archive; minor.",
+    "limits": "States window, censoring, match mode and partial geography. Does not carry limits into the reading as far as B does.",
+    "verdict": "Grounded answer with confidence and change conditions. Does not engage the contrary evidence (months below baseline).",
+    "facets": "Most facets are grounded, but the tone time series is missing."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown and no follow-ups.",
+    "export": "No export.",
+    "repro": "No numbers, so nothing to reproduce. Honest about it.",
+    "refs": "None.",
+    "accuracy": "No contradictions; it says nothing.",
+    "limits": "Generic statement of unavailability.",
+    "verdict": "A refusal with no substantive answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Treats the PBS plea-deal clip as a March 2026 report without noting it is likely a re-dated archive item"
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "B answers the question the way a decision-maker needs. It reads tone against the corpus baseline (0.93 vs 0.58, 1.6x) and charts the monthly ratio against that baseline, which shows the gap closing in late 2025 and reopening in May 2026. It also flags the corpus's own artefacts: name collisions, a re-dated archive item and incidental critical hits. C has the same headline numbers but charts and exports only volume and drills down less. A and D are honest but unmeasured."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 0,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {
+  "claude_bare": [
+   "repro 1->0"
+  ]
+ }
+}

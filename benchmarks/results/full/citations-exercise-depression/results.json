@@ -1,0 +1,194 @@
+{
+ "slug": "citations-exercise-depression",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 3.5,
+    "accuracy": 1.5,
+    "limits": 2.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 35.2,
+   "plain": 35.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 40.6,
+    "gpt": 29.7
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "export": 3.5,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 73.0,
+   "plain": 73.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 80.0,
+    "gpt": 66.1
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 1.5
+   },
+   "strict": 51.8,
+   "plain": 51.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 47.9,
+    "gpt": 55.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "export": 3.0,
+    "repro": 2.0,
+    "refs": 3.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 3.0
+   },
+   "strict": 60.0,
+   "plain": 60.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 56.4,
+    "gpt": 63.6
+   }
+  }
+ },
+ "judge_mad": 0.54,
+ "verdicts": {
+  "opus": "C was the only deliverable that grounded every element in the recorded calls. It exported a traced, provenance-complete CSV and read the tool honestly: only 1 of 8 Vancouver entries came back, and the evidence tier was flat across all eight sources. It also bounded its decision to what the data measured. A and B gave clinically sensible memory answers built on landmark reviews, but they are unverifiable, and B's effect sizes contain errors. D was grounded but drew too narrow a verdict from its own evidence and reshuffled the ranking.",
+  "gpt": "C best preserves the distinction between the one directly returned prevention citation, whose stance qualifies, and the population-specific records that do not establish a universal treatment effect. B gives a useful, plausible memory-based answer with a practical decision, while A overstates what its retrieved records support and D relies on unverified numeric specifics."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "Noetel 2024 publication date given as an exact 2024-02-28 from memory"
+   ],
+   "claude_bare": [
+    "Cochrane 2013 bias-restricted analysis stated as 4 trials (est.); the actual number is larger",
+    "Schuch 2016 SMD -0.80 (est.) likely understates the reported effect",
+    "Choi 2019 venue given as Am J Psychiatry in the table but JAMA Psychiatry in the references"
+   ],
+   "claude_prism": [],
+   "chatgpt_prism": [
+    "Verdict implies there is no treatment evidence, yet its own list includes RCT meta-analyses of depressive symptoms",
+    "r9 is a non-resolvable pseudo-citation"
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "Claims the citation result passed a typed-index coverage check with 105,553,750 rows against 98,602,364; that information is not in the reference record.",
+    "Treats eight records as evidence for the broad causal claim, although several concern association, psychological distress, or narrow populations and their stance was not returned."
+   ],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "Reports Cooney's trial count and SMDs, including a bias-restricted estimate, as estimates without a traceable source call or named source passage.",
+    "Mislabels Heissel 2023 as an umbrella review; the cited title is a systematic review and meta-analysis with meta-regression.",
+    "Presents several specific effect sizes and conclusions as measured-looking evidence despite acknowledging they are unverified from memory."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "export": "The CSV has a window and a partial-coverage flag, and the prose says it comes from memory. It traces to no call and is tagged source=ref:r1, so it cannot score above 1.",
+    "repro": "There are no numbers to trace. The selection is honestly marked as knowledge-only.",
+    "refs": "All 3 DOIs resolve, and each entry is tied to a claim with its tier. The quotes come from memory and cannot be checked against the corpus. No contrary sources are given.",
+    "accuracy": "Nothing contradicts the record. The exact 2024-02-28 date for Noetel is a precise specific that cannot be checked.",
+    "limits": "It states the knowledge-only selection, partial coverage, the gap to today and that no search was run. The limits are grouped in a section rather than placed next to each claim.",
+    "verdict": "A complete verdict: answer, decision, confidence with its reason, and what would change it. It notes the caveat that effects are smaller in higher-quality trials. Memory is adequate for this established literature.",
+    "facets": "The citations, ranking and rationale are all from memory, with no grounded values."
+   },
+   "claude_bare": {
+    "export": "The CSV is labelled estimate, which is honest. Its SMD values are unverified recollections.",
+    "repro": "7 numbers are given and none trace. The script ceiling is 0.",
+    "refs": "All 6 DOIs resolve, and entries carry tiers and stances. Choi 2019 is listed as Am J Psychiatry in the table but as JAMA Psychiatry in the references. There are no quotes.",
+    "accuracy": "Several effect-size specifics from memory look wrong, though each is labelled est.: the bias-restricted Cochrane analysis used more than 4 trials, and Schuch 2016 reported a larger SMD. The venue for Choi 2019 is internally inconsistent.",
+    "limits": "The limits are specific and include a list of what the data cannot answer. They are mostly in a footer section.",
+    "verdict": "A complete verdict that names the strongest contrary result, the shrinkage to SMD -0.18 in low-bias trials.",
+    "facets": "All from memory or estimate."
+   },
+   "claude_prism": {
+    "export": "The CSV traces to the call, with source, window, unit, coverage flag and DOIs. It includes a provenance JSON block and is referenced from the prose. Blank stance cells have no reason column.",
+    "repro": "5 of 5 numbers trace, and both calls are listed with args. A regenerate block is present. It falls short of 5 on full chart/table rebuild hygiene.",
+    "refs": "All 8 DOIs resolve, each tied to a population and stance, with tiers as the tool states them. The ranking reason comes from the tool's ladder. There are no quotes and no contrary sources.",
+    "accuracy": "Fields are read correctly. It catches that citations returned 1 of the 8 requested entries, that the tier rung is flat, and that cited_by tracks recency. It flags the off-target outcomes (COPD distress, accelerometer association).",
+    "limits": "Limits sit beside the data: no window, the 1-of-8 censoring, missing authors, claim-text matching, and that tier reflects design rather than direction. It names the follow-up calls that would close each gap.",
+    "verdict": "Direct and bounded, with the decision stated. It names the 'qualifies' stance as contrary evidence and avoids sizing an effect it did not measure.",
+    "facets": "It covers citations, ranking, ladder rationale and stance, and gives a grounded 'not retrieved' for effect sizes and authors."
+   },
+   "chatgpt_prism": {
+    "export": "The CSV traces to the call and includes DOIs and a provenance JSON block. The window is given as unknown..unknown. The rank order was edited away from the tool's order.",
+    "repro": "Script ceiling is 2. The calls are listed, but the re-ordered ranking cannot be replayed from them.",
+    "refs": "All 8 DOIs resolve, but the tie to claims is weak for r2 to r8. r9 is a non-resolvable pseudo-reference.",
+    "accuracy": "Nothing contradicts the record. It under-reads its own evidence by implying there is no treatment evidence, although the RCT meta-analyses for breast cancer and lung cancer depression are in its own list.",
+    "limits": "It states the missing window, lane, censoring and match mode. These are mostly in a footer, and it does not say how the gaps would change the reading.",
+    "verdict": "Narrows the answer to prevention in older adults and ignores the treatment-like RCT syntheses in its own table.",
+    "facets": "Facets are grounded, but the ranking facet departs from the tool's order and the meta-analyses for other populations are dismissed."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "export": "CSV is tied to a recorded ranking call, but omits the tool’s title and why_tier fields, lacks row identifiers beyond local refs, and has no source-call provenance JSON in the required shape.",
+    "repro": "All numeric claims are tagged to listed calls and the recipe includes both recorded calls and arguments; the extra follow-ups are proposed, not used. The export and chart largely reproduce the ranking response.",
+    "refs": "DOIs resolve, but the sources are not all tied to specific supporting claims with abstract quotes; most have only title-based or unmeasured stance.",
+    "accuracy": "Mostly faithful to the returned records, but it treats all eight returned entries as support for exercise reducing depression despite several being associations or broader outcomes, and describes the citation result’s coverage check though that detail is absent from the reference record.",
+    "limits": "States the unwindowed results, incomplete citation return, matching limits, and missing effect sizes and contrary-evidence search near the relevant claims.",
+    "verdict": "Gives a decision, medium confidence, and conditions that could change it, but does not adequately acknowledge the strongest contrary evidence or bound the recommendation to the returned population-specific evidence.",
+    "facets": "Addresses ranking and citation style, but does not provide author-complete Vancouver citations for most entries and leaves stance, effects, and contrary evidence unresolved."
+   },
+   "chatgpt_bare": {
+    "export": "The memory-based CSV is honestly identified as qualitative and partial, earning the estimate-level anchor.",
+    "repro": "The claims and references are explicitly memory-based, with no reproducible calls.",
+    "refs": "The three DOIs and metadata appear valid; each source is tied to a claim and quoted, but quotes are not verified here against the abstract and the set lacks a ranked evidence-weight rationale beyond broad tier labels.",
+    "accuracy": "The cited reviews and their general conclusions are plausible and no reference-record contradiction is evident; it openly says this is a knowledge-only selection.",
+    "limits": "It identifies the lack of search, partial coverage, and publication-date gap, but does not state all applicable source-specific limits alongside each claim.",
+    "verdict": "Directly answers, supports a practical decision, gives confidence and conditions that could change it, and bounds the evidence as qualitative rather than a uniform effect comparison.",
+    "facets": "Provides a grounded memory-based ranking of three syntheses, but omits several facets such as contrary evidence and detailed population-specific scope."
+   },
+   "chatgpt_prism": {
+    "export": "The CSV traces to the recorded ranking response and preserves blank stance values, but omits source-call/window provenance attributes and is not referenced with a full export provenance block.",
+    "repro": "It lists the two used calls and arguments, but numeric claims are not traceable at the required level and the regenerate recipe is incomplete.",
+    "refs": "All listed DOIs resolve and claims are connected to sources, but quotes are absent and most references lack authors, so the abstract-support check is incomplete.",
+    "accuracy": "Carefully distinguishes the single qualifying prevention record from the broader claim and does not invent effect estimates; minor issue: it calls the remaining population-specific records less relevant without evidence on their findings.",
+    "limits": "Notes missing windows, coverage details, match mode, and effect estimates, but these limits are not fully situated next to each bounded result.",
+    "verdict": "Provides a qualified direct answer, decision, confidence, and what evidence would change the conclusion; the scope is bounded to prevention in older adults.",
+    "facets": "Covers the returned evidence tiers and population scope, but does not supply complete Vancouver citations or resolve stance, effects, and contrary findings."
+   },
+   "claude_bare": {
+    "export": "CSV is explicitly labelled an estimate from memory, which earns the estimate-level anchor.",
+    "repro": "Seven numeric claims are presented without recorded calls or named-source traceability; the proposed calls were not run and have no windows.",
+    "refs": "DOIs resolve and the ranked sources carry metadata, but no claims are supported with verified abstract quotes; some source titles or bibliographic details appear mismatched.",
+    "accuracy": "Presents multiple specific effect estimates and trial counts as memory estimates, and the Heissel source is misdescribed as an umbrella review despite its cited title identifying a systematic review and meta-analysis with meta-regression.",
+    "limits": "Generic memory and currency limits are disclosed, but specific claims lack source windows and verifiable support.",
+    "verdict": "Offers a decision and confidence, but the recommendation rests on unsupported effect estimates and does not establish what evidence would change it with traceable sources.",
+    "facets": "Provides a memory-based ranking, but its numeric evidence is ungrounded and it does not resolve the requested Vancouver citations with evidence-weighted, verifiable support."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

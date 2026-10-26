@@ -1,0 +1,653 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 559,
+  "charts": [
+   {
+    "id": "layoffs-annual",
+    "title": "Tech-sector layoffs per year (approximate, not coverage)",
+    "kind": "bars",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Tech layoffs (Layoffs.fyi, recalled)",
+      "how": "estimate",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "layoffs_recalled.csv",
+    "how": "estimate",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly volume and direction of layoff coverage?",
+    "args": {
+     "term": "layoffs",
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "granularity must be one of ['daily', 'weekly', 'monthly', 'quarterly', 'yearly']",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does layoff tone compare with the corpus baseline?",
+    "args": {
+     "term": "layoffs",
+     "baseline": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '..., 'baseline': 'corpus'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='layoffs', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which companies and people are named most?",
+    "args": {
+     "term": "layoffs",
+     "entities": [
+      "org",
+      "person"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nentities\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['org', 'person'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places appear, and what is placed_pct?",
+    "args": {
+     "term": "layoffs"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.4,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 63713, \"share_pct\": 47.2, \"lift\": 2.1}, {\"label\": \"canada\", \"articles\": 8904, \"share_pct\": 6.6, \"lift\": 1.9}, {\"label\": \"united kingdom\", \"articles\": 6956, \"share_pct\": 5.2, \"lift\": 1.0}, {\"label\": \"india\", \"articles\": 5371, \"share_pct\": 4.0, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 3809, \"share_pct\": 2.8, \"lift\": 0.6}, {\"label\": \"spain\", \"articles\": 3229, \"share_pct\": 2.4, \"lift\": 2.1}, {\"label\": \"colombia\", \"articles\": 2729, \"share_pct\": 2.0, \"lift\": 4.2}, {\"label\": \"italy\", \"articles\": 2640, \"share_pct\": 2.0, \"lift\": 1.5}, {\"label\": \"china\", \"articles\": 2252, \"share_pct\": 1.7, \"lift\": 0.3}, {\"label\": \"france\", \"a"
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which are the most critical headlines, with date, publisher and URL?",
+    "args": {
+     "term": "layoffs",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'layoffs'",
+    "seconds": 11.1,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage among publishers?",
+    "args": {
+     "term": "layoffs",
+     "group_by": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 8,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "22 — - Windows: the recalled figures cover calendar 2023 and 2024. The gap to today (2026-10-23"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1071,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Articles mentioning 'layoffs' per month",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "critical_pct",
+    "title": "Share of 'layoffs' articles tagged critical",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "critical_pct",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "layoffs_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 115,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "layoffs_countries.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 29,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which headlines were most critical, with date and publisher?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "Which companies are named in job-cut coverage, excluding sports?",
+    "args": {
+     "term": "workforce reductions",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 74.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"workforce reductions\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 56, \"entity_labelled_articles\": 560, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 872, \"critical_articles\": 779, \"first_seen\": \"2024-06-04 00:00:00\", \"last_seen\": \"2026-05-31 17:46:26\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series w"
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does 'job cuts' coverage compare in tone with 'layoffs'?",
+    "args": {
+     "terms": [
+      "layoffs",
+      "job cuts"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.4,
+    "sample": "{\"terms\": [\"layoffs\", \"job cuts\"], \"rows\": [{\"term\": \"layoffs\", \"articles\": 115198, \"share_pct\": 85.5, \"critical\": 50954, \"direction\": \"rising\", \"growth\": 1.61, \"tone_ratio\": 1.13, \"vs_baseline\": 1.95, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 2276, \"critical\": 1021, \"negative\": 1151, \"positive\": 1014, \"mean_priority\": 5.77, \"critical_pct\": 44.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 2078, \"critical\": 1026, \"negative\": 1129, \"positive\": 851, \"mean_priority\": 5.87, \"critical_pct\": 49.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2209, \"critical\": 1107, \"negative\": 1185, \"positive\": 940, \"mean_priority\": 6.03, \"critical_pct\": 50.1, \"partial_pe"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries lead layoff coverage by month?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 60510, \"share_pct\": 47.5, \"lift\": 2.1}, {\"label\": \"canada\", \"articles\": 8212, \"share_pct\": 6.4, \"lift\": 1.9}, {\"label\": \"united kingdom\", \"articles\": 6542, \"share_pct\": 5.1, \"lift\": 1.0}, {\"label\": \"india\", \"articles\": 4549, \"share_pct\": 3.6, \"lift\": 0.5}, {\"label\": \"australia\", \"articles\": 3514, \"share_pct\": 2.8, \"lift\": 0.6}, {\"label\": \"spain\", \"articles\": 3071, \"share_pct\": 2.4, \"lift\": 2.1}, {\"label\": \"colombia\", \"articles\": 2678, \"share_pct\": 2.1, \"lift\": 4.3}, {\"label\": \"italy\", \"articles\": 2540, \"share_pct\": 2.0, \"lift\": 1.6}, {\"label\": \"china\", \"articles\": 2156, \"share_pct\": 1.7, \"lift\": 0.3}, {\"label\": \"france\", \"a"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What drove the April 2026 spike?",
+    "args": {
+     "term": "layoffs",
+     "since": "2026-03-01",
+     "granularity": "daily"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.0,
+    "sample": "{\"points\": [{\"period\": \"2026-03-01\", \"articles\": 56, \"critical\": 15, \"negative\": 18, \"positive\": 34, \"mean_priority\": 5.27, \"critical_pct\": 26.8, \"partial_period\": false}, {\"period\": \"2026-03-02\", \"articles\": 106, \"critical\": 52, \"negative\": 48, \"positive\": 55, \"mean_priority\": 5.81, \"critical_pct\": 49.1, \"partial_period\": false}, {\"period\": \"2026-03-03\", \"articles\": 98, \"critical\": 42, \"negative\": 56, \"positive\": 42, \"mean_priority\": 5.79, \"critical_pct\": 42.9, \"partial_period\": false}, {\"period\": \"2026-03-04\", \"articles\": 117, \"critical\": 59, \"negative\": 59, \"positive\": 54, \"mean_priority\": 5.85, \"critical_pct\": 50.4, \"partial_period\": false}, {\"period\": \"2026-03-05\", \"articles\": 176, \"cri"
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "How concentrated is coverage by publisher?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 76,
+   "traced": 76,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 154,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 311,
+  "charts": [
+   {
+    "id": "layoff-coverage-trend",
+    "title": "Layoff news coverage volume",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": []
+   }
+  ],
+  "tables": [],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly volume and direction of layoff coverage?",
+    "args": {
+     "term": "layoffs",
+     "window": "provide corpus dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='provide corpus dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does layoff coverage compare with the corpus baseline in volume and tone?",
+    "args": {
+     "term": "layoffs",
+     "window": "provide corpus dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'provide corpus dates'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='layoffs', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='provide corpus dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which companies and people appear most in layoff coverage, and what themes recur?",
+    "args": {
+     "term": "layoffs",
+     "window": "provide corpus dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='provide corpus dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are mentioned, and what share of articles can be placed?",
+    "args": {
+     "term": "layoffs",
+     "window": "provide corpus dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='provide corpus dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical layoff headlines are notable, with date and publisher?",
+    "args": {
+     "term": "layoffs",
+     "window": "provide corpus dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='provide corpus dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage among publishers?",
+    "args": {
+     "term": "layoffs",
+     "window": "provide corpus dates"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='provide corpus dates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 77,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 0,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 805,
+  "charts": [
+   {
+    "malformed": true
+   }
+  ],
+  "tables": [
+   {
+    "name": "layoffs_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 115,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "layoffs_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 29,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "Which verified companies announced layoffs in the window, and how many articles cover each announcement?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "group_by": "organization"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...up_by': 'organization'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='layoffs', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organization', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which cities or regions are associated with verified layoff announcements, after checking article context?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "level": "city"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 10.5,
+    "sample": "{\"level\": \"city\", \"rows\": [{\"label\": \"new york\", \"articles\": 6538, \"share_pct\": 5.8, \"lift\": 1.5}, {\"label\": \"los angeles\", \"articles\": 5369, \"share_pct\": 4.7, \"lift\": 3.8}, {\"label\": \"california\", \"articles\": 4386, \"share_pct\": 3.9, \"lift\": 1.1}, {\"label\": \"dallas\", \"articles\": 3698, \"share_pct\": 3.3, \"lift\": 8.1}, {\"label\": \"boston\", \"articles\": 3635, \"share_pct\": 3.2, \"lift\": 6.8}, {\"label\": \"detroit\", \"articles\": 3373, \"share_pct\": 3.0, \"lift\": 10.3}, {\"label\": \"congress\", \"articles\": 3351, \"share_pct\": 3.0, \"lift\": 2.0}, {\"label\": \"philadelphia\", \"articles\": 3182, \"share_pct\": 2.8, \"lift\": 6.2}, {\"label\": \"denver\", \"articles\": 3125, \"share_pct\": 2.8, \"lift\": 9.5}, {\"label\": \"houston\", \""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What are the dated critical headlines, publishers, and URLs about layoffs?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "How concentrated is layoff coverage among publishers in a recent article sample?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "publisher_sample": 300
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\npublisher_sample\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=300, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "Which recurring themes dominate non-sports layoff coverage, with article examples?",
+    "args": {
+     "term": "layoffs",
+     "since": "2024-06-01",
+     "orientation": "all"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='all', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 34,
+   "traced": 34,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 116,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

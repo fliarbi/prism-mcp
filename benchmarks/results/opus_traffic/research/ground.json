@@ -1,0 +1,707 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 5333,
+  "charts": [
+   {
+    "id": "ch_time",
+    "title": "Publication years of this page's reference list (5-year bins)",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "references",
+      "how": "ref",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch_effect",
+    "title": "Reduction in adverse birth outcomes after E-ZPass, mothers within 2 km of toll plaza",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "% reduction",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch_stance",
+    "title": "Stance of each reference toward the central claim",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "references",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch_comp",
+    "title": "Average city-centre travel time per 10 km, 2023",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "travel time per 10 km",
+      "how": "ref",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch_mix",
+    "title": "Source type of this page's evidence base",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "items",
+      "how": "ref",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "series_yearly_monthly.csv",
+    "how": "none",
+    "rows": 7,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_lanes.csv",
+    "how": "none",
+    "rows": 7,
+    "numeric_cells": 7,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "none",
+    "rows": 15,
+    "numeric_cells": 15,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "effect_sizes.csv",
+    "how": "none",
+    "rows": 7,
+    "numeric_cells": 11,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "none (query in words; not run)",
+    "question": "Papers per year on congestion and health/quality of life",
+    "args": "Prism research index /works?filter=title_and_abstract.search:\"traffic congestion\" AND (health OR \"quality of life\" OR wellbeing OR \"well-being\" OR stress),from_publication_date:2000-01-01,to_publication_date:2026-10-23&group_by=publication_year",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f2",
+    "feature": "none (query in words; not run)",
+    "question": "News articles per month and correlation with papers",
+    "args": "GDELT DOC 2.0 query=\"traffic congestion\" (health OR pollution OR stress OR commute), mode=timelinevolraw, 2017-01-01..2026-10-23, monthly; Spearman vs f1 by year",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f3",
+    "feature": "none (query in words; not run)",
+    "question": "Patents by assignee country",
+    "args": "Lens.org patents CPC G08G1 AND fulltext \"congestion\", group by applicant country and priority year; flag last 18 months as censored",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f4",
+    "feature": "none (query in words; not run)",
+    "question": "Studied vs published lane",
+    "args": "f1 result set grouped by first-author authorships.institutions.country_code and by primary_location.source host country",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f5",
+    "feature": "none (query in words; not run)",
+    "question": "Indian quasi-experimental congestion-health evidence",
+    "args": "the health literature index (\"traffic congestion\" OR \"congestion pricing\" OR \"odd-even\") AND (India OR Delhi OR Bengaluru OR Pune OR Mumbai) AND (health OR mortality OR \"birth weight\" OR asthma), screen for DiD/RD designs",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f6",
+    "feature": "none (query in words; not run)",
+    "question": "Direction and tier of congestion-pricing health evaluations",
+    "args": "Scopus TITLE-ABS-KEY(\"congestion charge\" OR \"congestion pricing\") AND TITLE-ABS-KEY(health OR asthma OR mortality), 2000-2026; code direction and tier",
+    "ok": false,
+    "why": "unknown feature"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 105,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 31,
+   "untagged_examples": [
+    "15 — - Confidence: low - no data queries were run and the 15-source set was assembled from memo",
+    "15 — Confidence: low. No queries were run, and I assembled the 15 sources [r1-r15] from memory.",
+    "15 — Scope bound for every number below. The newest source on this page is the TomTom Traffic I",
+    "15 — The 15 references cluster after 2010, with 12 of 15 published 2010-2024 [r1-r15]; this des",
+    "12 — The 15 references cluster after 2010, with 12 of 15 published 2010-2024 [r1-r15]; this des",
+    "15 — The 15 references cluster after 2010, with 12 of 15 published 2010-2024 [r1-r15]; this des",
+    "10 — Chart 2 (evidence magnitude) - Reduction in adverse birth outcomes after electronic tollin",
+    "16 — Balance by tier (my coding of r1-r15). I weighted systematic reviews and meta-analyses 3, "
+   ]
+  },
+  "dois": {
+   "cited": 12,
+   "found_in_corpus": 12,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 246,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [
+   "csv series_yearly_monthly.csv source='not_measured_(research,_news);_reference-list_coding_r1..r15_(bins)'",
+   "csv country_lanes.csv source='studied_lane:_author_coding_r1..r15;_other_lanes_not_measured'",
+   "csv key_documents.csv source='References_r1..r15_(author_coding)'",
+   "csv effect_sizes.csv source='r1,_r2,_r3,_r4,_r8,_r13_(values_recalled;_verify)'",
+   "an untagged number in the Verdict: 15, 15"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 0,
+   "accuracy": 5,
+   "map": 1,
+   "forecast": 1,
+   "dimensions": 1,
+   "crossdomain": 1,
+   "integrity": 5,
+   "article": 3
+  },
+  "deep": {
+   "maps": [
+    {
+     "title": "Studied lane: first-author or issuing-body country of this page's reference list",
+     "points": 7,
+     "how": "ref",
+     "traced_share": 0.0,
+     "india": true,
+     "lane_stated": true
+    }
+   ],
+   "forecasts": [],
+   "dimensions": [
+    "composition",
+    "evidence magnitude",
+    "geography",
+    "source mix"
+   ],
+   "corpora_traced": [],
+   "connecting_sentences": 0,
+   "manifest_error": "",
+   "html_bytes": 63196,
+   "article": {
+    "present": true,
+    "sections_found": 7,
+    "in_order": true,
+    "words": 2880,
+    "abstract_words": 255,
+    "results_numbers": 50,
+    "results_tagged": 32
+   }
+  },
+  "render": {
+   "rendered_views": 6,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 68776,
+   "manifest_charts": 6
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 5720,
+  "charts": [
+   {
+    "id": "ch1-research-years",
+    "title": "Research papers per year, 2017-2025",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "title contains 'traffic congestion'",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "congestion/commuting AND quality-of-life outcome in title",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch2-news-monthly",
+    "title": "News articles per month mentioning traffic congestion",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 29,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch3-indexed",
+    "title": "Research vs news indexed to 2017=100",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "research (index)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "news (index)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch6-lanes",
+    "title": "India and comparators across four lanes",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "studied (first-author)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "published (journal country)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "reported (news about)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 0.3333333333333333
+     },
+     {
+      "name": "patented (assignee)",
+      "how": "call",
+      "points": 3,
+      "traced_share": 0.6666666666666666
+     }
+    ]
+   },
+   {
+    "id": "ch7-orientation",
+    "title": "Orientation mix: subject lane vs health/wellbeing intersection",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "subject lane (57,482)",
+      "how": "call",
+      "points": 7,
+      "traced_share": 0.5714285714285714
+     },
+     {
+      "name": "intersection lane (126)",
+      "how": "call",
+      "points": 7,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch9-effects",
+    "title": "Largest effect sizes retrieved",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "long commute (>=120 vs <60 min)",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     },
+     {
+      "name": "commercial drivers vs white-collar",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch10-sourcemix",
+    "title": "Source mix on the subject",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "records",
+      "how": "call",
+      "points": 6,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "series_yearly_monthly.csv",
+    "how": "call",
+    "rows": 58,
+    "numeric_cells": 57,
+    "traced_share": 0.19298245614035087,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_lanes.csv",
+    "how": "call",
+    "rows": 14,
+    "numeric_cells": 37,
+    "traced_share": 0.7027027027027027,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 0,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "forecast.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 18,
+    "traced_share": 0.7222222222222222,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.packet",
+    "question": "Does measured congestion intensity predict physiological stress?",
+    "args": {
+     "claim": "Traffic congestion exposure raises physiological stress",
+     "subject_phrases": [
+      "traffic congestion",
+      "traffic jam"
+     ],
+     "outcome_phrases": [
+      "cortisol",
+      "blood pressure",
+      "heart rate variability"
+     ],
+     "first_year": 2017,
+     "last_year": 2025
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"packet_id\": \"packet_aa220b941040511e1b9b9f04c319b300\", \"expires_in_seconds\": 86400, \"sources\": [{\"id\": \"prism:W2763111440\", \"title\": \"Traffic congestion and blood pressure elevation: A comparative cross‐sectional study in Lebanon\", \"year\": 2017, \"doi\": \"10.1111/jch.13102\", \"url\": \"https://doi.org/10.1111/jch.13102\", \"tier\": \"article\", \"stance\": \"unread\", \"quote\": null, \"quote_verified\": false, \"verification_scope\": \"No verified quotation for this source.\", \"source_fit\": null}], \"scope\": {\"subject_phrases\": [\"traffic congestion\", \"traffic jam\"], \"outcome_phrases\": [\"cortisol\", \"blood pressure\", \"heart rate variability\"], \"match_field\": \"title\", \"widened\": false}, \"limitations\": [\"Bounded di"
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "Is research on congestion in India growing?",
+    "args": {
+     "term": "traffic congestion",
+     "geo": "India",
+     "geo_mode": "about",
+     "since": 2017,
+     "until": 2025
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"scope\": \"India\", \"geo_mode\": \"about\", \"phrases\": [\"traffic congestion\", \"urban traffic congestion\", \"road congestion\", \"vehicular congestion\", \"traffic delay\"], \"points\": [{\"year\": 2017, \"total\": 6, \"orientation\": {\"cautionary\": 1, \"breakthrough\": 1, \"descriptive\": 2, \"problem_identifying\": 1, \"promising\": 1}, \"stance_score\": null, \"positive\": 2, \"contested\": 2, \"positive_pct\": 33.3, \"contested_pct\": 33.3}, {\"year\": 2018, \"total\": 11, \"orientation\": {\"problem_identifying\": 6, \"breakthrough\": 1, \"promising\": 4}, \"stance_score\": null, \"positive\": 5, \"contested\": 6, \"positive_pct\": 45.5, \"contested_pct\": 54.5}, {\"year\": 2019, \"total\": 13, \"orientation\": {\"descriptive\": 1, \"problem_identifying"
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "Is congestion news more negative than baseline?",
+    "args": {
+     "term": "traffic congestion",
+     "since": "2024-01-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-01-01\", \"negative\": 152, \"positive\": 300, \"neutral\": 16, \"ratio\": 0.51}, {\"period\": \"2024-02-01\", \"negative\": 228, \"positive\": 450, \"neutral\": 7, \"ratio\": 0.51}, {\"period\": \"2024-03-01\", \"negative\": 227, \"positive\": 407, \"neutral\": 14, \"ratio\": 0.56}, {\"period\": \"2024-04-01\", \"negative\": 186, \"positive\": 239, \"neutral\": 12, \"ratio\": 0.78}, {\"period\": \"2024-05-01\", \"negative\": 203, \"positive\": 240, \"neutral\": 16, \"ratio\": 0.85}, {\"period\": \"2024-06-01\", \"negative\": 197, \"positive\": 247, \"neutral\": 5, \"ratio\": 0.8}, {\"period\": \"2024-07-01\", \"negative\": 254, \"positive\": 301, \"neutral\": 14, \"ratio\": 0.84}, {\"period\": \"2024-08-01\", \"negative\": 306, \"positive\": 296, \"n"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "Does congestion pricing improve health?",
+    "args": {
+     "claim": "congestion pricing improves air quality and population health"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 125, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 0, \"window\": \"1990-2025\", \"lane\": \"intersection\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 0, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"intersection\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"intersection\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"intersection\", \"what\": \"preprints\"}}, \"cor"
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which Indian cities drive news share?",
+    "args": {
+     "term": "traffic congestion",
+     "level": "city",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"city\", \"rows\": [{\"label\": \"delhi\", \"articles\": 1011, \"share_pct\": 8.9, \"lift\": 10.7}, {\"label\": \"mumbai\", \"articles\": 994, \"share_pct\": 8.7, \"lift\": 8.2}, {\"label\": \"bengaluru\", \"articles\": 790, \"share_pct\": 6.9, \"lift\": 17.5}, {\"label\": \"pune\", \"articles\": 611, \"share_pct\": 5.4, \"lift\": 28.2}, {\"label\": \"hyderabad\", \"articles\": 334, \"share_pct\": 2.9, \"lift\": 9.0}, {\"label\": \"dubai\", \"articles\": 227, \"share_pct\": 2.0, \"lift\": 3.8}, {\"label\": \"chennai\", \"articles\": 227, \"share_pct\": 2.0, \"lift\": 5.9}, {\"label\": \"new york\", \"articles\": 218, \"share_pct\": 1.9, \"lift\": 0.5}, {\"label\": \"los angeles\", \"articles\": 217, \"share_pct\": 1.9, \"lift\": 1.5}, {\"label\": \"california\", \"articles\": 21"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "Has news after May 2026 been ingested?",
+    "args": {
+     "term": "traffic congestion",
+     "since": "2026-01-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2026-01-01\", \"articles\": 561, \"critical\": 356, \"negative\": 253, \"positive\": 303, \"mean_priority\": 6.63, \"critical_pct\": 63.5, \"partial_period\": false}, {\"period\": \"2026-02-01\", \"articles\": 897, \"critical\": 553, \"negative\": 373, \"positive\": 504, \"mean_priority\": 6.57, \"critical_pct\": 61.6, \"partial_period\": false}, {\"period\": \"2026-03-01\", \"articles\": 950, \"critical\": 548, \"negative\": 394, \"positive\": 536, \"mean_priority\": 6.39, \"critical_pct\": 57.7, \"partial_period\": false}, {\"period\": \"2026-04-01\", \"articles\": 959, \"critical\": 578, \"negative\": 398, \"positive\": 542, \"mean_priority\": 6.44, \"critical_pct\": 60.3, \"partial_period\": false}, {\"period\": \"2026-05-01\", \"articl"
+   }
+  ],
+  "followups_ok": 6,
+  "numbers": {
+   "total": 335,
+   "traced": 332,
+   "derived": 21,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "7,720 — Measured (all from [c10] unless marked). Studied (the health literature index first-author affiliation, top 12 "
+   ]
+  },
+  "dois": {
+   "cited": 15,
+   "found_in_corpus": 15,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 107,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "map": 5,
+   "forecast": 2,
+   "dimensions": 5,
+   "crossdomain": 5,
+   "integrity": 5,
+   "article": 5
+  },
+  "deep": {
+   "maps": [
+    {
+     "title": "News articles by country an article is about",
+     "points": 20,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    },
+    {
+     "title": "the health literature index papers by first-author affiliation country",
+     "points": 12,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    }
+   ],
+   "forecasts": [
+    {
+     "title": "Projection of congestion-titled papers per year",
+     "source": "call:analysis.scenarios#1",
+     "periods": 3,
+     "traced_share": 0.8888888888888888,
+     "bounds": true,
+     "method": true
+    }
+   ],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "evidence magnitude",
+    "forecast",
+    "geography",
+    "source mix",
+    "time"
+   ],
+   "corpora_traced": [
+    "compose",
+    "health",
+    "news",
+    "patents",
+    "research",
+    "system"
+   ],
+   "connecting_sentences": 96,
+   "manifest_error": "",
+   "html_bytes": 72756,
+   "article": {
+    "present": true,
+    "sections_found": 7,
+    "in_order": true,
+    "words": 3045,
+    "abstract_words": 253,
+    "results_numbers": 101,
+    "results_tagged": 101
+   }
+  },
+  "render": {
+   "rendered_views": 10,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 81439,
+   "manifest_charts": 10
+  }
+ }
+}

@@ -1,0 +1,247 @@
+{
+ "slug": "intermittent-fasting-stance",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 3.0,
+    "accuracy": 1.5,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.5
+   },
+   "strict": 32.7,
+   "plain": 32.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 32.6,
+    "gpt": 32.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 5.0,
+    "chart": 4.0,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 3.0,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 4.5,
+    "facets": 4.0
+   },
+   "strict": 85.8,
+   "plain": 85.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 85.0,
+    "gpt": 86.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 0.5,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 1.0,
+    "limits": 2.5,
+    "verdict": 2.0,
+    "facets": 1.5
+   },
+   "strict": 25.1,
+   "plain": 25.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.0,
+    "gpt": 28.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 3.5,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.0
+   },
+   "strict": 74.5,
+   "plain": 74.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.8,
+    "gpt": 75.2
+   }
+  }
+ },
+ "judge_mad": 0.25,
+ "verdicts": {
+  "opus": "C answered the tone question with the right measure: yearly positive vs contested shares, exact deltas, and early/late ratios. It also flagged the tool's own facet inconsistency, giving a decision-maker a traced 'more promising in volume, broadly stable in balance' answer. B reached the same verdict with traced data but charted counts rather than shares. A and D answered from memory with a 'more cautious' narrative that the measured corpus does not support, and D additionally fabricated and misdated references.",
+  "gpt": "A best supports a decision: it traces the full annual series, separates rising counts from the largely stable contested share, and states what the framing labels can and cannot establish. C is also well sourced, but its count-only chart and single-year ratio do less to answer whether the balance of tone shifted."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "Headline 'shift to more cautious' contradicts measured record (positive share 19.8%->30.9%, contested share broadly unchanged)"
+   ],
+   "chatgpt_prism": [],
+   "claude_prism": [],
+   "chatgpt_bare": [
+    "r1 is a fabricated 2018 duplicate of the 2017 Trepanowski trial sharing the same DOI",
+    "Cochrane CD013496.pub2 misdated to 2025 (it is 2021)",
+    "Paper titles presented as verbatim quotes",
+    "Invented evidence-window end 2025-02-18",
+    "Verdict 'more cautious' contradicts measured record"
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "The browse facet reports 1,545 promising papers and 50.4%, inconsistent with the stance-trend totals; A flags this discrepancy rather than treating it as a finding.",
+    "No verbatim paper-abstract quotes are available."
+   ],
+   "claude_bare": [
+    "The claimed shift toward caution contradicts the reference record’s broadly unchanged balance of framing.",
+    "The 2024 safety signal is explicitly recalled from memory and lacks a DOI; it cannot support a traced trend."
+   ],
+   "chatgpt_prism": [
+    "The chart shows counts but omits the available contested-share series, which is central to judging tone shift.",
+    "No verbatim abstract quotes are provided; the report does not fold executed follow-up results into its evidence."
+   ],
+   "chatgpt_bare": [
+    "The 2017 and 2018 Trepanowski references use the same DOI despite conflicting title/year metadata.",
+    "The Cochrane review is listed as 2025, while the DOI corresponds to the 2021 review.",
+    "The cautionward field-wide conclusion conflicts with the reference record’s broadly unchanged framing."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Hand-coded ordinal series, honestly labelled as an estimate; there is no measured series.",
+    "comparison": "Compares means on a self-invented scale, labelled est.; this is effectively a qualitative comparison.",
+    "chart": "Memory chart labelled estimate, which caps it at 1.",
+    "drilldown": "Layers are named generically. 3 of 6 follow-ups executed. No traced breakdown.",
+    "export": "Estimate-labelled table, which caps it at 1.",
+    "repro": "Numbers are memory or estimates, honestly labelled.",
+    "refs": "The 4 DOIs resolve and are tied to claims with year, venue and tier. No quotes. r5 has no identifier.",
+    "accuracy": "Paper facts are plausible. However, the headline 'more cautious' contradicts the measured record: positive share rose and contested share was broadly flat.",
+    "limits": "Specific limits are stated: knowledge cutoff gap, five hand-picked items, high-profile bias. No measured window.",
+    "verdict": "Structurally complete and confidence is honestly low, but the answer is not supported by measured data and conflicts with it.",
+    "facets": "Facets are answered from memory only."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced counts with window. Deltas of 160 and 19 are correct. Early/late contested shares are given. Yearly shares are not shown and the tool's CAGR is not used.",
+    "comparison": "176 vs 32 (5.5x) and 11.1% vs 9.2% (-1.9pp) recompute exactly and the baseline is defined. The count-ratio comparison is driven by volume.",
+    "chart": "Traced and captioned, but it charts only counts of two orientations. The share view, which the tone question needs, is not charted.",
+    "drilldown": "One traced layer plus promising examples with IDs. No contrary papers. Follow-ups are partly ok.",
+    "export": "Two traced CSVs with provenance block, referenced from the prose. Full orientation rows are included.",
+    "repro": "18 of 19 numbers traced. Calls are listed with args. The 296-day gap is correct.",
+    "refs": "IDs/DOIs are given, examples are tiered and tied to claims, the Mendeley caveat is noted. No quotes and no contrary sources.",
+    "accuracy": "Everything matches the record. Did not catch the 1545-vs-793 facet anomaly.",
+    "limits": "Window end, 296-day gap, phrase expansion, coverage caveat and framing-vs-quality distinction are placed beside the numbers.",
+    "verdict": "Direct answer, decision, confidence with reason and change condition. Notes that cautionary counts also grew.",
+    "facets": "Trend and contested balance are covered. Yearly share view and critical examples are missing."
+   },
+   "claude_prism": {
+    "trend": "Full yearly positive/contested share series with window. Deltas +11.1 and -10.0pp are exact. Tool CAGRs and multiples are used and the decomposition is verified. Small-base caveat is included.",
+    "comparison": "Early vs late third table with exact ratios. Explains that shares matter more than counts. Answers the promising-vs-cautious contrast.",
+    "chart": "A traced share chart for both positive and contested framing, captioned and tied to a claim. Volume is not charted alongside.",
+    "drilldown": "Orientation-by-year, contribution, phrase audit and examples with W ids. 4 of 6 follow-ups ok. Nothing was executed and folded back.",
+    "export": "One traced CSV with provenance JSON. The script ceiling of 3 applies.",
+    "repro": "71 of 71 traced. Calls block and capture date present. Interpretation is marked.",
+    "refs": "Examples carry IDs, venue, year and tier. States plainly that no critical papers were retrieved. No quotes.",
+    "accuracy": "Correct definitions of the positive and contested sums. Catches the 1545-vs-793 facet inconsistency and the 6-of-8 return rather than repeating them as findings.",
+    "limits": "Window, the roughly 10-month gap, coverage meaning, phrase expansion, 2017 volatility and the browse anomaly are placed with the numbers. Names what cannot be answered.",
+    "verdict": "Answer is consistent with its chart and table, with decision, medium confidence with reason and change condition. Window end is not stated inside the verdict.",
+    "facets": "Volume, share balance, early/late comparison and phrase scope are grounded. Critical examples are explicitly marked missing."
+   },
+   "chatgpt_bare": {
+    "trend": "Direction is asserted with no series.",
+    "comparison": "Qualitative only.",
+    "chart": "Plots numeric codes sourced to a reference that is a duplicated or misdated entry, and the chart kind is mismatched.",
+    "drilldown": "Memory layers only. 2 of 6 follow-ups work.",
+    "export": "Qualitative CSV with a mislabelled source.",
+    "repro": "Memory only.",
+    "refs": "r1 and r2 share one DOI. r1 is a fabricated 2018 variant of the 2017 Trepanowski paper. The Cochrane review is misdated to 2025. 'Quotes' are actually titles.",
+    "accuracy": "Fabricated duplicate reference, a misdated review, and an invented 2025-02-18 window end presented as fact. The verdict direction also conflicts with the record.",
+    "limits": "Some specifics are given, but they rest on an invented window end.",
+    "verdict": "Claims medium confidence from memory, and the answer contradicts the measured flat balance.",
+    "facets": "Memory only."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Traced 2017–2025 series; quantifies endpoint and orientation changes and reads the stable contested share correctly.",
+    "comparison": "Early and late thirds are defined; ratios and the -1.9-point share change are traced and interpreted with caveats.",
+    "chart": "Traced share series with window and source, but it does not show the available decomposition by orientation counts.",
+    "drilldown": "Shows orientation, contribution, and identified paper examples with specific calls; no critical-paper results are folded back in.",
+    "export": "The traced yearly CSV has provenance, but a needed summary table is missing and the export is not fully decision-ready.",
+    "repro": "Lists calls with args and window; reported figures can be regenerated, with derived changes recomputable.",
+    "refs": "Paper identifiers resolve and claims are tied to examples, but abstract quotes are absent.",
+    "accuracy": "Mostly matches the record and flags the browse count discrepancy; the positive-share chart omits the more direct orientation split.",
+    "limits": "Places window gap, phrase scope, coverage, classifier, and evidence limits beside the findings.",
+    "verdict": "Direct, bounded answer with confidence, decision, conditions, and the contrary growth in cautionary counts acknowledged.",
+    "facets": "Covers volume, framing, phrase scope, and research-lane limits, but leaves some implied facets such as matched news comparison unmeasured."
+   },
+   "claude_bare": {
+    "trend": "No measured series; the hand-coded estimate is explicitly from memory.",
+    "comparison": "Numeric comparison is an explicitly estimated comparison of selected items, not a traced corpus contrast.",
+    "chart": "Honest estimate chart, which earns the estimate anchor only.",
+    "drilldown": "Names papers and proposes specific calls, but the breakdown is memory-based and call results are not integrated.",
+    "export": "The CSV is explicitly an estimate rather than a traced export.",
+    "repro": "No calls or reproducible corpus measurements; numbers are acknowledged as memory estimates.",
+    "refs": "Identifiers resolve and claims are tied to studies, but quotes are absent and the safety-signal item lacks a DOI or resolving URL.",
+    "accuracy": "The conclusion that tone moved toward caution contradicts the reference’s broadly unchanged framing balance.",
+    "limits": "Clearly labels the sample and measurement gaps, but does not provide the applicable corpus-specific limits.",
+    "verdict": "Gives a decision and conditions, but the cautionward conclusion is not supported by a measured trend and conflicts with the reference.",
+    "facets": "Addresses selected evidence and admits no yearly counts; most requested trend facets remain unmeasured."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced yearly counts and endpoint deltas, but does not quantify growth rates or chart the available share trend.",
+    "comparison": "The 2025 count ratio is traced and defined, but it describes one year rather than the early-to-late shift asked about.",
+    "chart": "Traced count chart with window and caption, but the question asks about tone and the available contested-share series is not charted.",
+    "drilldown": "Provides multiple layers and identified examples with specific follow-up calls; executed follow-up results are not folded into the report.",
+    "export": "Both needed tables are present and referenced with provenance, but the summary export is marked partial and lacks row identifiers.",
+    "repro": "Nearly all numbers trace and calls are listed, but one numeric claim is outside the trace ceiling for full reproducibility.",
+    "refs": "Identifiers resolve and examples are tied to claims, but verbatim abstract quotes are absent.",
+    "accuracy": "Matches the series and acknowledges the limited-effect paper despite its promising label; minor facet and export caveats remain.",
+    "limits": "States the window, gap, scope, coverage, and what the counts cannot establish, though not every limit is placed at each relevant number.",
+    "verdict": "Direct and supported answer with confidence and a decision, but it does not name what evidence would change the conclusion with enough specificity or fully bound the verdict.",
+    "facets": "Covers the principal framing question and some scope limits, but leaves implied comparisons and protocol sensitivity unresolved."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured time series; its chart is illustrative and its change is unquantified.",
+    "comparison": "Qualitative comparison only; no measured baseline or delta.",
+    "chart": "Memory-based illustrative examples, explicitly not measured.",
+    "drilldown": "Names selected evidence layers and follow-up calls, but calls do not yield a traced, identified breakdown in the report.",
+    "export": "Selected examples are from memory, not a traced export.",
+    "repro": "No reproducible corpus call or numeric claims to regenerate.",
+    "refs": "The two Trepanowski entries reuse one DOI for conflicting years and titles; the Cochrane year is also inconsistent with the DOI record.",
+    "accuracy": "The bibliography contains material identifier/metadata errors, and the cautious trend claim conflicts with the reference framing balance.",
+    "limits": "Clearly states that the sample is selected and that no annual trend was measured, but lacks corpus-specific limits.",
+    "verdict": "Offers a direct decision with confidence and a condition, but its cautionward interpretation is not supported as a field-wide trend.",
+    "facets": "Acknowledges missing yearly data and terminology sensitivity, while most implied trend comparisons remain unanswered."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

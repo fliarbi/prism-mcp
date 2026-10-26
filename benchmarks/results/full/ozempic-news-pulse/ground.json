@@ -1,0 +1,674 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 537,
+  "charts": [
+   {
+    "id": "ozempic-monthly-volume",
+    "title": "Monthly Ozempic news articles (not measured)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Ozempic articles",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ozempic_monthly.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is monthly Ozempic volume and direction over 12 months?",
+    "args": {
+     "term": "Ozempic",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does Ozempic tone compare with the corpus baseline?",
+    "args": {
+     "term": "Ozempic",
+     "baseline": "corpus"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\nbaseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='corpus', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does Ozempic compare with Mounjaro, Wegovy and Zepbound on volume and tone?",
+    "args": {
+     "terms": [
+      "Ozempic",
+      "Mounjaro",
+      "Wegovy",
+      "Zepbound"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 24.0,
+    "sample": "{\"terms\": [\"Ozempic\", \"Mounjaro\", \"Wegovy\", \"Zepbound\"], \"rows\": [{\"term\": \"Ozempic\", \"articles\": 22214, \"share_pct\": 31.4, \"critical\": 15062, \"direction\": \"flat\", \"growth\": 1.23, \"tone_ratio\": 0.61, \"vs_baseline\": 1.05, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 769, \"critical\": 530, \"negative\": 333, \"positive\": 433, \"mean_priority\": 6.52, \"critical_pct\": 68.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 823, \"critical\": 623, \"negative\": 260, \"positive\": 558, \"mean_priority\": 6.75, \"critical_pct\": 75.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 548, \"critical\": 375, \"negative\": 217, \"positive\": 327, \"mean_priority\": 6.57, \"critical_pct\": 68.4, \"p"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which are the most critical stories, with date, publisher and URL?",
+    "args": {
+     "term": "Ozempic",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.4,
+    "sample": "{\"articles\": [{\"target_id\": \"69e4f6c9d5e7fc42ee09d4cf\", \"url\": \"https://www.theweek.in/columns/dr-preetha-peddy/2026/04/11/the-global-weight-loss-revolution-how-drugs-are-redefining-obesity.html\", \"title\": \"The global weight loss revolution: How drugs are redefining obesity\", \"excerpt\": \"Across continents, a profound shift is unfolding in how societies approach weight loss and health. Medicines, such as Ozempic and Mounjaro, have moved obesity from the margins of personal struggle into the centre of medical and public discourse. In many ways, this marks progress. Obesity is increasi\", \"publisher\": \"theweek.in\", \"published\": \"2026-04-19 12:01:00\", \"partition\": \"from_2020_to_now\", \"datetime\": "
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which themes, organisations and people dominate?",
+    "args": {
+     "term": "Ozempic"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 43.0,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"Ozempic\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 20069, \"entity_labelled_articles\": 15546, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 22214, \"critical_articles\": 15062, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:48:49\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with "
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which countries cover Ozempic, and what is placed_pct?",
+    "args": {
+     "term": "Ozempic"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 10302, \"share_pct\": 41.1, \"lift\": 1.8}, {\"label\": \"united kingdom\", \"articles\": 2675, \"share_pct\": 10.7, \"lift\": 2.1}, {\"label\": \"canada\", \"articles\": 1158, \"share_pct\": 4.6, \"lift\": 1.4}, {\"label\": \"india\", \"articles\": 1069, \"share_pct\": 4.3, \"lift\": 0.6}, {\"label\": \"denmark\", \"articles\": 797, \"share_pct\": 3.2, \"lift\": 11.1}, {\"label\": \"china\", \"articles\": 782, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 767, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 516, \"share_pct\": 2.1, \"lift\": 1.2}, {\"label\": \"germany\", \"articles\": 488, \"share_pct\": 1.9, \"lift\": 1.6}, {\"label\": \"italy\", \"art"
+   },
+   {
+    "id": "f7",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage by publisher?",
+    "args": {
+     "term": "Ozempic",
+     "group_by": "source"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='source', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 897,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly articles mentioning Ozempic",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_ozempic.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which critical stories drove March 2026 (1,470 articles)?",
+    "args": {
+     "term": "ozempic",
+     "from": "2026-03-01",
+     "to": "2026-04-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-04-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What happened after May 2026?",
+    "args": {
+     "term": "ozempic",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'ozempic' in this window",
+    "seconds": 0.2,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does Ozempic compare with Wegovy and Mounjaro on volume and tone?",
+    "args": {
+     "terms": [
+      "ozempic",
+      "wegovy",
+      "mounjaro"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"ozempic\", \"wegovy\", \"mounjaro\"], \"rows\": [{\"term\": \"ozempic\", \"articles\": 22214, \"share_pct\": 37.0, \"critical\": 15062, \"direction\": \"flat\", \"growth\": 1.23, \"tone_ratio\": 0.61, \"vs_baseline\": 1.05, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 769, \"critical\": 530, \"negative\": 333, \"positive\": 433, \"mean_priority\": 6.52, \"critical_pct\": 68.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 823, \"critical\": 623, \"negative\": 260, \"positive\": 558, \"mean_priority\": 6.75, \"critical_pct\": 75.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 548, \"critical\": 375, \"negative\": 217, \"positive\": 327, \"mean_priority\": 6.57, \"critical_pct\": 68.4, \"partial_perio"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which countries are most critical?",
+    "args": {
+     "term": "ozempic",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 10302, \"share_pct\": 41.1, \"lift\": 1.8}, {\"label\": \"united kingdom\", \"articles\": 2675, \"share_pct\": 10.7, \"lift\": 2.1}, {\"label\": \"canada\", \"articles\": 1158, \"share_pct\": 4.6, \"lift\": 1.4}, {\"label\": \"india\", \"articles\": 1069, \"share_pct\": 4.3, \"lift\": 0.6}, {\"label\": \"denmark\", \"articles\": 797, \"share_pct\": 3.2, \"lift\": 11.1}, {\"label\": \"china\", \"articles\": 782, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"australia\", \"articles\": 767, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 516, \"share_pct\": 2.1, \"lift\": 1.2}, {\"label\": \"germany\", \"articles\": 488, \"share_pct\": 1.9, \"lift\": 1.6}, {\"label\": \"italy\", \"art"
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is the sentiment trend in the US only?",
+    "args": {
+     "term": "ozempic",
+     "country": "united states"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_sentiment\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='united states', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which compounding and pricing stories are critical?",
+    "args": {
+     "term": "ozempic compounding pricing",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'ozempic compounding pricing'",
+    "seconds": 8.1,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 80,
+   "traced": 80,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 144,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 357,
+  "charts": [
+   {
+    "id": "ozempic-news-volume",
+    "title": "Ozempic news volume",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Monthly articles",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many articles mention Ozempic in each month, and how does volume change over the selected period?",
+    "args": {
+     "term": "Ozempic",
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does Ozempic coverage tone compare with the news corpus baseline over the same period?",
+    "args": {
+     "term": "Ozempic",
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "include_baseline": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_baseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What themes, organisations, people, and sources appear most often in Ozempic coverage?",
+    "args": {
+     "term": "Ozempic",
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are associated with Ozempic coverage, and what share of articles have place data?",
+    "args": {
+     "term": "Ozempic",
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "What are the most critical Ozempic stories, with headline, date, publisher, and URL?",
+    "args": {
+     "term": "Ozempic",
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which publishers account for the largest share of Ozempic articles?",
+    "args": {
+     "term": "Ozempic",
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Ozempic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "12 — No Prism calls were run and no external sources were checked. The requested period in the "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 98,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 788,
+  "charts": [
+   {
+    "id": "ozempic-monthly-volume",
+    "title": "Monthly Ozempic news articles",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "ozempic_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which safety and adverse-effect stories drove critical coverage in the last year?",
+    "args": {
+     "term": "ozempic",
+     "since": "2025-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which publishers account for the most Ozempic coverage across the full window?",
+    "args": {
+     "term": "ozempic",
+     "since": "2024-06-01",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='ozempic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "How did negative-to-positive balance change month by month against the corpus baseline?",
+    "args": {
+     "term": "ozempic",
+     "since": "2024-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 333, \"positive\": 433, \"neutral\": 3, \"ratio\": 0.77}, {\"period\": \"2024-07-01\", \"negative\": 260, \"positive\": 558, \"neutral\": 3, \"ratio\": 0.47}, {\"period\": \"2024-08-01\", \"negative\": 217, \"positive\": 327, \"neutral\": 2, \"ratio\": 0.66}, {\"period\": \"2024-09-01\", \"negative\": 311, \"positive\": 418, \"neutral\": 3, \"ratio\": 0.74}, {\"period\": \"2024-10-01\", \"negative\": 355, \"positive\": 486, \"neutral\": 2, \"ratio\": 0.73}, {\"period\": \"2024-11-01\", \"negative\": 384, \"positive\": 416, \"neutral\": 6, \"ratio\": 0.92}, {\"period\": \"2024-12-01\", \"negative\": 356, \"positive\": 497, \"neutral\": 2, \"ratio\": 0.72}, {\"period\": \"2025-01-01\", \"negative\": 502, \"positive\": 794, \"neutr"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which organisations and people appear in the critical stories, after article-level verification?",
+    "args": {
+     "term": "ozempic",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which countries are discussed most often, and how does placed coverage vary over time?",
+    "args": {
+     "term": "ozempic",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.4,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 9665, \"share_pct\": 40.8, \"lift\": 1.8}, {\"label\": \"united kingdom\", \"articles\": 2581, \"share_pct\": 10.9, \"lift\": 2.2}, {\"label\": \"canada\", \"articles\": 1086, \"share_pct\": 4.6, \"lift\": 1.3}, {\"label\": \"india\", \"articles\": 1049, \"share_pct\": 4.4, \"lift\": 0.7}, {\"label\": \"china\", \"articles\": 761, \"share_pct\": 3.2, \"lift\": 0.6}, {\"label\": \"denmark\", \"articles\": 753, \"share_pct\": 3.2, \"lift\": 11.1}, {\"label\": \"australia\", \"articles\": 681, \"share_pct\": 2.9, \"lift\": 0.6}, {\"label\": \"france\", \"articles\": 488, \"share_pct\": 2.1, \"lift\": 1.2}, {\"label\": \"germany\", \"articles\": 454, \"share_pct\": 1.9, \"lift\": 1.5}, {\"label\": \"italy\", \"arti"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 52,
+   "traced": 51,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "144 — The article-count window ends **2026-05-31** [c1], with a **2026-06-01** [c1] censor cutof"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 110,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,646 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 711,
+  "charts": [
+   {
+    "id": "qc_gov",
+    "title": "Indian quick commerce gross order value (rough estimate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Quick commerce GOV, fiscal year (est.)",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "qc_gov_estimate.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the monthly volume of quick commerce news in India over the last 24 months?",
+    "args": {
+     "term": "quick commerce India",
+     "window": "24m"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='24m', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does tone compare with the corpus baseline?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.4,
+    "sample": "{\"points\": [{\"period\": \"2025-08-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2026-05-01\", \"negative\": 0, \"positive\": 2, \"neutral\": 0, \"ratio\": 0.0}], \"totals\": {\"neg\": 0, \"pos\": 3, \"neutral\": 0, \"n\": 3, \"neg_pct\": 0.0, \"pos_pct\": 100.0, \"ratio\": 0.0}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What are the most critical headlines, with dates, publishers and urls?",
+    "args": {
+     "term": "quick commerce India",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'quick commerce India'",
+    "seconds": 11.2,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which cities and states are covered, and what is placed_pct?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.2,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"china\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 2.5}, {\"label\": \"colombia\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 25.8}, {\"label\": \"mexico\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 20.8}, {\"label\": \"chile\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 123.5}, {\"label\": \"brazil\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 19.9}, {\"label\": \"india\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 1.9}, {\"label\": \"united states\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 0.5}, {\"label\": \"united kingdom\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 2.5}], \"placed_articles\": 1, \"matched_articles\": 1, \"placed_pct\": 100.0, \"what\": \"the place an article is ABOUT, "
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does coverage of Blinkit compare with Zepto and Instamart?",
+    "args": {
+     "terms": [
+      "Blinkit",
+      "Zepto",
+      "Swiggy Instamart"
+     ]
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 18.9,
+    "sample": "{\"terms\": [\"Blinkit\", \"Zepto\", \"Swiggy Instamart\"], \"rows\": [{\"term\": \"Blinkit\", \"articles\": 13141, \"share_pct\": 45.2, \"critical\": 8271, \"direction\": \"flat\", \"growth\": 0.82, \"tone_ratio\": 0.31, \"vs_baseline\": 0.53, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 415, \"critical\": 301, \"negative\": 82, \"positive\": 331, \"mean_priority\": 6.84, \"critical_pct\": 72.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 313, \"critical\": 167, \"negative\": 65, \"positive\": 246, \"mean_priority\": 6.29, \"critical_pct\": 53.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 705, \"critical\": 466, \"negative\": 132, \"positive\": 565, \"mean_priority\": 6.61, \"critical_pct\": 66.1, \"partial_p"
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "Which outlets dominate coverage?",
+    "args": {
+     "term": "quick commerce India",
+     "by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 9,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "1.0 — | Zepto | ~30% (est.) | 1.0x (baseline) |"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 124,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 989,
+  "charts": [
+   {
+    "id": "qc_monthly",
+    "title": "Monthly articles mentioning quick commerce",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 13,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "qc_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "qc_orgs.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 4,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "What drove the Jan 2026 negative spike?",
+    "args": {
+     "term": "quick commerce",
+     "since": "2026-01-01",
+     "until": "2026-02-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What has happened Jun-Oct 2026?",
+    "args": {
+     "term": "quick commerce",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'quick commerce' in this window",
+    "seconds": 0.2,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How does Blinkit coverage compare with Zepto?",
+    "args": {
+     "terms": [
+      "blinkit",
+      "zepto"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"blinkit\", \"zepto\"], \"rows\": [{\"term\": \"blinkit\", \"articles\": 13141, \"share_pct\": 52.6, \"critical\": 8271, \"direction\": \"flat\", \"growth\": 0.82, \"tone_ratio\": 0.31, \"vs_baseline\": 0.53, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 415, \"critical\": 301, \"negative\": 82, \"positive\": 331, \"mean_priority\": 6.84, \"critical_pct\": 72.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 313, \"critical\": 167, \"negative\": 65, \"positive\": 246, \"mean_priority\": 6.29, \"critical_pct\": 53.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 705, \"critical\": 466, \"negative\": 132, \"positive\": 565, \"mean_priority\": 6.61, \"critical_pct\": 66.1, \"partial_period\": false}, {\"pe"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which stories mention worker conditions or regulation?",
+    "args": {
+     "term": "quick commerce regulation gig workers",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'quick commerce regulation gig workers'",
+    "seconds": 7.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What share of coverage is IPO and valuation?",
+    "args": {
+     "term": "quick commerce IPO",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.1,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which cities or states are covered?",
+    "args": {
+     "term": "quick commerce",
+     "level": "city"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.6,
+    "sample": "{\"level\": \"city\", \"rows\": [{\"label\": \"bengaluru\", \"articles\": 1160, \"share_pct\": 20.4, \"lift\": 51.6}, {\"label\": \"mumbai\", \"articles\": 1061, \"share_pct\": 18.7, \"lift\": 17.6}, {\"label\": \"delhi\", \"articles\": 528, \"share_pct\": 9.3, \"lift\": 11.2}, {\"label\": \"hyderabad\", \"articles\": 343, \"share_pct\": 6.0, \"lift\": 18.4}, {\"label\": \"chennai\", \"articles\": 262, \"share_pct\": 4.6, \"lift\": 13.8}, {\"label\": \"pune\", \"articles\": 214, \"share_pct\": 3.8, \"lift\": 19.8}, {\"label\": \"kolkata\", \"articles\": 199, \"share_pct\": 3.5, \"lift\": 13.9}, {\"label\": \"singapore\", \"articles\": 185, \"share_pct\": 3.3, \"lift\": 3.9}, {\"label\": \"jaipur\", \"articles\": 104, \"share_pct\": 1.8, \"lift\": 13.6}, {\"label\": \"ahmedabad\", \"articles"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 81,
+   "traced": 80,
+   "derived": 8,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 129,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 334,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many India quick-commerce news items appeared each month, and how did volume change?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.1,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"posit"
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does quick-commerce coverage compare with a defined news baseline?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'quick commerce India'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='quick commerce India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "What themes, organisations, and people appear most often?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.9,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"quick commerce India\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 3, \"entity_labelled_articles\": 1, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 3, \"critical_articles\": 3, \"first_seen\": \"2025-08-27 21:00:20\", \"last_seen\": \"2026-05-20 06:07:32\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a c"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are mentioned, and what share of items can be placed geographically?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"china\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 2.5}, {\"label\": \"colombia\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 25.8}, {\"label\": \"mexico\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 20.8}, {\"label\": \"chile\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 123.5}, {\"label\": \"brazil\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 19.9}, {\"label\": \"india\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 1.9}, {\"label\": \"united states\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 0.5}, {\"label\": \"united kingdom\", \"articles\": 1, \"share_pct\": 12.5, \"lift\": 2.5}], \"placed_articles\": 1, \"matched_articles\": 1, \"placed_pct\": 100.0, \"what\": \"the place an article is ABOUT, "
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is the coverage tone compared with the corpus baseline?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2025-08-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2026-05-01\", \"negative\": 0, \"positive\": 2, \"neutral\": 0, \"ratio\": 0.0}], \"totals\": {\"neg\": 0, \"pos\": 3, \"neutral\": 0, \"n\": 3, \"neg_pct\": 0.0, \"pos_pct\": 100.0, \"ratio\": 0.0}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "Which critical headlines should a decision-maker review?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no matching article for 'quick commerce India'",
+    "seconds": 0.3,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "news.overview",
+    "question": "How concentrated is coverage among publishers?",
+    "args": {
+     "term": "quick commerce India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"quick commerce India\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 3, \"entity_labelled_articles\": 1, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 3, \"critical_articles\": 3, \"first_seen\": \"2025-08-27 21:00:20\", \"last_seen\": \"2026-05-20 06:07:32\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a c"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 95,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 698,
+  "charts": [
+   {
+    "id": "monthly-mentions",
+    "title": "Quick commerce news mentions in India query",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_mentions.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "sentiment.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.critical",
+    "question": "Which specific stories drove the January 2025 coverage peak?",
+    "args": {
+     "term": "quick commerce",
+     "since": "2025-01-01",
+     "until": "2025-02-01",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "What are the most recent central quick-commerce stories after May 2026?",
+    "args": {
+     "term": "quick commerce",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no article between 2026-06-01 and 2026-06-01 mentions 'quick commerce'",
+    "seconds": 0.1,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "How do coverage tone and volume differ between Blinkit, Zepto and Instamart?",
+    "args": {
+     "terms": [
+      "Blinkit",
+      "Zepto",
+      "Instamart"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.5,
+    "sample": "{\"terms\": [\"Blinkit\", \"Zepto\", \"Instamart\"], \"rows\": [{\"term\": \"Blinkit\", \"articles\": 13141, \"share_pct\": 46.4, \"critical\": 8271, \"direction\": \"flat\", \"growth\": 0.82, \"tone_ratio\": 0.31, \"vs_baseline\": 0.53, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 415, \"critical\": 301, \"negative\": 82, \"positive\": 331, \"mean_priority\": 6.84, \"critical_pct\": 72.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 313, \"critical\": 167, \"negative\": 65, \"positive\": 246, \"mean_priority\": 6.29, \"critical_pct\": 53.4, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 705, \"critical\": 466, \"negative\": 132, \"positive\": 565, \"mean_priority\": 6.61, \"critical_pct\": 66.1, \"partial_period\":"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which cities or states dominate India-focused quick-commerce reporting?",
+    "args": {
+     "term": "quick commerce",
+     "country": "India",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which publishers account for the largest share across the full window?",
+    "args": {
+     "term": "quick commerce",
+     "since": "2024-06-01",
+     "include_sources": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\ninclude_sources\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 35,
+   "traced": 35,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 117,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

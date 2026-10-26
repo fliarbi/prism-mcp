@@ -1,0 +1,176 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 3,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series and no direction asserted.",
+    "comparison": "Only a qualitative expectation, labelled est., that NATO is far smaller.",
+    "chart": "No chart.",
+    "drilldown": "Generic planned layers; 0/5 follow-ups executed ok.",
+    "export": "Empty CSV labelled estimate.",
+    "repro": "No measured numbers; calls listed but not run.",
+    "accuracy": "No contradictions, but the assumed window 2024-10..2026-10 does not match the data.",
+    "limits": "Specific about what is unmeasured (match mode, overlap, dedup), but the window is speculative.",
+    "verdict": "Honest 'cannot answer' with a call plan; no substantive answer.",
+    "facets": "Facets answered only by labelled expectation."
+   },
+   "B": {
+    "trend": "Traced series with window and growth labels, but no peaks or troughs. It wrongly treats May 2026 as the censored month.",
+    "comparison": "Russia vs NATO 4.8x and vs Ukraine 1.4x recompute correctly. Calling it a 'combined-articles baseline' is muddled, and overlap is left unresolved.",
+    "chart": "One traced volume chart; tone or critical share is not charted although the data supports it.",
+    "drilldown": "Gives only the critical% range; follow-ups 1/4 ok, and f2 duplicates c1.",
+    "export": "Two traced CSVs with provenance block; coverage flag set to partial.",
+    "repro": "17/20 numbers traced; at the ceiling.",
+    "accuracy": "Misreads censoring (May 2026 has partial_period false; the censor is at June). Calls the terms 'lanes'. Misses that combined equals the sum.",
+    "limits": "Limits are mostly in a footer and one is wrong (censoring).",
+    "verdict": "Direct answer, but it restates the headline counts and names no contrary evidence.",
+    "facets": "Volume and trend covered; tone only noted; overlap left unresolved."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Three generic follow-ups, none of which ran ok.",
+    "export": "No export.",
+    "repro": "No numbers.",
+    "accuracy": "No contradictions or fabrications.",
+    "limits": "Specific about the unmeasured aspects (match mode, coverage).",
+    "verdict": "Refusal with a decision; no answer.",
+    "facets": "No facet answered."
+   },
+   "D": {
+    "trend": "Full traced series. The half-on-half change (+19.8%, +1.3%, -15.9%) recomputes exactly, peaks are named, and it flags the Ukraine label mismatch. One trough is wrong.",
+    "comparison": "Ratios 4.80x, 3.47x, 1.38x and their deltas recompute exactly. The baseline is defined and the overlap caveat is carried.",
+    "chart": "Traced volume chart plus a derived critical-share chart; captions tie each to a claim.",
+    "drilldown": "Term and month layers with item-level identifiers missing; specific follow-ups (spike month, tone dip, overlap), 3/6 ok.",
+    "export": "Monthly and summary CSVs, fully traced, with a provenance JSON.",
+    "repro": "78/85 traced; derived figures recomputable; 7 untagged (e.g. the 107.1% row check).",
+    "accuracy": "Catches that combined_articles equals the sum (not distinct articles). It misstates Russia's lowest month.",
+    "limits": "Window end vs today, censoring, match mode and overlap are placed where used. It says what would close the gaps.",
+    "verdict": "Answer, decision, confidence with reason and what would change it. The Ukraine -15.9% contrary point sits in the trend section, not the verdict.",
+    "facets": "Volume, trend, tone and overlap are all addressed with grounded values or grounded unknowns."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "States May 2026 is within the censored final month; the reference has partial_period false and the censor at 2026-06-01",
+    "Treats the queried terms as 'lanes'"
+   ],
+   "C": [],
+   "D": [
+    "Russia's lowest month is given as 2025-06 (37,018); the reference has 2025-11 lower at 36,813",
+    "Critical % is tagged [c1] although it is derived"
+   ]
+  },
+  "best": "D",
+  "verdict": "D was the only deliverable to turn the data into a decision-grade comparison. It gives exact half-on-half changes, ratios and peaks. It caught that combined_articles is a plain sum, so overlap is unresolved. It also flagged the mismatch between Ukraine's 'flat' label and its -15.9% decline. It has one wrong trough. B traced the same data but read it shallowly and misplaced the censoring. A and C honestly declined and gave a decision-maker nothing usable."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 3,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

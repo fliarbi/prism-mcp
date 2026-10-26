@@ -1,0 +1,950 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 2559,
+  "charts": [
+   {
+    "id": "c_evid",
+    "title": "Relative risk of type 2 diabetes from SSB intake",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Relative risk",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "c_comp",
+    "title": "Modelled SSB-attributable deaths by cause, worldwide",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Attributable deaths (est.)",
+      "how": "ref",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "c_cmp",
+    "title": "Adults with diabetes, 2022: India vs China",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Adults with diabetes (est.)",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "time_series_india_diabetes_idf.csv",
+    "how": "none",
+    "rows": 6,
+    "numeric_cells": 12,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_table_diabetes_ncdrisc.csv",
+    "how": "none",
+    "rows": 5,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "none",
+    "rows": 5,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "words",
+    "question": "Papers per year on SSBs and type 2 diabetes, growth factor and peak",
+    "args": "Count papers per year mentioning 'sugar-sweetened beverages' and 'type 2 diabetes' in a bibliographic database, last 15 complete years, current year marked incomplete",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f2",
+    "feature": "words",
+    "question": "News articles per month on SSBs and diabetes",
+    "args": "Count news articles per month mentioning the phrase and 'diabetes' in a news archive, last 5 years, latest month marked incomplete",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f3",
+    "feature": "words",
+    "question": "India's share of research by first-author country and journal country vs China, US, UK, Pakistan",
+    "args": "For the f1 papers, count by country of first-author affiliation and by journal country, separately; report India's share and ratio to each comparator",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f4",
+    "feature": "words",
+    "question": "Patents on low-sugar beverage formulation by assignee country",
+    "args": "Count patent families per year by assignee country, noting 18-month publication lag",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f5",
+    "feature": "words",
+    "question": "India-specific SSB-diabetes relative risk",
+    "args": "Search prospective Indian cohorts reporting SSB intake and incident type 2 diabetes; extract adjusted risk ratios",
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f6",
+    "feature": "words",
+    "question": "Effect of Indian tax change on sugary drink sales",
+    "args": "Monthly retail sales volume of sugary drinks, 24 months before and after the change, against a comparator category",
+    "ok": false,
+    "why": "unknown feature"
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 109,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 25,
+   "untagged_examples": [
+    "1.00 — - What would change it: Indian cohort estimates near 1.00 after adjustment, or evidence th",
+    "1.00 — What would change it: Indian cohort estimates near 1.00 after adjustment, or evidence that",
+    "1.00 — Evidence magnitude: relative risk of type 2 diabetes from SSB intake. Unit: relative risk,",
+    "1.18 — Evidence magnitude: relative risk of type 2 diabetes from SSB intake. Unit: relative risk,",
+    "1.13 — Evidence magnitude: relative risk of type 2 diabetes from SSB intake. Unit: relative risk,",
+    "72% — Composition: modelled SSB-attributable deaths by cause, worldwide. Unit: deaths per year. ",
+    "133,000 — Composition: modelled SSB-attributable deaths by cause, worldwide. Unit: deaths per year. ",
+    "184,000 — Composition: modelled SSB-attributable deaths by cause, worldwide. Unit: deaths per year. "
+   ]
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 250,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [
+   "csv time_series_india_diabetes_idf.csv source='IDF_Diabetes_Atlas_(r6),_observed_values_recalled_(est.);_projection_is_our_estimate'",
+   "csv country_table_diabetes_ncdrisc.csv source='NCD-RisC_2024_(r5),_values_recalled_(est.)'",
+   "an untagged number in the Verdict: 1.00, 1.00"
+  ],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 0,
+   "accuracy": 5,
+   "map": 0,
+   "forecast": 2,
+   "dimensions": 1,
+   "crossdomain": 1,
+   "integrity": 5,
+   "actionability": 5
+  },
+  "deep": {
+   "maps": [],
+   "forecasts": [
+    {
+     "title": "Adults (20 to 79) with diabetes, India: observed and projected",
+     "source": "estimate",
+     "periods": 3,
+     "traced_share": 0,
+     "bounds": true,
+     "method": true
+    }
+   ],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "evidence magnitude",
+    "forecast"
+   ],
+   "corpora_traced": [],
+   "connecting_sentences": 0,
+   "manifest_error": "",
+   "html_bytes": 31707,
+   "policy_options": {
+    "present": true,
+    "header_ok": true,
+    "rows": 4,
+    "status_quo": true,
+    "who_specific": 4,
+    "evidence_tagged": 3,
+    "cost_ok": 4
+   }
+  },
+  "render": {
+   "rendered_views": 4,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 38549,
+   "manifest_charts": 4
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 3098,
+  "charts": [
+   {
+    "id": "ch_papers",
+    "title": "Papers per year with SSB phrases in the title",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "records",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_news_claim",
+    "title": "News articles per month on the SSB-diabetes claim",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 89,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_news_ssb",
+    "title": "News articles mentioning SSBs per month",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_lift",
+    "title": "Lift in SSB news coverage, India and comparators",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "lift",
+      "how": "call",
+      "points": 5,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_stance",
+    "title": "Orientation of typed papers on SSB consumption",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 7,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "ch_rr",
+    "title": "Effect sizes in the key syntheses",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Della Corte 2025",
+      "how": "ref",
+      "points": 4,
+      "traced_share": null
+     },
+     {
+      "name": "Neelakantan 2021 (Asia)",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   },
+   {
+    "id": "ch_sources",
+    "title": "Records by lane for the SSB claim subject",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "records",
+      "how": "call",
+      "points": 4,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "time_series.csv",
+    "how": "call",
+    "rows": 36,
+    "numeric_cells": 42,
+    "traced_share": 0.47619047619047616,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_claim_monthly.csv",
+    "how": "call",
+    "rows": 89,
+    "numeric_cells": 89,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_table.csv",
+    "how": "call",
+    "rows": 50,
+    "numeric_cells": 97,
+    "traced_share": 0.8041237113402062,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "call",
+    "rows": 8,
+    "numeric_cells": 0,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "India's own risk ratio",
+    "args": {
+     "claim": "sugar-sweetened beverage intake and incident type 2 diabetes in Indian adults",
+     "geo": "India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 33.7,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 2, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 2, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 60, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 0, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"available\": true"
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "India on the claim's country lanes",
+    "args": {
+     "claim": "sugar-sweetened beverage consumption increases the risk of type 2 diabetes",
+     "country": "India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.7,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": [{\"country\": \"United States\", \"papers\": 644}, {\"country\": \"China\", \"papers\": 250}, {\"country\": \"United Kingdom\", \"papers\": 200}, {\"country\": \"Australia\", \"papers\": 183}, {\"country\": \"Brazil\", \"papers\": 105}, {\"country\": \"Canada\", \"papers\": 86}, {\"country\": \"Mexico\", \"papers\": 62}, {\"country\": \"Spain\", \"papers\": 61}, {\"country\": \"Netherlands\", \"papers\": 61}, {\"country\": \"Germany\", \"papers\": 59}, {\"country\": \"South Korea\", \"papers\": 47}, {\"country\": \"Japan\", \"papers\": 35}]}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "Indian SSB news by month",
+    "args": {
+     "term": "sugar-sweetened beverages",
+     "country": "india",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.6,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 2, \"critical\": 1, \"negative\": 2, \"positive\": 0, \"mean_priority\": 6.5, \"critical_pct\": 50.0, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"positive\": 0, \"mean_priority\": null, \"critical_pct\": 0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 0, \"critical\": 0, \"negative\": 0, \"pos"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "Indian research framing shift",
+    "args": {
+     "term": "sugar-sweetened beverage",
+     "geo": "India",
+     "geo_mode": "from"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"scope\": \"India\", \"geo_mode\": \"from\", \"phrases\": [\"sugar-sweetened beverage\", \"sugar-sweetened drinks\", \"sugar-sweetened soft drinks\", \"sugar-sweetened beverage consumption\"], \"points\": [{\"year\": 2020, \"total\": 4, \"orientation\": {\"promising\": 1, \"problem_identifying\": 2, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 2, \"positive_pct\": 25.0, \"contested_pct\": 50.0}, {\"year\": 2021, \"total\": 1, \"orientation\": {\"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 1, \"positive_pct\": 0.0, \"contested_pct\": 100.0}, {\"year\": 2022, \"total\": 11, \"orientation\": {\"descriptive\": 8, \"cautionary\": 2, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": "
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "Do tax studies show reduced consumption",
+    "args": {
+     "claim": "tax on sugar-sweetened beverages reduces consumption",
+     "geo": "India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 26.0,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 4, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 7, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 1, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 1, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"available\": true,"
+   },
+   {
+    "id": "f6",
+    "feature": "research.radar",
+    "question": "What changed lately",
+    "args": {
+     "topic": "sugar-sweetened beverages type 2 diabetes",
+     "geo": "India",
+     "since_year": 2023
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.5,
+    "sample": "{\"new_work\": [{\"title\": \"Association between Sugar-Sweetened Beverage Consumption and the Risk of the Metabolic Syndrome: A Systematic Review and Meta-Analysis\", \"year\": 2023, \"venue\": \"Nutrients\", \"cited_by\": 33, \"orientation\": \"problem_identifying\", \"url\": \"https://doi.org/10.3390/nu15020430\"}, {\"title\": \"Health and economic burden of disease of sugar-sweetened beverage consumption in four Latin American and Caribbean countries: a modelling study\", \"year\": 2023, \"venue\": \"BMJ Open\", \"cited_by\": 18, \"orientation\": \"descriptive\", \"url\": \"https://doi.org/10.1136/bmjopen-2022-062809\"}, {\"title\": \"Association of Sugar-Sweetened Beverage Consumption and Moderate-to-Vigorous Physical Activity wit"
+   },
+   {
+    "id": "f7",
+    "feature": "research.evidence",
+    "question": "Weight-gain mediation for India",
+    "args": {
+     "claim": "sugar-sweetened beverages weight gain mediate type 2 diabetes risk India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 30.5,
+    "sample": "{\"volumes\": {\"research\": {\"n\": 11, \"window\": \"2017-2025\", \"lane\": \"subject\", \"what\": \"Prism-typed research papers\"}, \"readable_papers\": {\"n\": 4, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"papers carrying a real abstract, title-anchored\"}, \"pubmed\": {\"n\": 62, \"window\": \"1990-2025\", \"lane\": \"subject\", \"what\": \"the health literature index records — study designs available here\"}, \"news\": {\"n\": 1, \"window\": \"2019-01-01..2026-06-01\", \"lane\": \"subject\", \"what\": \"news articles mentioning this\"}, \"patents\": {\"n\": 0, \"window\": \"2005-2024\", \"lane\": \"subject\", \"what\": \"patents whose title matches\"}, \"arxiv\": {\"n\": 0, \"window\": \"2005-2025\", \"lane\": \"subject\", \"what\": \"preprints\"}}, \"corpus_stance\": {\"available\": tru"
+   }
+  ],
+  "followups_ok": 7,
+  "numbers": {
+   "total": 157,
+   "traced": 157,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 204,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 3,
+   "accuracy": 5,
+   "map": 5,
+   "forecast": 5,
+   "dimensions": 5,
+   "crossdomain": 5,
+   "integrity": 5,
+   "actionability": 5
+  },
+  "deep": {
+   "maps": [
+    {
+     "title": "Country an article is about: SSB news articles",
+     "points": 25,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    },
+    {
+     "title": "Country of first-author affiliation: the health literature index papers on SSB consumption",
+     "points": 12,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    }
+   ],
+   "forecasts": [
+    {
+     "title": "Papers per year with SSB phrases in the title: observed and projected",
+     "source": "call:analysis.scenarios#1",
+     "periods": 3,
+     "traced_share": 1.0,
+     "bounds": true,
+     "method": true
+    }
+   ],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "evidence magnitude",
+    "forecast",
+    "geography",
+    "source mix",
+    "time"
+   ],
+   "corpora_traced": [
+    "compose",
+    "health",
+    "news",
+    "patents",
+    "research",
+    "system"
+   ],
+   "connecting_sentences": 60,
+   "manifest_error": "",
+   "html_bytes": 55698,
+   "policy_options": {
+    "present": true,
+    "header_ok": true,
+    "rows": 4,
+    "status_quo": true,
+    "who_specific": 4,
+    "evidence_tagged": 4,
+    "cost_ok": 4
+   }
+  },
+  "render": {
+   "rendered_views": 10,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 61643,
+   "manifest_charts": 10
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 1863,
+  "charts": [],
+  "tables": [
+   {
+    "name": "ssb_diabetes_time_series.csv",
+    "how": "none",
+    "rows": 2,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country_comparison.csv",
+    "how": "none",
+    "rows": 1,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key_documents.csv",
+    "how": "none",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 40,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 32,
+   "untagged_examples": [
+    "13% — - In a meta-analysis of prospective studies, each additional daily serving of SSB was asso",
+    "1.13 — - In a meta-analysis of prospective studies, each additional daily serving of SSB was asso",
+    "95% — - In a meta-analysis of prospective studies, each additional daily serving of SSB was asso",
+    "1.06 — - In a meta-analysis of prospective studies, each additional daily serving of SSB was asso",
+    "1.21 — - In a meta-analysis of prospective studies, each additional daily serving of SSB was asso",
+    "10.1% — - India’s national adult diabetes prevalence was estimated at 10.1% (101 million people) i",
+    "101 — - India’s national adult diabetes prevalence was estimated at 10.1% (101 million people) i",
+    "28.6% — - India’s national adult diabetes prevalence was estimated at 10.1% (101 million people) i"
+   ]
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 234,
+   "first": true
+  },
+  "limits": {
+   "method_section": false,
+   "end_date": false,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 0,
+   "refs": 5,
+   "limits": 1,
+   "verdict": 3,
+   "accuracy": 5,
+   "map": 0,
+   "forecast": 1,
+   "dimensions": 0,
+   "crossdomain": 1,
+   "integrity": 2,
+   "actionability": 2
+  },
+  "deep": {
+   "maps": [],
+   "forecasts": [],
+   "dimensions": [],
+   "corpora_traced": [],
+   "connecting_sentences": 0,
+   "manifest_error": "",
+   "html_bytes": 20029,
+   "policy_options": {
+    "present": true,
+    "header_ok": true,
+    "rows": 3,
+    "status_quo": true,
+    "who_specific": 3,
+    "evidence_tagged": 0,
+    "cost_ok": 3
+   }
+  },
+  "render": {
+   "rendered_views": 0,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 20029,
+   "manifest_charts": 0
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 2733,
+  "charts": [
+   {
+    "id": "research-time",
+    "title": "Research records matching title phrase groups",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Title-matched records",
+      "how": "call",
+      "points": 26,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "news-time",
+    "title": "News articles mentioning sugary drinks",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Monthly articles",
+      "how": "call",
+      "points": 89,
+      "traced_share": 0.9887640449438202
+     }
+    ]
+   },
+   {
+    "id": "country-bars",
+    "title": "Top reported-country comparison",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Top countries",
+      "how": "call",
+      "points": 12,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "composition",
+    "title": "Subject-lane paper framing",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Framing",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "time-series.csv",
+    "how": "call",
+    "rows": 26,
+    "numeric_cells": 26,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "country-table.csv",
+    "how": "call",
+    "rows": 12,
+    "numeric_cells": 12,
+    "traced_share": 0.6666666666666666,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "key-documents.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": false,
+  "followups": [],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 81,
+   "traced": 81,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 8,
+   "found_in_corpus": 8,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 109,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [
+   "chart 'News articles mentioning sugary drinks' values match a different call of the cited feature than #n"
+  ],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "map": 5,
+   "forecast": 5,
+   "dimensions": 5,
+   "crossdomain": 5,
+   "integrity": 5,
+   "actionability": 5
+  },
+  "deep": {
+   "maps": [
+    {
+     "title": "Countries covered in sugary-drink news",
+     "points": 30,
+     "how": "call",
+     "traced_share": 1.0,
+     "india": true,
+     "lane_stated": true
+    }
+   ],
+   "forecasts": [
+    {
+     "title": "Conditional forecast of title-matched research records",
+     "source": "call:analysis.scenarios#1",
+     "periods": 3,
+     "traced_share": 1.0,
+     "bounds": true,
+     "method": true
+    }
+   ],
+   "dimensions": [
+    "comparison",
+    "composition",
+    "evidence magnitude",
+    "forecast",
+    "geography",
+    "time"
+   ],
+   "corpora_traced": [
+    "health",
+    "news",
+    "patents",
+    "research"
+   ],
+   "connecting_sentences": 21,
+   "manifest_error": "",
+   "html_bytes": 54159,
+   "policy_options": {
+    "present": true,
+    "header_ok": true,
+    "rows": 3,
+    "status_quo": true,
+    "who_specific": 3,
+    "evidence_tagged": 3,
+    "cost_ok": 3
+   }
+  },
+  "render": {
+   "rendered_views": 6,
+   "zero_width_views": 0,
+   "console_errors": [],
+   "dom_chars": 59211,
+   "manifest_charts": 6
+  }
+ }
+}

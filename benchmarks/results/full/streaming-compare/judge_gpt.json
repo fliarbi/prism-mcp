@@ -1,0 +1,178 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 2,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "trend": 2,
+    "comparison": 5,
+    "chart": 2,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly series and quantified endpoint changes across complete months; peak and full decomposition are not reported.",
+    "comparison": "Ratios and deltas use the same term-count window and define the combined-count baseline, with overlap caveat.",
+    "chart": "Chart traces but plots only two endpoints, so it does not show the monthly series the question calls for.",
+    "drilldown": "No traced breakdown to story or source; proposed calls did not return data.",
+    "export": "Monthly CSV is fully traced and carries source, window, unit, coverage, identifiers, and provenance; per-term summary export is absent.",
+    "repro": "Call args and window are supplied and the figures are reproducible, but the export omits the full regenerate recipe needed to rebuild every artifact.",
+    "accuracy": "Measured claims are mostly careful; it says the window cutoff is 144 days before today, while the actual date gap is 144 days only by date subtraction? It also calls coverage 'not proven complete' appropriately.",
+    "limits": "Specific window, censoring, overlap, match-mode, lane, and coverage limits are placed near the claims; ingest lag is not otherwise quantified.",
+    "verdict": "Direct answer, decision, confidence, and conditions are given, but the strongest contrary evidence and tone comparison are not addressed in the verdict.",
+    "facets": "Covers attention and trend with grounded data, but leaves tone comparison, source breakdown, overlap size, and implied facet checks unresolved."
+   },
+   "B": {
+    "trend": "No measured series or sourced estimate.",
+    "comparison": "No measured common-scale comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are generic and missing the benchmark window; only one follow-up executed successfully.",
+    "export": "No data export; empty provenance block.",
+    "repro": "No numeric claims to reproduce, but no measured source call or reproducible evidence.",
+    "accuracy": "Makes no contradictory measured claims; appropriately states the data are unavailable.",
+    "limits": "Clearly states missing window, lane, coverage, censoring, and match mode, though no measurement exists.",
+    "verdict": "Gives a direct decision, high confidence in the inability to measure, and specifies what evidence would change it.",
+    "facets": "Most requested facets are explicitly unavailable, but only a small portion of the implied comparison is grounded."
+   },
+   "C": {
+    "trend": "Includes the censored May 2026 point as a normal decline, directly contradicting the source caveat; this caps the score.",
+    "comparison": "Ratios and deltas are on a shared scale and mostly recompute, with overlap and denominator caveats.",
+    "chart": "The monthly chart plots censored May as a collapse and its caption claims a real fall; that source contradiction makes the chart invalid.",
+    "drilldown": "Has a traced term/month breakdown but follow-up calls are mostly empty or fail, and there are no item-level identifiers.",
+    "export": "Two relevant tables are referenced and largely traced, but the window label and coverage flag misstate the source's exclusive cutoff and censoring.",
+    "repro": "Most figures trace and the call is reproducible, but one numeric claim is untraced and the report materially misreads the censored endpoint.",
+    "accuracy": "Treats the censored May value as complete and interprets it as a real fall; the verdict also calls coverage 'complete-looking' despite the stated incompleteness caveat.",
+    "limits": "Mentions ingest lag and window, but incorrectly says May is uncensored and presents the cutoff as an inclusive end date.",
+    "verdict": "Although direct, it rests on the false May decline and misses the strongest limitation, so it is unsupported by its own correctly read evidence.",
+    "facets": "Addresses volume, trends, critical share, and limits, but tone is not established and implied source/overlap checks remain open."
+   },
+   "D": {
+    "trend": "No measured time series; explicitly labels its index estimates.",
+    "comparison": "Only an estimate-based qualitative/index comparison, not a measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Proposed calls are unexecuted and several use unsupported or malformed arguments; no traced breakdown.",
+    "export": "CSV is explicitly an estimate/plan with null values, earning the estimate-only level.",
+    "repro": "No measured numeric claims; estimates are labeled, but no call was run and the plan is not reproducible evidence.",
+    "accuracy": "Estimates are clearly marked and no reference facts are contradicted as measurements.",
+    "limits": "Specific missing-data, window, lane, censoring, and match-mode limits are stated.",
+    "verdict": "Gives a cautious answer and decision, but its unsupported index estimates weaken the recommendation and confidence.",
+    "facets": "Most requested facets are listed as unmeasured, without grounded values or grounded database no-data results."
+   }
+  },
+  "errors": {
+   "A": [
+    "The source window ends exclusively at 2026-06-01 and censors the newest month; export includes the May point but marks coverage partial, so its coverage label is too broad."
+   ],
+   "B": [],
+   "C": [
+    "Plots and describes May 2026 as a genuine decline even though the source says the newest month is censored because ingest is incomplete.",
+    "Calls the window 2024-06-01 through 2026-05-31 and says May is not partial, contrary to the source's exclusive cutoff and censoring note.",
+    "Claims 'complete-looking coverage' despite the source explicitly saying strict index partition reads do not prove ingest completeness."
+   ],
+   "D": [
+    "Provides Netflix 100, Disney+ 60, and Prime Video 45 as memory estimates; they are labeled, but unsupported and unusable for a measured comparison."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the most decision-ready: it quantifies the attention gap and challenger growth, preserves key caveats, and supplies a traced monthly export. C has richer charts and tables, but its treatment of censored May 2026 as a real collapse undermines its trend and verdict; B and D appropriately acknowledge that they cannot measure the comparison."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 2,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 2,
+   "comparison": 5,
+   "chart": 2,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

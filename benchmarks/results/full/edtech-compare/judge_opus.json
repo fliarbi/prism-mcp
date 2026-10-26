@@ -1,0 +1,174 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The yearly index is labelled as a memory estimate and names no source, so it earns 1.",
+    "comparison": "Gives a qualitative overlap note only, with no ratio.",
+    "chart": "The chart is labelled 'estimate', which is the honest memory chart and earns exactly 1.",
+    "drilldown": "Names generic layers. Only 1 of 6 follow-ups executed ok.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "No call underlies any figure. The ceiling is 0.",
+    "accuracy": "There are no contradictions. The Byju's history is memory labelled 'est.', and the 2019-2025 window does not match the database.",
+    "limits": "Specific about what cannot be measured and states the window gap, but none of it changes the reading.",
+    "verdict": "The hypothesis map rests on memory. It has a confidence level and a stated change condition, but no measured support.",
+    "facets": "Facets are answered from memory or estimate only."
+   },
+   "B": {
+    "trend": "The full 24-month traced series, window and censoring are all stated. The 781→212 first-12 vs last-12 change is recomputed exactly, as are the edtech 14,019→14,678 and online learning 10,433→8,714 changes. Peak 160 (2024-07), trough 4 (2025-09) and the May 2026 flare are named. The critical-share decomposition is traced.",
+    "comparison": "Gives 1.50x, 28.9x, 19.3x, 27.6x, 32.3x and the critical-share deltas, all recomputing exactly on one window. Overlap and the summed-total caveat are carried. It answers the question's premise: Byju's is 2% of volume but the most critical term.",
+    "chart": "One fully traced volume chart. Critical share and tone are discussed but not charted, although the data supports them.",
+    "drilldown": "One traced layer (month × labels) and no item-level records. Only 2 of 6 follow-ups returned ok.",
+    "export": "Two traced tables (monthly and summary) with full provenance and a provenance JSON. Both are referenced. The monthly critical and tone series are not exported.",
+    "repro": "111 of 117 numbers traced. The call is listed with args and window, and derived figures show their arithmetic.",
+    "accuracy": "Catches the reference's anomalies: combined_articles is a sum, not deduplicated; critical is not the same as negative; the tool's growth is undocumented; and no month is partial.",
+    "limits": "Limits are detailed and the 144-day gap is stated. They mostly sit in a Method section, and the ceiling is 3.",
+    "verdict": "A direct, quantified answer with a decision, a medium confidence level and its reason, and what would change it. It names the May 2026 flare as contrary evidence.",
+    "facets": "Totals, shares, trend, tone, most_covered, combined, and overlap (as a sum) are all grounded. Causes are honestly marked unmeasured."
+   },
+   "C": {
+    "trend": "The series is traced, but May 2026 is wrongly called censored. Endpoint-only changes are used, and 'online learning rose 43.8%' conflicts with the tool's flat direction and 0.82 growth.",
+    "comparison": "The 1.50x, 28.9x and 19.3x ratios are exact with the overlap caveat. The tone contrast is less developed.",
+    "chart": "Traced volume chart only. Its caption repeats the censoring misreading.",
+    "drilldown": "Gives the critical-share layer but no items. Only 1 of 5 follow-ups returned ok.",
+    "export": "One traced table, but the coverage flag is mislabelled 'partial'. Summary and tone tables are absent.",
+    "repro": "43 of 46 numbers traced, and the call is listed with args.",
+    "accuracy": "Misreads censored_at as censoring May 2026; May's partial_period is false. Its trend direction for online learning contradicts the tool.",
+    "limits": "States the window and the match-mode caveat, but the censoring limit is misstated, which changes the reading.",
+    "verdict": "A direct answer with a confidence level, but it is unquantified and does not acknowledge contrary evidence such as the May 2026 flare.",
+    "facets": "Most facets are grounded, but tone over time is not read."
+   },
+   "D": {
+    "trend": "No series and no direction is given.",
+    "comparison": "No comparison is given.",
+    "chart": "No chart is given.",
+    "drilldown": "Proposes follow-ups with unspecified windows. None of the 4 executed ok.",
+    "export": "No export is given.",
+    "repro": "There are no numbers at all.",
+    "accuracy": "An empty deliverable with no contradictions.",
+    "limits": "Specific about what cannot be measured.",
+    "verdict": "A refusal that hedges to nothing.",
+    "facets": "No facets are answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Claims May 2026 is censored and an incomplete month, but the tool marks it partial_period false; censoring excludes June 2026 onward.",
+    "Reports online learning as 'rose +43.8%' from single-month endpoints, contradicting the tool's flat direction and 0.82 growth.",
+    "The CSV coverage flag reads 'partial' while the tool reports full coverage."
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "B alone turns the single news.compare call into a decision-ready answer. Its first-12 vs last-12 changes, ratios and critical-share contrasts all recompute exactly, and it shows Byju's is about 2% of volume but 90% critical, which undercuts the 'Byju's dominates' premise for this window. B also catches the summed (not deduplicated) combined total and the critical-vs-negative distinction. C used the same data but misread censoring and drew a misleading direction from endpoint months, while A and D offered only memory or nothing measurable."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

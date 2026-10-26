@@ -1,0 +1,241 @@
+{
+ "slug": "apple-sentiment",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 1.0,
+    "chart": 0.5,
+    "drilldown": 1.5,
+    "export": 0.5,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 33.9,
+   "plain": 33.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 23.2,
+    "gpt": 44.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 2.5,
+    "export": 4.5,
+    "repro": 4.0,
+    "refs": 1.5,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 74.9,
+   "plain": 74.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 77.0,
+    "gpt": 72.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 24.8,
+   "plain": 24.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 16.6,
+    "gpt": 33.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.5,
+    "facets": 4.5
+   },
+   "strict": 71.6,
+   "plain": 71.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.8,
+    "gpt": 74.4
+   }
+  }
+ },
+ "judge_mad": 0.64,
+ "verdicts": {
+  "opus": "B and D both answer with traced numbers that Apple coverage is markedly more positive than the corpus baseline (0.36 vs 0.58). D goes further:\n- It separates the 'critical' flag from negative polarity.\n- It quantifies volume and critical trends.\n- It flags the Colombia anomaly and the label-fill lag.\n- It gives news items with URLs.\n\nD has one averaging slip. A and C offer no measurement; C's honestly labelled memory guess happens to point the right way.",
+  "gpt": "D is the strongest decision brief: it gives a measured comparison, a readable monthly movement, and a bounded verdict with relevant caveats. C provides richer exports and breakdowns, but its first-six-month tone average is miscalculated and its report adds more unsupported precision."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Leftover instruction text in the prose ('Mention the exported file...')"
+   ],
+   "claude_bare": [],
+   "claude_prism": [
+    "The first-six-month ratio average is given as ~0.42; recomputed it is 0.45, so the fall is ~0.15, not 0.12",
+    "Garbled caption: 'except none above'",
+    "The export labels coverage 'full' despite censoring and 48% placement"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "No measured trend, comparison, or data export; the remembered positive impression is explicitly marked as an estimate."
+   ],
+   "chatgpt_bare": [
+    "No measurements, trend, comparison, chart, or export; the proposed calls did not yield data."
+   ],
+   "claude_prism": [
+    "The stated first-six-month negative-to-positive average (~0.42) does not match the listed values (~0.45).",
+    "The gap from 2026-05-31 to 2026-10-23 is stated as 145 days; it is 145 days only if counting both endpoints, while elapsed-day difference is 145? The record's dates make the stated gap convention ambiguous."
+   ],
+   "chatgpt_prism": [
+    "The statement that the news table passed strict index partition reads is not supported by the supplied reference record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Names follow-up calls, but 0 of 4 executed.",
+    "export": "No CSV.",
+    "repro": "No numbers; honest about absence.",
+    "refs": "No news items, although the question needs them.",
+    "accuracy": "Empty deliverable with no contradictions, so 3 by rule.",
+    "limits": "States what is unknown only in generic terms.",
+    "verdict": "'Cannot determine' is an empty answer.",
+    "facets": "No facet answered."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced 24-month ratio series with window and censoring. Change quantified (-0.08, high 0.63, low 0.12, volume peak 697 in 2026-04). Not decomposed.",
+    "comparison": "0.36 vs a defined 0.58 baseline, delta and 0.62x recompute exactly. Launch vs regulation contrast not tested.",
+    "chart": "One fully traced ratio chart. No volume, critical-share or baseline overlay.",
+    "drilldown": "One traced layer and one headline without a URL. Only 1 of 5 follow-ups ran ok.",
+    "export": "One traced CSV with provenance, but no summary table. The prose reference is a leftover instruction line.",
+    "repro": "27 of 28 numbers traced; call listed with args and window.",
+    "refs": "Headline has no URL; capped at 1.",
+    "accuracy": "Values match the reference. Does not catch Colombia or explain what 'critical' means.",
+    "limits": "Gives the 144-day gap, censoring, match mode, sample basis of concentration and placed_pct. Mostly in the Method section.",
+    "verdict": "Direct answer, decision, confidence and trigger, consistent with its data. Contrary months are not named in the verdict.",
+    "facets": "Most facets grounded. Critical share and launch/regulation spikes not addressed."
+   },
+   "claude_bare": {
+    "trend": "Empty chart; no direction asserted.",
+    "comparison": "Qualitative estimate from memory only.",
+    "chart": "Chart with zero points does not count as a chart.",
+    "drilldown": "Breakdown layers named but none from data. 3 of 7 follow-ups ran ok.",
+    "export": "Header-only template.",
+    "repro": "Memory estimate, labelled as such.",
+    "refs": "None.",
+    "accuracy": "Its memory guess is consistent with the reference and nothing is fabricated.",
+    "limits": "Specific about what is unmeasured and about fruit/homonym matching.",
+    "verdict": "Low-confidence memory answer with a decision and a trigger.",
+    "facets": "Facets answered from memory or left as unmeasured."
+   },
+   "claude_prism": {
+    "trend": "Two traced series: critical_pct and ratio. CAGR 25.5%, late/early 1.47 and flat critical series quoted correctly. The first-six-month average is 0.45, not 0.42 as stated (est.). One caption is garbled.",
+    "comparison": "Baseline defined, delta and ratio exact. Notes the baseline window is unstated and that critical share has no baseline.",
+    "chart": "Two traced charts that decompose tone (critical vs polarity). No volume chart and no baseline line; one caption garbled.",
+    "drilldown": "Two traced layers (themes to subcategories; headlines with URLs). Only 2 of 6 follow-ups ran ok.",
+    "export": "Monthly and summary CSVs with provenance. coverage=full is questionable given censoring and 48% placement.",
+    "repro": "104 of 106 numbers traced; derived values marked est. One slip (0.42).",
+    "refs": "Headlines carry date, publisher and URL; capped at 2.",
+    "accuracy": "Reads critical as distinct from negative, flags Colombia and the enrichment lag. One averaging slip.",
+    "limits": "Limits sit next to the numbers: 145-day gap, label fill, match-mode split, sample basis. States what cannot be answered.",
+    "verdict": "Answer, decision, confidence with reason and trigger, bounded by window end. Above-baseline months (2025-01, 2025-05) not named in the verdict.",
+    "facets": "Volume, tone, baseline, critical, themes, entities, places and sources all grounded. Launch spikes not tied to events."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "No measured series; explicitly labels its impression as an estimate.",
+    "comparison": "No measured Apple-to-corpus comparison.",
+    "chart": "Empty estimate chart, which earns the estimate anchor only.",
+    "drilldown": "Identifies breakdown dimensions and gives specific calls, but only 3 of 7 executed successfully.",
+    "export": "Header-only estimate template with no data rows.",
+    "repro": "No measurement calls were run; estimates are honestly labeled.",
+    "refs": "No references; ceiling is 1.",
+    "accuracy": "Does not invent measurements or contradict the record.",
+    "limits": "Clearly states the absent window, unknown coverage and match mode, and separates memory from measurement.",
+    "verdict": "Direct, cautious answer with a decision, confidence, and condition that would change it; it cannot establish a measured conclusion.",
+    "facets": "Acknowledges the unanswered facets, but supplies no grounded measurements."
+   },
+   "chatgpt_bare": {
+    "trend": "No series or measured trend.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Names possible breakdowns, but its proposed calls did not execute successfully.",
+    "export": "No CSV export.",
+    "repro": "No measurements or reproducible results; missing data is stated honestly.",
+    "refs": "No references; ceiling is 1.",
+    "accuracy": "Does not invent measurements or contradict the record.",
+    "limits": "Mentions unknown window and methods, but does not give specific limits tied to measured values.",
+    "verdict": "Directly says the question cannot be answered, with confidence, a decision, and what evidence is needed; no data supports a substantive answer.",
+    "facets": "Lists the facets that are unavailable, but offers no grounded results."
+   },
+   "claude_prism": {
+    "trend": "Provides traced monthly tone and critical-share series with quantified changes and decisive points. The first-six-month average is misstated as about 0.42; the listed values average about 0.45.",
+    "comparison": "Apple and corpus ratios are compared on the same measure and the baseline is defined. Delta and ratio are supported, though the baseline window is unstated.",
+    "chart": "The plotted points trace and support the prose, but the charts do not visibly mark the censored boundary; the critical-share chart is not a direct tone measure.",
+    "drilldown": "Includes several traced breakdowns, but only two of six proposed follow-up calls returned usable data, short of the three needed for this anchor.",
+    "export": "Includes the monthly series and comparison summary, with provenance, identifiers, and calls in a provenance block.",
+    "repro": "Nearly all numeric claims trace and the used call is listed with arguments and window; two numeric claims fail the script trace.",
+    "refs": "News items are cited, but the script ceiling is 1 and there are no corpus DOI references.",
+    "accuracy": "The first-six-month ratio average is wrong, and the stated 145-day gap is one day too long. Other main comparisons are consistent with the record.",
+    "limits": "Covers the window, censoring, gap, match modes, coverage, enrichment lag, and interpretation limits near the relevant claims.",
+    "verdict": "Answers directly with a decision and confidence, but the verdict does not foreground the January 2025 contrary spike and understates the arithmetic issue in its trend account.",
+    "facets": "Grounded results cover tone, movement, themes, entities, geography, source concentration, and critical headlines, while noting important limits."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced monthly series and quantified endpoint change, peak, and trough; it does not give a fuller trend summary such as the reference's volume growth measure.",
+    "comparison": "Correctly compares Apple's ratio with the corpus baseline and states the delta and relative ratio; the baseline window is not supplied by the source.",
+    "chart": "The chart traces the monthly tone series and supports the claim, but does not visibly mark the censored boundary or show a baseline series.",
+    "drilldown": "Provides a traced breakdown and concrete proposed calls, but only one of five follow-ups executed successfully.",
+    "export": "The monthly series is exported with provenance, but the question also calls for a per-term comparison summary, which is absent as a CSV.",
+    "repro": "Nearly all numeric claims trace and the used call is reproducible; one numeric claim fails the script trace.",
+    "refs": "No external references; ceiling is 1.",
+    "accuracy": "The main figures and interpretation match the record. The claim that the news table passed strict index partition reads is not established by the supplied record.",
+    "limits": "States the window, censoring, coverage, matching mode, sentiment method, and enrichment limitations, though some caveats are condensed.",
+    "verdict": "Direct answer, decision, confidence, and change condition are consistent with the data; it acknowledges month-to-month reversals and bounds the inference to the measured classifier and window.",
+    "facets": "Covers tone versus baseline, time movement, and relevant implied facets with grounded values and caveats."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

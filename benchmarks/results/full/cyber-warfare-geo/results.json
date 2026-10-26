@@ -1,0 +1,220 @@
+{
+ "slug": "cyber-warfare-geo",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 29.4,
+   "plain": 29.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 27.3,
+    "gpt": 31.5
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 3.0,
+    "export": 4.0,
+    "repro": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 72.4,
+   "plain": 72.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 74.9,
+    "gpt": 70.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 2.0,
+    "facets": 0.5
+   },
+   "strict": 27.7,
+   "plain": 27.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.1,
+    "gpt": 31.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 2.5,
+    "chart": 0.0,
+    "drilldown": 4.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 64.5,
+   "plain": 64.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 59.0,
+    "gpt": 70.0
+   }
+  }
+ },
+ "judge_mad": 0.47,
+ "verdicts": {
+  "opus": "B and D used the same two calls. B read them critically: it noted that news rows overlap (2131 mentions vs 748 placed), flagged the conflict between the two news pulls and the undefined lift and share_pct baselines, and concluded that 'where it is studied' cannot be answered from 3 the health literature index papers. D presented the same sparse research rows as an answer at medium confidence and had no chart. A and C were honest about having no data, but C's memory map is the only one a decision-maker could act on qualitatively.",
+  "gpt": "B best equips a decision-maker to distinguish where research authorship, journals, patents, and news attention are recorded, and it carries the clearest traceable drill-down and provenance. D offers a stronger same-window news comparison, but its unsupported overlap inference and lift interpretation weaken accuracy, while neither deliverable can establish a direct geographic ratio between studied and reported activity."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Attributes 'do not add lanes' to c1, which does not state it"
+   ],
+   "claude_bare": [
+    "Patent origin rows asserted as empty, contradicting the reference (KR 5, US 2)"
+   ],
+   "chatgpt_prism": [
+    "news_geography.csv window end given as 2026-06-01 instead of the exclusive 2026-05-01",
+    "Undated c1 news pull described as 'broader' though it has smaller counts; 331 vs 523 discrepancy unaddressed"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Presents specific geography and named institutions as a likely map from memory; correctly labels it qualitative and unmeasured."
+   ],
+   "chatgpt_prism": [
+    "Dated news CSV lists only 15 of the 16 returned country rows, omitting the United Kingdom row at 144 articles.",
+    "Calls the dated research/news mismatch descriptive but does not resolve the differing windows or scales."
+   ],
+   "chatgpt_bare": [
+    "Calls the supplied measurements unavailable even though the reference record contains research, news, and patent geography results."
+   ],
+   "claude_prism": [
+    "Claims 2,131 listed country mentions exceed 748 placed articles and infers multi-country article overlap; the reference does not establish these are comparable totals.",
+    "Reads lift as relative to general corpus share although the response itself notes the baseline is unstated.",
+    "Chart caption identifies North Korea as highest lift but omits it from the plotted series."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "comparison": "No comparison is made.",
+    "chart": "No chart.",
+    "drilldown": "Follow-ups are generic, and only 1 of 5 executed successfully.",
+    "export": "Header-only CSV labelled estimate, with no rows.",
+    "repro": "No numbers, so there is nothing to reproduce.",
+    "accuracy": "Makes no claims, so there are no contradictions.",
+    "limits": "Specific about what is unmeasured, but has no data limits to place.",
+    "verdict": "An honest 'cannot measure' that answers nothing.",
+    "facets": "No facet answered."
+   },
+   "claude_prism": {
+    "comparison": "Traced ratios to the US (2.24x Russia) recompute exactly. Flags that the lift baseline is undefined. States that studied-vs-reported cannot be measured.",
+    "chart": "One fully traced hbar with window, unit and source. The thin research lanes are not charted, and it shows levels rather than a decomposition.",
+    "drilldown": "One traced layer (lane to country), with no item-level identifiers. 3 of 6 follow-ups executed successfully.",
+    "export": "Two CSVs with source, window, unit and coverage, plus a JSON provenance block, referenced in the prose. The research window is unknown.",
+    "repro": "61 of 63 numbers traced. Calls listed with args. Derived numbers such as 2131 and 175 days recompute.",
+    "accuracy": "Catches anomalies: row sum 2131 exceeds 748 placed, US count is 331 vs 523 across pulls, share_pct denominator unstated. Minor misattribution: says c1 states 'do not add'.",
+    "limits": "Window end, censoring, enrichment bound, the 175-day gap, placed_pct, the health literature index scope and acronym collisions all sit next to the numbers. Says what would close the gap.",
+    "verdict": "Clear split between the news answer and the research answer, with confidence reasons. Capped at 3 by the ceiling.",
+    "facets": "All four lanes covered with grounded values. The mismatch is explicitly marked unmeasurable."
+   },
+   "claude_bare": {
+    "comparison": "Qualitative hypothesis only.",
+    "chart": "No chart.",
+    "drilldown": "Layers are named generically. Only 2 of 7 follow-ups executed successfully.",
+    "export": "Estimate-labelled placeholder rows.",
+    "repro": "Memory content, labelled as such.",
+    "accuracy": "Calls patent origin rows 'explicit empty'; the reference has KR 5 and US 2. Named institutions are memory but labelled.",
+    "limits": "Honest and specific about what is unmeasured, including term-variant matching and language bias.",
+    "verdict": "Direct answer from memory with confidence, decision and change condition. No traced support.",
+    "facets": "Facets answered from memory."
+   },
+   "chatgpt_prism": {
+    "comparison": "Traced 2.2x US/Russia, but the baseline framing is odd. Carries no lift caveat. The studied-vs-reported mismatch is asserted from 3 papers.",
+    "chart": "No chart block.",
+    "drilldown": "One traced layer with no items. Follow-ups executed, but f4 duplicates c2.",
+    "export": "Two traced CSVs with a provenance block. The news CSV window ends 2026-06-01, contradicting the exclusive 2026-05-01 end used in the prose.",
+    "repro": "52 of 52 numbers traced. Calls listed with args.",
+    "accuracy": "Calls the smaller undated c1 news pull 'broader'. Does not reconcile 331 vs 523. Export window misstates the end date.",
+    "limits": "Window, censoring, placed_pct, the five-month gap and acronym collisions are stated in context. Does not say what would close the gap beyond 'broader databases'.",
+    "verdict": "Answers 'studied in Norway, China, Italy' from 3 papers at medium confidence, which a domain expert would not sign. Ignores the inconsistency between the two news pulls.",
+    "facets": "All lanes covered with grounded values."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "comparison": "No measured comparison or traced values; qualitative expectations only.",
+    "chart": "No chart block.",
+    "drilldown": "Breakdown and proposed calls are not backed by result layers; only two of seven follow-ups worked.",
+    "export": "Estimate CSV has no measured rows; ceiling is 1.",
+    "repro": "No calls or sourced numbers to regenerate.",
+    "accuracy": "Clearly marks claims as memory or estimates, with no contradiction to the reference.",
+    "limits": "Names relevant lane, window, coverage, and matching limits, though no measured window exists.",
+    "verdict": "Gives a cautious answer, decision, confidence, and conditions, but the geography claim is unmeasured.",
+    "facets": "Mostly qualitative or unmeasured; limited grounded coverage."
+   },
+   "chatgpt_prism": {
+    "comparison": "The 2.2x US-to-Russia comparison is traced and same-window, but it does not compare study with reporting on one scale; the lane mismatch is descriptive.",
+    "chart": "No chart block.",
+    "drilldown": "Two traced exports and five executed, on-topic follow-ups meet the ceiling; the follow-ups are proposed rather than their results folded back in.",
+    "export": "Both lane-specific CSVs are traced and referenced with provenance, but the research export lacks a reported window and explicit coverage flag, and null hygiene is not relevantly demonstrated.",
+    "repro": "Calls and args are listed and nearly all values trace; the dated news table omits some returned rows, and not every number is fully reproducible from the listed export.",
+    "accuracy": "Values and lane definitions generally match the reference; it does not catch the reference's multiple-country overlap and some coverage/window details are underspecified.",
+    "limits": "Covers lane meanings, censored news window, placement rate, and collision caveats near the data; research window and ingest limits remain incomplete.",
+    "verdict": "Direct answer, decision, confidence, and conditions are supported, but it does not name the strongest contrary evidence or fully bound the answer by limits.",
+    "facets": "Grounded coverage spans research, news, patents, dated placement, and the study/reporting mismatch."
+   },
+   "chatgpt_bare": {
+    "comparison": "No measured values or comparison.",
+    "chart": "No chart block.",
+    "drilldown": "No result breakdown; proposed calls include generic or nonmatching calls and only one executed follow-up returned relevant data.",
+    "export": "Header-only estimate placeholder, not a measured export.",
+    "repro": "No measured numbers or usable regeneration recipe.",
+    "accuracy": "Makes no contradictory or fabricated measured claims; correctly distinguishes unavailable from zero.",
+    "limits": "Says data are unavailable but leaves window, coverage, censoring, and match mode unknown rather than using the supplied record.",
+    "verdict": "Clear decision and confidence, but no data-backed answer to the geography question.",
+    "facets": "No grounded geography values; facets are mostly declared unavailable despite a supplied reference record."
+   },
+   "claude_prism": {
+    "comparison": "News-country ratios recompute on one dated scale with a stated baseline and caveats; it does not establish the requested study-versus-reporting comparison.",
+    "chart": "The single chart traces its points, window, unit, and source, but its caption claims highest lift for North Korea while North Korea is omitted from the plotted points.",
+    "drilldown": "Two traced breakdown levels and specific calls are present, but several follow-ups failed and none of their results are incorporated.",
+    "export": "Both needed lane tables are referenced and traced, with IDs and provenance; research window and coverage remain unknown as the source reports.",
+    "repro": "Most values trace and calls are listed, but two numbers are untraced and one is untagged, preventing full reproduction.",
+    "accuracy": "Mostly matches the record, but treats multi-country rows as proof articles appear under multiple countries and infers lift's denominator; these are not established by the response.",
+    "limits": "States dated window, censoring and enrichment bounds, placement coverage, lane distinctions, and match uncertainty beside relevant claims.",
+    "verdict": "The direct answer and confidence are undermined by saying news geography dominates while the evidence only measures subject-country mentions; contrary evidence and conditions are present but the verdict exceeds what the data supports.",
+    "facets": "Covers most implied facets with grounded values, including lane differences, overlap, seasonality limits, and attribution caveats, but not fully."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

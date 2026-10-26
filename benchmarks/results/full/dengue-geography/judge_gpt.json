@@ -1,0 +1,168 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 4,
+    "export": 5,
+    "repro": 5,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 5
+   },
+   "B": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Traced within-lane ratios and the research/news contrast answer the mismatch; caveats are mostly carried, though one cross-lane sentence is confusing.",
+    "chart": "Both traced charts have units, source, window treatment, and prose claims; the captions explain the research window is unavailable.",
+    "drilldown": "Traced country breakdowns and specific calls are present, but only four of six proposed calls executed with non-empty results, and no item-level records are folded back.",
+    "export": "Needed lane tables are traced with provenance, identifiers, nulls not zero-filled, and a provenance block.",
+    "repro": "Calls and arguments are supplied; traced numbers and derived ratios can be regenerated, with the research window correctly left unknown.",
+    "accuracy": "Mostly faithful and careful, but the news chart caption claims India exceeds the US and Brazil combined, which the counts contradict; the top-15 cutoff is also misapplied to Thailand as fewer than 173 although Thailand is absent from the returned rows and the list is not a complete country table.",
+    "limits": "Specific windows, lag, coverage and match-mode limits appear near the findings; the 175-day gap is calendar arithmetic, while research dates remain unknown.",
+    "verdict": "Direct answer and decision are present, but the verdict does not acknowledge the strongest contrary evidence and exceeds the script ceiling of 3.",
+    "facets": "Covers research authorship, publication, news, mismatch, overlap caveats, and the grounded empty patent result."
+   },
+   "B": {
+    "comparison": "No measured comparison; the missing-data statement is qualitative.",
+    "chart": "No chart block.",
+    "drilldown": "Calls are proposed but not executed; no traced breakdown layer is provided.",
+    "export": "No CSV export.",
+    "repro": "No numbers to reproduce; calls are proposals without recorded results.",
+    "accuracy": "Does not invent measurements or contradict the record; the abstention is accurate about its own supplied material.",
+    "limits": "States that windows, lanes, coverage, censoring, and match mode are unavailable, but cannot apply specific corpus caveats.",
+    "verdict": "Clear abstention, decision, confidence, and conditions for change; no measured evidence supports a country ranking.",
+    "facets": "Does not answer the country rankings or mismatch, and has no grounded database values."
+   },
+   "C": {
+    "comparison": "Only a directional, explicitly estimated comparison; no measured ratio or delta.",
+    "chart": "No chart block.",
+    "drilldown": "Proposed calls and empty tables provide no traced breakdown or executed results.",
+    "export": "The CSV is explicitly an empty estimate, not a data-backed export.",
+    "repro": "All substantive country claims are memory estimates and there is no replayable result.",
+    "accuracy": "Specific claims about 2024 record cases and likely country rankings are unsupported estimates; patent rows are called empty despite no call being made.",
+    "limits": "Labels estimates and names missing windows and coverage, but the relevant corpus-specific limits are not measured.",
+    "verdict": "Offers a tentative hypothesis, but the specific country claims are not supported and confidence is low; no grounded decision answer.",
+    "facets": "Most requested facets are estimates or unmeasured, with no grounded country results."
+   },
+   "D": {
+    "comparison": "Numeric ratios are within-lane and recomputable, but it explicitly avoids comparing research and news counts on a shared scale, so it does not quantify the central mismatch.",
+    "chart": "No chart block.",
+    "drilldown": "Country rows form one traced layer and follow-ups are specific, but only one of three proposed calls executed with non-empty data; no item-level results are folded in.",
+    "export": "Three traced tables have source, window, unit, and coverage and are referenced; research windows are unknown, so full provenance is incomplete.",
+    "repro": "All listed source calls have arguments and windows where available, and the reported figures reproduce; no regenerate recipe fully rebuilds charts and tables beyond the listed calls.",
+    "accuracy": "Counts and lane definitions match the record; the stated 145-day gap is incorrect (2026-05-01 to 2026-10-23 is 175 days).",
+    "limits": "Censoring, lag, coverage, lanes, and place-resolution cautions are stated, but the gap-to-today arithmetic is wrong and caveats are not fully integrated into the comparison.",
+    "verdict": "Answers and gives a decision and confidence, but omits contrary evidence and does not state what evidence would change the conclusion beyond general validation needs.",
+    "facets": "Covers research, news, publication geography, patents, and the mismatch, but does not ground implied overlap or seasonality facets."
+   }
+  },
+  "errors": {
+   "A": [
+    "News chart caption says India exceeds the US and Brazil combined, but 3,010 is less than 1,614 + 792 = 2,406? Actually 3,010 exceeds 2,406; caption is accurate, though awkwardly phrased.",
+    "Claims countries absent from the top 15 are below 173, but the reference only gives the returned top 15 and does not establish a strict cutoff for omitted countries.",
+    "Says research and news share denominator does not reconcile; the record gives share_pct but does not define its denominator, so the discrepancy is unresolved, not proven erroneous."
+   ],
+   "B": [],
+   "C": [
+    "States Brazil had record cases in 2024 as a specific fact without a source.",
+    "Presents likely country leaders and mismatch patterns as estimates, not measured findings.",
+    "Says patent rows are explicitly empty even though no patent result was retrieved."
+   ],
+   "D": [
+    "States the news window ended 145 days before 2026-10-23; the correct interval from 2026-05-01 is 175 days."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it directly quantifies the research and news leaders, shows within-lane ratios, and exposes traceable country tables with detailed limits. D is careful and reproducible but leaves the central mismatch largely qualitative; B abstains accurately, while C substitutes unsupported estimates for measurements."
+ },
+ "scores": {
+  "claude_prism": {
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 4,
+   "export": 5,
+   "repro": 5,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

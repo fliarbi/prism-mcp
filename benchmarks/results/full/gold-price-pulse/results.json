@@ -1,0 +1,242 @@
+{
+ "slug": "gold-price-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.0,
+    "chart": 1.0,
+    "drilldown": 2.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 32.2,
+   "plain": 32.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.2,
+    "gpt": 34.2
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 2.5,
+    "drilldown": 2.5,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 4.5,
+    "verdict": 3.0,
+    "facets": 4.5
+   },
+   "strict": 66.8,
+   "plain": 66.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 70.2,
+    "gpt": 63.4
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 27.2,
+   "plain": 27.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.6,
+    "gpt": 34.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 69.8,
+   "plain": 69.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 66.6,
+    "gpt": 73.0
+   }
+  }
+ },
+ "judge_mad": 0.52,
+ "verdicts": {
+  "opus": "D gave a decision-maker the full picture: volume decomposed into critical and tone, the spring-2026 negative turn against baseline, dated critical headlines with URLs, and limits placed where they bite. It has one denominator misreading on geography. A was accurate and tidy, but it charted only volume and missed the tone reversal its own data contained. B and C honestly declined to measure, so they offer scoping, not evidence.",
+  "gpt": "B best supports a decision-maker with a traced monthly volume series, a correctly defined tone comparison, and a bounded account of themes and sampled headlines. D covers more facets and charts tone, but its chart window is misleading and its verdict leans on an unsupported price-correction claim; neither deliverable provides fully resolving references for the critical stories."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Ignores the March 2026 tone reversal (neg/pos ratio 1.12) in its verdict"
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Chart plots price milestones rather than news narrative (estimate, off-target)"
+   ],
+   "claude_prism": [
+    "share_pct read with the wrong denominator: the 52.3% is not a share of placed articles",
+    "Ratio chart labelled with the full window but plots only 2025-09 to 2026-05",
+    "Gap stated as 145 days; the actual gap is 144"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Publisher concentration is only sampled, and the critical headline examples are not linked to resolving URLs in the deliverable."
+   ],
+   "claude_bare": [
+    "Gold price milestones and narrative descriptions are estimates, not corpus findings; the chart tracks price rather than news volume."
+   ],
+   "claude_prism": [
+    "The tone chart declares the full 2024-06 to 2026-05 window but plots only 2025-09 to 2026-05.",
+    "The four-month correction after a January 2026 all-time high is not established by the cited news overview.",
+    "One cited critical item has a mismatched title and URL, which the report flags."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Full traced monthly series with window and cutoff. The change is quantified: +1,190, 228%, 86.2% CAGR, October 2025 peak. No critical or tone decomposition.",
+    "comparison": "0.51 vs 0.58 baseline gives -0.07, about 12% lower, which recomputes correctly. The neutral-exclusion caveat is carried. It does not test tone against volume.",
+    "chart": "There is one fully traced volume chart. Tone, which the question asks about, is not charted.",
+    "drilldown": "Theme and entity layer is traced. Two headlines have date and publisher but no URLs. Two follow-ups merely repeat c1.",
+    "export": "One traced monthly CSV with provenance. Tone and critical columns, which the question needs, are absent.",
+    "repro": "28/29 numbers trace, the calls block has args, and the 144-day gap is correct.",
+    "refs": "Headlines lack URLs. Script ceiling is 1.",
+    "accuracy": "Values match the reference and critical is not misread as negative. It does not catch anomalies.",
+    "limits": "Window, the 144-day gap, mention mode, denominators, the sampled publisher panel and the machine-labelled entities are all stated, mostly next to their numbers.",
+    "verdict": "The verdict is complete in form. It ignores the tone turn in its own data (March 2026 ratio of 1.12) and barely addresses critical stories.",
+    "facets": "Volume, overall tone, themes and entities are covered. The critical trend, monthly tone and the critical-story facet are thin."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "On-topic follow-up calls but no breakdown layer.",
+    "export": "No CSV.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Refusal with no contradictions scores 3 by rule.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "'Cannot measure' does not answer the question.",
+    "facets": "No facet answered."
+   },
+   "claude_bare": {
+    "trend": "Only a direction is asserted; the price points are labelled estimates.",
+    "comparison": "Qualitative only.",
+    "chart": "An estimate-labelled chart of price milestones rather than news volume. Honest but off-target.",
+    "drilldown": "Follow-ups only (4/7 ok), no traced layer.",
+    "export": "The CSV is labelled as an estimate.",
+    "repro": "All numbers are memory estimates.",
+    "refs": "No references.",
+    "accuracy": "Memory specifics are labelled estimates. No direct contradiction.",
+    "limits": "States knowledge cutoff, the gap to today and that nothing was measured.",
+    "verdict": "Gives a low-confidence memory answer with a decision. It is not grounded.",
+    "facets": "Facets are answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Full series with critical, negative and positive decomposition in the CSV. Gives early/late thirds 1.78, CAGR 86.2%, 3.3x growth, the volume peak (October 2025), the critical peak (April 2025) and the critical-share range. All recompute correctly.",
+    "comparison": "Baseline table: 0.88, and computed ratios 1.93 and 0.45 recompute exactly. It addresses the gap between near-norm tone overall and the spring 2026 negative turn. The neutral-exclusion caveat is missing.",
+    "chart": "Volume and tone charts both trace. The ratio chart plots only September 2025 to May 2026 while its window label claims the full 2024-06 to 2026-05 window.",
+    "drilldown": "Theme, entity and place layers plus headlines with URLs. Only 1/6 follow-ups ran ok (ceiling 3).",
+    "export": "Traced monthly CSV with critical, negative and positive columns and provenance. Ceiling 3.",
+    "repro": "89/91 numbers trace and the calls block is present. Gap given as 145 days vs the actual 144.",
+    "refs": "Headlines carry URLs. Script ceiling is 1.",
+    "accuracy": "It catches the mismatched headline/URL anomaly. However, 'US+India+China = 52.3% of placed articles' and 'Fed in 28.2% of entity-labelled articles' misread the share_pct denominator, which is labelled mentions and not placed articles.",
+    "limits": "Enrichment bound and the roughly 4% May fill, placed_pct, the mention vs central match modes, the 145-day gap and what would close it are all stated where the numbers are used.",
+    "verdict": "Strong and names the contrary tone turn. Capped at 3 by the script.",
+    "facets": "Covers volume, tone overall and monthly, critical vs total, critical stories with URLs, themes, entities, geography and sources."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured series or quantified change.",
+    "comparison": "No measured baseline or contrast.",
+    "chart": "No chart supplied.",
+    "drilldown": "No breakdown layer; calls are proposed follow-ups, not a traced drill-down.",
+    "export": "No data-backed CSV.",
+    "repro": "Calls are listed, but results and numeric claims are not reproducible.",
+    "refs": "No references supplied.",
+    "accuracy": "Clearly states that it cannot measure the requested facts and invents no measured specifics.",
+    "limits": "Names the missing window and relevant limits, but only in general terms because no corpus results are available.",
+    "verdict": "Directly recommends treating this as a data gap, states confidence and what evidence would change it, and stays within its limits.",
+    "facets": "Names the requested facets as unmeasured, but supplies no grounded values."
+   },
+   "chatgpt_prism": {
+    "trend": "Full monthly volume series, stated window, peak and quantified growth; no critical-versus-total decomposition.",
+    "comparison": "Correct, defined tone ratio comparison to baseline with delta and relative difference; answers the tone question.",
+    "chart": "The volume chart traces, but the requested tone facet is not charted.",
+    "drilldown": "Traced themes and entity breakdowns reach dated headline examples; no executed follow-up result is folded back in.",
+    "export": "Monthly CSV traces and has provenance, but no separate export for the other needed summary facets.",
+    "repro": "Nearly all numbers trace and the main call is reproducible; one numeric claim fails tracing, preventing full credit.",
+    "refs": "No external reference identifiers are supplied, and headline references lack resolving URLs here.",
+    "accuracy": "Measured counts and polarity are read sensibly; minor ambiguity remains around completeness and the headline evidence.",
+    "limits": "States cutoff, censoring, matching and sampled-source caveats; enrichment lag is not fully placed beside the affected labels.",
+    "verdict": "Gives a supported answer, decision, confidence and update condition, but does not clearly name the strongest contrary evidence.",
+    "facets": "Covers volume, tone, themes, entities, geography, publishers and critical headlines; some implied decomposition and overlap questions remain."
+   },
+   "claude_bare": {
+    "trend": "Only a memory-based qualitative direction; no news series.",
+    "comparison": "No measured tone baseline comparison.",
+    "chart": "Chart is explicitly an estimate and depicts price, not news volume.",
+    "drilldown": "Names layers and follow-up questions, but no traced breakdown; some calls fail or are empty.",
+    "export": "CSV is explicitly an estimate, not a measured news export.",
+    "repro": "No results to regenerate; estimates are honestly labelled.",
+    "refs": "No resolving references.",
+    "accuracy": "Specifics are labelled estimates or impressions, with no clear contradiction to the reference record.",
+    "limits": "Clearly states the knowledge gap and that no corpus was queried, but does not have corpus-specific limits to apply.",
+    "verdict": "Offers a scoping decision and confidence, but its narrative answer rests on unmeasured impressions.",
+    "facets": "Most requested facets are unmeasured or estimated; only the data gap is grounded."
+   },
+   "claude_prism": {
+    "trend": "Full volume series and quantified change, but prose direction claims are not consistently supported by the charted monthly ratios.",
+    "comparison": "Tone comparisons use a defined baseline and correctly computed ratios; they address the requested tone contrast.",
+    "chart": "The tone chart labels a two-year window while plotting only nine months, so its stated window does not match the plotted series.",
+    "drilldown": "Provides breakdowns and headline examples, but proposed follow-ups mostly did not return usable results and none is folded back in.",
+    "export": "Monthly CSV is traced with provenance, but a separate tone or summary export is absent.",
+    "repro": "Most numeric claims trace and the source call is listed; a few untraced claims and incomplete follow-up calls limit regeneration.",
+    "refs": "Headlines have dates and publishers, but at least one URL is explicitly mismatched and no external sources resolve the claims.",
+    "accuracy": "The report acknowledges a mismatched headline URL, but presents an unsupported four-month correction and overstates the critical-story evidence.",
+    "limits": "States the stale window, match modes, partial enrichment and coverage caveats near the figures.",
+    "verdict": "Has a decision and confidence, but the correction claim is unsupported and the verdict does not sufficiently bound the critical-story evidence.",
+    "facets": "Covers most facets with grounded values, including tone, volume, themes, geography, publishers and sampled headlines; overlap and other implied contrasts are incomplete."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 2,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Series is traced and has a window. The headline change, though, is the 0%→43.6% rise anchored on a single 2020 paper. The 2023–2025 fall in contested share is not quantified, so the direction read is inconsistent.",
+    "comparison": "Promising vs cautionary on one corpus-share scale: 716/409=1.75 and 14.5pp both recompute. The baseline is defined.",
+    "chart": "Traced, with window, unit and source. Only the contested share is plotted, the positive series is missing, and the thin years are plotted without visible marking.",
+    "drilldown": "Orientation, topics and DOI-level items are all traced. Follow-ups ran 4 of 5 successfully. No follow-up was executed and folded back into the report.",
+    "export": "Traced CSV with a provenance JSON block, and the null row for 2021 is kept as blank. The coverage=partial flag is not stated by the tool, and no documents table is given.",
+    "repro": "27/27 numbers traced, and a prism-calls block with args is included.",
+    "refs": "3 DOIs resolve and each is tied to a claim with a tier. No quotes are available, and no contrary sources are given.",
+    "accuracy": "It repeats the tool's framing_shift artefact ('contested rose 43.6pp') as a finding even though 2023→2025 contested share fell.",
+    "limits": "Window end, the 296-day gap, thin years, match mode and phrase set are all stated. It misses the off-topic 'Generative grammar' contamination.",
+    "verdict": "The verdict says the field moved 'toward more contested and cautionary framing'. Its own chart and CSV show contested share falling from 53.1 to 43.6 over 2023–2025.",
+    "facets": "Volume, orientation shares, thin years and phrase set are covered with grounded values."
+   },
+   "B": {
+    "trend": "Estimate series from memory, honestly labelled.",
+    "comparison": "Numeric comparison of memory estimates only.",
+    "chart": "Chart labelled as an estimate.",
+    "drilldown": "Follow-up calls mostly fail (1 of 7). The layers listed are generic.",
+    "export": "Estimate CSV, labelled as such.",
+    "repro": "No traced numbers.",
+    "refs": "Real, resolving papers tied to claims, with contrary examples included. Quotes are titles only, and several are flagged 'verify'.",
+    "accuracy": "The estimated rising cautionary share (30→45%) runs opposite to the reference record, where contested share falls 53.1→43.6 and cautionary-only holds at about 19–21%.",
+    "limits": "Specific and honest about being unmeasured, but the limits are not tied to measured data.",
+    "verdict": "Direct answer with low confidence, a decision and conditions, but it rests on estimates that contradict the record.",
+    "facets": "Facets are answered from memory."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "A 1:1 ratio of two hand-picked examples is not a measured comparison.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown. Follow-ups ran 2 of 4 successfully.",
+    "export": "No export.",
+    "repro": "No numbers.",
+    "refs": "Neither DOI is found. The Kasneci paper is attributed to the wrong journal.",
+    "accuracy": "Fabricated or misattributed citation identifiers.",
+    "limits": "Honest about what was not measured.",
+    "verdict": "'Both' with low confidence. It does not answer how the framing moved.",
+    "facets": "Facets are largely unanswered."
+   },
+   "D": {
+    "trend": "Traced 2023–2025 window, with thin years explicitly excluded and the reason given. Deltas (+6.9, −9.5pp), the 9.7x volume growth and the cautionary-only split are all recomputed exactly.",
+    "comparison": "2023 vs 2025 on one scale, with exact ratios and deltas. It answers promising vs cautious directly and states what the labels cannot test.",
+    "chart": "Traced overlay of positive vs contested shares, with window, unit and source. There is no volume chart.",
+    "drilldown": "Contribution and topic layers plus DOI items. Follow-ups ran 5 of 6 successfully. None was folded back into the report.",
+    "export": "Single traced CSV with blanks kept and provenance JSON. It is capped at 3.",
+    "repro": "75/75 numbers traced, with a calls block.",
+    "refs": "4 DOIs resolve and are tied to claims. Tier is only partly given, there are no quotes, and no contrary documents.",
+    "accuracy": "It catches the framing_shift artefact and the off-topic 'Generative grammar'/synthetic-data contamination. However, the claim that coverage was 'not flagged partial' is not in the record, and the verdict calls the 2025 window incomplete, which conflicts with its own limits section.",
+    "limits": "Window, gap to today, thin years, match mode and phrase contamination are placed next to the numbers, and they change the reading.",
+    "verdict": "Direct answer, decision, confidence and what would change it, all consistent with its data. Capped at 3.",
+    "facets": "Covers volume, shares, label decomposition, thin years and phrase expansion, plus anomalies the scenario implies."
+   }
+  },
+  "errors": {
+   "A": [
+    "Presents the tool's framing_shift (0%→43.6% from a single 2020 paper) as a real move toward caution, contradicting the 2023–2025 decline in its own series",
+    "coverage=partial flag not supported by the record"
+   ],
+   "B": [
+    "Estimated rising cautionary share contradicts the record (contested 53.1→43.6%, cautionary ≈21→19%)"
+   ],
+   "C": [
+    "DOI 10.1007/s10639-023-11791-1 not found; Kasneci et al. misattributed to Education and Information Technologies",
+    "DOI 10.1080/17439884.2023.2216388 not found"
+   ],
+   "D": [
+    "Claims coverage 'not flagged partial' / passed row-floor checks, which is not in the reference record",
+    "Verdict says the 2025 window is incomplete, inconsistent with its own limits section"
+   ]
+  },
+  "best": "D",
+  "verdict": "D was the only deliverable to read the measured series correctly. Over the usable 2023–2025 years, the positive share rose and the contested share fell, which converges to a balanced field. D flagged the tool's 'more cautious' reading as an artefact of a one-paper baseline, and it also noted the off-topic phrase contamination. A was equally well traced but repeated that artefact in its verdict, against its own chart. B gave honest memory estimates that point the wrong way. C answered nothing and had misattributed DOIs."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 2,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

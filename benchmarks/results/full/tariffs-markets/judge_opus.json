@@ -1,0 +1,177 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Memory index, labelled est.",
+    "comparison": "Ratios computed from guessed index values.",
+    "chart": "Memory chart, honestly labelled estimate.",
+    "drilldown": "Follow-ups are mostly generic and 1/6 executed.",
+    "export": "CSV is labelled estimate.",
+    "repro": "No calls were run, so nothing can be regenerated.",
+    "accuracy": "No contradictions; every value is flagged est.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Honest low-confidence plan, but it gives no measured answer.",
+    "facets": "Mostly memory."
+   },
+   "B": {
+    "trend": "Traced series with window and censoring; 27.8x, 74x, 7.2x and the April 2025 peak recompute correctly; it notes that the 'rising' label sits oddly with the post-peak decline.",
+    "comparison": "Baseline defined; ratios 290.8x, 7.8x, 37.1x and critical-share deltas recompute; overlap caveat carried.",
+    "chart": "Traced, but plots only a 16-month subset, so dips such as Jan 2026 are hidden; volume only, no tone view.",
+    "drilldown": "One traced layer (month); 5/6 follow-ups are specific; none were folded back.",
+    "export": "Traced CSVs with provenance JSON; the monthly table is a subset despite the prose pointing to 'the full series'.",
+    "repro": "79/82 numbers traced; call and provenance listed; small day-count slip (145 vs 144).",
+    "accuracy": "Asserts the tool reported 'strict index partition reads and historical row floors', which is not in the reference; otherwise exact.",
+    "limits": "Censoring, the 144-day gap, match mode, overlap and the undefined tone measure are all placed next to the numbers.",
+    "verdict": "Direct answer with decision, confidence reason and what would change it; does not bound itself by window end inside the verdict.",
+    "facets": "Volume, timing, share and tone are covered; overlap is caveated but not measured."
+   },
+   "C": {
+    "trend": "Full traced series; peak and endpoints given; but it treats May 2026 as possibly incomplete when the tool marks partial_period false.",
+    "comparison": "Ratios correct; caveats on deduplication and importance carried.",
+    "chart": "Full 24-month traced chart with caption; volume only.",
+    "drilldown": "No breakdown; 0/5 follow-ups executed ok.",
+    "export": "summary.csv zero-fills negative and positive as 0, which are invented values not present in the tool output.",
+    "repro": "21/24 numbers traced; calls listed.",
+    "accuracy": "Zero-filled tone columns; defines tone_ratio as negative/positive without checking it; misreads the censoring as applying to May.",
+    "limits": "Window and the 144-day gap are stated; censoring is misplaced onto May.",
+    "verdict": "Supported, but it gives no numbers and does not name contrary evidence.",
+    "facets": "Volume, timing and share are grounded; tone fields are only partially grounded."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Proposed calls only, all failing.",
+    "export": "None.",
+    "repro": "Contains no numbers.",
+    "accuracy": "No claims, so no errors.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Refusal; 'high confidence' in having no answer is not an answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Fabricated coverage-check claim ('strict index partition reads and historical row floors') attributed to the tool",
+    "Gap stated as 145 days; it is 144"
+   ],
+   "C": [
+    "summary.csv zero-fills negative and positive counts as 0",
+    "Treats May 2026 as a possibly partial month although partial_period is false",
+    "Asserts tone_ratio is negative/positive without verification"
+   ],
+   "D": []
+  },
+  "best": "B",
+  "verdict": "B and C both traced the measured April 2025 spike: 93,515 tariffs, 19,452 trade war and 329 stock market crash articles. B quantified the rise and decay, defined its baseline and placed the specific limits next to the numbers. C plotted the full series but zero-filled tone columns and misplaced the censoring caveat onto May 2026. A and D answered from memory or not at all: honest, but they give a decision-maker nothing measured."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

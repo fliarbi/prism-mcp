@@ -1,0 +1,243 @@
+{
+ "slug": "antimicrobial-resistance-brief",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.5,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 38.1,
+   "plain": 38.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 33.8,
+    "gpt": 42.4
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 1.0,
+    "drilldown": 3.5,
+    "export": 1.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 74.0,
+   "plain": 74.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 79.0,
+    "gpt": 69.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 2.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 3.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 36.0,
+   "plain": 36.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 34.2,
+    "gpt": 37.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 67.2,
+   "plain": 67.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 64.2,
+    "gpt": 70.2
+   }
+  }
+ },
+ "judge_mad": 0.43,
+ "verdicts": {
+  "opus": "B was the only deliverable that met the question's hard part. It labelled every volume with its lane and window, kept the two news series apart, read the flat 1.13 news trend correctly and caught the tool's anomalies. D was traced but thin and misread two fields. A and C were memory-only; C was honest, while A carried a probably wrong 1990 baseline.",
+  "gpt": "C gives the broadest grounded brief: it separates corpus lanes, burden definitions, and framing; traces research and news trends; and calls out conflicting trend summaries and missing outcome data. Its chart-window and export provenance errors keep it from a clean decision-grade result, while B is more internally tidy but leaves more of the available evidence and trend detail unused."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "The 1990 attributable-deaths figure of 0.64M appears wrong (GBD 2021 reports about 1.06M), which inflates the stated +78% 1990–2021 growth"
+   ],
+   "claude_prism": [],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Claims the brief gives no contested counts, but c1 returns the supporting/qualifying/contradicting/neutral mix",
+    "Asserts May 2026 is an incomplete boundary bucket, though the tool marks it partial_period:false"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Reports 2021 and 2050 GBD burden figures as memory estimates; these figures are not in the supplied reference record.",
+    "The chart and CSV present a memory-derived series, not a traced database response."
+   ],
+   "chatgpt_prism": [
+    "Calls the monthly news endpoint a boundary month; the source identifies the series as censored at the June 1 cutoff, while May is the last monthly bucket.",
+    "The export omits the critical series available in the same trend response."
+   ],
+   "claude_prism": [
+    "The news chart window ends 2026-05-31, whereas the call window ends exclusively at 2026-06-01.",
+    "The 2050 alternative forecast is explicitly from memory and is not verified in the supplied record.",
+    "The corpus-volumes export uses a combined window that does not preserve each source lane’s distinct window."
+   ],
+   "chatgpt_bare": [
+    "The stated seven-year gap is approximate: the 2019 measurement year is not a precise measurement date."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Three-point modelled death series with a named source but unverifiable, and the 1990 point is an estimate.",
+    "comparison": "Ratio table of memory figures. Arithmetic is fine but the figures are unverifiable.",
+    "chart": "Memory chart citing r1, partly labelled est.",
+    "drilldown": "Layers are named generically. No traced breakdown. Follow-ups are partly ok but not grounded.",
+    "export": "Memory table from a cited source.",
+    "repro": "No calls were run. Figures are from memory and labelled.",
+    "refs": "Only 2 of 7 references carry resolvable identifiers. The WHO and World Bank entries have none. No quotes.",
+    "accuracy": "The 1990 baseline of 0.64M looks wrong; GBD 2021 reports about 1.06M. That makes the +78% growth claim misleading, even with the est. label.",
+    "limits": "Honest and specific that no corpus lanes or windows exist, and gives the gap to today. The limits are mostly in a footer.",
+    "verdict": "Has answer, decision, confidence and what would change it, but rests on memory figures.",
+    "facets": "No corpus volumes, lanes, contested share or news trend. Mostly memory."
+   },
+   "claude_prism": {
+    "trend": "Traced 24-month news series with window. Late-vs-early 1.13, peak 2025-01 at 1,520, and the research CAGR are all given. Critical share 92.2% recomputes exactly. The final month is treated cautiously.",
+    "comparison": "Ratios 3.9×, 72% and 73% recompute exactly with the baseline defined. Keeps the c1 and c2 news series apart and the research and news lanes apart, and carries the 'three different questions' note.",
+    "chart": "Capped at 1 by the script.",
+    "drilldown": "Gives institutions with lift, three geography lenses and the framing mix, plus specific follow-ups. Only 3 of 6 follow-ups ran ok.",
+    "export": "Capped at 1 by the script.",
+    "repro": "112 of 115 numbers traced. Calls are listed with args and window, with a provenance JSON block.",
+    "refs": "8 of 8 DOIs resolve. Quotes are verbatim and tiers are stated. Flags that the Lancet paper is mis-tiered as a review. No contrary sources.",
+    "accuracy": "Catches anomalies: the CAGR sign conflicts with the 'rising' label, the c1 and c2 news series disagree, and the Lancet tier is off. The memory forecast is labelled est.",
+    "limits": "Limits sit next to the numbers they bound: censoring date, a 144-day gap to today, mention matching, the coverage floor, and what cannot be answered.",
+    "verdict": "Direct, decision-ready, with confidence and reason, and bounded by the window. Does not strongly name the contrary evidence it contains.",
+    "facets": "Covers volumes by lane, established, contested mix, key numbers, both trends and geography lanes. Burden after 2019 is honestly marked missing."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "One memory ratio, 26%.",
+    "chart": "No chart.",
+    "drilldown": "Layers named generically. 0 of 4 follow-ups ran ok.",
+    "export": "No export.",
+    "repro": "Memory figures from named sources only.",
+    "refs": "The DOI and WHO URLs resolve and are tied to claims. No quotes.",
+    "accuracy": "No contradictions. The figures are correct.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Clear answer and decision, but memory-based and narrow.",
+    "facets": "Most facets are answered with 'cannot measure'."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced news series with window and censoring, plus the research CAGR. Does not give the news late-vs-early ratio or the flat reading. No decomposition.",
+    "comparison": "3.9× definitional ratio, traced, with the baseline defined.",
+    "chart": "One fully traced volume chart. No research or critical view, and the censored month is not visibly marked.",
+    "drilldown": "Capped at 1 by the script. No breakdown layer.",
+    "export": "One traced CSV with provenance. Burden and volume tables are missing.",
+    "repro": "30 of 31 numbers traced. Calls are listed with args and window.",
+    "refs": "3 of 3 DOIs resolve. Quote abbreviated with an ellipsis. Claims are tied.",
+    "accuracy": "Wrongly says the brief gives no contested counts, but c1 gives the mix. Calls May 2026 an incomplete bucket, against partial_period:false.",
+    "limits": "Gives the window, the 144-day gap, mention matching and the coverage floor, and states that counts are not incidence.",
+    "verdict": "Generic answer that does not name the strongest contrary evidence.",
+    "facets": "Contested mix, geography rows and the news flat reading are not given."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "The time series and chart are explicitly memory estimates, with no traced corpus series.",
+    "comparison": "Numeric contrasts use named public estimates but cannot be checked against the supplied record.",
+    "chart": "The chart is an honestly labelled estimate, which earns the memory-chart anchor only.",
+    "drilldown": "Names possible layers and has some follow-up calls that returned data, but the breakdown is not traced in the report.",
+    "export": "The export is an estimate, not a traced database table.",
+    "repro": "No calls were run; the numbers are largely memory estimates and cannot be regenerated from the listed calls.",
+    "refs": "Some sources resolve, but several references lack resolvable identifiers and no verbatim source quotes are provided.",
+    "accuracy": "No clear contradiction with the reference record, but unsupported specifics and memory estimates weaken the claims.",
+    "limits": "Clearly labels the lack of Prism data, the estimate status, and the age of the observed burden evidence.",
+    "verdict": "Gives a supported decision, confidence, and conditions that would change it, while bounding the figures as estimates.",
+    "facets": "Covers established evidence and burden, but provides no grounded corpus volumes, contested share, or news trend."
+   },
+   "chatgpt_prism": {
+    "trend": "Quantifies research growth and identifies the news peak and final value, but does not quantify the news change or provide the available full research series.",
+    "comparison": "The associated-to-attributable ratio is recomputable on one defined 2019 scale and clarifies the different burden definitions.",
+    "chart": "The monthly news chart traces correctly and states its window and source, but does not visibly mark the censored boundary or chart the other available trend facet.",
+    "drilldown": "The described layers are corpus-level only; all four proposed follow-up calls returned no usable data.",
+    "export": "The monthly series has provenance, but the export omits the available critical series and lacks the decision-ready identifiers and provenance shape.",
+    "repro": "Nearly all numeric claims trace and the calls include arguments and windows; one numeric claim is untagged, so it falls short of full traceability.",
+    "refs": "The cited DOIs resolve and are tied to claims with metadata and a supporting quote, but the set lacks contrary sources and tier rationale sufficient for the top anchor.",
+    "accuracy": "The distinctions between corpus volume, burden, and framing are sound; minor claims such as the calendar gap are not central to the reference data.",
+    "limits": "Places the windows, lane, censoring, mention matching, coverage caveat, and measured-versus-interpreted distinction near the claims.",
+    "verdict": "Directly supports a decision with confidence and a condition for revision, but does not name the strongest contrary evidence in its own cited set.",
+    "facets": "Covers corpus lanes, burden, contested framing, research and news trends, and explicitly notes missing outcome breakdowns."
+   },
+   "claude_prism": {
+    "trend": "The monthly series is traced, the early-to-late change is quantified, and the report catches the conflicting research direction/CAGR and distinguishes the two news windows.",
+    "comparison": "The burden ratios are recomputable and definitions are explained, though one forecast comparison mixes forecast and observed measures despite a caveat.",
+    "chart": "The news chart has a wrong window end and fails to visibly mark the censored boundary; the death chart is sourced but does not repair the chart ceiling.",
+    "drilldown": "Several traced breakdowns reach named categories and identifiers, and three follow-ups returned data, but not all breakdown items have identifiers or results folded back from those calls.",
+    "export": "Exports are not fully aligned with source window/provenance details, and the required provenance and hygiene are incomplete.",
+    "repro": "Most claims trace and calls are listed with arguments; a few numbers are untraced and the calls do not fully rebuild every chart and table.",
+    "refs": "Identifiers resolve and claims are tied to sources with quotes and metadata, but the evidence set is not consistently ranked with contrary sources.",
+    "accuracy": "It catches the conflicting direction label and differing news series, though its own news chart window is misstated and one forecast is memory-derived.",
+    "limits": "States the relevant windows, lanes, censoring, coverage, matching, and data gaps next to the claims; some caveats do not fully resolve the mismatched series.",
+    "verdict": "Answers directly with a decision, confidence, and conditions, but its confidence and conclusion do not fully account for all data limitations and anomalies.",
+    "facets": "Addresses corpus volumes, burden, contested framing, research/news trend, geography lenses, and explicit unavailable facets."
+   },
+   "chatgpt_bare": {
+    "trend": "No sourced time series or quantified change is supplied.",
+    "comparison": "The derived attributable-to-associated ratio is a numeric comparison, but it is based on cited public figures rather than the checkable reference series.",
+    "chart": "No chart block is included.",
+    "drilldown": "Names possible breakdowns but provides no traced items or follow-up results.",
+    "export": "No data export is provided.",
+    "repro": "Sources are named, but there are no reproducible calls and no complete regeneration recipe.",
+    "refs": "Identifiers and metadata are largely present and tied to claims, but verbatim quotes are absent.",
+    "accuracy": "The burden definitions and scope are handled carefully, with no direct contradiction to the reference record.",
+    "limits": "States the evidence year, lane unavailability, and bacterial-AMR scope, but several applicable corpus-specific limits cannot be assessed and it lacks sourced coverage details.",
+    "verdict": "Gives a direct, bounded answer with a decision, confidence, and what would change it, but no trend evidence supports a temporal conclusion.",
+    "facets": "Covers established burden and definitions but does not answer corpus volumes, measured trend, or corpus-based contested framing."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

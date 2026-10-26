@@ -1,0 +1,227 @@
+{
+ "slug": "semiconductor-shortage-history",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 30.2,
+   "plain": 30.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 27.6,
+    "gpt": 32.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 4.0,
+    "export": 4.5,
+    "repro": 5.0,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 86.0,
+   "plain": 86.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 78.9,
+    "gpt": 93.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 0.5,
+    "export": 0.0,
+    "repro": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.0,
+    "facets": 1.0
+   },
+   "strict": 23.4,
+   "plain": 23.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 13.9,
+    "gpt": 32.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 70.5,
+   "plain": 70.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.7,
+    "gpt": 72.4
+   }
+  }
+ },
+ "judge_mad": 0.57,
+ "verdicts": {
+  "opus": "B and A both traced the same 10→52 series and the scenario output. B went further: it gave an exact CAGR and year-on-year growth, an early-vs-late split, and a quantified baseline-vs-drift backtest showing that every fold under-predicted. Its verdict carried a usable 2026 range and a falsifiable trigger. C refused outright, and D offered only labelled memory estimates whose shape conflicts with the record.",
+  "gpt": "A is the strongest decision deliverable: it connects the traced annual rise to conditional scenario bounds, provides reproducible exports, and names useful follow-up questions. D is a concise, largely accurate account but leaves out scenario values and several decision-relevant facets; B is careful but does not answer the measured question, while C's explicitly labelled estimates are not decision-grade evidence."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "The 2023-25 vs 2017-22 step is stated as 3.2x; recomputed it is ~3.26x."
+   ],
+   "chatgpt_bare": [
+    "Asserts that no data was available, although the reference record contains the series and the scenarios."
+   ],
+   "claude_bare": [
+    "The estimated series contradicts the reference's 2020 dip and its magnitude (labelled as an estimate)."
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "The 401,173,762 corpus rows, 384,832,354 expected rows, and 104.2% coverage check are absent from the reference record.",
+    "The conclusion that late indexing may bias recent counts is plausible but not reported by the history response; it is presented as a caveat rather than a measured finding."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "The estimated annual counts, growth rates, shortage/CHIPS explanation, and scenario values are unsupported estimates; they are explicitly labelled as such."
+   ],
+   "chatgpt_prism": [
+    "States that the history query ran on 2026-10-22, a date not present in the reference record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Traced 2017-2025 series with its window. It quantifies 5.2x and +42 and names the 2020 dip, but has no decomposition or recomputed growth rate beyond first/last.",
+    "comparison": "2025 vs the 2017 baseline on one scale, with the baseline defined and the caveat that it is not corpus-adjusted. It does not engage the spike/overshoot contrast.",
+    "chart": "One traced trend chart with window, unit and source. The scenario range the question asks for is not charted.",
+    "drilldown": "Year is the only layer. Only 1 of 4 follow-ups executed ok.",
+    "export": "Two traced CSVs plus a provenance block. Labelling the scenario coverage 'partial' is unexplained. Capped at 3.",
+    "repro": "13/14 numbers traced, with the calls listed with args and a provenance block. The query date is not traceable.",
+    "accuracy": "Matches the reference. Fields are read correctly and the sensitivity bounds are correctly not called confidence intervals.",
+    "limits": "Window, match mode, normalisation and the backtest caveats are stated. They sit mostly in a methods section.",
+    "verdict": "Answer, decision, confidence and conditions are all present. The verdict omits the numeric range and the contrary evidence (the backtest under-predicted every fold).",
+    "facets": "Growth, range and backtest MAE are all covered with grounded values."
+   },
+   "claude_prism": {
+    "trend": "Traced series with window. CAGR 22.9% and year-on-year growth recompute exactly, and early vs late means are given. The 3.26x step is reported as 3.2x, a small slip that blocks a 5.",
+    "comparison": "MAE of drift vs the no-change baseline, with delta, % and ratio correct and caveats carried (few folds, no holdout). It notes the systematic under-prediction.",
+    "chart": "One fully traced trend chart. The scenario central/bounds are tabled but not charted.",
+    "drilldown": "Its 'layers' are scope descriptors rather than item-level breakdowns. 4/6 specific follow-ups executed ok.",
+    "export": "Two traced CSVs with full provenance and a provenance JSON, referenced from the prose. There are no row identifiers beyond year.",
+    "repro": "77/77 numbers traced, with the calls block and capture date present. Derived numbers show their arithmetic.",
+    "accuracy": "Consistent with the reference. Interpretation is labelled, including that the central path likely understates acceleration.",
+    "limits": "States the 10-month gap, title-only match as a floor, corpus growth not normalised, and weak multi-step support. Most limits are in a section rather than inline.",
+    "verdict": "Direct answer with the range, a decision, confidence with its reason, and a falsifiable trigger (a 2026 count outside 46-68). It stays within 150 words.",
+    "facets": "Growth, range, backtest and the 2020 dip are all addressed with grounded values."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "Flat; there are no follow-ups.",
+    "export": "No export.",
+    "repro": "No numbers and no calls.",
+    "accuracy": "It makes no contradictions, but it claims no data was supplied when the reference shows records existed.",
+    "limits": "Explains what is unmeasured, but generically.",
+    "verdict": "An answer of 'cannot measure'.",
+    "facets": "No facets answered."
+   },
+   "claude_bare": {
+    "trend": "A memory series that is honestly labelled as an estimate.",
+    "comparison": "A comparison between labelled estimates only.",
+    "chart": "A chart labelled as an estimate.",
+    "drilldown": "Proposed layers with no values. 3/6 follow-ups executed ok.",
+    "export": "Estimate CSVs, labelled as such.",
+    "repro": "Nothing traces, and 22 numbers are untagged.",
+    "accuracy": "The estimated shape (a steady rise through 2020, with values in the hundreds and thousands) conflicts with the reference (a 2020 dip and counts of 5-52), though the estimates are labelled.",
+    "limits": "Specific about its assumptions, the lag and the unknown coverage.",
+    "verdict": "Low-confidence directional prior with a decision and conditions. It is not grounded in data.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "trend": "Full traced annual series; exact change, peak and post-2022 acceleration are quantified and read consistently.",
+    "comparison": "Backtest comparison uses one scale and window; MAEs, delta, ratio and no-holdout caveat are stated.",
+    "chart": "Traced chart has window, unit, source and supports the claim; only relevant chart is included.",
+    "drilldown": "Provides history and scenario layers with identifiers and six specific calls; four follow-ups executed successfully and their results are incorporated.",
+    "export": "Both needed tables are traced, fully sourced and referenced, with provenance and row identifiers.",
+    "repro": "Lists the source calls with arguments and windows; figures and derived values are reproducible.",
+    "accuracy": "The corpus row-floor check is presented as evidence of reachability, but the stated 104.2% figure is not in the reference record; the trend and scenarios otherwise match.",
+    "limits": "Strong, local caveats cover scope, normalization, window gap, matching and scenario limits; censoring and the coverage flag are characterized beyond what the record establishes.",
+    "verdict": "Direct, decision-oriented answer with confidence, conditions and limits; it does not name the strongest contrary evidence, namely that linear drift underpredicted all four backtest folds.",
+    "facets": "Addresses the spike, broader matching, geography, stance, news comparison and seasonality/coverage limits with grounded follow-up paths."
+   },
+   "chatgpt_bare": {
+    "trend": "No series or quantified change.",
+    "comparison": "No measured comparator or baseline.",
+    "chart": "No chart block.",
+    "drilldown": "No breakdown or executable follow-ups.",
+    "export": "No export.",
+    "repro": "No measured figures or reproducible calls; the limitation is honestly stated.",
+    "accuracy": "Makes no unsupported factual claims and correctly identifies missing measurements in its presented evidence.",
+    "limits": "Clearly states that window, corpus, coverage and censoring cannot be assessed.",
+    "verdict": "Gives a supported recommendation and confidence, but does not answer the substantive question or provide a measured range.",
+    "facets": "Only establishes that evidence is absent; the growth, range and implied 2021-spike facets are unanswered."
+   },
+   "claude_bare": {
+    "trend": "The trend is explicitly memory-estimated, with a named window and quantified change, so the ceiling is 1.",
+    "comparison": "Numeric comparisons are labelled estimates but cannot be checked against a common measured scale.",
+    "chart": "Memory-estimate chart is honestly labelled and matches its own estimates.",
+    "drilldown": "The proposed layers are unmeasured and identifiers are only proposed; only one of six calls executed successfully.",
+    "export": "Estimate tables are honest but unmeasured.",
+    "repro": "No numeric claims trace to recorded calls; its proposed calls were not used to generate the figures.",
+    "accuracy": "The figures and post-shortage narrative are clearly labelled estimates; no verified records are contradicted, though the claim that the match is title/abstract is only an assumption.",
+    "limits": "Labels estimates and notes missing corpus, coverage and match verification, but does not establish the data-specific limits needed for stronger calibration.",
+    "verdict": "Offers a directional answer, but its estimated range has no data support and confidence is low; it does not support a decision-grade forecast.",
+    "facets": "Most facets are estimates or proposed analyses rather than grounded values or grounded no-data results."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced full annual series with window and quantified endpoints, but omits the 2025 value and does not quantify the growth rate or identify the 2023–2025 rise fully.",
+    "comparison": "Exact, traced 2017-to-2025 delta and ratio on a consistent scale; baseline is defined.",
+    "chart": "Chart is fully traced, labelled and tied to the prose, but no scenario chart is provided for the range the question asks about.",
+    "drilldown": "Annual series is one traced layer; no item-level breakdown, and only one of four proposed follow-ups succeeded.",
+    "export": "Annual export is traced and referenced, but the scenario table is also needed and its provenance lacks full coverage detail; scenario rows are marked partial without a stated reason.",
+    "repro": "Nearly all numeric claims trace, calls and windows are listed, and derived values can be recomputed; one claim, the query date, is not supported by the reference record.",
+    "accuracy": "Main series and scenario values match, but the claim that the history query ran on 2026-10-22 is absent from the reference record.",
+    "limits": "Covers the principal scope and scenario limits, but omits the ten-month gap to today and the series coverage/censoring caveat is incomplete.",
+    "verdict": "Answers the trend and range direction with confidence and a decision, but gives no actual scenario values, no condition for changing the view, and omits the backtest's consistent underprediction.",
+    "facets": "Covers the observed trend, range, baseline, and key limitations, but does not address the implied breadth, overlap, seasonality, or research-versus-news facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

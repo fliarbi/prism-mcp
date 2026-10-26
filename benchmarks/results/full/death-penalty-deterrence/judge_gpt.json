@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 5,
+    "drilldown": 5,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 5,
+    "facets": 5
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 3,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 5,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 2,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 0,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced annual series, quantified endpoint change and peak; the plotted 2025 point sits awkwardly with the censoring caveat, and the news series is omitted.",
+    "comparison": "The 1:1 and equal tier-weighted tallies use the same two-document retrieval and define their limited baseline.",
+    "chart": "The traced, labeled annual series supports the trend claim and shows all available points.",
+    "drilldown": "Two traced document layers with identifiers and three successful, on-topic follow-ups folded into the report.",
+    "export": "Both needed exports are traced and referenced, but the tables omit row identifiers and the corpus window metadata is imprecise.",
+    "repro": "Lists the calls with arguments and capture date; reported figures can be regenerated from the cited outputs.",
+    "refs": "Three of six DOIs were not found in the corpus, triggering the rubric's fabricated-or-unresolved identifier cap.",
+    "accuracy": "Substantially matches the record; the newest-period censoring language is unclear relative to the plotted 2025 point.",
+    "limits": "Places most corpus, lane, coverage, lag, and interpretation limits beside the relevant claims; some censoring detail is inconsistent.",
+    "verdict": "Direct, bounded answer with a decision, confidence, contrary evidence, and conditions that could change it.",
+    "facets": "Covers evidence balance, opposing findings, corpus limits, and the research trend with grounded values."
+   },
+   "B": {
+    "trend": "No measured series; explicitly says the trend is unavailable.",
+    "comparison": "Explains why a numeric comparison cannot be made, but provides no measured contrast.",
+    "chart": "Empty estimate-sourced chart is an honest representation of missing measurement.",
+    "drilldown": "Provides one review layer and six concrete follow-up calls; three executed successfully with on-topic data.",
+    "export": "Empty estimate-labeled CSV records missing observations rather than inventing values.",
+    "repro": "No corpus results to reproduce; proposed calls are not executed results and lack measured windows.",
+    "refs": "The NRC reference resolves and is tied to a claim, but its quoted wording differs from the reference-record quote.",
+    "accuracy": "The central claim is careful and does not contradict the record; the cited review is represented as inconclusive.",
+    "limits": "Clearly states that no corpus calls ran and identifies the resulting measurement gaps.",
+    "verdict": "Direct answer, policy decision, confidence, and change condition; bounded appropriately.",
+    "facets": "Addresses the causal question and missing data, but has no grounded corpus or trend measurements."
+   },
+   "C": {
+    "trend": "Research series is traced and quantified, but the news trend is asserted without showing its full series and censoring is not handled consistently.",
+    "comparison": "Provides numeric findings and caveats, but compares unlike designs against an artificial zero baseline.",
+    "chart": "Research chart traces correctly, but omits the available news series despite discussing its trend.",
+    "drilldown": "Two traced breakdown layers and specific follow-ups, but only two of six calls returned usable data.",
+    "export": "Both relevant CSVs are traced and referenced, but omit row identifiers and the required provenance shape is incomplete.",
+    "repro": "Lists the three source calls with arguments; all reported numeric claims trace to those calls or are labeled as interpretation/estimate.",
+    "refs": "All three identifiers resolve, claims are tied to them, and cited quotations match the supplied corpus record.",
+    "accuracy": "Mostly grounded, but says two documents read in full when the record supports verified quotations rather than full-text reading, and adds unsupported population detail.",
+    "limits": "Strong, specific limits are stated near the data, though the year-end/censoring account is not fully clear.",
+    "verdict": "Direct, decision-ready answer with confidence and a contrary study; its claim that two documents read in full agree overstates the record.",
+    "facets": "Covers the main evidence and research volume, but leaves the research/news mismatch and news-series detail underdeveloped."
+   },
+   "D": {
+    "trend": "The series is explicitly estimated from memory, earning the estimate-only level.",
+    "comparison": "Gives a memory-labeled state-rate contrast, but its source and comparability are not verifiable here.",
+    "chart": "Chart is labeled as an estimate, but has no resolvable recorded source.",
+    "drilldown": "Names breakdown dimensions and lists calls, but provides no traced breakdown values or executed follow-up results.",
+    "export": "Exports are labeled estimates and from memory, with no recorded source rows.",
+    "repro": "Numbers are estimates from memory and calls are not run; the listed call set cannot regenerate the report.",
+    "refs": "Only the NRC entry has a resolving identifier; the other references lack identifiers, quotes, or sufficient support metadata.",
+    "accuracy": "Numerous precise memory estimates and an approximate quote are presented; the script also flags an untagged number in the verdict.",
+    "limits": "Clearly labels the data as approximate, US-centered, memory-based, and stale, with the latest stated year.",
+    "verdict": "The script flags an untagged number in the verdict, and its ceiling is zero.",
+    "facets": "Offers a memory-based answer and some limits, but no grounded corpus, trend, or evidence breakdown."
+   }
+  },
+  "errors": {
+   "A": [
+    "Three cited DOIs were not found in the research corpus.",
+    "The censoring statement is hard to reconcile with plotting the 2025 point as part of the series."
+   ],
+   "B": [
+    "The NRC quotation does not match the quotation supplied in the reference record."
+   ],
+   "C": [
+    "Claims two documents were read in full; the record verifies quotations, not full-text reading.",
+    "Adds a US postmoratorium population description for the supporting study that is not supplied by the recorded call."
+   ],
+   "D": [
+    "The script flags an untagged number in the verdict.",
+    "Presents multiple memory-based figures and references without independently checkable identifiers."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest decision aid: it gives a clear, bounded answer and makes its retrieved evidence, comparison, and limitations reproducible. C offers the richest grounded detail, but its reading-status claim and incomplete trend coverage weaken trust; B is appropriately cautious but cannot measure the evidence, while D relies heavily on unverifiable estimates."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 5,
+   "drilldown": 5,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 5,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 3,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 5,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 2,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 0,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

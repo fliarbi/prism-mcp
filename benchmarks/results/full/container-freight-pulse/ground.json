@@ -1,0 +1,629 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 554,
+  "charts": [
+   {
+    "id": "wci_path",
+    "title": "Drewry WCI composite, approximate, USD per 40ft",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "WCI composite (recalled)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "wci_recalled.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "Monthly article volume on container freight rates, 2021-2026?",
+    "args": {
+     "term": "container freight rates",
+     "from": "2021-01-01",
+     "to": "2026-10-22",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2021-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-22', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "Is tone more negative than the corpus baseline?",
+    "args": {
+     "term": "container freight rates"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 1, \"positive\": 2, \"neutral\": 1, \"ratio\": 0.5}, {\"period\": \"2024-07-01\", \"negative\": 5, \"positive\": 9, \"neutral\": 0, \"ratio\": 0.56}, {\"period\": \"2024-08-01\", \"negative\": 2, \"positive\": 1, \"neutral\": 0, \"ratio\": 2.0}, {\"period\": \"2024-09-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 3, \"ratio\": null}, {\"period\": \"2024-10-01\", \"negative\": 3, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2024-11-01\", \"negative\": 3, \"positive\": 4, \"neutral\": 0, \"ratio\": 0.75}, {\"period\": \"2024-12-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"2025-01-01\", \"negative\": 2, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\":"
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes and organisations dominate?",
+    "args": {
+     "term": "container freight rates"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 51.7,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"container freight rates\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 46, \"entity_labelled_articles\": 67, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 123, \"critical_articles\": 97, \"first_seen\": \"2024-06-04 06:33:26\", \"last_seen\": \"2026-05-31 22:56:32\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series "
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places are covered, and what is placed_pct?",
+    "args": {
+     "term": "container freight rates"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 38, \"share_pct\": 13.7, \"lift\": 0.6}, {\"label\": \"china\", \"articles\": 34, \"share_pct\": 12.2, \"lift\": 2.4}, {\"label\": \"new zealand\", \"articles\": 17, \"share_pct\": 6.1, \"lift\": 9.8}, {\"label\": \"india\", \"articles\": 15, \"share_pct\": 5.4, \"lift\": 0.8}, {\"label\": \"united arab emirates\", \"articles\": 12, \"share_pct\": 4.3, \"lift\": 5.4}, {\"label\": \"netherlands\", \"articles\": 12, \"share_pct\": 4.3, \"lift\": 18.9}, {\"label\": \"iran\", \"articles\": 10, \"share_pct\": 3.6, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 10, \"share_pct\": 3.6, \"lift\": 0.7}, {\"label\": \"italy\", \"articles\": 9, \"share_pct\": 3.2, \"lift\": 2.5}, {\"label\": \"australia\","
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which headlines are most critical?",
+    "args": {
+     "term": "container freight rates",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.9,
+    "sample": "{\"articles\": [{\"target_id\": \"6a2a8195963d76f4afd51f2b\", \"url\": \"https://indiashippingnews.com/west-asia-crisis-surged-container-freight-rates-nearly-tenfold/\", \"title\": \"West Asia Crisis surged Container Freight Rates nearly Tenfold\", \"excerpt\": \"West Asia Crisis surged Container Freight Rates nearly Tenfold NEW DELHI: Escalating geopolitical tensions in West Asia have significantly disrupted maritime trade flows, resulting in a steep increase in freight charges for cargo shipments to the region. According to officials from the shipping mini\", \"publisher\": \"indiashippingnews.com\", \"published\": \"2026-05-21 03:26:38\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-05-21 03:26:38\", \"priorit"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How does 2024 coverage compare with 2021?",
+    "args": {
+     "term": "container freight rates",
+     "a": "2021",
+     "b": "2024"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...': '2021', 'b': '2024'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='container freight rates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\na\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2021', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nb\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 121,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 855,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly articles mentioning freight rates",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 11,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove the March 2026 spike?",
+    "args": {
+     "term": "freight rates",
+     "granularity": "weekly",
+     "from": "2026-02-01",
+     "to": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "How does coverage of container rates specifically compare?",
+    "args": {
+     "terms": [
+      "container freight rates",
+      "freight rates"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.8,
+    "sample": "{\"terms\": [\"container freight rates\", \"freight rates\"], \"rows\": [{\"term\": \"container freight rates\", \"articles\": 123, \"share_pct\": 2.7, \"critical\": 97, \"direction\": \"rising\", \"growth\": 1.74, \"tone_ratio\": 2.19, \"vs_baseline\": 3.78, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 4, \"critical\": 3, \"negative\": 1, \"positive\": 2, \"mean_priority\": 6.5, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 14, \"critical\": 12, \"negative\": 5, \"positive\": 9, \"mean_priority\": 7.14, \"critical_pct\": 85.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 3, \"critical\": 1, \"negative\": 2, \"positive\": 1, \"mean_priority\": 6.33, \"critical_pct\": 33.3, \"partial_perio"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical headlines cover Hormuz and rates?",
+    "args": {
+     "term": "freight rates Hormuz",
+     "since": "2026-03-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-03-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What has happened since June 2026?",
+    "args": {
+     "term": "freight rates",
+     "from": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which places are covered, by region?",
+    "args": {
+     "term": "freight rates",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 29.3,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 1587, \"share_pct\": 18.5, \"lift\": 0.8}, {\"label\": \"china\", \"articles\": 941, \"share_pct\": 11.0, \"lift\": 2.2}, {\"label\": \"india\", \"articles\": 626, \"share_pct\": 7.3, \"lift\": 1.1}, {\"label\": \"iran\", \"articles\": 327, \"share_pct\": 3.8, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 267, \"share_pct\": 3.1, \"lift\": 0.6}, {\"label\": \"russia\", \"articles\": 244, \"share_pct\": 2.8, \"lift\": 3.4}, {\"label\": \"canada\", \"articles\": 201, \"share_pct\": 2.3, \"lift\": 0.7}, {\"label\": \"japan\", \"articles\": 200, \"share_pct\": 2.3, \"lift\": 1.5}, {\"label\": \"israel\", \"articles\": 193, \"share_pct\": 2.3, \"lift\": 1.8}, {\"label\": \"singapore\", \"articles\": 1"
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "How has tone moved month to month?",
+    "args": {
+     "term": "freight rates",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 81, \"positive\": 38, \"neutral\": 5, \"ratio\": 2.13}, {\"period\": \"2024-07-01\", \"negative\": 103, \"positive\": 79, \"neutral\": 1, \"ratio\": 1.3}, {\"period\": \"2024-08-01\", \"negative\": 94, \"positive\": 71, \"neutral\": 1, \"ratio\": 1.32}, {\"period\": \"2024-09-01\", \"negative\": 62, \"positive\": 68, \"neutral\": 9, \"ratio\": 0.91}, {\"period\": \"2024-10-01\", \"negative\": 83, \"positive\": 54, \"neutral\": 2, \"ratio\": 1.54}, {\"period\": \"2024-11-01\", \"negative\": 54, \"positive\": 58, \"neutral\": 4, \"ratio\": 0.93}, {\"period\": \"2024-12-01\", \"negative\": 55, \"positive\": 23, \"neutral\": 1, \"ratio\": 2.39}, {\"period\": \"2025-01-01\", \"negative\": 93, \"positive\": 40, \"neutral\": 1, \"ratio\":"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 78,
+   "traced": 78,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 151,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 345,
+  "charts": [
+   {
+    "id": "trend",
+    "title": "Container freight rates in news coverage",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": []
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many news items mention container freight rates, by month, over a stated window?",
+    "args": {
+     "term": "container freight rates",
+     "window": "2020-01-01..2026-10-23",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How does the topic's tone compare with the wider news corpus baseline over the same window?",
+    "args": {
+     "term": "container freight rates",
+     "window": "2020-01-01..2026-10-23",
+     "include_corpus_baseline": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_corpus_baseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which themes and organisations or people are most prominent in this coverage?",
+    "args": {
+     "term": "container freight rates",
+     "window": "2020-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for prism_overview\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places appear, and what share of matching articles have a place assigned?",
+    "args": {
+     "term": "container freight rates",
+     "window": "2020-01-01..2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which critical headlines are most relevant, with publication dates and source links?",
+    "args": {
+     "term": "container freight rates",
+     "window": "2020-01-01..2026-10-23",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How concentrated is coverage by publisher?",
+    "args": {
+     "term": "container freight rates",
+     "window": "2020-01-01..2026-10-23",
+     "dimension": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...imension': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='container freight rates', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2020-01-01..2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 761,
+  "charts": [
+   {
+    "id": "freight-rates-coverage",
+    "title": "Monthly news articles matching freight rates",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Matching articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "freight-rates-monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What is the container-only monthly coverage and sentiment trend?",
+    "args": {
+     "term": "container freight rates",
+     "since": "2024-06-01",
+     "granularity": "monthly"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 4, \"critical\": 3, \"negative\": 1, \"positive\": 2, \"mean_priority\": 6.5, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 14, \"critical\": 12, \"negative\": 5, \"positive\": 9, \"mean_priority\": 7.14, \"critical_pct\": 85.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 3, \"critical\": 1, \"negative\": 2, \"positive\": 1, \"mean_priority\": 6.33, \"critical_pct\": 33.3, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 4, \"critical\": 0, \"negative\": 1, \"positive\": 0, \"mean_priority\": 5.75, \"critical_pct\": 0.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 3, \"critical\": 3, \"negative"
+   },
+   {
+    "id": "f2",
+    "feature": "news.compare",
+    "question": "Which news themes distinguish container freight rates from general freight rates?",
+    "args": {
+     "terms": [
+      "container freight rates",
+      "freight rates"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"terms\": [\"container freight rates\", \"freight rates\"], \"rows\": [{\"term\": \"container freight rates\", \"articles\": 123, \"share_pct\": 2.7, \"critical\": 97, \"direction\": \"rising\", \"growth\": 1.74, \"tone_ratio\": 2.19, \"vs_baseline\": 3.78, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 4, \"critical\": 3, \"negative\": 1, \"positive\": 2, \"mean_priority\": 6.5, \"critical_pct\": 75.0, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 14, \"critical\": 12, \"negative\": 5, \"positive\": 9, \"mean_priority\": 7.14, \"critical_pct\": 85.7, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 3, \"critical\": 1, \"negative\": 2, \"positive\": 1, \"mean_priority\": 6.33, \"critical_pct\": 33.3, \"partial_perio"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which critical headlines specifically discuss container freight rates, with dates and publishers?",
+    "args": {
+     "term": "container freight rates",
+     "since": "2024-06-01",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places and trade lanes are covered in container-rate news, and what share is place-resolved?",
+    "args": {
+     "term": "container freight rates",
+     "since": "2024-06-01",
+     "level": "country"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.2,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 38, \"share_pct\": 13.7, \"lift\": 0.6}, {\"label\": \"china\", \"articles\": 34, \"share_pct\": 12.2, \"lift\": 2.4}, {\"label\": \"new zealand\", \"articles\": 17, \"share_pct\": 6.1, \"lift\": 9.8}, {\"label\": \"india\", \"articles\": 15, \"share_pct\": 5.4, \"lift\": 0.8}, {\"label\": \"united arab emirates\", \"articles\": 12, \"share_pct\": 4.3, \"lift\": 5.4}, {\"label\": \"netherlands\", \"articles\": 12, \"share_pct\": 4.3, \"lift\": 18.9}, {\"label\": \"iran\", \"articles\": 10, \"share_pct\": 3.6, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 10, \"share_pct\": 3.6, \"lift\": 0.7}, {\"label\": \"italy\", \"articles\": 9, \"share_pct\": 3.2, \"lift\": 2.5}, {\"label\": \"singapore\","
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "How concentrated are publishers across the full container freight-rate news window?",
+    "args": {
+     "term": "container freight rates",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.6,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"container freight rates\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 46, \"entity_labelled_articles\": 67, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 123, \"critical_articles\": 97, \"first_seen\": \"2024-06-04 06:33:26\", \"last_seen\": \"2026-05-31 22:56:32\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series "
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 25,
+   "traced": 25,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 113,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

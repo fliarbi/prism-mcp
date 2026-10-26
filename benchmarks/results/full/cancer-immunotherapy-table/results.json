@@ -1,0 +1,229 @@
+{
+ "slug": "cancer-immunotherapy-table",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 2.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 25.6,
+   "plain": 25.6,
+   "invented": true,
+   "by_judge": {
+    "opus": 25.6,
+    "gpt": 25.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 3.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 4.0,
+    "accuracy": 5.0,
+    "limits": 4.5,
+    "verdict": 4.5,
+    "facets": 4.0
+   },
+   "strict": 68.8,
+   "plain": 68.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.6,
+    "gpt": 70.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 1.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 1.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 27.4,
+   "plain": 27.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.0,
+    "gpt": 30.9
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 4.5,
+    "repro": 3.0,
+    "refs": 4.0,
+    "accuracy": 4.5,
+    "limits": 4.0,
+    "verdict": 4.5,
+    "facets": 4.0
+   },
+   "strict": 62.7,
+   "plain": 62.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 59.1,
+    "gpt": 66.2
+   }
+  }
+ },
+ "judge_mad": 0.23,
+ "verdicts": {
+  "opus": "B and D both stayed faithful to the single recorded table call, kept nulls as nulls, and refused to rank non-comparable figures. D went further by reading the rows critically: the colorectal figure is a radiomics subgroup, the melanoma figure is an imaging study, and the breast news item is off-topic. A and C answered from memory; A presented wrong trial figures and a bad DOI as sourced fact, while C at least labelled every value as an estimate.",
+  "gpt": "B is the strongest decision aid: it identifies the four reported rows, distinguishes the NSCLC risk ratio from response proportions, and explains why the figures cannot support a cross-cancer ranking. A has the cleaner export and provenance hygiene, but B’s within-row arm comparison and more explicit interpretation of the colorectal evidence make its answer more useful while remaining consistent with the record."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "CheckMate 037 ORR given as 40% (published about 32%)",
+    "CheckMate 037 DOI does not resolve; first author misattributed to Hodi",
+    "KEYNOTE-158 non-colorectal MSI-H ORR given as 39.6% (published 34.3%)"
+   ],
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "Verdict contains untagged memory numbers",
+    "Recommends ranking tumor types on non-comparable estimates"
+   ],
+   "claude_prism": [
+    "CSV leaves breast cancer article count blank although c1 reports 6",
+    "No null-reason column in the CSV"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [],
+   "claude_prism": [],
+   "claude_bare": [
+    "The verdict's 0%, 70%, 40, and 60% values are untagged per the script.",
+    "The glioblastoma claim concerns no survival benefit, which does not establish a zero ORR."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1016/S1470-2045(15)00006-9 does not resolve to the stated CheckMate 037 melanoma paper."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "comparison": "Compares two memory figures (40% vs 19%). The melanoma figure is wrong for CheckMate 037, so I scored it below the ceiling of 2.",
+    "chart": "There is no chart.",
+    "drilldown": "The breakdown comes from memory. None of the follow-up calls returned on-topic data.",
+    "export": "The CSV values come from memory, as the limits section admits. The header cites source=ref:r1 instead of being labelled as an estimate.",
+    "repro": "No numbers trace to a recorded call. Memory is only acknowledged in the limits section.",
+    "refs": "The CheckMate 037 DOI does not resolve in the corpus, and the first author is wrong (Weber, not Hodi). One bad identifier caps refs at 1.",
+    "accuracy": "Several specifics are wrong but presented as fact: CheckMate 037 ORR was about 32%, not 40%; KEYNOTE-158 non-colorectal MSI-H ORR was 34.3%, not 39.6% (39.6% is the pooled approval figure); the CheckMate 017 ORR figure is also doubtful.",
+    "limits": "States the window, the gap to today, partial coverage and memory selection. Nothing is measured, so it cannot go higher.",
+    "verdict": "Gives a direct answer, a decision, a confidence level and what would change it. It rests on memory figures, some of them wrong.",
+    "facets": "Every row is answered from memory."
+   },
+   "chatgpt_prism": {
+    "comparison": "Explains qualitatively why there is no shared scale. It computes no ratio or delta.",
+    "chart": "There is no chart.",
+    "drilldown": "Breakdown is only the table. None of the follow-ups returned data.",
+    "export": "The CSV traces to c1, keeps nulls with a reason column, and carries a provenance JSON. DOI identifiers are missing from the rows.",
+    "repro": "6 of 7 numbers trace, and the calls are listed with args. This is at the ceiling of 3.",
+    "refs": "All DOIs resolve, quotes are verbatim, and tiers are stated. The set is not ranked and no contrary sources are given.",
+    "accuracy": "Faithful to c1. It does not flag that the colorectal row may not be an immunotherapy population.",
+    "limits": "Covers the missing window, the 145-day gap, the news lane for breast cancer, null versus zero, and what the counts are.",
+    "verdict": "Direct and consistent with the table. Includes a decision, a confidence level and what would change it.",
+    "facets": "All six requested rows are grounded, including two grounded nulls with the tool's reason."
+   },
+   "claude_bare": {
+    "comparison": "Memory figures against a self-chosen memory baseline, labelled as estimates. The arithmetic is consistent.",
+    "chart": "There is no chart.",
+    "drilldown": "The layer list is generic and the breakdown is from memory. One follow-up worked.",
+    "export": "The CSV is labelled source=estimate.",
+    "repro": "Everything is labelled as memory or estimate.",
+    "refs": "No identifiers are given, so nothing can be resolved.",
+    "accuracy": "The memory figures are mostly close to published values and are honestly labelled. Several are approximate (for example TNBC, HCC).",
+    "limits": "Specific about having no retrieval, the knowledge cutoff and the missing tumor types. This is at the ceiling of 3.",
+    "verdict": "The ceiling is 0 because the verdict contains untagged numbers. It also recommends ranking tumor types on figures it admits are not comparable.",
+    "facets": "Answered entirely from memory."
+   },
+   "claude_prism": {
+    "comparison": "Justifies not comparing across rows. The only delta is within the bladder row (44.4% vs 0%), which traces.",
+    "chart": "There is no chart.",
+    "drilldown": "None of the follow-ups returned data, which caps drilldown at 1.",
+    "export": "The CSV traces and has provenance JSON. There is no reason column for the nulls. The breast row's article count (6) is missing.",
+    "repro": "22 of 23 numbers trace, and a calls block with capture date is given. One number is untagged.",
+    "refs": "All DOIs resolve, quotes are verbatim, and tiers are stated. The news item has no publisher or url, and the set is not ranked.",
+    "accuracy": "Catches the reference's anomalies: the colorectal row is a radiomics subgroup with unclear treatment, the melanoma row is an imaging study rather than a pivotal trial, the breast news item is off-topic, and the direction of the NSCLC RR is flagged.",
+    "limits": "Limits sit next to the numbers. They change the reading (null is not zero; the colorectal figure is not an immunotherapy rate), and it says what would close the gap.",
+    "verdict": "Concise and consistent with the data. Gives a decision, low confidence with reasons, and what would change it.",
+    "facets": "All six rows are grounded, including the nulls."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "comparison": "Explains why cross-row comparison is invalid, but provides no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are listed, but none returned usable data.",
+    "export": "CSV preserves null reasons and identifiers with provenance JSON; the table matches the recorded rows.",
+    "repro": "Most numbers trace to the table call, but not all numeric claims are tagged and the follow-ups do not replay successfully.",
+    "refs": "All five DOIs resolve and quotes support claims; the references are not ranked with contrary evidence.",
+    "accuracy": "Row values and nulls match the record, and the answer correctly flags that the measures and populations are not comparable.",
+    "limits": "States the unset window, lane, coverage, null meaning, and gap to today; the limitations could more directly specify how to close the data gap.",
+    "verdict": "Gives a supported answer, a practical decision, confidence and reason, a change condition, and the strongest limitation.",
+    "facets": "Covers all six requested rows with grounded values or grounded no-figure results, but not the implied broader comparisons."
+   },
+   "claude_prism": {
+    "comparison": "Provides the traced within-bladder arm contrast and explains why cross-cancer deltas would mislead, though the requested cross-cancer comparison remains unavailable.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are specific but none executed successfully.",
+    "export": "The CSV traces, but lacks full per-row provenance and some decision-ready hygiene.",
+    "repro": "Nearly all numeric claims trace and the main call is reproducible; one claim is untagged and the calls block does not fully rebuild every output.",
+    "refs": "Identifiers resolve and quoted evidence supports claims, but the set lacks ranked contrary evidence and complete news metadata.",
+    "accuracy": "Correctly distinguishes the NSCLC risk ratio from a response rate, and flags the colorectal result as not established as immunotherapy in the abstract.",
+    "limits": "States window, lanes, coverage, matching level, and missing values; the limits do not fully explain how fresh evidence would close the gap.",
+    "verdict": "Direct, appropriately cautious answer with decision, confidence, conditions, and contrary or limiting evidence.",
+    "facets": "Grounds all six requested rows, including nulls, but does not resolve the implied broader comparison facets."
+   },
+   "claude_bare": {
+    "comparison": "Gives numeric contrasts, but they are recalled estimates and cannot be checked against a common recorded source.",
+    "chart": "No chart block.",
+    "drilldown": "The breakdown is from memory and proposed calls do not provide a usable traced path.",
+    "export": "Export is explicitly an estimate, which is honest but unmeasured.",
+    "repro": "Numbers are memory estimates with no executed calls or regenerate recipe.",
+    "refs": "Trial names are recalled, with no verified identifiers, metadata checks, or verbatim quotes.",
+    "accuracy": "The estimates are disclosed, but the glioblastoma no-benefit statement is a survival endpoint and does not establish a zero response rate.",
+    "limits": "Clearly labels memory estimates and notes coverage and comparability limits, but lacks corpus-specific bounds.",
+    "verdict": "The verdict presents several untagged response-rate claims, so it exceeds its own script ceiling of zero.",
+    "facets": "Many cancer types are listed, but values are memory estimates rather than grounded answers."
+   },
+   "chatgpt_bare": {
+    "comparison": "The arithmetic contrast is labelled as an estimate, but the public-source figures are not verified on a shared scale.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-up calls are listed but none executed successfully.",
+    "export": "The CSV is based on cited memory figures and is not traced to a recorded response.",
+    "repro": "No database calls or regenerate recipe; figures rely on remembered publications.",
+    "refs": "One DOI fails to resolve to the stated work, which caps this parameter at 1.",
+    "accuracy": "The CheckMate 037 DOI is a fabricated or mismatched identifier for the cited melanoma source.",
+    "limits": "Discloses memory selection, old publication window, and noncomparability, but does not provide specific corpus coverage bounds.",
+    "verdict": "Gives a direct, bounded recommendation with confidence and a condition that would improve comparability.",
+    "facets": "Only a selected subset is covered, and the figures are memory-derived rather than grounded in the supplied record."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

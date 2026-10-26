@@ -1,0 +1,179 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 5,
+    "verdict": 0,
+    "facets": 3
+   },
+   "C": {
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 5
+   },
+   "D": {
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Qualitative contrast only; it gives no comparable numeric estimates.",
+    "chart": "No chart block.",
+    "drilldown": "Names two evidence layers, but provides no traced item breakdown or executed follow-ups.",
+    "export": "No CSV export.",
+    "repro": "The literature claims and numbers are not tied to reproducible calls or named sources with traceable details.",
+    "refs": "One DOI does not resolve in the research corpus, capping this at 1.",
+    "accuracy": "The general account is cautious and does not materially contradict the reference record.",
+    "limits": "Clearly states several limits, but lacks a measured window and specific corpus coverage details.",
+    "verdict": "Direct answer, decision, confidence, conditions, and contrary evidence are present; bounded by the lack of measured data.",
+    "facets": "Addresses the central debate but leaves most measured facets unavailable."
+   },
+   "B": {
+    "comparison": "Provides numeric elasticity ranges from memory, explicitly labelled estimates, so the figures are not benchmark-traceable.",
+    "chart": "No chart block.",
+    "drilldown": "Lists follow-up calls, but none executed successfully with on-topic data.",
+    "export": "The estimate CSV is honestly labelled, earning 1.",
+    "repro": "Claims rely on memory and estimates without reproducible source calls.",
+    "refs": "References lack resolvable identifiers and source quotes.",
+    "accuracy": "The untagged 60% threshold is an unsupported specific, and other numerical claims are estimates.",
+    "limits": "Specifies memory-based coverage, freshness gap, lanes, censoring, and match limitations.",
+    "verdict": "The verdict contains the untagged 60% number; the script ceiling is 0.",
+    "facets": "Covers the debate qualitatively, but measured facets are missing."
+   },
+   "C": {
+    "comparison": "Traced comparison uses one corpus field and window, states ratio and delta, defines the baseline, and explains that counts do not measure truth or evidence strength.",
+    "chart": "No chart block.",
+    "drilldown": "Provides a claim-level breakdown and follow-up questions, but none of the proposed calls returned usable data.",
+    "export": "The needed claim comparison CSV is fully traced with provenance and is referenced in the prose.",
+    "repro": "All numeric claims trace to the recorded call or recomputable arithmetic; the call and capture date are provided.",
+    "refs": "Only one of two surfaced documents has a resolving identifier; quotes are absent and one item cannot be checked.",
+    "accuracy": "Faithfully distinguishes corpus mix from document reads and avoids treating corpus volume as causal evidence; it does not catch further reference anomalies.",
+    "limits": "Places the empty window, lane, coverage, matching and interpretation limits alongside the relevant claims.",
+    "verdict": "Gives a bounded answer, decision, confidence, conditions, and the strongest contrary evidence in the supplied record.",
+    "facets": "Covers the requested claim comparison and grounds the unavailable effect-size and subgroup questions as gaps."
+   },
+   "D": {
+    "comparison": "Traced same-call comparison with recomputable shares and ratio; it states the matching caveat, though the corpus-volume comparison cannot establish comparative evidence strength.",
+    "chart": "The chart window is invented as the retrieval date despite the source having no reported window; chart ceiling is 0.",
+    "drilldown": "Provides corpus and document layers plus one successful on-topic follow-up, but not the full coverage of open facets.",
+    "export": "Both needed CSVs trace to the recorded call, preserve the reported null-like unread count, and include provenance.",
+    "repro": "Some numeric claims are untraced and the chart window conflicts with the source’s empty window.",
+    "refs": "Only the surfaced New York study has a resolvable identifier; the other relied-on items lack verifiable identifiers or quotes.",
+    "accuracy": "Mostly reads the recorded fields correctly and labels background literature as memory; the chart’s stated window is unsupported.",
+    "limits": "Explains the empty window, intersection lane, thin document reads, matching limits, and what counts cannot establish.",
+    "verdict": "Direct recommendation, confidence, conditions, and limits are present; the literature-based moderate-increase recommendation is less supported by this run’s measured evidence.",
+    "facets": "Covers the main comparison and several limits, but leaves implied facets such as overlap and seasonality without grounded treatment."
+   }
+  },
+  "errors": {
+   "A": [
+    "The DOI 10.1257/aer.84.4.772 is not found in the research corpus."
+   ],
+   "B": [
+    "The verdict's 60% bite threshold is untagged and unsupported by the stated sources."
+   ],
+   "C": [
+    "The 2018 preprint has no identifier or URL, and neither surfaced item has a verbatim quote."
+   ],
+   "D": [
+    "The chart assigns a 2026-10-23 measurement window although the source call reports no window.",
+    "Several background literature claims are memory-based and lack resolving identifiers or quotes."
+   ]
+  },
+  "best": "C",
+  "verdict": "C is strongest for a decision-maker because its comparisons, exports, and numerical claims are reproducible and it clearly separates corpus volume from causal evidence. Its missing chart, weak document references, and unexecuted follow-ups limit the deliverable, but D’s apparent breadth is weakened by an unsupported chart window and untraced numbers."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 5,
+   "verdict": 0,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 5
+  },
+  "claude_prism": {
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,178 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 5,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "The maize vs rice ratio (2.3x, delta -4.2pp) is between memory figures from Zhao 2017, so it cannot be checked; the respondent says rows have different baselines.",
+    "chart": "The chart uses a cited public series (r1) that the benchmark cannot verify, which is anchor 1.",
+    "drilldown": "The layers are named generically and the six proposed calls were not run; 0/6 succeeded.",
+    "export": "The CSVs come from memory and are sourced to refs, not calls; nulls are kept honestly.",
+    "repro": "Every number is labelled as recalled from memory, and no calls were made.",
+    "refs": "All 6 DOIs resolve, each with year, venue, tier and a stated claim; there are no verbatim quotes.",
+    "accuracy": "The recalled figures match the published values (Zhao, Lobell, Schlenker-Roberts, Jägermeyr). They are memory specifics, but they are tagged and labelled. Nothing contradicts the reference.",
+    "limits": "States the source windows, the gap to today, selection bias and the single lane. These are reasonably specific, but it cannot bound measured data.",
+    "verdict": "Gives a direct answer, a decision, a confidence level with its reason, and what would change it. This is an established literature, so a memory answer is acceptable at 4.",
+    "facets": "The crop facets are answered from memory. Millet, the fifth crop in the reference, is honestly marked as having no value."
+   },
+   "B": {
+    "comparison": "The soybean vs corn per-°C comparison (16 vs 13, 3pp, ratio 1.23) is traced to one study on one scale and recomputes correctly. It explains why the other rows cannot be compared.",
+    "chart": "No chart.",
+    "drilldown": "There is one traced layer (crop to paper), but the proposed follow-ups did not execute (0/6).",
+    "export": "The script ceiling is 0. The CSV recasts the measures (e.g. millet 24 as value_pct) and the window is unknown.",
+    "repro": "All 26 numbers trace to c1, the call is listed with args, the provenance JSON is included and the derived ratio is shown.",
+    "refs": "All 5 DOIs resolve, the quotes are verbatim from the returned sentences, tier is stated and each ref is tied to a claim.",
+    "accuracy": "Catches the reference's own anomaly: 3 of 5 rows are off-topic (fertilizer, irrigation, soil). It reads each measure correctly.",
+    "limits": "The limits sit next to the numbers: no window, one top sentence per row, semantic match surfacing irrelevant papers, single-study values. It says what would close the gap.",
+    "verdict": "Gives a direct screening answer, a decision, a reasoned low confidence and what would change it. It is bounded, but does not substantively answer the climate question.",
+    "facets": "All five rows are addressed with grounded values and a grounded relevance reading."
+   },
+   "C": {
+    "comparison": "Explicitly declines any comparison. This is qualitative only and misses the one valid in-study contrast (soybean vs corn).",
+    "chart": "No chart.",
+    "drilldown": "The breakdown is a restatement of the rows, and the 3 follow-ups did not execute.",
+    "export": "The CSV traces and is referenced from the prose, but the window is unknown, coverage is mislabelled 'full', there are no DOI identifiers and the values are stored as strings.",
+    "repro": "The numbers trace, but the c1 entry in prism-calls lacks feature and args (a declared call that was never made). The provenance JSON partly compensates.",
+    "refs": "All 5 DOIs resolve with tier and a stated claim; the single quote given is verbatim.",
+    "accuracy": "Correctly flags the off-topic rows and reads each measure properly.",
+    "limits": "Limits are stated in a footer paragraph and partly in the table. Censoring and match mode are only marked 'not specified'.",
+    "verdict": "Clear negative answer, decision, confidence and what would change it. It is consistent with the table.",
+    "facets": "All five rows are covered with grounded values and a relevance status."
+   },
+   "D": {
+    "comparison": "No comparison is made.",
+    "chart": "No chart.",
+    "drilldown": "Breakdown is generic, and the follow-ups failed.",
+    "export": "An empty CSV with a null reason; it is honest but contains no data.",
+    "repro": "No traceable numbers or calls.",
+    "refs": "The DOIs resolve, but the r1 title is garbled or fabricated ('全球 warming...') and does not match the Zhao 2017 paper, so the metadata mismatch caps refs at 1.",
+    "accuracy": "Misdescribes Zhao 2017 as a synthesis of observed impacts and Jägermeyr as projecting production by 2050. The reference title is fabricated. It wrongly says no crop list exists, when the reference has five rows.",
+    "limits": "The limits are largely generic, and the claim of 'no input rows' is wrong.",
+    "verdict": "Hedges to 'it depends' without any crop-specific answer.",
+    "facets": "No crop facet is answered with a grounded value."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "CSV coverage flag set to 'full' while unit is mixed and window unknown",
+    "prism-calls entry c1 lacks feature/args"
+   ],
+   "D": [
+    "Fabricated/garbled title for Zhao et al. 2017 (DOI 10.1073/pnas.1701762114)",
+    "Zhao 2017 mischaracterised as a synthesis of observed yield impacts",
+    "Jägermeyr 2021 mischaracterised as projecting production by 2050",
+    "Claims no crop rows were available, contradicting the five-row reference"
+   ]
+  },
+  "best": "B",
+  "verdict": "B and C both saw that the database's five crop values mostly measure fertilizer, irrigation and soil effects, not climate impact. B went further: it kept the one valid like-for-like warming contrast (soybean vs corn per °C), quoted every source verbatim and placed its limits next to the numbers. A gave the most useful substantive answer from real, correctly recalled literature, but none of it is measured or reproducible. D gave neither data nor a usable answer, and it carried a garbled reference title."
+ },
+ "scores": {
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 5,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

@@ -1,0 +1,242 @@
+{
+ "slug": "llm-hallucination-evidence",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 22.0,
+   "plain": 22.0,
+   "invented": true,
+   "by_judge": {
+    "opus": 26.2,
+    "gpt": 17.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 1.5,
+    "chart": 3.5,
+    "drilldown": 1.5,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 65.6,
+   "plain": 65.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 64.6,
+    "gpt": 66.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.5,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 1.5
+   },
+   "strict": 26.8,
+   "plain": 26.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 19.0,
+    "gpt": 34.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 0.5,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 3.5,
+    "repro": 4.5,
+    "refs": 4.5,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 68.9,
+   "plain": 68.9,
+   "invented": false,
+   "by_judge": {
+    "opus": 56.4,
+    "gpt": 81.4
+   }
+  }
+ },
+ "judge_mad": 0.89,
+ "verdicts": {
+  "opus": "C separated measured from remembered: it traced every tool number and reported that the corpus held no fabrication-rate evidence. It still gave clearly labelled estimate ranges and a usable decision. A had the most useful real-world figures, and they appear correct, but none trace and its verdict rests on untagged numbers. D was rigorous but answered 'give numbers' with none, and B gave nothing.",
+  "gpt": "A is the strongest decision-grade response because it refuses to turn broad subject-corpus counts into a fabrication rate, and it clearly states what evidence would be needed to answer the question. B adds memory-based rate estimates that are labelled honestly, but they remain unverified and its news-trend reading is inconsistent; C is cautious but offers little usable measurement. D appears most numerically decisive, yet its unsupported specifics make it the least reliable basis for a decision."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "Untagged 5% threshold in the verdict",
+    "GPTZero/NeurIPS and Tow Center figures unverified (labelled est.)"
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "'Intersection lane was null' is not supported by the reference",
+    "Censored 2025 point plotted without a mark"
+   ],
+   "chatgpt_prism": [
+    "Research-vs-news 375x ratio combines different corpora and windows as 'same unit'"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "The news-series trend statement gives a last point of 1 for 2026-05 and presents the series as rising, while the supplied trend summary reports first 10, last 1, direction rising; this is internally inconsistent with the endpoint direction and the series is incomplete in the reference excerpt.",
+    "Memory-based rate ranges and cross-model contrast are unverified and do not establish a general frequency."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Presents several unverified study-specific rates as facts despite claiming they are from memory.",
+    "The verdict includes an untagged 5% threshold, flagged by the script as invented-looking.",
+    "Claims peer-reviewed evidence, incident counts and a tier-weighted tally without reproducible calls or verified supporting citations.",
+    "Reference r4 has no DOI, and several referenced incident/news claims lack resolving item URLs."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Cross-study points from memory, not a series; A admits it is not a clean time series.",
+    "comparison": "Within-study model deltas are from memory; ratios recompute (55/18=3.1, 91.4/28.6=3.2), but nothing can be checked.",
+    "chart": "Chart of cited public figures that cannot be verified; it is on the edge of being a non-series.",
+    "drilldown": "Model, task and error-type breakdown is from memory; 0/6 follow-ups ran ok.",
+    "export": "CSV values are from memory, labelled only through the source note.",
+    "repro": "Ceiling 0; nothing traces to a call.",
+    "refs": "3 DOIs resolve and each reference is tied to a claim, but r4 has no DOI, r5 and r6 have no URL, and there are no quotes.",
+    "accuracy": "Recalled figures (Walters & Wilder 55/18, Chelli 39.6/28.6/91.4, Bhattacharyya 47/46/7) match the public record and nothing contradicts the reference; the GPTZero, tracker and Tow figures are unverified but labelled est.",
+    "limits": "Specific about the memory basis, the gap to today, and that each study defines 'fabricated' differently; still a plain-model answer.",
+    "verdict": "Ceiling 0: the verdict carries an untagged 5% figure.",
+    "facets": "Facets answered from memory."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "Empty chart.",
+    "drilldown": "Generic follow-ups only, and none executed ok.",
+    "export": "CSV has headers only, no data.",
+    "repro": "No numbers to trace.",
+    "refs": "None given.",
+    "accuracy": "Refusal; no contradictions.",
+    "limits": "Generic statements of inability rather than specific limits.",
+    "verdict": "Gives a decision but no numbers, and the user asked for numbers.",
+    "facets": "No facet answered."
+   },
+   "claude_prism": {
+    "trend": "Traced research series with window and CAGR 17.6%, plus news peak 46 in 2022-01 and late/early 2.77; but it is a field-volume proxy, not the asked quantity.",
+    "comparison": "Traced late-vs-early news ratio; the fabrication-rate contrast is memory est.",
+    "chart": "Traced chart with window, unit and source, but of an irrelevant proxy, and the censored 2025 point is not marked.",
+    "drilldown": "One traced layer (corpus volumes); 1/6 follow-ups executed ok.",
+    "export": "Traced volumes CSV with provenance JSON; one table only.",
+    "repro": "38/39 traced; calls listed with args; memory figures labelled est.",
+    "refs": "3 DOIs resolve, tier and venue given, one verbatim quote; each correctly marked unrelated.",
+    "accuracy": "Traced figures are correct; 'intersection lane was null' is not in the record; it misses that 2025 is plotted despite censored_at=2025.",
+    "limits": "Window gaps to today, lane, title match mode, censoring and what the counts are not are all stated next to the numbers.",
+    "verdict": "Honest that the run did not measure a rate, gives a decision, low confidence with reason, and what would change it; bounded memory ranges labelled est.",
+    "facets": "Grounded no-data on the rate, plus labelled estimates."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series, 3.65x is correct, censoring noted; it is a proxy, not a fabrication series.",
+    "comparison": "Research-vs-news 375x mixes corpora and windows and is irrelevant to the question, though the mixing is stated.",
+    "chart": "Traced chart of a proxy with an irrelevant facet.",
+    "drilldown": "Ceiling 1.",
+    "export": "Traced series CSV with provenance; one table.",
+    "repro": "21/23 traced; calls with args.",
+    "refs": "3 DOIs resolve with tier and claim; quote fragments match.",
+    "accuracy": "Correct values; the 375x 'same unit' framing is misleading but caveated.",
+    "limits": "Ceiling 3; specific window gaps and lane are stated.",
+    "verdict": "Clear 'cannot measure' with a decision, but gives no numbers to a question that asked for them.",
+    "facets": "Grounded no-data on the rate."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "The traced annual series, dates, quantified 3.65× change and censoring are correct, but it is broad research volume rather than fabrication frequency.",
+    "comparison": "The research and news counts use different windows and corpus types, so the ratio is not a valid same-scale comparison.",
+    "chart": "The chart traces all annual points, gives source, unit and window, and clearly says it measures broad subject research volume.",
+    "drilldown": "Breakdowns are present, but none reaches relevant rate-measuring items and the proposed follow-up calls returned no data.",
+    "export": "The annual CSV traces to the series and has provenance, but the needed data is only a broad volume table, not a fabrication-rate export.",
+    "repro": "Calls and arguments are listed; traced chart and prose figures are reproducible, with the broad-volume limitation made explicit.",
+    "refs": "All three DOIs resolve, metadata matches, and each reference is tied to an explanation of why it does not support a rate.",
+    "accuracy": "It consistently distinguishes corpus coverage and retrieval tallies from a fabrication rate and catches that the evidence is unrelated.",
+    "limits": "Specific windows, censoring, lane and matching limits are discussed, but coverage caveats are not fully grounded in the supplied record.",
+    "verdict": "It gives a bounded answer, decision, confidence rationale and evidence threshold that would change the conclusion.",
+    "facets": "It grounds the absence of a rate and addresses broad coverage and research/news mismatch, but lacks grounded model/task rates and other implied facets."
+   },
+   "claude_prism": {
+    "trend": "The research series is correct, but the news peak/last point and late-versus-early figures are not a complete, correctly read traced trend; the stated last point conflicts with the supplied trend summary.",
+    "comparison": "The proposed GPT rate contrast is memory-based, while the research/news figures are not a valid same-scale comparison.",
+    "chart": "The annual research chart traces and is properly labelled as field volume, not fabrication frequency.",
+    "drilldown": "The script ceiling is 3, but only one of six follow-ups executed with on-topic data and the breakdown does not reach identified rate studies.",
+    "export": "The corpus CSV has mismatched window provenance and omits per-row window fields; no rate dataset is provided.",
+    "repro": "Nearly all numeric claims trace, and calls are listed, but some news trend statements mismatch the reference record and memory estimates are not reproducible.",
+    "refs": "Identifiers resolve, but entries are not all tied to rate claims with verified supporting quotes; the cited works here are unrelated Prism results.",
+    "accuracy": "It correctly states that Prism did not measure the rate, but memory estimates and an unsupported GPT-3.5/GPT-4 contrast invite a measured-sounding answer.",
+    "limits": "It states the lane, windows, censoring, coverage and matching limits near the relevant figures, and labels memory estimates.",
+    "verdict": "It gives a decision and confidence, but its default unreliability advice is stronger than the supplied evidence and the contrary evidence is not meaningfully evaluated.",
+    "facets": "It covers the grounded no-rate result, corpus counts, phrase audit and broad research/news limits, while explicitly identifying unavailable rate facets."
+   },
+   "chatgpt_bare": {
+    "trend": "No sourced series is provided; the empty chart does not establish a trend.",
+    "comparison": "No measured comparison is given.",
+    "chart": "The chart has no plotted values.",
+    "drilldown": "No traced breakdown or executed follow-up is supplied.",
+    "export": "Only a header-only, unknown-coverage CSV is provided.",
+    "repro": "No calls or measurements are listed; the answer is explicitly memory-limited.",
+    "refs": "No references are supplied, appropriate to its stated inability to verify sources but insufficient for this pattern.",
+    "accuracy": "It avoids unsupported rate claims and correctly says it cannot measure one.",
+    "limits": "It candidly states the lack of sources and measurement, but does not discuss the reference record's specific windows, lane or coverage.",
+    "verdict": "It gives a practical decision and confidence, but does not answer with a measured rate or state the strongest evidence-based change condition in sufficient detail.",
+    "facets": "It covers the grounded no-rate conclusion, but provides no grounded corpus or trend values."
+   },
+   "claude_bare": {
+    "trend": "The chart is memory-based and the listed values are unverified; the ceiling also limits trend to 2.",
+    "comparison": "The within-study comparisons are memory figures and cannot be checked against the supplied record.",
+    "chart": "The chart is an unverified memory chart, which earns only the estimate ceiling.",
+    "drilldown": "No traced layers or executed follow-ups are provided.",
+    "export": "The CSV is labelled partial but lacks resolvable provenance, and the script ceiling is 1.",
+    "repro": "No Prism calls or reproducible source record; 17 numeric claims are untagged and one invented-looking verdict figure is flagged.",
+    "refs": "At least one reference lacks a DOI, and the script only establishes that listed DOIs resolve, not that they support the claimed rates with verified quotes.",
+    "accuracy": "It presents numerous unverified rates as factual and includes the explicitly flagged untagged 5% figure.",
+    "limits": "It labels figures as from memory and notes varying tasks and missing 2026 coverage, but its specifics are not verified and limits do not cure unsupported numbers.",
+    "verdict": "The verdict relies on unverified rates and the untagged 5% threshold, exceeding the script's zero ceiling.",
+    "facets": "The answer's rates and incident claims are ungrounded, and it does not provide grounded corpus or trend facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

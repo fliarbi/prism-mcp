@@ -1,0 +1,187 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 5,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 5
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series. The chart holds only null placeholders, and no direction is asserted.",
+    "comparison": "The intended contrast is described but nothing is measured.",
+    "chart": "The chart has only null values. It carries no information and supports no claim.",
+    "drilldown": "The layers are generic. The follow-up calls use loose args, and only 2 of 6 executed.",
+    "export": "The theme ranking table is honestly labelled as an estimate from memory.",
+    "repro": "There are no measured numbers. Everything is labelled estimate.",
+    "refs": "No references.",
+    "accuracy": "No contradictions. The memory themes are labelled as estimates.",
+    "limits": "Specific about each unmeasured facet and states the knowledge cutoff. No data window.",
+    "verdict": "Direct memory-based answer with a decision, a low confidence level and what would change it. It is unmeasured.",
+    "facets": "Themes and entities come from memory. Every other facet is marked as not measurable."
+   },
+   "B": {
+    "trend": "Full traced series with window, peak, CAGR (with a caveat), late/early ratio 1.6, and a critical/negative/positive decomposition in the CSV.",
+    "comparison": "Tone ratio 2.13 vs baseline 0.58 = 3.67x, with the baseline defined. It is a tone contrast, not a theme contrast.",
+    "chart": "One traced volume chart. Themes are the core facet and are not charted.",
+    "drilldown": "Category, subcategory and person layers with counts, plus headlines with URLs. 3 of 6 follow-ups returned ok, and none was folded back into the report.",
+    "export": "Traced CSVs with provenance. The export score is capped at 3 by the script.",
+    "repro": "104 of 104 numbers traced, with a calls block and a capture date.",
+    "refs": "Capped at 1 by the script.",
+    "accuracy": "Catches the Immanuel Kant, Cameroon and IRS label anomalies. Minor slip: 645 should be 644.",
+    "limits": "Window, the 145-day gap, match modes, enrichment fill and placed_pct are stated where the numbers are used, plus what would close the gap.",
+    "verdict": "Concise answer with a decision, a reasoned confidence level, what would change it, and the contrary reading of the critical flag.",
+    "facets": "All facets answered with grounded values, and the anomalies are addressed."
+   },
+   "C": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Generic follow-ups only, and 0 of 7 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Refusal: no contradictions.",
+    "limits": "Says it cannot measure, but gives no window or specifics beyond that.",
+    "verdict": "Declines to answer the question.",
+    "facets": "No facets answered."
+   },
+   "D": {
+    "trend": "Traced series with window, censoring, peak, a correct 3.05x, and 1.60x late vs early. No decomposition.",
+    "comparison": "Tone 3.67x vs baseline, with a polarity caveat.",
+    "chart": "Volume chart only. No theme chart.",
+    "drilldown": "Category and subcategory layers. Headlines have no URLs, and only 1 of 6 follow-ups executed ok.",
+    "export": "Two traced CSVs with a provenance JSON including censored_at, both referenced in the prose.",
+    "repro": "44 of 44 numbers traced, with a calls block.",
+    "refs": "Capped at 1 by the script.",
+    "accuracy": "Accurate, but cites CBI and misses the IRS, Kant and Cameroon anomalies. The claim that the baseline covers the 'same reporting window' is unsupported.",
+    "limits": "Thorough limits placed next to the numbers, but they change the reading less.",
+    "verdict": "Answer, decision, confidence and what would change it. The contrary evidence is only lightly named.",
+    "facets": "All facets are grounded, but the implied anomalies are not addressed."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "States the non-February range as up to 645; the source maximum is 644."
+   ],
+   "C": [],
+   "D": [
+    "Says the baseline covers the same reporting window; the source does not state this.",
+    "Lists CBI as a representative organisation and does not flag implausible labels such as the IRS."
+   ]
+  },
+  "best": "B",
+  "verdict": "B and D both traced every number to the overview call. B went further: it read the data critically, flagging the Immanuel Kant, Cameroon and IRS label artefacts, explaining what the 'critical' flag actually marks, and linking headline URLs. A gave honest but unmeasured memory themes, and C declined to answer, so neither supports a decision."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

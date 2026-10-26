@@ -1,0 +1,169 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "chart": 0,
+    "drilldown": 4,
+    "export": 2,
+    "repro": 2,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 0,
+    "facets": 1
+   },
+   "D": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "chart": "No chart; ceiling 0.",
+    "drilldown": "Ceiling 1: 0/5 follow-ups returned on-topic data.",
+    "export": "One traced CSV with provenance and a JSON block. The window is unknown and only the claims table is given, not a documents table. The Parkinson's/diabetes tally cells are left blank even though the reference has that tally.",
+    "repro": "25/25 numbers traced and c1 is listed with full args. There is no full regenerate coverage for the documents layer.",
+    "refs": "5/5 DOIs resolve, each tied to a claim with a tier. The r1 and r2 quotes come from ungrounded, unverified deep reads but are presented as 'surfaced snippets' without that flag.",
+    "accuracy": "States that the response gives no deep-read tally for the Parkinson's/diabetes claim. The reference has one (0/1/0/10/1).",
+    "limits": "Places the literal title-matching, unread documents and missing window next to the numbers they bound.",
+    "verdict": "Gives answer, decision, confidence with reason and what would change it. It is somewhat soft on the clearly false 'cures' claim.",
+    "facets": "All four claims are covered with grounded counts, plus citation coverage. The Parkinson's tally is missed."
+   },
+   "B": {
+    "chart": "No chart; ceiling 0.",
+    "drilldown": "Two traced layers (claim, then documents with DOIs and quotes). 3/6 follow-ups ok. r7 has no identifier.",
+    "export": "Single CSV marked coverage=full, which is wrong for a literal partial screen. The provenance JSON drops the text arg.",
+    "repro": "Ceiling 3. c1 is listed with args {deep:3} only, without the audited text, so replay is not possible as listed.",
+    "refs": "9/9 DOIs resolve. Each is tied to a claim with a tier. Verified and claimed quotes are distinguished, and contrary sources are included.",
+    "accuracy": "Fields are read correctly (ungrounded counts, proposed stances, all three tallies) and background knowledge is labelled est. The coverage=full flag is a misreading.",
+    "limits": "Ceiling 3. Limits are mostly in a footer list.",
+    "verdict": "Direct, decisive answer with decision, confidence reason and what would change it. Notes that the blood-pressure claim was not assessable.",
+    "facets": "All claims, all deep-read tallies and citation coverage are grounded."
+   },
+   "C": {
+    "chart": "No chart.",
+    "drilldown": "Breakdown from memory, labelled as such.",
+    "export": "Estimate-labelled table.",
+    "repro": "Ceiling 0. Numbers come from memory.",
+    "refs": "Two DOIs not found. dc13-2487 is attached to a garbled Ding title.",
+    "accuracy": "Fabricated-looking identifiers, although they are hedged.",
+    "limits": "States the knowledge cutoff and gap, and names what is unmeasured.",
+    "verdict": "Ceiling 0. The verdict contains an untagged number.",
+    "facets": "Answered from memory."
+   },
+   "D": {
+    "chart": "No chart.",
+    "drilldown": "Generic qualitative description; 0/5 follow-ups ok.",
+    "export": "Estimate-labelled table.",
+    "repro": "Ceiling 0.",
+    "refs": "Only 1 of 4 references carries a resolvable identifier.",
+    "accuracy": "No fabricated specifics; the assessments are reasonable.",
+    "limits": "Claims a zero-day gap to today, which misstates the currency of memory-based knowledge.",
+    "verdict": "Clear answer and decision, but not supported by traced numbers.",
+    "facets": "Answered from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "Says Prism gave no deep-read tally for the Parkinson's/diabetes claim; the reference has supports 0, contradicts 1, unrelated 10, unread 1.",
+    "Presents ungrounded r1/r2 snippets without flagging them as unverified."
+   ],
+   "B": [
+    "CSV coverage=full for a literal, partial title screen.",
+    "c1 args omit the audited text, so the call cannot be replayed."
+   ],
+   "C": [
+    "DOI 10.2337/dc13-2487 attached to a mixed-up Ding title; DOI 10.3945/ajcn.110.008060 not found.",
+    "Untagged number 50 in the verdict."
+   ],
+   "D": [
+    "States the gap to today is zero days despite answering from memory."
+   ]
+  },
+  "best": "B",
+  "verdict": "A and B both grounded the fact-check in the audit. B went further: it drilled into the documents behind every claim, separated verified from unverified quotes, and gave a decisive rewrite. A had cleaner replay provenance but misreported the reference's Parkinson's/diabetes tally. C and D answered from memory; C added fabricated-looking DOIs and D had too few identifiers to check."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "chart": 0,
+   "drilldown": 4,
+   "export": 2,
+   "repro": 2,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 0,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

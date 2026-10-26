@@ -1,0 +1,85 @@
+{
+ "slug": "improve-microplastics",
+ "captured_at": "2026-10-23T00:20:55+0530",
+ "calls": [
+  {
+   "tool": "improve_claim",
+   "feature": "research.improve",
+   "args": {
+    "claim": "Microplastics cause cancer in humans"
+   },
+   "seconds": 59.1,
+   "response": {
+    "ok": true,
+    "feature": "research.improve",
+    "subject": {
+     "claim": "Microplastics cause cancer in humans"
+    },
+    "data": {
+     "verdict": "unsupported",
+     "assessment": "No evidence directly links microplastics to cancer in humans; all cited studies are unrelated.",
+     "options": [
+      {
+       "text": "There is currently no evidence that microplastics cause cancer in humans.",
+       "why": "Reflects the lack of supporting or qualifying evidence in the provided material."
+      },
+      {
+       "text": "Microplastics have not been shown to cause cancer in humans.",
+       "why": "Accurately conveys that the evidence does not support the claim."
+      },
+      {
+       "text": "Evidence linking microplastics to cancer in humans is lacking.",
+       "why": "States the absence of relevant findings while matching the original sentence length."
+      }
+     ],
+     "rejected_options": [],
+     "based_on": {
+      "documents_read": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 10,
+       "unread": 1
+      },
+      "corpus_mix": {
+       "supporting": 31254,
+       "qualifying": 20618,
+       "contradicting": 464,
+       "neutral": 21539
+      },
+      "lane": "subject",
+      "lane_note": "only 6 papers cover both sides of this claim, so the evidence below is about microplastic particles, microplastic exposure alone and does not establish the connection the claim asserts"
+     }
+    },
+    "window": {},
+    "meta": {
+     "seconds": 59.1
+    }
+   }
+  },
+  {
+   "tool": "evidence_card",
+   "feature": "research.evidence_card",
+   "args": {
+    "claim": "Microplastics cause cancer in humans"
+   },
+   "seconds": 0.0,
+   "response": {
+    "ok": false,
+    "feature": "research.evidence_card",
+    "subject": {},
+    "data": null,
+    "window": {},
+    "error": {
+     "kind": "no_data",
+     "reason": "11 documents were read and none speaks to this claim as written"
+    },
+    "meta": {
+     "lane": "subject",
+     "lane_note": "only 6 papers cover both sides of this claim, so the evidence below is about microplastic particles, microplastic exposure alone and does not establish the connection the claim asserts",
+     "seconds": 0.0
+    }
+   }
+  }
+ ]
+}

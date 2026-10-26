@@ -1,0 +1,214 @@
+{
+ "slug": "humanoid-robots-history",
+ "captured_at": "2026-10-23T00:01:29+0530",
+ "calls": [
+  {
+   "tool": "historical_analysis",
+   "feature": "analysis.history",
+   "args": {
+    "subject_phrases": [
+     "humanoid robot"
+    ],
+    "outcome_phrases": null
+   },
+   "seconds": 18.5,
+   "response": {
+    "ok": true,
+    "feature": "analysis.history",
+    "subject": {},
+    "data": {
+     "series": [
+      {
+       "year": 2017,
+       "value": 474
+      },
+      {
+       "year": 2018,
+       "value": 554
+      },
+      {
+       "year": 2019,
+       "value": 535
+      },
+      {
+       "year": 2020,
+       "value": 437
+      },
+      {
+       "year": 2021,
+       "value": 447
+      },
+      {
+       "year": 2022,
+       "value": 446
+      },
+      {
+       "year": 2023,
+       "value": 441
+      },
+      {
+       "year": 2024,
+       "value": 589
+      },
+      {
+       "year": 2025,
+       "value": 821
+      }
+     ],
+     "scope": {
+      "subject_phrases": [
+       "humanoid robot"
+      ],
+      "outcome_phrases": [],
+      "match_field": "title"
+     },
+     "provenance": {
+      "kind": "live_corpus_query",
+      "created_at": "2026-10-22T18:31:29.685979+00:00"
+     },
+     "retrieval_seconds": 18.244,
+     "limitations": [
+      "Record counts, not deduplicated studies, adoption, sentiment, or causal effects.",
+      "Not normalized for changing corpus size or enrichment coverage.",
+      "Year bounds are ingestion-safe defaults, not proof of complete coverage."
+     ],
+     "history_id": "history_aad13193f4d1f90366d15dec47256d8a"
+    },
+    "window": {
+     "unit": "matching Prism research index records per year",
+     "period": {
+      "first_year": 2017,
+      "last_year": 2025
+     }
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792693871.4411035,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "seconds": 18.5
+    }
+   }
+  },
+  {
+   "tool": "trend_scenarios",
+   "feature": "analysis.scenarios",
+   "args": {
+    "history_id": "history_aad13193f4d1f90366d15dec47256d8a",
+    "horizon": 3
+   },
+   "seconds": 0.0,
+   "response": {
+    "ok": true,
+    "feature": "analysis.scenarios",
+    "subject": {},
+    "data": {
+     "kind": "conditional_scenarios",
+     "provenance": {
+      "kind": "saved_corpus_history",
+      "history_id": "history_aad13193f4d1f90366d15dec47256d8a",
+      "source": {
+       "kind": "live_corpus_query",
+       "created_at": "2026-10-22T18:31:29.685979+00:00"
+      },
+      "unit": "matching Prism research index records per year"
+     },
+     "observed_through": 2025,
+     "selected_baseline": "linear_drift",
+     "backtest": {
+      "method": "expanding-window, one-step ahead",
+      "folds": [
+       {
+        "year": 2022,
+        "training_through": 2021,
+        "observed": 446.0,
+        "predictions": {
+         "no_change": 447.0,
+         "linear_drift": 440.25
+        }
+       },
+       {
+        "year": 2023,
+        "training_through": 2022,
+        "observed": 441.0,
+        "predictions": {
+         "no_change": 446.0,
+         "linear_drift": 440.4
+        }
+       },
+       {
+        "year": 2024,
+        "training_through": 2023,
+        "observed": 589.0,
+        "predictions": {
+         "no_change": 441.0,
+         "linear_drift": 435.5
+        }
+       },
+       {
+        "year": 2025,
+        "training_through": 2024,
+        "observed": 821.0,
+        "predictions": {
+         "no_change": 589.0,
+         "linear_drift": 605.4285714285714
+        }
+       }
+      ],
+      "mae": {
+       "no_change": 96.5,
+       "linear_drift": 93.85535714285714
+      },
+      "independent_holdout": false
+     },
+     "scenarios": [
+      {
+       "year": 2026,
+       "central": 864.375,
+       "lower_sensitivity": 648.804,
+       "upper_sensitivity": 1079.946
+      },
+      {
+       "year": 2027,
+       "central": 907.75,
+       "lower_sensitivity": 476.607,
+       "upper_sensitivity": 1338.893
+      },
+      {
+       "year": 2028,
+       "central": 951.125,
+       "lower_sensitivity": 304.411,
+       "upper_sensitivity": 1597.839
+      }
+     ],
+     "probabilities": null,
+     "stale_for_present": false,
+     "limitations": [
+      "Extrapolates the declared count series, not real-world future events.",
+      "Sensitivity ranges use worst one-step backtest error times horizon; NOT confidence intervals.",
+      "Model selection uses these same folds; no independent validation or multi-step calibration.",
+      "Structural breaks, seasonality, policy shifts and changing data coverage are not modeled."
+     ]
+    },
+    "window": {},
+    "meta": {
+     "seconds": 0.0
+    }
+   }
+  }
+ ]
+}

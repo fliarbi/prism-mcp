@@ -1,0 +1,129 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Claude alone</title><style>
+:root{--bg:#ffffff;--ink:#14161a;--ink2:#4b5160;--ink3:#8a8f9c;--line:#e3e5ea;--card:#f6f7f9;--accent:#2a78d6;--bad:#c4321d;--good:#1a8f62}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:28px 32px 40px}
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:18px}
+.bar .who{font-weight:700;font-size:20px}.bar .q{color:var(--ink2);font-size:13px;max-width:560px;text-align:right}
+h2{font-size:18px;margin:26px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+table{border-collapse:collapse;margin:10px 0;font-size:13px;width:100%}th,td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:var(--card)}code{background:var(--card);padding:1px 4px;border-radius:3px;font-size:12.5px}
+.chart{margin:12px 0}.chart img,.chart svg{max-width:100%}.cap{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:9px;border:1px solid var(--line);color:var(--ink2);margin-left:6px}
+.tag.inv{color:var(--bad);border-color:var(--bad)}.tag.ok{color:var(--good);border-color:var(--good)}
+.csvh{font-size:12px;color:var(--ink2);margin-top:12px}details{margin:8px 0;font-size:12.5px}pre{white-space:pre-wrap;background:var(--card);padding:8px;border-radius:4px;font-size:11.5px}
+</style></head><body><div class='wrap'><div class='bar'><div class='who'>Claude alone</div><div class='q'>Is research on carbon taxes becoming more favourable or more critical?</div></div><h2>Verdict</h2>
+<ul>
+<li>Answer: From memory alone, I cannot measure a yearly orientation series. The qualitative literature suggests research has moved from broadly favourable (efficiency, emissions cuts) toward a more nuanced mix: still supportive on effectiveness, more critical on distribution, political acceptability and adequacy of price levels. This is interpretation (est.), not a measured count.</li>
+<li>Decision: Treat carbon pricing as effective but design-dependent. Fund revenue recycling and acceptability work. Do not cite a "favourable vs critical" ratio until the Prism calls below are run.</li>
+<li>Confidence: low - no Prism calls were run, and every figure here is a memory-based estimate.</li>
+<li>What would change it: A yearly stance series from research.stance_trends showing a sustained rise or fall in critical share.</li>
+</ul>
+<h2>What the data shows</h2>
+<p>No Prism call was executed, so there are no [cN] values. Everything numeric below is labelled (est.) or comes from a named reference.</p>
+<ul>
+<li>Carbon pricing covers roughly 24% of global emissions (est.) according to World Bank reporting [r1].</li>
+<li>Ex-post studies of the Swedish and British carbon pricing find emission reductions of a few percent to about 6% (est.) [r2].</li>
+<li>A synthesis of ex-post evaluations found a median reduction of around 5–21% (est.) [r3]. I am unsure of the exact range.</li>
+<li>British Columbia studies reported emission reductions of about 5–15% (est.) with small economic effects [r4].</li>
+<li>Yellow-vest protests in France, from late 2018 (est.), are the usual example of the acceptability problem [r5].</li>
+</ul>
+<p>Not answerable from memory: the number of papers per year, the share classed favourable vs critical, and any ratio of the two.</p>
+<h2>Trend</h2>
+<p>The chart shows the only quantity I can state from a published source, which is the number of national and subnational carbon pricing instruments in force. It is not a stance series.</p>
+<div class='chart'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="Carbon pricing instruments in operation worldwide (estimate)"><style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#8a8984;--grid:#e6e5e0;--axis:#c9c8c2;
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neu:#b9b8b1;--band:#2a78d633}
+
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.t{font-size:17px;font-weight:600}.st{font-size:12.5px;fill:var(--ink2)}.src{font-size:11px;fill:var(--ink3)}
+.ax{font-size:11px;fill:var(--ink2)}.lb{font-size:12px;fill:var(--ink)}.v{font-size:11.5px;fill:var(--ink2)}
+.g{stroke:var(--grid);stroke-width:1}.a{stroke:var(--axis);stroke-width:1}
+.c1{fill:var(--s1)}.c2{fill:var(--s2)}.c3{fill:var(--s3)}.c4{fill:var(--s4)}.cn{fill:var(--neu)}
+.l1{stroke:var(--s1)}.l2{stroke:var(--s2)}.l3{stroke:var(--s3)}.l4{stroke:var(--s4)}
+.ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.bg{fill:var(--bg);stroke:var(--grid)}
+</style><rect class="bg" x="0.5" y="0.5" width="759" height="329" rx="10"/><text class="t" x="24" y="34">Carbon pricing instruments in operation worldwide (estimate)</text><text class="st" x="24" y="54">instruments · window {&quot;from&quot;: &quot;2010-01-01&quot;, &quot;to&quot;: &quot;2024-12-31&quot;}</text><line class="a" x1="64" x2="736" y1="272.0" y2="272.0"/><text class="ax" x="56" y="276.0" text-anchor="end">0</text><line class="g" x1="64" x2="736" y1="222.5" y2="222.5"/><text class="ax" x="56" y="226.5" text-anchor="end">20</text><line class="g" x1="64" x2="736" y1="173.0" y2="173.0"/><text class="ax" x="56" y="177.0" text-anchor="end">40</text><line class="g" x1="64" x2="736" y1="123.5" y2="123.5"/><text class="ax" x="56" y="127.5" text-anchor="end">60</text><line class="g" x1="64" x2="736" y1="74.0" y2="74.0"/><text class="ax" x="56" y="78.0" text-anchor="end">80</text><text class="ax" x="64.0" y="290" text-anchor="middle">2010</text><text class="ax" x="288.0" y="290" text-anchor="middle">2015</text><text class="ax" x="512.0" y="290" text-anchor="middle">2020</text><text class="ax" x="736.0" y="290" text-anchor="middle">2024</text><path class="ln l1" d="M64.0,247.2 L288.0,173.0 L512.0,123.5 L736.0,86.4"/><circle class="c1" cx="736.0" cy="86.4" r="4.5" stroke="var(--bg)" stroke-width="2"/><text class="v" x="736.0" y="76.4" text-anchor="middle">75</text><text class="src" x="24" y="316">source: estimate</text></svg><div class='cap'>Policy adoption roughly septupled over 2010–2024 (est.), which is a context signal and not a research-orientation measure.<span class='tag'>from memory (estimate / cited, not checkable)</span></div></div>
+<p>Quantified change: from about 10 to about 75 instruments (est.), a ratio of about 7.5 (est.). The values are rounded from World Bank reports [r1].</p>
+<h2>Comparison</h2>
+<p>Baseline: the rough research consensus around 2010 versus around 2024, on a qualitative scale. No numeric contrast is available.</p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Early (c. 2010)</th>
+<th>Late (c. 2024)</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effectiveness</td>
+<td>Mostly modelled, favourable</td>
+<td>Ex-post evidence, modest but positive</td>
+<td>[r3]</td>
+</tr>
+<tr>
+<td>Distribution</td>
+<td>Regressive concern, fixable by rebates</td>
+<td>Greater focus on household and regional burden</td>
+<td>[r6]</td>
+</tr>
+<tr>
+<td>Acceptability</td>
+<td>Secondary</td>
+<td>Central topic</td>
+<td>[r5]</td>
+</tr>
+<tr>
+<td>Price adequacy</td>
+<td>Assumed</td>
+<td>Critique that prices fall short of the levels needed</td>
+<td>[r1]</td>
+</tr>
+</tbody>
+</table>
+<p>This table is interpretation (est.), not a count. I cannot give a ratio or delta.</p>
+<h2>Evidence</h2>
+<p>The identifiers are from memory. Years and venues may be imprecise, and I have no verbatim quotes.</p>
+<ul>
+<li>[r1] World Bank, State and Trends of Carbon Pricing, annual (grey literature, tier: institutional report). Supports coverage and adoption.</li>
+<li>[r2] Andersson (2019), American Economic Journal: Economic Policy (peer-reviewed). Supports the Swedish emission reductions.</li>
+<li>[r3] Green (2021), Environmental Research Letters (peer-reviewed review). Supports the ex-post effectiveness range.</li>
+<li>[r4] Murray and Rivers (2015), Energy Policy (peer-reviewed). Supports the British Columbia results.</li>
+<li>[r5] Douenne and Fabre (2022), AEJ: Economic Policy (peer-reviewed). Supports the acceptability and perception problem.</li>
+<li>[r6] Känzig (2023), working paper and later publication. Supports the distributional and heterogeneous effects of carbon pricing.</li>
+</ul>
+<p>Promising examples: [r2], [r3], [r4]. Critical examples: [r5], [r6], and the price-adequacy point in [r1].</p>
+<h2>Drill-down</h2>
+<p>Breakdown layers to request: year, orientation (favourable, mixed, critical), topic (effectiveness, equity, acceptability, competitiveness), and region.</p>
+<details open><summary>Calls and follow-up queries (executable)</summary><pre>[
+{&quot;id&quot;:&quot;f1&quot;,&quot;question&quot;:&quot;What is the yearly share of favourable vs critical carbon tax papers?&quot;,&quot;feature&quot;:&quot;research.stance_trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;from&quot;:&quot;2005&quot;,&quot;to&quot;:&quot;2026&quot;}},
+{&quot;id&quot;:&quot;f2&quot;,&quot;question&quot;:&quot;Which papers drive the critical rise?&quot;,&quot;feature&quot;:&quot;research.browse&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;orientation&quot;:&quot;critical&quot;,&quot;limit&quot;:8}},
+{&quot;id&quot;:&quot;f3&quot;,&quot;question&quot;:&quot;Which years are too thin to read?&quot;,&quot;feature&quot;:&quot;research.statistics&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;by&quot;:&quot;year&quot;}},
+{&quot;id&quot;:&quot;f4&quot;,&quot;question&quot;:&quot;Does phrase expansion (carbon pricing, emissions tax) change the trend?&quot;,&quot;feature&quot;:&quot;research.stance_trends&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon pricing OR emissions tax&quot;}},
+{&quot;id&quot;:&quot;f5&quot;,&quot;question&quot;:&quot;What counter-evidence exists to the effectiveness claim?&quot;,&quot;feature&quot;:&quot;research.counter_evidence&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax effectiveness&quot;}},
+{&quot;id&quot;:&quot;f6&quot;,&quot;question&quot;:&quot;How does the framing shift between early and late windows?&quot;,&quot;feature&quot;:&quot;research.brief&quot;,&quot;args&quot;:{&quot;term&quot;:&quot;carbon tax&quot;,&quot;compare&quot;:&quot;2005-2014 vs 2018-2026&quot;}}
+]</pre></details>
+<h2>Exports</h2>
+<div class='csvh'>⬇ <b>instruments_est.csv</b> · source estimate · window 2010..2024 · unit instruments<span class='tag'>from memory</span></div><table><tr><th>year</th><th>instruments</th></tr><tr><td>2010</td><td>10</td></tr><tr><td>2015</td><td>40</td></tr><tr><td>2020</td><td>60</td></tr><tr><td>2024</td><td>75</td></tr></table>
+<details open><summary>json</summary><pre>{&quot;exported_at&quot;:&quot;2026-10-23&quot;,&quot;calls&quot;:[]}</pre></details>
+<h2>Method and limits</h2>
+<ul>
+<li>Windows: the chart covers 2010-01-01 to 2024-12-31, which is a gap of about 22 months to today (2026-10-23). The memory cutoff is June 2026.</li>
+<li>Lanes: only the research lane was considered, from memory. No news lane was used.</li>
+<li>Coverage: a handful of well-known papers, which is not a systematic sample.</li>
+<li>Censoring: recent years are underrepresented in my memory.</li>
+<li>Match mode: not applicable because no search was run. Phrase expansion to "carbon pricing" would change any counts, and thin years would need flagging.</li>
+<li>The counts are rough policy-adoption estimates and are not paper counts.</li>
+<li>Interpretation: the whole "more nuanced" verdict is my reading, not a measurement.</li>
+<li>Cannot answer: the yearly orientation series, the early-vs-late framing ratio, or which years are thin.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>[r1] State and Trends of Carbon Pricing. World Bank, 2024 (annual series). url: worldbank.org</li>
+<li>[r2] Andersson, J. "Carbon Taxes and CO2 Emissions: Sweden as a Case Study." AEJ: Economic Policy, 2019.</li>
+<li>[r3] Green, J. "Does carbon pricing reduce emissions? A review of ex-post analyses." Environmental Research Letters, 2021.</li>
+<li>[r4] Murray, B., Rivers, N. "British Columbia's revenue-neutral carbon tax: A review." Energy Policy, 2015.</li>
+<li>[r5] Douenne, T., Fabre, A. "Yellow Vests, Pessimistic Beliefs, and Carbon Tax Aversion." AEJ: Economic Policy, 2022.</li>
+<li>[r6] Känzig, D. "The Unequal Economic Consequences of Carbon Pricing." Working paper, 2023.</li>
+</ul></div></body></html>

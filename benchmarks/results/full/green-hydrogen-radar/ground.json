@@ -1,0 +1,655 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 669,
+  "charts": [
+   {
+    "id": "pub_index",
+    "title": "Illustrative index of water-electrolysis publication volume (2022 = 100)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Publication volume index (est.)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "pub_index_estimate.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How has annual publication volume on water electrolysis changed since 2022?",
+    "args": {
+     "term": "green hydrogen electrolysis",
+     "from": "2022-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '..., 'from': '2022-01-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen electrolysis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which new papers are most cited since 2022?",
+    "args": {
+     "term": "green hydrogen",
+     "sort": "citations",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 22.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3806, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7117997716\", \"title\": \"Solar-Driven Green Hydrogen in Iran: Techno-Economic Analysis and Deployment Roadmap\", \"authors\": [\"Davoud Soltani Sehat\"], \"venue\": \"Preprints.org\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.20944/preprints202512.2819.v1\", \"url\": \"https://doi.org/10.20944/preprints202512.2819.v1\", \"cited_by\": 0, \"orientation\": \"comparative\", \"contribution\": \"empirical\", \"stance_score\": 0.2, \"topics\": [\"Hybrid Renewable Energy Systems\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Is research orientation shifting toward critical views?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"green hydrogen\", \"renewable hydrogen\", \"green hydrogen production\", \"green hydrogen technology\", \"green hydrogen economy\"], \"points\": [{\"year\": 2017, \"total\": 27, \"orientation\": {\"promising\": 3, \"breakthrough\": 4, \"descriptive\": 4, \"comparative\": 1, \"problem_identifying\": 4}, \"stance_score\": null, \"positive\": 7, \"contested\": 4, \"positive_pct\": 25.9, \"contested_pct\": 14.8}, {\"year\": 2018, \"total\": 32, \"orientation\": {\"problem_identifying\": 1, \"comparative\": 3, \"descriptive\": 3, \"cautionary\": 1, \"promising\": 5, \"breakthrough\": 4}, \"stance_score\": null, \"positive\": 9, \"contested\": 2, \"positive_pct\": 28.1, \"contested_pct\": 6.2}, {\"year\": 2019, \"tota"
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "What critical evidence exists on cost and scale?",
+    "args": {
+     "term": "green hydrogen cost"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'green hydrogen cost'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen cost', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.radar",
+    "question": "Which topics are under-covered (e.g. water use, geography)?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'green hydrogen'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "How has news coverage trended?",
+    "args": {
+     "term": "green hydrogen",
+     "from": "2022-01-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.geography",
+    "question": "Which countries lead research output?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'green hydrogen'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 3,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "10 — - Windows: 2022-01-01 to about 2025-12-31 for the chart. The gap to today (2026-10-23) is "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 121,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1178,
+  "charts": [
+   {
+    "id": "research_trend",
+    "title": "Green hydrogen papers per year (endpoints and peak only)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "trend_points.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "new_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "Is the 2025 drop real or a partial-year artefact?",
+    "args": {
+     "term": "green hydrogen",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...n', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers carry the cautionary framing?",
+    "args": {
+     "term": "green hydrogen",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 44, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117105735\", \"title\": \"White Hydrogen and the Future of Power-to-X: A Policy Reassessment of Europe’s Green Hydrogen Strategy\", \"authors\": [\"Bo Nørregaard Jørgensen\", \"Zheng Grace Ma\"], \"venue\": \"Sustainability\", \"year\": 2025, \"date\": \"2025-12-24\", \"doi\": \"10.3390/su18010190\", \"url\": \"https://doi.org/10.3390/su18010190\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Hybrid Renewable Energy S"
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Is cautionary framing rising over time?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"green hydrogen\", \"renewable hydrogen\", \"green hydrogen production\", \"green hydrogen technology\", \"green hydrogen economy\"], \"points\": [{\"year\": 2017, \"total\": 27, \"orientation\": {\"descriptive\": 4, \"breakthrough\": 4, \"promising\": 3, \"comparative\": 1, \"problem_identifying\": 4}, \"stance_score\": null, \"positive\": 7, \"contested\": 4, \"positive_pct\": 25.9, \"contested_pct\": 14.8}, {\"year\": 2018, \"total\": 32, \"orientation\": {\"comparative\": 3, \"problem_identifying\": 1, \"promising\": 5, \"breakthrough\": 1, \"descriptive\": 5, \"cautionary\": 1}, \"stance_score\": null, \"positive\": 6, \"contested\": 2, \"positive_pct\": 18.8, \"contested_pct\": 6.2}, {\"year\": 2019, \"tota"
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which countries publish most?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'green hydrogen'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "What does news say about cost and projects?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 32.3,
+    "sample": "{\"articles\": [{\"target_id\": \"69bc7df2b34e503b1de08e42\", \"url\": \"https://hydrogen-central.com/morocco-allocates-land-in-occupied-western-sahara-to-green-hydrogen-investors/\", \"title\": \"Morocco allocates land in occupied Western Sahara to green hydrogen investors - Hydrogen Central\", \"excerpt\": \"Morocco allocates land in occupied Western Sahara to green hydrogen investors\", \"publisher\": \"hydrogen-central.com\", \"published\": \"2026-02-21 08:24:17\", \"partition\": \"from_2020_to_now\", \"datetime\": \"2026-02-21 08:24:17\", \"priority\": 8, \"polarity\": \"pos\", \"tone\": \"very_pos\", \"tags\": [\"green hydrogen\", \"aacwa power\", \"onee\", \"morocco\", \"nareva (morocco)\", \"un special rapporteurs\"], \"categories\": [\"busine"
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "What is the news sentiment trend?",
+    "args": {
+     "term": "green hydrogen"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.2,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 59, \"positive\": 1002, \"neutral\": 8, \"ratio\": 0.06}, {\"period\": \"2024-07-01\", \"negative\": 71, \"positive\": 1127, \"neutral\": 9, \"ratio\": 0.06}, {\"period\": \"2024-08-01\", \"negative\": 64, \"positive\": 890, \"neutral\": 4, \"ratio\": 0.07}, {\"period\": \"2024-09-01\", \"negative\": 46, \"positive\": 1167, \"neutral\": 10, \"ratio\": 0.04}, {\"period\": \"2024-10-01\", \"negative\": 76, \"positive\": 1174, \"neutral\": 3, \"ratio\": 0.06}, {\"period\": \"2024-11-01\", \"negative\": 66, \"positive\": 960, \"neutral\": 7, \"ratio\": 0.07}, {\"period\": \"2024-12-01\", \"negative\": 54, \"positive\": 815, \"neutral\": 6, \"ratio\": 0.07}, {\"period\": \"2025-01-01\", \"negative\": 93, \"positive\": 1143, \"neutral"
+   },
+   {
+    "id": "f7",
+    "feature": "research.citations",
+    "question": "Which papers cite the capillary-fed cell?",
+    "args": {
+     "doi": "10.1038/s41467-022-28953-x"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'doi': '1...38/s41467-022-28953-x'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ndoi\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='10.1038/s41467-022-28953-x', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 55,
+   "traced": 55,
+   "derived": 5,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 145,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 614,
+  "charts": [],
+  "tables": [
+   {
+    "name": "evidence_gap.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers since 2022 report measured electrolyzer durability improvements, and what conditions were tested?",
+    "args": {
+     "term": "green hydrogen electrolyzer durability",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'green hydrogen electrolyzer durability' — try expand=true, or a broader phrase",
+    "seconds": 3.8,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "analysis.history",
+    "question": "How have publication counts on green hydrogen changed by year since 2022 in a defined research index?",
+    "args": {
+     "term": "green hydrogen",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.radar",
+    "question": "Which green hydrogen topics receive the fewest papers relative to their stated policy or deployment importance?",
+    "args": {
+     "term": "green hydrogen research topics",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen research topics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "How has news coverage of green hydrogen changed by year since 2022?",
+    "args": {
+     "term": "green hydrogen",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries or regions are most represented in green hydrogen research since 2022?",
+    "args": {
+     "term": "green hydrogen",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 5,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "296 — The requested endpoint is 2026-10-23; the gap from the last complete calendar year, 2025-1"
+   ]
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 875,
+  "charts": [
+   {
+    "id": "research-trend",
+    "title": "Indexed research volume on green hydrogen",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research trend",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "green_hydrogen_trend.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drove the 2023–2025 rise, with DOI and citation counts?",
+    "args": {
+     "term": "green hydrogen",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 44, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 17, \"papers\": [{\"id\": \"W7117105735\", \"title\": \"White Hydrogen and the Future of Power-to-X: A Policy Reassessment of Europe’s Green Hydrogen Strategy\", \"authors\": [\"Bo Nørregaard Jørgensen\", \"Zheng Grace Ma\"], \"venue\": \"Sustainability\", \"year\": 2025, \"date\": \"2025-12-24\", \"doi\": \"10.3390/su18010190\", \"url\": \"https://doi.org/10.3390/su18010190\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Hybrid Renewable Energy "
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "How do publication counts by year compare for electrolysis, storage, and derivatives?",
+    "args": {
+     "topic": "green hydrogen",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...n', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...n', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence challenges claims of electrolyzer cost or performance gains?",
+    "args": {
+     "topic": "green hydrogen electrolyzer cost performance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...yzer cost performance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen electrolyzer cost performance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has research stance on deployment barriers changed over time?",
+    "args": {
+     "topic": "green hydrogen deployment barriers"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...n deployment barriers'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen deployment barriers', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "What is the year-by-year news trend using explicit green-hydrogen terms?",
+    "args": {
+     "topic": "green hydrogen",
+     "from": "2019-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2019-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Which topics have substantial research but little matched news under explicit vocabulary?",
+    "args": {
+     "topic": "green hydrogen",
+     "from": "2022-01-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...1', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='green hydrogen', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 27,
+   "traced": 26,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 5,
+   "found_in_corpus": 5,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

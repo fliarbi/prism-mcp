@@ -1,0 +1,193 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 2,
+    "comparison": 3,
+    "chart": 2,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 0,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The logical-qubit series is from memory and honestly labelled as an estimate, which earns 1.",
+    "comparison": "It compares the 2019 and 2025 RSA-2048 qubit estimates from memory (about 20M to under 1M). The figures are real but cannot be checked.",
+    "chart": "The only chart is labelled an estimate and comes from recall.",
+    "drilldown": "The layers are named generically. Only 2 of 7 follow-up calls executed successfully.",
+    "export": "The CSVs are labelled as estimates, so they are honest but unmeasured.",
+    "repro": "All numbers are recall-based and no calls were made.",
+    "refs": "The titles look real, but no identifiers are given, so none of the references resolve.",
+    "accuracy": "The recalled facts are correct: Willow distance 3/5/7, 48 logical qubits, Gidney under 1M qubits, and FIPS 203/204/205. However, the chart's 2023 value of 1 logical qubit contradicts its own reference r3, the 48-logical-qubit result published in 2023.",
+    "limits": "It is specific about the knowledge cutoff, the 4-month gap, selection bias and the non-equivalent logical qubits. As a memory-only respondent it cannot earn 4.",
+    "verdict": "It gives a direct answer, a decision, a confidence level with its reason, and what would change it. It addresses the error-correction shift and the classical rebuttals. A domain expert would largely agree.",
+    "facets": "The facets are answered from memory, and no grounded corpus values are given."
+   },
+   "B": {
+    "trend": "The endpoints are traced and the window is stated. However, it labels the 17 to 25 endpoint rise as '2.39×', which is the late-vs-early ratio; the endpoint ratio is about 3.76. It also mislabels paper counts as an 'index'.",
+    "comparison": "The early and late thirds (37,569 vs 89,940, delta 52,371) are exact and the baseline is defined. But it is framed as index aggregates and does not address the question's contrast.",
+    "chart": "Only the research endpoints are charted, with the unit mislabelled as 'index value'. The caption ties to a claim that contains the wrong ratio. News and framing are not charted.",
+    "drilldown": "There is one traced layer: selected work with DOIs. Only 1 of 5 follow-ups executed successfully.",
+    "export": "Two traced CSVs with provenance are referenced from the prose. The unit is mislabelled, and the news and framing series are absent.",
+    "repro": "Most numbers trace and the calls are listed. The '2.39× increase' is misattributed and the gap claim is tagged [c1] incorrectly.",
+    "refs": "All 5 DOIs resolve and each is tied to a claim with year and venue. No quotes are given.",
+    "accuracy": "The research trend counts are misread as an index, and late_vs_early is used as the endpoint growth ratio. The field misreadings carry no fabrications.",
+    "limits": "It states the window, the 5-month gap, the coverage caveat and the match mode. It correctly flags the under-covered zeros as an artifact.",
+    "verdict": "The verdict is direct and hedged, with a decision and conditions. It ignores the error-correction framing the question centres on and does not say the corpus cannot show it.",
+    "facets": "New work, trend, framing and the under-covered no-data are grounded. Error-correction milestones are not addressed."
+   },
+   "C": {
+    "trend": "It explicitly has no trend series.",
+    "comparison": "It explicitly declines to compare.",
+    "chart": "The chart is a labelled estimate of counts of selected examples. Its 2025 bar disagrees with the CSV.",
+    "drilldown": "The breakdown comes from memory, and 0 of 5 follow-ups worked.",
+    "export": "The CSV years (r5 as 2024) differ from the chart (one 2025 paper) and the references (r5 as 2025). The CSV titles also differ from the reference titles.",
+    "repro": "Everything is memory-based, and the DOIs are partly fabricated.",
+    "refs": "3 of 5 DOIs were not found. Titles, attributions and quotes are mismatched: r3 is the Harvard title attributed to Quantinuum/Microsoft, and r5 is the below-threshold title described as lattice-gauge work.",
+    "accuracy": "There are multiple fabricated or mismatched specifics presented as references: DOIs, attributions, and quotes taken from other papers.",
+    "limits": "It hedges and warns the reader to verify, but presents unreliable identifiers anyway.",
+    "verdict": "The direction is sensible, but it rests on references that are largely fabricated or mismatched.",
+    "facets": "Its facets come mostly from memory and it has no grounded values."
+   },
+   "D": {
+    "trend": "Research and news endpoints are traced with their windows. CAGRs are 18.0% and 40.6%, the endpoint ratio of 3.8x is recomputed correctly, the news peak is 1,246 in April 2026, and the partial last month is flagged.",
+    "comparison": "The papers-vs-news table recomputes exactly, and the window mismatch is stated. The framing comparison (8.9% vs 11.0%, +2.1 pp) carries the tool's own caveat.",
+    "chart": "The one traced chart has window, unit and source. News and framing were supported by the data but not charted.",
+    "drilldown": "There is one traced layer of 10 papers with DOIs. Only 1 of 6 follow-ups executed successfully.",
+    "export": "The endpoint CSVs carry full provenance. The papers/DOI table is not exported and the CSVs are not referenced from the prose.",
+    "repro": "63 of 64 numbers trace. The calls are listed with args, and the derived 3.8x and 2.8x are recomputable.",
+    "refs": "All 10 DOIs resolve and are tied to the new-work claim. Quotes and tiers are absent, which it honestly states.",
+    "accuracy": "Fields are read by their definitions. It catches the under-covered zero artifact and the partial last news month, and notes the citation-age bias.",
+    "limits": "It covers window gaps, censoring, match mode and coverage, and says error-correction milestones are not answerable from this call. Some of these limits sit in a footer.",
+    "verdict": "It gives a direct answer, decision, confidence with reason and conditions, consistent with its tables. It does not engage the error-correction shift beyond noting the data cannot test it.",
+    "facets": "Volume, news, new work, framing and the under-covered no-data are all grounded. The error-correction gap is declared explicitly."
+   }
+  },
+  "errors": {
+   "A": [
+    "The chart plots 1 logical qubit in 2023 while its own reference r3 (48 logical qubits) is dated 2023."
+   ],
+   "B": [
+    "It states the 2017 to 2025 rise as '2.39×'; that figure is late_vs_early, and the endpoint ratio is about 3.76×.",
+    "It labels the research_trend paper counts as an 'index value'."
+   ],
+   "C": [
+    "Three DOIs are not found: 10.1038/s41586-023-06481-w, 10.1038/s41586-023-06486-5 and 10.1038/s41586-024-07248-7.",
+    "r3 carries the Harvard/QuEra title 'Logical quantum processor based on reconfigurable atom arrays' but is attributed to Quantinuum/Microsoft, under an incorrect DOI.",
+    "r5 carries the title 'Quantum error correction below the surface code threshold' but is described as a lattice-gauge-theory simulation.",
+    "The quotes do not belong to the cited papers: r1 is quoted with 'below the surface code threshold'.",
+    "The CSV titles and years disagree with the references and the chart."
+   ],
+   "D": []
+  },
+  "best": "D",
+  "verdict": "D read every radar field correctly, including CAGRs, peak, censoring and the under-covered artifact. It quantified the change exactly and was honest that error-correction milestones are outside what the call can show. B used the same data but misreported the growth ratio and mislabelled paper counts as an index. A gave the most expert-correct narrative on error correction, but entirely from memory. C's references were largely fabricated or mismatched."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 2,
+   "comparison": 3,
+   "chart": 2,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 0,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

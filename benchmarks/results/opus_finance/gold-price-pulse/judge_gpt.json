@@ -1,0 +1,110 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 5,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 5
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced monthly volume and critical counts; quantifies growth, peaks, and censoring, and includes tone series. However, prose says late-period tone was more negative than baseline, while the stated full-window ratio is below baseline and the recent ratio comparison is misstated.",
+    "comparison": "Recent and prior tone ratios and volume are compared on stated periods, with defined baseline and caveats; arithmetic is supported by the monthly points.",
+    "chart": "Both chart specifications have source lines, but the script found a chart mismatch, so the ceiling is zero.",
+    "drilldown": "Provides traced themes and itemized headlines, but only 2 of 7 proposed follow-ups executed successfully with non-empty results.",
+    "export": "Exports are traced, referenced, and include provenance; monthly and critical-story tables cover the requested quantities.",
+    "repro": "Calls, arguments, windows, and capture date are provided; traced numbers and derived figures are reproducible, with five untagged claims limiting a perfect score.",
+    "refs": "News references include dates, publishers, and URLs, but the critical sample contains a headline/excerpt mismatch and the script ceiling is 2.",
+    "accuracy": "Mostly faithful to the record and flags the mismatched headline, but the verdict's recent tone claim says 0.81 against baseline when the actual Feb–May aggregate is 0.81 and the ratio is 1.39x; it also mischaracterizes overall tone as a late shift beyond the measured evidence.",
+    "limits": "Places window, censoring, lag, match mode, coverage, enrichment limits, and the absent price/research evidence alongside relevant claims.",
+    "verdict": "Direct and decision-oriented with confidence and a change condition, but its central tone conclusion conflicts with the full-window reading and the critical sample is weak evidence; ceiling 3.",
+    "facets": "Grounded coverage of volume, tone, critical stories, themes, source sample, geography, and limits, including explicit unmeasured facets."
+   },
+   "B": {
+    "trend": "News volume is explicitly unmeasured; the substitute estimated price series does not answer the requested quantity. Ceiling 1.",
+    "comparison": "Central-bank purchases are compared with a stated baseline, but this does not answer the requested news-volume or tone contrast; ceiling 2.",
+    "chart": "The charts are labelled estimates or cite public references, earning the estimate ceiling, but neither charts the requested news volume or tone.",
+    "drilldown": "Narrative layers lack traced items and all proposed calls failed to return usable results; ceiling 1.",
+    "export": "Exports are openly estimates or public-reference figures, not traced news data; ceiling 1.",
+    "repro": "No Prism calls were executed and the key price series is from memory; ceiling 1.",
+    "refs": "News URLs are publisher-section placeholders and unverified, so the cited critical stories lack resolving identifiers; ceiling 1.",
+    "accuracy": "It clearly labels unmeasured facets, but presents unverified headlines and specific estimated prices as a narrative about the period without support in the reference record.",
+    "limits": "Clearly distinguishes memory from measurement and states the knowledge gap, though limits are less tied to individual claims and no measured corpus coverage exists.",
+    "verdict": "Gives a direct, bounded qualitative answer with low confidence and a condition, but the conclusion rests on estimates and does not answer measured volume or tone; ceiling 5.",
+    "facets": "Most requested facets are unmeasured or based on memory; the explicit admission covers limits but not the substantive facets."
+   }
+  },
+  "errors": {
+   "A": [
+    "Verdict says Feb–May 2026 negative/positive ratio was 0.81 against a 0.58 baseline; the recorded monthly counts imply about 0.81, but this is an aggregate not a single-month reading and the baseline comparison should be framed as 1.39x.",
+    "Says one of the five critical headlines is mismatched while listing five; the recorded critical panel includes seven rows, and the headline/excerpt mismatch is specifically an issue with the February graphite headline.",
+    "Claims critical headlines sample is five returned of eight, while the export lists seven rows and the reference record shows seven recent critical rows.",
+    "Treats critical as a story-quality sample without clearly separating the database's critical flag from negative tone."
+   ],
+   "B": [
+    "Memory-based monthly average price points and reported price milestones do not measure news volume or tone.",
+    "The Reuters references use broad section URLs rather than verified article URLs, and several headlines/dates are unverified.",
+    "Claims coverage was dominated by records and milestones and assigns a rough theme ranking without corpus evidence.",
+    "The central-bank comparison is unrelated to the requested measured news-volume and tone comparison."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is substantially more useful for a decision-maker because it supplies traced monthly volume and tone, critical-story examples, exports, and reproducible calls, with explicit limits on the missing post-May data. Its tone verdict and critical-headline accounting contain material inconsistencies, while B is candid about its limits but substitutes memory-based gold-price and central-bank figures for the requested news narrative."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 5,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

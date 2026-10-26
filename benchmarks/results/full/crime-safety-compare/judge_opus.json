@@ -1,0 +1,178 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 3,
+    "repro": 3,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The full 24-point traced series is given with its window, the 2026-04 peaks and the lows. The 2026-04 vs 2026-01 ratios are exact. The 12-month sums are wrong, and the robbery line trails off garbled.",
+    "comparison": "Ratios and deltas on one scale recompute exactly (1.55x, 9.5x, 6.2x). It computes critical% per term, which addresses criticality vs volume. The overlap caveat is carried.",
+    "chart": "One fully traced line chart with window, unit and source, tied to the peak claim. Critical share and tone are not charted, and there is no early-vs-late or decomposition view.",
+    "drilldown": "One traced layer (term to month). Only 2 of 6 follow-ups executed ok. No items or identifiers.",
+    "export": "Totals CSV is traced with provenance and a JSON block. The monthly series is not exported as CSV; it is only referenced in the chart.",
+    "repro": "The call is listed with args and window. Most numbers trace, but the hand-computed 12-month sums do not reproduce, and some coverage figures are untagged.",
+    "accuracy": "The first- and last-12-month sums are wrong: murder is 274,059 vs 268,960 (-1.9%), not -3.7%; fraud is 171,355 vs 179,757 (+4.9%), not +2.3%. These are presented with percentages. It correctly catches the non-deduplicated combined total and the undefined critical/tone fields.",
+    "limits": "Window, exclusive end, the 5-month gap to today, keyword/figurative over-count, overlap and lane are all placed next to the numbers.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it, all within bounds. It does not foreground critical share in the verdict itself.",
+    "facets": "Totals, share, monthly series, direction, tone, critical and overlap are all addressed with grounded values."
+   },
+   "B": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "The chart block is empty.",
+    "drilldown": "Generic follow-ups with non-standard args; 0 of 4 executed ok.",
+    "export": "Header-only CSV with no data.",
+    "repro": "Nothing is measured; the response is honest about it.",
+    "accuracy": "No contradictions.",
+    "limits": "States specifically what cannot be measured, but there is no data to bound.",
+    "verdict": "Honest 'cannot measure' with a decision, but it gives no answer.",
+    "facets": "No facets answered."
+   },
+   "C": {
+    "trend": "The series is traced, but the chart is malformed, so the ceiling caps this at 1. It uses endpoint-only changes and gives murder +41.2% where the correct figure is 41.3%.",
+    "comparison": "Exact ratios and deltas with the baseline defined and the overlap caveat carried. It ignores critical share, which is the crux of the question.",
+    "chart": "Malformed chart JSON (unclosed points array); ceiling is 0.",
+    "drilldown": "One layer; 0 of 5 follow-ups executed ok.",
+    "export": "Full monthly CSV is traced with provenance. Only one table, and it is labelled coverage=partial although the window is not partial.",
+    "repro": "Call listed with args; most numbers trace. Ceiling is 3.",
+    "accuracy": "No major contradictions. It has a minor rounding slip, and the coverage flag is mislabelled 'partial'.",
+    "limits": "Window, the 144-day gap, ingest completeness, the common-word caveat and undefined fields are all placed with the numbers.",
+    "verdict": "Answer, decision, confidence and what would change it. It misses the criticality dimension and leans on endpoint rises.",
+    "facets": "Critical share is not used; the other facets are covered."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "Only a planned design; no comparison is made.",
+    "chart": "No chart.",
+    "drilldown": "Planned layers only; 0 of 5 follow-ups executed ok.",
+    "export": "Empty template CSV.",
+    "repro": "No measured numbers.",
+    "accuracy": "No fabrications; its qualitative prior is labelled est.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Honest 'cannot measure' with a decision, but no answer.",
+    "facets": "No facets answered."
+   }
+  },
+  "errors": {
+   "A": [
+    "12-month sums miscomputed: murder 276,562/266,457 should be 274,059/268,960, and fraud 173,575/177,537 should be 171,355/179,757; the derived -3.7% and +2.3% are wrong",
+    "Robbery 12-month line truncated mid-number ('29,...')",
+    "'107.1% of expected rows' coverage figure is not in the shown reference record"
+   ],
+   "B": [],
+   "C": [
+    "Chart JSON is malformed (points array not closed)",
+    "Murder endpoint change is 41.3%, not 41.2%",
+    "Export labelled coverage=partial although no period is partial"
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A was the only deliverable to address the question's crux: murder dominates on both volume and critical share (87.6% vs 82.0% for fraud and 75.4% for robbery). It also caught the non-deduplicated combined total and placed the 5-month currency gap next to the numbers. However, its hand-computed 12-month sums are wrong. C traced the same data and exported the full monthly series, but its chart is broken and it ignored criticality. B and D were honest refusals that give a decision-maker nothing measured."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 1,
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 3,
+   "repro": 3,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

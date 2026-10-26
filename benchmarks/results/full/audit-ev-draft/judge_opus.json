@@ -1,0 +1,169 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "chart": 0,
+    "drilldown": 4,
+    "export": 2,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "D": {
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "chart": "No chart block.",
+    "drilldown": "Three traced layers, but 0/4 follow-ups executed ok; held at the ceiling of 1.",
+    "export": "The CSV traces 100% and keeps nulls as blanks. It has a provenance block and is referenced from the prose. The window is unknown and there is only one table, with no document table.",
+    "repro": "All 8 numbers trace to c1, and the c1 call is listed with its full args. One coverage assertion ('strict index partition reads') is not in the record.",
+    "refs": "Ceiling 1. The DOIs are real, but the script failed to resolve 3/6 because of a trailing-character artifact. The quotes are verbatim.",
+    "accuracy": "Counts are read correctly. However, it attributes 'index partition reads / row floors' and 'no citation issues' to c1, and the record does not show these. It catches none of the record's anomalies.",
+    "limits": "States the empty window, literal title matching and 'counts are not truth', placed with the numbers. Ceiling 3.",
+    "verdict": "It answers only at the level of screen classification and never says whether the claims are true. It gives a decision and a confidence, but its 'what would change it' is generic.",
+    "facets": "All audit facets are grounded (statuses, counts, deep read, citations, needs_attention with wording)."
+   },
+   "B": {
+    "chart": "No chart block.",
+    "drilldown": "Claim leads to counts, then to deep-read documents with prism ids, DOIs and quotes. 3/6 follow-ups returned data. No follow-up result was folded back into the report.",
+    "export": "The CSV traces, but provenance is weak: the window is 'unknown..today', the c1 args are truncated, and the CSV is not referenced from the prose. Only one table.",
+    "repro": "11/11 numbers trace. The c1 call is listed without its text arg, so the run cannot be replayed exactly.",
+    "refs": "All DOIs resolve and the quotes are verbatim. Each reference carries its tier and its stance (all unrelated). There are no contrary sources.",
+    "accuracy": "Catches real anomalies in the record: research_checkable 2 vs by_checkable_by 3, and tally read=0 vs 12 unrelated. Memory directions are labelled est. 'Coverage check passed' is not in the record.",
+    "limits": "Limits sit next to the numbers they bound: empty window, research lane only, literal match, dropped single word. It lists what this run cannot answer and how to close the gap.",
+    "verdict": "Gives an answer, a decision, low confidence with a reason, and what would change it. Capped at 3 by the ceiling.",
+    "facets": "Every facet is grounded or given a grounded 'no data'. Directional verdicts are added as clearly labelled estimates."
+   },
+   "C": {
+    "chart": "No chart block.",
+    "drilldown": "The layers are generic and drawn from memory. Only 1/6 follow-ups ran ok.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "Everything is from memory and labelled est. Nothing can be reproduced.",
+    "refs": "References are grey literature with bare domain URLs only. There are no resolvable identifiers or quotes.",
+    "accuracy": "The ICCT ranges and the Geotab 1.8%/yr figure are plausible and labelled est. The fire rates come from AutoinsuranceEZ's per-sold analysis but are blended with MSB, so the attribution is muddled. 'Research-checkable: 3' conflicts with the record's 2, though it is labelled est.",
+    "limits": "Memory-only is stated, and the gap to today is given. Limits are mostly generic.",
+    "verdict": "Direct and decisive, with a decision and a confidence. It calls claim 3 flatly 'false' on a weak per-sold statistic, which an expert would soften.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "D": {
+    "chart": "No chart block.",
+    "drilldown": "Breakdown from memory, and 0/3 follow-ups executed ok.",
+    "export": "Estimate-labelled qualitative CSV.",
+    "repro": "Ceiling 0. Numbers are untagged and the quotes come from memory.",
+    "refs": "URLs and titles look reconstructed. The ICCT r1 title does not match its URL. Verbatim quotes are asserted from memory. The NTSB page is likely not a real identifier.",
+    "accuracy": "Presents verbatim quotes as fact without being able to verify them. These are fabricated-looking specifics.",
+    "limits": "Explains that the claims are underspecified and that no calls were run. Limits are not tied to measured data.",
+    "verdict": "Hedges on claims 2 and 3 ('cannot determine') where the established literature does support an answer. It does give a decision and a confidence.",
+    "facets": "Answered from memory. The audit facets are marked 'cannot measure'."
+   }
+  },
+  "errors": {
+   "A": [
+    "Attributes 'research-index tables passed strict index partition reads and historical row floors' to c1, which is not in the record",
+    "'reported no citation issues' is not in the record"
+   ],
+   "B": [
+    "'The corpus coverage check passed [c1]' is not in the record",
+    "c1 is listed without its text arg, so it cannot be replayed"
+   ],
+   "C": [
+    "The fire rates (25 / 1,530 / 3,475 per 100k) are AutoinsuranceEZ figures built from US data and wrongly co-attributed to MSB",
+    "'Research-checkable: 3' conflicts with the audit's 2 (labelled est.)"
+   ],
+   "D": [
+    "Verbatim quotes and URLs are given from memory as if checked (ICCT r1 title/URL mismatch; NTSB 'Electric Vehicle Fires' page likely not a real identifier)"
+   ]
+  },
+  "best": "B",
+  "verdict": "B best combined traced audit facts with honest, clearly labelled background judgment on whether each claim is true. It also caught the record's internal inconsistencies, and it carried resolvable DOIs with verbatim quotes. A was fully traced but never told the reader whether the claims were true. C and D answered from memory: C was useful but leaned on a weak fire statistic, and D presented unverifiable quotes and hedged where the literature is clear."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_prism": {
+   "chart": 0,
+   "drilldown": 4,
+   "export": 2,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

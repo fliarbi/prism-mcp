@@ -1,0 +1,235 @@
+{
+ "slug": "statins-dementia",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 2.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 33.1,
+   "plain": 33.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.9,
+    "gpt": 35.3
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 5.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 4.5,
+    "accuracy": 4.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 77.8,
+   "plain": 77.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 74.4,
+    "gpt": 81.1
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 1.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 29.1,
+   "plain": 29.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 23.1,
+    "gpt": 35.1
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 4.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 3.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 51.7,
+   "plain": 51.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 49.6,
+    "gpt": 53.8
+   }
+  }
+ },
+ "judge_mad": 0.3,
+ "verdicts": {
+  "opus": "D traced nearly every number to the single comparison call and computed exact ratios. It also flagged the record's own anomaly: the off-topic depression paper returned as claim A's strongest source. C traced the same tallies but misread that field and mixed memory effect sizes into the measured layer. A and B gave reasonable clinical verdicts from memory but no measured balance, and A's citations contain fabricated venue and DOI details.",
+  "gpt": "B is strongest because it turns the recorded comparison into a reproducible, correctly caveated contrast and clearly distinguishes corpus volume from clinical truth. Its chart and exports are useful, though the database has no explicit window and the clinical evidence remains unresolved; the other deliverables either rely on unverified specifics or omit the measured comparison."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "Swiger KJ meta-analysis cited as Archives of Internal Medicine 2012 with a non-resolving DOI; it was published in Mayo Clinic Proceedings in 2013.",
+    "Haag MDM Rotterdam statin study cited as Neurology 2013 with a non-resolving DOI; it was published in J Neurol Neurosurg Psychiatry in 2009."
+   ],
+   "claude_bare": [],
+   "chatgpt_prism": [
+    "Attributes the observational meta-analysis as the strongest-source context for the 'reduce dementia risk' claim. In the record it is claim B's strongest source; claim A's is an off-topic depression paper.",
+    "Effect sizes from memory are presented with reference tags rather than marked as estimates."
+   ],
+   "claude_prism": [
+    "Chart and CSV window given as 2026-10-23..2026-10-23 although the tool returned an empty window."
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Reports approximate pooled relative-risk values and trial summaries from memory; they are honestly labeled estimates, not verified findings."
+   ],
+   "claude_prism": [
+    "Calls the corpus comparison window 2026-10-23..2026-10-23 in chart/export although the response supplies no explicit window; window is otherwise acknowledged as unknown."
+   ],
+   "chatgpt_prism": [
+    "Cites four DOIs that the benchmark did not find in the corpus.",
+    "States external study counts and effect estimates that are not all traceable to the listed database call."
+   ],
+   "chatgpt_bare": [
+    "Two cited DOIs were not found in the corpus; the associated source claims are not verified by the reference record."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "comparison": "A qualitative table only. It explicitly declines to give a ratio.",
+    "chart": "No chart.",
+    "drilldown": "The design-lane breakdown is from memory. None of the 4 follow-ups returned data.",
+    "export": "No CSV.",
+    "repro": "No calls were run. Sources are from memory and the claims are not reproducible.",
+    "refs": "2 of 3 DOIs were not found. The Swiger and Haag citations carry the wrong venue, year and DOI.",
+    "accuracy": "Fabricated-looking citation specifics are presented as fact.",
+    "limits": "Specific about being memory-only, with no window or counts. Most limits sit in the footer.",
+    "verdict": "The answer, decision, confidence and what would change it are clinically sound. However, the verdict leans on mis-cited references.",
+    "facets": "No grounded volumes or tallies. Everything is from memory."
+   },
+   "claude_bare": {
+    "comparison": "The RR contrast uses memory numbers labelled est.",
+    "chart": "No chart.",
+    "drilldown": "Generic layers are named. Only 1 of 6 follow-ups returned data.",
+    "export": "A CSV labelled estimate.",
+    "repro": "0 of 13 numbers traced.",
+    "refs": "No identifiers are given. The named works are real but unresolvable here.",
+    "accuracy": "No contradictions, and figures are honestly labelled est.",
+    "limits": "States the gap to today, trial censoring and memory status, but no data-specific limits.",
+    "verdict": "A sound clinical verdict, at the ceiling.",
+    "facets": "Memory-only. No grounded tallies."
+   },
+   "chatgpt_prism": {
+    "comparison": "The 5.7:1 ratio and the 85,745 delta recompute correctly. It carries the caveat that volume is not strength.",
+    "chart": "No chart.",
+    "drilldown": "None of the 3 follow-ups returned data, so it is at the ceiling.",
+    "export": "A traced tally CSV with provenance JSON and a blank kept for the null. Window and coverage are unknown, and there is only one table.",
+    "repro": "30 of 37 traced. Memory effect sizes (OR 0.80, 36 studies) are mixed in under [r] tags.",
+    "refs": "4 of 8 DOIs not found per the script (the misses may be parse artifacts). At the ceiling; quotes are unverified.",
+    "accuracy": "Misreads the strongest-source field: the observational meta-analysis is claim B's source, while claim A's is an off-topic depression paper. It misses that anomaly.",
+    "limits": "States that no window was returned and that counts are not cases, with limits placed reasonably.",
+    "verdict": "Direct and sound, with decision, confidence and conditions.",
+    "facets": "Both claims' volumes, lanes and tallies are grounded. The off-topic anomaly is missed."
+   },
+   "claude_prism": {
+    "comparison": "Ratios of 5.7, 5.6 and 4.0 and the +0.8pt delta recompute against the B baseline. It carries the 'more evidence is not more true' caveat and says what the data cannot test.",
+    "chart": "The single chart traces but shows bare volume levels. The stance or read tallies are not charted, and the window is mislabelled as the capture date.",
+    "drilldown": "One traced stance layer. Only 1 of 6 follow-ups returned data.",
+    "export": "Two traced CSVs with provenance JSON. The window field uses the capture date although the tool returned none.",
+    "repro": "34 of 35 traced, the call is listed with args, and derived numbers are recomputable.",
+    "refs": "Both DOIs resolve, are tied to claims and have tiers stated. No quotes are given.",
+    "accuracy": "Catches the off-topic strongest source for claim A, the subject-lane meaning and the tiny read sample. The minor flaw is the window mislabel.",
+    "limits": "Limits are placed with the numbers: the tiny read sample, the subject lane and the 17 both-poles papers. It also states what would close the gap.",
+    "verdict": "Low confidence with reason, decision and what would change it, bounded by the data. It lacks the trial-level balance an expert would add.",
+    "facets": "All measured facets are grounded and anomalies flagged. The tier-weighting is thin."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "comparison": "Numeric contrasts are expressly estimates from memory, so they are not traceable to one verified scale.",
+    "chart": "No chart is provided.",
+    "drilldown": "Names possible research directions but supplies no working, executed on-topic follow-up calls.",
+    "export": "Provides an honest estimate CSV, which is not a traced export.",
+    "repro": "No numbers trace to a recorded call or fully identified public source; the calls block is empty.",
+    "refs": "References lack verified identifiers and claim-supporting quotes.",
+    "accuracy": "The cautious distinction between observational association and randomized evidence is reasonable, with no clear contradiction of the reference record.",
+    "limits": "Clearly labels memory estimates and states gaps, though the limits are not tied to measured corpus outputs.",
+    "verdict": "Gives a direct answer, decision, confidence and conditions, but its support is unverified and it omits a grounded contrary finding.",
+    "facets": "Does not ground the requested comparative volumes, claim tallies, or research/news facets."
+   },
+   "claude_prism": {
+    "comparison": "Traced same-call ratios and percentage-point delta recompute; baseline and subject-lane limitations are stated, and the comparison answers the relative-evidence question.",
+    "chart": "The one relevant chart is fully traced and captioned, but presents bare levels rather than a decomposition or comparison beyond the two values.",
+    "drilldown": "Provides one traced breakdown layer; only one of six proposed follow-ups executed successfully, so the required executable coverage is absent.",
+    "export": "Two relevant CSVs trace to the call and are referenced, but provenance/window is incomplete because the source response has no defined window.",
+    "repro": "34/35 numbers trace and the used call has args; the undefined response window and one nontracing number keep it below full reproducibility.",
+    "refs": "Both DOIs resolve, sources are tied to claims with metadata and tiers, and the strongest contrary source is identified; no unsupported verbatim quotes are supplied.",
+    "accuracy": "Reads the subject lane, read tallies, contested share and tool caveat correctly, and flags the off-topic strongest source.",
+    "limits": "Specific lane, sample-size, window and coverage limits appear near the figures; the unavailable end date is acknowledged.",
+    "verdict": "Direct, appropriately cautious decision with low confidence and a change condition; names the contrary read finding, but the evidence is corpus classification rather than clinical effect evidence.",
+    "facets": "Covers the main comparison and limitations, but does not ground seasonality, news mismatch, or overlap across claim terms."
+   },
+   "chatgpt_prism": {
+    "comparison": "The traced volume difference and ratio are correct and their scope is explained; contested shares are also compared on the same call.",
+    "chart": "No chart is provided.",
+    "drilldown": "Offers follow-up questions and calls, but none executed successfully and there is no traced item-level layer.",
+    "export": "The traced CSV preserves the null and has identifiers and provenance, but the question needs research-document evidence rows as well as the claim tallies, and the CSV is not linked to a file in this text.",
+    "repro": "Only 30/37 numeric claims trace; the outside research effect estimates and study counts are not all reproducible from listed calls.",
+    "refs": "Half of the eight cited identifiers fail the corpus lookup, triggering the fabricated-identifier cap; quotes and metadata cannot rescue the score.",
+    "accuracy": "The Prism comparison is handled carefully, but the research citations include identifiers not found in the corpus, making specific evidence claims unreliable.",
+    "limits": "States the missing Prism window and lane limits, but leaves out some applicable coverage and match-mode limits and does not fully bound external evidence windows.",
+    "verdict": "Direct answer, decision, confidence and conditions are present, with contrary observational evidence acknowledged; some support rests on unverified citations.",
+    "facets": "Addresses core claim volumes, lanes, overlap warning and research/news absence, but does not ground seasonality."
+   },
+   "chatgpt_bare": {
+    "comparison": "Qualitative comparison only; the two rows use different designs and outcomes and no measured ratio or delta is given.",
+    "chart": "No chart is provided.",
+    "drilldown": "Names evidence lanes but supplies no traced item-level breakdown or successful follow-up.",
+    "export": "No CSV export is provided.",
+    "repro": "Numbers and sources are largely untraceable to reproducible calls; memory summary is explicitly acknowledged.",
+    "refs": "Two of three identifiers fail the corpus lookup, so the fabricated-identifier cap applies.",
+    "accuracy": "Its broad cautious conclusion is consistent with the reference record, though the selected evidence is not verified there.",
+    "limits": "Clearly marks the absence of current search and counts, but does not provide specific corpus coverage or window bounds for measured data.",
+    "verdict": "Direct decision, confidence and change condition are given, with observational evidence acknowledged and limits stated.",
+    "facets": "Grounds a qualitative distinction between trial and observational evidence but leaves the requested measured comparative facets unavailable."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {
+   "chatgpt_bare": [
+    "refs 1->0"
+   ]
+  }
+ }
+}

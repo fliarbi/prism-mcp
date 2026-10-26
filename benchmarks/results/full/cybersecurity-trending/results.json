@@ -1,0 +1,235 @@
+{
+ "slug": "cybersecurity-trending",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 23.6,
+   "plain": 23.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.8,
+    "gpt": 24.3
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 4.0,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 75.3,
+   "plain": 75.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 84.6,
+    "gpt": 66.1
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 0.5,
+    "accuracy": 4.0,
+    "limits": 3.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 26.5,
+   "plain": 26.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 15.4,
+    "gpt": 37.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 1.5,
+    "export": 2.5,
+    "repro": 3.0,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 61.6,
+   "plain": 61.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 58.9,
+    "gpt": 64.3
+   }
+  }
+ },
+ "judge_mad": 0.7,
+ "verdicts": {
+  "opus": "B and D both read the one recorded call and filtered out off-topic labels. Only B set robotics' 14-16x rise against flat AI (1.01x) and the other big topics, and it tied every limit (144-day staleness, top-15 censoring, loose category tagging) to the numbers with a reproducible export. D was correct but narrower and had a coverage-flag inconsistency. A and C measured nothing: A offered labelled memory guesses, and C gave a bare refusal.",
+  "gpt": "C gives the most careful decision-ready reading of the available two-window record: it separates the fastest visible technology-related labels from the off-topic growth leaders, quantifies the comparison, and bounds the stale, loosely categorized feed. B is more expansive and has stronger traced comparison material, but unsupported topic counts and a contradicted coverage claim make it less dependable; neither deliverable achieves usable drill-down."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "claude_prism": [],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "CSV provenance says coverage=partial, but the prose and the tool metadata report a non-partial read",
+    "The 144-day date difference is computed from the tool's dates but labelled (est.)"
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Introduces telemedicine prescription practices at 19.76x, absent from c1.",
+    "Introduces electric vehicle and lunar/martian counts absent from c1.",
+    "Claims 107.1% row coverage and says there is no partial flag; c1 has no such metadata in the supplied record.",
+    "Treats the returned ranking as complete enough to call robotics the credible fastest theme despite loose labels and unmeasured topics."
+   ],
+   "chatgpt_prism": [
+    "Says coverage is non-partial; c1 provides no coverage metadata supporting that claim.",
+    "Calls the source layers a returned breakdown, though c1 supplies ranked lists rather than article-level or subcategory drill-down records."
+   ],
+   "claude_bare": [
+    "Names AI agents, data-center power, regulation, and generative AI as likely rising or biggest without a resolvable source; they are explicitly estimates, not measured findings."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "No series is given. The response honestly declines to plot one.",
+    "comparison": "No contrast is made. It only defines a hypothetical baseline.",
+    "chart": "No chart block.",
+    "drilldown": "The planned layers are memory topics. Only 2 of 6 follow-ups executed, and the layering is generic.",
+    "export": "The CSV is labelled estimate and leaves cells empty. That is honest but unmeasured.",
+    "repro": "No call was run. The candidate list is memory and cannot be regenerated.",
+    "accuracy": "No contradictions. The memory candidates are labelled est.",
+    "limits": "It is specific about what is unmeasured and about the gap between its knowledge cutoff and today.",
+    "verdict": "It states an answer, decision, confidence and conditions, but the answer rests only on memory.",
+    "facets": "Facets are answered from memory or not at all."
+   },
+   "claude_prism": {
+    "trend": "Both windows are traced, the change is quantified (14.2x, 15.56x, +1.3% for AI) and the dates are stated. Only two points exist, so this is not a true series.",
+    "comparison": "The baseline is defined, and the deltas and ratios recompute (14893/174 ≈ 85.6). The robotics-vs-AI contrast is meaningful.",
+    "chart": "The chart is traced, with unit, window, source and caption, and it overlays AI against robotics. Plotting the windows as temporal points at their end dates is slightly awkward.",
+    "drilldown": "At the ceiling. No follow-up executed and the response exposes no item identifiers.",
+    "export": "The CSV is traced, carries provenance and a JSON block, and keeps the null growth_x for the new topic. It is a single table.",
+    "repro": "87 of 87 numbers trace, derived figures are shown, and a prism-calls block with capture date is included.",
+    "accuracy": "It catches the off-topic labels, the loose category tagging and a possible clustering artifact. Fields are read correctly.",
+    "limits": "The 144-day staleness, top-15 censoring, row-floor coverage caveat, label clustering and what the counts are not all sit next to the numbers. It also says what would close the gap.",
+    "verdict": "The answer is direct and filtered for off-topic labels. It gives a decision and a reasoned low confidence, and names flat AI as contrary evidence.",
+    "facets": "Rising, newly covered, biggest and window staleness are all grounded. It also addresses label mismatch and the AI-vs-robotics comparison."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups are generic and 0 of 3 executed.",
+    "export": "No export.",
+    "repro": "Nothing to reproduce.",
+    "accuracy": "It makes no claims, so there is nothing to contradict.",
+    "limits": "It lists unknowns but none tied to actual data. Marking today's date as est. is odd.",
+    "verdict": "It refuses to answer and attaches high confidence to the refusal.",
+    "facets": "No facet is answered, even with a grounded no-data."
+   },
+   "chatgpt_prism": {
+    "trend": "At the ceiling. Only two-window growth for two topics is given.",
+    "comparison": "The deltas are exact (43-article difference). The comparison is between two near-identical robotics labels, not a decision-relevant contrast.",
+    "chart": "The chart is traced and captioned but shows only robotics. Biggest topics and new topics are not charted.",
+    "drilldown": "It names the response layers. Only 2 of 5 follow-ups executed and no item identifiers are given.",
+    "export": "A single traced CSV, but labelled coverage=partial while the prose says the coverage read was non-partial. That is an inconsistency.",
+    "repro": "23 of 26 numbers trace and a calls block is present. The 144-day figure is oddly labelled est.",
+    "accuracy": "It catches the off-topic labels. The coverage flag is mislabelled in the CSV.",
+    "limits": "At the ceiling. It covers window, staleness, coverage, match mode and that counts are not adoption.",
+    "verdict": "The answer is direct, with decision, low confidence and what would change it. It gives less contrary evidence than B.",
+    "facets": "Rising, new and biggest are each addressed with grounded values. The response notes no technology topic is newly covered."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured series or named source; correctly declines to invent one.",
+    "comparison": "No measured comparison.",
+    "chart": "No chart block.",
+    "drilldown": "Generic, unexecuted calls with unsupported argument shapes.",
+    "export": "No data export.",
+    "repro": "No measured claims or reproducible source calls.",
+    "accuracy": "Does not contradict the supplied record or present invented measurements.",
+    "limits": "Clearly states missing window, coverage, censoring, and match mode.",
+    "verdict": "Direct recommendation and confidence with conditions, but does not answer the topic ranking from the available record.",
+    "facets": "Does not ground any requested ranking facets."
+   },
+   "claude_prism": {
+    "trend": "Traced two-window counts and exact growth for key topics, but omits the source’s partial-period caveat and includes unsupported topics.",
+    "comparison": "Comparisons and derived deltas use the same windows and recompute; baseline is defined.",
+    "chart": "Chart values trace and support a prose claim, with window, unit, and source; no visible partial-period marking.",
+    "drilldown": "Only one topic-label layer; proposed follow-ups did not execute successfully.",
+    "export": "Traced CSV with provenance, but it omits needed rows and the source’s coverage caveat; not every needed table is supplied.",
+    "repro": "Most numbers trace, but several claims (including telemedicine, EV, lunar missions, and coverage percentage) are not in c1; listed calls do not reproduce them.",
+    "accuracy": "Adds specific topics and coverage metadata absent from the supplied record, and calls the feed’s partial status full.",
+    "limits": "States window, lag, loose categorization, and article-count meaning, but misstates the coverage flag.",
+    "verdict": "Answers with a decision and confidence, but the unsupported specifics and contradictory coverage claim weaken support.",
+    "facets": "Covers growth, biggest, and novelty facets, but some values are unsupported and overlap/seasonality are not addressed."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced two-window counts and growth, but gives no full point series and drops the source’s partial-period caveat.",
+    "comparison": "Same-window counts, deltas, and baseline are defined and arithmetically correct.",
+    "chart": "Chart points trace to c1 and support a specific claim; it shows both windows but lacks visible partial-period marking.",
+    "drilldown": "One traced label layer; proposed follow-ups did not execute successfully enough to establish further layers.",
+    "export": "CSV traces and includes identifiers and provenance, but lacks the source coverage flag and is not a complete set of needed rows.",
+    "repro": "Most numerical claims trace and calls are specified, though the export claims partial coverage contrary to c1 and some numbers are derived without a complete regenerate recipe.",
+    "accuracy": "Core counts and rankings match c1; no major field-definition error, with minor imprecision in describing returned layers as source breakdowns.",
+    "limits": "States window, lane, rank limit, and matching uncertainty, but incorrectly says coverage is non-partial.",
+    "verdict": "Direct answer, decision, confidence, and change condition; it acknowledges the feed’s strongest contrary entries and bounds the conclusion.",
+    "facets": "Addresses growth, biggest, newly covered, loose labels, and stale window, but not seasonality or overlap with grounded values."
+   },
+   "claude_bare": {
+    "trend": "Candidate topics are explicitly estimates, earning the estimate-level score only.",
+    "comparison": "Defines a hypothetical comparison but supplies no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Hypothetical breakdown with ungrounded candidates; calls are not executable against the supplied record.",
+    "export": "Estimate-labelled qualitative CSV earns the estimate-level score.",
+    "repro": "No measured source or replayable data; honest memory labelling avoids invented measurements.",
+    "accuracy": "Memory candidates are presented as likely risers without support and cannot be checked against the record; no measured contradiction is established.",
+    "limits": "Clearly marks absent data and stale memory, though no applicable corpus-specific limits can be grounded.",
+    "verdict": "Gives a cautious hypothesis and conditions, but no supported answer to the ranking question.",
+    "facets": "Requested facets are largely unmeasured; speculative candidates do not count as grounded coverage."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {
+   "chatgpt_prism": [
+    "trend 3->1"
+   ],
+   "claude_bare": [
+    "trend 1->0",
+    "repro 1->0"
+   ]
+  }
+ }
+}

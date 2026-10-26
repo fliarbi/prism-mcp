@@ -1,0 +1,233 @@
+{
+ "slug": "ai-agents-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 0.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 1.0
+   },
+   "strict": 34.5,
+   "plain": 34.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 31.2,
+    "gpt": 37.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 5.0,
+    "comparison": 4.5,
+    "chart": 4.5,
+    "drilldown": 4.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 4.0,
+    "limits": 4.5,
+    "verdict": 3.0,
+    "facets": 5.0
+   },
+   "strict": 79.3,
+   "plain": 79.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 78.4,
+    "gpt": 80.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 25.5,
+   "plain": 25.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.0,
+    "gpt": 33.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 4.5,
+    "repro": 5.0,
+    "refs": 0.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 74.7,
+   "plain": 74.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.8,
+    "gpt": 79.6
+   }
+  }
+ },
+ "judge_mad": 0.52,
+ "verdicts": {
+  "opus": "A and B both report the measured 45,512 articles and the 4.46× late-vs-early growth. A goes further: it decomposes tone and the critical flag, explains why 'critical' is not negativity, and gives URL-level headlines. Its limits are placed next to the numbers they bound. C and D answered from memory or declined, so they give a decision-maker nothing measurable about volume or growth.",
+  "gpt": "B gives the strongest decision-grade answer: a reproducible monthly series, quantified growth, tone comparison, and useful breakdowns with explicit data limits. C is close and has cleaner export provenance, but offers less actionable drill-down; B’s small date and confidence overstatements keep it from a fully clean verdict."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "'2026 level of about 3,600 to 4,900' ignores January 2026 at 1,963."
+   ],
+   "chatgpt_prism": [],
+   "claude_bare": [],
+   "chatgpt_bare": []
+  },
+  "gpt": {
+   "claude_bare": [
+    "Claims coverage rose sharply from 2023 and again through 2025, but labels this as an estimate rather than a measured result."
+   ],
+   "claude_prism": [
+    "The gap from the June 1, 2026 data cutoff to October 23, 2026 is 144 days, not 145.",
+    "The confidence rationale says the corpus passed coverage checks; the record cautions that historical row-floor and related checks do not prove ingestion completeness."
+   ],
+   "chatgpt_prism": [],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Full 24-month series is traced with its window and censoring. It gives CAGR 372.2%, a late/early ratio of 4.46 and the April 2026 peak of 4,883. It decomposes critical and negative counts, and the derived May dip (-20.6%) recomputes exactly.",
+    "comparison": "The tone ratio of 0.07 against a 0.58 corpus baseline is defined. The 0.12 multiple, the 0.51 delta and the 17% for May recompute exactly.",
+    "chart": "Volume and tone-vs-baseline charts are both traced, with captions and sources. Neither shows a decomposition overlay or marks the censored edge.",
+    "drilldown": "Gives traced theme, entity and place layers, plus critical items with date, publisher and URL. 5 of 7 follow-ups executed and are on-topic. The items come from c1 itself rather than from a folded-back follow-up.",
+    "export": "At ceiling. There are two traced CSVs and a provenance JSON. The places export is labelled coverage=partial.",
+    "repro": "129 of 130 numbers trace. The calls block lists args and a capture date, and derived figures are marked.",
+    "refs": "Capped at 1 by the script. The news items carry URLs but the cap applies.",
+    "accuracy": "Field misreadings are avoided: 'critical' is flagged as not meaning negative, and Clooney/Sam Roberts and api/cto are flagged as label noise. Two flaws stop this short of 5. The '2026 level 3,600-4,900' range omits January (1,963), and the Colombia row is not singled out as a possible collision.",
+    "limits": "Limits sit next to the numbers they bound: the 145-day gap, mention vs central match, the enrichment lag for May, placed_pct, and sampled sources. It also says what would close each gap.",
+    "verdict": "At ceiling. It has an answer, a decision, a confidence with its reason, and what would change it. It is capped at 3.",
+    "facets": "Covers volume, growth, tone, themes, entities, places, sources and critical headlines with grounded values. It also addresses the mention-vs-tag overlap."
+   },
+   "chatgpt_prism": {
+    "trend": "The traced series has window and censoring, with CAGR and the 4.46 ratio. The peak is mentioned only in a caption without its value, and there is no decomposition.",
+    "comparison": "Early vs late thirds is traced: 5,702 vs 25,440, a ratio of 4.46 and a delta of 19,738, all exact. The group definitions are stated.",
+    "chart": "A single volume chart, although tone was measured and could have been charted.",
+    "drilldown": "At ceiling. 0 of 5 follow-ups worked, and there are no item identifiers.",
+    "export": "The monthly CSV is traced, has provenance and is referenced from the prose. It is a single table.",
+    "repro": "30 of 31 numbers trace, and the calls block includes a capture date.",
+    "refs": "No headlines or references, although the pattern needs news items.",
+    "accuracy": "No contradictions. The 144-day gap is correctly computed from the censor date.",
+    "limits": "Gap, lane, match mode, sampled publishers and enrichment bound are all stated. Some sit in the Method section rather than next to the numbers.",
+    "verdict": "It has an answer, a decision, a confidence with its reason, and what would change it. The verdict is consistent with the chart but stops short of 5. It does not engage the May drop or the sharp critical-share contrast.",
+    "facets": "Most facets have grounded values. Critical headlines are absent."
+   },
+   "claude_bare": {
+    "trend": "A relative index labelled as an estimate, with no named source.",
+    "comparison": "No comparison is made.",
+    "chart": "The chart is honestly labelled as an estimate.",
+    "drilldown": "Follow-ups are partially executable (3 of 5). Breakdown layers are only named.",
+    "export": "The CSV is labelled as an estimate.",
+    "repro": "Values are from memory.",
+    "refs": "None.",
+    "accuracy": "No fabricated specifics are presented as measured.",
+    "limits": "It is specific about which facets are unmeasured.",
+    "verdict": "Gives a direction from memory with low confidence and a decision.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "Follow-up calls are given (5 of 7 ok), but there is no breakdown layer.",
+    "export": "No export.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "No contradictions because nothing is stated.",
+    "limits": "Generic statements of what is missing.",
+    "verdict": "Declines to answer, yet states 'high' confidence.",
+    "facets": "No facets answered."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "The series is explicitly an estimate from memory, so it reaches only the estimate anchor.",
+    "comparison": "No measured baseline or numeric contrast is provided.",
+    "chart": "The chart is honestly labeled as an estimate, which earns the estimate anchor only.",
+    "drilldown": "Names breakdown layers and specific calls, but gives no traced breakdown values; only three of five follow-ups executed successfully.",
+    "export": "The CSV is explicitly an estimate and has no measured source.",
+    "repro": "The numbers are labeled estimates and cannot be reproduced from recorded calls.",
+    "refs": "No resolving references support the specific historical narrative.",
+    "accuracy": "No clear contradiction; the limited historical claims are marked as estimates.",
+    "limits": "Clearly distinguishes unmeasured quantities, estimate, and missing 2026 data, though no corpus-specific limits can be stated.",
+    "verdict": "Direct answer, decision, confidence, and conditions are given; the answer is bounded by the stated absence of measurement.",
+    "facets": "Most requested facets are only listed as unmeasured or estimated, without grounded corpus results."
+   },
+   "claude_prism": {
+    "trend": "The full monthly series is traced; the window, censoring, quantified growth, peak, and critical-series decomposition are reported.",
+    "comparison": "Tone ratios and same-series early/late totals are quantified with defined baselines and caveats.",
+    "chart": "Both charts trace to the recorded overview, carry window, unit, source, and support prose claims; they chart volume and tone.",
+    "drilldown": "Provides traced themes, entities, and dated headline URLs, but the listed follow-ups cover only five of seven calls successfully.",
+    "export": "The monthly CSV is traced and referenced, but the required tables are incomplete for the range of reported breakdowns and provenance is not fully decision-ready.",
+    "repro": "Every recorded number is traceable, calls and arguments are provided, and the derived figures can be recomputed.",
+    "refs": "No external references are used; the headline URLs are present but the script ceiling limits this score to 1.",
+    "accuracy": "Most facts match the record, but the stated 145-day gap is off by a day; the record date/window imply 144 days.",
+    "limits": "Specific limits are placed near the relevant figures, including matching, censoring, enrichment, coverage, and sampled sources.",
+    "verdict": "The script ceiling is 3; the verdict is direct and supported, but its confidence claim that the corpus passed coverage checks is stronger than the record establishes.",
+    "facets": "Grounded values cover trend, tone, themes, entities, geography, source concentration, critical flag, and key matching limitations."
+   },
+   "chatgpt_prism": {
+    "trend": "The traced full series has a stated window, quantified CAGR and early/late comparison, peak, and direction-consistent reading.",
+    "comparison": "The early-versus-late comparison uses equal-length groups from one series and states the ratio and delta.",
+    "chart": "The monthly chart is fully traced and labeled, but does not visibly mark the censored boundary as required for the top chart anchor.",
+    "drilldown": "The layers are summarized but no successful executable follow-ups or item-level breakdown are supplied.",
+    "export": "The monthly CSV and provenance block are traced, complete for the requested series, and referenced in the prose.",
+    "repro": "The listed call and arguments reproduce the series and derived comparisons; capture date and provenance are included.",
+    "refs": "No external references are supplied, and the script ceiling limits this score to 1.",
+    "accuracy": "No material contradiction; the 144-day gap is consistent with the reporting and censor dates.",
+    "limits": "The window, censoring, mention match, panel differences, sampling, and enrichment limits are explained, though some could be positioned closer to the figures they constrain.",
+    "verdict": "Gives a direct answer and decision with confidence and a condition that would change it; it omits the strongest contrary evidence in its own data, namely the May decline and positive tone classification on critical examples.",
+    "facets": "Grounded results address the implied volume, trend, tone, theme, entity, geography, publisher, headline, and matching facets."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or direction is supplied.",
+    "comparison": "No measured common-scale comparison is supplied.",
+    "chart": "No chart block is provided.",
+    "drilldown": "It names relevant breakdowns and follow-up questions, but supplies no traced breakdown layer; only the generic planning layer is present.",
+    "export": "No CSV export is provided.",
+    "repro": "Calls are listed without complete arguments such as a reproducible window, and there are no measured numbers to regenerate.",
+    "refs": "No references are supplied; the script ceiling limits this score to 1.",
+    "accuracy": "It makes no unsupported measured claims and accurately states that it has no corpus measurements.",
+    "limits": "It identifies missing window, lane, outlet coverage, match mode, and censoring, but cannot provide corpus-specific bounds.",
+    "verdict": "Direct answer, decision, confidence, and what would change it are all stated, within the script ceiling.",
+    "facets": "It identifies the requested facets as unavailable but does not provide grounded corpus values or tool-grounded null reasons."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,629 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1113,
+  "charts": [
+   {
+    "id": "crit_share",
+    "title": "Estimated share of GenAI-in-education papers framed cautionary/critical",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Cautionary/critical share (est.)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "orientation_share_est.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "evidence_refs.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly orientation series (promising/critical/mixed) for generative AI in education?",
+    "args": {
+     "term": "generative AI education",
+     "from": "2022",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers drove the 2023 rise in critical framing?",
+    "args": {
+     "term": "generative AI education",
+     "orientation": "critical",
+     "year": 2023,
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for browse_research\nyear\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2023, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.citations",
+    "question": "Which promising papers are most cited?",
+    "args": {
+     "term": "generative AI education",
+     "orientation": "promising",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...promising', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='generative AI education', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='promising', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence exists to learning-harm findings?",
+    "args": {
+     "claim": "generative AI harms learning"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 47.3,
+    "sample": "{\"supporting\": [{\"id\": \"prism:W4396896417\", \"title\": \"The Impact of Large Language Models on Programming Education and Student Learning Outcomes\", \"year\": 2024, \"venue\": \"Applied Sciences\", \"tier\": \"article\", \"strength\": \"moderate\", \"stance\": \"supports\", \"quote\": \"Our results reveal a significant negative correlation between increased LLM reliance for critical thinking-intensive tasks such as code generation and debugging and lower final grades.\", \"grounded\": true, \"why\": \"Shows that greater generative AI use is linked to poorer learning outcomes.\", \"url\": \"https://doi.org/10.3390/app14104115\", \"cited_by\": 105, \"doi\": \"10.3390/app14104115\"}], \"contradicting\": [{\"id\": \"prism:W4409352105\", \"ti"
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "How many papers per year, to flag thin years?",
+    "args": {
+     "term": "generative AI education",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ucation', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='generative AI education', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How does news framing compare with research framing?",
+    "args": {
+     "term": "generative AI education"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...nerative AI education'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='generative AI education', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.table",
+    "question": "Does the result change if the query is expanded to ChatGPT, LLM and tutor phrases?",
+    "args": {
+     "terms": [
+      "ChatGPT education",
+      "LLM tutoring",
+      "AI tutor"
+     ],
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... tutor'], 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... tutor'], 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['ChatGPT education', 'LLM tutoring', 'AI tutor'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 12,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 3,
+   "untagged_examples": [
+    "+35 — The ratio is computed from the estimates above and inherits their error. A plausible error",
+    "12 — - Level: K-12, higher education, other.",
+    "12 — - **What the data cannot answer:** the exact yearly series, the thin-year counts, the K-12"
+   ]
+  },
+  "dois": {
+   "cited": 6,
+   "found_in_corpus": 6,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1145,
+  "charts": [
+   {
+    "id": "contested-vs-positive",
+    "title": "Share of papers framed positive vs contested, generative AI in education",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "positive_pct",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     },
+     {
+      "name": "contested_pct",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "stance_by_year.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 34,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which cautionary papers are most cited?",
+    "args": {
+     "term": "generative ai in education",
+     "orientation": "cautionary",
+     "sort": "cited",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 19.3,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 410, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W4386098991\", \"title\": \"Challenges and Opportunities of Generative AI for Higher Education as Explained by ChatGPT\", \"authors\": [\"Rosario Michel‐Villarreal\", \"Eliseo Luis Vilalta-perdomo\", \"David Ernesto Salinas-Navarro\", \"Ricardo Thierry-Aguilera\", \"Flor Silvestre Gerardou\"], \"venue\": \"Education Sciences\", \"year"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which critical papers exist, with ids?",
+    "args": {
+     "term": "generative ai in education",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.0,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 54, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7136126786\", \"title\": \"Students’ Ethical Reasoning about Generative AI in Higher Education Assessment: A Cross-National Survey Study of Romania and Moldova\", \"authors\": [\"Laura Malița\", \"Roza Dumbrăveanu\", \"Olga BALMUȘ\", \"Gabriela Grosseck\"], \"venue\": \"Research and Education\", \"year\": 2025, \"date\": \"2025-12-31\", "
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Does the picture hold with the wider concept cluster?",
+    "args": {
+     "term": "generative ai in education",
+     "expand": true,
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.5,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 2193, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7125713601\", \"title\": \"Challenges and Opportunities in Literary Creative Writing Education in the Era of Generative AI: A Qualitative Study on Domestic Educational Sites\", \"authors\": [\"Min Seo Park\"], \"venue\": \"Humanities Journal\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.37981/hjhrisu.2025.12.74.237\", \"u"
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Do empirical papers differ from position papers in stance?",
+    "args": {
+     "term": "generative ai in education",
+     "contribution": "position",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.3,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 308, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7123559531\", \"title\": \"An analysis of research trends in generative AI applications within the field of educational technology in Korea: Focusing on research papers in ‘Journal of Educational Technology’ and ‘The Journal of Educational Information and Media’\", \"authors\": [\"Soungyoun Kwon\"], \"venue\": \"Korean Asso"
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does the picture look in news coverage?",
+    "args": {
+     "term": "generative ai in education"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ative ai in education'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='generative ai in education', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.browse",
+    "question": "Which problem-identifying papers drove the 2024-2025 rise?",
+    "args": {
+     "term": "generative ai in education",
+     "orientation": "problem_identifying",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.1,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 498, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7125713601\", \"title\": \"Challenges and Opportunities in Literary Creative Writing Education in the Era of Generative AI: A Qualitative Study on Domestic Educational Sites\", \"authors\": [\"Min Seo Park\"], \"venue\": \"Humanities Journal\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.37981/hjhrisu.2025.12.74.237\", \"ur"
+   }
+  ],
+  "followups_ok": 5,
+  "numbers": {
+   "total": 75,
+   "traced": 75,
+   "derived": 11,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 163,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 587,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "How many education papers are coded as promising or critical in each year?",
+    "args": {
+     "term": "generative AI education",
+     "from": "2022",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2022', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers exemplify promising claims about generative AI in education?",
+    "args": {
+     "term": "generative AI education opportunities",
+     "orientation": "promising",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 12, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 9, \"papers\": [{\"id\": \"W7115918635\", \"title\": \"Application of Generative Artificial Intelligence in Education Personalization: Perceptions of Humanities and Technical Students\", \"authors\": [\"Ekaterina A. Pospelova\", \"Evgeniya N. Gorlacheva\", \"Petr L. Ototsky\"], \"venue\": \"Integration of Education\", \"year\": 2025, \"date\": \"2025-12-18\", \"doi\": \"10.15507/1991-9468.029.202504.734-752\", \"url\": \"https://doi.org/10.15507/1991-9468.029.202504.734-752\", \"cited_by\": 0, \"orientation\":"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers exemplify critical claims about generative AI in education?",
+    "args": {
+     "term": "generative AI education risks ethics",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 29.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 1, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 1, \"papers\": [{\"id\": \"W4408679585\", \"title\": \"Barbie meets generative AI in education: Neither artificial nor intelligent?\", \"authors\": [\"Carmen Vallis\"], \"venue\": \"Educational Philosophy and Theory\", \"year\": 2025, \"date\": \"2025-03-19\", \"doi\": \"10.1080/00131857.2025.2480770\", \"url\": \"https://doi.org/10.1080/00131857.2025.2480770\", \"cited_by\": 5, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Ethics and Social Impacts of AI\", \"Digi"
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "How does the balance of promising and critical framing differ between early and late years?",
+    "args": {
+     "term": "generative AI education",
+     "group_by": "year",
+     "include_orientation": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ude_orientation': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='generative AI education', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_orientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 0,
+   "not_found": [
+    "10.1007/s10639-023-11791-1",
+    "10.1080/17439884.2023.2216388"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 108,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 0,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 931,
+  "charts": [
+   {
+    "id": "education-framing",
+    "title": "Contested framing in generative AI in education research",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Contested share",
+      "how": "call",
+      "points": 5,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "orientation_by_year.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 25,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are classified as cautionary, and what claims do they make?",
+    "args": {
+     "term": "generative ai in education",
+     "orientation": "cautionary",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.4,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 410, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7117746826\", \"title\": \"Generative AI in Art Education: A Systematic Review of Research Trends, Tool Applications, and Outcomes (2019–2025)\", \"authors\": [\"Yihan Jiang\", \"Fan Ying\", \"Zifeng Liu\"], \"venue\": \"Education Sciences\", \"year\": 2025, \"date\": \"2025-12-30\", \"doi\": \"10.3390/educsci16010047\", \"url\": \"https://d"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which papers are classified as critical, and what claims do they make?",
+    "args": {
+     "term": "generative ai in education",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.0,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 54, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7136126786\", \"title\": \"Students’ Ethical Reasoning about Generative AI in Higher Education Assessment: A Cross-National Survey Study of Romania and Moldova\", \"authors\": [\"Laura Malița\", \"Roza Dumbrăveanu\", \"Olga BALMUȘ\", \"Gabriela Grosseck\"], \"venue\": \"Research and Education\", \"year\": 2025, \"date\": \"2025-12-31\", "
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers drive the change in contested share in the latest year?",
+    "args": {
+     "term": "generative ai in education",
+     "orientation": "problem_identifying",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.7,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"scope_means\": \"the scope word must appear in the paper's title — work ABOUT it. The scope need not be a place: 'in education' scopes the same way\", \"matched\": 498, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7125713601\", \"title\": \"Challenges and Opportunities in Literary Creative Writing Education in the Era of Generative AI: A Qualitative Study on Domestic Educational Sites\", \"authors\": [\"Min Seo Park\"], \"venue\": \"Humanities Journal\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.37981/hjhrisu.2025.12.74.237\", \"ur"
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How does the yearly series change when the concept cluster is expanded?",
+    "args": {
+     "term": "generative ai in education",
+     "expand": true
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 16.2,
+    "sample": "{\"scope\": \"education\", \"geo_mode\": \"about\", \"phrases\": [\"generative ai\", \"deep generative models\", \"synthetic data generation\", \"generative adversarial networks\", \"neural text generation\"], \"points\": [{\"year\": 2018, \"total\": 2, \"orientation\": {\"breakthrough\": 2}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2019, \"total\": 3, \"orientation\": {\"descriptive\": 1, \"promising\": 2}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \"positive_pct\": 66.7, \"contested_pct\": 0.0}, {\"year\": 2020, \"total\": 4, \"orientation\": {\"breakthrough\": 1, \"descriptive\": 1, \"promising\": 2}, \"stance_score\": null, \"positive\": 3, \"contested\": 0, \"positive_p"
+   },
+   {
+    "id": "f5",
+    "feature": "research.evidence",
+    "question": "What study designs and measured outcomes appear across the promising and cautionary papers?",
+    "args": {
+     "term": "generative ai in education"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ative ai in education'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='generative ai in education', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 27,
+   "traced": 27,
+   "derived": 5,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

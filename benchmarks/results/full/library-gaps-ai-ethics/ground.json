@@ -1,0 +1,536 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 707,
+  "charts": [],
+  "tables": [
+   {
+    "name": "coverage_map.csv",
+    "how": "estimate",
+    "rows": 5,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which governance and regulation papers are most cited since 2022?",
+    "args": {
+     "term": "AI regulation governance",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 173, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 4, \"papers\": [{\"id\": \"W7118726224\", \"title\": \"Artificial Intelligence Governance Audit for Public Information Disclosure (AI Government Audit)\", \"authors\": [\"Ramdan Prawira Sutardjo\", \"I D Sumitra\"], \"venue\": \"Jurnal Tata Kelola dan Kerangka Kerja Teknologi Informasi\", \"year\": 2025, \"date\": \"2025-12-29\", \"doi\": \"10.34010/jtk3ti.v11i3.19007\", \"url\": \"https://doi.org/10.34010/jtk3ti.v11i3.19007\", \"cited_by\": 0, \"orientation\": \"promising\", \"contribution\": \"methodological\","
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "Which generative-AI harm topics rose fastest in 2024-2026?",
+    "args": {
+     "term": "generative AI ethics harms"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"misuse of generative ai\", \"societal impacts of generative ai\"], \"points\": [{\"year\": 2024, \"total\": 3, \"orientation\": {\"problem_identifying\": 1, \"cautionary\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 2, \"positive_pct\": 0.0, \"contested_pct\": 66.7}, {\"year\": 2025, \"total\": 9, \"orientation\": {\"cautionary\": 1, \"descriptive\": 1, \"problem_identifying\": 3}, \"stance_score\": null, \"positive\": 0, \"contested\": 4, \"positive_pct\": 0.0, \"contested_pct\": 44.4}], \"totals\": {\"problem_identifying\": 4, \"cautionary\": 2, \"descriptive\": 1}, \"papers\": 7, \"per_orientation_trend\": {\"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three perio"
+   },
+   {
+    "id": "f3",
+    "feature": "research.citations",
+    "question": "What are the most cited AI auditing papers?",
+    "args": {
+     "term": "algorithmic auditing accountability"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...diting accountability'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='algorithmic auditing accountability', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "analysis.history",
+    "question": "How has AI safety and alignment coverage changed over time?",
+    "args": {
+     "term": "AI alignment safety"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'AI alignment safety'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='AI alignment safety', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What critical evidence exists on explainability methods?",
+    "args": {
+     "term": "explainable AI post-hoc explanations"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...post-hoc explanations'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='explainable AI post-hoc explanations', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "How is the news covering EU AI Act implementation?",
+    "args": {
+     "term": "EU AI Act"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.4,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 53, \"critical\": 42, \"negative\": 11, \"positive\": 40, \"mean_priority\": 7.0, \"critical_pct\": 79.2, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 90, \"critical\": 84, \"negative\": 28, \"positive\": 52, \"mean_priority\": 7.31, \"critical_pct\": 93.3, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 71, \"critical\": 63, \"negative\": 12, \"positive\": 59, \"mean_priority\": 7.48, \"critical_pct\": 88.7, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 84, \"critical\": 78, \"negative\": 16, \"positive\": 67, \"mean_priority\": 7.31, \"critical_pct\": 92.9, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 73, \"critica"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": false,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1010,
+  "charts": [
+   {
+    "id": "themes",
+    "title": "Resolved works per theme carried by the 4 reading-list items",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "works in theme",
+      "how": "call",
+      "points": 6,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "themes.csv",
+    "how": "call",
+    "rows": 6,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "gap_candidates.csv",
+    "how": "call",
+    "rows": 8,
+    "numeric_cells": 8,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "How many papers address AI governance and regulation, and which are most cited?",
+    "args": {
+     "term": "AI governance regulation",
+     "orientation": "neutral",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 233, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7133346733\", \"title\": \"Transparency, Control, Diversity, and Responsibility:The Multidimensional Moderating Effects of Algorithmic Accountability on AI Service Avoidance\", \"authors\": [\"Jae-Eun Oh\", \"Hyunyim Park\", \"Ki Joon Kim\"], \"venue\": \"CityU Scholars\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": null, \"url\": \"https://scholars.cityu.edu.hk/files/411820821/402697704.pdf\", \"cited_by\": 0, \"orientation\": \"breakthrough\", \"contribution\": \"empirical\", "
+   },
+   {
+    "id": "f2",
+    "feature": "research.stance_trends",
+    "question": "Is attention to LLM safety and alignment rising?",
+    "args": {
+     "term": "large language model safety alignment"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"large language model alignment\", \"llm safety alignment\"], \"points\": [{\"year\": 2023, \"total\": 5, \"orientation\": {\"problem_identifying\": 1, \"breakthrough\": 3}, \"stance_score\": null, \"positive\": 3, \"contested\": 1, \"positive_pct\": 60.0, \"contested_pct\": 20.0}, {\"year\": 2024, \"total\": 20, \"orientation\": {\"descriptive\": 1, \"critical\": 1, \"breakthrough\": 6, \"promising\": 1}, \"stance_score\": null, \"positive\": 7, \"contested\": 1, \"positive_pct\": 35.0, \"contested_pct\": 5.0}, {\"year\": 2025, \"total\": 44, \"orientation\": {\"promising\": 9, \"breakthrough\": 16, \"cautionary\": 1, \"problem_identifying\": 1, \"comparative\": 1, \"descriptive\": 3}, \"stance_score\": null, \"po"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What does the evidence say on AI accountability and auditing?",
+    "args": {
+     "term": "algorithmic accountability auditing"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...countability auditing'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='algorithmic accountability auditing', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "What is the volume trend for AI environmental cost research?",
+    "args": {
+     "term": "AI carbon footprint energy"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...rbon footprint energy'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='AI carbon footprint energy', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How is news coverage of AI regulation changing?",
+    "args": {
+     "term": "AI regulation"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 113, \"critical\": 105, \"negative\": 35, \"positive\": 77, \"mean_priority\": 7.58, \"critical_pct\": 92.9, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 102, \"critical\": 89, \"negative\": 37, \"positive\": 57, \"mean_priority\": 7.4, \"critical_pct\": 87.3, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 133, \"critical\": 120, \"negative\": 41, \"positive\": 85, \"mean_priority\": 7.32, \"critical_pct\": 90.2, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 131, \"critical\": 117, \"negative\": 53, \"positive\": 74, \"mean_priority\": 7.37, \"critical_pct\": 89.3, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 113, "
+   },
+   {
+    "id": "f6",
+    "feature": "research.counter_evidence",
+    "question": "What critical views exist on current fairness metrics?",
+    "args": {
+     "term": "fairness in machine learning"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...s in machine learning'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='fairness in machine learning', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 26,
+   "traced": 26,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 12,
+   "found_in_corpus": 12,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 135,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 769,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.citations",
+    "question": "Which AI ethics topics have the highest citation counts, filtered for relevance to the systems I care about?",
+    "args": {
+     "term": "AI ethics topics accountability safety security labor environmental impact",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ientation': 'critical'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='AI ethics topics account...or environmental impact', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which recent papers address safety, robustness, and security in AI ethics?",
+    "args": {
+     "term": "AI ethics safety robustness security",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.9,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 42, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 4, \"papers\": [{\"id\": \"W7117930349\", \"title\": \"The MH8-Protocols / AI Breaking Point MH8 Red Team Riddle Protocol v2 vs Large LLM #5 Open Public Chat Thread — AI Safety Results, Raw Leaf Sealed & Publicly Auditable\", \"authors\": [\"HEPLER\"], \"venue\": \"Zenodo (CERN European Organization for Nuclear Research)\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.5281/zenodo.18109982\", \"url\": \"https://doi.org/10.5281/zenodo.18109982\", \"cited_by\": 0, \"orientation\": \"critical\", \"cont"
+   },
+   {
+    "id": "f3",
+    "feature": "research.evidence",
+    "question": "What evidence supports adding accountability, audit, and impact assessment to an AI ethics reading list?",
+    "args": {
+     "term": "AI accountability audit impact assessment",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ientation': 'critical'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='AI accountability audit impact assessment', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.evidence",
+    "question": "How do AI ethics frameworks treat human oversight and contestability?",
+    "args": {
+     "term": "AI human oversight contestability ethics",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ientation': 'critical'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='AI human oversight contestability ethics', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "What does recent research say about AI labor, environmental costs, and concentration of power?",
+    "args": {
+     "term": "AI ethics labor environmental impact concentration power",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 8, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7117108797\", \"title\": \"A Case for End-Constrained Ethical Artificial Intelligence\", \"authors\": [\"Tyler Cook\"], \"venue\": \"Science and Engineering Ethics\", \"year\": 2025, \"date\": \"2025-12-24\", \"doi\": \"10.1007/s11948-025-00577-6\", \"url\": \"https://doi.org/10.1007/s11948-025-00577-6\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Ethics and Social Impacts of AI\", \"Adversarial Robustness in Machine "
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "1.0 — - **[r3]** *AI Risk Management Framework (AI RMF 1.0)*. NIST, 2023. Supports treating vali",
+    "2.0 — - **[r4]** *The NIST Cybersecurity Framework (CSF) 2.0*. NIST, 2024. Supports examining cy"
+   ]
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 96,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 0,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 720,
+  "charts": [],
+  "tables": [
+   {
+    "name": "topic-coverage.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 5,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "missing-reading-leads.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which highly cited papers on AI ethics and social impacts are missing, after excluding general technical papers?",
+    "args": {
+     "term": "AI ethics social impacts",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 14.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 2, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 2, \"papers\": [{\"id\": \"W7114766844\", \"title\": \"<i>The Artifice Girl</i> : exploring the existential and ethical implications of Artificial Intelligence in a neoliberal society\", \"authors\": [\"Jittu Varghese\", \"Jobson Joshwa\"], \"venue\": \"Journal for Cultural Research\", \"year\": 2025, \"date\": \"2025-12-11\", \"doi\": \"10.1080/14797585.2025.2601975\", \"url\": \"https://doi.org/10.1080/14797585.2025.2601975\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stanc"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which recent AI ethics papers on adversarial robustness should be added?",
+    "args": {
+     "term": "AI ethics adversarial robustness",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 28.7,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 22, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 9, \"papers\": [{\"id\": \"W4416936153\", \"title\": \"Can artificial intelligence solve the blockchain oracle problem? Unpacking the challenges and possibilities\", \"authors\": [\"Giulio Caldarelli\"], \"venue\": \"Frontiers in Blockchain\", \"year\": 2025, \"date\": \"2025-12-03\", \"doi\": \"10.3389/fbloc.2025.1682623\", \"url\": \"https://doi.org/10.3389/fbloc.2025.1682623\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"position\", \"stance_score\": -0.4, \"topics\": [\"Blockchain Technolo"
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which recent AI ethics papers address LLM privacy and security?",
+    "args": {
+     "term": "LLM ethics privacy security",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'LLM ethics privacy security' — try expand=true, or a broader phrase",
+    "seconds": 13.1,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 6,
+   "traced": 6,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 99,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

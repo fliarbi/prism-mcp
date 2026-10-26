@@ -1,0 +1,194 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 2,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 2,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced 2017-2025 series with window. Gives CAGR 3.9%, late/early 1.21, the 2022 low and the 2025 peak, and keeps the censor caveat and Prism's 'flat' label. No decomposition.",
+    "comparison": "Deltas versus the 2017 baseline recompute exactly (-630/0.84, +1,431/1.35). The ~6,100x research-vs-news ratio mixes lanes and windows without resolving them. Neither comparison addresses the poverty-vs-work contrast.",
+    "chart": "One fully traced chart with window, unit, source and caption. It shows only research volume, not the poverty or work facets, and the censored 2025 point is not marked.",
+    "drilldown": "Breakdown layers come from c1 (stance, contribution, orientation, topic) and reach documents with DOIs. Follow-ups are specific to labour supply and 5 of 6 ran ok, but none was executed and folded back.",
+    "export": "Two CSVs plus a provenance JSON. The doc_tally window '2017..2025' misstates the document window, column renames are undocumented, and the prose barely references the files.",
+    "repro": "45 of 46 numbers traced, and every call is listed with args. Derived deltas are marked as estimates.",
+    "refs": "All five refs resolve, each is tied to a claim, and the quotes are verbatim from the record. Tiers are stated as the tool gives them. The unread r4 is flagged honestly. No ranked tiering, and no contrary sources were available.",
+    "accuracy": "No contradictions with the record. It catches that the lane is broad (only 661 'universal basic income' titles). 'Simulated-country' is a minor overreading.",
+    "limits": "Gives windows with gaps to today, the censor point, lane counts, and coverage meaning. It notes the work half of the question was never queried and what would close that gap. Some limits sit in the footer rather than next to the numbers.",
+    "verdict": "Direct answer with a decision, low confidence with its reason, and what would change it. It is consistent with the data and bounded by it.",
+    "facets": "The poverty facet is grounded and the work facet gets an honest grounded 'not retrieved'. The required labour-supply counter-evidence is not shown with values."
+   },
+   "B": {
+    "trend": "Ceiling 0. B honestly declines to give a series.",
+    "comparison": "Gives a single memory number (-1.3 hours/week) with no real contrast.",
+    "chart": "No chart.",
+    "drilldown": "The study breakdown is from memory, and the follow-ups did not run ok (0/3).",
+    "export": "CSVs are sourced to references, not traced, and not labelled as estimates.",
+    "repro": "No calls were made. The numbers rest on named references only.",
+    "refs": "The three refs are real and resolvable and tied to claims. Quotes cannot be verified in the corpus. The Finland ref titles the 2020 final report as 'Preliminary Results'.",
+    "accuracy": "Study facts match public record (Finland, Vivalt et al. 1.3 hours, Mincome hospitalizations). One minor ref title mismatch.",
+    "limits": "Limits are specific and inline (population, duration, design). The gap figure of 662 days is off by one day.",
+    "verdict": "Clear answer, decision, medium confidence with its reason, and what would change it. It names the contrary 1.3-hour work reduction.",
+    "facets": "Facets are answered from memory."
+   },
+   "C": {
+    "trend": "Traced series with window and censor caveat. The 35.4% increase is exact, but only first and last values are read, with no peak or trough.",
+    "comparison": "The -0.17 SD versus a zero baseline is a trivial contrast that tests nothing about the work question.",
+    "chart": "Same traced volume chart as A. It does not chart the poverty or work facets, and the censored point is not marked.",
+    "drilldown": "One layer of volumes plus documents with DOIs. Follow-ups ran 3 of 4 ok.",
+    "export": "One traced CSV with provenance and an honest partial-coverage flag. Only one table is given.",
+    "repro": "c1-c3 are declared in the prism-calls block without feature or args, though the JSON carries them. Two numbers are untagged.",
+    "refs": "Two refs resolve, with verbatim quotes and tiers stated.",
+    "accuracy": "No contradictions. It does not catch the broad-lane issue.",
+    "limits": "Gives precise gaps to today, the censor point, lane, and coverage meaning, mostly inline.",
+    "verdict": "Complete and bounded. Medium confidence sits slightly high given there is no work evidence.",
+    "facets": "Poverty is grounded. Work gets a grounded 'none'. No labour-supply counter-evidence."
+   },
+   "D": {
+    "trend": "The chart is labelled estimate and is not a time series. The prose admits it cannot source one.",
+    "comparison": "Memory figures labelled as estimates. The ~3% relative decline is estimated.",
+    "chart": "An estimate-labelled memory chart. Plotting a cross-study comparison on a year axis is misleading.",
+    "drilldown": "Breakdown from memory. Follow-ups ran 0 of 6 ok.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Ceiling 0.",
+    "refs": "Two DOIs are real (Jones-Marinescu, Egger). The Kela, NBER and SEED links are generic and do not resolve to specific documents. No quotes.",
+    "accuracy": "Memory specifics largely match the public record (Finland EUR 560/2,000; OpenResearch -2pp/1.3h; SEED 125/$500). The Finland '+1 pp' figure is not an employment-rate measure, and the Trend prose describes a chart it does not show.",
+    "limits": "Estimates are labelled, the window gap is stated, and the selection bias is noted.",
+    "verdict": "The most substantive direct answer, with decision, confidence, conditions and contrary evidence. It rests on memory.",
+    "facets": "Facets are answered from memory."
+   }
+  },
+  "errors": {
+   "A": [
+    "Describes the generosity finding as from 'simulated-country settings', which the record does not state",
+    "doc_tally CSV window mislabelled as 2017..2025"
+   ],
+   "B": [
+    "Finland ref titled 'Preliminary Results' but dated 2020 with the final-report handle",
+    "Gap to today stated as 662 days; it is about 661"
+   ],
+   "C": [
+    "prism-calls block declares c1-c3 without feature or args"
+   ],
+   "D": [
+    "Trend prose promises a 'share of trials finding declines' chart but plots per-study effects",
+    "Finland effect given as '+1 pp' employment though it was measured in days worked",
+    "Stockton described as lacking randomization power, which mischaracterises a randomized but small trial"
+   ]
+  },
+  "best": "A",
+  "verdict": "A and C grounded every number in the recorded calls and were honest that the retrieved evidence measures poverty but not work. A went further: it quantified the trend, flagged the broad lane, said explicitly that the work half was never queried, and set low confidence to match. B and D gave the more substantively informative memory-based answers on labour supply, including the OpenResearch work reduction, but nothing they reported can be traced or regenerated."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 2,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 2,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

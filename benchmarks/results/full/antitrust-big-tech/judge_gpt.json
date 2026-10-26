@@ -1,0 +1,192 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Names the peak and compares early and late thirds, but does not quantify the change between them.",
+    "comparison": "The negative-to-positive ratio and defined corpus baseline yield a correctly stated 5.24x contrast.",
+    "chart": "The traced volume chart has a window, unit, source and claim, but the supported tone facet is not charted.",
+    "drilldown": "Provides themes and headline items, but only two of four follow-up calls returned usable results.",
+    "export": "Monthly and sentiment CSVs are referenced and sourced, but coverage and provenance are incomplete for full export credit.",
+    "repro": "Lists the source call with arguments and window; the reported figures are traceable and derived ratios can be recomputed.",
+    "refs": "Headline URLs and metadata are supplied, but there are no supporting quotes or external references for the legal claims.",
+    "accuracy": "Counts and caveats track the record; the response does not establish the substantive current status of either case.",
+    "limits": "Places the window gap, censoring, match mode, enrichment bound and small publisher sample near their figures.",
+    "verdict": "Gives a supported attention summary and decision, but does not directly resolve what reporting says about remedies in both cases.",
+    "facets": "Grounds broad attention and framing, while the search/ad-tech comparison and current remedy status remain unanswered."
+   },
+   "B": {
+    "trend": "Explicitly says the series cannot be measured.",
+    "comparison": "States that no common-scale comparison is available, without measured values.",
+    "chart": "The chart has no plotted series and cannot support a trend.",
+    "drilldown": "Follow-ups are unexecuted and generic; only one of six returned usable data.",
+    "export": "No data table is provided.",
+    "repro": "No measurements are claimed; the memory account is explicitly not verified.",
+    "refs": "No references were consulted or verified.",
+    "accuracy": "No clear contradiction is established, but its case-status summary is unsupported here.",
+    "limits": "Identifies missing data and the inability to calculate a corpus window, but lacks specific corpus limits.",
+    "verdict": "Offers a direct, cautious answer but lacks supporting measurements and verified sources.",
+    "facets": "Most requested news facets are explicitly unmeasured."
+   },
+   "C": {
+    "trend": "Quantifies the peak and early-versus-late change, but does not fully state the recomputed change and its chart window uses an inclusive end date.",
+    "comparison": "Correctly compares the sentiment ratio with the defined corpus baseline and notes small later-month counts.",
+    "chart": "The series traces to the source and supports a claim, but omits the tone facet and does not visibly mark censoring.",
+    "drilldown": "Provides categories and headline links, but only two of six follow-up calls returned usable data.",
+    "export": "The monthly table traces, but the export omits a needed aggregate sentiment table and has incomplete provenance.",
+    "repro": "Lists the call and arguments; the figures trace and derived comparisons can be recomputed.",
+    "refs": "References largely point back to the data call rather than fully sourced, claim-linked documents.",
+    "accuracy": "Several interpretations exceed the evidence, including treating a machine-assigned adtech label as evidence of case coverage and assigning headline bumps to remedies.",
+    "limits": "States the window gap, lane, matching, censoring and enrichment limits close to the data, but some implications are overread.",
+    "verdict": "Answers media attention and framing, but the limited corpus cannot support a substantive comparison of case remedies.",
+    "facets": "Covers more grounded breakdowns and explicitly identifies the ad-tech and current-status gaps, but does not resolve the cases' remedy reporting."
+   },
+   "D": {
+    "trend": "The chart is explicitly a memory estimate of rulings, not a news series.",
+    "comparison": "Compares remedy asks and orders from memory, without a traceable common-scale measure.",
+    "chart": "The estimate label is honest, but the chart measures rulings rather than news coverage.",
+    "drilldown": "Case stages are only generic labels; proposed calls did not produce sufficient traced findings.",
+    "export": "The milestone table is an explicitly labeled estimate, not a news export.",
+    "repro": "Case facts and calls are not reproducible from the listed references.",
+    "refs": "References lack resolvable identifiers and complete metadata.",
+    "accuracy": "Specific remedy and procedural claims are presented from memory without verifiable citations.",
+    "limits": "Clearly labels memory and missing measurements, but the stated cutoff and generic caveats do not bound the claims precisely.",
+    "verdict": "Gives a recommendation and confidence, but it rests on unsupported case claims and does not answer what the news says.",
+    "facets": "Some case topics are named, but news volume, tone, sources and headlines are unmeasured."
+   }
+  },
+  "errors": {
+   "A": [
+    "The deliverable does not establish the current search remedies outcome or the ad-tech case status; its remedy examples are older headlines."
+   ],
+   "B": [
+    "The deliverable offers no sourced news findings, trend, or export."
+   ],
+   "C": [
+    "It treats the adtech organization tag as a signal about ad-tech case coverage, though the tag does not establish that connection.",
+    "It attributes coverage bumps to the remedies debate while acknowledging the data cannot link them to events."
+   ],
+   "D": [
+    "The chart counts rulings from memory rather than news volume and labels the estimate as a trend.",
+    "It presents detailed remedy and procedural claims without resolvable supporting references."
+   ]
+  },
+  "best": "C",
+  "verdict": "C gives the broadest traceable picture of coverage, tone, themes and headlines, and clearly flags the stale window and thin publisher sample. A is more restrained, but neither establishes what current reporting says about the search and ad-tech remedies; C’s unsupported links between tags or volume bumps and case coverage keep its conclusion tentative."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

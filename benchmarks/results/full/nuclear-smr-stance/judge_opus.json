@@ -1,0 +1,186 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 0,
+    "repro": 3,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Gives follow-up calls, but 0 of 3 executed successfully.",
+    "export": "No export.",
+    "repro": "There are no numbers, so nothing can be regenerated; it is honest about this.",
+    "refs": "No references.",
+    "accuracy": "An empty but honest deliverable earns 3 by rule.",
+    "limits": "It is specific about what cannot be measured, which earns 3 for a plain-model answer.",
+    "verdict": "'Can't measure' does not answer the question.",
+    "facets": "No facet is answered with grounded values."
+   },
+   "B": {
+    "trend": "The series is traced and decomposed into positive and contested shares, and the deltas are exact. One prose slip: it calls 2025 the most favorable year 'on both measures since 2018', but contested was 3.6% in 2021.",
+    "comparison": "The 2017 vs 2025 ratios recompute exactly, the 'small base' caveat is carried, and the comparison speaks to promising vs cautious.",
+    "chart": "A traced share chart overlays positive and contested shares, with window, unit, source and caption.",
+    "drilldown": "Gives the contribution and topic layers plus paper IDs and DOIs; 4 of 6 follow-ups succeeded; no follow-up result was folded back into the report.",
+    "export": "Score is at the ceiling: a traced CSV with provenance.",
+    "repro": "72 of 73 numbers trace, the calls block has args, and provenance JSON is present.",
+    "refs": "The DOIs resolve and each is tied to a claim, but there are no quotes and no contrary sources.",
+    "accuracy": "Fields are read correctly, and it catches the 434 vs 332/828 count anomaly. It reads the 2025 rebound as 'more promising', against the tool's 'broadly unchanged', although it acknowledges this.",
+    "limits": "Window end, the 10-month gap, lane, phrase matching and the meaning of orientation are each placed next to the numbers they bound.",
+    "verdict": "Direct answer, decision, confidence and what would change it, and it names the negative net change since 2017.",
+    "facets": "Trend, shift, examples, thin years and phrase expansion are all covered with grounded values."
+   },
+   "C": {
+    "trend": "Traced counts and a computed promising share, but breakthrough is omitted and the positive-share decomposition from the tool is not used.",
+    "comparison": "At the ceiling: a computed share comparison on one denominator.",
+    "chart": "Charts promising counts only; the share and cautionary views were not charted.",
+    "drilldown": "Gives two paper IDs and 3 of 4 follow-ups worked; no critical examples.",
+    "export": "The CSV share columns are self-computed rather than tool fields, so they do not trace (ceiling 0).",
+    "repro": "16 of 25 numbers trace; c1 and c2 are declared without feature or args.",
+    "refs": "Two DOIs resolve, but the reference list cites tool results rather than papers.",
+    "accuracy": "Fields are read correctly, and it catches the 2025-date/2026-DOI anomaly.",
+    "limits": "At the ceiling; the 296-day gap is stated.",
+    "verdict": "A balanced answer that is consistent with the data and has the decision and conditions.",
+    "facets": "The cautionary trend and the 2024 peak are not addressed."
+   },
+   "D": {
+    "trend": "A memory index labelled as an estimate.",
+    "comparison": "Memory CFPP price figures, which do not measure the research-orientation contrast.",
+    "chart": "An estimate-labelled memory chart.",
+    "drilldown": "Only 1 of 6 follow-ups ran successfully.",
+    "export": "An estimate-labelled table.",
+    "repro": "Memory only.",
+    "refs": "Generic domain URLs, and r1 mislabels the 2023 certification as US460.",
+    "accuracy": "Conflates the 2023 50 MWe certification with the US460 design, and memory specifics carry little weight.",
+    "limits": "Honest that nothing was measured, but some limits are generic.",
+    "verdict": "A direct answer that rests on unmeasured memory.",
+    "facets": "Mostly memory."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Prose claims 2025 is the most favorable year on both measures since 2018, but contested share was 3.6% in 2021."
+   ],
+   "C": [],
+   "D": [
+    "r1 labels the 2023 NRC design certification as NuScale US460; the 2023 certification was the 50 MWe US600, and US460 (77 MWe) was approved in 2025."
+   ]
+  },
+  "best": "B",
+  "verdict": "B gave a fully traced orientation series split into positive and contested shares, an exact 2017-vs-2025 comparison, placed limits, and a caught count anomaly; its verdict honestly separates the 2025 rebound from a flat-to-slightly-negative net change. C was accurate but reported counts only and had untraced computed export columns. A declined to answer and D relied on memory about NuScale costs rather than measuring the research trend."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 0,
+   "repro": 3,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

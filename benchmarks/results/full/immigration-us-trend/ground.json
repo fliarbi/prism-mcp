@@ -1,0 +1,706 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 676,
+  "charts": [
+   {
+    "id": "trend_index",
+    "title": "Illustrative coverage index by term (2023=100), estimate only",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "immigration",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     },
+     {
+      "name": "border security",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     },
+     {
+      "name": "deportation",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "coverage_estimates.csv",
+    "how": "estimate",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are per-term totals and shares over the last 36 months?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "window": "36m"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='36m', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly series for the three terms on one scale?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What is the tone split per term?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...n', 'border security']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "Which articles are most covered and how many are in the de-duplicated union?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...ecurity'], 'limit': 10}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=10, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which countries and regions drive each term?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...n', 'border security']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.critical",
+    "question": "What is the critical coverage of deportation?",
+    "args": {
+     "term": "deportation",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.6,
+    "sample": "{\"articles\": [{\"target_id\": \"6a04237f220687a966b77fac\", \"url\": \"https://www.elcaribe.com.do/panorama/internacionales/la-ue-sanciona-a-16-personas-por-deportar-a-ninos-ucranianos/\", \"title\": \"La UE sanciona a 16 personas y 7 entidades por deportar y adoctrinar a niños ucranianos\", \"excerpt\": \"The Council of the European Union (EU) added on Monday sixteen persons and seven entities to the list of those punished for systematic illegal deportation, forced transfer and forced assimilation - including indoctrination and militarized education - of Ukrainian minors, as well as their illegal ado\", \"publisher\": \"elcaribe.com.do\", \"published\": \"2026-05-12 01:57:55\", \"partition\": \"from_2020_to_now\", \"da"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 19,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "10 — The guessed change from 2023 to 2025 is +50% (est.) for immigration, +20% (est.) for borde",
+    "10 — - Windows: the illustrative window ends 2025-12-31, which is about 10 months before today "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 103,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 992,
+  "charts": [
+   {
+    "id": "monthly_articles",
+    "title": "Monthly articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "immigration",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     },
+     {
+      "name": "deportation",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     },
+     {
+      "name": "border security",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "term_totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 30,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.geography",
+    "question": "Which countries drive the immigration volume?",
+    "args": {
+     "term": "immigration",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.4,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 216651, \"share_pct\": 32.4, \"lift\": 1.4}, {\"label\": \"united kingdom\", \"articles\": 34670, \"share_pct\": 5.2, \"lift\": 1.0}, {\"label\": \"mexico\", \"articles\": 29065, \"share_pct\": 4.3, \"lift\": 7.2}, {\"label\": \"china\", \"articles\": 23982, \"share_pct\": 3.6, \"lift\": 0.7}, {\"label\": \"canada\", \"articles\": 21801, \"share_pct\": 3.3, \"lift\": 1.0}, {\"label\": \"india\", \"articles\": 20389, \"share_pct\": 3.0, \"lift\": 0.5}, {\"label\": \"el salvador\", \"articles\": 13006, \"share_pct\": 1.9, \"lift\": 15.1}, {\"label\": \"australia\", \"articles\": 12905, \"share_pct\": 1.9, \"lift\": 0.4}, {\"label\": \"venezuela\", \"articles\": 12753, \"share_pct\": 1.9, \"lift\": 9.1}, {\"la"
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What drove the deportation peak in 2025-04?",
+    "args": {
+     "term": "deportation",
+     "since": "2025-03-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 1.5,
+    "sample": "{\"points\": [{\"period\": \"2025-03-01\", \"articles\": 8241, \"critical\": 7505, \"negative\": 7835, \"positive\": 316, \"mean_priority\": 7.31, \"critical_pct\": 91.1, \"partial_period\": false}, {\"period\": \"2025-04-01\", \"articles\": 10719, \"critical\": 9671, \"negative\": 10269, \"positive\": 342, \"mean_priority\": 7.2, \"critical_pct\": 90.2, \"partial_period\": false}, {\"period\": \"2025-05-01\", \"articles\": 5886, \"critical\": 5186, \"negative\": 5576, \"positive\": 241, \"mean_priority\": 6.98, \"critical_pct\": 88.1, \"partial_period\": false}, {\"period\": \"2025-06-01\", \"articles\": 5392, \"critical\": 4635, \"negative\": 5168, \"positive\": 172, \"mean_priority\": 6.91, \"critical_pct\": 86.0, \"partial_period\": false}, {\"period\": \"2025-07"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which outlets run the most critical deportation coverage?",
+    "args": {
+     "term": "deportation",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How does sentiment on border security shift over time?",
+    "args": {
+     "term": "border security",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 694, \"positive\": 155, \"neutral\": 16, \"ratio\": 4.48}, {\"period\": \"2024-07-01\", \"negative\": 669, \"positive\": 215, \"neutral\": 20, \"ratio\": 3.11}, {\"period\": \"2024-08-01\", \"negative\": 924, \"positive\": 245, \"neutral\": 35, \"ratio\": 3.77}, {\"period\": \"2024-09-01\", \"negative\": 987, \"positive\": 191, \"neutral\": 23, \"ratio\": 5.17}, {\"period\": \"2024-10-01\", \"negative\": 749, \"positive\": 232, \"neutral\": 17, \"ratio\": 3.23}, {\"period\": \"2024-11-01\", \"negative\": 882, \"positive\": 325, \"neutral\": 48, \"ratio\": 2.71}, {\"period\": \"2024-12-01\", \"negative\": 776, \"positive\": 260, \"neutral\": 27, \"ratio\": 2.98}, {\"period\": \"2025-01-01\", \"negative\": 1816, \"positive\": 409"
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "What does academic research say about deportation framing?",
+    "args": {
+     "term": "deportation"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 2.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"deportation\", \"deportation policy\", \"removal proceedings\", \"immigration enforcement\", \"deportation law\"], \"points\": [{\"year\": 2017, \"total\": 668, \"orientation\": {\"descriptive\": 113, \"promising\": 3, \"problem_identifying\": 121, \"breakthrough\": 10, \"comparative\": 8, \"cautionary\": 17, \"critical\": 71}, \"stance_score\": null, \"positive\": 13, \"contested\": 209, \"positive_pct\": 1.9, \"contested_pct\": 31.3}, {\"year\": 2018, \"total\": 874, \"orientation\": {\"problem_identifying\": 124, \"descriptive\": 170, \"critical\": 97, \"promising\": 4, \"cautionary\": 13, \"comparative\": 5, \"breakthrough\": 6}, \"stance_score\": null, \"positive\": 10, \"contested\": 234, \"positive_pct\": "
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "How much do the three terms overlap in articles?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...n', 'border security']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 67,
+   "traced": 63,
+   "derived": 7,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "24 — The monthly file is partial because it lists selected months only. The full 24-month serie"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 128,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 308,
+  "charts": [
+   {
+    "id": "coverage-trend",
+    "title": "Monthly coverage of immigration, deportation, and border security",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": []
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are the total article counts and shares for immigration, deportation, and border security over a common window?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts for each term on the same scale and window?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...}, 'interval': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What tone labels and definitions apply to coverage of each term?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How much do the term result sets overlap, and what common-word or matching caveats apply?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     },
+     "include_overlap": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_overlap\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which article is most covered, and how many combined articles are counted across the terms?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "window": {
+      "from": "2025-10-23",
+      "to": "2026-10-23"
+     }
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...', 'to': '2026-10-23'}}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value={'from': '2025-10-23', 'to': '2026-10-23'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 97,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 657,
+  "charts": [
+   {
+    "id": "monthly-term-coverage",
+    "title": "Monthly news articles matching each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "immigration",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "deportation",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     },
+     {
+      "name": "border security",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "term-totals.csv",
+    "how": "call",
+    "rows": 4,
+    "numeric_cells": 16,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "Which outlets and source records contribute most to each term’s count, and how many matches are common-word false positives?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "How do sentiment labels and their definitions vary by term and month?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which geographies drive coverage of each term over the measured window?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "What stories or events explain the largest monthly changes for each term?",
+    "args": {
+     "terms": [
+      "immigration",
+      "deportation",
+      "border security"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['immigration', 'deportation', 'border security'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 24,
+   "traced": 23,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

@@ -1,0 +1,183 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "refs": 5,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 2
+   },
+   "B": {
+    "comparison": 5,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 5,
+    "refs": 5,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 5,
+    "facets": 5
+   },
+   "C": {
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 5,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 3
+   },
+   "D": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 5,
+    "repro": 3,
+    "refs": 5,
+    "accuracy": 5,
+    "limits": 3,
+    "verdict": 5,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Only a qualitative contrast between observed and modeled findings; no crop-scale values or delta.",
+    "chart": "No chart block.",
+    "drilldown": "Names generic breakdown layers and proposes calls, but none executed and no item-level breakdown.",
+    "export": "The CSV is an empty template, not a traced crop-row export.",
+    "repro": "No numeric claims trace to recorded calls; provenance lists no calls.",
+    "refs": "Both DOIs resolve, metadata and claims are stated, and no unsupported verbatim quotes are offered.",
+    "accuracy": "No clear contradiction; the broad claims are cautiously bounded, though the evidence does not answer the requested crop rows.",
+    "limits": "States the missing crop inputs, source dates, coverage, and inability to assess row-level matching; some tool-specific limits remain unspecified.",
+    "verdict": "Direct, cautious answer with a decision and conditions, but little crop-specific evidence supports it.",
+    "facets": "Does not answer the five crop facets with grounded row values; offers only broad major-crop findings."
+   },
+   "B": {
+    "comparison": "Compares row measures and baselines, gives the traced soybean-corn per-degree delta and ratio, and explains that unlike rows cannot be ranked.",
+    "chart": "No chart block.",
+    "drilldown": "The row-to-paper layer is described, but proposed follow-up calls did not return non-empty results.",
+    "export": "The CSV has untraced rows relative to the recorded response, so it does not qualify as a traced export.",
+    "repro": "All stated figures trace to c1; the call arguments and window are given, and the derived 3-point gap and 1.23 ratio recompute.",
+    "refs": "All five DOIs resolve; each is tied to its claim with year, venue, tier, and a matching source quote.",
+    "accuracy": "Correctly distinguishes the returned drought, management, irrigation, and warming measures and identifies the unsupported climate facets.",
+    "limits": "Places window, lane, coverage, censoring, match-mode, and relevance limits next to the findings.",
+    "verdict": "Direct screening answer, decision, low confidence with reason, and conditions for change; it acknowledges that most returned figures do not measure climate impact.",
+    "facets": "Addresses all five requested crops and identifies climate-specific gaps and the limited soybean result."
+   },
+   "C": {
+    "comparison": "The recalled numeric comparisons are not benchmark-traceable; reported mismatched titles and other unsupported specifics prevent a stronger score.",
+    "chart": "The memory chart is explicitly sourced to a public paper but cannot be verified by the record; estimate ceiling is 1.",
+    "drilldown": "Proposed calls were not executed and no traceable item-level breakdown is supplied.",
+    "export": "Both CSVs are memory-derived and not traced; honest memory labeling caps the score at 1.",
+    "repro": "Most numbers are recalled or marked estimates; no calls or regenerate recipe reproduce them.",
+    "refs": "The listed DOIs resolve in the corpus, and claims are attached, though quotes and verified metadata are absent.",
+    "accuracy": "The claimed per-degree estimates are presented as memory but include a wrong Zhao title/attribution and unsupported figures as evidence; the record only supports different top-matched findings.",
+    "limits": "Acknowledges memory, missing search, partial crop coverage, and publication lag, but does not give the specific limits required for all claims.",
+    "verdict": "Gives a direct ranking and confidence, but the recommendation rests on untraced figures and unsupported comparisons.",
+    "facets": "Covers several staple crops and states some gaps, but many requested crop impacts rely on memory rather than grounded values."
+   },
+   "D": {
+    "comparison": "Correctly explains why the returned measures cannot be compared, but provides no valid measured ratio or delta.",
+    "chart": "No chart block.",
+    "drilldown": "Only the returned-row breakdown is given; proposed calls were not executed and there is no item-level layer.",
+    "export": "The per-row CSV preserves identifiers, null policy/provenance structure, and traced returned values with the call and capture date.",
+    "repro": "All nine numeric claims trace to c1, but a declared call lacks arguments and the regenerate recipe is incomplete.",
+    "refs": "All five identifiers resolve and are tied to claims with venue, year, tier, and matching quotes where provided.",
+    "accuracy": "Faithfully distinguishes the five returned measures and avoids treating availability as a climate-impact answer.",
+    "limits": "States the missing time window, coverage and unspecified match/censoring limits, but does not fully bound the gap to today or close the data gap.",
+    "verdict": "Answers the decision question directly, gives confidence and conditions, and is consistent with the row table and its caveats.",
+    "facets": "Covers every queried crop with grounded returned values and identifies which climate-impact rows remain unanswered."
+   }
+  },
+  "errors": {
+   "A": [
+    "Claims no input rows or crop list were provided, but c1 explicitly queried wheat, rice, maize, soybean, and millet.",
+    "Its CSV is empty despite those recorded rows."
+   ],
+   "B": [
+    "The export CSV omits the recorded rice late-season 17% value and millet’s second-site 43% value, so it is not a complete row export.",
+    "It describes the table as giving 5–8 papers per row, while the millet row has 6; the headline counts are otherwise correct."
+   ],
+   "C": [
+    "The Zhao 2017 PNAS title is misattributed: the cited DOI is for “Temperature increase reduces global yields of major crops in four independent estimates,” not the listed title.",
+    "The per-degree estimates, historical effects, projections, heat thresholds, and sector estimate are untraced to the supplied record and are presented with specific values.",
+    "The chart's 2017 window is not a recorded source window, and its values are memory estimates rather than a recorded series."
+   ],
+   "D": [
+    "The soybean sentence is truncated in c1; D paraphrases a warming decrease and precipitation offsets, but its cited row value is only 16% and the full sentence is not available in the record.",
+    "The provenance declares an additional call without arguments; the table values themselves match the recorded c1 response."
+   ]
+  },
+  "best": "B",
+  "verdict": "B best equips a decision-maker to distinguish the one returned warming result from drought, irrigation, fertilizer, and soil-management figures, while stating that the crops cannot be ranked from these mixed measures. D is the strongest traceable row export and reaches the same cautious decision, but B adds the more useful explicit comparison and fuller limits."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "refs": 5,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 2
+  },
+  "claude_prism": {
+   "comparison": 5,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 5,
+   "refs": 5,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 5,
+   "facets": 5
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 5,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 5,
+   "repro": 3,
+   "refs": 5,
+   "accuracy": 5,
+   "limits": 3,
+   "verdict": 5,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

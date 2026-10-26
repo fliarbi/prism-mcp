@@ -1,0 +1,164 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_bare",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "comparison": 2,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "D": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "US vs India, -337 and 0.76x, recomputes. One scale, placed_pct and the do-not-add caveat are carried. The research-vs-news contrast is only stated qualitatively.",
+    "chart": "No chart block.",
+    "drilldown": "One traced country layer. Follow-ups ran 3 of 5 ok, and f2 duplicates c1. No item-level layer.",
+    "export": "One traced CSV with provenance and a JSON block. Research rows are not exported, and the CSV includes the CAR collision row without a flag.",
+    "repro": "12/12 numbers traced, calls listed with args, window carried.",
+    "accuracy": "Fields are read correctly and the empty patent lane is reported as empty. The CAR artifact sits in the CSV without being called out.",
+    "limits": "Window, censoring, the 5-month gap to today, placed share and lanes are placed beside the numbers. The patent result is read as unmeasurable.",
+    "verdict": "Direct answer, decision, low confidence with reason, what would change it, and bounded to lanes.",
+    "facets": "Authorship, publication and news with placed_pct are grounded, patent is grounded as empty, and the mismatch is noted."
+   },
+   "B": {
+    "comparison": "Patent-share comparison built from memory estimates, labelled est.",
+    "chart": "No chart.",
+    "drilldown": "Layers proposed but none filled. Follow-ups ran 3 of 7 ok.",
+    "export": "CSV is labelled estimate.",
+    "repro": "All figures are memory estimates.",
+    "accuracy": "No contradiction with the record. Specific shares are presented as est., not as measured.",
+    "limits": "Specific limits stated, including the 18-month patent lag, the knowledge gap and the definition problem, but none are measured.",
+    "verdict": "Honest low-confidence shortlist with a decision and what would change it, but it rests on estimates.",
+    "facets": "Facets answered from memory."
+   },
+   "C": {
+    "comparison": "US/China 3.2x, India/China 2.4x and Finland/Korea 1.8x all recompute. Baseline defined and placed caveat carried. States that research and patents cannot be compared.",
+    "chart": "Traced hbar with window, unit, source and caption. It shows only the news lane as bare levels; the thin research rows are not charted.",
+    "drilldown": "Lane and country layers traced, no item level. Follow-ups ran 4 of 6 ok.",
+    "export": "Two traced CSVs with provenance and a JSON block, referenced from the prose.",
+    "repro": "44/45 numbers traced, calls with args, ratios recomputable.",
+    "accuracy": "Catches the CAR acronym artifact and the unwindowed news rows in c1. The 'passed row floors' claim is not in the shown record.",
+    "limits": "Limits sit beside the numbers: unplaced 55% could reorder the ranking, enrichment bound, the health literature index bias, and what would close the gap. The patent lag is not discussed.",
+    "verdict": "Clear 'cannot rank' answer with decision, low confidence and reason, and a concrete path to change it.",
+    "facets": "All facets grounded, and the research-vs-news mismatch is addressed with grounded values."
+   },
+   "D": {
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Breakdown is all 'unavailable'. Follow-ups ran 0 of 4 ok.",
+    "export": "No export.",
+    "repro": "No numbers, and the country list is not sourced.",
+    "accuracy": "No contradictions; the illustrative list is flagged as such.",
+    "limits": "Specific about what is unmeasured, but no window or patent-lag reasoning.",
+    "verdict": "Honest 'cannot rank' with decision and confidence, but leans on an unsourced candidate list.",
+    "facets": "Nothing grounded."
+   }
+  },
+  "errors": {
+   "A": [
+    "CSV includes the central african republic row (likely acronym collision) without flagging it"
+   ],
+   "B": [
+    "Patent share ranges (China 35-40%, US 15-20%) are unverifiable memory estimates"
+   ],
+   "C": [
+    "'passed its row floors' is asserted without support in the shown record"
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "C and A both read the database correctly: the research and patent lanes are empty or near-empty, and news shows only attention. C went further with recomputable ratios, a traced chart, both research and news exports, and it caught the Central African Republic place-resolution artifact. B and D answered from memory and were honest about it, but they give a decision-maker nothing measured, and B's patent shares are unverifiable."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "comparison": 2,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

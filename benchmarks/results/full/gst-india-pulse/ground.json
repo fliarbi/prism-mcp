@@ -1,0 +1,659 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 663,
+  "charts": [
+   {
+    "id": "gst_collections",
+    "title": "Approx. gross GST collection, ₹ lakh crore (not news volume)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Gross GST collection (approx.)",
+      "how": "estimate",
+      "points": 4,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "gst_events.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many articles on GST Council per month, Nov 2024–Oct 2026?",
+    "args": {
+     "term": "GST Council",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "interval": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.sentiment",
+    "question": "What is the tone against the corpus baseline?",
+    "args": {
+     "term": "GST rate cut"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.6,
+    "sample": "{\"points\": [{\"period\": \"2024-08-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2024-09-01\", \"negative\": 0, \"positive\": 2, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2024-12-01\", \"negative\": 0, \"positive\": 2, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2025-01-01\", \"negative\": 0, \"positive\": 1, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2025-02-01\", \"negative\": 1, \"positive\": 1, \"neutral\": 0, \"ratio\": 1.0}, {\"period\": \"2025-03-01\", \"negative\": 0, \"positive\": 3, \"neutral\": 0, \"ratio\": 0.0}, {\"period\": \"2025-04-01\", \"negative\": 1, \"positive\": 3, \"neutral\": 0, \"ratio\": 0.33}, {\"period\": \"2025-05-01\", \"negative\": 1, \"positive\": 0, \"neutral\": 0, \"ratio\": null}, {\"period\": \"20"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which headlines were most critical?",
+    "args": {
+     "term": "GST Council",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 9.3,
+    "sample": "{\"articles\": [{\"target_id\": \"69f9d50f7b2d589e844b410c\", \"url\": \"https://www.cnbctv18.com/india/exclusive-tamil-nadu-kerala-west-bengal-puducherry-poll-results-set-to-rewire-gst-council-power-dynamics-ws-l-19898476.htm\", \"title\": \"Exclusive: Tamil Nadu, Kerala, West Bengal & Puducherry poll results set to rewire GST Council power dynamics - CNBC TV18\", \"excerpt\": \"The latest state election results in Tamil Nadu, Kerala, West Bengal and Puducherry are poised to do more than reshape political leadership—they are set to recalibrate the internal balance of the GST Council, the country’s most powerful indirect tax decision-making body. In a system where states col\", \"publisher\": \"cnbctv18.com\", \"p"
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places and what placed_pct?",
+    "args": {
+     "term": "GST Council"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 27.6,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 2557, \"share_pct\": 45.7, \"lift\": 6.9}, {\"label\": \"cameroon\", \"articles\": 791, \"share_pct\": 14.1, \"lift\": 53.9}, {\"label\": \"united states\", \"articles\": 745, \"share_pct\": 13.3, \"lift\": 0.6}, {\"label\": \"china\", \"articles\": 169, \"share_pct\": 3.0, \"lift\": 0.6}, {\"label\": \"japan\", \"articles\": 133, \"share_pct\": 2.4, \"lift\": 1.5}, {\"label\": \"united kingdom\", \"articles\": 98, \"share_pct\": 1.8, \"lift\": 0.4}, {\"label\": \"russia\", \"articles\": 71, \"share_pct\": 1.3, \"lift\": 1.5}, {\"label\": \"france\", \"articles\": 60, \"share_pct\": 1.1, \"lift\": 0.6}, {\"label\": \"pakistan\", \"articles\": 55, \"share_pct\": 1.0, \"lift\": 0.9}, {\"label\": \"australia\", \"articles"
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which outlets dominate?",
+    "args": {
+     "term": "GST rate changes"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 42.4,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"GST rate changes\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 1, \"entity_labelled_articles\": 26, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 35, \"critical_articles\": 29, \"first_seen\": \"2024-10-29 00:00:00\", \"last_seen\": \"2026-02-17 13:45:07\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a co"
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "Before vs after the 56th meeting?",
+    "args": {
+     "term": "GST",
+     "split": "2025-09-03"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'split': '2025-09-03'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='GST', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsplit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-09-03', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 30,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 7,
+   "untagged_examples": [
+    "56 — - 3 Sep 2025, 56th meeting, New Delhi: the 12% and 28% slabs were largely removed. Most go",
+    "12% — - 3 Sep 2025, 56th meeting, New Delhi: the 12% and 28% slabs were largely removed. Most go",
+    "28% — - 3 Sep 2025, 56th meeting, New Delhi: the 12% and 28% slabs were largely removed. Most go",
+    "5% — - 3 Sep 2025, 56th meeting, New Delhi: the 12% and 28% slabs were largely removed. Most go",
+    "18% — - 3 Sep 2025, 56th meeting, New Delhi: the 12% and 28% slabs were largely removed. Most go",
+    "40% — - 3 Sep 2025, 56th meeting, New Delhi: the 12% and 28% slabs were largely removed. Most go",
+    "28% — Themes (interpretation, est.): rate rationalisation and slab simplification; consumer pric"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 130,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 0,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 870,
+  "charts": [
+   {
+    "id": "gst-monthly",
+    "title": "Monthly articles mentioning 'gst council'",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "gst_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 48,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove the September 2025 spike?",
+    "args": {
+     "term": "gst council",
+     "since": "2025-08-01",
+     "until": "2025-10-01",
+     "granularity": "daily"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.4,
+    "sample": "{\"points\": [{\"period\": \"2025-08-01\", \"articles\": 3, \"critical\": 1, \"negative\": 0, \"positive\": 1, \"mean_priority\": 6.33, \"critical_pct\": 33.3, \"partial_period\": false}, {\"period\": \"2025-08-02\", \"articles\": 3, \"critical\": 2, \"negative\": 0, \"positive\": 2, \"mean_priority\": 5.33, \"critical_pct\": 66.7, \"partial_period\": false}, {\"period\": \"2025-08-03\", \"articles\": 2, \"critical\": 1, \"negative\": 0, \"positive\": 1, \"mean_priority\": 7.0, \"critical_pct\": 50.0, \"partial_period\": false}, {\"period\": \"2025-08-04\", \"articles\": 2, \"critical\": 2, \"negative\": 1, \"positive\": 1, \"mean_priority\": 7.5, \"critical_pct\": 100.0, \"partial_period\": false}, {\"period\": \"2025-08-05\", \"articles\": 9, \"critical\": 0, \"negative\""
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "What drove the December 2024 spike?",
+    "args": {
+     "term": "gst council",
+     "since": "2024-12-01",
+     "until": "2025-01-01",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-12-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.overview",
+    "question": "Which headlines cover rate cuts or rate changes specifically?",
+    "args": {
+     "term": "gst rate cut",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 57.6,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"gst rate cut\", \"type\": \"topic\", \"type_evidence\": {\"person\": 0, \"organization\": 0, \"place\": 0, \"tagged_articles\": 114, \"entity_labelled_articles\": 752, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 1046, \"critical_articles\": 625, \"first_seen\": \"2024-08-09 00:00:00\", \"last_seen\": \"2026-05-30 07:52:50\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every series with a "
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How does the tone compare with other tax topics?",
+    "args": {
+     "terms": [
+      "gst council",
+      "gst rate cut"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.8,
+    "sample": "{\"terms\": [\"gst council\", \"gst rate cut\"], \"rows\": [{\"term\": \"gst council\", \"articles\": 5535, \"share_pct\": 84.1, \"critical\": 4007, \"direction\": \"falling\", \"growth\": 0.22, \"tone_ratio\": 0.43, \"vs_baseline\": 0.74, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 327, \"critical\": 269, \"negative\": 77, \"positive\": 189, \"mean_priority\": 7.06, \"critical_pct\": 82.3, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 117, \"critical\": 93, \"negative\": 36, \"positive\": 70, \"mean_priority\": 7.04, \"critical_pct\": 79.5, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 135, \"critical\": 101, \"negative\": 44, \"positive\": 67, \"mean_priority\": 6.96, \"critical_pct\": 74.8, \"partial_period\":"
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Is Cameroon a false match?",
+    "args": {
+     "term": "gst council",
+     "level": "country",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 2539, \"share_pct\": 45.8, \"lift\": 6.9}, {\"label\": \"cameroon\", \"articles\": 783, \"share_pct\": 14.1, \"lift\": 53.8}, {\"label\": \"united states\", \"articles\": 741, \"share_pct\": 13.4, \"lift\": 0.6}, {\"label\": \"china\", \"articles\": 167, \"share_pct\": 3.0, \"lift\": 0.6}, {\"label\": \"japan\", \"articles\": 131, \"share_pct\": 2.4, \"lift\": 1.5}, {\"label\": \"united kingdom\", \"articles\": 96, \"share_pct\": 1.7, \"lift\": 0.3}, {\"label\": \"russia\", \"articles\": 70, \"share_pct\": 1.3, \"lift\": 1.5}, {\"label\": \"france\", \"articles\": 60, \"share_pct\": 1.1, \"lift\": 0.6}, {\"label\": \"pakistan\", \"articles\": 55, \"share_pct\": 1.0, \"lift\": 1.0}, {\"label\": \"australia\", \"articles"
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "What happened from June to October 2026?",
+    "args": {
+     "term": "gst council",
+     "since": "2026-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'gst council' in this window",
+    "seconds": 0.2,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 76,
+   "traced": 76,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 135,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 250,
+  "charts": [
+   {
+    "id": "gst-news-monthly-volume",
+    "title": "Monthly news coverage of India's GST Council and rate changes",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": []
+   }
+  ],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How many articles mentioned India's GST Council or GST rate changes in each month, and how did that compare with the full news corpus?",
+    "args": {
+     "term": "India GST Council rate changes",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "interval": "month",
+     "include_baseline": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_baseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.overview",
+    "question": "What themes, organisations, and people appeared most often in coverage?",
+    "args": {
+     "term": "India GST Council rate changes",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "include_themes": true,
+     "include_entities": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_themes\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_entities\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What was the coverage tone compared with the corpus baseline?",
+    "args": {
+     "term": "India GST Council rate changes",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "include_baseline": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for news_sentiment\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_baseline\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which places appeared in the coverage, and what share of articles could be placed geographically?",
+    "args": {
+     "term": "India GST Council rate changes",
+     "from": "2024-10-23",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.critical",
+    "question": "Which headlines were most critical, with publication dates, publishers, and URLs?",
+    "args": {
+     "term": "India GST Council rate changes",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How concentrated was coverage among publishers?",
+    "args": {
+     "term": "India GST Council rate changes",
+     "from": "2024-10-23",
+     "to": "2026-10-23",
+     "group_by": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...group_by': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India GST Council rate changes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 93,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 701,
+  "charts": [
+   {
+    "id": "gst-monthly-mentions",
+    "title": "Monthly news articles mentioning GST Council",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "gst_monthly_mentions.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 24,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.browse",
+    "question": "Which GST Council decisions changed rates, and which were proposals?",
+    "args": {
+     "term": "GST Council rate change",
+     "orientation": "all",
+     "limit": 20
+    },
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f2",
+    "feature": "news.browse",
+    "question": "Which commodities and sectors drove the September 2025 coverage spike?",
+    "args": {
+     "term": "GST Council",
+     "orientation": "all",
+     "limit": 20
+    },
+    "ok": false,
+    "why": "unknown feature"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What were the most critical rate-change headlines, with dates and publishers?",
+    "args": {
+     "term": "GST rate changes",
+     "since": "2024-10-23",
+     "until": "2026-10-23",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nuntil\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How did sentiment change month by month relative to the corpus baseline?",
+    "args": {
+     "term": "gst council",
+     "since": "2024-10-23",
+     "until": "2026-10-23"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.6,
+    "sample": "{\"points\": [{\"period\": \"2024-10-01\", \"negative\": 3, \"positive\": 8, \"neutral\": 0, \"ratio\": 0.38}, {\"period\": \"2024-11-01\", \"negative\": 13, \"positive\": 65, \"neutral\": 18, \"ratio\": 0.2}, {\"period\": \"2024-12-01\", \"negative\": 185, \"positive\": 372, \"neutral\": 49, \"ratio\": 0.5}, {\"period\": \"2025-01-01\", \"negative\": 24, \"positive\": 34, \"neutral\": 1, \"ratio\": 0.71}, {\"period\": \"2025-02-01\", \"negative\": 21, \"positive\": 59, \"neutral\": 3, \"ratio\": 0.36}, {\"period\": \"2025-03-01\", \"negative\": 12, \"positive\": 28, \"neutral\": 4, \"ratio\": 0.43}, {\"period\": \"2025-04-01\", \"negative\": 5, \"positive\": 9, \"neutral\": 4, \"ratio\": 0.56}, {\"period\": \"2025-05-01\", \"negative\": 11, \"positive\": 39, \"neutral\": 11, \"ratio\": "
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "Which outlets contributed the most coverage across the full period?",
+    "args": {
+     "term": "gst council",
+     "since": "2024-10-23",
+     "until": "2026-10-23",
+     "dimension": "publisher"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...imension': 'publisher'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='gst council', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimension\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publisher', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.geography",
+    "question": "Which Indian states or cities were associated with the coverage?",
+    "args": {
+     "term": "gst council",
+     "since": "2024-10-23",
+     "until": "2026-10-23",
+     "level": "state"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.9,
+    "sample": "{\"level\": \"state\", \"rows\": [{\"label\": \"centre\", \"articles\": 587, \"share_pct\": 14.3, \"lift\": 128.3}, {\"label\": \"rajasthan\", \"articles\": 331, \"share_pct\": 8.0, \"lift\": 37.7}, {\"label\": \"bihar\", \"articles\": 267, \"share_pct\": 6.5, \"lift\": 33.8}, {\"label\": \"karnataka\", \"articles\": 208, \"share_pct\": 5.1, \"lift\": 16.8}, {\"label\": \"delhi\", \"articles\": 180, \"share_pct\": 4.4, \"lift\": 10.7}, {\"label\": \"maharashtra\", \"articles\": 174, \"share_pct\": 4.2, \"lift\": 5.9}, {\"label\": \"tamil nadu\", \"articles\": 170, \"share_pct\": 4.1, \"lift\": 11.7}, {\"label\": \"west bengal\", \"articles\": 152, \"share_pct\": 3.7, \"lift\": 10.9}, {\"label\": \"kerala\", \"articles\": 142, \"share_pct\": 3.5, \"lift\": 19.3}, {\"label\": \"telangana\", "
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 30,
+   "traced": 29,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 99,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 4,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

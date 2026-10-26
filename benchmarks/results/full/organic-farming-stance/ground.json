@@ -1,0 +1,584 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 766,
+  "charts": [
+   {
+    "id": "yield-gap",
+    "title": "Reported organic yield gap vs conventional, by meta-analysis publication year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Organic yield gap (published meta-analyses)",
+      "how": "ref",
+      "points": 2,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "yield_gap.csv",
+    "how": "ref",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "Yearly orientation of organic farming research, 2005-2026?",
+    "args": {
+     "term": "organic farming",
+     "from": "2005",
+     "to": "2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2005', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "Which years have too few papers to read?",
+    "args": {
+     "term": "organic farming",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...farming', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which critical papers drive recent years?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 405, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7117898658\", \"title\": \"A Review on IoT-Based Agricultural Robots: Seed Sowing, Fertilizer Spraying, and Grass Cutting Automation for Precision Farming\", \"authors\": [\"Anamika G. Ingole\"], \"venue\": \"International Journal for Research in Applied Science and Engineering Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.22214/ijraset.2025.76674\", \"url\": \"https://doi.org/10.22214/ijraset.2025.76674\", \"cited_by\": 0, \"orientation\": \"critical\", \""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which promising papers drive recent years?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "promising",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 13767, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7133349591\", \"title\": \"The Role of Ethnoecological Knowledge, Climate Adaptation Strategies, and Farmer Innovation in Achieving Sustainable Agriculture in Indonesia\", \"authors\": [\"Yohanes Kamakaula\", \"Agatha Wahyu Widati\", \"Trees Augustine Pattiasina\", \"Darmawanto Uria\"], \"venue\": \"West Science Nature and Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.58812/wsnt.v3i04.2473\", \"url\": \"https://doi.org/10.58812/wsnt.v3i04.2473\", \"cited_"
+   },
+   {
+    "id": "f5",
+    "feature": "research.stance_trends",
+    "question": "Does phrase expansion change the trend?",
+    "args": {
+     "term": "organic farming OR agroecology OR regenerative"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.4,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"agroecological practices\", \"regenerative agriculture\", \"sustainable farming systems\"], \"points\": [{\"year\": 2017, \"total\": 11, \"orientation\": {\"problem_identifying\": 1, \"cautionary\": 2, \"comparative\": 1, \"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 3, \"positive_pct\": 0.0, \"contested_pct\": 27.3}, {\"year\": 2018, \"total\": 23, \"orientation\": {\"problem_identifying\": 4, \"descriptive\": 1, \"promising\": 2, \"cautionary\": 4}, \"stance_score\": null, \"positive\": 2, \"contested\": 8, \"positive_pct\": 8.7, \"contested_pct\": 34.8}, {\"year\": 2019, \"total\": 20, \"orientation\": {\"promising\": 3, \"problem_identifying\": 3, \"descriptive\": 4, \"comparat"
+   },
+   {
+    "id": "f6",
+    "feature": "research.brief",
+    "question": "Early versus late framing shift?",
+    "args": {
+     "term": "organic farming",
+     "compare": "2005-2015 vs 2016-2026"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...005-2015 vs 2016-2026'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2005-2015 vs 2016-2026', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 16,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "0% — Baseline: conventional farming outcomes equal 0% difference.",
+    "25% — | r1 | 2012, Nature, peer-reviewed meta-analysis | Yield penalty about 25% |"
+   ]
+  },
+  "dois": {
+   "cited": 6,
+   "found_in_corpus": 6,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 100,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1102,
+  "charts": [
+   {
+    "id": "stance-share",
+    "title": "Share of papers framed promising/breakthrough vs contested, organic farming phrase cluster",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Positive %",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Contested %",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "stance_by_year.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 42,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which critical papers exist on organic farming?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 405, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7117898658\", \"title\": \"A Review on IoT-Based Agricultural Robots: Seed Sowing, Fertilizer Spraying, and Grass Cutting Automation for Precision Farming\", \"authors\": [\"Anamika G. Ingole\"], \"venue\": \"International Journal for Research in Applied Science and Engineering Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.22214/ijraset.2025.76674\", \"url\": \"https://doi.org/10.22214/ijraset.2025.76674\", \"cited_by\": 0, \"orientation\": \"critical\", \""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Do cautionary papers concern yield gaps?",
+    "args": {
+     "term": "organic farming yield"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'organic farming yield'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming yield', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "What does the stance trend look like for 'organic agriculture' alone?",
+    "args": {
+     "term": "organic agriculture"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"organic agriculture\", \"organic farming\", \"organic crop production\", \"organic food systems\"], \"points\": [{\"year\": 2017, \"total\": 1140, \"orientation\": {\"breakthrough\": 10, \"descriptive\": 201, \"problem_identifying\": 124, \"promising\": 143, \"cautionary\": 48, \"comparative\": 71, \"critical\": 6}, \"stance_score\": null, \"positive\": 153, \"contested\": 178, \"positive_pct\": 13.4, \"contested_pct\": 15.6}, {\"year\": 2018, \"total\": 1370, \"orientation\": {\"promising\": 198, \"critical\": 14, \"problem_identifying\": 150, \"comparative\": 85, \"breakthrough\": 11, \"cautionary\": 48, \"descriptive\": 288}, \"stance_score\": null, \"positive\": 209, \"contested\": 212, \"positive_pct\": 15"
+   },
+   {
+    "id": "f4",
+    "feature": "research.table",
+    "question": "Which topic drives the 2025 volume jump?",
+    "args": {
+     "term": "organic farming",
+     "by": "topic",
+     "year": 2025
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'topic', 'year': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'topic', 'year': 2025}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='topic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nyear\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2025, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries produce the promising papers?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "promising"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...entation': 'promising'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='promising', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.compare",
+    "question": "How is news coverage framed compared with research?",
+    "args": {
+     "term": "organic farming"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'organic farming'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 56,
+   "traced": 56,
+   "derived": 10,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 3,
+   "found_in_corpus": 3,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 160,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 3,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 420,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.stance_trends",
+    "question": "What is the yearly orientation series for research on organic farming, including paper identifiers and classification criteria?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "favourable, critical, mixed",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='favourable, critical, mixed', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which promising papers support organic farming, and what claims and identifiers do they have?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "favourable",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 23.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 39264, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7117891013\", \"title\": \"The emerging role of Fungi in sustainable farming and global food security\", \"authors\": [\"IS Manawasinghe\", \"KD Hyde\", \"A Balasuriya\", \"N Suwannarach\", \"N Boonyuen\", \"DL Harishchandra\", \"S.C Karunarathna\", \"S Khuna\"], \"venue\": \"Mycosphere\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.5943/mycosphere/16/1/37\", \"url\": \"https://doi.org/10.5943/mycosphere/16/1/37\", \"cited_by\": 1, \"orientation\": \"descriptive\", \"contribution\""
+   },
+   {
+    "id": "f3",
+    "feature": "research.counter_evidence",
+    "question": "Which critical papers challenge benefits attributed to organic farming, and what are their identifiers?",
+    "args": {
+     "term": "organic farming",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...c farming', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.brief",
+    "question": "How did research framing differ between early and late periods under consistent search terms and coverage?",
+    "args": {
+     "term": "organic farming",
+     "compare_periods": "early vs late",
+     "include": "framing, coverage, search terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...overage, search terms'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_periods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='early vs late', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='framing, coverage, search terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 90,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "trend": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 767,
+  "charts": [
+   {
+    "id": "orientation-trend",
+    "title": "Organic-farming papers by framing orientation",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Promising",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Critical",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "organic_farming_orientation.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 44,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which directly relevant papers drove the recent rise in promising framing?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "promising",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 22.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 13767, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 20, \"papers\": [{\"id\": \"W7133349591\", \"title\": \"The Role of Ethnoecological Knowledge, Climate Adaptation Strategies, and Farmer Innovation in Achieving Sustainable Agriculture in Indonesia\", \"authors\": [\"Yohanes Kamakaula\", \"Agatha Wahyu Widati\", \"Trees Augustine Pattiasina\", \"Darmawanto Uria\"], \"venue\": \"West Science Nature and Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.58812/wsnt.v3i04.2473\", \"url\": \"https://doi.org/10.58812/wsnt.v3i04.2473\", \"cited"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "Which directly relevant papers use critical framing, and what findings do they report?",
+    "args": {
+     "term": "organic farming",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 45.1,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 405, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 19, \"papers\": [{\"id\": \"W7117898658\", \"title\": \"A Review on IoT-Based Agricultural Robots: Seed Sowing, Fertilizer Spraying, and Grass Cutting Automation for Precision Farming\", \"authors\": [\"Anamika G. Ingole\"], \"venue\": \"International Journal for Research in Applied Science and Engineering Technology\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.22214/ijraset.2025.76674\", \"url\": \"https://doi.org/10.22214/ijraset.2025.76674\", \"cited_by\": 0, \"orientation\": \"critical\", "
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How do annual promising and critical shares change when the query is restricted to organic farming terms?",
+    "args": {
+     "term": "organic farming",
+     "expand": false
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"organic farming\", \"organic agriculture\", \"sustainable agriculture\", \"organic crop production\", \"organic farming systems\"], \"points\": [{\"year\": 2017, \"total\": 2001, \"orientation\": {\"critical\": 25, \"cautionary\": 68, \"breakthrough\": 18, \"descriptive\": 333, \"comparative\": 96, \"problem_identifying\": 320, \"promising\": 197}, \"stance_score\": null, \"positive\": 215, \"contested\": 413, \"positive_pct\": 10.7, \"contested_pct\": 20.6}, {\"year\": 2018, \"total\": 2439, \"orientation\": {\"critical\": 18, \"promising\": 345, \"comparative\": 98, \"cautionary\": 43, \"problem_identifying\": 400, \"breakthrough\": 20, \"descriptive\": 415}, \"stance_score\": null, \"positive\": 365, \"cont"
+   },
+   {
+    "id": "f4",
+    "feature": "research.brief",
+    "question": "Are the latest annual counts complete, and how do results change across the expanded phrase set?",
+    "args": {
+     "term": "organic farming",
+     "include_methods": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...include_methods': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='organic farming', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninclude_methods\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 28,
+   "traced": 27,
+   "derived": 1,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "296 — Windows: 2017–2025 [c1]; the final window year ends 2025-12-31 [c1], 296 days before 2026-"
+   ]
+  },
+  "dois": {
+   "cited": 1,
+   "found_in_corpus": 1,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 106,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

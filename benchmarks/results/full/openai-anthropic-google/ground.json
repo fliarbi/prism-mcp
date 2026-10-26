@@ -1,0 +1,748 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 601,
+  "charts": [
+   {
+    "id": "trend-placeholder",
+    "title": "Monthly news articles mentioning each lab (not measured)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "OpenAI",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Anthropic",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Google DeepMind",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "attention_estimates.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "What are per-term totals, shares and combined_articles?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "window": "2025-10-01..2026-09-30"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-10-01..2026-09-30', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "How do monthly series trend for each term?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "granularity": "month"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...'granularity': 'month'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.sentiment",
+    "question": "What is the tone per term?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...c', 'Google DeepMind']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which stories drive the criticism of each lab?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...DeepMind'], 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.geography",
+    "question": "Which countries cover each lab most?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...c', 'Google DeepMind']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.overview",
+    "question": "What is the overview of coverage and most_covered term?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...c', 'Google DeepMind']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 1,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "23 — - **Windows:** The intended window is 2025-10-01 to 2026-09-30, which ends 23 days before "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 111,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 0,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1071,
+  "charts": [
+   {
+    "id": "monthly-articles",
+    "title": "Monthly news articles mentioning each term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "openai",
+      "how": "call",
+      "points": 11,
+      "traced_share": 1.0
+     },
+     {
+      "name": "anthropic",
+      "how": "call",
+      "points": 11,
+      "traced_share": 1.0
+     },
+     {
+      "name": "deepmind",
+      "how": "call",
+      "points": 11,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "totals.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 18,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "monthly_articles.csv",
+    "how": "call",
+    "rows": 11,
+    "numeric_cells": 33,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "What drove Anthropic's jump in 2026-02?",
+    "args": {
+     "term": "anthropic",
+     "since": "2026-01-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.6,
+    "sample": "{\"points\": [{\"period\": \"2026-01-01\", \"articles\": 2724, \"critical\": 1812, \"negative\": 537, \"positive\": 2171, \"mean_priority\": 6.75, \"critical_pct\": 66.5, \"partial_period\": false}, {\"period\": \"2026-02-01\", \"articles\": 9497, \"critical\": 7175, \"negative\": 3958, \"positive\": 5464, \"mean_priority\": 7.0, \"critical_pct\": 75.6, \"partial_period\": false}, {\"period\": \"2026-03-01\", \"articles\": 7932, \"critical\": 6265, \"negative\": 3871, \"positive\": 3980, \"mean_priority\": 7.07, \"critical_pct\": 79.0, \"partial_period\": false}, {\"period\": \"2026-04-01\", \"articles\": 11550, \"critical\": 8795, \"negative\": 4132, \"positive\": 7275, \"mean_priority\": 6.98, \"critical_pct\": 76.1, \"partial_period\": false}, {\"period\": \"2026-"
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which countries produce the coverage of each term?",
+    "args": {
+     "terms": [
+      "openai",
+      "anthropic",
+      "deepmind"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_geography\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nthropic', 'deepmind']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['openai', 'anthropic', 'deepmind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "Which articles are the most critical for Anthropic?",
+    "args": {
+     "term": "anthropic",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.5,
+    "sample": "{\"articles\": [{\"target_id\": \"69bcbe908d57adc3f4da945c\", \"url\": \"https://www.hindustantimes.com/world-news/us-news/did-us-use-anthropics-claude-ai-in-iran-strikes-despite-trumps-ban-101772345758921.html\", \"title\": \"Did US use Anthropic's Claude AI in Iran strikes despite Trump's ban?\", \"excerpt\": \"The United States defense forces employed artificial intelligence created by Anthropic during the airstrikes on Iran, mere hours after US President Donald Trump instructed federal agencies to cease collaboration with the technology firm, reported The Wall Street Journal. The US defense forces utiliz\", \"publisher\": \"hindustantimes.com\", \"published\": \"2026-03-01 08:10:02\", \"partition\": \"from_2020_to_n"
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is tone defined, and does it differ by term?",
+    "args": {
+     "terms": [
+      "openai",
+      "anthropic",
+      "deepmind"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nthropic', 'deepmind']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['openai', 'anthropic', 'deepmind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "What is the overview and the source panel for the deepmind term?",
+    "args": {
+     "term": "deepmind"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 54.8,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"deepmind\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 4551, \"place\": 0, \"tagged_articles\": 8739, \"entity_labelled_articles\": 7717, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 11047, \"critical_articles\": 8688, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 14:26:54\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close every seri"
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.history",
+    "question": "How do trends look over a longer history?",
+    "args": {
+     "terms": [
+      "openai",
+      "anthropic",
+      "deepmind"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for historical_analysis\nsubject_phrases\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...nthropic', 'deepmind']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['openai', 'anthropic', 'deepmind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 67,
+   "traced": 66,
+   "derived": 16,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 122,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 377,
+  "charts": [
+   {
+    "id": "news-attention-unmeasured",
+    "title": "Monthly news attention for OpenAI, Anthropic, and Google DeepMind",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "OpenAI",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Anthropic",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     },
+     {
+      "name": "Google DeepMind",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_attention.csv",
+    "how": "estimate",
+    "rows": 3,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.compare",
+    "question": "How many unique news articles mention each organization in the same date window?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "window": "same start and end dates for all terms",
+     "deduplicate": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same start and end dates for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndeduplicate\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.trends",
+    "question": "What are the monthly article counts for each organization on one scale?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "interval": "month",
+     "window": "same start and end dates for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...d dates for all terms'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ninterval\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='month', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same start and end dates for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.compare",
+    "question": "What share of the combined unique article set mentions each organization, accounting for overlap?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "measure": "unique articles and overlap",
+     "window": "same start and end dates for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='unique articles and overlap', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same start and end dates for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "What tone labels apply to coverage of each organization, and what definitions support those labels?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "window": "same start and end dates for all terms",
+     "request_label_definitions": true
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_sentiment\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...bel_definitions': True}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same start and end dates for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nrequest_label_definitions\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.overview",
+    "question": "Which organization was most covered, and how many unique articles mentioned any of the three?",
+    "args": {
+     "terms": [
+      "OpenAI",
+      "Anthropic",
+      "Google DeepMind"
+     ],
+     "measure": "most_covered and combined_articles",
+     "window": "same start and end dates for all terms"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for prism_overview\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ...d dates for all terms'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['OpenAI', 'Anthropic', 'Google DeepMind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nmeasure\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='most_covered and combined_articles', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='same start and end dates for all terms', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 92,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 671,
+  "charts": [
+   {
+    "id": "monthly-news-attention",
+    "title": "Monthly news articles by matched term",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "OpenAI",
+      "how": "call",
+      "points": 23,
+      "traced_share": 1.0
+     },
+     {
+      "name": "Anthropic",
+      "how": "call",
+      "points": 23,
+      "traced_share": 1.0
+     },
+     {
+      "name": "DeepMind",
+      "how": "call",
+      "points": 23,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news-monthly.csv",
+    "how": "call",
+    "rows": 72,
+    "numeric_cells": 429,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.overview",
+    "question": "How much of each term’s attention comes from unambiguous organization mentions?",
+    "args": {
+     "term": "openai"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 74.2,
+    "sample": "{\"profile\": {\"available\": true, \"term\": \"openai\", \"type\": \"organization\", \"type_evidence\": {\"person\": 0, \"organization\": 166860, \"place\": 0, \"tagged_articles\": 246939, \"entity_labelled_articles\": 170211, \"how\": \"the entity array that names this term most often, judged against the articles that carry entity labels at all; 'topic' when no array does\"}, \"articles\": 255044, \"critical_articles\": 190992, \"first_seen\": \"2024-06-01 00:00:00\", \"last_seen\": \"2026-05-31 23:24:31\", \"window\": {\"from\": \"2024-06-01\", \"to\": \"2026-06-01\", \"to_is_exclusive\": true, \"censored_at\": \"2026-06-01\", \"why_censored\": \"news ingest lags publication; the newest month holds a fraction of a normal month and would close eve"
+   },
+   {
+    "id": "f2",
+    "feature": "news.geography",
+    "question": "Which outlets contribute most to attention for each organization?",
+    "args": {
+     "term": "anthropic"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 22660, \"share_pct\": 37.7, \"lift\": 1.6}, {\"label\": \"colombia\", \"articles\": 4937, \"share_pct\": 8.2, \"lift\": 16.9}, {\"label\": \"united kingdom\", \"articles\": 3730, \"share_pct\": 6.2, \"lift\": 1.2}, {\"label\": \"india\", \"articles\": 3489, \"share_pct\": 5.8, \"lift\": 0.9}, {\"label\": \"china\", \"articles\": 3293, \"share_pct\": 5.5, \"lift\": 1.1}, {\"label\": \"iran\", \"articles\": 1458, \"share_pct\": 2.4, \"lift\": 0.8}, {\"label\": \"australia\", \"articles\": 1327, \"share_pct\": 2.2, \"lift\": 0.5}, {\"label\": \"france\", \"articles\": 1282, \"share_pct\": 2.1, \"lift\": 1.2}, {\"label\": \"canada\", \"articles\": 1182, \"share_pct\": 2.0, \"lift\": 0.6}, {\"label\": \"japan\", \"a"
+   },
+   {
+    "id": "f3",
+    "feature": "news.critical",
+    "question": "What stories drove the February 2026 attention spike for Anthropic?",
+    "args": {
+     "term": "anthropic",
+     "since": "2026-02-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-02-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.sentiment",
+    "question": "How is tone classified, and what are the underlying sentiment counts for DeepMind?",
+    "args": {
+     "term": "deepmind",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 90, \"positive\": 237, \"neutral\": 1, \"ratio\": 0.38}, {\"period\": \"2024-07-01\", \"negative\": 52, \"positive\": 310, \"neutral\": 3, \"ratio\": 0.17}, {\"period\": \"2024-08-01\", \"negative\": 56, \"positive\": 471, \"neutral\": 1, \"ratio\": 0.12}, {\"period\": \"2024-09-01\", \"negative\": 17, \"positive\": 152, \"neutral\": 0, \"ratio\": 0.11}, {\"period\": \"2024-10-01\", \"negative\": 37, \"positive\": 487, \"neutral\": 0, \"ratio\": 0.08}, {\"period\": \"2024-11-01\", \"negative\": 36, \"positive\": 198, \"neutral\": 0, \"ratio\": 0.18}, {\"period\": \"2024-12-01\", \"negative\": 42, \"positive\": 427, \"neutral\": 0, \"ratio\": 0.1}, {\"period\": \"2025-01-01\", \"negative\": 27, \"positive\": 266, \"neutral\": 3, \""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How many unique articles mention more than one of these organizations?",
+    "args": {
+     "terms": [
+      "openai",
+      "anthropic",
+      "deepmind"
+     ],
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.2,
+    "sample": "{\"terms\": [\"openai\", \"anthropic\", \"deepmind\"], \"rows\": [{\"term\": \"openai\", \"articles\": 255044, \"share_pct\": 75.8, \"critical\": 190992, \"direction\": \"rising\", \"growth\": 2.06, \"tone_ratio\": 0.39, \"vs_baseline\": 0.67, \"points\": [{\"period\": \"2024-06-01\", \"articles\": 7522, \"critical\": 5476, \"negative\": 2081, \"positive\": 5373, \"mean_priority\": 7.04, \"critical_pct\": 72.8, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 5421, \"critical\": 3901, \"negative\": 1183, \"positive\": 4178, \"mean_priority\": 7.02, \"critical_pct\": 72.0, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 5486, \"critical\": 3986, \"negative\": 1450, \"positive\": 3990, \"mean_priority\": 6.97, \"critical_pct\": 72."
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "What are the fully ingested monthly counts after April 2026?",
+    "args": {
+     "terms": [
+      "openai",
+      "anthropic",
+      "deepmind"
+     ],
+     "since": "2026-05-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'terms': ... 'since': '2026-05-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterms\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['openai', 'anthropic', 'deepmind'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 26,
+   "traced": 25,
+   "derived": 3,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

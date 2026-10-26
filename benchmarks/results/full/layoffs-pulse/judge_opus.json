@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 0
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Two recalled Layoffs.fyi annual totals are labelled est. They measure layoffs, not coverage.",
+    "comparison": "The 2024 vs 2023 ratio comes from memory and is about layoffs, not coverage tone. It is off-question.",
+    "chart": "An honest estimate-labelled memory chart earns exactly 1.",
+    "drilldown": "Layers are named but empty. Only 1 of 6 follow-ups executed ok.",
+    "export": "The table is labelled estimate.",
+    "repro": "Every number is memory-labelled.",
+    "refs": "Layoffs.fyi resolves, but no claim-level support is checkable.",
+    "accuracy": "Nothing contradicts the reference, and memory figures are flagged.",
+    "limits": "It is specific about what is unmeasured, including the 22-month gap.",
+    "verdict": "Honest scoping verdict with decision, confidence and what would change it. A memory-only deliverable cannot score higher.",
+    "facets": "Facets are answered from memory or not at all."
+   },
+   "B": {
+    "trend": "The series is traced, but the chart JSON is malformed (the points array is never closed). The ceiling is 1.",
+    "comparison": "1.13 vs a defined 0.58 baseline, with delta 0.55 and 1.95x, all traced. It does not address the tech-vs-labour-data contrast.",
+    "chart": "The chart block is malformed and does not parse.",
+    "drilldown": "There is a traced country layer but no item level. Only 1 of 5 follow-ups returned ok.",
+    "export": "Monthly and country CSVs are traced, with provenance and coverage flags, and referenced from the prose.",
+    "repro": "34 of 34 numbers traced. The call is listed with args, window and capture date.",
+    "refs": "No news items with url. It honestly reports the critical panel as empty.",
+    "accuracy": "Fields are read correctly and the sports noise is flagged. It does not catch the May enrichment collapse.",
+    "limits": "Censoring, the 144-day gap, mention match mode and differing denominators all sit next to the numbers. It misses the enrichment bound.",
+    "verdict": "Direct answer with decision, medium confidence and its reason, and what would change it. Consistent with the data.",
+    "facets": "All facets are covered with grounded values or a grounded no-data."
+   },
+   "C": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "The chart block has an empty series.",
+    "drilldown": "Generic follow-ups with placeholder args. 0 of 6 executed.",
+    "export": "None.",
+    "repro": "No numbers, nothing to regenerate.",
+    "refs": "None.",
+    "accuracy": "No contradictions, because it makes no claims.",
+    "limits": "General statements only. It cannot state a window.",
+    "verdict": "An honest refusal that answers nothing.",
+    "facets": "No facets answered."
+   },
+   "D": {
+    "trend": "Traced series with window, CAGR 102%, peak, and early/late thirds. It is decomposed into a critical trend (1.91x vs 1.61x). 'Roughly doubled' is loose wording.",
+    "comparison": "Baseline defined, with delta and ratio traced and a monthly ratio range. It does not address the tech-vs-labour-data question.",
+    "chart": "Two fully traced charts, volume and critical share, each with window, unit and source. Tone ratio is not charted.",
+    "drilldown": "Month and country layers are traced, and 4 of 6 follow-ups are ok. There is no item-level (headline) layer.",
+    "export": "Two traced CSVs with provenance JSON and coverage flags. The window is matched to the enrichment bound.",
+    "repro": "76 of 76 numbers traced. A call recipe with window and capture date is included.",
+    "refs": "No news items with url. It honestly reports the critical panel as empty.",
+    "accuracy": "Everything is correct, and 44.2% recomputes. It catches the sports contamination, the Puerto Rico acronym row and the May enrichment collapse.",
+    "limits": "Window, the 145-day gap, enrichment lag, match mode and denominators are all placed next to the numbers. It names a re-run that would close the gap.",
+    "verdict": "Solid and well-bounded, but held at the ceiling of 3.",
+    "facets": "All facets are covered, including the grounded no-data for employers and headlines. It does not address the tech-vs-labour-data mismatch."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "prism-chart JSON malformed (points array not closed)"
+   ],
+   "C": [],
+   "D": []
+  },
+  "best": "D",
+  "verdict": "D and B both measured the same corpus correctly. D went further: it decomposed volume into critical share and caught the sports contamination of the 'layoffs' match. It also caught the acronym collision and the May 2026 enrichment collapse, and it shipped valid charts and a full regenerate recipe. B was accurate and well caveated, but its chart is malformed and it is thinner on drill-down. A and C had no data. A offered off-question layoff totals from memory, honestly labelled; C declined entirely."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 1,
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 0
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

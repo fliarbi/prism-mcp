@@ -1,0 +1,184 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Index from memory, honestly labelled as an estimate.",
+    "comparison": "Expected tone direction only, with no measurement.",
+    "chart": "Chart labelled as an estimate, so it earns exactly 1.",
+    "drilldown": "No breakdown layer. Only 2 of 6 follow-ups executed.",
+    "export": "Milestones table labelled as an estimate.",
+    "repro": "Every number is labelled memory or estimate.",
+    "refs": "3 DOIs resolve and each is tied to a claim with year and venue. No quotes.",
+    "accuracy": "Recalled facts are correct (77% of 22 donors, NEJM 2024, Nature Medicine 2025, INC talks). Nothing is presented as measured.",
+    "limits": "Specific about what is unmeasured and about the gap to today.",
+    "verdict": "Full structure with an honest low confidence, but the answer is unmeasured.",
+    "facets": "Facets are answered from memory or marked unanswerable."
+   },
+   "B": {
+    "trend": "Full series with window. Peak 1,547 in 2025-03, CAGR 2.3% and 1.27x are stated. No critical/total decomposition.",
+    "comparison": "Ratio 0.87 vs 0.58, delta 0.29, 1.5x, with the baseline caveated.",
+    "chart": "Volume chart traces fully, but tone is not charted although it was asked.",
+    "drilldown": "Panels are listed as one layer with no items. Only 2 of 4 follow-ups executed.",
+    "export": "Monthly and sentiment CSVs with provenance block. No critical column and no row identifiers beyond period.",
+    "repro": "33 of 33 numbers traced. The call is listed with args, window and capture date.",
+    "refs": "No news items or documents are cited.",
+    "accuracy": "No contradictions. The 144-day gap is correct.",
+    "limits": "Window, censoring, gap, enrichment bound, match mode and sampled publishers are covered, mostly in the limits section.",
+    "verdict": "Answer, decision, confidence and what would change it are all present and consistent. The cause of the spike goes unaddressed.",
+    "facets": "Most facets are grounded, including empty critical headlines. The spike driver and human-tissue link are not explored."
+   },
+   "C": {
+    "trend": "Full series with critical decomposition (8.8% CAGR, 1.29x, critical share 78.5% to 88.3%). However, the claim that the March 2025 outlier 'inflates both' is wrong: the peak sits in the middle third and is not an endpoint.",
+    "comparison": "Delta +0.29, 1.5x, baseline defined.",
+    "chart": "Volume chart traces fully. Tone and critical split appear only in the CSV, not in a chart.",
+    "drilldown": "One traced layer plus two news items with URLs. Only 1 of 6 follow-ups executed.",
+    "export": "Monthly CSV with critical, negative and positive columns plus provenance. Single table.",
+    "repro": "67 of 67 numbers traced. Call and window are listed.",
+    "refs": "News items carry date, publisher and URL. No research DOIs.",
+    "accuracy": "Catches entity noise (Carl Linnaeus, 'technical support'), the undefined 'critical' flag and the enrichment lag. One misreading about what the outlier inflates.",
+    "limits": "Window, 145-day gap, match modes, May 4% labelled, syndication and the undefined critical flag are stated and read.",
+    "verdict": "Direct, bounded and consistent, and it names what would change it.",
+    "facets": "Most facets are grounded. The cause of the spike is honestly marked unanswerable."
+   },
+   "D": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Follow-ups carry placeholder args. None of 6 executed.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, no contradictions.",
+    "limits": "Says what it cannot measure, but generically.",
+    "verdict": "Qualitative answer with no support.",
+    "facets": "Nothing grounded."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Claims the 2025-03 outlier inflates CAGR and the late/early ratio. It sits in the middle third and is not an endpoint, so it affects neither."
+   ],
+   "D": []
+  },
+  "best": "C",
+  "verdict": "B and C both traced the full monthly series, the 2025-03 peak and the 1.5x negativity versus baseline. C went further with the critical-versus-total decomposition, news items with URLs, and caught anomalies such as noisy entity labels and the undefined 'critical' flag, though it mis-stated what the March outlier inflates. A was an honest memory answer with real DOIs but measured nothing, and D was an honest blank."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

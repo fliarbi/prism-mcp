@@ -1,0 +1,85 @@
+{
+ "slug": "improve-screen-time",
+ "captured_at": "2026-10-23T00:20:45+0530",
+ "calls": [
+  {
+   "tool": "improve_claim",
+   "feature": "research.improve",
+   "args": {
+    "claim": "Screen time causes ADHD in children"
+   },
+   "seconds": 48.4,
+   "response": {
+    "ok": true,
+    "feature": "research.improve",
+    "subject": {
+     "claim": "Screen time causes ADHD in children"
+    },
+    "data": {
+     "verdict": "overstated",
+     "assessment": "The claim asserts causation, but evidence only shows association and mixed findings; no direct causal evidence is provided.",
+     "options": [
+      {
+       "text": "Screen time is associated with ADHD in children",
+       "why": "Reflects the observed association without implying causation."
+      },
+      {
+       "text": "Screen time has been linked to ADHD symptoms in children",
+       "why": "Indicates a connection while acknowledging that the evidence is not definitive for causation."
+      },
+      {
+       "text": "Evidence suggests screen time may be related to ADHD in children",
+       "why": "Conveys the tentative nature of the relationship given mixed and qualifying evidence."
+      }
+     ],
+     "rejected_options": [],
+     "based_on": {
+      "documents_read": {
+       "supports": 0,
+       "contradicts": 0,
+       "qualifies": 0,
+       "unrelated": 10,
+       "unread": 1
+      },
+      "corpus_mix": {
+       "supporting": 428,
+       "qualifying": 820,
+       "contradicting": 62,
+       "neutral": 1314
+      },
+      "lane": "subject",
+      "lane_note": "only 0 papers cover both sides of this claim, so the evidence below is about media consumption, screen time exposure alone and does not establish the connection the claim asserts"
+     }
+    },
+    "window": {},
+    "meta": {
+     "seconds": 48.4
+    }
+   }
+  },
+  {
+   "tool": "evidence_card",
+   "feature": "research.evidence_card",
+   "args": {
+    "claim": "Screen time causes ADHD in children"
+   },
+   "seconds": 0.0,
+   "response": {
+    "ok": false,
+    "feature": "research.evidence_card",
+    "subject": {},
+    "data": null,
+    "window": {},
+    "error": {
+     "kind": "no_data",
+     "reason": "11 documents were read and none speaks to this claim as written"
+    },
+    "meta": {
+     "lane": "subject",
+     "lane_note": "only 0 papers cover both sides of this claim, so the evidence below is about media consumption, screen time exposure alone and does not establish the connection the claim asserts",
+     "seconds": 0.0
+    }
+   }
+  }
+ ]
+}

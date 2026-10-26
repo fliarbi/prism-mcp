@@ -1,0 +1,222 @@
+{
+ "slug": "audit-coffee-draft",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.0,
+    "accuracy": 1.5,
+    "limits": 3.5,
+    "verdict": 0.0,
+    "facets": 1.0
+   },
+   "strict": 18.1,
+   "plain": 18.1,
+   "invented": true,
+   "by_judge": {
+    "opus": 18.6,
+    "gpt": 17.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 3.5,
+    "export": 2.5,
+    "repro": 2.5,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 58.0,
+   "plain": 58.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 55.9,
+    "gpt": 60.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 0.0,
+    "refs": 1.5,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 33.3,
+   "plain": 33.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 28.2,
+    "gpt": 38.3
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 4.0,
+    "repro": 4.5,
+    "refs": 4.0,
+    "accuracy": 3.5,
+    "limits": 4.5,
+    "verdict": 4.5,
+    "facets": 4.0
+   },
+   "strict": 67.7,
+   "plain": 67.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 55.7,
+    "gpt": 79.8
+   }
+  }
+ },
+ "judge_mad": 0.61,
+ "verdicts": {
+  "opus": "A and B both grounded the fact-check in the audit. B went further: it drilled into the documents behind every claim, separated verified from unverified quotes, and gave a decisive rewrite. A had cleaner replay provenance but misreported the reference's Parkinson's/diabetes tally. C and D answered from memory; C added fabricated-looking DOIs and D had too few identifiers to check.",
+  "gpt": "D is the strongest decision aid: its figures, export, and citations trace to the supplied audit, and it explains what the retrieval counts do and do not establish. A offers more proposed next steps, but its unverified quotes and partly ungrounded interpretations weaken confidence; B and C rely on memory or estimates, and B adds unresolved identifiers and an untagged number."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Says Prism gave no deep-read tally for the Parkinson's/diabetes claim; the reference has supports 0, contradicts 1, unrelated 10, unread 1.",
+    "Presents ungrounded r1/r2 snippets without flagging them as unverified."
+   ],
+   "claude_prism": [
+    "CSV coverage=full for a literal, partial title screen.",
+    "c1 args omit the audited text, so the call cannot be replayed."
+   ],
+   "claude_bare": [
+    "DOI 10.2337/dc13-2487 attached to a mixed-up Ding title; DOI 10.3945/ajcn.110.008060 not found.",
+    "Untagged number 50 in the verdict."
+   ],
+   "chatgpt_bare": [
+    "States the gap to today is zero days despite answering from memory."
+   ]
+  },
+  "gpt": {
+   "claude_prism": [
+    "The heart-disease and diabetes interpretations rely partly on ungrounded or unverified evidence; the report labels that uncertainty but still makes firm editorial recommendations."
+   ],
+   "claude_bare": [
+    "Calls the draft five claims, while the reference audit extracted four.",
+    "Presents estimated heart-disease effect sizes and a supported blood-pressure conclusion without traced evidence.",
+    "Two listed DOIs do not resolve in the corpus."
+   ],
+   "chatgpt_bare": [
+    "Counts five claims rather than the four extracted by the reference audit.",
+    "Cites three papers without identifiers, limiting source verification."
+   ],
+   "chatgpt_prism": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "chart": "No chart; ceiling 0.",
+    "drilldown": "Ceiling 1: 0/5 follow-ups returned on-topic data.",
+    "export": "One traced CSV with provenance and a JSON block. The window is unknown and only the claims table is given, not a documents table. The Parkinson's/diabetes tally cells are left blank even though the reference has that tally.",
+    "repro": "25/25 numbers traced and c1 is listed with full args. There is no full regenerate coverage for the documents layer.",
+    "refs": "5/5 DOIs resolve, each tied to a claim with a tier. The r1 and r2 quotes come from ungrounded, unverified deep reads but are presented as 'surfaced snippets' without that flag.",
+    "accuracy": "States that the response gives no deep-read tally for the Parkinson's/diabetes claim. The reference has one (0/1/0/10/1).",
+    "limits": "Places the literal title-matching, unread documents and missing window next to the numbers they bound.",
+    "verdict": "Gives answer, decision, confidence with reason and what would change it. It is somewhat soft on the clearly false 'cures' claim.",
+    "facets": "All four claims are covered with grounded counts, plus citation coverage. The Parkinson's tally is missed."
+   },
+   "claude_prism": {
+    "chart": "No chart; ceiling 0.",
+    "drilldown": "Two traced layers (claim, then documents with DOIs and quotes). 3/6 follow-ups ok. r7 has no identifier.",
+    "export": "Single CSV marked coverage=full, which is wrong for a literal partial screen. The provenance JSON drops the text arg.",
+    "repro": "Ceiling 3. c1 is listed with args {deep:3} only, without the audited text, so replay is not possible as listed.",
+    "refs": "9/9 DOIs resolve. Each is tied to a claim with a tier. Verified and claimed quotes are distinguished, and contrary sources are included.",
+    "accuracy": "Fields are read correctly (ungrounded counts, proposed stances, all three tallies) and background knowledge is labelled est. The coverage=full flag is a misreading.",
+    "limits": "Ceiling 3. Limits are mostly in a footer list.",
+    "verdict": "Direct, decisive answer with decision, confidence reason and what would change it. Notes that the blood-pressure claim was not assessable.",
+    "facets": "All claims, all deep-read tallies and citation coverage are grounded."
+   },
+   "claude_bare": {
+    "chart": "No chart.",
+    "drilldown": "Breakdown from memory, labelled as such.",
+    "export": "Estimate-labelled table.",
+    "repro": "Ceiling 0. Numbers come from memory.",
+    "refs": "Two DOIs not found. dc13-2487 is attached to a garbled Ding title.",
+    "accuracy": "Fabricated-looking identifiers, although they are hedged.",
+    "limits": "States the knowledge cutoff and gap, and names what is unmeasured.",
+    "verdict": "Ceiling 0. The verdict contains an untagged number.",
+    "facets": "Answered from memory."
+   },
+   "chatgpt_bare": {
+    "chart": "No chart.",
+    "drilldown": "Generic qualitative description; 0/5 follow-ups ok.",
+    "export": "Estimate-labelled table.",
+    "repro": "Ceiling 0.",
+    "refs": "Only 1 of 4 references carries a resolvable identifier.",
+    "accuracy": "No fabricated specifics; the assessments are reasonable.",
+    "limits": "Claims a zero-day gap to today, which misstates the currency of memory-based knowledge.",
+    "verdict": "Clear answer and decision, but not supported by traced numbers.",
+    "facets": "Answered from memory."
+   }
+  },
+  "gpt": {
+   "claude_prism": {
+    "chart": "No chart is included.",
+    "drilldown": "Shows claims and paper layers with identifiers, but only half of proposed follow-ups executed successfully.",
+    "export": "The traced audit CSV is referenced and has provenance attributes, though its window is unknown.",
+    "repro": "Most numbers trace, but 23 of 28 do; one is untagged and calls do not reproduce every numeric claim.",
+    "refs": "Identifiers resolve and claims are tied to sources, but several quotes are explicitly unverified.",
+    "accuracy": "Mostly distinguishes coverage from truth and flags ungrounded reads; some interpretations go beyond the supplied record.",
+    "limits": "States literal matching, sampling, missing window, and unmeasured citation coverage, but misses applicable limits.",
+    "verdict": "Gives a clear publication decision, confidence, reason, and next evidence needed; contrary evidence is discussed in the report.",
+    "facets": "Covers the main claims, but not all implied comparison and corpus-facet questions."
+   },
+   "claude_bare": {
+    "chart": "No chart is included.",
+    "drilldown": "Breakdowns are qualitative and generic; only one of five follow-ups executed successfully.",
+    "export": "The estimate CSV is honestly labeled, which earns the memory-table anchor.",
+    "repro": "Numbers are untraced and the calls lack reproducible results; the verdict also contains an untagged 50.",
+    "refs": "Two of five DOIs fail corpus resolution, triggering the fabricated-identifier cap.",
+    "accuracy": "Contradicts the record’s four-claim extraction and presents unsupported effect-size and blood-pressure conclusions.",
+    "limits": "Clearly labels recall, cutoff, partial coverage, and unavailable measurements, though it does not bound every specific assertion in place.",
+    "verdict": "The script ceiling is zero because the verdict contains an invented, untagged number.",
+    "facets": "Most assessments are memory claims; grounded measured facets are absent."
+   },
+   "chatgpt_bare": {
+    "chart": "No chart is included.",
+    "drilldown": "No traced breakdown or successful executable follow-up is provided.",
+    "export": "The qualitative CSV is labeled an estimate, earning the memory-table anchor.",
+    "repro": "No numeric claims trace and no usable replay recipe is supplied.",
+    "refs": "Most references lack resolvable identifiers or quotes; the supplied citation has incomplete support fields.",
+    "accuracy": "The qualitative cautions are sensible, but the manual five-claim count differs from the record’s four extracted claims.",
+    "limits": "Explicitly states no search, window, or full-text review and separates interpretation from measurement.",
+    "verdict": "Gives a direct publication decision, confidence, and what evidence could change it; contrary evidence is acknowledged.",
+    "facets": "Addresses the core editorial claims but supplies no grounded database facets."
+   },
+   "chatgpt_prism": {
+    "chart": "No chart is included.",
+    "drilldown": "The report has a traced breakdown but none of its five follow-up calls executed successfully.",
+    "export": "The CSV and provenance JSON include traced values, identifiers, source call, window, coverage, and capture date.",
+    "repro": "All numbers trace and the listed call and capture date allow the output to be regenerated.",
+    "refs": "All identifiers resolve, sources are tied to claims, and quoted snippets are supported; contrary and irrelevant evidence are identified.",
+    "accuracy": "Reads the audit fields correctly, distinguishes retrieval counts from evidence votes, and catches unrelated and unread items.",
+    "limits": "Places window, lane, literal matching, reachability, and unread or unrelated evidence limits alongside the claims they constrain.",
+    "verdict": "Direct decision, confidence, reasons, conditions, and contrary evidence are consistent with the audit’s limits.",
+    "facets": "Covers the main claims and data limits, but not all implied brand-versus-class, overlap, seasonality, and research-versus-news facets."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

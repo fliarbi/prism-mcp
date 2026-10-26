@@ -1,0 +1,342 @@
+{
+ "slug": "citations-exercise-depression",
+ "captured_at": "2026-10-22T23:14:07+0530",
+ "calls": [
+  {
+   "tool": "get_citations",
+   "feature": "research.citations",
+   "args": {
+    "claim": "Exercise reduces depression symptoms",
+    "style": "vancouver",
+    "limit": 8
+   },
+   "seconds": 297.6,
+   "response": {
+    "ok": true,
+    "feature": "research.citations",
+    "subject": {
+     "claim": "Exercise reduces depression symptoms"
+    },
+    "data": {
+     "style": "vancouver",
+     "entries": [
+      {
+       "n": 1,
+       "id": "pubmed:40124408",
+       "citation": "Zhao X, Oh S, Zhang Z, Wang C. Move your body, stay away from depression: a systematic review and meta-analysis of exercise-based prevention of depression in middle-aged and older adults. Frontiers in public health. 2025. https://doi.org/10.3389/fpubh.2025.1554195",
+       "url": "https://doi.org/10.3389/fpubh.2025.1554195",
+       "tier": "meta_analysis",
+       "strength": "very_high"
+      }
+     ],
+     "inline_markers": [
+      {
+       "n": 1,
+       "id": "pubmed:40124408",
+       "inline": "[1]"
+      }
+     ],
+     "styles_available": [
+      "apa",
+      "vancouver",
+      "harvard",
+      "mla",
+      "chicago",
+      "bibtex",
+      "inline_link",
+      "footnote",
+      "numbered",
+      "source_card",
+      "wordpress"
+     ],
+     "rendered": [
+      {
+       "id": "pubmed:40124408",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "stance": "qualifies",
+       "citation": "Zhao X, Oh S, Zhang Z, Wang C. Move your body, stay away from depression: a systematic review and meta-analysis of exercise-based prevention of depression in middle-aged and older adults. Frontiers in public health. 2025. https://doi.org/10.3389/fpubh.2025.1554195"
+      }
+     ]
+    },
+    "window": {
+     "period": {
+      "corpora": {}
+     }
+    },
+    "meta": {
+     "coverage": {
+      "tables": {
+       "research_typed": {
+        "corpus": "research_typed",
+        "rows": 105553750,
+        "expected": 98602364,
+        "pct": 107.0,
+        "partial": false,
+        "checked_at": 1792691026.2367327,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "research": {
+        "corpus": "research",
+        "rows": 401173762,
+        "expected": 384832354,
+        "pct": 104.2,
+        "partial": false,
+        "checked_at": 1792691026.256444,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "pubmed": {
+        "corpus": "pubmed",
+        "rows": 40957072,
+        "expected": 40957072,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792691026.4441278,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       },
+       "disease_factors": {
+        "corpus": "disease_factors",
+        "rows": 55545265,
+        "expected": 55545265,
+        "pct": 100.0,
+        "partial": false,
+        "checked_at": 1792691030.2280445,
+        "age_seconds": 0,
+        "expires_in_seconds": 30.0,
+        "strict_shard_read": true,
+        "completeness": "reachability and historical row floor, not an ingest completeness proof"
+       }
+      },
+      "partial": false,
+      "note": "all listed tables passed strict index partition reads and historical row floors"
+     },
+     "seconds": 297.6
+    }
+   }
+  },
+  {
+   "tool": "rank_sources",
+   "feature": "research.source_ranking",
+   "args": {
+    "claim": "Exercise reduces depression symptoms",
+    "limit": 8
+   },
+   "seconds": 17.5,
+   "response": {
+    "ok": true,
+    "feature": "research.source_ranking",
+    "subject": {
+     "claim": "Exercise reduces depression symptoms"
+    },
+    "data": {
+     "sources": [
+      {
+       "rank": 1,
+       "title": "Effects of physical activity on depressive symptoms during breast cancer survivorship: a meta-analysis of randomised control trials",
+       "year": 2017,
+       "venue": "ESMO Open",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 89,
+       "doi": "10.1136/esmoopen-2017-000271",
+       "url": "https://doi.org/10.1136/esmoopen-2017-000271",
+       "source": "research",
+       "type": "article"
+      },
+      {
+       "rank": 2,
+       "title": "Does aerobic exercise reduce postpartum depressive symptoms? a systematic review and meta-analysis",
+       "year": 2017,
+       "venue": "British Journal of General Practice",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 88,
+       "doi": "10.3399/bjgp17x692525",
+       "url": "https://doi.org/10.3399/bjgp17x692525",
+       "source": "research",
+       "type": "review"
+      },
+      {
+       "rank": 3,
+       "title": "The association between accelerometer-measured physical activity and symptoms of depression and anxiety in children and adolescents: a systematic review and meta-analysis.",
+       "year": 2025,
+       "venue": "BMC pediatrics",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 0,
+       "doi": "10.1186/s12887-025-06420-y",
+       "url": "https://doi.org/10.1186/s12887-025-06420-y",
+       "source": "pubmed",
+       "type": "Journal Article, Systematic Review, Meta-Analysis"
+      },
+      {
+       "rank": 4,
+       "title": "Effect of exercise on mental health and alcohol consumption in individuals with alcohol use disorder: a systematic review and meta-analysis.",
+       "year": 2025,
+       "venue": "BMJ open",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 0,
+       "doi": "10.1136/bmjopen-2025-102622",
+       "url": "https://doi.org/10.1136/bmjopen-2025-102622",
+       "source": "pubmed",
+       "type": "Journal Article, Systematic Review, Meta-Analysis"
+      },
+      {
+       "rank": 5,
+       "title": "Effects of exercise on psychological distress in patients with COPD: A systematic review and meta-analysis of randomised controlled trials.",
+       "year": 2025,
+       "venue": "Medicine",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 0,
+       "doi": "10.1097/MD.0000000000044026",
+       "url": "https://doi.org/10.1097/MD.0000000000044026",
+       "source": "pubmed",
+       "type": "Journal Article, Systematic Review, Meta-Analysis"
+      },
+      {
+       "rank": 6,
+       "title": "Impact of aerobic exercise on cardiovascular and mental health in postmenopausal women: a systematic review and meta-analysis.",
+       "year": 2025,
+       "venue": "Menopause (New York, N.Y.)",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 0,
+       "doi": "10.1097/GME.0000000000002552",
+       "url": "https://doi.org/10.1097/GME.0000000000002552",
+       "source": "pubmed",
+       "type": "Journal Article, Systematic Review, Meta-Analysis"
+      },
+      {
+       "rank": 7,
+       "title": "Effects of Exercise on Depression and Anxiety in Lung Cancer Survivors: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+       "year": 2025,
+       "venue": "Current oncology (Toronto, Ont.)",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 0,
+       "doi": "10.3390/curroncol32060304",
+       "url": "https://doi.org/10.3390/curroncol32060304",
+       "source": "pubmed",
+       "type": "Journal Article, Systematic Review, Meta-Analysis"
+      },
+      {
+       "rank": 8,
+       "title": "Move your body, stay away from depression: a systematic review and meta-analysis of exercise-based prevention of depression in middle-aged and older adults.",
+       "year": 2025,
+       "venue": "Frontiers in public health",
+       "tier": "meta_analysis",
+       "strength": "very_high",
+       "why_tier": "pools multiple studies and reports a combined estimate",
+       "cited_by": 0,
+       "doi": "10.3389/fpubh.2025.1554195",
+       "url": "https://doi.org/10.3389/fpubh.2025.1554195",
+       "source": "pubmed",
+       "type": "Journal Article, Systematic Review, Meta-Analysis"
+      }
+     ],
+     "by_tier": {
+      "meta_analysis": 9,
+      "trial": 5,
+      "review": 5,
+      "article": 5
+     },
+     "ladder": {
+      "meta_analysis": {
+       "rank": 6,
+       "strength": "very_high",
+       "why": "pools multiple studies and reports a combined estimate"
+      },
+      "guideline": {
+       "rank": 6,
+       "strength": "very_high",
+       "why": "a body reviewing the whole evidence base issued a recommendation"
+      },
+      "trial": {
+       "rank": 5,
+       "strength": "high",
+       "why": "randomised or controlled — the design that can establish an effect"
+      },
+      "observational": {
+       "rank": 4,
+       "strength": "moderate",
+       "why": "measures association in a real population; confounding is possible"
+      },
+      "review": {
+       "rank": 4,
+       "strength": "moderate",
+       "why": "summarises a field rather than adding a measurement"
+      },
+      "empirical": {
+       "rank": 3,
+       "strength": "moderate",
+       "why": "reports its own measurements"
+      },
+      "methodological": {
+       "rank": 3,
+       "strength": "low",
+       "why": "proposes a method rather than a finding about the world"
+      },
+      "theoretical": {
+       "rank": 2,
+       "strength": "low",
+       "why": "argues from theory rather than from data"
+      },
+      "preprint": {
+       "rank": 2,
+       "strength": "low",
+       "why": "not yet peer reviewed"
+      },
+      "case_report": {
+       "rank": 2,
+       "strength": "low",
+       "why": "one case; cannot support a general claim"
+      },
+      "commentary": {
+       "rank": 1,
+       "strength": "very_low",
+       "why": "opinion, letter or editorial"
+      },
+      "news": {
+       "rank": 1,
+       "strength": "very_low",
+       "why": "journalism about research, not research"
+      },
+      "patent": {
+       "rank": 1,
+       "strength": "very_low",
+       "why": "evidence that somebody is building it, not that it works"
+      },
+      "article": {
+       "rank": 3,
+       "strength": "moderate",
+       "why": "peer-reviewed research article"
+      }
+     }
+    },
+    "window": {},
+    "meta": {
+     "lane": "intersection",
+     "seconds": 17.5
+    }
+   }
+  }
+ ]
+}

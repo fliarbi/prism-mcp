@@ -1,0 +1,244 @@
+{
+ "slug": "mental-health-teens-social-media",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 1.5
+   },
+   "strict": 35.3,
+   "plain": 35.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 36.6,
+    "gpt": 34.0
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 3.5,
+    "repro": 4.0,
+    "refs": 4.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 73.2,
+   "plain": 73.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.8,
+    "gpt": 72.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.5
+   },
+   "strict": 27.7,
+   "plain": 27.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 23.4,
+    "gpt": 32.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 3.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 4.5,
+    "accuracy": 4.0,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 3.5
+   },
+   "strict": 71.4,
+   "plain": 71.4,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.6,
+    "gpt": 75.2
+   }
+  }
+ },
+ "judge_mad": 0.43,
+ "verdicts": {
+  "opus": "C and D both grounded their answers in the recorded evidence: the r=.11 meta-analysis, the inconclusive 2025 review and the traced research series. C went further, quantifying growth, comparing stance counts exactly, contrasting media framing with evidence, and catching tool anomalies, and it set a calibrated low confidence. A and B gave sensible memory-based verdicts but no measurable or traceable data, and A also carried a mismatched DOI.",
+  "gpt": "A best balances a decision-ready answer with traceable study evidence, a clearly defined small association, and an explicit account of contradictory versus qualifying evidence. B is the most complete corpus dashboard, but it overreads framing counts and mishandles the censored endpoint; C and D are candid about memory or missing data, yet provide much less grounded evidence."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [
+    "r3 DOI 10.1038/s41562-020-0836-0 does not match Beyens et al. (Scientific Reports 2020)"
+   ],
+   "claude_bare": [
+    "Twenge reference title, venue and year conflated (2018/2020)"
+   ],
+   "claude_prism": [
+    "Says neutral is the baseline but computes ratios to contradicting",
+    "'About 10 months unobserved' censoring statement is muddled"
+   ],
+   "chatgpt_prism": []
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The 2025 research point is censored for ingest lag, but the deliverable includes it as a normal endpoint and does not state the caveat that this newest period is excluded from trend interpretation.",
+    "The report says the counter-evidence review is a contradiction while the broader evidence tally has zero contradicting papers; it notes the classification difference, but the underlying review is not a direct null outcome study."
+   ],
+   "claude_prism": [
+    "The research trend uses 2025 as a complete endpoint without carrying the source's ingest-lag censoring caveat into the chart or reading.",
+    "The stance-label imbalance is used to suggest the character of disagreement, although framing labels do not establish a field consensus about harm."
+   ],
+   "chatgpt_bare": [
+    "DOI 10.1038/s41562-020-0836-0 is reported as the Beyens study, but the identifier does not resolve to the cited work."
+   ],
+   "claude_bare": [
+    "The NSDUH prevalence series and approximate values are memory estimates, not a traced social-media-use series; the accompanying claim that the trend is consistent with a social media effect is not established by the chart.",
+    "The claim that harm is concentrated in girls, early adolescents, and heavy or problematic users is presented without traceable support in this deliverable."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series and no direction asserted.",
+    "comparison": "Explicitly declines to compare.",
+    "chart": "No chart block.",
+    "drilldown": "Names three cited layers with no values. Follow-up calls are generic; only 1/5 returned data.",
+    "export": "No CSV.",
+    "repro": "Contains no numbers; the evidence rests on memory citations.",
+    "refs": "The r3 DOI 10.1038/s41562-020-0836-0 does not match Beyens et al., Scientific Reports, 2020. One fabricated identifier caps refs at 1.",
+    "accuracy": "The substantive claims are sound. The mismatched DOI is presented as fact.",
+    "limits": "Specific about what is unmeasured (no corpus, windows, lanes or counts) and separates interpretation from measurement.",
+    "verdict": "Gives an answer, decision, confidence and what would change it. No numbers support it, and the contrary evidence is cited only thinly.",
+    "facets": "Facets are answered from memory only."
+   },
+   "claude_bare": {
+    "trend": "Memory NSDUH series labelled estimate. The values are plausible but unverified.",
+    "comparison": "Numeric memory comparison. It correctly notes that variance explained and relative risk are not on one scale.",
+    "chart": "Memory chart honestly labelled estimate.",
+    "drilldown": "Layers are named generically. None of the 6 follow-ups executed ok.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Memory and estimate figures, not reproducible.",
+    "refs": "No DOIs or URLs, so no reference is resolvable. The Twenge title and venue are conflated.",
+    "accuracy": "Memory specifics are broadly correct: Orben 0.4%, the Surgeon General's 3h roughly doubling risk, NASEM 2023, Braghieri AER 2022. One citation is minorly mixed.",
+    "limits": "States a memory window to about 2024 and the 2-year gap. Most limits sit in a footer.",
+    "verdict": "Well-calibrated answer and decision that name the contrary view. Appropriate for an established literature.",
+    "facets": "Mostly memory."
+   },
+   "claude_prism": {
+    "trend": "Fully traced series with window. Quantifies CAGR 24.8% and late/early 3.71. Censoring is noted in limits, but 2025 is not marked on the chart.",
+    "comparison": "Stance ratios recompute exactly (953/34=28.0, 1282/34=37.7) and the framing caveat is carried. The media-vs-evidence contrast (58% negative headlines vs r=.11) addresses studied vs reported. Calling 'neutral' the baseline while dividing by contradicting is inconsistent.",
+    "chart": "One traced chart with window, unit and source. The stance mix, a facet central to the question, is not charted.",
+    "drilldown": "Traced layers reach documents with DOIs and quotes. None of the 6 follow-ups executed ok, so drilldown stays at its ceiling of 1.",
+    "export": "Two traced CSVs with provenance, referenced from the prose. The provenance JSON omits the claim arg for c2 and c3.",
+    "repro": "57/57 numbers traced, prism-calls block listed, derived ratios labelled.",
+    "refs": "6/6 DOIs resolve. Quotes are verbatim and tiers are stated. Contrary sources and the source-fit failure are carried.",
+    "accuracy": "Matches the record. Catches the anomalies: tally discrepancy between c1 and c2, the off-topic cyberbullying stats, the dropped broad phrase, and the failed-fit dissertation. The 'reachability checks' detail is not visible in the record.",
+    "limits": "Limits sit next to the numbers they bound: windows, gap to today, lane, framing labels not verdicts, thin claim extraction, and what the data cannot answer.",
+    "verdict": "Low confidence justified by the thin retrieved set. Gives a decision and change conditions, and names the jcpp review as contrary.",
+    "facets": "Covers volume, stance, effect size, contrary evidence, media vs research and trend, with grounded 'no data' for subgroups."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced series with window, delta 555 and 5.9x. Only first and last points are named; no CAGR or peak reading.",
+    "comparison": "The 'comparison' is a single r=.11 with no contrast ratio. The tally contrast appears only in the drill-down.",
+    "chart": "One traced chart with caption. The stance view is not charted.",
+    "drilldown": "Traced tally and document layer with DOIs. Follow-ups are specific, but only 1/5 executed ok.",
+    "export": "One traced CSV with provenance. The stance table is not exported.",
+    "repro": "20/21 numbers traced, calls listed with args.",
+    "refs": "3/3 DOIs resolve, quotes are verbatim, and the contrary review is included.",
+    "accuracy": "Matches the record. The 144-day gap is correct, and it flags the c1/c2 tally inconsistency and the undefined weighting. The 'index partition-read' check detail is not visible in the record.",
+    "limits": "Window gap, lane, coverage caveat, claims vs papers and ingest lag are each stated in place.",
+    "verdict": "Direct answer, decision, confidence with reason and change conditions. Notes the inconclusive-review counterpoint.",
+    "facets": "Omits the media-vs-research contrast and the stance comparison as a measured contrast."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced annual series and quantified 114-to-669 growth, but omits the full-series trend summary and treats the censored 2025 point as an ordinary endpoint.",
+    "comparison": "The meta-analysis correlation is clearly defined and interpreted cautiously; the cited counter-evidence tally is kept separate.",
+    "chart": "The full traced annual series has a suitable line chart, source, window, unit, and relevant caption; censoring is not visibly marked.",
+    "drilldown": "Breakdowns are traced, but only one of five proposed follow-ups executed successfully.",
+    "export": "The annual CSV is traced and referenced, but no item-level evidence export is provided for the report's document claims.",
+    "repro": "Most numeric claims trace and the source calls are listed, but the trend treatment and incomplete export keep it below full reproducibility.",
+    "refs": "All cited DOIs resolve, claims are tied to references, and verbatim quotes match the supplied abstracts; evidence tiers are identified.",
+    "accuracy": "The answer reflects small association and uncertainty, but understates that the supplied review labels the time-use finding contradictory in the counter-evidence call.",
+    "limits": "It places corpus windows, lane, censoring, coverage, and interpretation limits near the claims; some relevant enrichment and matching caveats remain incomplete.",
+    "verdict": "Direct answer, decision, confidence, change condition, and contrary evidence are present; the evidence supports a cautious association rather than a causal conclusion.",
+    "facets": "It covers effect evidence, disagreement, research volume, corpus limits, and the research-news mismatch, but leaves several implied facets unmeasured."
+   },
+   "claude_prism": {
+    "trend": "The annual series and CAGR are reported, but the deliverable does not carry the censoring caveat into its chart and treats 2025 as a complete endpoint.",
+    "comparison": "The same-corpus stance counts and ratios recompute, and the framing-label caveat is stated; this is a useful but indirect contrast for whether use harms health.",
+    "chart": "The traced annual series is charted with window, unit, and source, but the censored endpoint is not marked.",
+    "drilldown": "The proposed follow-ups did not execute successfully, and the named breakdown layers do not provide item-level links.",
+    "export": "Two relevant traced CSVs are referenced, but provenance is incomplete and the exports lack row identifiers and a provenance block in the required shape.",
+    "repro": "Numeric claims are traced and the calls are listed, but the incomplete exports and the uncensored trend presentation limit regeneration fidelity.",
+    "refs": "All six referenced DOIs resolve; claims have matching metadata and quotes, including a contrary review, with tiers stated.",
+    "accuracy": "Strong coverage, but the claim that only 34 papers are labelled contradicting is framed as a consensus argument despite most papers being neutral or descriptive; the trend also drops its censoring caveat.",
+    "limits": "Specific corpus windows, lane, coverage, match, and extraction limits are discussed alongside the numbers, though censoring is mishandled in the trend section.",
+    "verdict": "It gives a direct decision, confidence, change conditions, and contrary evidence; support is tempered by thin document-level evidence.",
+    "facets": "It addresses effects, disagreement, trend, media framing, corpus mix, and missing subgroup/design data with grounded values or explicit limits."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series; the deliverable explicitly declines to estimate one.",
+    "comparison": "No measured common-scale comparison is supplied.",
+    "chart": "No chart is supplied.",
+    "drilldown": "It gives generic evidence layers and proposed calls, but no traced breakdown or successful executable follow-up.",
+    "export": "No measured export is supplied.",
+    "repro": "It honestly reports no database calls; the numeric and reference claims are not reproducible from a recorded call set.",
+    "refs": "One DOI fails to resolve to the cited work, triggering the fabricated-identifier cap.",
+    "accuracy": "No contradiction with the supplied database record is apparent, but the broad evidence claims are not grounded in that record.",
+    "limits": "It clearly states the absence of corpus measurements and separates interpretation from observation, but omits specific limits for its cited studies.",
+    "verdict": "The answer is direct and bounded, but confidence and decision are not adequately supported by measured evidence or a grounded contrary finding.",
+    "facets": "It addresses the main disagreement qualitatively, but most evidence, trend, and comparison facets have no grounded values."
+   },
+   "claude_bare": {
+    "trend": "The series is explicitly an estimate from memory, which earns the estimate-level score only.",
+    "comparison": "The numeric comparison is from memory and mixes variance explained with correlation-derived variance; it correctly flags that the odds ratio is not comparable.",
+    "chart": "The memory-based chart is labelled as an estimate, so it earns the estimate-level score only.",
+    "drilldown": "The response names generic breakdown dimensions but provides no traced layer or successful follow-up.",
+    "export": "The CSV is honestly labelled estimate, not a traced data export.",
+    "repro": "The response says the figures are from memory or estimates and lists no calls, so it is not reproducible.",
+    "refs": "References are named but lack resolvable identifiers and source-verifying quotes; the script found no DOI records to check.",
+    "accuracy": "No direct contradiction with the supplied record, but claims about subgroup concentration and several study findings are unsupported by the provided evidence.",
+    "limits": "It labels estimates and notes missing corpus data, but offers only generic memory-based coverage limits rather than applicable source-specific caveats.",
+    "verdict": "It makes a clear recommendation and names what could change it, but its confidence and causal framing rest on unverified evidence.",
+    "facets": "It discusses disagreement and some study designs, but has no grounded corpus values, traceable series, or measured comparison."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,522 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 619,
+  "charts": [],
+  "tables": [
+   {
+    "name": "facets.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which countries lead authorship?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'climate finance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How did publications change after COP21 and COP29?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'climate finance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which countries get the most prominent coverage?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 15.5,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 1825, \"share_pct\": 11.2, \"lift\": 0.5}, {\"label\": \"azerbaijan\", \"articles\": 1563, \"share_pct\": 9.6, \"lift\": 70.3}, {\"label\": \"india\", \"articles\": 1222, \"share_pct\": 7.5, \"lift\": 1.1}, {\"label\": \"brazil\", \"articles\": 988, \"share_pct\": 6.1, \"lift\": 9.7}, {\"label\": \"china\", \"articles\": 954, \"share_pct\": 5.9, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 744, \"share_pct\": 4.6, \"lift\": 0.9}, {\"label\": \"france\", \"articles\": 599, \"share_pct\": 3.7, \"lift\": 2.1}, {\"label\": \"united arab emirates\", \"articles\": 481, \"share_pct\": 3.0, \"lift\": 3.7}, {\"label\": \"germany\", \"articles\": 472, \"share_pct\": 2.9, \"lift\": 2.3}, {\"label\": \"n"
+   },
+   {
+    "id": "f4",
+    "feature": "news.trends",
+    "question": "Does news volume spike around COP summits?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.8,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 214, \"critical\": 177, \"negative\": 40, \"positive\": 171, \"mean_priority\": 6.86, \"critical_pct\": 82.7, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 211, \"critical\": 170, \"negative\": 46, \"positive\": 163, \"mean_priority\": 6.92, \"critical_pct\": 80.6, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 138, \"critical\": 111, \"negative\": 26, \"positive\": 111, \"mean_priority\": 6.8, \"critical_pct\": 80.4, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 273, \"critical\": 249, \"negative\": 67, \"positive\": 200, \"mean_priority\": 7.17, \"critical_pct\": 91.2, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": "
+   },
+   {
+    "id": "f5",
+    "feature": "research.browse",
+    "question": "Which critical papers question the finance goals?",
+    "args": {
+     "term": "climate finance",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 28.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 160, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7133197762\", \"title\": \"Climate Finance and Green Banking Practices in Nepalese Commercial Banks\", \"authors\": [\"Bipana Shreshtha\", \"Gyan Mani Adhikari\"], \"venue\": \"Journal of Business and Social Sciences\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.3126/jbss.v7i1.91337\", \"url\": \"https://doi.org/10.3126/jbss.v7i1.91337\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \"stance_score\": -0.4, \"topics\": [\"Sustainable Finance a"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 2,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 118,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 1,
+   "drilldown": 3,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 797,
+  "charts": [
+   {
+    "id": "news_top",
+    "title": "Climate finance news articles by country the article is about",
+    "kind": "hbar",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "articles",
+      "how": "call",
+      "points": 10,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "news_geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "news.trends",
+    "question": "How did news volume change over time, and when did Azerbaijan peak?",
+    "args": {
+     "term": "climate finance",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 214, \"critical\": 177, \"negative\": 40, \"positive\": 171, \"mean_priority\": 6.86, \"critical_pct\": 82.7, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 211, \"critical\": 170, \"negative\": 46, \"positive\": 163, \"mean_priority\": 6.92, \"critical_pct\": 80.6, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 138, \"critical\": 111, \"negative\": 26, \"positive\": 111, \"mean_priority\": 6.8, \"critical_pct\": 80.4, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 273, \"critical\": 249, \"negative\": 67, \"positive\": 200, \"mean_priority\": 7.17, \"critical_pct\": 91.2, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": "
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How does research volume on climate finance compare with news volume?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'climate finance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.browse",
+    "question": "Which papers are the leading evidence on climate finance?",
+    "args": {
+     "term": "climate finance",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 6.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 3615, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 7, \"papers\": [{\"id\": \"W7133343258\", \"title\": \"Guinea Country Climate and Development Report\", \"authors\": [\"World Bank Group\"], \"venue\": \"Washington, DC: World Bank eBooks\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.1596/44413\", \"url\": \"https://doi.org/10.1596/44413\", \"cited_by\": 0, \"orientation\": \"descriptive\", \"contribution\": \"methodological\", \"stance_score\": 0.0, \"topics\": [\"Climate Change and Environmental Impact\", \"Climate Change, Adaptation, Migration\", \"Gend"
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which countries are covered critically?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 21.1,
+    "sample": "{\"articles\": [{\"target_id\": \"6a2a4fc65cefb83fe8ece59b\", \"url\": \"https://oglobo.globo.com/economia/noticia/2026/05/21/paises-ricos-voltaram-a-superar-meta-anual-de-us-100-bilhoes-em-financiamento-climatico-em-2023-e-2024-diz-ocde.ghtml\", \"title\": \"Países ricos superam meta climática global de US$ 100 bilhões pelo terceiro ano seguido, mas OCDE vê incerteza para números de 2025\", \"excerpt\": \"In 2023 and 2024, rich countries exceeded the annual target of $100 billion in climate finance for developing nations, reaching $132.8 billion and $136.7 billion, respectively, according to OECD. This is the third consecutive year that the goal is exceeded, after reaching $115.9 billion in 2022. The\", \"pub"
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does Azerbaijan coverage compare with a pre-COP period?",
+    "args": {
+     "term": "climate finance",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... 'since': '2024-06-01'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.sentiment",
+    "question": "What is the sentiment of coverage?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.1,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 40, \"positive\": 171, \"neutral\": 3, \"ratio\": 0.23}, {\"period\": \"2024-07-01\", \"negative\": 46, \"positive\": 163, \"neutral\": 2, \"ratio\": 0.28}, {\"period\": \"2024-08-01\", \"negative\": 26, \"positive\": 111, \"neutral\": 1, \"ratio\": 0.23}, {\"period\": \"2024-09-01\", \"negative\": 67, \"positive\": 200, \"neutral\": 5, \"ratio\": 0.34}, {\"period\": \"2024-10-01\", \"negative\": 74, \"positive\": 211, \"neutral\": 6, \"ratio\": 0.35}, {\"period\": \"2024-11-01\", \"negative\": 827, \"positive\": 765, \"neutral\": 68, \"ratio\": 1.08}, {\"period\": \"2024-12-01\", \"negative\": 118, \"positive\": 172, \"neutral\": 12, \"ratio\": 0.69}, {\"period\": \"2025-01-01\", \"negative\": 61, \"positive\": 121, \"neutral\":"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 45,
+   "traced": 45,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 355,
+  "charts": [],
+  "tables": [],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Where are climate finance research authorship rows located, and what is the geographic coverage?",
+    "args": {
+     "term": "climate finance",
+     "breakdown": "authorship"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...eakdown': 'authorship'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='authorship', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Where are climate finance research publication rows located, and what is the geographic coverage?",
+    "args": {
+     "term": "climate finance",
+     "breakdown": "publication"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...akdown': 'publication'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nbreakdown\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='publication', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Where is climate finance covered in the news, including placed_pct, over the same window?",
+    "args": {
+     "term": "climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"united states\", \"articles\": 1825, \"share_pct\": 11.2, \"lift\": 0.5}, {\"label\": \"azerbaijan\", \"articles\": 1563, \"share_pct\": 9.6, \"lift\": 70.3}, {\"label\": \"india\", \"articles\": 1222, \"share_pct\": 7.5, \"lift\": 1.1}, {\"label\": \"brazil\", \"articles\": 988, \"share_pct\": 6.1, \"lift\": 9.7}, {\"label\": \"china\", \"articles\": 954, \"share_pct\": 5.9, \"lift\": 1.2}, {\"label\": \"united kingdom\", \"articles\": 744, \"share_pct\": 4.6, \"lift\": 0.9}, {\"label\": \"france\", \"articles\": 599, \"share_pct\": 3.7, \"lift\": 2.1}, {\"label\": \"united arab emirates\", \"articles\": 481, \"share_pct\": 3.0, \"lift\": 3.7}, {\"label\": \"germany\", \"articles\": 472, \"share_pct\": 2.9, \"lift\": 2.3}, {\"label\": \"n"
+   },
+   {
+    "id": "f4",
+    "feature": "news.compare",
+    "question": "How do research and news geographies compare on a common scale and baseline?",
+    "args": {
+     "term": "climate finance",
+     "compare_with": "research"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...pare_with': 'research'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncompare_with\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='research', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "Are there climate finance patent origin rows, and where are they attributed?",
+    "args": {
+     "term": "climate finance",
+     "lane": "patents"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ce', 'lane': 'patents'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='climate finance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlane\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='patents', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 94,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 0,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 780,
+  "charts": [],
+  "tables": [
+   {
+    "name": "news-geography.csv",
+    "how": "call",
+    "rows": 15,
+    "numeric_cells": 45,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.geography",
+    "question": "Which climate-finance research countries appear by first-author affiliation over a specified period?",
+    "args": {
+     "claim": "Climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 11.7,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": []}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"nigeria\", \"articles\": 2}, {\"country\": \"india\", \"articles\": 2}, {\"country\": \"pakistan\", \"articles\": 1}, {\"country\": \"denmark\", \"articles\": 1}, {\"country\": \"united arab emirates\", \"articles\": 1}, {\"country\": \"turkey\", \"articles\": 1}]}, \"research_publication\": {\"what\": \"country of the publishing journal (the health literature index) — not where the study was done\", \"rows\": []}, \"patent_origin\": {\"what\": \"assignee country\", \"rows\": []}}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which countries publish climate-finance research, by publishing-journal country, over the same period?",
+    "args": {
+     "claim": "Climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.1,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": []}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"india\", \"articles\": 2}, {\"country\": \"nigeria\", \"articles\": 2}, {\"country\": \"turkey\", \"articles\": 1}, {\"country\": \"denmark\", \"articles\": 1}, {\"country\": \"pakistan\", \"articles\": 1}, {\"country\": \"united arab emirates\", \"articles\": 1}]}, \"research_publication\": {\"what\": \"country of the publishing journal (the health literature index) — not where the study was done\", \"rows\": []}, \"patent_origin\": {\"what\": \"assignee country\", \"rows\": []}}"
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "Which countries are most often the subject of climate-finance news by month, and how does placed percentage change?",
+    "args": {
+     "term": "climate finance",
+     "since": "2024-06-01"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 214, \"critical\": 177, \"negative\": 40, \"positive\": 171, \"mean_priority\": 6.86, \"critical_pct\": 82.7, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 211, \"critical\": 170, \"negative\": 46, \"positive\": 163, \"mean_priority\": 6.92, \"critical_pct\": 80.6, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 138, \"critical\": 111, \"negative\": 26, \"positive\": 111, \"mean_priority\": 6.8, \"critical_pct\": 80.4, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 273, \"critical\": 249, \"negative\": 67, \"positive\": 200, \"mean_priority\": 7.17, \"critical_pct\": 91.2, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": "
+   },
+   {
+    "id": "f4",
+    "feature": "news.critical",
+    "question": "Which news articles about Azerbaijan account for its high lift?",
+    "args": {
+     "term": "climate finance",
+     "country": "azerbaijan",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for critical_news\ncountry\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='azerbaijan', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.geography",
+    "question": "Which countries hold climate-finance patents by assignee origin?",
+    "args": {
+     "claim": "Climate finance"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"research_authorship\": {\"what\": \"country of the first author's affiliation (the health literature index) — where the research is done, as far as an affiliation says\", \"rows\": []}, \"news_coverage\": {\"what\": \"country an article is about\", \"rows\": [{\"country\": \"india\", \"articles\": 2}, {\"country\": \"nigeria\", \"articles\": 2}, {\"country\": \"turkey\", \"articles\": 1}, {\"country\": \"denmark\", \"articles\": 1}, {\"country\": \"pakistan\", \"articles\": 1}, {\"country\": \"united arab emirates\", \"articles\": 1}]}, \"research_publication\": {\"what\": \"country of the publishing journal (the health literature index) — not where the study was done\", \"rows\": []}, \"patent_origin\": {\"what\": \"assignee country\", \"rows\": []}}"
+   }
+  ],
+  "followups_ok": 4,
+  "numbers": {
+   "total": 16,
+   "traced": 15,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 0,
+   "export": 5,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

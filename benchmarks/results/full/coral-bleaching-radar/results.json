@@ -1,0 +1,248 @@
+{
+ "slug": "coral-bleaching-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 2.0,
+    "chart": 1.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 2.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 36.1,
+   "plain": 36.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 33.4,
+    "gpt": 38.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 3.0,
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 2.5,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 69.8,
+   "plain": 69.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.8,
+    "gpt": 67.8
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 1.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 20.1,
+   "plain": 20.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 17.0,
+    "gpt": 23.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 2.0,
+    "export": 2.5,
+    "repro": 2.5,
+    "refs": 3.5,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 68.2,
+   "plain": 68.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.2,
+    "gpt": 69.2
+   }
+  }
+ },
+ "judge_mad": 0.39,
+ "verdicts": {
+  "opus": "C and D both grounded their answers in the radar call and read its traps correctly, notably the taxonomy-label zeros. C went further: it exposed the new-work layer with DOIs, compared research and news on early-vs-late thirds, and flagged the incomplete final news month, so it gives a decision-maker the most usable picture. A gave honest, labelled memory about the 4th global event but nothing measured. B fabricated three DOIs.",
+  "gpt": "D is strongest for a decision-maker: its core research-volume and framing figures trace to the reference record, and it provides a useful set of recent papers with identifiers. Its main weakness is the claim that news grew faster than research, which compares different windows and lanes; C is more careful about that limitation but has weaker traceability and export coverage."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [
+    "68% is attributed both to the 3rd event and to the 4th event up to mid-2024, an internal inconsistency"
+   ],
+   "chatgpt_bare": [
+    "Fabricated DOIs: 10.1038/s41586-019-1729-9, 10.1038/s41558-020-0798-2 and 10.1038/s43017-021-00186-8, with mismatched titles and venues"
+   ],
+   "claude_prism": [
+    "Claims the geography field was null, which is not in the reference record",
+    "The CSV window 2017–2025 is applied to the news row, whose data covers 2019–2026"
+   ],
+   "chatgpt_prism": [
+    "The gap is given as 298 days, but recomputes to 296",
+    "The c1 call is declared without a feature or args"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "The central shift toward a recurring global crisis and intervention is presented as a memory-based interpretation, not a measured research trend.",
+    "The event-area chart and comparison are estimates rather than recorded series."
+   ],
+   "chatgpt_bare": [
+    "Three DOI identifiers were not found in the corpus: 10.1038/s41558-020-0798-2, 10.1038/s41586-019-1729-9, and 10.1038/s43017-021-00186-8.",
+    "The claimed framing shift is qualitative and unmeasured."
+   ],
+   "chatgpt_prism": [
+    "The call block declares a call that was never made.",
+    "Only 17 of 21 numeric claims trace, and only two of five proposed follow-ups executed successfully."
+   ],
+   "claude_prism": [
+    "The claim that news grew faster than research compares ratios from different windows and lanes.",
+    "The last news value is zero at the endpoint; the deliverable flags possible incompleteness, but the source does not establish that caveat."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "trend": "Event series is labelled as an estimate, sourced from memory and not traceable. Capped at 1.",
+    "comparison": "Compares the 3rd and 4th events (68% vs 84%) from memory and labels it an estimate. Cannot be checked.",
+    "chart": "Chart is honestly labelled as an estimate, which earns 1.",
+    "drilldown": "No traced breakdown layer. Only 3 of 6 follow-ups executed.",
+    "export": "CSV is labelled as an estimate.",
+    "repro": "All numbers are from memory and labelled as such.",
+    "refs": "The Hughes 2018 DOI is real. The other three references point only to homepage URLs, not specific documents. No quotes.",
+    "accuracy": "The 84%, the April 2024 declaration, the GBR event list and the 2025 tipping-point report are plausible and correct. However, 68% is attributed both to the 3rd event and to the 4th event up to mid-2024, which is an internal inconsistency.",
+    "limits": "Specific about the memory-only basis and the roughly 4-month gap since its knowledge ends. No data limits apply because no data was used.",
+    "verdict": "Has an answer, a decision, low confidence with its reason, and what would change it. It rests on memory.",
+    "facets": "Facets are answered from memory only."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None given.",
+    "chart": "No chart.",
+    "drilldown": "All five follow-ups failed.",
+    "export": "None.",
+    "repro": "No numbers. Everything is labelled as memory.",
+    "refs": "Three of the four DOIs are not found. The Sully and Skirving metadata appear fabricated.",
+    "accuracy": "Fabricated DOIs and paper metadata are presented as fact.",
+    "limits": "Honest and specific about what is unmeasured.",
+    "verdict": "Gives a direct answer with medium confidence, but has no data support.",
+    "facets": "The answer is qualitative and from memory."
+   },
+   "claude_prism": {
+    "trend": "Gives traced endpoints, the 7.0% CAGR, the peak year, and +71%. It notes that only endpoints were returned. The news point at 0 is flagged as incomplete.",
+    "comparison": "Early vs late third for both papers and news, plus the framing delta. All figures trace and the baseline is defined. It notes that the news window differs from the research window.",
+    "chart": "Chart is traced, with window, unit and source. However, it shows only volume as two endpoint bars. Framing and news are not charted.",
+    "drilldown": "New-work table carries DOIs. 3 of 7 follow-ups returned data. The geography-null claim is not in the record.",
+    "export": "The CSV window (2017–2025) is applied to the news row, but the news data covers 2019–2026. The CSV is not referenced from the prose and only one table is exported.",
+    "repro": "45 of 45 numbers traced. The calls block has args, and there is a provenance JSON.",
+    "refs": "Five DOIs resolve and each is tied to a claim with year and venue. No quotes or tier.",
+    "accuracy": "Fields are read correctly. It catches the anomaly that the zero news counts come from taxonomy labels and flags the incomplete final news month.",
+    "limits": "Window ends, the gap to today, censoring, match mode and lane are all placed next to the relevant numbers.",
+    "verdict": "Concise. Includes a decision, confidence with its reason, and what would change it. Notes the unchanged framing as contrary evidence.",
+    "facets": "Volume, news, framing, new work, and a grounded 'cannot tell' on under-coverage."
+   },
+   "chatgpt_prism": {
+    "trend": "Gives traced endpoints, CAGR, +71.2% and the news peak. Notes that no annual series was returned.",
+    "comparison": "The framing ratio 0.97 recomputes correctly, and it states that the window boundaries are undated.",
+    "chart": "Line chart of the two traced endpoints. Volume only.",
+    "drilldown": "Evidence list with DOIs. The c1 call is declared without a feature or args, and only 2 of 5 follow-ups returned data.",
+    "export": "Traced CSV with provenance that the prose references. Only the endpoints table is exported.",
+    "repro": "17 of 21 numbers traced. The c1 call is declared without args.",
+    "refs": "Four DOIs resolve, each tied to a claim with venue and orientation. No quotes.",
+    "accuracy": "The gap is miscalculated: 298 days, against 296 when recomputed. It also does not flag the 0 news endpoint as an incomplete month.",
+    "limits": "Window gaps, lane, coverage and match mode are placed next to the numbers. Explicit about what cannot be measured.",
+    "verdict": "Complete and bounded, and names the small framing shift.",
+    "facets": "All facets are addressed, including a grounded 'no data' on under-coverage."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "The reef-area series is explicitly an estimate, so it earns the memory-series anchor only.",
+    "comparison": "The event comparison is numeric but estimated and not independently checkable.",
+    "chart": "The plotted values are memory estimates, explicitly labelled as such.",
+    "drilldown": "It names layers and specific questions, but only three of six proposed calls executed successfully and no traced item-level breakdown is shown.",
+    "export": "The event CSV is an estimate, not a traced export.",
+    "repro": "No numbers trace to reproducible calls; the deliverable says no Prism calls were run.",
+    "refs": "One DOI resolves, but the other references lack specific, checkable identifiers and the cited support is thin.",
+    "accuracy": "The estimates are labelled, and no direct conflict with the supplied record is apparent; the answer does not measure recent research changes.",
+    "limits": "It identifies memory-only coverage, partial window, and the gap to today near the relevant claims.",
+    "verdict": "It gives a decision, low confidence, and conditions, but the central shift is not supported by measured evidence.",
+    "facets": "It covers event impacts and interventions from memory, but does not ground the research-trend facets."
+   },
+   "chatgpt_bare": {
+    "trend": "It provides no time series, consistent with its stated lack of measurement.",
+    "comparison": "It explains that a measured comparison cannot be made, but offers no measured contrast.",
+    "chart": "There is no chart block.",
+    "drilldown": "No traced breakdown or successful on-topic follow-up calls are provided.",
+    "export": "No dataset or CSV export is supplied.",
+    "repro": "The answer is explicitly memory-based and has no reproducible calls.",
+    "refs": "Only one of four DOI identifiers was found in the corpus; the others fail the reference ceiling.",
+    "accuracy": "Several listed DOI/title pairings are unsupported by the corpus record, and the described trend is an unmeasured synthesis.",
+    "limits": "It states the absence of a corpus and limits on coverage, though it cannot give a measured window.",
+    "verdict": "It offers a decision and confidence, but the claimed framing shift is not supported by measured evidence and contrary evidence is absent.",
+    "facets": "Most requested trend, comparison, and research-versus-news facets remain unmeasured."
+   },
+   "chatgpt_prism": {
+    "trend": "The traced endpoints, stated window, and recomputed growth quantify direction; the source does not provide the intervening annual points.",
+    "comparison": "The cautionary-share comparison is traced, defined, and correctly recomputed, with its framing caveat; it does not resolve exact window boundaries.",
+    "chart": "The endpoint chart is sourced, labelled, and tied to the claim, but it shows only endpoints and omits supported facets such as framing and news comparison.",
+    "drilldown": "Selected papers provide one traced layer, but only two of five follow-up calls succeeded and no second item-level layer is exposed.",
+    "export": "The endpoint CSV traces, but it is not the full series or the other needed comparison/document tables and lacks full provenance attributes.",
+    "repro": "Most numbers trace, but 17 of 21 are verified and the call block declares a call that was never made.",
+    "refs": "All four DOIs resolve and are tied to claims with metadata; no abstract quotes are supplied.",
+    "accuracy": "It correctly distinguishes framing from truth and taxonomy-label news zeros from scientific under-coverage; its limitations are generally explicit.",
+    "limits": "It states window ends, gaps to today, lane, coverage, matching limits, and what the available result cannot establish.",
+    "verdict": "The answer and decision follow from the evidence, with confidence and what would change it; it acknowledges thin evidence and limits.",
+    "facets": "It covers output, framing, selected methods, and grounded gaps, but leaves seasonality and research-news mismatch insufficiently resolved."
+   },
+   "claude_prism": {
+    "trend": "The traced endpoint values, window, and quantified growth support a rising trend, but the full annual path is absent.",
+    "comparison": "The ratios are individually traced, but the news and research windows differ, so comparing which grew faster is not a like-for-like contrast.",
+    "chart": "The chart traces and supports its endpoint claim with unit, window, and source, but does not visualize the other supported facets or mark partial periods.",
+    "drilldown": "The selected papers and metadata give item-level detail, but only three of seven proposed follow-ups succeeded and no executed result is folded back in.",
+    "export": "The CSV traces and is referenced, but it omits the monthly series and other tables needed to reproduce the report’s facets.",
+    "repro": "The cited numbers trace and the main call includes arguments; the report notes the key gap between the endpoint chart and an annual path.",
+    "refs": "The DOI-backed items are traceable, but the evidence section does not tie each identifier as fully as the rubric requires, and quotes are absent.",
+    "accuracy": "The data is mostly read correctly, but ‘news grew faster than research’ overstates a comparison between different windows and lanes.",
+    "limits": "It places the windows, lane, coverage, match mode, and framing-window uncertainty near the results, while noting the likely incomplete news endpoint.",
+    "verdict": "It offers a direct answer and decision, but overstates the news-versus-research comparison and omits a clear contrary finding in its evidence.",
+    "facets": "It covers research volume, framing, selected work, and the taxonomy-label caveat, but does not resolve seasonality or a comparable research-news contrast."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

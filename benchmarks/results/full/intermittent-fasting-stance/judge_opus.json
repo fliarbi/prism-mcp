@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 4,
+    "repro": 4,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 5,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 2,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Hand-coded ordinal series, honestly labelled as an estimate; there is no measured series.",
+    "comparison": "Compares means on a self-invented scale, labelled est.; this is effectively a qualitative comparison.",
+    "chart": "Memory chart labelled estimate, which caps it at 1.",
+    "drilldown": "Layers are named generically. 3 of 6 follow-ups executed. No traced breakdown.",
+    "export": "Estimate-labelled table, which caps it at 1.",
+    "repro": "Numbers are memory or estimates, honestly labelled.",
+    "refs": "The 4 DOIs resolve and are tied to claims with year, venue and tier. No quotes. r5 has no identifier.",
+    "accuracy": "Paper facts are plausible. However, the headline 'more cautious' contradicts the measured record: positive share rose and contested share was broadly flat.",
+    "limits": "Specific limits are stated: knowledge cutoff gap, five hand-picked items, high-profile bias. No measured window.",
+    "verdict": "Structurally complete and confidence is honestly low, but the answer is not supported by measured data and conflicts with it.",
+    "facets": "Facets are answered from memory only."
+   },
+   "B": {
+    "trend": "Traced counts with window. Deltas of 160 and 19 are correct. Early/late contested shares are given. Yearly shares are not shown and the tool's CAGR is not used.",
+    "comparison": "176 vs 32 (5.5x) and 11.1% vs 9.2% (-1.9pp) recompute exactly and the baseline is defined. The count-ratio comparison is driven by volume.",
+    "chart": "Traced and captioned, but it charts only counts of two orientations. The share view, which the tone question needs, is not charted.",
+    "drilldown": "One traced layer plus promising examples with IDs. No contrary papers. Follow-ups are partly ok.",
+    "export": "Two traced CSVs with provenance block, referenced from the prose. Full orientation rows are included.",
+    "repro": "18 of 19 numbers traced. Calls are listed with args. The 296-day gap is correct.",
+    "refs": "IDs/DOIs are given, examples are tiered and tied to claims, the Mendeley caveat is noted. No quotes and no contrary sources.",
+    "accuracy": "Everything matches the record. Did not catch the 1545-vs-793 facet anomaly.",
+    "limits": "Window end, 296-day gap, phrase expansion, coverage caveat and framing-vs-quality distinction are placed beside the numbers.",
+    "verdict": "Direct answer, decision, confidence with reason and change condition. Notes that cautionary counts also grew.",
+    "facets": "Trend and contested balance are covered. Yearly share view and critical examples are missing."
+   },
+   "C": {
+    "trend": "Full yearly positive/contested share series with window. Deltas +11.1 and -10.0pp are exact. Tool CAGRs and multiples are used and the decomposition is verified. Small-base caveat is included.",
+    "comparison": "Early vs late third table with exact ratios. Explains that shares matter more than counts. Answers the promising-vs-cautious contrast.",
+    "chart": "A traced share chart for both positive and contested framing, captioned and tied to a claim. Volume is not charted alongside.",
+    "drilldown": "Orientation-by-year, contribution, phrase audit and examples with W ids. 4 of 6 follow-ups ok. Nothing was executed and folded back.",
+    "export": "One traced CSV with provenance JSON. The script ceiling of 3 applies.",
+    "repro": "71 of 71 traced. Calls block and capture date present. Interpretation is marked.",
+    "refs": "Examples carry IDs, venue, year and tier. States plainly that no critical papers were retrieved. No quotes.",
+    "accuracy": "Correct definitions of the positive and contested sums. Catches the 1545-vs-793 facet inconsistency and the 6-of-8 return rather than repeating them as findings.",
+    "limits": "Window, the roughly 10-month gap, coverage meaning, phrase expansion, 2017 volatility and the browse anomaly are placed with the numbers. Names what cannot be answered.",
+    "verdict": "Answer is consistent with its chart and table, with decision, medium confidence with reason and change condition. Window end is not stated inside the verdict.",
+    "facets": "Volume, share balance, early/late comparison and phrase scope are grounded. Critical examples are explicitly marked missing."
+   },
+   "D": {
+    "trend": "Direction is asserted with no series.",
+    "comparison": "Qualitative only.",
+    "chart": "Plots numeric codes sourced to a reference that is a duplicated or misdated entry, and the chart kind is mismatched.",
+    "drilldown": "Memory layers only. 2 of 6 follow-ups work.",
+    "export": "Qualitative CSV with a mislabelled source.",
+    "repro": "Memory only.",
+    "refs": "r1 and r2 share one DOI. r1 is a fabricated 2018 variant of the 2017 Trepanowski paper. The Cochrane review is misdated to 2025. 'Quotes' are actually titles.",
+    "accuracy": "Fabricated duplicate reference, a misdated review, and an invented 2025-02-18 window end presented as fact. The verdict direction also conflicts with the record.",
+    "limits": "Some specifics are given, but they rest on an invented window end.",
+    "verdict": "Claims medium confidence from memory, and the answer contradicts the measured flat balance.",
+    "facets": "Memory only."
+   }
+  },
+  "errors": {
+   "A": [
+    "Headline 'shift to more cautious' contradicts measured record (positive share 19.8%->30.9%, contested share broadly unchanged)"
+   ],
+   "B": [],
+   "C": [],
+   "D": [
+    "r1 is a fabricated 2018 duplicate of the 2017 Trepanowski trial sharing the same DOI",
+    "Cochrane CD013496.pub2 misdated to 2025 (it is 2021)",
+    "Paper titles presented as verbatim quotes",
+    "Invented evidence-window end 2025-02-18",
+    "Verdict 'more cautious' contradicts measured record"
+   ]
+  },
+  "best": "C",
+  "verdict": "C answered the tone question with the right measure: yearly positive vs contested shares, exact deltas, and early/late ratios. It also flagged the tool's own facet inconsistency, giving a decision-maker a traced 'more promising in volume, broadly stable in balance' answer. B reached the same verdict with traced data but charted counts rather than shares. A and D answered from memory with a 'more cautious' narrative that the measured corpus does not support, and D additionally fabricated and misdated references."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 4,
+   "repro": 4,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_prism": {
+   "trend": 5,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 2,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

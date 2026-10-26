@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 3
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 4,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 3,
+    "export": 1,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 1,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced annual endpoints and exact reported growth, but omits the reported censoring caveat and full available trend points.",
+    "comparison": "Traced same-scale topic ratios with a defined baseline and arithmetic; it does not resolve whether this comparison answers reshoring versus nearshoring.",
+    "chart": "The endpoint chart traces to the call, states window, unit and source, and supports a stated claim; it lacks the fuller series and visible partial-period caveat.",
+    "drilldown": "Two traced layers reach identified papers, and the report folds in follow-up results; only four of six follow-ups succeeded.",
+    "export": "Two referenced CSVs include source, window, unit, coverage, identifiers and provenance; the trend export omits the full available series.",
+    "repro": "Most figures trace and the source call is reproducible, but one number is untagged and the regenerate recipe does not rebuild every reported table and chart.",
+    "refs": "All nine DOIs resolve and works are tied to claims with metadata, but no verbatim abstract quotes or stated evidence tiers.",
+    "accuracy": "Generally reads the proxy and orientation correctly, but overstates that 2025 is the peak year when the reported trend peak is only given as 2025, without a completeness caveat.",
+    "limits": "Explains proxy, match mode and several gaps, but the 2025 research endpoint's censoring/partial-period status is unresolved and limits are not consistently placed beside figures.",
+    "verdict": "Directly answers the evidence gap with low confidence and a proposed next search, but omits the strongest contrary evidence and is not fully bounded by the unresolved trend limits.",
+    "facets": "Provides several grounded proxy facets, but the central reshoring/nearshoring-specific momentum, framing and news facets remain unanswered."
+   },
+   "B": {
+    "trend": "Traced endpoints and reported growth, but the chart/data omit the available full trend and censoring caveat.",
+    "comparison": "The traced framing shares and delta are on one scale, but internal comparison windows are not identified with dates.",
+    "chart": "The traced chart has window, unit, source and claim linkage; it shows levels only and omits visible partial-period/censoring context.",
+    "drilldown": "Lists a thematic breakdown but does not reach item-level identifiers, and only two of seven follow-up calls succeeded.",
+    "export": "One traced endpoints CSV has provenance but is incomplete for the trend series and does not provide other needed tables.",
+    "repro": "Numeric claims largely trace and source calls have arguments, but the recipe does not rebuild all report elements and the available trend is reduced to endpoints.",
+    "refs": "All three DOIs resolve and are tied to claims with year and venue, but quotes and explicit evidence tier/strength are absent.",
+    "accuracy": "Caveats the resilience proxy and framing correctly; the claim that the response reports broad index coverage as non-partial is not supported by the reference record.",
+    "limits": "States proxy, dates, match mode and incomplete-ingest caveat, but leaves framing comparison windows undated and does not fully address partial-period limits next to the trend.",
+    "verdict": "Gives a direct, supported decision recommendation with low confidence and conditions for change, while acknowledging that the proxy cannot establish reshoring-specific findings.",
+    "facets": "Grounds proxy activity and framing but leaves the question's direct reshoring and nearshoring facets unanswered."
+   },
+   "C": {
+    "trend": "The series is explicitly an estimate from memory, which earns the estimate anchor only.",
+    "comparison": "Numeric comparison is labelled estimate, but does not measure research literature and cannot be checked against a common source.",
+    "chart": "Memory chart is explicitly labelled estimate, earning the estimate anchor only.",
+    "drilldown": "Supplies three follow-up calls that executed with non-empty data, but no traced breakdown layer is presented.",
+    "export": "Memory CSV is honestly labelled estimate, earning the estimate anchor only.",
+    "repro": "No recorded calls or reproducible measurements; numeric claims are memory estimates.",
+    "refs": "References are explicitly unverified and include no resolving identifiers or checkable support quotes.",
+    "accuracy": "Several unverified import-share and policy claims are presented as estimates, and the answer shifts from research novelty to trade flows.",
+    "limits": "Clearly labels memory, coverage and date gaps, but does not provide dataset-specific limits for measured findings because none were measured.",
+    "verdict": "Offers a direct strategy recommendation and low confidence, but its support is unverified and it does not establish the research trend it asserts.",
+    "facets": "Most requested research facets are estimated, interpreted or explicitly unmeasured rather than grounded."
+   },
+   "D": {
+    "trend": "No measured time series or chart is provided.",
+    "comparison": "Only a qualitative contrast; no measured common-scale comparison.",
+    "chart": "No chart block is provided.",
+    "drilldown": "There is no traced breakdown, and only one proposed follow-up executed successfully.",
+    "export": "No source-backed export is provided.",
+    "repro": "No measured numbers or recorded calls support reproduction.",
+    "refs": "One of three listed DOIs fails to resolve to the stated work, which caps this score.",
+    "accuracy": "The failed Antràs DOI/title/venue combination is a clear bibliographic contradiction; other claims are framed as interpretation.",
+    "limits": "Clearly states the absence of measured counts, lanes and current coverage, but cannot supply dataset-specific limits for evidence it did not retrieve.",
+    "verdict": "Directly answers with a decision and low confidence, but its conclusion rests on illustrative sources and does not name a contrary finding from its evidence.",
+    "facets": "Provides a grounded no-data answer for trends and comparison, but covers few facets of what is newly studied."
+   }
+  },
+  "errors": {
+   "A": [
+    "Calls 2025 the research-trend peak, but the available record does not state whether the year is complete; its chart omits the partial-period/censoring caveat.",
+    "Claims a coverage/row-floor note that is absent from the supplied reference record."
+   ],
+   "B": [
+    "Says the radar response reports broad index coverage as non-partial; that field is absent from the supplied reference record."
+   ],
+   "C": [
+    "Presents unverified import-share and trade-flow estimates as evidence for a question about research; the trend is not a literature series."
+   ],
+   "D": [
+    "The cited Antràs DOI 10.1057/s42214-023-00148-3 is not found in the corpus, so its reference metadata cannot be verified as stated."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the clearest decision brief: it answers that the supplied evidence measures broad resilience research, not reshoring or nearshoring, and gives a bounded sourcing recommendation. A has richer traced breakdowns and exports, but its trend and coverage claims carry material caveat problems; C and D rely on memory or provide no measurable research trend."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 4,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 3
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 3,
+   "export": 1,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 1,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

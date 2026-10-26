@@ -1,0 +1,668 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 753,
+  "charts": [
+   {
+    "id": "scm-completion",
+    "title": "Approximate share of SCM projects reported completed",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Completed share (est.)",
+      "how": "estimate",
+      "points": 7,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "scm_completion_est.csv",
+    "how": "estimate",
+    "rows": 7,
+    "numeric_cells": 7,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.statistics",
+    "question": "How many papers on India smart cities per year, 2015-2026?",
+    "args": {
+     "term": "India smart cities mission",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...n', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India smart cities mission', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers criticise the SPV governance model?",
+    "args": {
+     "term": "smart city SPV India governance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... SPV India governance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='smart city SPV India governance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How has news coverage of the Smart Cities Mission trended?",
+    "args": {
+     "term": "Smart Cities Mission",
+     "from": "2015-06-01",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which states dominate coverage?",
+    "args": {
+     "term": "Smart Cities Mission"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 4.1,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 441, \"share_pct\": 26.9, \"lift\": 4.1}, {\"label\": \"united states\", \"articles\": 171, \"share_pct\": 10.4, \"lift\": 0.5}, {\"label\": \"china\", \"articles\": 83, \"share_pct\": 5.1, \"lift\": 1.0}, {\"label\": \"united kingdom\", \"articles\": 81, \"share_pct\": 4.9, \"lift\": 1.0}, {\"label\": \"japan\", \"articles\": 71, \"share_pct\": 4.3, \"lift\": 2.8}, {\"label\": \"germany\", \"articles\": 59, \"share_pct\": 3.6, \"lift\": 2.9}, {\"label\": \"cameroon\", \"articles\": 51, \"share_pct\": 3.1, \"lift\": 11.8}, {\"label\": \"france\", \"articles\": 46, \"share_pct\": 2.8, \"lift\": 1.6}, {\"label\": \"south korea\", \"articles\": 45, \"share_pct\": 2.7, \"lift\": 3.6}, {\"label\": \"australia\", \"articles\""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is the sentiment on surveillance and ICCCs?",
+    "args": {
+     "term": "smart city command centre surveillance India"
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no data",
+    "seconds": 2.7,
+    "sample": "{\"points\": [], \"totals\": {}, \"corpus_baseline_ratio\": 0.58, \"vs_baseline\": null, \"reading\": null}"
+   },
+   {
+    "id": "f6",
+    "feature": "research.evidence",
+    "question": "What does the evidence say about outcomes in ABD zones?",
+    "args": {
+     "term": "area-based development smart city India outcomes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...t city India outcomes'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='area-based development smart city India outcomes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "analysis.scenarios",
+    "question": "What are the post-2025 successor plans and their likely paths?",
+    "args": {
+     "term": "India urban missions after Smart Cities Mission"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India urban missions after Smart Cities Mission', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 15,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "100 — Breakdown layers: city (100), state, sector (mobility, water, ICCC, public space), funding",
+    "19 — - Windows: the SCM ran from 2015-06 to 2025-03-31. That is about 19 months before today (2"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 120,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 966,
+  "charts": [
+   {
+    "id": "research-year",
+    "title": "Smart-city (India) research papers per year, endpoints only",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "critical-pct",
+    "title": "Share of 'smart cities mission' news labelled critical",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "critical_pct",
+      "how": "call",
+      "points": 7,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_papers_endpoints.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 2,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "news_mission_monthly.csv",
+    "how": "call",
+    "rows": 3,
+    "numeric_cells": 6,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.counter_evidence",
+    "question": "Which critical papers are there on Indian smart city governance?",
+    "args": {
+     "term": "smart cities India governance"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ties India governance'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='smart cities India governance', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "news.critical",
+    "question": "What are the main criticisms in the news?",
+    "args": {
+     "term": "smart cities mission",
+     "since": "2024-06-01"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for critical_news\nsince\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-06-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.geography",
+    "question": "Which Indian cities and states get the coverage?",
+    "args": {
+     "term": "smart cities mission"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 0.0,
+    "sample": "{\"level\": \"country\", \"rows\": [{\"label\": \"india\", \"articles\": 441, \"share_pct\": 26.9, \"lift\": 4.1}, {\"label\": \"united states\", \"articles\": 171, \"share_pct\": 10.4, \"lift\": 0.5}, {\"label\": \"china\", \"articles\": 83, \"share_pct\": 5.1, \"lift\": 1.0}, {\"label\": \"united kingdom\", \"articles\": 81, \"share_pct\": 4.9, \"lift\": 1.0}, {\"label\": \"japan\", \"articles\": 71, \"share_pct\": 4.3, \"lift\": 2.8}, {\"label\": \"germany\", \"articles\": 59, \"share_pct\": 3.6, \"lift\": 2.9}, {\"label\": \"cameroon\", \"articles\": 51, \"share_pct\": 3.1, \"lift\": 11.8}, {\"label\": \"france\", \"articles\": 46, \"share_pct\": 2.8, \"lift\": 1.6}, {\"label\": \"south korea\", \"articles\": 45, \"share_pct\": 2.7, \"lift\": 3.6}, {\"label\": \"australia\", \"articles\""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has stance in research shifted over time?",
+    "args": {
+     "term": "smart cities India"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.5,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"urban digital transformation\"], \"points\": [{\"year\": 2021, \"total\": 1, \"orientation\": {\"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2022, \"total\": 1, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2023, \"total\": 3, \"orientation\": {\"promising\": 3}, \"stance_score\": null, \"positive\": 3, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2024, \"total\": 3, \"orientation\": {\"breakthrough\": 1, \"promising\": 1}, \"stance_score\": null, \"positive\": 2, \"contested\": 0, \""
+   },
+   {
+    "id": "f5",
+    "feature": "research.statistics",
+    "question": "What are the quantified outcomes in the studies?",
+    "args": {
+     "term": "smart cities India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'smart cities India'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='smart cities India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "analysis.scenarios",
+    "question": "Which scenarios follow from the mission ending?",
+    "args": {
+     "topic": "smart cities mission India"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for trend_scenarios\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='smart cities mission India', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 58,
+   "traced": 58,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 115,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 3,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 621,
+  "charts": [
+   {
+    "id": "scm-project-completion",
+    "title": "SCM projects reported complete",
+    "kind": "share",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": false,
+    "series": [
+     {
+      "name": "Reported complete",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "scm_progress.csv",
+    "how": "ref",
+    "rows": 3,
+    "numeric_cells": 3,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.table",
+    "question": "Which cities have the largest gap between completed projects and operational services?",
+    "args": {
+     "topic": "India Smart Cities Mission city project completion operationalization",
+     "columns": [
+      "city",
+      "completed",
+      "operational",
+      "source"
+     ],
+     "limit": 100
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...source'], 'limit': 100}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...source'], 'limit': 100}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Smart Cities Missi...tion operationalization', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncolumns\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['city', 'completed', 'operational', 'source'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=100, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What independent evaluations measure resident outcomes before and after SCM projects?",
+    "args": {
+     "term": "India Smart Cities Mission independent impact evaluation resident outcomes before after",
+     "limit": 20
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...re after', 'limit': 20}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Smart Cities Missi...t outcomes before after', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "How do SCM spending and delivery compare across cities and project types?",
+    "args": {
+     "topic": "India Smart Cities Mission city project type cost completion",
+     "columns": [
+      "city",
+      "project_type",
+      "cost",
+      "completion",
+      "source"
+     ],
+     "limit": 100
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "5 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...source'], 'limit': 100}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...source'], 'limit': 100}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India Smart Cities Missi...ct type cost completion', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ncolumns\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['city', 'project_type', ... 'completion', 'source'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nlimit\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=100, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "What share of published research supports or contests claims of improved urban services?",
+    "args": {
+     "term": "India Smart Cities Mission improved urban services quality of life",
+     "window": "2015-2024"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-2024', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of SCM project progress changed by year?",
+    "args": {
+     "term": "India Smart Cities Mission progress projects",
+     "from": "2015-06-25",
+     "to": "2024-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2015-06-25', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2024-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 14,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 102,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 2,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 2,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 895,
+  "charts": [
+   {
+    "id": "india-smart-city-news",
+    "title": "Monthly news articles mentioning India’s smart cities mission",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Articles",
+      "how": "call",
+      "points": 24,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "india_smart_city_news_monthly.csv",
+    "how": "call",
+    "rows": 24,
+    "numeric_cells": 96,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers drive the qualifying or contradicting classifications?",
+    "args": {
+     "term": "smart cities India",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'smart cities India' — try expand=true, or a broader phrase",
+    "seconds": 1.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What outcome evaluations compare Indian smart-city projects with baselines?",
+    "args": {
+     "topic": "Indian smart city mission outcomes",
+     "geo": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...comes', 'geo': 'india'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='Indian smart city mission outcomes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How have supporting, qualifying, and contradicting research shares changed by year?",
+    "args": {
+     "topic": "smart cities",
+     "geo": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for stance_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...ities', 'geo': 'india'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='smart cities', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.geography",
+    "question": "Which cities dominate India-focused smart-city news coverage?",
+    "args": {
+     "term": "smart cities mission",
+     "geo": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_geography\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What are the strongest counter-evidence findings on mission implementation?",
+    "args": {
+     "topic": "India smart cities mission",
+     "geo": "india"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...ssion', 'geo': 'india'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='India smart cities mission', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngeo\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='india', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 40,
+   "traced": 40,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 7,
+   "found_in_corpus": 7,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 101,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": false
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 1,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 3,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

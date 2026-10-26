@@ -1,0 +1,267 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "dimensions": 5,
+    "map": 4,
+    "forecast": 4,
+    "drilldown": 5,
+    "export": 3,
+    "repro": 3,
+    "refs": 4,
+    "accuracy": 2,
+    "limits": 4,
+    "integrity": 5,
+    "verdict": 3,
+    "crossdomain": 4,
+    "article": 3
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "dimensions": 1,
+    "map": 0,
+    "forecast": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "integrity": 5,
+    "verdict": 4,
+    "crossdomain": 2,
+    "article": 3
+   },
+   "C": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "dimensions": 1,
+    "map": 2,
+    "forecast": 2,
+    "drilldown": 1,
+    "export": 2,
+    "repro": 1,
+    "refs": 4,
+    "accuracy": 1,
+    "limits": 2,
+    "integrity": 4,
+    "verdict": 2,
+    "crossdomain": 2,
+    "article": 2
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "dimensions": 1,
+    "map": 0,
+    "forecast": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 2,
+    "limits": 2,
+    "integrity": 2,
+    "verdict": 3,
+    "crossdomain": 1,
+    "article": 2
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Both research and news series are traced, windowed, and changes are quantified; the partial news month is withheld. Some research completeness language is stronger than the source warrants.",
+    "comparison": "Provides numerical country contrasts and tier-weighted document tallies, with caveats about windows and placement. Some comparison figures rely on limited top-row results.",
+    "chart": "Most chart data and captions align with calls, but some chart claims or provenance are shaky, including treating the news comparison as a distinct source mix.",
+    "dimensions": "Covers time, geography, comparison, composition, forecast, evidence magnitude, and source mix with captions.",
+    "map": "Maps trace the first-author and news-about lanes and include India and comparators. It does not map every supported lane; top-row and placement limits are noted.",
+    "forecast": "Projection, bounds, method, baseline, backtest error, observed period, and count-series interpretation are given. The stated gap/completeness details are not fully reliable.",
+    "drilldown": "Provides identified documents and country/theme layers plus seven follow-ups; the declared calls include executable arguments and the run includes follow-up queries.",
+    "export": "Includes the required tables with provenance and identifiers, but the country export contains unsupported or misrepresented values and some coverage/null handling is incomplete.",
+    "repro": "Most values are tagged, but several call tags are misassigned and derived or source-specific claims cannot be replayed exactly from the declared call mapping.",
+    "refs": "DOIs resolve and claims have quotes, but some entries are news excerpts rather than research references and metadata/attribution is imperfect.",
+    "accuracy": "There are material misreadings: the journal-country India cutoff is misstated, some query IDs do not match their stated data, and the geography rows contain questionable claims.",
+    "limits": "Discusses windows, matching, partial news, placed_pct, patent lag, lane distinctions, and projection limits near the relevant findings; some dates and completeness claims are imprecise.",
+    "integrity": "The script reports all views rendered, no console errors, and a valid manifest.",
+    "verdict": "Direct and decision-oriented, but the claim of three consistent pooled estimates and the cited supporting evidence are not fully substantiated by the displayed results.",
+    "crossdomain": "Connects research, health evidence, news, and patents in multiple arguments while keeping lanes separate; some links use mismapped call references.",
+    "article": "Has the required sections, length, and many traceable results, but methods and results include mismatched calls and claims that weaken reproducibility."
+   },
+   "B": {
+    "trend": "Explicitly says the requested series were not measured; no series is supplied.",
+    "comparison": "Offers only literature-based numerical contrasts, not the requested measured country comparison or tier-weighted document balance.",
+    "chart": "One literature effect-size chart is shown, but its values are cited rather than traced to task-run data.",
+    "dimensions": "Only evidence magnitude is represented in a chart.",
+    "map": "No map or country-level data.",
+    "forecast": "No measured series or forecast; the absence is stated honestly.",
+    "drilldown": "Identifies several studies and gives six specific follow-up query plans, but none was executed.",
+    "export": "CSV schemas and literature values are provided, but the time and geography exports are unmeasured and quote fields are empty.",
+    "repro": "No data queries were run and the quantitative claims are from cited literature or memory, so the requested call-based reproduction is unavailable.",
+    "refs": "Most references are resolvable and tied to claims, but verbatim quotations are absent and source details are not uniformly complete.",
+    "accuracy": "The response is transparent about not querying data, though some effect-size details are not fully aligned with the reference record and are acknowledged as needing verification.",
+    "limits": "Specific about absent queries, source age, observational evidence, and what would close gaps; several limits are necessarily hypothetical.",
+    "verdict": "Clear decision and confidence with conditions, but it does not bound the answer with measured attention, geography, or patent evidence.",
+    "crossdomain": "Connects cited health estimates and a tax-purchase result, but has no measured research, news, or patent corpora.",
+    "article": "The article has the required headings and length and candidly describes the literature-only approach; results are not based on new analysis."
+   },
+   "C": {
+    "trend": "The annual research series uses a nonmatching extended history, and the news trend claims are not supported by the recorded monthly response.",
+    "comparison": "Offers some numeric comparisons, but key attention and geography comparisons rely on mismatched or sparse data.",
+    "chart": "Chart data are not consistently traceable to the recorded responses; the script ceiling is only 1.",
+    "dimensions": "The apparently broad chart set cannot count beyond the integrity ceiling for charted dimensions.",
+    "map": "The affiliation points trace, but only one lane is mapped and the stated window is unsupported; other country lanes are sparse.",
+    "forecast": "A central path and sensitivity bounds are shown, but the underlying history/backtest figures conflict with the recorded scenario response.",
+    "drilldown": "Follow-up queries are listed but none executed; the next layer is limited.",
+    "export": "Exports exist, but the news landmarks and some country/provenance details do not trace cleanly to the recorded calls.",
+    "repro": "Declared arguments and results do not match the supplied reference record in material places, so replay would not reproduce the page.",
+    "refs": "The two DOIs resolve and quotes align with the supplied evidence, though the bibliography is sparse.",
+    "accuracy": "Several specifics conflict with the database record, including news landmarks, reported-country counts, and forecast backtest values.",
+    "limits": "Mentions important limits, but understates the data mismatches and uses windows not established by the calls.",
+    "verdict": "The recommendation is reasonable but the headline rests on a mischaracterized thin intersection and conflicting data details.",
+    "crossdomain": "Attempts to connect multiple corpora, but the news and geography measurements are mismatched or sparse, weakening those links.",
+    "article": "The structure and length meet the article form, but methods and results include measurements not supported by the supplied call record."
+   },
+   "D": {
+    "trend": "No series is claimed; this is an honest memory-based literature response.",
+    "comparison": "No measured country or weighted-tier comparison; only qualitative comparison of cited estimates.",
+    "chart": "The single chart is a cited literature comparison rather than a task-traced chart.",
+    "dimensions": "Only evidence magnitude appears, and the chart does not meet the measured-chart bar.",
+    "map": "No country-level map or traced geography lane.",
+    "forecast": "No forecast is supplied, and the missing analysis is explicitly acknowledged.",
+    "drilldown": "Names relevant references and gives follow-up queries, but no analysis is run and the next layer is limited.",
+    "export": "Exports are empty schemas rather than populated traced tables.",
+    "repro": "No calls or new computations; the page cannot be reproduced from a recorded query recipe.",
+    "refs": "The listed identifiers are broadly resolvable, but no verbatim quotes are supplied and one estimate attribution/interval appears inaccurate.",
+    "accuracy": "The no-query status is clear, but the effect-size details and confidence framing are not fully reliable against the cited sources.",
+    "limits": "Acknowledges the absence of data and observational limits, but gives only generic or hypothetical coverage and lag treatment.",
+    "verdict": "Gives a clear decision and change conditions, but lacks measured support for the broader funding rationale.",
+    "crossdomain": "No measured cross-corpus evidence is connected.",
+    "article": "Article sections are present but the deliverable does not reach the required length and relies on a knowledge-only synthesis."
+   }
+  },
+  "errors": {
+   "A": [
+    "The journal-country lane is described as having India below a smallest returned value of 51, but the recorded top rows end at Ireland 51 and Denmark 88; India was simply not returned.",
+    "The declaration of several call IDs does not consistently match the response used for the cited claim, making exact replay uncertain.",
+    "The monthly news plot ends in April 2026, but some text blurs the distinction between the plotted window and the censored boundary.",
+    "The claim that BMI adjustment shows adiposity mediation is an interpretation, not a demonstrated mediation analysis."
+   ],
+   "B": [
+    "The response says no data queries were run, so it does not satisfy the measured attention, geography, forecast, or export requirements.",
+    "Some recalled effect-size details require verification against the cited sources; the response itself flags this limitation."
+   ],
+   "C": [
+    "The news monthly trend and its landmarks conflict with the recorded news response, whose monthly series begins in January 2024 and ends in May 2026.",
+    "The reported-country result is described as five articles across four countries, while the recorded research.geography call supplies four country rows totaling five.",
+    "The forecast backtest and bounds conflict with the recorded scenario call, which reports four folds, MAE 33.25 versus 40.071, and projections 331 with bounds 259–403, 187–475, and 115–547.",
+    "The extended 2000–2025 history includes values not present in the recorded subject-plus-outcome history, so its chart and export are not reproducible from the supplied calls."
+   ],
+   "D": [
+    "The response supplies no task-run queries, charts, maps, forecasts, or populated exports.",
+    "It attributes an adjusted RR of 1.18 with CI 1.09–1.28 to Imamura, while the cited result record reports a different estimate/interval; the cited numeric claims need source verification."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the strongest deliverable because it attempts the full measured analysis, with traced trends, geography, forecast, exports, and an article, despite meaningful call-mapping and accuracy problems. B is the most disciplined literature-only response, but it leaves most required measurements blank; C’s apparent breadth is undermined by conflicts with the supplied query record, while D is transparent but substantially incomplete."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 0,
+   "dimensions": 5,
+   "map": 4,
+   "forecast": 4,
+   "drilldown": 5,
+   "export": 0,
+   "repro": 3,
+   "refs": 4,
+   "accuracy": 2,
+   "limits": 4,
+   "integrity": 5,
+   "verdict": 3,
+   "crossdomain": 4,
+   "article": 3
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 2,
+   "chart": 1,
+   "dimensions": 1,
+   "map": 0,
+   "forecast": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 0,
+   "refs": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "integrity": 5,
+   "verdict": 4,
+   "crossdomain": 1,
+   "article": 3
+  },
+  "chatgpt_prism": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "dimensions": 1,
+   "map": 2,
+   "forecast": 2,
+   "drilldown": 1,
+   "export": 2,
+   "repro": 1,
+   "refs": 4,
+   "accuracy": 1,
+   "limits": 2,
+   "integrity": 4,
+   "verdict": 2,
+   "crossdomain": 2,
+   "article": 2
+  },
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "dimensions": 1,
+   "map": 0,
+   "forecast": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 2,
+   "limits": 2,
+   "integrity": 2,
+   "verdict": 3,
+   "crossdomain": 1,
+   "article": 2
+  }
+ },
+ "clamped": {
+  "claude_prism": [
+   "chart 4->0",
+   "export 3->0"
+  ],
+  "claude_bare": [
+   "trend 1->0",
+   "repro 1->0",
+   "crossdomain 2->1"
+  ],
+  "chatgpt_bare": [
+   "drilldown 2->1"
+  ]
+ }
+}

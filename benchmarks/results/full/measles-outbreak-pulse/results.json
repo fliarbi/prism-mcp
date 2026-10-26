@@ -1,0 +1,230 @@
+{
+ "slug": "measles-outbreak-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 1.5,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 35.5,
+   "plain": 35.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.4,
+    "gpt": 40.6
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.5,
+    "export": 4.0,
+    "repro": 5.0,
+    "refs": 1.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 4.0,
+    "facets": 5.0
+   },
+   "strict": 73.0,
+   "plain": 73.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 82.0,
+    "gpt": 64.0
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 2.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.0
+   },
+   "strict": 23.2,
+   "plain": 23.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 18.0,
+    "gpt": 28.4
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.5,
+    "comparison": 4.5,
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 5.0,
+    "refs": 0.5,
+    "accuracy": 4.5,
+    "limits": 4.5,
+    "verdict": 4.0,
+    "facets": 4.5
+   },
+   "strict": 77.1,
+   "plain": 77.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 68.6,
+    "gpt": 85.6
+   }
+  }
+ },
+ "judge_mad": 0.7,
+ "verdicts": {
+  "opus": "D and B both reproduce the measured series exactly, but D also splits the geography, flags the entity and place anomalies, and shows the enrichment lag that under-counts the 2026 Bangladesh surge. D also reaches item-level headlines with URLs, which B never does. A and C measure nothing about coverage; C substitutes memory case counts, which a decision-maker could misread as a coverage series.",
+  "gpt": "C is the strongest decision-grade answer: its traced trend, comparisons, and limits stay aligned with the record, though it lacks a geography export and external references. D covers more facets, but its false claim that the latest month is complete undermines its trend reading and confidence."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "chatgpt_prism": [],
+   "claude_bare": [
+    "The trend, chart and export use outbreak case counts as a stand-in for coverage."
+   ],
+   "claude_prism": []
+  },
+  "gpt": {
+   "chatgpt_bare": [],
+   "claude_bare": [],
+   "chatgpt_prism": [],
+   "claude_prism": [
+    "States that the series has no partial months and treats May 2026 as complete, despite the reference warning that the newest month is censored and contains only a fraction of a normal month."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "No chart.",
+    "drilldown": "Five of six follow-ups executed, but there is no traced breakdown layer and the calls are broad.",
+    "export": "Empty provenance and no rows.",
+    "repro": "There are no numbers, so nothing can be regenerated.",
+    "refs": "None.",
+    "accuracy": "Empty deliverable, so no contradictions.",
+    "limits": "Says what is unmeasured, but the limits are generic rather than tied to any data.",
+    "verdict": "An honest non-answer: it hedges to nothing usable.",
+    "facets": "No facet is answered."
+   },
+   "chatgpt_prism": {
+    "trend": "Traced 24-month series with a stated window, the peak with its date, a 3.36x late-vs-early ratio and the CAGR. No critical or negative decomposition.",
+    "comparison": "Early third vs late third is traced, with the delta 5,902 and ratio 3.36. Tone is also compared against a defined corpus baseline.",
+    "chart": "One fully traced volume chart. The geography facet the question asks for is not charted.",
+    "drilldown": "Traced country, theme and entity layers, but no item-level headlines with URLs. Three of five follow-ups executed.",
+    "export": "Monthly CSV with provenance. There is no places table, although 'where' is a core facet.",
+    "repro": "45 of 45 numbers traced, a calls block is listed, and a provenance block is included. The 144-day gap recomputes.",
+    "refs": "No headline items, dates or URLs, where the pattern needs them.",
+    "accuracy": "Everything matches the reference. It does not flag the Georgia collision or the entity mislabels.",
+    "limits": "Window gap, censoring, mention matching, enrichment lag, the sampled publisher panel and placed_pct are all placed next to the numbers they bound.",
+    "verdict": "The verdict mostly restates the headline count. 'Where' and trend values are missing from the verdict itself.",
+    "facets": "Volume, trend, geography split and tone are covered with grounded values."
+   },
+   "claude_bare": {
+    "trend": "Series is memory case counts, not coverage. It is labelled estimate.",
+    "comparison": "Memory figures for cases, the wrong quantity for this question.",
+    "chart": "An estimate-labelled chart of cases, not coverage.",
+    "export": "Estimate-labelled CSV of cases.",
+    "drilldown": "Only 2 of 7 follow-ups executed. The layer description is generic.",
+    "repro": "Memory numbers; the sources are generic landing pages.",
+    "refs": "Generic CDC and WHO landing pages, with no specific documents.",
+    "accuracy": "The memory case facts are plausible and labelled. Nothing contradicts the reference.",
+    "limits": "Specific about what is unmeasured and separates interpretation.",
+    "verdict": "Answers a proxy question about cases, not coverage, at low confidence.",
+    "facets": "Coverage facets are unanswered; what is offered is outbreak proxies from memory."
+   },
+   "claude_prism": {
+    "trend": "Traced series with window, peak and second surge. It quantifies 3.36x total and 3.65x critical. Recomputed figures are exact: 4.6x, 36%, 12.7x.",
+    "comparison": "Early vs late, tone vs a defined baseline, and peak vs trough, all recomputing exactly. The global geography contrast is described, not ratioed.",
+    "chart": "Only a volume chart. The places table and the critical decomposition are in CSVs but not charted.",
+    "drilldown": "Month and country layers lead to dated headlines with publisher and URL. Three of six follow-ups executed; none were folded back into the report.",
+    "export": "Monthly CSV with the decomposition plus a places CSV, provenance and a JSON block.",
+    "repro": "109 of 109 traced, a calls block and a provenance block.",
+    "refs": "Script ceiling of 1; news items carry dates, publishers and URLs.",
+    "accuracy": "Catches the 'cult of the dead cow' mislabel, 'the who' typed as a person, the Georgia collision, enrichment lag hiding the Bangladesh surge, and the recent-sample bias.",
+    "limits": "Strong and placed next to the numbers, but capped by the ceiling.",
+    "verdict": "Direct, quantified and geographic, with decision, confidence, conditions and the window bound stated.",
+    "facets": "All facets are covered, including the US-vs-global split and the Bangladesh under-labelling."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No measured monthly series or quantified change.",
+    "comparison": "No measured comparison or baseline.",
+    "chart": "No chart.",
+    "drilldown": "Lists specific follow-up calls, but gives no traced breakdown layer.",
+    "export": "No data export.",
+    "repro": "No measured values or reproducible calls.",
+    "refs": "No sources or identifiers.",
+    "accuracy": "It clearly says it cannot measure the requested coverage and makes no contradictory measured claims.",
+    "limits": "Names key missing window, lane, corpus, coverage, censoring, and matching details, but has no dataset-specific limits.",
+    "verdict": "Directly advises against a decision based on this response, gives confidence and a condition that would change the answer; no contrary evidence is present.",
+    "facets": "No requested facet is answered with grounded values or a database-grounded no-data result."
+   },
+   "claude_bare": {
+    "trend": "The only series is explicitly an estimate of US cases, not coverage.",
+    "comparison": "Numeric case comparison is labeled estimate and uses a named public source, but does not compare coverage.",
+    "chart": "The chart is an openly labeled estimated case series, not coverage.",
+    "drilldown": "Follow-up questions are specific, but only two of seven calls returned usable results and there is no traced breakdown.",
+    "export": "The only CSV is an estimated case series, not the coverage export needed.",
+    "repro": "Most numeric claims are memory estimates or cannot be regenerated from listed calls.",
+    "refs": "Named public references are provided, but they do not give the item-level support and quotes needed for higher scores.",
+    "accuracy": "Separates case activity from media coverage and labels estimates and interpretations; no clear conflict with the reference record.",
+    "limits": "Clearly separates cases from coverage and notes the missing corpus, but omits applicable measured-corpus limits because none was queried.",
+    "verdict": "Gives a decision, confidence, and what would change it, while correctly treating cases as a proxy rather than measured coverage.",
+    "facets": "Most coverage facets remain unmeasured; the outbreak geography and themes are estimates or interpretation."
+   },
+   "chatgpt_prism": {
+    "trend": "Full monthly series traces; quantified late-versus-early growth, peak, censoring, and critical-volume decomposition are reported consistently.",
+    "comparison": "The early/late ratio and delta recompute, and the sentiment comparison defines the corpus baseline and caveat.",
+    "chart": "The monthly chart traces every point and supports the trend claim, but geography is not charted.",
+    "drilldown": "Traced panels provide breakdowns, but only three follow-up calls executed successfully and the report does not reach identified headline items.",
+    "export": "The monthly series has full provenance, but the requested geography facet has no corresponding export.",
+    "repro": "The recorded call, arguments, window, and capture date allow the reported numbers and derived comparisons to be regenerated.",
+    "refs": "No external documents with resolvable identifiers and claim-linked quotations are provided.",
+    "accuracy": "Measurements match the record, and the deliverable distinguishes article mentions, sentiment, assigned labels, and placed geography from epidemiology.",
+    "limits": "Places limits next to the relevant counts, including mention matching, censoring, the gap to today, enrichment lag, placement coverage, and panel denominator differences.",
+    "verdict": "Direct answer, decision, confidence, conditions, limits, and the contrary signal of the post-peak decline are all stated within the word limit.",
+    "facets": "Grounded volume, trend, sentiment, themes, entities, geography, placement, and sampled publisher facets are covered, with limits clearly stated."
+   },
+   "claude_prism": {
+    "trend": "The series and changes trace, but the report contradicts the source by calling the latest month complete and saying there are no partial months despite the censoring caveat.",
+    "comparison": "The early/late and sentiment ratios and deltas are traced, with the baseline defined and its caveat carried.",
+    "chart": "The monthly values trace and support a trend claim, but the chart does not visibly mark the censored boundary and there is no geography chart.",
+    "drilldown": "There are traced breakdowns, but only three follow-up calls succeeded and the report does not fold an executed follow-up result into the analysis.",
+    "export": "Monthly and country tables trace and are referenced, with provenance; the country table is partial and null-preserving hygiene is not demonstrated.",
+    "repro": "The source call, arguments, window, and capture date support regeneration of the traced values and calculations.",
+    "refs": "No external documents are referenced with claim-linked, resolvable identifiers and supporting quotes.",
+    "accuracy": "It says the newest month is complete and has no partial months, directly contradicting the source's censoring warning about the newest month.",
+    "limits": "Several applicable limits are stated, but the censoring limit is directly misstated and the verdict repeats the completeness error.",
+    "verdict": "It gives a decision and conditions, but its confidence reason contradicts the censoring caveat and the verdict does not bound that error.",
+    "facets": "Covers volume, trend, tone, themes, entities, geography, headlines, and publisher sampling with grounded values, including acknowledged gaps."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

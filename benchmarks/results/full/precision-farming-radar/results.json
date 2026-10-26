@@ -1,0 +1,242 @@
+{
+ "slug": "precision-farming-radar",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 32.3,
+   "plain": 32.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 30.2,
+    "gpt": 34.4
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 4.5,
+    "refs": 3.0,
+    "accuracy": 2.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 70.8,
+   "plain": 70.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 67.4,
+    "gpt": 74.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 0.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 1.0
+   },
+   "strict": 24.7,
+   "plain": 24.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 24.2,
+    "gpt": 25.2
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.0,
+    "chart": 3.0,
+    "drilldown": 2.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 3.0,
+    "accuracy": 3.0,
+    "limits": 4.0,
+    "verdict": 3.0,
+    "facets": 3.5
+   },
+   "strict": 64.6,
+   "plain": 64.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 59.2,
+    "gpt": 70.0
+   }
+  }
+ },
+ "judge_mad": 0.39,
+ "verdicts": {
+  "opus": "C and D both grounded their answers in the radar call. C used more of it: it quantified the research and news trends with ratios and the news peak, listed all ten DOI-linked works, and read the under-coverage zeros correctly. D omitted the news series and misread the direction of the framing shift in its verdict. A and B were honest memory-only answers with no measured support; B added labelled estimates that understate the recorded growth.",
+  "gpt": "D offers the broadest decision-grade picture: it connects research and news trends, framing, recent papers, and taxonomy results while explaining what those counts cannot establish. Its numerical coverage and drill-down are stronger than B’s, though an orientation-count error and unsupported peak caveat weaken its accuracy; B is the cleaner, more restrained alternative."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Memory estimates (around 10k papers per year by the mid-2020s, about 20% CAGR) conflict with the record (24,885 papers in 2025, 29.0% CAGR)."
+   ],
+   "claude_prism": [
+    "Says four of the top ten are labelled 'promising'. The record has five promising, four descriptive and one problem_identifying."
+   ],
+   "chatgpt_prism": [
+    "The verdict describes a 'shift toward cautionary framing', but the cautionary share declined from 10.3% to 8.3%."
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Publication index and annual growth figures are estimates, not measured research counts.",
+    "The asserted framing shift and emerging-topic claims are unverified recollections."
+   ],
+   "chatgpt_prism": [
+    "The supplied output does not provide the claimed index partition-read coverage metadata.",
+    "The trend chart shows only endpoints although the reference provides early-third and late-third values and a peak."
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "It says four of the top ten papers are promising; the reference lists five.",
+    "It presents 2025 as a possible partial peak/indexing-lag issue without that caveat appearing in the reference record.",
+    "Some tier labels are presented in the table as tool-like categories, though the response later says they are its own reading."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_bare": {
+    "trend": "No series; it only states that a trend cannot be measured.",
+    "comparison": "Gives only a qualitative contrast between input control and data-to-action systems.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown layer and an empty follow-up list.",
+    "export": "No export.",
+    "repro": "Contains no numbers and is honestly framed as general knowledge.",
+    "refs": "No references.",
+    "accuracy": "No contradictions, but no measured content either.",
+    "limits": "It is specific about what it cannot measure, which is honest. Without data it cannot place limits next to numbers.",
+    "verdict": "Gives an answer, a decision, a confidence level and what would change it. The answer rests on memory only.",
+    "facets": "Themes come from memory. News, under-coverage and trend are not grounded."
+   },
+   "claude_bare": {
+    "trend": "The index series is labelled estimate, from memory.",
+    "comparison": "Compares memory index values against a baseline that is also from memory.",
+    "chart": "The chart is labelled estimate, which is the honest ceiling.",
+    "drilldown": "Breakdown is from memory. Only 2 of 6 follow-up calls executed.",
+    "export": "The CSV is labelled estimate.",
+    "repro": "All figures are memory estimates.",
+    "refs": "No references.",
+    "accuracy": "Labelled estimates conflict with the record. B says 'up to roughly ten thousand papers by mid-2020s' and about 20% CAGR, against 24,885 papers in 2025 and 29% CAGR.",
+    "limits": "States window end versus today, lanes, coverage and censoring. As a plain model it cannot earn above 3.",
+    "verdict": "Has a complete structure but the answer rests on memory.",
+    "facets": "Facets are answered from memory."
+   },
+   "claude_prism": {
+    "trend": "Gives research and news endpoints with CAGR, the late/early ratio and the news peak (120 in 2025-03). The partial-2025 caveat is noted.",
+    "comparison": "The framing comparison (-2.0 pp) is traced with its baseline and caveat. The research vs news ratio is flagged as mixing windows.",
+    "chart": "The single endpoint chart traces. News volume and framing are not charted.",
+    "drilldown": "One traced layer: 10 works with DOIs plus topic counts. Only 3 of 6 follow-ups executed and none were folded back into the report.",
+    "export": "Two traced CSVs with provenance. The new_work.csv lacks DOI identifiers.",
+    "repro": "58 of 58 numbers trace, there is a calls block, and derived figures recompute (7.7x, 1.7, 19.9 pp).",
+    "refs": "All 10 DOIs resolve and each is tied to a claim with year and venue. There are no quotes, and the tier labels are self-assigned (disclosed as such).",
+    "accuracy": "It miscounts orientations: it says four promising, but the record has five, plus one problem_identifying.",
+    "limits": "Limits sit next to the numbers: window gaps, censoring, match mode, and the meaning of the under-covered zero counts.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It notes the lack of outcome data.",
+    "facets": "Covers trend, news, new work, framing and under-coverage. It does not address the drones vs AI vs IoT speed contrast."
+   },
+   "chatgpt_prism": {
+    "trend": "Research endpoints are quantified (7.66x, 29% CAGR). It omits the research censoring caveat and the news series entirely.",
+    "comparison": "The framing comparison is traced with its baseline, recomputed (0.81x), and carries its caveat.",
+    "chart": "The single endpoint chart traces. News and framing are not charted.",
+    "drilldown": "Evidence carries DOIs, but the grouping is qualitative. Only 2 of 6 follow-ups executed, and some are mismatched (geography called for under-coverage; critical browse called for growth drivers).",
+    "export": "Two CSVs with a provenance block. The framing window is unknown and there is no document table.",
+    "repro": "25 of 26 numbers trace and derived values recompute.",
+    "refs": "Five DOIs resolve, tied to claims with year and venue. There are no quotes.",
+    "accuracy": "The verdict says the 'shift toward cautionary framing is modest', but the cautionary share fell from 10.3% to 8.3%.",
+    "limits": "Limits are well placed, including the 175-day gap and the coverage caveat.",
+    "verdict": "The verdict misreads the framing direction against its own data, and the measured news trend is omitted.",
+    "facets": "The news trend is omitted despite being available. The drones/AI/IoT speed contrast is not addressed."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "trend": "Its explicitly estimated index has a stated window and quantified change, but the ceiling is 1 because it is unmeasured.",
+    "comparison": "The index comparison is an explicitly labelled estimate, capped at the script ceiling.",
+    "chart": "The chart is an honest estimate, which earns 1 under the rubric.",
+    "drilldown": "It offers generic breakdowns and only two of six proposed calls execute successfully.",
+    "export": "The CSV is an estimated index with no recorded source call.",
+    "repro": "The figures are honestly labelled memory estimates and cannot be replayed.",
+    "refs": "No references were verified or provided.",
+    "accuracy": "It clearly separates memory from measurement and does not contradict the reference record, though its specific trend and themes are unsupported.",
+    "limits": "It places useful limits beside the estimates, including no measured news data, unknown coverage, and missing 2026 data.",
+    "verdict": "It gives a decision, confidence, and conditions, but its answer rests on an unmeasured qualitative synthesis.",
+    "facets": "It covers several facets only as estimates and omits grounded research, news, orientation, and evidence results."
+   },
+   "chatgpt_prism": {
+    "trend": "The sourced endpoint series has a stated window but only first and last values, with no censoring caveat; the change is quantified.",
+    "comparison": "The earlier and recent cautionary shares are compared on one scale with the delta and defined baseline; arithmetic checks out.",
+    "chart": "The chart traces its endpoints and supports the prose claim, but omits the available trend decomposition and censoring marker.",
+    "drilldown": "It gives a qualitative topic grouping but no item-level layer; only two proposed follow-up calls execute successfully.",
+    "export": "Both needed tables are traced and referenced, but the trend export contains endpoints rather than the full available series.",
+    "repro": "Nearly all numbers trace, the recorded call has arguments, and derived ratios are recomputable; the missing numeric claim prevents a 5.",
+    "refs": "All five DOIs resolve and claims are tied to entries, but no abstract quotations or tier/strength are supplied.",
+    "accuracy": "It reads the framing caveat correctly and avoids claiming topic-level neglect from zero label matches; minor coverage claims exceed the supplied record.",
+    "limits": "It states windows, lane and important matching and coverage caveats near the claims, but does not carry all applicable censoring detail.",
+    "verdict": "The answer, decision, confidence and change conditions are clear and consistent, but it omits the strongest contrary evidence in its cited papers.",
+    "facets": "It addresses research topics, output, framing, and the research/news comparison caveat, but lacks grounded topic-specific breakdowns and item-level follow-through."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured time series is provided.",
+    "comparison": "It explicitly declines a measured comparison.",
+    "chart": "There is no chart block.",
+    "drilldown": "It provides no traced breakdown or executable follow-up calls.",
+    "export": "No measured dataset is exported.",
+    "repro": "The qualitative synthesis is not reproducible from calls or named sources.",
+    "refs": "No references are verified.",
+    "accuracy": "It makes no specific measured claims that contradict the record and clearly identifies the response as qualitative.",
+    "limits": "It accurately states that no database search, window, lane, or coverage data was used, but does not provide the specific limits needed for measured findings.",
+    "verdict": "It gives a cautious decision and confidence, but its qualitative answer lacks evidence and does not name contrary evidence.",
+    "facets": "It offers broad qualitative themes but does not ground the implied trend, comparison, evidence, or research/news facets."
+   },
+   "claude_prism": {
+    "trend": "The sourced research series includes a stated window, quantified growth and late/early comparison, but drops the full monthly news points and censoring detail.",
+    "comparison": "The research and news late/early ratios are separately computed and caveated for their differing windows and units.",
+    "chart": "The endpoint chart traces to the source, fits the time series, and supports a claim, but lacks intermediate points and visible censoring.",
+    "drilldown": "It exposes papers and taxonomy items with identifiers, but only three follow-up calls succeed and no follow-up result is folded in.",
+    "export": "The exports trace and have provenance, but omit required detailed monthly and complete series fields.",
+    "repro": "Every number traces and the call arguments and capture date are supplied in a regenerate block.",
+    "refs": "All identifiers resolve and metadata supports the claims, but no verbatim abstract quotes are included and tier labels are partly author interpretation.",
+    "accuracy": "Most values match, but it calls the 2025 endpoint a peak despite the record not marking it partial and inaccurately says four entries are promising and four descriptive when there are five promising and four descriptive.",
+    "limits": "It explains the windows, coverage, matching limits and what the counts cannot establish, though censoring is not fully anchored to the source.",
+    "verdict": "It gives a decision and confidence, but does not reconcile the measured framing stability with a contrary evidence item or fully bound the conclusion.",
+    "facets": "It grounds research and news trends, framing, recent work, under-coverage caveats, and research/news differences."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

@@ -1,0 +1,167 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "claude_prism",
+  "C": "chatgpt_bare",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 4,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "comparison": 4,
+    "chart": 0,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "accuracy": 3,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   },
+   "D": {
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 0,
+    "accuracy": 2,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "comparison": "Within-lane ratios recompute exactly (24/19=1.26x, 30974/11412=2.71x, delta 19,562). Says not to add lanes. It only obliquely contrasts studied vs reported.",
+    "chart": "No chart block.",
+    "drilldown": "One traced country layer. Only 1 of 5 follow-ups executed ok. No item-level identifiers.",
+    "export": "Two traced CSVs with window, unit, coverage=partial and a provenance JSON. The blank patent country is kept as blank and the CSVs are referenced from the prose.",
+    "repro": "37/37 numbers traced. The prism-calls block has args and the windows are stated. Derived numbers are recomputable.",
+    "accuracy": "Reads fields correctly: placed_pct 25%, lift is not volume, journal country is not study site. It cautions on high-lift rows but does not name Colombia as a likely acronym collision.",
+    "limits": "Window, censoring, the 5-month gap to today, lanes, placement coverage and the missing research window are stated next to the numbers.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. It ignores the strongest contrary evidence in its own data: European countries collectively dominate authorship rows.",
+    "facets": "Covers authorship, publication, news with placed_pct, patents and do-not-add. The mismatch is addressed only through relative gaps."
+   },
+   "B": {
+    "comparison": "Share-of-listed-rows contrast recomputes (86.7/24.5=3.5x, etc.) and states the denominator caveat. It directly answers studied vs reported and flags the unreconciled 86.7% vs 29.6%.",
+    "chart": "The chart's window is a placeholder borrowed from c2 for c1 data. Ceiling is 0.",
+    "drilldown": "Five of six follow-ups executed ok. Layers stop at lane and country, with no item-level identifiers.",
+    "export": "Five traced CSVs plus provenance. geo_news_term.csv is labelled coverage=full even though placed_pct is 25%, which is a hygiene error.",
+    "repro": "136/137 numbers traced. The prism-calls block and windows are given. Derived sums and shares are recomputable.",
+    "accuracy": "Mislabels news coverage as full. The '107.1% row-floor check' does not appear in the reference. The chart window is fabricated for schema purposes, though disclosed.",
+    "limits": "Rich, placed limits: the 175-day gap, enrichment bound, match mode, the health literature index's weak coverage of law journals, and listed-row truncation. The coverage label contradicts these.",
+    "verdict": "Clear answer that addresses the mismatch, with decision, confidence and conditions. Capped at 3 by the script ceiling.",
+    "facets": "All lanes, the mismatch with values, and India's presence in news but not research. The GDPR vs DPDP framing itself is not grounded."
+   },
+   "C": {
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Only failing follow-up calls.",
+    "export": "None.",
+    "repro": "No numbers. Honest but not reproducible.",
+    "accuracy": "No contradictions because it makes no claims.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Declines to answer.",
+    "facets": "No facets answered."
+   },
+   "D": {
+    "comparison": "Qualitative hypotheses only.",
+    "chart": "None.",
+    "drilldown": "Layers are named generically. Only 1 of 6 follow-ups executed ok.",
+    "export": "Empty stub labelled estimate.",
+    "repro": "Untagged figure and no traced calls.",
+    "accuracy": "Misdefines placed_pct as 'placed in a country's outlets'. Asserts the patent lane is empty, but the reference has 24 patents.",
+    "limits": "Honest about being unmeasured.",
+    "verdict": "Gives a hypothesis from memory with low confidence.",
+    "facets": "Answered from memory only."
+   }
+  },
+  "errors": {
+   "A": [
+    "Attributes the do-not-add caveat to c1 text that is not visible in the reference record (minor)"
+   ],
+   "B": [
+    "news CSV coverage=full contradicts placed_pct 25.0%",
+    "'row-floor check at 107.1%' is not in the reference",
+    "Chart window borrowed from c2 for c1-derived data"
+   ],
+   "C": [],
+   "D": [
+    "placed_pct misdefined as share placed in a country's outlets",
+    "Patent origin asserted as explicitly empty; the reference has US 10, KR 6, DE 4 and 4 blank"
+   ]
+  },
+  "best": "A",
+  "verdict": "A and B both ground every number in the two calls and keep the lanes separate. B makes the sharper studied-vs-reported contrast but carries a false coverage=full label, an untraced row-floor figure and a placeholder chart window. A is narrower but clean, so it is the safer decision document. C and D honestly decline to measure, but D also misreads placed_pct and wrongly declares the patent lane empty."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 4,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_prism": {
+   "comparison": 4,
+   "chart": 0,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "accuracy": 3,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  },
+  "claude_bare": {
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 0,
+   "accuracy": 2,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

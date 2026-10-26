@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "chatgpt_prism",
+  "B": "chatgpt_bare",
+  "C": "claude_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 4,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 2,
+    "export": 0,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 2,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 5
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Traced full monthly series with window, censoring, quantified late/early ratio and peak; omits the tool-reported 22.0% CAGR.",
+    "comparison": "Same-window ratio and corpus baseline are defined, and the delta and relative reduction recompute.",
+    "chart": "The monthly chart traces all points and supports the stated trend; no separate tone chart is supplied.",
+    "drilldown": "Multiple breakdowns and specific follow-up calls are listed, but no executed follow-up result is folded into the report and no item-level headlines are provided.",
+    "export": "Needed monthly, tone, and geography CSVs are referenced and carry provenance, but the tone export lacks source identifiers and row-level linkage required for anchor 5.",
+    "repro": "The used call, arguments, window, and capture date are given; the reported figures are traceable, but no full regeneration recipe for all exports/charts is provided.",
+    "refs": "No resolving news URLs or external references are supplied; Prism call citations alone do not meet the reference requirement.",
+    "accuracy": "Mostly matches the record, but says entity central for publisher and recent feeds; the overview record labels the sampled publisher data under mention mode and does not establish that feed matching claim.",
+    "limits": "Specific window, censoring, gap, match mode, and enrichment caveats are placed near the relevant figures; the latest-month incompleteness is clearly stated.",
+    "verdict": "Direct, bounded answer with decision, confidence, and change conditions; it does not name the strongest contrary finding, the April peak amid flat direction.",
+    "facets": "Covers trend, tone, places, companies, themes, source concentration, and relevant caveats, but does not resolve brand-versus-generic overlap or seasonality."
+   },
+   "B": {
+    "trend": "No measured series or estimate is provided.",
+    "comparison": "No measured contrast or estimate is provided.",
+    "chart": "No chart block with data is supplied.",
+    "drilldown": "Lists possible follow-ups, but only three of six calls executed successfully and no traced breakdown layer is reported.",
+    "export": "No data export is supplied.",
+    "repro": "No measured numbers or executable calls with complete arguments and window are reported.",
+    "refs": "No resolving references or news items are supplied.",
+    "accuracy": "It avoids unsupported claims and contradicts no reference data, earning the rubric's empty-deliverable accuracy score.",
+    "limits": "Notes that the corpus and window are unavailable, but does not state the scenario's applicable coverage, censoring, or match-mode limits.",
+    "verdict": "Gives a direct no-measurement answer and decision with confidence and conditions, but offers no measured support or contrary evidence.",
+    "facets": "Most requested facets remain unmeasured, with no grounded values or tool-backed no-data results."
+   },
+   "C": {
+    "trend": "The full series is traced, but prose calls the period flat to rising and describes a 2026 step-up without reconciling that reading with the tool's flat direction and 22% CAGR; it also omits censoring from the chart.",
+    "comparison": "Ratio, baseline, delta, and relative ratio are traceable and recompute; it answers the tone contrast on one scale.",
+    "chart": "Charts trace the full monthly series and visibly compare volume with tone via the monthly export; labels and captions support the requested facets and the partial period is excluded.",
+    "drilldown": "Provides traced theme, geography, entity, and publisher breakdowns, but no item-level records and no usable executed follow-up results are folded back in.",
+    "export": "The only CSV contains six of 24 months, despite the monthly series being central; the other needed tone and geography rows are not exported.",
+    "repro": "The main call, arguments, and capture date are present and figures are traceable, but some calls lack reproducible windows or valid-looking arguments and the export is incomplete.",
+    "refs": "No resolving news URLs or external references are supplied; Prism call citations alone do not satisfy the references rubric.",
+    "accuracy": "It says the series is rising and that 2026 stepped up despite the record's flat direction; it also describes the monthly series as complete without carrying the censoring caveat in the chart.",
+    "limits": "States the window gap, censoring, mention mode, enrichment bound, sample size, and limits of counts next to relevant claims.",
+    "verdict": "Supported answer and confidence are given, but the claim of growing attention conflicts with the tool's flat direction, and the verdict omits the strongest contrary reading.",
+    "facets": "Addresses trend, tone, themes, places, organizations, people, and source concentration, and flags generic-versus-song collisions; does not measure seasonal pattern or term overlap."
+   },
+   "D": {
+    "trend": "The only chart is an explicitly labelled memory estimate of capacity, not a news time series; it earns the honest-estimate floor.",
+    "comparison": "No measured news comparison or estimate of a news ratio is provided.",
+    "chart": "The memory-based capacity chart is explicitly estimated, so it earns the estimate-only score.",
+    "drilldown": "Provides only planned generic layers; no traced breakdown or successful follow-up result is included.",
+    "export": "An estimate CSV is present, but it is not a news export and has no source call.",
+    "repro": "All news measures are unmeasured; the capacity figures are honestly marked as memory estimates but cannot be reproduced.",
+    "refs": "No resolving references or news items are supplied.",
+    "accuracy": "It clearly labels the numbers and expected themes as estimates or interpretation, and makes no factual contradiction to the reference record.",
+    "limits": "It identifies the missing news window and unknown coverage, censoring, and match mode, but relies on generic missing-data caveats rather than limits tied to measured figures.",
+    "verdict": "Gives a scoping answer with confidence and conditions, but does not answer what the news says with grounded findings.",
+    "facets": "News facets are expectations from memory or explicitly unavailable, not grounded values or tool-backed no-data results."
+   }
+  },
+  "errors": {
+   "A": [
+    "The claimed entity_central match mode for sampled publisher/recent feeds is not established by the overview response; its recorded match_mode is mention.",
+    "No resolving news URLs are included for the reported news findings."
+   ],
+   "B": [],
+   "C": [
+    "Calls the overall series rising and says attention grew, while the reference direction is flat; the tool's reported 22.0% CAGR does not override its direction field.",
+    "The chart omits the censoring marker/caveat for the censored newest month.",
+    "The claimed news series is complete, although the response explicitly censors the newest month."
+   ],
+   "D": [
+    "The capacity additions and price figures are unverified memory estimates, not findings about news coverage; the chart does not answer the asked news trend."
+   ]
+  },
+  "best": "A",
+  "verdict": "A is the most decision-ready: it gives a measured, bounded account of volume, tone, places, and organizations, with traceable exports and a cautious interpretation. C covers more facets but overstates the trend as rising and leaves the export incomplete; B and D correctly acknowledge missing measurements but cannot answer the question from grounded news data."
+ },
+ "scores": {
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 4,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 2,
+   "export": 0,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 3,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 2,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 5
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

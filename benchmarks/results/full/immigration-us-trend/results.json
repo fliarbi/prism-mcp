@@ -1,0 +1,235 @@
+{
+ "slug": "immigration-us-trend",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 1.0,
+    "comparison": 1.5,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "accuracy": 2.0,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 30.8,
+   "plain": 30.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 28.7,
+    "gpt": 32.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.5,
+    "chart": 3.0,
+    "drilldown": 3.5,
+    "export": 3.5,
+    "repro": 4.0,
+    "accuracy": 2.5,
+    "limits": 3.5,
+    "verdict": 3.5,
+    "facets": 4.0
+   },
+   "strict": 68.7,
+   "plain": 68.7,
+   "invented": false,
+   "by_judge": {
+    "opus": 71.5,
+    "gpt": 65.9
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 1.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.0
+   },
+   "strict": 22.8,
+   "plain": 22.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 20.7,
+    "gpt": 25.0
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 3.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 1.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "accuracy": 3.0,
+    "limits": 3.0,
+    "verdict": 3.5,
+    "facets": 3.5
+   },
+   "strict": 64.1,
+   "plain": 64.1,
+   "invented": false,
+   "by_judge": {
+    "opus": 58.5,
+    "gpt": 69.8
+   }
+  }
+ },
+ "judge_mad": 0.38,
+ "verdicts": {
+  "opus": "A and D both grounded the term totals, shares and exact ratios in the call. A went further: it read critical share per term, named peaks with dates, quantified changes, read the censoring correctly and shipped two exports with executable follow-ups. D misread the censoring, treating May as a partial month, and offered no runnable drill-down. B and C honestly declined or estimated, but C's guessed shares contradict the measured ordering, so neither supports a decision.",
+  "gpt": "C is the strongest decision aid: it gives a reproducible same-window ranking, complete chart series, and careful separation of critical orientation from sentiment. B adds useful drill-down and comparison detail, but its endpoint treatment conflicts with the source’s censoring caveat; C also has a censor-date mistake, while A and D lack grounded measurements."
+ },
+ "errors": {
+  "opus": {
+   "claude_prism": [
+    "Calls deportation 'most negative' on the basis of critical share (loose conflation of critical with negative).",
+    "Cites coverage 'row floor at 107.1%' as [c1], but this does not appear in the shown record."
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Estimated shares (immigration 60%, border security 25%, deportation 15%) contradict the record (78.0/4.5/17.5), labelled est.",
+    "Claims deportation grew fastest, while the record shows deportation flat (growth 1.16), labelled est."
+   ],
+   "chatgpt_prism": [
+    "States May 2026 is censored or partial, but the record marks it partial_period:false. The censor date 2026-06-01 is the excluded end."
+   ]
+  },
+  "gpt": {
+   "chatgpt_bare": [
+    "Misses the supplied c1 reference record and claims no Prism results were supplied.",
+    "Proposed calls use unsupported window/argument shapes and are not executed."
+   ],
+   "claude_prism": [
+    "Treats May 2026 as uncensored even though c1 says the newest month is a fraction of normal ingest and censors at 2026-06-01.",
+    "Claims endpoint changes conflict with source direction labels without resolving that the source growth calculation is undefined.",
+    "Calls critical orientation a frame and gives tone_ratio an inferred negative/positive interpretation despite its undefined formula."
+   ],
+   "chatgpt_prism": [
+    "Says May 2026 is censored; c1's censor cutoff is 2026-06-01, so May is within the reported window and not flagged partial.",
+    "Describes the newest month as a fraction of normal ingest while assigning that status to May, creating a date mismatch."
+   ],
+   "claude_bare": [
+    "Estimated overlap magnitude and term behavior are presented without evidence, including the assertion that immigration appears in most deportation or border-security articles.",
+    "Estimated annual index values do not measure article coverage and cannot support a comparative coverage trend."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_prism": {
+    "trend": "Window, censoring and peaks are named with values and dates, and the endpoint change is computed correctly. The chart and CSV show only 10 of the 24 available months, and there is no decomposition.",
+    "comparison": "Ratios and deltas recompute exactly (17.4x, 3.9x, 4.5x). Border security is defined as the baseline and the overlap caveat is carried. Overlap itself is not measured.",
+    "chart": "The points trace with window, unit and source. However, the line uses decimated points, so intermediate swings are hidden. Tone and critical share are discussed but not charted.",
+    "drilldown": "Breakdown goes term, then month, then tone, and 4 of 6 follow-ups executed. No item-level identifiers and no results folded back.",
+    "export": "Two traced CSVs with provenance and a JSON block, referenced from the prose. The monthly file is honestly labelled partial (selected months).",
+    "repro": "63 of 67 numbers trace. The calls block has args, and derived values are labelled and recomputable.",
+    "accuracy": "Recomputations are correct and the censoring is read correctly (June excluded, May complete). Two weak points: critical share is loosely called 'most negative', and the coverage figure of 107.1% does not appear in the record shown.",
+    "limits": "Window end, the 5-month gap to today, lane, match mode, attention vs importance and the double-counting of the combined total are all stated where the numbers are used. Unanswerable items are listed.",
+    "verdict": "Direct answer with decision, medium confidence with a reason, and what would change it. The endpoint-vs-label tension is acknowledged in the Trend section rather than in the verdict.",
+    "facets": "Totals, shares, monthly series, direction, tone, most_covered and combined are all grounded. Overlap is given an explicit grounded 'not measurable'."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "No comparison.",
+    "chart": "Empty chart.",
+    "drilldown": "Proposed follow-ups only, and 0 of 5 executed.",
+    "export": "No data.",
+    "repro": "No numbers to trace.",
+    "accuracy": "No contradictions because nothing is claimed.",
+    "limits": "Honest but mostly generic about what is unknown.",
+    "verdict": "Declines to answer, with a decision to obtain data.",
+    "facets": "No facet answered."
+   },
+   "claude_bare": {
+    "trend": "A memory index labelled as estimate.",
+    "comparison": "Compares guessed indices, not volumes.",
+    "chart": "Estimate-labelled memory chart.",
+    "drilldown": "Only 1 of 6 follow-ups ran, and no traced breakdown.",
+    "export": "Estimate-labelled CSV.",
+    "repro": "Memory values only.",
+    "accuracy": "The estimates are labelled, but they contradict the record. Guessed shares of 60/15/25 vs actual 78/17.5/4.5 invert deportation and border security, and deportation 'growing fastest' conflicts with its flat direction.",
+    "limits": "Specific about what is unmeasured, and the overlap and common-word discussion is good.",
+    "verdict": "Low-confidence scoping answer resting on guesses.",
+    "facets": "Mostly memory estimates."
+   },
+   "chatgpt_prism": {
+    "trend": "Full 24-point series with window, but change is given only as endpoints and no peaks are named. It also wrongly calls May 2026 censored.",
+    "comparison": "Exact ratios (4.46x, 17.38x, 3.89x), baseline defined and overlap caveat carried.",
+    "chart": "Full traced volume chart. Tone is not charted, and the caption misstates that the newest plotted month is censored.",
+    "drilldown": "0 of 4 follow-ups executed, and the 'drill-down' is a field glossary.",
+    "export": "Only a totals table, with no monthly export despite the full series in the prose and chart.",
+    "repro": "23 of 24 numbers trace, and the calls are listed with args.",
+    "accuracy": "It misreads censoring: the record has partial_period false for May, and the censor point is the excluded June. This is propagated into the trend reading and the caption. Its reading that critical is not negative is correct.",
+    "limits": "Window, gap of 144 days, lane and coverage are stated, but mostly in the footer, and the censoring statement is wrong.",
+    "verdict": "Answer, decision, confidence and what would change it are present. It does not address the endpoint-vs-direction contrary evidence.",
+    "facets": "Tone and overlap are only thinly addressed, and there are no peaks or tone-by-term reading."
+   }
+  },
+  "gpt": {
+   "chatgpt_bare": {
+    "trend": "No sourced time series; the proposed chart has no data.",
+    "comparison": "No measured contrast or sourced values.",
+    "chart": "Chart has an empty series and no source-backed values.",
+    "drilldown": "Names follow-up calls, but they are unexecuted and some args/windows do not match the supplied call.",
+    "export": "No data export; provenance block has no calls.",
+    "repro": "No recorded call or named source can reproduce measurements.",
+    "accuracy": "Makes no fabricated measured claims, but its blanket refusal omits the supplied reference evidence.",
+    "limits": "Clearly says it cannot measure, but does not identify the supplied window, censoring, or corpus limits.",
+    "verdict": "Gives a cautious decision and conditions, but no evidence supports a comparison.",
+    "facets": "Does not answer measured volume, trend, tone, or overlap facets."
+   },
+   "claude_prism": {
+    "trend": "Series traces, but the chart samples only 10 of 24 months and endpoint changes are not the source's reported growth measure; censoring is missed in the trend reading.",
+    "comparison": "Same-window term totals, ratios and deltas recompute; it defines its reference and states overlap and attention caveats.",
+    "chart": "The monthly chart traces its plotted points and has labels, but omits most available months and does not visibly mark the censored endpoint.",
+    "drilldown": "Provides term and month/tone layers plus four follow-up calls that executed with relevant data; no item-level articles are exposed.",
+    "export": "Exports are referenced and mostly trace, but monthly CSV is a selected subset and lacks full per-month rows and full provenance attributes.",
+    "repro": "Call args and window are given; most numeric claims trace, but 4 of 67 do not and one is untagged, so it falls below full traceability.",
+    "accuracy": "Contradicts the source censoring caveat by treating May 2026 as a normal full month and calls critical coverage a frame; also interprets undefined tone_ratio.",
+    "limits": "Notes window, lane, coverage and matching gaps, but fails to apply censoring to the trend endpoints and misses that the newest month is partial ingest.",
+    "verdict": "Directly supports a decision with confidence and a change condition, but its trend and tone interpretation overstates what the source establishes and it omits a contrary trend signal.",
+    "facets": "Grounds volume, direction, tone-related fields and overlap, but leaves source-level validation and a de-duplicated overlap count unanswered."
+   },
+   "chatgpt_prism": {
+    "trend": "Full monthly series traces, but it does not quantify change and incorrectly says May is censored; source says censoring is at 2026-06-01, after May.",
+    "comparison": "Ratios are correct on the same window and totals, with overlap caveat, but the comparison does not carry the source's attention-not-importance and common-word caveats at the point of comparison.",
+    "chart": "Fully traced monthly values with source, window and claim; however, the chart does not visibly mark a censored period and the source does not censor May.",
+    "drilldown": "Provides only a term-level breakdown and proposed calls; none of its follow-ups executed successfully.",
+    "export": "Term totals trace and are referenced, but the question needs the monthly series too; export omits it and provenance is incomplete.",
+    "repro": "The core call, args and window are listed and almost all figures trace; one numeric claim is untraced, and there is no complete regenerate recipe for all artifacts.",
+    "accuracy": "Reads critical separately from negative, flags undefined tone fields and overlap, and does not materially misstate the source aside from the minor censor-date imprecision.",
+    "limits": "States the window, news lane, coverage caveat and matching limits, but incorrectly treats May as the censored month and omits the gap to today from the measured window as an interpretive limit.",
+    "verdict": "Direct answer, decision, confidence and change condition are supported; the answer is concise and acknowledges overlap and the tone-definition limitation, though the May caveat is wrong.",
+    "facets": "Covers volume, trends, tone-related fields, overlap and the news-versus-importance distinction with grounded evidence."
+   },
+   "claude_bare": {
+    "trend": "Explicit estimate from memory earns 1; it is not a measured series.",
+    "comparison": "Numeric comparison is explicitly estimated, but compares invented index values rather than measured coverage.",
+    "chart": "Estimate-only chart is honestly labelled, earning the memory-chart anchor.",
+    "drilldown": "Lists generic layers and mostly unexecuted calls; only one follow-up returned relevant nonempty data.",
+    "export": "Export is explicitly an estimate, with no measured rows.",
+    "repro": "No recorded call reproduces the estimated values; estimates are labelled honestly.",
+    "accuracy": "Labels estimates, but asserts unmeasured overlap and broad-term behavior as fact in places.",
+    "limits": "Identifies that no measured window or query exists, but limits are generic and do not provide source-specific bounds.",
+    "verdict": "Offers a cautious scoping decision and conditions, but the comparative conclusion rests on estimates and has low confidence.",
+    "facets": "Most requested facets are estimates or unanswered; overlap is asserted without evidence."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

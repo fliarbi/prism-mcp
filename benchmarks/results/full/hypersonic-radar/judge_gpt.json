@@ -1,0 +1,190 @@
+{
+ "labels": {
+  "A": "claude_bare",
+  "B": "chatgpt_bare",
+  "C": "chatgpt_prism",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "B": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 2
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 5,
+    "drilldown": 2,
+    "export": 4,
+    "repro": 5,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 4,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "The series is explicitly an estimate, so it earns the estimate anchor only.",
+    "comparison": "Speed figures and framing contrast are estimates or qualitative, not a traced same-scale comparison.",
+    "chart": "The chart is labeled estimate, which earns 1; its values are not measured.",
+    "drilldown": "Names possible breakdowns and lists calls, but only two calls ran successfully and no traced breakdown is shown.",
+    "export": "The CSV is explicitly from memory and is not a needed measured research export.",
+    "repro": "No calls were executed; numeric claims are estimates or unverified references.",
+    "refs": "References are unverified and lack resolvable identifiers.",
+    "accuracy": "The deliverable labels estimates and interpretation, with no clear contradiction to the supplied record.",
+    "limits": "It states no database was queried, identifies estimates, and describes coverage and time gaps; some limits remain generic.",
+    "verdict": "Direct answer, decision, confidence, and conditions are given, but the answer rests on unverified qualitative claims.",
+    "facets": "Most requested measured facets are explicitly unavailable; the remaining topics are largely ungrounded."
+   },
+   "B": {
+    "trend": "No time series is provided; the empty chart does not supply one.",
+    "comparison": "No measured comparison is made.",
+    "chart": "The chart has no plotted values and is explicitly an estimate/no-data illustration.",
+    "drilldown": "Lists generic research questions and calls; only one follow-up returned on-topic data.",
+    "export": "The CSV is an empty schema, not a traced export.",
+    "repro": "No calls were executed and no numeric claims are made to reproduce.",
+    "refs": "No source documents or identifiers are supplied.",
+    "accuracy": "It avoids fabricated measurements and clearly distinguishes broad topic descriptions from corpus findings.",
+    "limits": "It states the lack of corpus and measurement, but does not provide data-specific limits beyond that.",
+    "verdict": "Direct but cautious answer with decision, confidence, and what would change it; no measured evidence supports a stronger conclusion.",
+    "facets": "It answers some facets with grounded no-data statements, but offers only a general research-area map."
+   },
+   "C": {
+    "trend": "The traced trend values, window, caveats, and quantified comparisons are present, but the chart omits most available series points and censoring detail.",
+    "comparison": "Research and framing comparisons are traced, ratios and deltas are stated, and the framing caveat is carried; it does not fully resolve the question’s attention-versus-research contrast.",
+    "chart": "Charts trace to the call, identify windows, units, and source, and support stated claims; the series are sparse and partial-period marking is absent.",
+    "drilldown": "There is a traced paper layer and specific follow-ups, but only one follow-up executed successfully and no item-level result was folded back in.",
+    "export": "Exports are referenced and mostly trace with provenance, but the trend table is selective and does not preserve the complete series or all required source fields.",
+    "repro": "The used call and arguments are supplied, all numeric claims trace, and the export carries a regenerate recipe.",
+    "refs": "Five listed DOI identifiers fail the corpus lookup, capping this at 1.",
+    "accuracy": "The key trends and caveats match the record; the deliverable acknowledges the radar’s limited scope and avoids equating research activity with capability.",
+    "limits": "It states the windows, gap to today, match mode, lane and coverage caveats; some limits are not attached directly to every number.",
+    "verdict": "Direct answer, decision, confidence, and conditions are given, but it does not name the strongest contrary evidence from its own data.",
+    "facets": "It covers trend, framing, and scope limits, but leaves several implied facets such as seasonality and the research/news mismatch unresolved."
+   },
+   "D": {
+    "trend": "The record’s annual series is reduced to trend statements and aggregate thirds; no full traced time series is shown.",
+    "comparison": "The within-series ratios and deltas recompute, and the different windows are disclosed; the cross-lane growth comparison is appropriately qualified.",
+    "chart": "Both charts are traced, labeled, and tied to claims, with useful early/late decomposition; partial periods are not visibly marked.",
+    "drilldown": "Shows trend, ranked papers, and news layers with identifiers, plus three successful specific follow-ups, but no executed result is folded back into the report.",
+    "export": "Exports are referenced and trace, but are incomplete for the full trend series and lack full provenance attributes such as a coverage flag’s definition and capture details.",
+    "repro": "The radar call, arguments, window, and capture date are present; numeric claims trace and derived values are recomputable.",
+    "refs": "All DOIs resolve and entries are tied to claims with year, venue, and tier, but no abstract quotes are supplied.",
+    "accuracy": "The reported values and field meanings match the record; it correctly warns that exact-label zeros do not establish under-coverage.",
+    "limits": "It states windows, gaps, lane, match bias, coverage caveat, and separates interpretation from measured counts; caveats could be placed closer to some figures.",
+    "verdict": "It gives a supported answer, decision, confidence, and conditions, and notes the main limitation; it omits the framing result as contrary evidence to its attention narrative.",
+    "facets": "It covers the implied research/news contrast, overlap and limits, and gives grounded no-data treatment for subtopic coverage; seasonality is not directly measured."
+   }
+  },
+  "errors": {
+   "A": [
+    "Presents several missile-program and deployment claims from memory; they are labeled estimates but remain unverified."
+   ],
+   "B": [],
+   "C": [
+    "Five cited DOI identifiers are not found in the research corpus, as flagged by the script.",
+    "The news trend ends 2026-05-01, so its last point is not a current measure."
+   ],
+   "D": [
+    "The news ‘last’ value is a single period and may be partial; the chart does not visibly mark that caveat.",
+    "The research trend chart displays only early and late thirds, not the full available annual series."
+   ]
+  },
+  "best": "D",
+  "verdict": "D is strongest for a decision-maker: it connects the research themes to a traced publication trend and contrasts that with rising news attention, while warning that neither establishes capability. C has stronger full-series and export machinery, but its failed DOI checks materially weaken the paper-level evidence."
+ },
+ "scores": {
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 2
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 5,
+   "drilldown": 2,
+   "export": 4,
+   "repro": 5,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_prism": {
+   "trend": 1,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 4,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

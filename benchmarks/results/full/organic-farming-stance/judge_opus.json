@@ -1,0 +1,185 @@
+{
+ "labels": {
+  "A": "claude_prism",
+  "B": "claude_bare",
+  "C": "chatgpt_prism",
+  "D": "chatgpt_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 4,
+    "comparison": 5,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 5,
+    "refs": 3,
+    "accuracy": 5,
+    "limits": 5,
+    "verdict": 3,
+    "facets": 4
+   },
+   "B": {
+    "trend": 1,
+    "comparison": 2,
+    "chart": 1,
+    "drilldown": 2,
+    "export": 1,
+    "repro": 1,
+    "refs": 3,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 3,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 2,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 3,
+    "facets": 3
+   },
+   "D": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 1,
+    "facets": 0
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Full positive and contested share series, traced and decomposed, with deltas and the 2020 contested peak named. The caption 'move together' overreads a volatile series (positive spikes in 2019 while contested stays flat).",
+    "comparison": "Same scale (% of papers) and same baseline year. 2.44x, 1.51x, +11.1pp, +6.5pp and the gap row all recompute exactly. It notes that the framing shift averages over thirds, and it answers the promising-vs-contested contrast.",
+    "chart": "Traced share overlay showing a decomposition, with window, unit and source. Volatility is acknowledged but not marked on the chart.",
+    "drilldown": "Contribution and topic layers are traced. Only 2 of 6 follow-ups executed ok.",
+    "export": "One traced CSV with full provenance and a provenance JSON block. No document table with ids. Ceiling 3.",
+    "repro": "56/56 numbers traced. The prism-calls block lists every call with args.",
+    "refs": "3 DOIs resolve and each is tied to a claim. No quotes. Tier is explicitly not reported.",
+    "accuracy": "No contradictions. It catches anomalies: off-topic rows (cricket powder, hydroponics) and 'sustainable agriculture' dominating the title matches.",
+    "limits": "Limits are placed next to the numbers: the 10-month gap to today, phrase expansion, framing not being truth, and a narrower re-run as the fix.",
+    "verdict": "Direct answer, decision, confidence with reason, and what would change it. At ceiling 3.",
+    "facets": "Trend, framing shift, examples and phrase caveat are covered. The yield-vs-environment content is flagged as unanswerable."
+   },
+   "B": {
+    "trend": "No series of research favourability. The yield-gap points come from memory and cite a source.",
+    "comparison": "Memory figures (25% vs 19.2%).",
+    "chart": "Chart built from cited memory values, which cannot be verified.",
+    "drilldown": "No traced layer. Some follow-ups are specific.",
+    "export": "Memory table with source.",
+    "repro": "No traced numbers.",
+    "refs": "6 real DOIs, each tied to a claim with venue and tier, contrary sources included. No quotes.",
+    "accuracy": "Remembered yield-gap and richness figures match the published studies. It does not contradict the reference.",
+    "limits": "Honest about relying on memory and about the 2018 cutoff. No data-specific limits.",
+    "verdict": "Honest 'unproven' answer that engages the yield-vs-environment tension. Not measured.",
+    "facets": "Facets answered mostly from memory."
+   },
+   "C": {
+    "trend": "Traced counts and shares with peaks named (23.7% in 2022, 26.6% in 2020). Not decomposed into the shares on the chart.",
+    "comparison": "Raw-count ratios (10.3x vs 1.5x) are inflated by 5x volume growth. It contrasts critical against promising instead of contested against positive. It does carry the caveat that these are counts, not shares.",
+    "chart": "Traced, but it plots raw counts, so the comparison is dominated by volume. No share or tone chart.",
+    "drilldown": "Essentially one illustrative item. No traced breakdown layers.",
+    "export": "One traced CSV with coverage=unknown and a provenance block.",
+    "repro": "27/28 numbers traced, calls listed.",
+    "refs": "Only one DOI, cited inline. No reference list.",
+    "accuracy": "Mostly correct; the 296-day gap is correct. It underweights the rise in positive share ('fluctuated') and cites coverage metadata not visible in the record.",
+    "limits": "Window, gap to today, phrase expansion and framing-vs-truth are stated.",
+    "verdict": "Has a decision and a confidence level. It downplays its own contrary evidence: the positive share also rose 7.7→18.8%.",
+    "facets": "About three quarters of the facets covered. Examples are thin."
+   },
+   "D": {
+    "trend": "None.",
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Only generic follow-ups; 1 of 4 executed ok.",
+    "export": "None.",
+    "repro": "No numbers.",
+    "refs": "None.",
+    "accuracy": "No contradictions, but empty.",
+    "limits": "Specific about what is unmeasured.",
+    "verdict": "Declines to answer.",
+    "facets": "None answered."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [],
+   "C": [
+    "Comparison uses raw counts across a 5x volume rise, which overstates the promising growth relative to shares",
+    "Treats the positive share as merely 'fluctuating' although it rose 7.7→18.8% (2017→2025)"
+   ],
+   "D": []
+  },
+  "best": "A",
+  "verdict": "A was the only deliverable that compared positive and contested framing shares on one scale. It showed that both rose and that the gap nearly closed, and it flagged that the 'sustainable agriculture' phrase and off-topic rows contaminate the corpus. C used the same data but leaned on raw counts that mostly reflect volume growth. B offered accurate memory-based yield-gap context with real DOIs but no measurement, and D offered nothing."
+ },
+ "scores": {
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 5,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 5,
+   "refs": 3,
+   "accuracy": 5,
+   "limits": 5,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 2,
+   "chart": 1,
+   "drilldown": 2,
+   "export": 1,
+   "repro": 1,
+   "refs": 3,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 3,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 2,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 3,
+   "facets": 3
+  },
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 1,
+   "facets": 0
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

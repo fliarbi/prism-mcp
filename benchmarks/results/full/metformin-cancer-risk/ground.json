@@ -1,0 +1,642 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 822,
+  "charts": [
+   {
+    "id": "hr-by-era",
+    "title": "Approximate pooled cancer risk ratio with metformin, by study design era (illustrative)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typical reported point estimate (est.)",
+      "how": "estimate",
+      "points": 5,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "estimates.csv",
+    "how": "estimate",
+    "rows": 4,
+    "numeric_cells": 4,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.evidence",
+    "question": "What does the strongest RCT and target-trial evidence say about incidence?",
+    "args": {
+     "term": "metformin cancer incidence type 2 diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...dence type 2 diabetes'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer incidence type 2 diabetes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.counter_evidence",
+    "question": "Which papers contradict the protective effect?",
+    "args": {
+     "term": "metformin cancer risk immortal time bias"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...sk immortal time bias'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer risk immortal time bias', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has stance shifted over time?",
+    "args": {
+     "term": "metformin cancer prevention"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 8.6,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"metformin and cancer risk\"], \"points\": [{\"year\": 2019, \"total\": 1, \"orientation\": {\"descriptive\": 1}, \"stance_score\": null, \"positive\": 0, \"contested\": 0, \"positive_pct\": 0.0, \"contested_pct\": 0.0}, {\"year\": 2023, \"total\": 2, \"orientation\": {\"problem_identifying\": 2}, \"stance_score\": null, \"positive\": 0, \"contested\": 2, \"positive_pct\": 0.0, \"contested_pct\": 100.0}], \"totals\": {\"descriptive\": 1, \"problem_identifying\": 2}, \"papers\": 3, \"per_orientation_trend\": {\"descriptive\": {\"available\": false, \"reason\": \"fewer than three periods\"}, \"problem_identifying\": {\"available\": false, \"reason\": \"fewer than three periods\"}}, \"framing_shift\": {\"early_conte"
+   },
+   {
+    "id": "f4",
+    "feature": "research.statistics",
+    "question": "Which site-specific effects are consistent?",
+    "args": {
+     "term": "metformin colorectal liver cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...lorectal liver cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin colorectal liver cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.compare",
+    "question": "How does news coverage compare with the research?",
+    "args": {
+     "term": "metformin cancer"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for compare_terms\nterms\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'metformin cancer'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.geography",
+    "question": "Where is the research concentrated geographically?",
+    "args": {
+     "term": "metformin cancer diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ormin cancer diabetes'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer diabetes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 23,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 1,
+   "untagged_examples": [
+    "1.0 — Baseline: cancer incidence in T2D patients on sulfonylurea or other non-metformin therapy,"
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 114,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1412,
+  "charts": [
+   {
+    "id": "research-series",
+    "title": "Metformin-cancer-risk research papers per year",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "papers (intersection lane)",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research_series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "effect_sizes.csv",
+    "how": "call",
+    "rows": 5,
+    "numeric_cells": 15,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which papers are critical of the claim, including bias critiques?",
+    "args": {
+     "term": "metformin cancer immortal time bias",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'metformin cancer immortal time bias' — try expand=true, or a broader phrase",
+    "seconds": 6.5,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.table",
+    "question": "Are there other randomized trials of metformin and cancer incidence?",
+    "args": {
+     "term": "metformin cancer incidence randomized trial"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ence randomized trial'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ence randomized trial'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer incidence randomized trial', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "How has stance shifted over time?",
+    "args": {
+     "term": "metformin cancer risk diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'metformin cancer risk diabetes'",
+    "seconds": 8.4,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "news.overview",
+    "question": "What does news coverage say and where?",
+    "args": {
+     "term": "metformin cancer risk"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no article between 2024-06-01 and 2026-06-01 mentions 'metformin cancer risk'",
+    "seconds": 14.6,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.citations",
+    "question": "Which papers cite the DPP follow-up?",
+    "args": {
+     "id": "pubmed:40243198"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for get_citations\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'id': 'pubmed:40243198'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nid\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='pubmed:40243198', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.counter_evidence",
+    "question": "What do the breast and endometrial results show in detail?",
+    "args": {
+     "claim": "Metformin increases endometrial cancer risk",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 62.3,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 7, \"unread\": 1}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 72270, \"window\": \"2017-2025\", \"lane\": \"subject\", \"orientation\": {\"promising\": 26682, \"descriptive\": 18019, \"problem_identifying\": 7426, \"comparative\": 7316, \"cautionary\": 7145, \"breakthrough\": 4296, \"critical\": 1386}, \"contribution\": {\"empirical\": 50395, \"review\": 14717, \"methodological\": 4310, \"position\": 2610, \"theoretical\": 238}, \"sides\": {\"supporting\": 30978, \"qualifying\": 14571, \"contradicting\": 1386, \"neutral\""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 95,
+   "traced": 95,
+   "derived": 4,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 11,
+   "found_in_corpus": 11,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 135,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 654,
+  "charts": [
+   {
+    "id": "evidence-by-design",
+    "title": "Direction of evidence on metformin and cancer risk",
+    "kind": "share",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Observational studies",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     },
+     {
+      "name": "Randomized-trial meta-analysis",
+      "how": "ref",
+      "points": 1,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "evidence_summary.csv",
+    "how": "ref",
+    "rows": 2,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which randomized trials report cancer incidence and what populations did they include?",
+    "args": {
+     "term": "metformin randomized trial cancer incidence diabetes",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'metformin randomized trial cancer incidence diabetes' — try expand=true, or a broader phrase",
+    "seconds": 2.3,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.browse",
+    "question": "How do observational estimates change after accounting for immortal-time and confounding biases?",
+    "args": {
+     "term": "metformin cancer observational immortal time bias diabetes",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'metformin cancer observational immortal time bias diabetes' — try expand=true, or a broader phrase",
+    "seconds": 2.1,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f3",
+    "feature": "research.statistics",
+    "question": "Do estimates differ by cancer site or cancer mortality?",
+    "args": {
+     "term": "metformin cancer site mortality type 2 diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...ality type 2 diabetes'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer site mortality type 2 diabetes', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.stance_trends",
+    "question": "How has research publication volume changed over time?",
+    "args": {
+     "term": "metformin cancer risk type 2 diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no typed paper matches 'metformin cancer risk type 2 diabetes'",
+    "seconds": 2.1,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage changed over time and what claims does it emphasize?",
+    "args": {
+     "term": "metformin cancer risk diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'metformin cancer risk diabetes' in this window",
+    "seconds": 1.8,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 0,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 2,
+   "found_in_corpus": 1,
+   "not_found": [
+    "10.1007/s00125-011-2389-3"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 96,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 0,
+   "export": 1,
+   "drilldown": 1,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 1083,
+  "charts": [
+   {
+    "id": "research-series",
+    "title": "Prism intersection research papers on metformin and cancer risk",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Typed research papers",
+      "how": "call",
+      "points": 9,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "research-series.csv",
+    "how": "call",
+    "rows": 9,
+    "numeric_cells": 9,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which randomized trials in people with established type 2 diabetes measured overall cancer incidence?",
+    "args": {
+     "term": "metformin randomized trial type 2 diabetes overall cancer incidence",
+     "orientation": "critical",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'metformin randomized trial type 2 diabetes overall cancer incidence' — try expand=true, or a broader phrase",
+    "seconds": 2.0,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.brief",
+    "question": "Which biases most affect observational metformin-cancer estimates, including time-related bias and confounding?",
+    "args": {
+     "claim": "metformin cancer observational bias immortal time confounding",
+     "orientation": "critical"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_brief\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...ientation': 'critical'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin cancer observa...mortal time confounding', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\norientation\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='critical', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.table",
+    "question": "How do overall-cancer meta-analyses differ by study design and population?",
+    "args": {
+     "claim": "metformin overall cancer incidence diabetes study design population"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...udy design population'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'claim': ...udy design population'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nclaim\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='metformin overall cancer...study design population', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.counter_evidence",
+    "question": "Which cancer-specific outcomes show null or increased-risk estimates in people with type 2 diabetes?",
+    "args": {
+     "claim": "metformin cancer-specific risk null increased type 2 diabetes",
+     "limit": 10
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 32.6,
+    "sample": "{\"supporting\": [], \"contradicting\": [], \"tally\": {\"counts\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0, \"unrelated\": 9, \"unread\": 1}, \"tier_weighted\": {\"supports\": 0, \"contradicts\": 0, \"qualifies\": 0}, \"read\": 0, \"ungrounded\": 0}, \"corpus_mix\": {\"available\": true, \"papers\": 128, \"window\": \"2017-2025\", \"lane\": \"intersection\", \"orientation\": {\"descriptive\": 47, \"promising\": 36, \"cautionary\": 21, \"problem_identifying\": 11, \"critical\": 6, \"comparative\": 4, \"breakthrough\": 3}, \"contribution\": {\"empirical\": 88, \"review\": 36, \"position\": 2, \"methodological\": 2}, \"sides\": {\"supporting\": 39, \"qualifying\": 32, \"contradicting\": 6, \"neutral\": 51}, \"contested_pct\": 29.7, \"mean_stance\": 0.119, \"read"
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of metformin and cancer changed over time?",
+    "args": {
+     "term": "metformin cancer risk diabetes"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "no coverage of 'metformin cancer risk diabetes' in this window",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "research.browse",
+    "question": "Which studies drive the recent increase in research volume?",
+    "args": {
+     "term": "metformin cancer risk diabetes",
+     "orientation": "descriptive",
+     "limit": 10
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'metformin cancer risk diabetes' — try expand=true, or a broader phrase",
+    "seconds": 1.3,
+    "sample": "{\"scope\": null}"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 59,
+   "traced": 59,
+   "derived": 1,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 4,
+   "found_in_corpus": 4,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 112,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

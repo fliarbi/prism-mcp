@@ -1,0 +1,188 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "chatgpt_prism",
+  "C": "claude_bare",
+  "D": "claude_prism"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 0,
+    "accuracy": 3,
+    "limits": 2,
+    "verdict": 1,
+    "facets": 0
+   },
+   "B": {
+    "trend": 3,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 4
+   },
+   "C": {
+    "trend": 0,
+    "comparison": 0,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 0,
+    "repro": 0,
+    "refs": 1,
+    "accuracy": 3,
+    "limits": 3,
+    "verdict": 2,
+    "facets": 1
+   },
+   "D": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 5,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 4
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "Empty series; no direction measured.",
+    "comparison": "None.",
+    "chart": "The chart block has an empty series.",
+    "drilldown": "Generic follow-up calls with placeholder args; 0 of 6 executed ok.",
+    "export": "The CSVs are header-only, with no observations.",
+    "repro": "No numbers and no executable calls.",
+    "refs": "None used.",
+    "accuracy": "Empty deliverable, so no contradictions; scored 3 per the anti-gaming rule.",
+    "limits": "Says everything is unknown but names no specific data limits; this is generic.",
+    "verdict": "A refusal that answers nothing about countries, themes or stories.",
+    "facets": "No facet is answered."
+   },
+   "B": {
+    "trend": "Full traced series with first/last change (126.5%), CAGR 53.3% and late/early 1.46. Peak and trough are not named in the prose. Censoring appears only in the Method section, not beside the series.",
+    "comparison": "Tone ratio 1.39 vs baseline 0.58, with a delta of 81 per 100 and a ratio of 2.4x. Baseline is defined and the caveat is carried.",
+    "chart": "Traced volume chart with window, unit and source. Tone and geography are not charted.",
+    "drilldown": "Headlines carry URLs, but only one follow-up executed ok (1 of 4).",
+    "export": "Full traced monthly CSV with provenance. There is no places or tone table, although the question needs one.",
+    "repro": "28/28 numbers traced; the call is listed with args and window.",
+    "refs": "Capped by ceiling; news items carry URLs.",
+    "accuracy": "Reads the enrichment bound as 'labelled through May 2026', but the bound is 2026-05-01, so May is unlabelled. Also asserts 'index partition-read checks', which is not in the shown record.",
+    "limits": "Window, the 144-day gap, placed_pct, sampling and match mode are stated. Capped at 3.",
+    "verdict": "Direct answer with decision, confidence and conditions. Does not engage the strongest contrary evidence in its own data (the spring-2025 dip, the Colombia artefact).",
+    "facets": "Trend, tone, themes, countries, entities, stories and sources are all grounded."
+   },
+   "C": {
+    "trend": "No coverage series. The milestone chart is not the quantity asked about.",
+    "comparison": "None measured.",
+    "chart": "Charts a regulatory timetable rather than coverage, so it is off-question.",
+    "drilldown": "Layers are from memory; 3 of 7 follow-ups executed ok.",
+    "export": "Only a milestone table, which is not the data the question needs.",
+    "repro": "Numbers come from memory; ceiling is 0.",
+    "refs": "Official legal texts are cited without precise URLs.",
+    "accuracy": "Memory claims are labelled est. and are plausible; no contradictions.",
+    "limits": "Specific about what is unmeasured, including the knowledge cutoff.",
+    "verdict": "Low-confidence hypothesis map built from memory.",
+    "facets": "Facets are answered mostly from memory."
+   },
+   "D": {
+    "trend": "Traced series with window and censoring, CAGR 53.3%, early/late thirds, the peak May 2026 at 256, and the trough April 2025 at 56. Critical split appears only in a partial CSV.",
+    "comparison": "Baseline is defined, ratios recompute (2.4x, May 2.22 vs 0.58 ≈ 3.8). Wording says '2.4 times more negative' where the figure is a ratio of ratios.",
+    "chart": "Only the volume chart; tone, geography and critical share are not charted.",
+    "drilldown": "Three layers down to headlines with date and publisher but no URLs. 4 of 6 follow-ups executed ok, but none were folded back into the report.",
+    "export": "Ceiling 3. The monthly CSV holds selected months only; the places CSV carries a correct enrichment window.",
+    "repro": "82/82 traced; derived figures are marked est.",
+    "refs": "Capped; news items lack URLs.",
+    "accuracy": "Catches the Colombia acronym risk, the tag-panel artefacts, 'critical' being undefined and the May enrichment gap.",
+    "limits": "Limits sit beside the numbers they bound: placed_pct, enrichment bound, match mode, censoring and the 145-day gap. States what would close the gaps.",
+    "verdict": "Direct answer, decision, reasoned confidence and change conditions; bounded by window and placement.",
+    "facets": "All main facets are grounded. India, EU and US coverage contrasts are not measured separately."
+   }
+  },
+  "errors": {
+   "A": [],
+   "B": [
+    "Misreads the enrichment bound as labelled through May 2026 (the bound is 2026-05-01)",
+    "Untraceable assertion of 'index partition-read and historical row-floor checks'"
+   ],
+   "C": [],
+   "D": [
+    "Phrasing '2.4 times more negative' for a ratio-of-ratios",
+    "59.2% subcategory fill not visible in the shown record"
+   ]
+  },
+  "best": "D",
+  "verdict": "D and B both measured volume, tone and geography from the same traced call. D went further: it named the peak and trough, caught the Colombia and tag-panel artefacts, and placed its limits beside the numbers they bound. A and C could not measure coverage at all; C's memory map is honestly labelled but is not decision-grade. B is a solid second but slightly misreads the enrichment bound and gives a thinner drill-down."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 0,
+   "accuracy": 3,
+   "limits": 2,
+   "verdict": 1,
+   "facets": 0
+  },
+  "chatgpt_prism": {
+   "trend": 3,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 0,
+   "comparison": 0,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 0,
+   "repro": 0,
+   "refs": 1,
+   "accuracy": 3,
+   "limits": 3,
+   "verdict": 2,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 5,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 4
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

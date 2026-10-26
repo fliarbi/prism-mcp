@@ -1,0 +1,242 @@
+{
+ "slug": "solar-power-pulse",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "trend": 0.5,
+    "comparison": 0.0,
+    "chart": 1.0,
+    "drilldown": 1.0,
+    "export": 1.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 2.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 27.2,
+   "plain": 27.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 23.0,
+    "gpt": 31.4
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "trend": 3.5,
+    "comparison": 4.0,
+    "chart": 4.0,
+    "drilldown": 3.0,
+    "export": 3.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 2.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 5.0
+   },
+   "strict": 67.6,
+   "plain": 67.6,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.0,
+    "gpt": 66.2
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "trend": 0.0,
+    "comparison": 0.0,
+    "chart": 0.0,
+    "drilldown": 2.0,
+    "export": 0.0,
+    "repro": 1.0,
+    "refs": 0.5,
+    "accuracy": 3.0,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 23.8,
+   "plain": 23.8,
+   "invented": false,
+   "by_judge": {
+    "opus": 22.0,
+    "gpt": 25.6
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "trend": 4.0,
+    "comparison": 4.0,
+    "chart": 3.5,
+    "drilldown": 3.5,
+    "export": 4.0,
+    "repro": 4.0,
+    "refs": 1.0,
+    "accuracy": 3.5,
+    "limits": 4.0,
+    "verdict": 4.0,
+    "facets": 4.0
+   },
+   "strict": 72.3,
+   "plain": 72.3,
+   "invented": false,
+   "by_judge": {
+    "opus": 69.4,
+    "gpt": 75.2
+   }
+  }
+ },
+ "judge_mad": 0.36,
+ "verdicts": {
+  "opus": "A and B both deliver traced volume, tone-vs-baseline, geography and company answers with the proper window and censoring. B edges ahead because it flags the Lorde/Charli XCX name collisions and the undefined 'critical' field. A has the more complete exports, but its single chart omits tone. C refuses honestly, and D offers only off-question memory estimates, so neither supports a news-based decision.",
+  "gpt": "A is the most decision-ready: it gives a measured, bounded account of volume, tone, places, and organizations, with traceable exports and a cautious interpretation. C covers more facets but overstates the trend as rising and leaves the export incomplete; B and D correctly acknowledge missing measurements but cannot answer the question from grounded news data."
+ },
+ "errors": {
+  "opus": {
+   "chatgpt_prism": [
+    "Implies share_pct (21.9% US) is a share of placed articles; the denominator does not match 33,303"
+   ],
+   "claude_prism": [
+    "States geography shares are 'of placed articles'; share_pct uses a different denominator",
+    "Verdict says 'rising modestly' while the tool labels the direction flat"
+   ],
+   "chatgpt_bare": [],
+   "claude_bare": [
+    "Memory capacity figures (350/450 GW) are likely understated and off-question for a news query"
+   ]
+  },
+  "gpt": {
+   "chatgpt_prism": [
+    "The claimed entity_central match mode for sampled publisher/recent feeds is not established by the overview response; its recorded match_mode is mention.",
+    "No resolving news URLs are included for the reported news findings."
+   ],
+   "chatgpt_bare": [],
+   "claude_prism": [
+    "Calls the overall series rising and says attention grew, while the reference direction is flat; the tool's reported 22.0% CAGR does not override its direction field.",
+    "The chart omits the censoring marker/caveat for the censored newest month.",
+    "The claimed news series is complete, although the response explicitly censors the newest month."
+   ],
+   "claude_bare": [
+    "The capacity additions and price figures are unverified memory estimates, not findings about news coverage; the chart does not answer the asked news trend."
+   ]
+  }
+ },
+ "reasons": {
+  "opus": {
+   "chatgpt_prism": {
+    "trend": "Full 24-month traced series with window and censoring. The change is quantified (late/early 1.15, first 2,050, last 3,001, peak 3,609 in 2026-04). The tool's 'flat' label is read correctly. No critical or tone decomposition.",
+    "comparison": "Ratio 0.14 vs baseline 0.58 is defined. The 0.44 delta and '~76% lower' (0.14/0.58 = 0.241) both recompute. The classifier caveat is carried. The contrast is not tied back to the question's companies or places.",
+    "chart": "One fully traced volume chart. Tone was asked for and the data supports it, but it is not charted.",
+    "drilldown": "Themes and geography layers are traced but give no subcategory counts and reach no item level. Follow-ups are specific, 5/6 ok. The empty critical feed is acknowledged.",
+    "export": "Three traced CSVs (monthly, tone, geography) with source, window, unit and coverage flag, plus a provenance JSON. The geography window is correctly trimmed to the enrichment bound. No row identifiers.",
+    "repro": "29/30 traced. The prism-calls block has args and the capture date. Derived figures are recomputable.",
+    "refs": "No headline items; it honestly states the critical feed returned none.",
+    "accuracy": "No contradictions; the 144-day gap is correct. It implies share_pct is a share of placed articles, but 15,199/33,303 = 45.6%, not 21.9%. It does not catch the Lorde collision or the undefined 'critical' field.",
+    "limits": "Window end, 144-day gap, censoring, enrichment bound, placed_pct, match mode and sampled publishers are each stated near the relevant numbers.",
+    "verdict": "Direct, with a decision, medium confidence and a reason, and what would change it. Consistent with the chart and bounded by the data.",
+    "facets": "Trend, tone, places and companies are all answered with grounded values."
+   },
+   "claude_prism": {
+    "trend": "Traced series, window and censoring. Quantifies 1.15, CAGR 22%, the range 1,812 (2025-06) to 3,609 (2026-04) and the Feb-2026 step. Monthly tone-ratio peaks are named. The verdict's 'rising modestly' leans slightly against the tool's 'flat' label.",
+    "comparison": "0.14 vs 0.58 with baseline defined. Delta 0.44 and 0.24x match the tool's vs_baseline. Monthly ratio peaks (0.25 in 2024-11, 0.21 in 2025-08) are traced.",
+    "chart": "One traced volume chart with a caption tied to a claim. No tone chart.",
+    "drilldown": "Organisation, people, theme and country counts are traced, but there are no item-level identifiers. Follow-ups are targeted, but only 3/6 executed ok.",
+    "export": "The CSV is traced and has provenance, but it holds only the last six months; the full monthly series is not exported. It is referenced from the prose.",
+    "repro": "68/68 traced; calls are listed with args; derived 76.5% is shown with its arithmetic.",
+    "refs": "No headline items; it honestly reports that none were returned.",
+    "accuracy": "Catches the Lorde/Charli XCX name collisions and the undefined 'critical' share (76.5%). Explicitly misreads share_pct as a share of placed articles.",
+    "limits": "Window, 145-day gap, censoring, match mode, ~4% May enrichment, sample size and interpretation flags all sit beside the numbers. It names what would close the gap.",
+    "verdict": "Direct answer, decision, medium confidence with reason, change conditions. Notes the critical-flag uncertainty.",
+    "facets": "All facets are grounded. The implied facets (passing mentions, name collisions, lift-based over-representation) are also addressed."
+   },
+   "chatgpt_bare": {
+    "trend": "No series.",
+    "comparison": "None.",
+    "chart": "No chart.",
+    "drilldown": "No breakdown layer; follow-ups only, 3/6 ok.",
+    "export": "No export.",
+    "repro": "No numbers to trace; honest.",
+    "refs": "None.",
+    "accuracy": "Empty but contains no contradictions.",
+    "limits": "Specific about what is unmeasured, but no window can be given.",
+    "verdict": "Declines to answer. The decision is only 'get data'.",
+    "facets": "No facets answered."
+   },
+   "claude_bare": {
+    "trend": "The only series is a memory estimate of PV capacity, not news volume. It is off-question.",
+    "comparison": "None.",
+    "chart": "Chart is labelled estimate, of the wrong quantity.",
+    "drilldown": "Generic planned calls, 0/6 ok.",
+    "export": "Memory table labelled estimate.",
+    "repro": "Memory numbers only.",
+    "refs": "None.",
+    "accuracy": "Labelled estimates of 350/450 GW appear low against public figures. Company and place lists are guesses, though labelled.",
+    "limits": "Honest about what is unmeasured and gives its knowledge cutoff.",
+    "verdict": "Low-confidence scoping note that does not answer the news question.",
+    "facets": "Facets are answered only from memory or expectation."
+   }
+  },
+  "gpt": {
+   "chatgpt_prism": {
+    "trend": "Traced full monthly series with window, censoring, quantified late/early ratio and peak; omits the tool-reported 22.0% CAGR.",
+    "comparison": "Same-window ratio and corpus baseline are defined, and the delta and relative reduction recompute.",
+    "chart": "The monthly chart traces all points and supports the stated trend; no separate tone chart is supplied.",
+    "drilldown": "Multiple breakdowns and specific follow-up calls are listed, but no executed follow-up result is folded into the report and no item-level headlines are provided.",
+    "export": "Needed monthly, tone, and geography CSVs are referenced and carry provenance, but the tone export lacks source identifiers and row-level linkage required for anchor 5.",
+    "repro": "The used call, arguments, window, and capture date are given; the reported figures are traceable, but no full regeneration recipe for all exports/charts is provided.",
+    "refs": "No resolving news URLs or external references are supplied; Prism call citations alone do not meet the reference requirement.",
+    "accuracy": "Mostly matches the record, but says entity central for publisher and recent feeds; the overview record labels the sampled publisher data under mention mode and does not establish that feed matching claim.",
+    "limits": "Specific window, censoring, gap, match mode, and enrichment caveats are placed near the relevant figures; the latest-month incompleteness is clearly stated.",
+    "verdict": "Direct, bounded answer with decision, confidence, and change conditions; it does not name the strongest contrary finding, the April peak amid flat direction.",
+    "facets": "Covers trend, tone, places, companies, themes, source concentration, and relevant caveats, but does not resolve brand-versus-generic overlap or seasonality."
+   },
+   "chatgpt_bare": {
+    "trend": "No measured series or estimate is provided.",
+    "comparison": "No measured contrast or estimate is provided.",
+    "chart": "No chart block with data is supplied.",
+    "drilldown": "Lists possible follow-ups, but only three of six calls executed successfully and no traced breakdown layer is reported.",
+    "export": "No data export is supplied.",
+    "repro": "No measured numbers or executable calls with complete arguments and window are reported.",
+    "refs": "No resolving references or news items are supplied.",
+    "accuracy": "It avoids unsupported claims and contradicts no reference data, earning the rubric's empty-deliverable accuracy score.",
+    "limits": "Notes that the corpus and window are unavailable, but does not state the scenario's applicable coverage, censoring, or match-mode limits.",
+    "verdict": "Gives a direct no-measurement answer and decision with confidence and conditions, but offers no measured support or contrary evidence.",
+    "facets": "Most requested facets remain unmeasured, with no grounded values or tool-backed no-data results."
+   },
+   "claude_prism": {
+    "trend": "The full series is traced, but prose calls the period flat to rising and describes a 2026 step-up without reconciling that reading with the tool's flat direction and 22% CAGR; it also omits censoring from the chart.",
+    "comparison": "Ratio, baseline, delta, and relative ratio are traceable and recompute; it answers the tone contrast on one scale.",
+    "chart": "Charts trace the full monthly series and visibly compare volume with tone via the monthly export; labels and captions support the requested facets and the partial period is excluded.",
+    "drilldown": "Provides traced theme, geography, entity, and publisher breakdowns, but no item-level records and no usable executed follow-up results are folded back in.",
+    "export": "The only CSV contains six of 24 months, despite the monthly series being central; the other needed tone and geography rows are not exported.",
+    "repro": "The main call, arguments, and capture date are present and figures are traceable, but some calls lack reproducible windows or valid-looking arguments and the export is incomplete.",
+    "refs": "No resolving news URLs or external references are supplied; Prism call citations alone do not satisfy the references rubric.",
+    "accuracy": "It says the series is rising and that 2026 stepped up despite the record's flat direction; it also describes the monthly series as complete without carrying the censoring caveat in the chart.",
+    "limits": "States the window gap, censoring, mention mode, enrichment bound, sample size, and limits of counts next to relevant claims.",
+    "verdict": "Supported answer and confidence are given, but the claim of growing attention conflicts with the tool's flat direction, and the verdict omits the strongest contrary reading.",
+    "facets": "Addresses trend, tone, themes, places, organizations, people, and source concentration, and flags generic-versus-song collisions; does not measure seasonal pattern or term overlap."
+   },
+   "claude_bare": {
+    "trend": "The only chart is an explicitly labelled memory estimate of capacity, not a news time series; it earns the honest-estimate floor.",
+    "comparison": "No measured news comparison or estimate of a news ratio is provided.",
+    "chart": "The memory-based capacity chart is explicitly estimated, so it earns the estimate-only score.",
+    "drilldown": "Provides only planned generic layers; no traced breakdown or successful follow-up result is included.",
+    "export": "An estimate CSV is present, but it is not a news export and has no source call.",
+    "repro": "All news measures are unmeasured; the capacity figures are honestly marked as memory estimates but cannot be reproduced.",
+    "refs": "No resolving references or news items are supplied.",
+    "accuracy": "It clearly labels the numbers and expected themes as estimates or interpretation, and makes no factual contradiction to the reference record.",
+    "limits": "It identifies the missing news window and unknown coverage, censoring, and match mode, but relies on generic missing-data caveats rather than limits tied to measured figures.",
+    "verdict": "Gives a scoping answer with confidence and conditions, but does not answer what the news says with grounded findings.",
+    "facets": "News facets are expectations from memory or explicitly unavailable, not grounded values or tool-backed no-data results."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}

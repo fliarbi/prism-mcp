@@ -1,0 +1,684 @@
+{
+ "claude_bare": {
+  "setup": "claude_bare",
+  "words_prose": 1059,
+  "charts": [
+   {
+    "id": "pubs-est",
+    "title": "Approx. annual journal articles on hypersonic flight (rough estimate)",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Estimated articles",
+      "how": "estimate",
+      "points": 3,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "milestones_est.csv",
+    "how": "estimate",
+    "rows": 6,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which hypersonic papers since 2023 have the most citations, and what are their DOIs?",
+    "args": {
+     "term": "hypersonic missile",
+     "since": 2023,
+     "sort": "citations",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 7.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 102, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 6, \"papers\": [{\"id\": \"W7118017656\", \"title\": \"Deciphering Strategic Stability in the Age of Speed: Hypersonic Weapons in South Asia\", \"authors\": [\"Hamdan Khan\"], \"venue\": \"BTTN Journal\", \"year\": 2025, \"date\": \"2025-12-31\", \"doi\": \"10.61732/bj.v4i2.245\", \"url\": \"https://doi.org/10.61732/bj.v4i2.245\", \"cited_by\": 0, \"orientation\": \"cautionary\", \"contribution\": \"empirical\", \"stance_score\": -0.2, \"topics\": [\"Nuclear Issues and Defense\", \"Space exploration and regulation\", \""
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How has publication volume on hypersonic weapons changed year by year?",
+    "args": {
+     "term": "hypersonic missile",
+     "by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...missile', 'by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nby\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Has the stance of the literature shifted toward critical views?",
+    "args": {
+     "term": "hypersonic weapons"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 5.2,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"hypersonic weapons\", \"hypersonic glide vehicles\"], \"points\": [{\"year\": 2017, \"total\": 6, \"orientation\": {\"promising\": 2, \"breakthrough\": 1, \"cautionary\": 2}, \"stance_score\": null, \"positive\": 3, \"contested\": 2, \"positive_pct\": 50.0, \"contested_pct\": 33.3}, {\"year\": 2018, \"total\": 1, \"orientation\": {\"promising\": 1}, \"stance_score\": null, \"positive\": 1, \"contested\": 0, \"positive_pct\": 100.0, \"contested_pct\": 0.0}, {\"year\": 2019, \"total\": 6, \"orientation\": {\"promising\": 2, \"critical\": 1, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 2, \"contested\": 2, \"positive_pct\": 33.3, \"contested_pct\": 33.3}, {\"year\": 2020, \"total\": 2, \"orientati"
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which countries publish most on hypersonic defence and tracking?",
+    "args": {
+     "term": "hypersonic defence interceptor tracking"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '... interceptor tracking'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic defence interceptor tracking', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence exists on hypersonic weapons' strategic value?",
+    "args": {
+     "term": "hypersonic weapons strategic value",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...gic value', 'limit': 8}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic weapons strategic value', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f6",
+    "feature": "news.trends",
+    "question": "How has news volume on hypersonic missiles moved over the past 3 years?",
+    "args": {
+     "term": "hypersonic missile",
+     "window": "3y"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for news_trends\nwindow\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='3y', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f7",
+    "feature": "research.radar",
+    "question": "Which topics are under-covered relative to propulsion and aerodynamics?",
+    "args": {
+     "term": "hypersonic"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'hypersonic'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 2,
+  "numbers": {
+   "total": 13,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 2,
+   "untagged_examples": [
+    "500 — The change from 2015 to 2025 is +3,000 articles, or ×2.2 (est.). The values are guesses to",
+    "1.0 — The baseline is the conventional definition of hypersonic: Mach 5 (ratio 1.0). Speeds are "
+   ]
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 135,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 2,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "claude_prism": {
+  "setup": "claude_prism",
+  "words_prose": 1100,
+  "charts": [
+   {
+    "id": "news_trend",
+    "title": "Hypersonic news articles, early vs late third of window",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "News articles (sum of third)",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   },
+   {
+    "id": "research_trend",
+    "title": "Hypersonic research papers, early vs late third of window",
+    "kind": "bars",
+    "temporal": false,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Papers (sum of third)",
+      "how": "call",
+      "points": 2,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "new_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   },
+   {
+    "name": "trend_summary.csv",
+    "how": "call",
+    "rows": 2,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": false,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.table",
+    "question": "Which subtopics (propulsion, materials, guidance) make up the literature?",
+    "args": {
+     "term": "hypersonic",
+     "group_by": "subtopic"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for research_table\nrows\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'group_by': 'subtopic'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nquestion\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...'group_by': 'subtopic'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='subtopic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f2",
+    "feature": "research.geography",
+    "question": "Which countries produce the research?",
+    "args": {
+     "term": "hypersonic"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': 'hypersonic'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "What drove the 2025-03 news peak?",
+    "args": {
+     "term": "hypersonic",
+     "from": "2025-01-01",
+     "to": "2025-06-30"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "2 validation errors for news_trends\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-01-01', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2025-06-30', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.browse",
+    "question": "Which papers are critical of hypersonic claims?",
+    "args": {
+     "term": "hypersonic",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 13.3,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 84, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W4416442181\", \"title\": \"Global aerothermal effects and their symmetry in hypersonic transitional swept shock wave/boundary-layer interactions\", \"authors\": [\"Xu Liu\", \"Yu Zhuang\", \"Gang Wang\", \"Chuangxin He\", \"Yingzheng Liu\", \"Di Peng\"], \"venue\": \"Journal of Fluid Mechanics\", \"year\": 2025, \"date\": \"2025-11-21\", \"doi\": \"10.1017/jfm.2025.10849\", \"url\": \"https://doi.org/10.1017/jfm.2025.10849\", \"cited_by\": 1, \"orientation\": \"critical\", \"contribution\": \""
+   },
+   {
+    "id": "f5",
+    "feature": "news.sentiment",
+    "question": "What is news sentiment on hypersonic weapons?",
+    "args": {
+     "term": "hypersonic"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.5,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"negative\": 97, \"positive\": 74, \"neutral\": 7, \"ratio\": 1.31}, {\"period\": \"2024-07-01\", \"negative\": 86, \"positive\": 71, \"neutral\": 12, \"ratio\": 1.21}, {\"period\": \"2024-08-01\", \"negative\": 32, \"positive\": 54, \"neutral\": 7, \"ratio\": 0.59}, {\"period\": \"2024-09-01\", \"negative\": 74, \"positive\": 96, \"neutral\": 7, \"ratio\": 0.77}, {\"period\": \"2024-10-01\", \"negative\": 95, \"positive\": 70, \"neutral\": 4, \"ratio\": 1.36}, {\"period\": \"2024-11-01\", \"negative\": 498, \"positive\": 229, \"neutral\": 49, \"ratio\": 2.17}, {\"period\": \"2024-12-01\", \"negative\": 207, \"positive\": 136, \"neutral\": 26, \"ratio\": 1.52}, {\"period\": \"2025-01-01\", \"negative\": 133, \"positive\": 142, \"neutral\": 3,"
+   },
+   {
+    "id": "f6",
+    "feature": "research.stance_trends",
+    "question": "Which non-control work (scramjet, thermal protection) is rising?",
+    "args": {
+     "term": "hypersonic scramjet thermal protection"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.8,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"phrases\": [\"thermal protection system\"], \"points\": [{\"year\": 2017, \"total\": 52, \"orientation\": {\"cautionary\": 1, \"comparative\": 1, \"descriptive\": 5, \"promising\": 17, \"breakthrough\": 3, \"problem_identifying\": 1}, \"stance_score\": null, \"positive\": 20, \"contested\": 2, \"positive_pct\": 38.5, \"contested_pct\": 3.8}, {\"year\": 2018, \"total\": 66, \"orientation\": {\"cautionary\": 1, \"descriptive\": 7, \"breakthrough\": 6, \"problem_identifying\": 2, \"promising\": 14, \"comparative\": 2}, \"stance_score\": null, \"positive\": 20, \"contested\": 3, \"positive_pct\": 30.3, \"contested_pct\": 4.5}, {\"year\": 2019, \"total\": 91, \"orientation\": {\"descriptive\": 9, \"problem_identifying\": 1, \"compar"
+   }
+  ],
+  "followups_ok": 3,
+  "numbers": {
+   "total": 45,
+   "traced": 45,
+   "derived": 6,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 10,
+   "found_in_corpus": 10,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 129,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 1,
+   "export": 3,
+   "drilldown": 5,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 5,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ },
+ "chatgpt_bare": {
+  "setup": "chatgpt_bare",
+  "words_prose": 512,
+  "charts": [
+   {
+    "id": "research-areas-estimate",
+    "title": "Hypersonic missile research momentum",
+    "kind": "share",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Measured publications",
+      "how": "estimate",
+      "points": 0,
+      "traced_share": null
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "hypersonic_research.csv",
+    "how": "estimate",
+    "rows": 0,
+    "numeric_cells": 0,
+    "traced_share": null,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which recent papers on hypersonic missile propulsion appeared in the selected period, and what are their DOIs and citation counts?",
+    "args": {
+     "term": "hypersonic missile propulsion",
+     "orientation": "critical",
+     "limit": 8
+    },
+    "ok": false,
+    "nonempty": true,
+    "why": "no paper in the typed corpus matches 'hypersonic missile propulsion' — try expand=true, or a broader phrase",
+    "seconds": 4.0,
+    "sample": "{\"scope\": null}"
+   },
+   {
+    "id": "f2",
+    "feature": "research.statistics",
+    "question": "How did hypersonic missile publication volume change by year in the selected corpus?",
+    "args": {
+     "term": "hypersonic missile",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_statistics\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...e', 'group_by': 'year'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "research.stance_trends",
+    "question": "Has research framing shifted toward integrated systems, operational use, or countermeasures?",
+    "args": {
+     "term": "hypersonic missile",
+     "group_by": "year"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "1 validation error for stance_trends\ngroup_by\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='year', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.radar",
+    "question": "Which hypersonic missile research topics are comparatively under-covered?",
+    "args": {
+     "term": "hypersonic missile",
+     "dimensions": [
+      "propulsion",
+      "thermal protection",
+      "guidance",
+      "flight testing",
+      "countermeasures"
+     ]
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for research_radar\ntopic\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'term': '...g', 'countermeasures']}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\nterm\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\ndimensions\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=['propulsion', 'thermal p...ing', 'countermeasures'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "news.trends",
+    "question": "How has news coverage of hypersonic missiles changed over time?",
+    "args": {
+     "term": "hypersonic missile"
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 3.0,
+    "sample": "{\"points\": [{\"period\": \"2024-06-01\", \"articles\": 104, \"critical\": 92, \"negative\": 79, \"positive\": 18, \"mean_priority\": 7.28, \"critical_pct\": 88.5, \"partial_period\": false}, {\"period\": \"2024-07-01\", \"articles\": 88, \"critical\": 82, \"negative\": 64, \"positive\": 17, \"mean_priority\": 7.56, \"critical_pct\": 93.2, \"partial_period\": false}, {\"period\": \"2024-08-01\", \"articles\": 36, \"critical\": 33, \"negative\": 20, \"positive\": 13, \"mean_priority\": 7.5, \"critical_pct\": 91.7, \"partial_period\": false}, {\"period\": \"2024-09-01\", \"articles\": 75, \"critical\": 69, \"negative\": 41, \"positive\": 33, \"mean_priority\": 7.37, \"critical_pct\": 92.0, \"partial_period\": false}, {\"period\": \"2024-10-01\", \"articles\": 65, \"critic"
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 0,
+   "traced": 0,
+   "derived": 0,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 0,
+   "found_in_corpus": 0,
+   "not_found": [],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 83,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 1,
+   "trend": 1,
+   "export": 1,
+   "drilldown": 2,
+   "repro": 1,
+   "comparison": 1,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 3
+  }
+ },
+ "chatgpt_prism": {
+  "setup": "chatgpt_prism",
+  "words_prose": 955,
+  "charts": [
+   {
+    "id": "research-volume",
+    "title": "Prism hypersonic research trend measure",
+    "kind": "line",
+    "temporal": true,
+    "has_window": true,
+    "has_unit": true,
+    "supports_found": true,
+    "series": [
+     {
+      "name": "Research trend",
+      "how": "call",
+      "points": 3,
+      "traced_share": 1.0
+     }
+    ]
+   }
+  ],
+  "tables": [
+   {
+    "name": "hypersonic_radar_work.csv",
+    "how": "call",
+    "rows": 10,
+    "numeric_cells": 10,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   },
+   {
+    "name": "hypersonic_radar_trends.csv",
+    "how": "call",
+    "rows": 16,
+    "numeric_cells": 16,
+    "traced_share": 1.0,
+    "full_provenance": true,
+    "named_in_prose": true,
+    "zero_for_null": false
+   }
+  ],
+  "provenance_block": true,
+  "followups": [
+   {
+    "id": "f1",
+    "feature": "research.browse",
+    "question": "Which hypersonic-missile papers drove the recent research trend, and what are their DOIs and citation counts?",
+    "args": {
+     "term": "hypersonic missile",
+     "orientation": "critical",
+     "limit": 20
+    },
+    "ok": true,
+    "nonempty": true,
+    "why": "",
+    "seconds": 12.0,
+    "sample": "{\"scope\": null, \"geo_mode\": null, \"scope_means\": null, \"matched\": 9, \"matched_note\": \"papers matching every filter; the orientation facet below counts the whole subject, so you can see what the filter excluded\", \"returned\": 8, \"papers\": [{\"id\": \"W7027885296\", \"title\": \"Doctrine by Necessity : Analysing Russia’s Nuclear Strategy Modification in the Era of Hypersonic Weapons\", \"authors\": [\"Lóránt, Szabolcs\"], \"venue\": \"Repository of the Academy's Library (Library of the Hungarian Academy of Sciences)\", \"year\": 2025, \"date\": \"2025-01-01\", \"doi\": null, \"url\": \"https://real.mtak.hu/221378/1/08_lorant_103-120_HSZ_2025_1.pdf\", \"cited_by\": 0, \"orientation\": \"critical\", \"contribution\": \"empirical\", \""
+   },
+   {
+    "id": "f2",
+    "feature": "research.evidence",
+    "question": "What recent primary studies cover propulsion, thermal protection, guidance and flight tests?",
+    "args": {
+     "topic": "hypersonic missile",
+     "since_year": 2021
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...e', 'since_year': 2021}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2021, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f3",
+    "feature": "news.trends",
+    "question": "How did news volume and framing change in the months after the supplied news window ended?",
+    "args": {
+     "topic": "hypersonic missile",
+     "from": "2026-05-02",
+     "to": "2026-10-23"
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "4 validation errors for news_trends\nterm\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...2', 'to': '2026-10-23'}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nfrom\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-05-02', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nto\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='2026-10-23', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f4",
+    "feature": "research.geography",
+    "question": "Which countries or regions account for the recent hypersonic research and news?",
+    "args": {
+     "topic": "hypersonic missile",
+     "since_year": 2021
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for global_comparison\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...e', 'since_year': 2021}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2021, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   },
+   {
+    "id": "f5",
+    "feature": "research.counter_evidence",
+    "question": "What counter-evidence challenges claims of recent technical advances?",
+    "args": {
+     "topic": "hypersonic missile",
+     "since_year": 2021
+    },
+    "ok": false,
+    "nonempty": false,
+    "why": "3 validation errors for find_counter_evidence\nclaim\n  Missing required argument [type=missing_argument, input_value=ArgsKwargs((), {'topic': ...e', 'since_year': 2021}), input_type=ArgsKwargs]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing_argument\ntopic\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='hypersonic missile', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument\nsince_year\n  Unexpected keyword argument [type=unexpected_keyword_argument, input_value=2021, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.11/v/unexpected_keyword_argument",
+    "seconds": 0.0,
+    "sample": ""
+   }
+  ],
+  "followups_ok": 1,
+  "numbers": {
+   "total": 23,
+   "traced": 23,
+   "derived": 2,
+   "untagged_untraced": 0,
+   "untagged_examples": []
+  },
+  "dois": {
+   "cited": 15,
+   "found_in_corpus": 10,
+   "not_found": [
+    "10.1109/taes.2022.3160687`",
+    "10.1109/tmech.2021.3090509`",
+    "10.1109/tsmc.2023.3264552`",
+    "10.1109/tvt.2023.3264243`",
+    "10.2514/1.j060516`"
+   ],
+   "year_mismatch": []
+  },
+  "verdict_structure": {
+   "four_lines": true,
+   "words": 104,
+   "first": true
+  },
+  "limits": {
+   "method_section": true,
+   "end_date": true,
+   "gap_to_today": true
+  },
+  "invented": [],
+  "notes": [],
+  "ceiling": {
+   "chart": 5,
+   "trend": 5,
+   "export": 5,
+   "drilldown": 3,
+   "repro": 5,
+   "comparison": 5,
+   "refs": 1,
+   "limits": 5,
+   "verdict": 5,
+   "accuracy": 5,
+   "facets": 5
+  }
+ }
+}

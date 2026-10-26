@@ -1,0 +1,191 @@
+{
+ "labels": {
+  "A": "chatgpt_bare",
+  "B": "claude_prism",
+  "C": "chatgpt_prism",
+  "D": "claude_bare"
+ },
+ "raw": {
+  "scores": {
+   "A": {
+    "trend": 1,
+    "comparison": 0,
+    "chart": 1,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 1
+   },
+   "B": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 4,
+    "drilldown": 3,
+    "export": 3,
+    "repro": 4,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 4,
+    "verdict": 4,
+    "facets": 5
+   },
+   "C": {
+    "trend": 4,
+    "comparison": 4,
+    "chart": 3,
+    "drilldown": 2,
+    "export": 3,
+    "repro": 3,
+    "refs": 1,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 4,
+    "facets": 4
+   },
+   "D": {
+    "trend": 1,
+    "comparison": 1,
+    "chart": 0,
+    "drilldown": 1,
+    "export": 1,
+    "repro": 1,
+    "refs": 0,
+    "accuracy": 4,
+    "limits": 3,
+    "verdict": 3,
+    "facets": 1
+   }
+  },
+  "reasons": {
+   "A": {
+    "trend": "No measured series; the empty estimate chart records the gap.",
+    "comparison": "No measured baseline or contrast.",
+    "chart": "The chart is explicitly an empty estimate, so it earns the honest-memory ceiling only.",
+    "drilldown": "Calls are proposed but none executed; no traced breakdown.",
+    "export": "Empty CSV is labelled estimate and carries no measured rows.",
+    "repro": "No measured numbers or reproducible calls.",
+    "refs": "No references; no measured findings rely on documents.",
+    "accuracy": "Clearly distinguishes general-knowledge candidates from measured findings.",
+    "limits": "Specific about the absent corpus and what cannot be measured, though no dataset-specific limits can be assessed.",
+    "verdict": "Directly answers that dominance cannot be established, with low confidence and a condition that would change it; the decision is a starting agenda.",
+    "facets": "Names candidate themes and people but provides no grounded corpus values or grounded database no-data results."
+   },
+   "B": {
+    "trend": "Traced monthly points, peak, late-to-early ratio and CAGR; critical volume is also decomposed, but the chart omits that decomposition and labels the window through May 31 rather than the exclusive June 1 cutoff.",
+    "comparison": "Baseline, ratio and delta are stated and recompute; interpretation is bounded, though it does not fully say what the tone comparison can test about the themes and people question.",
+    "chart": "Volume chart traces all points and supports a claim, but the requested theme and people facets lack charts; the chart also does not visibly mark censoring.",
+    "drilldown": "Multiple breakdowns and four follow-ups execute, but no follow-up results are folded back in and most breakdown items lack linkable identifiers.",
+    "export": "Monthly CSV is traced and referenced, but the question also needs theme and people breakdown exports; provenance is incomplete for anchor 5.",
+    "repro": "Main numerical claims trace and calls include args, but the deliverable's window labels are not consistently aligned to the reference's exclusive end and some follow-ups fail.",
+    "refs": "The script ceiling is 1; no cited news items carry resolving URLs for all headline claims, and there are no claim-linked source references meeting the rubric.",
+    "accuracy": "Core counts and interpretations align, but the monthly window is described as ending May 31 rather than June 1 exclusive, and source/article sample claims are not fully evidenced by identifiers.",
+    "limits": "Censoring, lag, lane, match mode, coverage and entity caveats are mostly stated near the relevant numbers; some window labels and the five-month gap description are imprecise.",
+    "verdict": "Answers the question with a decision, confidence and change condition, while acknowledging limits; contrary evidence is noted, though the window-label inconsistency keeps it below 5.",
+    "facets": "Covers themes, people, trend, sentiment, sources, geography, overlap and the news-versus-research scope with grounded values or explicit limits."
+   },
+   "C": {
+    "trend": "Traced full monthly series with window, peak and quantified annualized decline; no critical-versus-total decomposition despite available data.",
+    "comparison": "The baseline and delta recompute with its definition, but the comparison only partially advances the requested themes-and-people contrast.",
+    "chart": "The volume series traces and supports a claim, but the requested facets of theme and people dominance are not charted, and censoring is not visibly marked.",
+    "drilldown": "The report provides breakdowns but lacks two traced layers reaching identified items; only one proposed follow-up executed successfully.",
+    "export": "A traced, sourced monthly CSV is referenced, but it is the only export despite the question also needing theme and people summaries.",
+    "repro": "Most numbers trace and the main call has args, but one number is untraced and the follow-up calls are not all reproducible successes.",
+    "refs": "The script ceiling is 1; no claim-linked resolvable headlines or other document references are supplied.",
+    "accuracy": "The main counts, people and caveats align with the record; the stated 144-day gap is consistent with the dates.",
+    "limits": "Window, censoring, lane, match mode and several panel limits are covered, but coverage flag and specific enrichment lag are not adequately stated beside the affected figures.",
+    "verdict": "Gives a supported answer, decision, confidence and condition; it acknowledges limits and contrary examples, but the verdict could more directly bound the entity panel's lag and coverage.",
+    "facets": "Covers themes, people, trend, tone, publisher mix and geography, but does not address several implied facets such as tariff-versus-IPO overlap or seasonality with grounded breakdowns."
+   },
+   "D": {
+    "trend": "No measured series; estimate label is honest.",
+    "comparison": "Only a qualitative proposed comparison, with no executed measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Proposed calls are mostly unexecuted and no traced breakdown is provided.",
+    "export": "Memory-based qualitative CSV is labelled estimate and not measured.",
+    "repro": "No measurements or replayable calls used for findings.",
+    "refs": "No references supplied for the memory-based specifics.",
+    "accuracy": "No clear contradiction with the reference record; claims are explicitly labelled as memory estimates.",
+    "limits": "Clearly says no corpus was queried, but provides only generic limits for an unmeasured deliverable.",
+    "verdict": "Direct hypothesis answer and low confidence, but no evidence supports a decision beyond a suggested query.",
+    "facets": "Lists candidate topics and people from memory without grounded values."
+   }
+  },
+  "errors": {
+   "A": [
+    "Names Akash Ambani as a likely person without a source; it is explicitly presented as a general-knowledge candidate, not a measured finding."
+   ],
+   "B": [
+    "Calls the news window 2024-06-01 through 2026-05-31 rather than stating the reference's exclusive end of 2026-06-01.",
+    "Reports a chart window ending 2026-05-31 while including the May monthly bucket; the cutoff should be expressed as exclusive 2026-06-01."
+   ],
+   "C": [
+    "Calls the 2026-06-01 boundary month incomplete while also correctly saying the window ends exclusively on that date; the censored newest month is beyond the last reported May point, so the wording is imprecise."
+   ],
+   "D": [
+    "Names JioHotstar, Jio Financial Services, Isha Ambani and other specific themes/people as memory estimates; they are not measured or source-verified in this deliverable."
+   ]
+  },
+  "best": "B",
+  "verdict": "B is the strongest decision aid: it answers which themes and people dominate with traced counts, trend and caveats, and it addresses several implied contrasts. Its missing theme and people exports, incomplete drill-down linkage, and inconsistent end-date wording keep it short of a fully reproducible, decision-grade package."
+ },
+ "scores": {
+  "chatgpt_bare": {
+   "trend": 1,
+   "comparison": 0,
+   "chart": 1,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 1
+  },
+  "claude_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 4,
+   "drilldown": 3,
+   "export": 3,
+   "repro": 4,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 4,
+   "verdict": 4,
+   "facets": 5
+  },
+  "chatgpt_prism": {
+   "trend": 4,
+   "comparison": 4,
+   "chart": 3,
+   "drilldown": 2,
+   "export": 3,
+   "repro": 3,
+   "refs": 1,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 4,
+   "facets": 4
+  },
+  "claude_bare": {
+   "trend": 1,
+   "comparison": 1,
+   "chart": 0,
+   "drilldown": 1,
+   "export": 1,
+   "repro": 1,
+   "refs": 0,
+   "accuracy": 4,
+   "limits": 3,
+   "verdict": 3,
+   "facets": 1
+  }
+ },
+ "lowered": {},
+ "clamped": {}
+}

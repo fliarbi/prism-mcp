@@ -1,0 +1,213 @@
+{
+ "slug": "drug-trafficking-geo",
+ "setups": {
+  "claude_bare": {
+   "params": {
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 1.0,
+    "repro": 1.0,
+    "accuracy": 3.5,
+    "limits": 3.0,
+    "verdict": 2.5,
+    "facets": 1.0
+   },
+   "strict": 33.2,
+   "plain": 33.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 28.5,
+    "gpt": 37.8
+   }
+  },
+  "claude_prism": {
+   "params": {
+    "comparison": 3.0,
+    "chart": 3.0,
+    "drilldown": 3.5,
+    "export": 3.0,
+    "repro": 4.5,
+    "accuracy": 4.5,
+    "limits": 4.0,
+    "verdict": 3.5,
+    "facets": 4.5
+   },
+   "strict": 75.2,
+   "plain": 75.2,
+   "invented": false,
+   "by_judge": {
+    "opus": 73.9,
+    "gpt": 76.6
+   }
+  },
+  "chatgpt_bare": {
+   "params": {
+    "comparison": 0.5,
+    "chart": 0.0,
+    "drilldown": 1.5,
+    "export": 0.0,
+    "repro": 0.5,
+    "accuracy": 3.5,
+    "limits": 2.5,
+    "verdict": 2.5,
+    "facets": 0.5
+   },
+   "strict": 28.0,
+   "plain": 28.0,
+   "invented": false,
+   "by_judge": {
+    "opus": 17.3,
+    "gpt": 38.8
+   }
+  },
+  "chatgpt_prism": {
+   "params": {
+    "comparison": 3.0,
+    "chart": 0.0,
+    "drilldown": 2.5,
+    "export": 4.5,
+    "repro": 4.5,
+    "accuracy": 4.0,
+    "limits": 3.0,
+    "verdict": 3.0,
+    "facets": 4.0
+   },
+   "strict": 63.5,
+   "plain": 63.5,
+   "invented": false,
+   "by_judge": {
+    "opus": 58.8,
+    "gpt": 68.3
+   }
+  }
+ },
+ "judge_mad": 0.69,
+ "verdicts": {
+  "opus": "D was the only deliverable that grounded both lanes, charted the traced news shares, and read the evidence honestly. It concluded that a 2-paper research sample cannot support a studied-vs-reported verdict, and it named what would close the gap. C traced its numbers well but compared news to news instead of answering the studied-vs-reported question, and it lacked a chart. A and B were honest but unmeasured, with A at least offering a labelled hypothesis.",
+  "gpt": "B is the strongest decision aid: it traces both research and news geography, explains why their counts cannot be directly compared, and carries the key coverage and timing caveats. Its main weakness is that the chart covers only news and the headline comparison does not establish a measured research-versus-reporting gap; C has stronger exports, but its comparison also stops short of that core contrast."
+ },
+ "errors": {
+  "opus": {
+   "claude_bare": [],
+   "chatgpt_bare": [],
+   "chatgpt_prism": [
+    "Omits c1 news_coverage rows (India 213, etc.) without comment",
+    "Comparison ratio tagged '(est.)' though it is computed from traced values"
+   ],
+   "claude_prism": [
+    "news_geography.csv marked coverage=full despite placed_pct 38.5%"
+   ]
+  },
+  "gpt": {
+   "claude_bare": [
+    "Directional country and regional claims are memory estimates, not measured findings; several are broad and unsupported."
+   ],
+   "claude_prism": [
+    "The research-versus-news comparison table places news percentages beside paper counts, so it is not a shared-scale comparison."
+   ],
+   "chatgpt_prism": [
+    "The numeric comparison supports a US-versus-Mexico news contrast, not the question's core contrast between where research is studied and where it is reported."
+   ],
+   "chatgpt_bare": []
+  }
+ },
+ "reasons": {
+  "opus": {
+   "claude_bare": {
+    "comparison": "Defines a proposed delta but computes no contrast.",
+    "chart": "No chart.",
+    "drilldown": "Names layers and calls, but they are unexecuted plans and only 2 of 6 returned data.",
+    "export": "Honest estimate-labelled table with empty cells.",
+    "repro": "Every claim is labelled memory or estimate.",
+    "accuracy": "No contradictions. The 30-40% guess is labelled est.",
+    "limits": "Specific about what is unmeasured and why; honest, but cannot reach 4.",
+    "verdict": "Gives a hypothesis with decision, confidence and what would change it, but it rests on estimates.",
+    "facets": "Facets are answered from memory only."
+   },
+   "chatgpt_bare": {
+    "comparison": "None.",
+    "chart": "None.",
+    "drilldown": "Lists follow-ups only; 1 of 5 returned data.",
+    "export": "No export.",
+    "repro": "No measured content to reproduce.",
+    "accuracy": "No contradictions; the deliverable says nothing.",
+    "limits": "Generic 'unknown' statements.",
+    "verdict": "Refusal-style answer with no substantive direction.",
+    "facets": "No facet is answered."
+   },
+   "chatgpt_prism": {
+    "comparison": "Traced US vs Mexico comparison (3.4x recomputes) with a defined baseline, but it is news vs news, not the studied-vs-reported contrast the question poses.",
+    "chart": "No chart block.",
+    "drilldown": "One traced layer; only 1 of 4 follow-ups was ok.",
+    "export": "Two traced CSVs with provenance and coverage flags, referenced from the prose. 'label' is renamed to 'country' without documentation.",
+    "repro": "15/15 numbers trace and a calls block is present.",
+    "accuracy": "Reads fields correctly. Omits c1's news_coverage rows but does not contradict them.",
+    "limits": "Window, censoring, placed_pct and the acronym caveat are stated. Misses the gap between window end and today.",
+    "verdict": "Supported answer with a confidence level, but it states a mismatch while the research side is only 2 papers.",
+    "facets": "Omits the c1 news rows and the window-to-today gap. Other facets are covered."
+   },
+   "claude_prism": {
+    "comparison": "Places news share beside research rows for the studied-vs-reported contrast, declines a ratio on n=2, and carries the 'not a measured zero' caveat. 'Baseline' is loosely defined.",
+    "chart": "Fully traced hbar with window, unit, source and the claim it supports. Only the news facet is charted, though research n=2 arguably does not support a chart.",
+    "drilldown": "Layers are lane, then country, with no item-level identifiers; 4 of 6 follow-ups were ok.",
+    "export": "Both tables trace with provenance JSON. The news CSV is flagged coverage=full even though placed_pct is 38.5%.",
+    "repro": "47/47 numbers trace, with a calls block and capture date.",
+    "accuracy": "All values match the reference, and it separates the claim query from the term query. The acronym caveat is noted but not applied to specific suspect rows. The coverage=full flag is a slip.",
+    "limits": "Limits sit next to the numbers: window, the 5.7-month gap, the enrichment bound, placed_pct, match mode and n=2. It also says what would close the gap.",
+    "verdict": "Direct answer with decision, low confidence and its reason, and what would change it. Correctly refuses to infer the mismatch from 2 papers.",
+    "facets": "All lanes are covered with grounded values or grounded empties, including both news queries and the patent-empty row."
+   }
+  },
+  "gpt": {
+   "claude_bare": {
+    "comparison": "Only proposes a comparison; provides no measured figures.",
+    "chart": "No chart block.",
+    "drilldown": "Follow-ups are planned, but most are unexecuted and no traced breakdown is shown.",
+    "export": "CSV is explicitly an estimate and has no measured rows.",
+    "repro": "No calls were run; values are labeled estimates.",
+    "accuracy": "Memory claims are marked as estimates, without a clear contradiction to the record.",
+    "limits": "Clearly says the measurements, windows, and coverage are unknown; some limits are necessarily generic without calls.",
+    "verdict": "Gives a cautious decision and conditions, but the answer rests on unmeasured directional claims.",
+    "facets": "Most requested facets are estimates or unmeasured."
+   },
+   "claude_prism": {
+    "comparison": "The comparison table juxtaposes news shares and research paper counts, which are different scales; it correctly declines to calculate a ratio.",
+    "chart": "The news chart is traced and well specified, but research geography—the other side of the question—is not charted.",
+    "drilldown": "Country rows and lane breakdowns are traced, with specific follow-ups; no executed follow-up result is folded back into the report.",
+    "export": "Exports are traced and referenced, but the research export lacks a window and the CSVs omit some needed provenance and identifiers.",
+    "repro": "Numeric claims trace to calls with arguments and windows where available; the provenance block allows regeneration.",
+    "accuracy": "Reads the lane definitions and placement denominator correctly, flags the small research sample, acronym collisions, and high-lift low-count caveat.",
+    "limits": "Places the main window, censoring, placement, lane, and matching caveats near the findings; the five-and-a-half-month gap is approximate.",
+    "verdict": "Direct and cautious, but does not name the shared US presence as contrary evidence or clearly say what finding would change the decision.",
+    "facets": "Covers authorship, publication, news geography, placement, patents, and the research-versus-news mismatch with grounded values or no-data."
+   },
+   "chatgpt_prism": {
+    "comparison": "The US-versus-Mexico news comparison is traced and recomputable, but it addresses a news-country contrast rather than the studied-versus-reported contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Provides traced country and lane breakdowns plus concrete follow-up calls, but only one follow-up executed successfully and no result is folded in.",
+    "export": "Both requested lane exports and provenance are present, with identifiers, null handling, and source calls.",
+    "repro": "All presented values trace to the listed calls; the calls include arguments, windows, and a capture date.",
+    "accuracy": "Generally reads the fields correctly and catches important caveats, but the comparison risks implying more than the tiny research result can establish.",
+    "limits": "States the key window, censoring, placement, enrichment, and acronym caveats, though the script ceiling limits this score to 3.",
+    "verdict": "Answers directly with confidence and conditions, but does not fully name contrary evidence or support a decision-grade conclusion.",
+    "facets": "Addresses the research/news distinction, placement coverage, separate research lanes, patent result, and acronym and high-lift caveats."
+   },
+   "chatgpt_bare": {
+    "comparison": "Says a comparison cannot be calculated and gives no measured contrast.",
+    "chart": "No chart block.",
+    "drilldown": "Names potential calls, but gives no traced breakdown and the follow-ups are not sufficiently executable or on-topic.",
+    "export": "No CSV export.",
+    "repro": "No measured numbers or reproducible results; calls are only proposed.",
+    "accuracy": "Makes no fabricated measured claims; its statement that no observations were supplied is a defensible memory-only response.",
+    "limits": "Clearly identifies missing windows and coverage, but cannot state the specific limits of the recorded data.",
+    "verdict": "Gives a direct answer, decision, confidence, and conditions, bounded by its stated lack of data.",
+    "facets": "Most facets are explicitly unmeasured rather than answered with grounded values."
+   }
+  }
+ },
+ "clamped": {
+  "opus": {},
+  "gpt": {}
+ }
+}
