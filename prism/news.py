@@ -177,6 +177,8 @@ def _bounds(since: str | None, until: str | None, months: int = DEFAULT_MONTHS) 
     """A two-sided window, always. The upper bound defaults to the ingest-safe
     edge rather than to today: the newest month in the corpus holds a fraction
     of a normal month and closes every series with a cliff."""
+    since = ch.safe_date(since, "since")
+    until = ch.safe_date(until, "until")
     end = until or ch.NEWS_LAST_MONTH
     if since:
         start = since
@@ -460,6 +462,8 @@ def critical_news(term: str, limit: int = 10, days: int = 120,
     geopolitics, regulation and disasters, against a band 1 that holds cookie
     notices and fixture lists. Tone is returned alongside so a caller can
     separate "big" from "bad"."""
+    since = ch.safe_date(since, "since")
+    until = ch.safe_date(until, "until")
     end = until or ch.NEWS_LAST_MONTH
     if since:
         start = since

@@ -164,6 +164,10 @@ def public(o, key=None):
 
 import os as _os
 PUBLIC_API = _os.environ.get("PRISM_PUBLIC", "0") == "1"
+# Tracebacks carry absolute server paths; attach them only when explicitly
+# asked for. Public mode never shows them; local mode (Claude Code/Desktop)
+# showed them by default, which leaked /home/... paths to the client.
+DEBUG = _os.environ.get("PRISM_DEBUG", "0") == "1"
 # On the public API no response names a store, table, host or upstream source.
 _PUBLIC_EXTRA = [
     (re.compile(r"\b(?:CHError|URLError|OperationalError|ServerSelectionTimeoutError)\b:?\s*"), ""),
@@ -225,10 +229,13 @@ def _guard(feature: str, fn, /, *args, _subject=None, **kwargs) -> dict:
     except ValidationError as e:
         return fail(feature, str(e), kind='bad_request', subject=_subject)
     except Exception as e:
-        from .ch import CHError
+        from .ch import CHError, BadRequest
         from urllib.error import URLError
+        if isinstance(e, BadRequest):      # caller typo, not a bug: no trace
+            return fail(feature, str(e), kind='bad_request', subject=_subject)
         kind = 'upstream' if isinstance(e, (CHError, URLError, TimeoutError, ConnectionError)) else 'internal'
+        meta = {"seconds": round(time.time() - t0, 1)}
+        if DEBUG:                          # absolute paths: opt-in only
+            meta["trace"] = traceback.format_exc()[-1200:]
         return fail(feature, f"{type(e).__name__}: {e}", kind=kind,
-                    subject=_subject,
-                    meta={"seconds": round(time.time() - t0, 1),
-                          "trace": traceback.format_exc()[-1200:]})
+                    subject=_subject, meta=meta)

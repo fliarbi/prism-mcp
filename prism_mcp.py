@@ -116,10 +116,17 @@ def prism_tool(feature: str, group: str = "research"):
                 structuredContent=result,
                 isError=not result['ok'] and result.get('error', {}).get('kind')
                         in ('bad_request', 'internal', 'upstream'))
+        # Read-only tools are annotated so a client (notably ChatGPT) does not
+        # treat them as write actions that need a confirmation prompt. Only the
+        # pure-retrieval groups and read-only system ops qualify; compose.* /
+        # drive.* (which generate, upload or write) are left unannotated rather
+        # than risk labelling a side-effecting tool as safe.
+        _read_only = group in ('news', 'research', 'analysis') or feature in (
+            'system.status', 'system.freshness', 'system.features', 'system.resolve',
+            'system.job', 'system.jobs', 'system.article_store')
         annotations = (ToolAnnotations(readOnlyHint=True, destructiveHint=False,
                                        idempotentHint=True, openWorldHint=True)
-                       if feature in ('research.plan', 'research.packet', 'research.packet_read',
-                                      'analysis.history', 'analysis.scenarios') else None)
+                       if _read_only else None)
         async_wrapper.__doc__ = envelope.public_text(fn.__doc__ or "")
         if envelope.PUBLIC_API:
             async_wrapper.__doc__ = envelope._public_strings(async_wrapper.__doc__)

@@ -260,7 +260,7 @@ def _next(month: str) -> str:
 def timeline(term: str, scope=None, months: int = 12, until: str | None = None, per_month: int = 6) -> dict:
     sc = _scope_terms(scope)
     months = max(3, min(int(months or 12), 24))
-    end = (until or ch.NEWS_LAST_MONTH)[:7] + "-01"
+    end = (ch.safe_date(until, "until") or ch.NEWS_LAST_MONTH)[:7] + "-01"
     ck = cache.key("deep.timeline.v1", term.lower(), "|".join(sc), end, months, per_month)
     hit = cache.get(ck)
     if hit:

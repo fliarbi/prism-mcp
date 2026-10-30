@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prism-mcp"
+version = "1.0.0"
+description = "Prism's research layer as an MCP server: research and editorial tools over Prism's ClickHouse corpora, with retrieved evidence kept distinct from model interpretation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # mcp<2 is required: the server uses mcp.server.fastmcp (removed in 2.x).
+    "mcp>=1.2,<2",
+    "pydantic>=2,<3",
+    "anyio>=4,<5",
+    "numpy>=1.26",
+    "Pillow>=10",
+]
+
+[project.optional-dependencies]
+# HTTP and public transports (python -m prism_mcp --http / PRISM_PUBLIC=1).
+http = ["uvicorn>=0.27"]
+
+[project.scripts]
+prism-mcp = "prism_mcp:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["prism"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"prism_mcp.py" = "prism_mcp.py"

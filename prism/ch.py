@@ -210,6 +210,55 @@ def drain_errors() -> list:
 
 
 # ═══════════════════════════ SQL literals ════════════════════════════════════
+class BadRequest(ValueError):
+    """A caller-supplied value is malformed. The envelope maps this to
+    kind='bad_request' (a 400), not 'upstream'/'internal', so a typo in a date
+    is told apart from a cluster outage or a bug."""
+
+
+_DATE_RE = re.compile(r"^(\d{4})-(\d{2})(?:-(\d{2}))?(?:[ T]\d{2}:\d{2}(?::\d{2})?)?$")
+
+
+def safe_date(x, field: str = "date"):
+    """Validate a caller-supplied date and return it canonicalised.
+
+    Date parameters are interpolated into SQL (``datetime >= '{start}'``), so an
+    unvalidated value is an injection vector. This accepts only YYYY-MM,
+    YYYY-MM-DD or YYYY-MM-DD[ T]HH:MM[:SS] and returns a string that provably
+    holds nothing but digits and date punctuation; anything else raises
+    BadRequest. None and '' pass through as None so a default window still
+    applies. Trusted internal constants (NEWS_LAST_MONTH) validate unchanged."""
+    if x is None:
+        return None
+    s = str(x).strip()
+    if not s:
+        return None
+    m = _DATE_RE.match(s)
+    if not m:
+        raise BadRequest(f"{field} must be a date like YYYY-MM-DD (got {s!r})")
+    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3) or 1)
+    if not (1 <= mo <= 12 and 1 <= d <= 31):
+        raise BadRequest(f"{field} is not a real date (got {s!r})")
+    if m.group(3) is None:                 # month only → first of the month
+        return f"{y:04d}-{mo:02d}-01"
+    return s                               # already matched the strict pattern
+
+
+def safe_year(x, field: str = "year", lo: int = 1800, hi: int = 2100):
+    """Validate a caller-supplied year. Returns None for None/''; otherwise an
+    int in [lo, hi] or raises BadRequest. (Most year params are already coerced
+    to int by validate_call; this is belt-and-braces for raw interpolation.)"""
+    if x is None or (isinstance(x, str) and not x.strip()):
+        return None
+    try:
+        y = int(x)
+    except (TypeError, ValueError):
+        raise BadRequest(f"{field} must be a 4-digit year (got {x!r})")
+    if not (lo <= y <= hi):
+        raise BadRequest(f"{field} must be between {lo} and {hi} (got {y})")
+    return y
+
+
 def sql_str(x) -> str:
     return "'" + str(x).replace("\\", "\\\\").replace("'", "\\'") + "'"
 

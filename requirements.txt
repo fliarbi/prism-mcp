@@ -1,0 +1,13 @@
+# Prism MCP runtime dependencies.
+# mcp MUST stay <2: the server uses mcp.server.fastmcp, which was removed in
+# mcp 2.x. A fresh `pip install mcp` resolves to 2.x and the server fails to
+# import — pin it here.
+mcp>=1.2,<2
+pydantic>=2,<3
+anyio>=4,<5
+numpy>=1.26
+Pillow>=10
+
+# Needed only for the HTTP / public transports (python prism_mcp.py --http).
+# Stdio mode (Claude Desktop/Code, Cursor) does not require it.
+uvicorn>=0.27
