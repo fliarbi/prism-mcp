@@ -9,7 +9,8 @@
 > and verified.
 
 **Subject:** eastern Uttar Pradesh (Purvanchal) · **Retrieved:** 2026-11-06 · **Tools:**
-`news_themes`, `news_trends`, `disease_profile` · **Read as:** one flow, top to bottom.
+`news_themes`, `news_trends`, `disease_profile`, `critical_news`, `news_factors` · **Read as:** one
+flow, top to bottom.
 
 ---
 
@@ -21,6 +22,7 @@ cause of the region's worst health outcome, and the corpus connects the two by n
 ```mermaid
 flowchart LR
   A["Monsoon and heavy rainfall<br/>climate signal · 58× lift"] --> B["Flooding and water-logging<br/>disaster · 17× lift"]
+  F["Water released from Nepal<br/>into the Ghaghra and Rapti"] --> B
   B --> C["Encephalitis risk factors<br/>monsoon · water-logging · malnutrition"]
   C --> D["Child mortality<br/>2019 surge: 692 claims"]
   E["Weak health system<br/>'inaction of the state machinery'"] --> D
@@ -69,6 +71,20 @@ category here rather than an occasional story.
 > **The read:** east UP doesn't just *get* extreme weather — it *lives on the warnings*. One in ten
 > labelled weather items is a lightning or storm alert.
 
+And the warnings are not seasonal — they **rotate**, so there is effectively no off-season. Assembling
+the dated, high-priority alerts in the corpus into a calendar makes the cycle explicit (every quote
+verified against its source; publisher withheld; *IMD* = India Meteorological Department):
+
+| When | Hazard | Verbatim from the corpus |
+|---|---|---|
+| **December** | Dense fog | *"dense fog"* with *"zero visibility or below 50 metres"* across **13 districts** of the Terai belt and eastern UP |
+| **Apr–Jun** | Heat + lightning | an IMD orange alert pairing a **47°C** heatwave with *"thunderstorms, lightning"* over the belt; an earlier report records a *"death toll from the heatwave in eastern Uttar Pradesh, Bihar"* |
+| **Jul–Sep** | Monsoon flood | *"many major rivers across the state … flow above the danger mark"* — the **Ganga** *"above danger mark … Allahabad, Varanasi flooded"* |
+
+The extraction tool discarded two further flood factors outright *"because no source named."* That
+discard is the discipline: it keeps only what it can tie to a verified report — the same reason the
+figures above can be quoted at all.
+
 ---
 
 ## 3 · Disaster — when the weather wins
@@ -78,6 +94,13 @@ baseline**. This is the flood layer: the Ghaghra, Rapti and Ganga systems spilli
 and the **water-logging** that follows and lingers. Disaster coverage spills across the porous border,
 too: the co-occurring place-tags are **Bihar** (110× lift) and **Jharkhand** (151×) — the flood belt
 is a region, not a state line.
+
+And the corpus names the *mechanism*, not just the fact. East-UP flooding is a **two-source** problem —
+the monsoon from above and water from across the border: *"late monsoon rain, along with water
+released from Nepal into our rivers, have been causing flooding of fields."* The rivers that drown
+Purvanchal (the Ghaghra and Rapti) rise in Nepal, so a barrage release upstream lands as a flooded
+paddy field downstream. The recorded impact is exactly that — *"flooding of fields"*, i.e. crop loss —
+and the **water-logging** that lingers afterward, straight into the encephalitis season of Section 4.
 
 > **The hinge:** water-logging is where this report turns from a *weather* story into a *health* one —
 > because it is, verbatim, one of the risk factors the corpus names for the disease in Section 4.
@@ -122,7 +145,11 @@ Downstream of a hazard-prone, under-industrialised belt is the region's other de
 **labour out-migration.** The research signal is thin (see Section 6), but it is the human answer to
 Sections 1–4 — people leaving a flood plain that offers few jobs and a frayed safety net. The
 governance layer that failed at the hospital in Section 4 is the same one tagged across the regional
-news: *Yogi Adityanath* (129× lift), *government* coverage at 7.3%. The brief ends where it has to —
+news: *Yogi Adityanath* (129× lift), *government* coverage at 7.3%. The state's visible counter-move
+shows up in the same feed: an April 2026 report of a *"Centre of Excellence"* in **Gorakhpur**, built
+with a major IT-services firm to teach *"emerging technology to the youth of Eastern Uttar Pradesh"* —
+local opportunity offered against the pull to migrate. Whether it shifts the out-migration the
+research corpus can't even measure (Section 6) is the open question. The brief ends where it has to —
 at the state's capacity to absorb the shocks the earlier sections measured.
 
 ---
@@ -165,6 +192,11 @@ into a story you can act on.
 # 1. what the region is distinctively about, and the composition of the signal
 curl -s .../prism/v1/news.themes  -H "$AUTH" -d '{"term":"eastern Uttar Pradesh"}' \
   | jq '{categories: .data.categories.rows, subthemes: .data.subcategories.rows}'
+
+# 2-3. the dated hazard calendar and the flood mechanism (verbatim, verified)
+curl -s .../prism/v1/news.critical -H "$AUTH" -d '{"term":"eastern Uttar Pradesh","days":540}'
+curl -s .../prism/v1/news.factors  -H "$AUTH" -d '{"topic":"flooding in eastern Uttar Pradesh"}' \
+  | jq '{causes: [.data.causes[].quote], impacts: [.data.impacts[].quote], discarded: .data.rejected}'
 
 # 4. the crisis downstream — causes, risk factors, the 2019 time-series
 curl -s .../prism/v1/research.disease -H "$AUTH" -d '{"disease":"acute encephalitis syndrome"}' \
