@@ -134,6 +134,54 @@
   "development_countermove": "April 2026: a 'Centre of Excellence' in Gorakhpur, built with a major IT-services firm to teach emerging technology to youth of eastern UP",
   "extractor_discipline": "news_factors discarded two further flood factors 'because no source named' — it keeps only factors tied to a verified report"
  },
+ "verticals": {
+  "tool": "news.critical + news.sentiment + news.themes",
+  "note": "the full problem-space; publisher, company and individual names withheld per policy. Crime and migration are read at the event level because the corpus under-categorises them.",
+  "landscape_top20_priority": {
+   "what": "the region's highest-priority stories by vertical, of the top 20 it is central to",
+   "rows": [
+    { "vertical": "weather / climate / disaster", "stories": 8 },
+    { "vertical": "health", "stories": 4 },
+    { "vertical": "governance / politics", "stories": 3 },
+    { "vertical": "crime / law-and-order", "stories": 2 },
+    { "vertical": "agriculture / infrastructure", "stories": 1 },
+    { "vertical": "education / tech", "stories": 1 },
+    { "vertical": "accident / social", "stories": 1 }
+   ]
+  },
+  "health_wider": {
+   "encephalitis_deaths_verbatim": "399 deaths this year (brain fever), reported by the Gorakhpur government medical college",
+   "other": ["rare cerebral malaria (mixed Plasmodium)", "drug-resistant TB work at a Gorakhpur tertiary hospital", "new 32-bed ICU to relieve severe patients from Eastern UP, Bihar and Nepal"],
+   "reading": "health is wider than encephalitis; one Gorakhpur hospital is the referral point for three jurisdictions — the health geography mirrors the flood geography"
+  },
+  "crime": {
+   "category_signal": "weak — the literal term 'crime in Uttar Pradesh' returns ~17 articles; crime news is tagged by specifics, not by the word 'crime'",
+   "event_signal": "sharp — the Bihar-border illegal-arms pipeline",
+   "verbatim": "a man arrested in Chandauli carrying 'five pistols ... five magazines of 32 bore', running them from Munger (Bihar) toward Bhadohi; a sitting Lok Sabha MP reporting a 'threat to life ... criminals in Eastern Uttar Pradesh are planning to harm him'",
+   "reading": "a trafficking-and-muscle story, not a property-crime beat; under-registers in categorical coverage because it lives in one-off seizures and threats"
+  },
+  "agriculture_economy": {
+   "irrigation_upside": "Saryu Canal project expansion to cover '14.04 lakh hectare' of irrigation, 'great relief to the farmers of Eastern Uttar Pradesh'",
+   "flood_downside": "the same rivers flood the same fields — 'flooding of fields'; a monsoon flood 'faded the happiness of Rakshabandhan' as people reached relatives 'by boat'",
+   "reading": "water is the economy as much as the hazard — one line from canal headworks to the river danger mark"
+  },
+  "migration_economy": {
+   "fact": "labour out-migration is Purvanchal's defining economic fact; the research corpus cannot measure it (see research_layer_limits)",
+   "policy_response_verbatim": "land-ownership certificates distributed to tribal and resettled families; a Gorakhpur 'Centre of Excellence' with a major IT-services firm to teach 'emerging technology to the youth of Eastern Uttar Pradesh'; power-department staff 'mobilised against privatisation'",
+   "reading": "the state is trying to manufacture reasons to stay; whether the belt can hold its own people is the question under every vertical"
+  },
+  "religion_tourism": {
+   "volume": "religion + culture + tourism ~250 articles; religion alone at ~8x lift",
+   "anchors": ["Varanasi (Kashi)", "the Gorakhnath temple", "Ram temple / pilgrimage tags (e.g. Shravasti)"],
+   "reading": "the one vertical whose dominant tone is positive; it is what pulls the autumn mood back above the line"
+  },
+  "sentiment_seasonality": {
+   "tool": "news.sentiment (24 months)",
+   "totals": { "positive_pct": 52.6, "negative_pct": 35.4, "ratio_neg_over_pos": 0.67, "vs_baseline": 1.16, "reading": "somewhat more negative than ordinary news coverage" },
+   "mean_ratio_by_month": { "Jan": 1.27, "Feb": 0.36, "Mar": 0.72, "Apr": 0.56, "May": 1.53, "Jun": 1.26, "Jul": 1.21, "Aug": 0.82, "Sep": 0.78, "Oct": 0.28, "Nov": 0.27, "Dec": 0.81 },
+   "reading": "mood tracks the hazard calendar — net negative in May-Jul (heat, monsoon flood) and the January cold snap; net positive in Oct-Nov (festival / harvest)"
+  }
+ },
  "news_volume": {
   "tool": "news.trends",
   "total_2024_2026": 1101,
