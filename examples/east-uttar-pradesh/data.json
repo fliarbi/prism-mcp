@@ -161,9 +161,24 @@
    "reading": "a trafficking-and-muscle story, not a property-crime beat; under-registers in categorical coverage because it lives in one-off seizures and threats"
   },
   "agriculture_economy": {
-   "irrigation_upside": "Saryu Canal project expansion to cover '14.04 lakh hectare' of irrigation, 'great relief to the farmers of Eastern Uttar Pradesh'",
-   "flood_downside": "the same rivers flood the same fields — 'flooding of fields'; a monsoon flood 'faded the happiness of Rakshabandhan' as people reached relatives 'by boat'",
-   "reading": "water is the economy as much as the hazard — one line from canal headworks to the river danger mark"
+   "news_level": {
+    "irrigation_upside": "Saryu Canal project expansion to cover '14.04 lakh hectare' of irrigation, 'great relief to the farmers of Eastern Uttar Pradesh'",
+    "flood_downside": "the same rivers flood the same fields — 'flooding of fields'; a monsoon flood 'faded the happiness of Rakshabandhan' as people reached relatives 'by boat'"
+   },
+   "research_scope": {
+    "tool": "Prism research-scope (question -> scope of extracted findings + scope-id -> model re-analysis per focus)",
+    "why": "the academic corpus does not index 'eastern UP', so the scope was run on the agro-ecological system it belongs to: the eastern Indo-Gangetic rice-wheat plain",
+    "scope": {"findings": 93, "papers": 38, "dimensions": ["soil_problems", "water_problems", "cropping_yield", "inputs", "economy", "solutions"]},
+    "soil": {
+     "reading": "conventional puddling/tillage keeps soil organic carbon low or drains it; conservation agriculture rebuilds it near the surface",
+     "metrics": ["conventional-till rice-wheat gained only 0.9 t C/ha", "zero-till + residue gained 3.0-4.7 t C/ha (3-5x conventional)", "intensified cropping depleted total organic carbon 17.56% at 0-30 cm", "zero-till lifted SOC +20%/+40% in 0-15/15-30 cm", "non-puddled rice + residue: SOC +79%, N +62%", "tillage had no effect below 0.15 m"]
+    },
+    "sodicity": {"metrics": ["gypsum + pressmud raised total organic carbon 32-64% with ~25% higher yield", "rice-wheat yield rose with soil carbon, fell with pH / exchangeable-sodium-% / bulk density"]},
+    "water": {"metrics": ["the Gangetic aquifer is spatially heterogeneous (recharge, permeability, storage, chemistry)", "UP groundwater neutral-to-alkaline, CaMgHCO3-type, rock-dominated", "40% of samples exceed the 50 mg/l nitrate limit", "shifting wheat sowing dates could unlock +69% untapped wheat potential"]},
+    "yield_economy": {"metrics": ["system rice-equivalent yield 15.72-16.39 t/ha (conservation) vs 10.30 (baseline)", "nutrient-expert fertiliser cut wheat global-warming potential 12-20%; >80% of farmers raised yield and income", "resource-poor farm households most exposed to simulated drought, cushioned by off-farm income"]},
+    "study_dois": ["10.1016/j.eja.2017.08.006", "10.1111/sum.12331", "10.3390/agronomy10060888", "10.1111/sum.12577", "10.1038/s41598-021-95092-6", "10.20546/ijcmas.2017.603.017", "10.4067/s0718-95162018005003201", "10.1002/ldr.4047"]
+   },
+   "reading": "at the news level agriculture is water (canal vs flood); the science-scope flow adds the soil/salinity/yield depth the news cannot — same corpus, different engine"
   },
   "migration_economy": {
    "fact": "labour out-migration is Purvanchal's defining economic fact; the research corpus cannot measure it (see research_layer_limits)",

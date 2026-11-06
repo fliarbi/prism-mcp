@@ -147,12 +147,52 @@ planning to harm him."*
 
 ## 6 · Agriculture and the rural economy
 
-The region is an agrarian floodplain, so water is the economy as much as the hazard. The upside
-appears as irrigation: an expansion of the **Saryu Canal** project to cover *"14.04 lakh hectare"* of
-irrigation, *"great relief to the farmers of Eastern Uttar Pradesh."* The downside is Section 3's
-flood landing on the same fields — *"flooding of fields"*, and a monsoon flood that *"faded the
-happiness of Rakshabandhan"* as people reached relatives *"by boat."* Agriculture here is one unbroken
-line from the canal headworks to the danger mark on the river gauge.
+At the news level, agriculture here is water: the upside is irrigation — the **Saryu Canal** expansion
+to cover *"14.04 lakh hectare"*, *"great relief to the farmers of Eastern Uttar Pradesh"* — and the
+downside is Section 3's flood landing on the same fields (*"flooding of fields"*; a monsoon flood that
+reached relatives *"by boat"*). But the headline stops at the water's edge. For the **science** of what
+ails these soils, this section is built with a different engine — and that difference is the point.
+
+Because the academic corpus does not index "eastern UP" (Section 10), the depth below comes from
+Prism's **research-scope** flow run on the agro-ecological system the region belongs to — the **eastern
+Indo-Gangetic rice-wheat plain**. One scope gathered **93 findings from 38 papers**; focusing it on
+soil, water and yield returns a read no news feed carries.
+
+**Soil — conventional practice is draining it.** Under puddled, conventional tillage soil organic
+carbon stays low or falls: conventional-till rice-wheat gained only **0.9 t C/ha**, and intensified
+cropping without conservation depleted total organic carbon **17.56%** at 0–30 cm. Conservation
+agriculture reverses it — zero-till with residue gained **3.0–4.7 t C/ha** (3–5× conventional), lifted
+soil carbon **+20% / +40%** in the 0–15 and 15–30 cm layers, and non-puddled rice with residue raised
+SOC **+79%** and nitrogen **+62%** — but only near the surface; below 0.15 m, tillage made no
+difference.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agriculture-soil-carbon-dark.png">
+  <img alt="Horizontal bars of soil carbon gained over the trial (t C/ha) by farming practice in eastern Indo-Gangetic rice-wheat: conventional tillage 0.9, zero-till no residue 1.1, zero-till plus residue 3.0 and 4.7. Conservation farming rebuilds soil carbon 3-5x faster." src="./assets/agriculture-soil-carbon-light.png" width="100%">
+</picture>
+
+**Salinity & sodicity.** On sodic soils, gypsum and pressmud cut sodification and compaction and raised
+total organic carbon **32–64%** with about **25% higher yield**; across the trials, rice-wheat yield
+rose with soil carbon and fell with pH, exchangeable-sodium percentage and bulk density — the chemistry
+of a tired soil, quantified.
+
+**Water.** The Gangetic aquifer is not the single homogeneous body it is mapped as — recharge,
+permeability, storage and chemistry vary sharply across it. In the UP study region the groundwater is
+neutral-to-alkaline, CaMgHCO₃-type and rock-dominated, and **40% of samples exceed the 50 mg/l nitrate
+limit** — unfit for direct use. Yet the agronomy also finds slack: shifting wheat **sowing dates** alone
+could unlock **+69%** untapped wheat potential with no trade-off on rice, irrigation or profit.
+
+**Yield & the rural economy.** System rice-equivalent yield ran **15.72–16.39 t/ha** under conservation
+scenarios against **10.30** at baseline; nutrient-expert fertiliser cut wheat global-warming potential
+**12–20%** while **>80% of participating farmers raised both yield and income**. And the human floor
+shows through: resource-poor farm households are the most exposed to simulated drought, cushioned only
+where off-farm income exists.
+
+> **Why this section is deep where Sections 1–5 were thinner:** it was built with Prism's research-scope
+> flow — a question becomes a scope of extracted findings carrying a scope-id, then a model re-analyses
+> that scope for one focus (soil, water, yield). The earlier sections used the news/claim tools, which
+> match on titles and return little for a sub-region. Same corpus, different engine.
+> *(Sources: eastern Indo-Gangetic rice-wheat field trials, 2017–2022; study DOIs in [`data.json`](./data.json).)*
 
 ---
 
