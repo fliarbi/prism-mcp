@@ -1,0 +1,241 @@
+[
+ {
+  "key": "activities",
+  "tool": "news_activities",
+  "args": {
+   "term": "air pollution"
+  },
+  "ok": true
+ },
+ {
+  "key": "states",
+  "tool": "news_geography",
+  "args": {
+   "term": "air pollution",
+   "level": "state",
+   "limit": 25
+  },
+  "ok": true
+ },
+ {
+  "key": "drill0",
+  "tool": "news_drill",
+  "args": {
+   "term": "air pollution",
+   "scope": "stubble burning"
+  },
+  "ok": true
+ },
+ {
+  "key": "overview",
+  "tool": "prism_overview",
+  "args": {
+   "term": "air pollution",
+   "since": "2024-06-01"
+  },
+  "ok": true
+ },
+ {
+  "key": "drill1",
+  "tool": "news_drill",
+  "args": {
+   "term": "air pollution",
+   "scope": "aqi"
+  },
+  "ok": true
+ },
+ {
+  "key": "themes_2021",
+  "tool": "news_themes",
+  "args": {
+   "term": "air pollution",
+   "since": "2021-01-01",
+   "until": "2022-01-01",
+   "limit": 25
+  },
+  "ok": true
+ },
+ {
+  "key": "themes_2022",
+  "tool": "news_themes",
+  "args": {
+   "term": "air pollution",
+   "since": "2022-01-01",
+   "until": "2023-01-01",
+   "limit": 25
+  },
+  "ok": true
+ },
+ {
+  "key": "themes_2023",
+  "tool": "news_themes",
+  "args": {
+   "term": "air pollution",
+   "since": "2023-01-01",
+   "until": "2024-01-01",
+   "limit": 25
+  },
+  "ok": true
+ },
+ {
+  "key": "themes_2024",
+  "tool": "news_themes",
+  "args": {
+   "term": "air pollution",
+   "since": "2024-01-01",
+   "until": "2025-01-01",
+   "limit": 25
+  },
+  "ok": true
+ },
+ {
+  "key": "themes_2025",
+  "tool": "news_themes",
+  "args": {
+   "term": "air pollution",
+   "since": "2025-01-01",
+   "until": "2026-01-01",
+   "limit": 25
+  },
+  "ok": true
+ },
+ {
+  "key": "critical",
+  "tool": "critical_news",
+  "args": {
+   "term": "air pollution",
+   "limit": 8
+  },
+  "ok": true
+ },
+ {
+  "key": "history",
+  "tool": "historical_analysis",
+  "args": {
+   "subject_phrases": [
+    "air pollution"
+   ]
+  },
+  "ok": false
+ },
+ {
+  "key": "stance",
+  "tool": "stance_trends",
+  "args": {
+   "term": "air pollution"
+  },
+  "ok": true
+ },
+ {
+  "key": "factors",
+  "tool": "news_factors",
+  "args": {
+   "topic": "air pollution"
+  },
+  "ok": true
+ },
+ {
+  "key": "browse",
+  "tool": "browse_research",
+  "args": {
+   "term": "air pollution",
+   "sort": "citations",
+   "since": 2020,
+   "limit": 12
+  },
+  "ok": true
+ },
+ {
+  "key": "geo",
+  "tool": "global_comparison",
+  "args": {
+   "claim": "Air pollution increases mortality"
+  },
+  "ok": true
+ },
+ {
+  "key": "gaps",
+  "tool": "research_gaps",
+  "args": {
+   "claim": "Air pollution increases mortality"
+  },
+  "ok": true
+ },
+ {
+  "key": "radar",
+  "tool": "research_radar",
+  "args": {
+   "topic": "air pollution",
+   "since_year": 2022
+  },
+  "ok": true
+ },
+ {
+  "key": "brief",
+  "tool": "research_brief",
+  "args": {
+   "topic": "air pollution"
+  },
+  "ok": true
+ },
+ {
+  "key": "rank",
+  "tool": "rank_sources",
+  "args": {
+   "claim": "Air pollution increases mortality"
+  },
+  "ok": true
+ },
+ {
+  "key": "counter",
+  "tool": "find_counter_evidence",
+  "args": {
+   "claim": "Air pollution increases mortality",
+   "limit": 10
+  },
+  "ok": true
+ },
+ {
+  "key": "evidence",
+  "tool": "find_evidence",
+  "args": {
+   "claim": "Air pollution increases mortality",
+   "limit": 10
+  },
+  "ok": true
+ },
+ {
+  "key": "timeline",
+  "tool": "deep_timeline",
+  "args": {
+   "term": "air pollution",
+   "months": 12
+  },
+  "ok": true
+ },
+ {
+  "key": "compare",
+  "tool": "compare_claims",
+  "args": {
+   "claim_a": "Air pollution increases mortality",
+   "claim_b": "Air pollution reduces life expectancy"
+  },
+  "ok": true
+ },
+ {
+  "key": "table",
+  "tool": "research_table",
+  "args": {
+   "rows": [
+    "mortality",
+    "respiratory disease",
+    "cardiovascular disease",
+    "cognitive function",
+    "labour productivity",
+    "life expectancy"
+   ],
+   "question": "What is the effect of air pollution on {row}?"
+  },
+  "ok": true
+ }
+]
