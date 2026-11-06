@@ -306,10 +306,83 @@ Three fields ride on every payload, because each one has produced a confidently 
 * **`lane`**: whether a count describes the claim (both sides of it) or only its subject. "Papers about
   coffee and heart disease" and "papers about heart disease" differ by three orders of magnitude.
 
+## Get started in four steps
+
+| Step | Do this | You get |
+|---:|---|---|
+| 1 | [Fliar dashboard](https://fliarbi.com/radar/dashboard?tab=radarapi) → **API keys** → create a key with **All data** access | One `rdr_` key for Prism, Radar and Prism News |
+| 2 | On the same page, buy prepaid credits and set a monthly spending limit | Credits at US$0.01 (₹0.84) each, minimum 500 |
+| 3 | `curl -fsSL https://radar-api.fliarbi.com/prism/install.sh \| bash`, then `prism login` | The `prism` command, `PRISM_URL` set, your key saved owner-only |
+| 4 | Connect your assistant (below), call `$PRISM_URL/v1/<feature>`, or use the `prism` command | The same 52 public tools over MCP, REST and the CLI |
+
+**Claude Code**
+```bash
+claude mcp add --transport http prism "$PRISM_URL/mcp" --header "Authorization: Bearer $FLIAR_API_KEY"
+```
+
+**Codex / ChatGPT desktop (Codex CLI)**: add to `~/.codex/config.toml`
+```toml
+[mcp_servers.prism]
+url = "https://radar-api.fliarbi.com/prism/mcp"
+bearer_token_env_var = "FLIAR_API_KEY"
+tool_timeout_sec = 600
+```
+
+**Claude Desktop, Cursor, VS Code**: an HTTP MCP server at `$PRISM_URL/mcp` with the header
+`Authorization: Bearer $FLIAR_API_KEY`.
+
+**ChatGPT connectors, n8n, Zapier**: point them at `$PRISM_URL/mcp` (streamable HTTP) or import
+`$PRISM_URL/v1/openapi.json` (bearer auth).
+
+**REST**
+```bash
+curl -s -X POST "$PRISM_URL/v1/news.compare" -H "Authorization: Bearer $FLIAR_API_KEY" \
+  -H 'content-type: application/json' -d '{"terms":["tesla","byd"],"since":"2024-06-01"}' \
+  | jq '.data.rows[] | {term, articles, growth}'
+```
+
+## Pricing
+
+Pay as you go from the one Fliar API wallet: **1 credit = US$0.01 (₹0.84)**, charged per successful call by feature.
+A call that fails or finds nothing costs nothing, and `list_features` and `freshness_status` are free. Every
+response carries the credits it used in the `X-Prism-Credits` header; the full table is at `GET $PRISM_URL/v1/pricing`.
+
+| Kind of call | Examples | Credits |
+| --- | --- | ---: |
+| Quick counts and series | `news.trends`, `news.trending`, `analysis.history`, `analysis.scenarios`, `compose.report_check` | 1 |
+| Places, sources, tone | `news.geography`, `news.entities`, `news.sentiment`, `news.sources` | 2 |
+| Literature and geography lanes | `research.stance_trends`, `research.geography`, `research.statistics`, `research.counter_evidence`, `news.critical` | 5 |
+| Comparisons and browsing | `news.compare`, `research.browse`, `research.evidence_card` | 8 |
+| Radars, rewrites, themes | `research.radar`, `research.improve`, `news.themes`, `news.recent` | 12 |
+| Evidence reading and briefs | `research.evidence`, `research.brief`, `research.audit`, `research.citations`, `news.overview` | 20 |
+| Tables across many rows | `research.table` | 30 |
+| Claim against claim, full articles | `research.compare`, `compose.article` | 50 |
+
+Prices are set from each feature's measured running cost (index compute time and model tokens) with headroom
+for reliability; limits per minute, concurrent calls and daily credits rise with your usage level, as on Radar.
+
+## Every answer carries its limits
+
+Three fields ride on every payload, because each one has produced a confidently wrong answer before:
+
+* **`window`**: the period the numbers cover. Recent news arrives over days, so series stop at the latest
+  complete period and say so; research and patents have their own publication lags. A series run to today
+  would show a collapse that never happened.
+* **`meta.coverage`**: whether the whole index answered. A partial read returns *smaller* numbers rather than
+  an error, so Prism checks completeness and says when it is not.
+* **`lane`**: whether a count describes the claim (both sides of it) or only its subject. "Papers about
+  coffee and heart disease" and "papers about heart disease" differ by three orders of magnitude.
+
+What the showcase found and fixed in the server is in [Engineering flags](docs/ENGINEERING_FLAGS.md).
+
 ## What is in this repository
 
 | Path | What |
 | --- | --- |
+| `cli/prism`, `scripts/install.sh` | the `prism` command and its installer: calls any feature, and `prism mcp claude` / `prism mcp codex` connects your assistant to the Prism MCP with your API key |
+| `tools/prism_export.py` | any response to CSV, Excel, JSONL or BibTeX, with a provenance sidecar |
+| `tools/india_states_official.py`, `tools/world_india_official.py` | build the map outlines used by the dashboards (India with its official outline) |
+| `wordpress/` | the Prism Research WordPress plugin and its Docker test site (`tests/test_wordpress.*`) |
 | `docs/use-cases/` | the demonstration pages, by domain, with charts in `img/` |
 | `docs/topics/`, `docs/diseases/`, `docs/investors/` | topic, disease and investor intelligence pages, each with its charts and the saved results behind it |
 | `docs/dashboards/`, `docs/gallery/` | dashboards built by an assistant from one brief, and screens of what gets built on Prism |

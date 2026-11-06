@@ -38,8 +38,8 @@ abstract and a study-design tier (meta-analysis > RCT > cohort > case report).
 
 Every paper in the 105.6M-record typed corpus carries an **orientation** label (breakthrough,
 promising, descriptive, comparative, cautionary, problem-identifying, critical). Counting those labels by
-year shows whether a field is getting more optimistic or more cautious, without reading a single
-abstract.
+year shows whether a field is getting more optimistic or more cautious, without a model reading a
+single abstract.
 
 ```text
 research.stance_trends  term="intermittent fasting"
@@ -66,9 +66,9 @@ analysis.history    subject_phrases=["vaccine hesitancy"]
 analysis.scenarios  history_id=<from the call above>  horizon=3
 ```
 
-The history call returns a yearly count **and a plain statement of what was counted**. The scenarios call
-tests two simple baselines (no change, linear drift) against the series' own past and keeps the one
-that would have forecast it better:
+The history call returns a yearly count **and the exact SQL that produced it**. The scenarios call
+backtests two baselines (no change, linear drift) one step ahead on the series itself and keeps the one
+that would have forecast the past better:
 
 | | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 (scenario) | 2028 (scenario) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -81,8 +81,8 @@ wide range" ([full page](use-cases/public-health/vaccine-hesitancy-trend.md)).
 ## 4. Media analysis next to research
 
 Most questions need both corpora: what the research says, and how the world is talking about it.
-`research.brief` returns volumes for six corpora in one call (typed research, readable papers, the biomedical index,
-news, patents, preprint index). `news.overview` returns eight panels for a term: profile, monthly trend, tone
+`research.brief` returns volumes for six corpora in one call (typed research, readable papers, the health literature index,
+news, patents, preprints). `news.overview` returns eight panels for a term: profile, monthly trend, tone
 against the all-news baseline, themes ranked by lift, organisations, people, places and the critical
 headlines.
 
@@ -125,13 +125,13 @@ shows the result as CSV ready to paste into a sheet. See [Data export](DATA_EXPO
 | what is new | `research.radar` (since a year) | `search` sorted by date |
 | attention and tone | `news.overview`, `news.compare` | counting search results |
 | a defensible forecast | `analysis.history` → `analysis.scenarios` | a trend line through a spike |
-| sources for a bibliography | `research.citations`, `research.source_ranking` | references written from memory |
+| sources for a bibliography | `research.citations`, `research.source_ranking` | model-written references |
 
 ## Limits to plan around
 
 * Research counts are **records**, not deduplicated studies; a finding restated in ten papers counts ten times.
 * Orientation is a label on a paper's **own framing**, not a verdict on the claim.
 * The typed corpus starts in **2017**; reading and history go back to 1900.
-* News stops at **1 June 2026** by default (reporting lag); patents run about 18 months behind.
-* A claim with several outcomes should be split, one mechanism per claim: Prism reads each claim as two sides
-  (a subject and an outcome), and a three-outcome claim is read as its broadest outcome.
+* News stops at **1 June 2026** by default (ingest lag); patents run about 18 months behind.
+* A claim with several outcomes should be split, one mechanism per claim: retrieval resolves each claim to
+  two poles, and a three-outcome claim resolves to the broadest one.

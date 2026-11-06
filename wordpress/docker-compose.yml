@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: rootpw
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+  wordpress:
+    image: wordpress:php8.3-apache
+    depends_on: [db]
+    ports:
+      - "8085:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+    volumes:
+      - wp_core:/var/www/html
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+  cli:
+    image: wordpress:cli-php8.3
+    depends_on: [db, wordpress]
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wp_core:/var/www/html
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    entrypoint: ["wp"]
+    command: ["--info"]
+volumes:
+  db_data:
+  wp_core:
