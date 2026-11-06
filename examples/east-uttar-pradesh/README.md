@@ -96,6 +96,16 @@ exactly that — *"flooding of fields"* (crop loss) and **water-logging** that l
 encephalitis season of Section 4. The flood belt is a region, not a state line: co-occurring tags are
 **Bihar** (110×) and **Jharkhand** (151×).
 
+> **⟡ Research-scope deep-dive — the floods are not from more rain** *(33 papers · 39 s build)*. Point
+> the research-scope engine at flood *drivers* and the obvious explanation fails: mean rainfall across
+> the belt has been **falling**, not rising — annual and monsoon rainfall declined across Bihar over
+> 1901–2002 (**−2.17 / −2.13 mm·yr⁻¹**), with significant negative trends across the Kosi, Gandak and
+> Sone sub-basins. The water comes from **concentration and saturation**, not totals: the monsoon months
+> carry **84%** of the year's rain, late-September 2019 ran **176% above average** with soil moisture
+> **19% above**, and rising monsoon groundwater (a ~2 m head swing) tops up the rivers. One monsoon left
+> **7,019 km²** of the plain submerged. The driver is *timing and extremes*, not the annual sum.
+> *(10 studies, 2017–2024; DOIs in [`data.json`](./data.json).)*
+
 ---
 
 ## 4 · Health — bigger than encephalitis
@@ -126,6 +136,22 @@ resistant **tuberculosis** work at a Gorakhpur tertiary hospital; and, on the ot
 Gorakhpur hospital is the referral point for three jurisdictions — the health geography mirrors the
 flood geography.
 
+> **⟡ Research-scope deep-dive — the cause is not what the name says** *(38 papers · 38 s build)*. Run
+> the engine on the *etiology* of the syndrome and the headline reverses: the leading identified cause
+> of acute encephalitis syndrome in eastern UP is **scrub typhus** (*Orientia tsutsugamushi*), a
+> mite-borne rickettsial infection — **not** Japanese encephalitis. Among **2,529** hospitalised AES
+> cases in eastern UP, **50%** were antibody-positive and **37%** DNA-positive for *O. tsutsugamushi*;
+> Gorakhpur seroprevalence ran **70.8%** in the epidemic season. JE virus turned up in only **10.3%** of
+> 407 Gorakhpur AES patients, dengue in **7.1%**. It matters clinically: scrub typhus is treatable with
+> a cheap antibiotic (doxycycline) — a very different intervention from a JE vaccine.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/health-etiology-dark.png">
+  <img alt="Horizontal bars of the share of tested AES/febrile patients positive by cause in eastern UP: scrub typhus 50%, Japanese encephalitis 10.3%, dengue 7.1%, leptospira 3%. Scrub typhus dominates." src="./assets/health-etiology-light.png" width="100%">
+</picture>
+
+*(12 studies, 2017–2022; DOIs in [`data.json`](./data.json).)*
+
 ---
 
 ## 5 · Crime and law-and-order
@@ -155,8 +181,8 @@ ails these soils, this section is built with a different engine — and that dif
 
 Because the academic corpus does not index "eastern UP" (Section 10), the depth below comes from
 Prism's **research-scope** flow run on the agro-ecological system the region belongs to — the **eastern
-Indo-Gangetic rice-wheat plain**. One scope gathered **93 findings from 38 papers**; focusing it on
-soil, water and yield returns a read no news feed carries.
+Indo-Gangetic rice-wheat plain**. One scope gathered **93 findings from 38 papers** *(~40 s build)*;
+focusing it on soil, water and yield returns a read no news feed carries.
 
 **Soil — conventional practice is draining it.** Under puddled, conventional tillage soil organic
 carbon stays low or falls: conventional-till rice-wheat gained only **0.9 t C/ha**, and intensified
@@ -182,6 +208,15 @@ neutral-to-alkaline, CaMgHCO₃-type and rock-dominated, and **40% of samples ex
 limit** — unfit for direct use. Yet the agronomy also finds slack: shifting wheat **sowing dates** alone
 could unlock **+69%** untapped wheat potential with no trade-off on rice, irrigation or profit.
 
+> **⟡ Research-scope deep-dive — the water table is being irrigated away** *(37 papers · 38 s build)*.
+> A second scope on groundwater finds the depletion is irrigation-driven: irrigation raised modelled
+> evapotranspiration **12%** across the Ganges basin, net irrigation ran **~101 mm·yr⁻¹ (67 km³)** with
+> **70%** drawn in the dry season, and **83%** of 300 surveyed eastern-UP farmers said they had
+> *increased* irrigation. The basin-scale cost is real — modelled irrigation-driven depletion cut
+> freshwater flow to the Bay of Bengal by up to **1,200 m³·s⁻¹**, and reduced irrigation availability
+> mapped to wheat-yield losses of **−4% to −36%**. On quality it confirms the nitrate signal above —
+> Varanasi borewells **80% over** the 50 mg/l limit. *(11 studies, 2018–2025; DOIs in [`data.json`](./data.json).)*
+
 **Yield & the rural economy.** System rice-equivalent yield ran **15.72–16.39 t/ha** under conservation
 scenarios against **10.30** at baseline; nutrient-expert fertiliser cut wheat global-warming potential
 **12–20%** while **>80% of participating farmers raised both yield and income**. And the human floor
@@ -206,6 +241,14 @@ built with a major IT-services firm to teach *"emerging technology to the youth 
 Pradesh."* Even the grid is contested terrain — power-department staff *"mobilised against
 privatisation."* The economic question underneath every vertical is whether the belt can hold its
 own people.
+
+> **⟡ Research-scope deep-dive — even the research can't see it** *(10 papers · 33 s build)*. Point the
+> engine at out-migration and it comes back **honestly near-empty**: of the findings it gathered, none
+> directly measures what drives out-migration from eastern UP, the evidence is Bihar-proxy and
+> observational, and there is **no data on migration flows, destinations within India, or Purvanchal
+> specifically**. The one driver-like signal is that circular labour migration tracks *scarce local
+> opportunity*. The region's defining economic fact is, in the formal literature, a near-blank — which
+> is exactly why the news and the migration itself (Section 10) carry the story the papers do not.
 
 ---
 
