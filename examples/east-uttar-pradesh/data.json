@@ -1,0 +1,68 @@
+{
+  "_provenance": {
+    "subject": "eastern Uttar Pradesh (Purvanchal) — regional problem-space",
+    "retrieved_at": "2026-11-06",
+    "source": "Prism public API — news.themes, news.trends, research.disease (disease_profile), research.evidence",
+    "coverage": {"news_pct": 107.1, "disease_factors_pct": 100, "strict_shard_read": true},
+    "note": "A PLACE, not a single claim. The intelligence here lives in the news corpus and the extracted disease-claim layer, NOT in title-matched academic research — and the report shows exactly where each tool could and could not resolve the region."
+  },
+  "news_distinctiveness": {
+    "tool": "news.themes",
+    "what": "news categories over-represented for 'eastern Uttar Pradesh' vs the all-India baseline (lift), with article counts",
+    "window": "2024-06-01 .. 2026-06-01",
+    "categories_by_lift": [
+      {"label": "climate", "articles": 291, "lift": 58.0},
+      {"label": "weather", "articles": 408, "lift": 19.9},
+      {"label": "disaster", "articles": 121, "lift": 17.1},
+      {"label": "infrastructure development", "articles": 26, "lift": 16.6},
+      {"label": "religion", "articles": 99, "lift": 7.9},
+      {"label": "tourism", "articles": 32, "lift": 5.0},
+      {"label": "science", "articles": 129, "lift": 4.9},
+      {"label": "infrastructure", "articles": 73, "lift": 4.4},
+      {"label": "culture", "articles": 118, "lift": 4.3},
+      {"label": "agriculture", "articles": 68, "lift": 4.0}
+    ],
+    "top_subcategories": ["rainfall and precipitation statistics (14.1%)", "weather forecast updates (13.3%)", "regional weather patterns (10.4%)", "thunderstorm and lightning alerts (9.9%)", "monsoon season updates (6.3%)"],
+    "top_tags_by_lift": [{"tag": "gorakhpur", "articles": 199, "lift": 496.7}, {"tag": "varanasi", "articles": 137, "lift": 188.5}, {"tag": "bihar", "articles": 294, "lift": 109.6}, {"tag": "jharkhand", "articles": 157, "lift": 151.3}],
+    "reading": "the distinctive signature of east-UP news is extreme weather — monsoon, flooding, thunderstorm/lightning — anchored on Gorakhpur and spilling into Bihar and Jharkhand"
+  },
+  "news_volume": {
+    "tool": "news.trends",
+    "total_2024_2026": 1101,
+    "year_2025": {"articles": 507, "positive": 241, "negative": 188, "high_priority_pct": 46.0},
+    "note": "a balanced, mixed-sentiment regional stream — unlike a national triumph or scandal story"
+  },
+  "encephalitis": {
+    "tool": "research.disease (disease_profile: acute encephalitis syndrome)",
+    "claims": 1523,
+    "by_relation": {"association": 855, "cause": 308, "treatment": 219, "risk_factor": 128, "mechanism": 7, "protective": 6},
+    "study_tiers": {"unspecified": 1396, "observational": 78, "clinical": 28, "clinical_rct": 13, "preclinical": 4, "review_meta": 4},
+    "high_tier_share_pct": 3,
+    "claims_per_year": [[2015,52],[2016,19],[2017,141],[2018,43],[2019,692],[2020,55],[2021,42],[2022,45],[2023,41],[2024,115],[2025,50]],
+    "spike_note": "the 2019 surge (692 claims) tracks the Muzaffarpur / north-India encephalitis outbreak coverage",
+    "risk_factors": [
+      {"factor": "malnutrition", "claims": 8, "family": "environmental"},
+      {"factor": "malnourished children", "claims": 4, "family": "environmental"},
+      {"factor": "monsoon season", "claims": 3, "family": "environmental"},
+      {"factor": "inaction of the state machinery", "claims": 3, "family": "governance"},
+      {"factor": "children under 15 years of age", "claims": 3, "family": "environmental"},
+      {"factor": "water-logging", "claims": 2, "family": "environmental"},
+      {"factor": "poor governance", "claims": 2, "family": "governance"},
+      {"factor": "lack of medical facilities in government hospitals", "claims": 2, "family": "governance"},
+      {"factor": "heavy rainfall", "claims": 2, "family": "environmental"},
+      {"factor": "poorest of the poor section", "claims": 2, "family": "governance"}
+    ],
+    "top_associations": ["bihar (24)", "muzaffarpur (22)", "rising number of deaths (15)", "malnutrition (11)"],
+    "reading": "the corpus frames the encephalitis crisis as a socio-environmental AND a governance failure — monsoon, water-logging and malnutrition alongside 'inaction of the state machinery', 'poor governance' and 'lack of medical facilities'. High-tier share is only 3% (mostly news-derived claims)."
+  },
+  "research_layer_limits": {
+    "tool": "research.evidence",
+    "what": "region-specific academic lanes that did NOT form — the honest boundary of title-matched research for a sub-national place",
+    "lanes": [
+      {"claim": "acute encephalitis syndrome causes high child mortality in eastern Uttar Pradesh", "both_sides": 0, "result": "no_data — ok:false; 'acute encephalitis syndrome' has 197 titles but the region+child-mortality intersection is 0"},
+      {"claim": "recurrent river flooding damages agriculture in eastern Uttar Pradesh", "both_sides": 0, "lane": "subject", "note": "the 5 subject papers are about Sikkim, Sundarban, J&K — not east UP"},
+      {"claim": "lack of local employment drives labour out-migration from eastern Uttar Pradesh", "both_sides": 4, "lane": "subject", "note": "thin; 'labour out-migration' n=5 titles, 'employment in eastern uttar pradesh' n=0"}
+    ],
+    "reading": "the academic title index does not resolve sub-national Indian regions; Prism declined to fabricate a lane and routed the question to the news and disease-claim layers instead"
+  }
+}

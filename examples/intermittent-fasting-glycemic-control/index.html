@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="claude:viewport-fit-sides" content="cover">
 <title>Prism Meta-Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-  /* Layout: a single-column research console — summary tiles, the claim-lane, then evidence read top-to-bottom. */
+  /* Layout: a research console — a Prism synthesis up top, then the cross-angle map as the hero,
+     then the evidence (forest, trend, verdicts) that backs each angle, then the code. */
   :root{
     --bg:#f6f5f1; --surface:#ffffff; --surface-2:#f1efe9; --ink:#191c22; --ink-2:#565c69;
     --line:#e4e1d8; --accent:#4f46e5; --accent-soft:#ecebfb;
-    --good:#0f7a4f; --warn:#b4610a; --bad:#b4281c; --neutral:#7b808c;
-    --good-soft:#e4f3ec; --warn-soft:#f8eddf; --bad-soft:#f7e6e4; --neutral-soft:#edecea;
+    --good:#0f7a4f; --warn:#b4610a; --bad:#b4281c; --neutral:#8a8f9a;
+    --good-soft:#e4f3ec; --warn-soft:#f8eddf; --bad-soft:#f7e6e4; --muted-soft:#edecea;
     --shadow:0 1px 2px rgba(20,22,30,.05),0 6px 24px rgba(20,22,30,.06);
     --d-serif:'Spectral',Georgia,'Times New Roman',serif;
     --d-sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
@@ -23,53 +23,41 @@
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --bg:#0e1116; --surface:#161a21; --surface-2:#1d222b; --ink:#e9ebf1; --ink-2:#9aa2af;
     --line:#282e38; --accent:#9a99f2; --accent-soft:#20233a;
-    --good:#34d399; --warn:#f0a846; --bad:#f08279; --neutral:#9aa2af;
-    --good-soft:#15271f; --warn-soft:#2a2113; --bad-soft:#2a1816; --neutral-soft:#1f242c;
+    --good:#34d399; --warn:#f0a846; --bad:#f08279; --neutral:#8a919d;
+    --good-soft:#15271f; --warn-soft:#2a2113; --bad-soft:#2a1816; --muted-soft:#1f242c;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.35); color-scheme:dark;
   }}
   :root[data-theme="dark"]{
     --bg:#0e1116; --surface:#161a21; --surface-2:#1d222b; --ink:#e9ebf1; --ink-2:#9aa2af;
     --line:#282e38; --accent:#9a99f2; --accent-soft:#20233a;
-    --good:#34d399; --warn:#f0a846; --bad:#f08279; --neutral:#9aa2af;
-    --good-soft:#15271f; --warn-soft:#2a2113; --bad-soft:#2a1816; --neutral-soft:#1f242c;
+    --good:#34d399; --warn:#f0a846; --bad:#f08279; --neutral:#8a919d;
+    --good-soft:#15271f; --warn-soft:#2a2113; --bad-soft:#2a1816; --muted-soft:#1f242c;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.35); color-scheme:dark;
   }
   html,body{margin:0}
   img{max-width:100%}
   *{box-sizing:border-box}
-  body{background:var(--bg);color:var(--ink);font-family:var(--d-sans);line-height:1.5;
-    font-size:15px;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1040px;margin:0 auto;
-    padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
-    padding-block:34px 56px}
-  .spectrum{height:3px;border-radius:3px;background:linear-gradient(90deg,#6366f1,#2aa8c4,#10b981)}
+  body{background:var(--bg);color:var(--ink);font-family:var(--d-sans);line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));padding-block:34px 56px}
+  .spectrum{height:3px;border-radius:3px;background:linear-gradient(90deg,#6366f1,#2aa8c4,#10b981);max-width:120px;margin-bottom:18px}
   h1,h2,h3{text-wrap:balance;margin:0}
-  .eyebrow{font-family:var(--d-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
   .mono{font-family:var(--d-mono)}
   .num{font-family:var(--d-mono);font-variant-numeric:tabular-nums}
-
-  /* header */
-  header{margin-top:14px}
-  .brand{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+  .eyebrow{font-family:var(--d-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
   .brand .mark{font-family:var(--d-mono);font-weight:500;letter-spacing:.24em;font-size:12px;text-transform:uppercase}
   .brand .mark b{color:var(--accent);font-weight:600}
   h1{font-family:var(--d-serif);font-weight:600;font-size:clamp(30px,6vw,46px);line-height:1.05;letter-spacing:-.01em}
   .angle{font-family:var(--d-serif);font-style:italic;font-weight:500;font-size:clamp(17px,3.4vw,21px);color:var(--ink-2);margin-top:8px}
-  .opening{margin-top:16px;max-width:64ch;color:var(--ink-2);font-size:15.5px}
   .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-  .chip{font-family:var(--d-mono);font-size:11px;color:var(--ink-2);background:var(--surface-2);
-    border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+  .chip{font-family:var(--d-mono);font-size:11px;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
   .chip b{color:var(--ink);font-weight:500}
 
-  /* tiles */
-  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
-  .tile{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:var(--shadow)}
-  .tile .v{font-family:var(--d-serif);font-weight:600;font-size:clamp(26px,4.5vw,36px);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-  .tile .k{margin-top:9px;font-size:12.5px;color:var(--ink-2)}
-  .tile.key{background:linear-gradient(180deg,var(--accent-soft),var(--surface))}
-  .tile.key .v{color:var(--accent)}
+  .synthesis{margin-top:26px;background:linear-gradient(180deg,var(--accent-soft),var(--surface));border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+  .synthesis .lab{font-family:var(--d-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .synthesis p{margin:0;font-size:16.5px;max-width:72ch}
+  .synthesis p+p{margin-top:12px;font-size:14px;color:var(--ink-2)}
 
   section{margin-top:40px}
   .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
@@ -77,361 +65,287 @@
   .sec-head .note{font-size:12.5px;color:var(--ink-2)}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
   .pad{padding:22px}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .minw{min-width:0}
 
-  /* claim-lane */
-  .lane{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:14px}
-  .lane .box{text-align:center}
-  .lane .bar{height:var(--h);border-radius:8px;margin:0 auto 10px;width:min(100%,220px)}
-  .lane .op{font-family:var(--d-serif);font-size:30px;color:var(--ink-2);line-height:1}
-  .lane .cap{font-size:12.5px;color:var(--ink-2)}
-  .lane .big{font-family:var(--d-serif);font-weight:600;font-size:clamp(20px,3vw,30px);font-variant-numeric:tabular-nums}
-  .lane .inter .big{color:var(--accent)}
-  .lane-note{margin-top:18px;padding:12px 14px;background:var(--accent-soft);border-radius:10px;
-    font-size:13.5px;color:var(--ink)}
+  /* cross-angle map */
+  .amap{display:grid;gap:0}
+  .arow{display:grid;grid-template-columns:230px 150px 1fr 54px;gap:16px;align-items:center;padding:15px 0;border-top:1px solid var(--line)}
+  .arow:first-child{border-top:0}
+  .arow .nm{font-weight:600;font-size:14.5px}
+  .arow .nm small{display:block;font-weight:400;color:var(--ink-2);font-size:11.5px;margin-top:3px;line-height:1.35}
+  .vchip{display:inline-flex;align-items:center;gap:6px;font-family:var(--d-mono);font-size:11px;font-weight:500;padding:4px 9px;border-radius:7px;white-space:nowrap}
+  .vchip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
+  .v-good{background:var(--good-soft);color:var(--good)}
+  .v-warn{background:var(--warn-soft);color:var(--warn)}
+  .v-muted{background:var(--muted-soft);color:var(--ink-2)}
+  .sbar{display:flex;height:26px;border-radius:7px;overflow:hidden;gap:2px;background:var(--surface-2)}
+  .sbar>span{min-width:2px}
+  .sbar .s{background:var(--good)}.sbar .q{background:var(--warn)}.sbar .c{background:var(--bad)}.sbar .n{background:var(--neutral)}
+  .thin{font-family:var(--d-mono);font-size:11.5px;color:var(--ink-2);display:flex;align-items:center;height:26px}
+  .arow .dep{font-family:var(--d-mono);font-variant-numeric:tabular-nums;text-align:right;font-size:13px;color:var(--ink-2)}
+  .arow .dep b{color:var(--ink);font-weight:600}
+  .maplegend{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:16px;font-size:12px;color:var(--ink-2)}
+  .maplegend .it{display:flex;align-items:center;gap:6px}.maplegend .sw{width:11px;height:11px;border-radius:3px}
 
-  /* segmented bars */
-  .segbar{display:flex;height:34px;border-radius:8px;overflow:hidden;gap:2px;background:var(--surface-2)}
-  .segbar>span{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:500;min-width:2px}
-  .legend{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:14px;font-size:12.5px}
-  .legend .it{display:flex;align-items:center;gap:7px;color:var(--ink-2)}
-  .legend .sw{width:11px;height:11px;border-radius:3px;flex:none}
-  .legend b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
-  .sub{font-size:12.5px;color:var(--ink-2);margin:4px 0 12px}
-
-  /* pooled effects (forest-style, per-row scale, like-with-like only) */
-  .effrow{display:grid;grid-template-columns:1.15fr 1.1fr 1.4fr;gap:14px;align-items:center;
-    padding:13px 0;border-top:1px solid var(--line)}
-  .effrow:first-of-type{border-top:0}
-  .effrow .name{font-weight:500}
-  .effrow .name small{display:block;color:var(--ink-2);font-weight:400;font-size:11.5px;margin-top:2px}
-  .effrow .est{font-family:var(--d-mono);font-variant-numeric:tabular-nums}
-  .effrow .est b{font-size:17px}
-  .effrow .est small{color:var(--ink-2)}
-  .effrow .p{color:var(--good);font-size:11.5px}
-  .whisk{position:relative;height:30px}
-  .whisk .zero{position:absolute;top:0;bottom:0;border-left:1px dashed var(--line)}
-  .whisk .ci{position:absolute;top:50%;height:3px;background:var(--accent);transform:translateY(-50%);border-radius:2px;opacity:.5}
-  .whisk .pt{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%)}
-  .whisk .lbl{position:absolute;bottom:-2px;font-size:9.5px;color:var(--ink-2);font-family:var(--d-mono)}
-  .dir{display:flex;justify-content:space-between;font-size:10.5px;color:var(--ink-2);font-family:var(--d-mono);margin-top:2px}
-
-  /* verdict cards */
-  .verdicts{display:grid;gap:12px}
-  .verdict{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--surface)}
-  .verdict .top{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:9px}
-  .tag{font-family:var(--d-mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;
-    padding:3px 8px;border-radius:6px;font-weight:500}
-  .tag.supports{background:var(--good-soft);color:var(--good)}
-  .tag.contradicts{background:var(--bad-soft);color:var(--bad)}
-  .tag.tier{background:var(--surface-2);color:var(--ink-2)}
-  .verdict q{display:block;font-family:var(--d-serif);font-style:italic;font-size:15.5px;line-height:1.45;quotes:none}
-  .verdict q::before{content:'“'}.verdict q::after{content:'”'}
-  .verdict .src{margin-top:9px;font-size:12px;color:var(--ink-2)}
-
-  /* trend chart */
+  /* forest */
   .chartwrap{overflow-x:auto}
   svg{display:block;max-width:100%;height:auto}
   .axis{fill:var(--ink-2);font-family:var(--d-mono);font-size:11px}
   .gridline{stroke:var(--line);stroke-width:1}
 
-  /* geography bars */
+  /* effect cards */
+  .effs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .eff{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--surface)}
+  .eff .v{font-family:var(--d-serif);font-weight:600;font-size:26px;letter-spacing:-.02em}
+  .eff .m{font-size:12.5px;color:var(--ink-2);margin-top:3px}
+  .eff .src{font-family:var(--d-mono);font-size:10.5px;color:var(--ink-2);margin-top:8px}
+
+  /* verdict cards */
+  .verdicts{display:grid;gap:12px}
+  .verdict{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--surface)}
+  .verdict .top{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:9px}
+  .tag{font-family:var(--d-mono);font-size:10.5px;letter-spacing:.03em;text-transform:uppercase;padding:3px 8px;border-radius:6px;font-weight:500}
+  .tag.supports{background:var(--good-soft);color:var(--good)}
+  .tag.contradicts{background:var(--bad-soft);color:var(--bad)}
+  .tag.mixed{background:var(--warn-soft);color:var(--warn)}
+  .tag.ang{background:var(--surface-2);color:var(--ink-2)}
+  .verdict q{display:block;font-family:var(--d-serif);font-style:italic;font-size:15.5px;line-height:1.45;quotes:none}
+  .verdict q::before{content:'“'}.verdict q::after{content:'”'}
+  .verdict .src{margin-top:9px;font-size:12px;color:var(--ink-2)}
+
   .geo{display:grid;gap:8px}
   .georow{display:grid;grid-template-columns:130px 1fr 54px;align-items:center;gap:12px;font-size:13px}
   .geobar{height:16px;background:var(--accent);border-radius:0 5px 5px 0;min-width:2px;opacity:.85}
   .georow .c{font-family:var(--d-mono);font-variant-numeric:tabular-nums;color:var(--ink-2);text-align:right;font-size:12px}
 
-  /* command block */
-  pre{margin:0;overflow-x:auto;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;
-    padding:16px 18px;font-family:var(--d-mono);font-size:12.5px;line-height:1.7;color:var(--ink)}
-  pre .cm{color:var(--ink-2)}
-  pre .fl{color:var(--accent)}
-  .angles{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .angle-pill{font-family:var(--d-mono);font-size:12px;border:1px solid var(--line);background:var(--surface);
-    border-radius:8px;padding:7px 11px;color:var(--ink-2)}
-  .angle-pill b{color:var(--ink);font-weight:500}
+  pre{margin:0;overflow-x:auto;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-family:var(--d-mono);font-size:12.5px;line-height:1.7;color:var(--ink)}
+  pre .cm{color:var(--ink-2)}pre .fl{color:var(--accent)}
+  .sub{font-size:12.5px;color:var(--ink-2);margin:0 0 12px}
 
   footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-2)}
-  footer .disc{max-width:70ch}
-  footer b{color:var(--ink);font-weight:600}
+  footer .disc{max-width:72ch}footer b{color:var(--ink);font-weight:600}
 
-  @media (max-width:760px){
-    .tiles{grid-template-columns:repeat(2,1fr)}
-    .grid2{grid-template-columns:1fr}
-    .lane{grid-template-columns:1fr;gap:6px}
-    .lane .op{transform:rotate(90deg);margin:2px 0}
-    .effrow{grid-template-columns:1fr 1fr;row-gap:8px}
-    .effrow .whisk{grid-column:1/-1}
-    .georow{grid-template-columns:96px 1fr 46px}
+  @media (max-width:820px){
+    .arow{grid-template-columns:1fr 1fr;row-gap:8px}
+    .arow .stance,.arow .dep{grid-column:1/-1}
+    .arow .dep{text-align:left}
   }
+  @media (max-width:620px){ .effs{grid-template-columns:1fr} .georow{grid-template-columns:96px 1fr 46px} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">
-      <span class="mark"><b>◆</b> Prism</span>
-      <span class="eyebrow">Research Meta-Analytics</span>
-    </div>
-    <div class="spectrum" style="max-width:120px;margin-bottom:18px"></div>
+    <div class="brand"><span class="mark"><b>◆</b> Prism</span><span class="eyebrow">Research Meta-Analytics</span></div>
+    <div class="spectrum"></div>
     <h1>Intermittent fasting</h1>
-    <div class="angle">Focused angle — glycemic control in type&nbsp;2 diabetes</div>
-    <p class="opening">A single topic, measured from the research record and then narrowed to one angle. Every
-      count, share and effect below is measured from Prism’s corpora; quoted findings are copied
-      verbatim from the source and verified against it. Nothing here is a language model's recollection.</p>
+    <div class="angle">Six angles, measured from the research record — not one claim, a map of them</div>
     <div class="chips">
       <span class="chip">corpus <b>research 2017–2025</b></span>
-      <span class="chip">The biomedical index <b>1990–2025</b></span>
-      <span class="chip"><b>the coverage check</b> · all data available</span>
+      <span class="chip">PubMed <b>1990–2025</b></span>
+      <span class="chip"><b>strict shard read</b></span>
       <span class="chip">retrieved <b>2026-11-06</b></span>
     </div>
   </header>
 
-  <div class="tiles">
-    <div class="tile"><div class="v num">964</div><div class="k">typed research papers on intermittent fasting</div></div>
-    <div class="tile"><div class="v num">28,237</div><div class="k">biomedical index records — study designs available</div></div>
-    <div class="tile"><div class="v num">≈3×</div><div class="k">research output since 2017 (468 → 1,432 papers/yr)</div></div>
-    <div class="tile key"><div class="v num">99</div><div class="k">papers address <b>both</b> fasting and glycemic control — the claim itself</div></div>
+  <div class="synthesis">
+    <div class="lab">Prism's read across the angles</div>
+    <p>Fasting is well-evidenced where the literature is deep: it lowers <b>blood pressure</b> and improves
+      <b>fatty-liver</b> markers and <b>glycemic control</b>, each with pooled effect sizes from very-high-strength
+      meta-analyses. Where it is popularly assumed, the record is thinner and more honest: fasting does <b>not
+      beat ordinary calorie restriction</b> for weight loss (head-to-head RCTs find no difference), its
+      <b>cardiovascular-disease</b> benefit is <b>not yet established</b> (only 16 papers address both sides; the
+      rest are surrogate markers and animal models), and the <b>hypoglycaemia</b> safety signal is <b>mixed</b> —
+      one RCT found twice the rate, another found none.</p>
+    <p>Each angle below carries Prism's own one-line reading of the corpus, the number of papers that cover
+      <em>both</em> sides of the claim, and the effect sizes quoted verbatim from the source.</p>
   </div>
 
-  <!-- CLAIM LANE -->
+  <!-- CROSS-ANGLE MAP (hero) -->
   <section>
-    <div class="sec-head">
-      <h2>The claim lane</h2>
-      <span class="note">why a topic count and a claim count are three orders of magnitude apart</span>
-    </div>
+    <div class="sec-head"><h2>The evidence map</h2><span class="note">how each angle leans, and how much evidence stands behind it</span></div>
     <div class="card pad">
-      <div class="lane">
-        <div class="box"><div class="bar" style="--h:84px;background:var(--neutral);opacity:.35"></div>
-          <div class="big num">62,557</div><div class="cap">papers on the <b>subject</b><br>(intermittent fasting)</div></div>
-        <div class="op">∩</div>
-        <div class="box"><div class="bar" style="--h:104px;background:var(--neutral);opacity:.5"></div>
-          <div class="big num">85,592</div><div class="cap">papers on the <b>outcome</b><br>(glycemic control)</div></div>
-        <div class="op">=</div>
-        <div class="box inter"><div class="bar" style="--h:22px;background:var(--accent)"></div>
-          <div class="big num">99</div><div class="cap">cover <b>both sides</b><br>of the claim</div></div>
-      </div>
-      <p class="lane-note mono">99 papers cover both sides of this claim, out of 62,557 on the subject and
-        85,592 on the outcome. A verdict is read from the 99 — not from either pole alone.</p>
-    </div>
-  </section>
-
-  <!-- STANCE -->
-  <section>
-    <div class="sec-head">
-      <h2>How the evidence leans</h2>
-      <span class="note">the 99 claim-lane papers, 2017–2025</span>
-    </div>
-    <div class="grid2">
-      <div class="card pad minw">
-        <p class="sub">Stance toward the claim</p>
-        <div class="segbar">
-          <span style="flex:37;background:var(--good)">37</span>
-          <span style="flex:24;background:var(--warn)">24</span>
-          <span style="flex:2;background:var(--bad)"></span>
-          <span style="flex:36;background:var(--neutral)">36</span>
-        </div>
-        <div class="legend">
-          <span class="it"><span class="sw" style="background:var(--good)"></span>Supporting <b>37</b></span>
-          <span class="it"><span class="sw" style="background:var(--warn)"></span>Qualifying <b>24</b></span>
-          <span class="it"><span class="sw" style="background:var(--bad)"></span>Contradicting <b>2</b></span>
-          <span class="it"><span class="sw" style="background:var(--neutral)"></span>Neutral <b>36</b></span>
-        </div>
-        <p class="sub" style="margin-top:16px">Mostly positive framing, with a substantial cautionary minority —
-          <b>26.3%</b> contested.</p>
-      </div>
-      <div class="card pad minw">
-        <p class="sub">Each paper's own orientation</p>
-        <div class="segbar">
-          <span style="flex:2;background:#0f7a4f" title="Breakthrough 2"></span>
-          <span style="flex:35;background:#2f9e6b" title="Promising 35">35</span>
-          <span style="flex:27;background:#8a9099" title="Descriptive 27">27</span>
-          <span style="flex:9;background:#b9bdc4" title="Comparative 9">9</span>
-          <span style="flex:12;background:#d59033" title="Problem-identifying 12">12</span>
-          <span style="flex:12;background:#c2691a" title="Cautionary 12">12</span>
-          <span style="flex:2;background:#b4281c" title="Critical 2"></span>
-        </div>
-        <div class="legend">
-          <span class="it"><span class="sw" style="background:#2f9e6b"></span>Promising <b>35</b></span>
-          <span class="it"><span class="sw" style="background:#8a9099"></span>Descriptive <b>27</b></span>
-          <span class="it"><span class="sw" style="background:#c2691a"></span>Cautionary <b>12</b></span>
-          <span class="it"><span class="sw" style="background:#d59033"></span>Problem <b>12</b></span>
-          <span class="it"><span class="sw" style="background:#b9bdc4"></span>Comparative <b>9</b></span>
-          <span class="it"><span class="sw" style="background:#0f7a4f"></span>Breakthrough <b>2</b></span>
-          <span class="it"><span class="sw" style="background:#b4281c"></span>Critical <b>2</b></span>
-        </div>
-        <p class="sub" style="margin-top:16px">Contribution: <b>75</b> empirical · <b>19</b> review ·
-          <b>4</b> position · <b>1</b> methodological. Orientation is the paper's own framing, not a verdict on the claim.</p>
+      <div class="amap" id="amap"></div>
+      <div class="maplegend">
+        <span class="it"><span class="sw" style="background:var(--good)"></span>Supporting</span>
+        <span class="it"><span class="sw" style="background:var(--warn)"></span>Qualifying</span>
+        <span class="it"><span class="sw" style="background:var(--bad)"></span>Contradicting</span>
+        <span class="it"><span class="sw" style="background:var(--neutral)"></span>Neutral</span>
+        <span class="it" style="margin-left:auto">Bars shown only where the claim lane is deep enough to characterise; thin lanes are read from documents, not charted.</span>
       </div>
     </div>
   </section>
 
-  <!-- POOLED EFFECTS -->
+  <!-- FOREST (blood pressure, one unit) -->
   <section>
-    <div class="sec-head">
-      <h2>Pooled effects, read verbatim</h2>
-      <span class="note">each measure on its own scale — different units are never put on one axis</span>
-    </div>
+    <div class="sec-head"><h2>Pooled effect: blood pressure</h2><span class="note">mmHg vs. control — one unit, so one axis; a real forest plot</span></div>
     <div class="card pad">
-      <div class="effrow" id="e0"></div>
-      <div class="dir" style="max-width:420px;margin-left:auto"><span>← favours fasting</span><span>favours control →</span></div>
-      <p class="sub" style="margin-top:14px">From a GRADE-assessed systematic review &amp; meta-analysis (very-high strength):
-        Lu, Chen, Liou &amp; Weng (2025), <i>Journal of Health, Population and Nutrition</i>.
-        <a href="https://doi.org/10.1186/s41043-025-01039-2" target="_blank" rel="noopener">10.1186/s41043-025-01039-2</a></p>
+      <div class="chartwrap"><svg id="forest" viewBox="0 0 720 220" role="img" aria-label="Forest plot of blood-pressure reductions in mmHg"></svg></div>
     </div>
   </section>
 
-  <!-- VERDICTS -->
+  <!-- OTHER EFFECTS (different units, own scale) -->
   <section>
-    <div class="sec-head">
-      <h2>What the documents actually said</h2>
-      <span class="note">quotes verified against the source · not independent validation of the interpretation</span>
+    <div class="sec-head"><h2>Pooled effects, other angles</h2><span class="note">different units — each read on its own, never on a shared axis</span></div>
+    <div class="effs">
+      <div class="eff"><div class="v num">−33.2</div><div class="m">hepatic steatosis (CAP dB/m) vs. control — NAFLD</div><div class="src">Saleh 2024, meta-analysis · 95% CI −50.7, −15.7</div></div>
+      <div class="eff"><div class="v num">−9.1</div><div class="m">ALT (U/L) vs. control — NAFLD</div><div class="src">Saleh 2024, meta-analysis · 95% CI −12.5, −5.8</div></div>
+      <div class="eff"><div class="v num">−0.08</div><div class="m">HbA1c (%) vs. control — type 2 diabetes</div><div class="src">Lu 2025, meta-analysis · 95% CI −0.13, −0.02</div></div>
+      <div class="eff"><div class="v num">−3.34</div><div class="m">fasting blood glucose (mg/dL) — metabolic syndrome</div><div class="src">Lu 2025, meta-analysis · 95% CI −6.24, −0.45</div></div>
     </div>
+  </section>
+
+  <!-- VERDICTS across angles -->
+  <section>
+    <div class="sec-head"><h2>What the documents said, across the angles</h2><span class="note">quotes verified against the source; the spread is the point</span></div>
     <div class="verdicts">
-      <div class="verdict">
-        <div class="top"><span class="tag supports">Supports</span><span class="tag tier">meta-analysis · very high</span></div>
-        <q>IF could improve patients' glycated hemoglobin, fasting plasma glucose, body weight, BMI, waist circumference, systolic blood pressure, diastolic blood pressure, low density lipoprotein, and cholesterol levels (p &lt; 0.05).</q>
-        <div class="src">Huang, Huang &amp; Wei (2025) — <i>Nutrición Hospitalaria</i>. Meta-analysis of randomized controlled trials. <a href="https://doi.org/10.20960/nh.05521" target="_blank" rel="noopener">doi</a></div>
-      </div>
-      <div class="verdict">
-        <div class="top"><span class="tag supports">Supports</span><span class="tag tier">systematic review</span></div>
-        <q>All fasting regimens revealed strong evidence to support intermittent fasting as a feasible diet to improve glycemia and body composition measures within 12–24 weeks.</q>
-        <div class="src">Vitale &amp; Kim (2020) — <i>Metabolic Syndrome and Related Disorders</i>, cited 41×. <a href="https://doi.org/10.1089/met.2020.0048" target="_blank" rel="noopener">doi</a></div>
-      </div>
-      <div class="verdict">
-        <div class="top"><span class="tag contradicts">Contradicts</span><span class="tag tier">meta-analysis · very high</span></div>
-        <q>IF had a similar effect on HbA1c reduction as control interventions (SMD: 0.36%; 95% CI −0.37, 1.10; P = 0.33, I² = 87%).</q>
-        <div class="src">Zaki et&nbsp;al. (2022) — <i>Cureus</i>. The cautionary minority: no significant HbA1c gain over control, high heterogeneity. <a href="https://doi.org/10.7759/cureus.30879" target="_blank" rel="noopener">doi</a></div>
-      </div>
+      <div class="verdict"><div class="top"><span class="tag ang">Fatty liver</span><span class="tag supports">Supports</span><span class="tag ang">meta-analysis</span></div>
+        <q>IF regimens reduced steatosis scores (WMD −33.22 CAP dB/m, 95% CI −50.72 to −15.72) … as well as ALT (WMD −9.10 U/L) … versus controls.</q>
+        <div class="src">Saleh et al. (2024) — <i>Clinical Nutrition ESPEN</i>. <a href="https://doi.org/10.1016/j.clnesp.2023.11.009" target="_blank" rel="noopener">doi</a></div></div>
+      <div class="verdict"><div class="top"><span class="tag ang">Blood pressure</span><span class="tag supports">Supports</span><span class="tag ang">meta-analysis</span></div>
+        <q>IF significantly reduced systolic blood pressure (MD −4.43 mmHg, 95% CI −5.83 to −3.03) and diastolic blood pressure (MD −2.00 mmHg, 95% CI −3.23 to −0.78).</q>
+        <div class="src">Guo et al. (2025) — <i>International Journal of Obesity</i>. <a href="https://doi.org/10.1038/s41366-025-01823-4" target="_blank" rel="noopener">doi</a></div></div>
+      <div class="verdict"><div class="top"><span class="tag ang">vs. calorie restriction</span><span class="tag contradicts">Contradicts superiority</span><span class="tag ang">RCT</span></div>
+        <q>No significant difference between ICR and CCR regarding weight change at wk102 was observed (p = 0.63).</q>
+        <div class="src">Pannen et al. (2021) — <i>Nutrients</i>. The "fasting beats dieting" claim doesn't hold: the two are comparable. <a href="https://doi.org/10.3390/nu13041195" target="_blank" rel="noopener">doi</a></div></div>
+      <div class="verdict"><div class="top"><span class="tag ang">Hypoglycaemia (safety)</span><span class="tag mixed">Conflicting</span><span class="tag ang">two RCTs</span></div>
+        <q>Fasting increased the rate of hypoglycaemia despite medication reduction (RR 2.05, 95% CI 1.17 to 3.52).</q>
+        <div class="src">Corley et al. (2018), <i>Diabetic Medicine</i> — versus Obermayer et al. (2023, INTERFAST-2): "No severe hypoglycemia occurred." The signal is real but inconsistent; medication management matters. <a href="https://doi.org/10.1111/dme.13595" target="_blank" rel="noopener">doi</a></div></div>
     </div>
   </section>
 
   <!-- TREND -->
   <section>
-    <div class="sec-head">
-      <h2>Direction of travel</h2>
-      <span class="note">research papers mentioning intermittent fasting, by year, matched on the topic's own phrases</span>
-    </div>
-    <div class="card pad">
-      <div class="chartwrap"><svg id="trend" viewBox="0 0 720 260" role="img" aria-label="Research output per year, 2017 to 2025, rising from 468 to 1,432"></svg></div>
-    </div>
+    <div class="sec-head"><h2>Direction of travel</h2><span class="note">research papers mentioning intermittent fasting, by year, matched on Prism's live vocabulary</span></div>
+    <div class="card pad"><div class="chartwrap"><svg id="trend" viewBox="0 0 720 240" role="img" aria-label="Research output per year, 2017 to 2025, rising from 468 to 1,432"></svg></div></div>
   </section>
 
   <!-- GEOGRAPHY -->
   <section>
-    <div class="sec-head">
-      <h2>Where the work is done</h2>
-      <span class="note">country of the first author's affiliation (the biomedical index) — not where it was published</span>
-    </div>
+    <div class="sec-head"><h2>Where the work is done</h2><span class="note">first-author affiliation country (PubMed)</span></div>
     <div class="card pad"><div class="geo" id="geo"></div></div>
   </section>
 
-  <!-- FOCUS ANOTHER ANGLE -->
+  <!-- CODE -->
   <section>
-    <div class="sec-head">
-      <h2>Focus another angle</h2>
-      <span class="note">one call; change the outcome to swing the lens across the same subject</span>
-    </div>
+    <div class="sec-head"><h2>How this was built</h2><span class="note">one call per angle; the map is their stance fields side by side</span></div>
     <div class="card pad">
-      <p class="sub">Everything above came from two calls against the public API. The angle is just the claim you ask about.</p>
-      <pre><span class="cm"># the whole topic — the structured brief</span>
-curl -s https://radar-api.fliarbi.com/prism/v1/research.brief \
-  -H <span class="fl">"Authorization: Bearer rdr_…"</span> \
-  -H "Content-Type: application/json" \
-  -d '{"topic":"intermittent fasting"}'
-
-<span class="cm"># narrow to ONE angle — the evidence lane for a specific claim</span>
-curl -s https://radar-api.fliarbi.com/prism/v1/research.evidence \
-  -H <span class="fl">"Authorization: Bearer rdr_…"</span> \
-  -H "Content-Type: application/json" \
-  -d '{"claim":"<b>intermittent fasting improves glycemic control in type 2 diabetes</b>"}'</pre>
-      <p class="sub" style="margin-top:16px">Same subject, different lens — just change the claim:</p>
-      <div class="angles">
-        <span class="angle-pill">…<b>cardiovascular mortality</b></span>
-        <span class="angle-pill">…<b>weight loss vs. continuous calorie restriction</b></span>
-        <span class="angle-pill">…<b>risk of hypoglycaemia</b></span>
-        <span class="angle-pill">…<b>non-alcoholic fatty liver disease</b></span>
-        <span class="angle-pill">…<b>muscle mass retention</b></span>
-      </div>
+      <p class="sub">Each row of the map is one <code>research.evidence</code> call. The subject stays fixed; the claim is the angle.</p>
+      <pre><span class="cm"># sweep the angles — one claim each (bash)</span>
+for claim in \
+  "intermittent fasting lowers blood pressure" \
+  "intermittent fasting improves non-alcoholic fatty liver disease" \
+  "intermittent fasting improves glycemic control in type 2 diabetes" \
+  "intermittent fasting outperforms continuous calorie restriction for weight loss" \
+  "intermittent fasting increases the risk of hypoglycaemia in type 2 diabetes" \
+  "intermittent fasting reduces cardiovascular disease risk" ; do
+  curl -s https://radar-api.fliarbi.com/prism/v1/research.evidence \
+    -H <span class="fl">"Authorization: Bearer rdr_…"</span> -H "Content-Type: application/json" \
+    -d "{\"claim\":\"$claim\"}" \
+  | jq '{claim: .subject.claim,
+         both_sides: .data.lane_counts.intersection,
+         lean: .data.corpus_stance.sides,
+         reading: .data.corpus_stance.reading,
+         verdict: .data.tally.counts}'
+done</pre>
+      <p class="sub" style="margin-top:14px">Two fields carry the insight: <code>lane_counts.intersection</code> (is the evidence even there?)
+        and <code>tally.counts</code> (which way the read documents actually fall). When the intersection is thin,
+        Prism says so in <code>lane_note</code> and refuses to read a verdict from it — that's why cardiovascular
+        and the head-to-head sit in the map as "not established" and "no advantage," not as a confident number.
+        Over MCP the same call is <code>find_evidence { "claim": "…" }</code>.</p>
     </div>
   </section>
 
   <footer>
-    <p class="disc"><b>Distinguish retrieved evidence from model interpretation.</b> Counts, shares and the
-      per-year series are measured from Prism’s research index (research 2017–2025, 104% of the
-      historical floor), the biomedical index (1990–2025, 100%) and the typed research index (107%); all passed a strict
-      parts of the index read. Quoted findings are copied verbatim and verified against the source. Orientation and stance
-      are labels on each paper's own framing over the 99 claim-lane papers, not a judgment of whether the claim
-      is true. Windows differ by corpus and are not comparable across them.</p>
-    <p style="margin-top:14px"><span class="mono" style="letter-spacing:.2em"><b>◆ PRISM</b></span> &nbsp;·&nbsp; 384.8M research works · 41.0M biomedical index records · 238.6M news articles · 108.0M patents</p>
+    <p class="disc"><b>Distinguish retrieved evidence from model interpretation.</b> Counts, shares, the stance
+      splits and the per-year series are computed in ClickHouse over Prism's research index (2017–2025, strict
+      shard read) and PubMed (1990–2025). Effect sizes are copied verbatim from the cited meta-analyses and
+      verified against them. Prism's "reading" lines are interpretations of each corpus slice, not verdicts on
+      truth. A claim lane with too few both-sides papers is reported as inconclusive rather than charted. Windows
+      differ by corpus and are never added across them.</p>
+    <p style="margin-top:14px"><span class="mono" style="letter-spacing:.2em"><b>◆ PRISM</b></span> &nbsp;·&nbsp; 384.8M research works · 41.0M PubMed records · 238.6M news articles · 108.0M patents</p>
   </footer>
 </div>
 
 <script>
 (function(){
-  // ---- pooled effects (per-row scale; like-with-like only) ----
-  var eff=[
-    {name:'Fasting blood glucose',unit:'mg/dL (WMD)',est:-3.34,lo:-6.24,hi:-0.45,p:'P=0.024'},
-    {name:'HbA1c',unit:'% (WMD)',est:-0.08,lo:-0.13,hi:-0.02,p:'P=0.005'},
-    {name:'HOMA-IR',unit:'index (WMD)',est:-0.60,lo:-0.91,hi:-0.28,p:'P<0.001'},
-    {name:'LDL cholesterol',unit:'mg/dL (WMD)',est:-6.42,lo:-12.26,hi:-0.58,p:'P=0.031'},
-    {name:'Interleukin-6',unit:'pg/mL (WMD)',est:-0.58,lo:-1.08,hi:-0.08,p:'P=0.022'}
+  // ---- cross-angle map ----
+  var angles=[
+    {nm:'Blood pressure', note:'“positive framing — consensus or publication bias” (Prism)', v:'Well supported', vc:'v-good', st:{s:33,q:8,c:0,n:13}, dep:54},
+    {nm:'Fatty liver (NAFLD)', note:'61 of 99 supporting; hard liver-enzyme effects', v:'Well supported', vc:'v-good', st:{s:61,q:20,c:1,n:17}, dep:99},
+    {nm:'Glycemic control (T2D)', note:'HbA1c and fasting glucose both down', v:'Supported', vc:'v-good', st:{s:37,q:24,c:2,n:36}, dep:99},
+    {nm:'Weight loss vs. calorie restriction', note:'head-to-head RCTs: “no significant difference”', v:'No advantage', vc:'v-warn', st:null, dep:14, thin:'14 both-sides papers — thin'},
+    {nm:'Hypoglycaemia risk (safety)', note:'one RCT RR 2.05, another “no severe hypoglycemia”', v:'Conflicting', vc:'v-warn', st:null, dep:null, thin:'read from documents'},
+    {nm:'Cardiovascular disease', note:'surrogate markers & animal studies; too few human both-sides', v:'Not established', vc:'v-muted', st:null, dep:16, thin:'16 both-sides papers — thin'}
   ];
-  var host=document.getElementById('e0'); if(host){ host.className=''; var html='';
-    eff.forEach(function(d){
-      // symmetric scale around zero, per row, so each unit keeps its own axis
-      var span=Math.max(Math.abs(d.lo),Math.abs(d.hi))*1.15;
-      var pct=function(v){return (50 + 50*(v/span)).toFixed(1);};
-      html+='<div class="effrow">'+
-        '<div class="name">'+d.name+'<small>'+d.unit+'</small></div>'+
-        '<div class="est"><b>'+d.est+'</b> <small>95% CI '+d.lo+', '+d.hi+'</small><div class="p">'+d.p+' · significant</div></div>'+
-        '<div class="whisk"><div class="zero" style="left:50%"></div>'+
-          '<div class="ci" style="left:'+pct(d.lo)+'%;width:'+(pct(d.hi)-pct(d.lo))+'%"></div>'+
-          '<div class="pt" style="left:'+pct(d.est)+'%"></div>'+
-          '<div class="lbl" style="left:0">'+(-span).toFixed(1)+'</div>'+
-          '<div class="lbl" style="right:0">+'+span.toFixed(1)+'</div>'+
-        '</div></div>';
+  var host=document.getElementById('amap'), h='';
+  angles.forEach(function(a){
+    var stance;
+    if(a.st){var t=a.st.s+a.st.q+a.st.c+a.st.n||1;
+      stance='<div class="sbar">'+
+        '<span class="s" style="flex:'+a.st.s+'" title="Supporting '+a.st.s+'"></span>'+
+        '<span class="q" style="flex:'+a.st.q+'" title="Qualifying '+a.st.q+'"></span>'+
+        '<span class="c" style="flex:'+(a.st.c||0.0001)+'" title="Contradicting '+a.st.c+'"></span>'+
+        '<span class="n" style="flex:'+a.st.n+'" title="Neutral '+a.st.n+'"></span></div>';
+    } else { stance='<div class="thin">'+a.thin+'</div>'; }
+    h+='<div class="arow"><div class="nm">'+a.nm+'<small>'+a.note+'</small></div>'+
+       '<div><span class="vchip '+a.vc+'">'+a.v+'</span></div>'+
+       '<div class="stance minw">'+stance+'</div>'+
+       '<div class="dep">'+(a.dep!=null?'<b>'+a.dep+'</b><br>papers':'—')+'</div></div>';
+  });
+  host.innerHTML=h;
+
+  // ---- forest plot (mmHg, shared axis) ----
+  var F=[
+    {n:'Systolic BP',est:-4.43,lo:-5.83,hi:-3.03,s:'Guo 2025 · MA'},
+    {n:'Diastolic BP',est:-2.00,lo:-3.23,hi:-0.78,s:'Guo 2025 · MA'},
+    {n:'Systolic BP · modified ADF',est:-7.24,lo:-11.90,hi:-2.58,s:'Kibret 2025 · network MA'}
+  ];
+  (function(){
+    var W=720,H=220,PL=210,PR=24,PT=16,PB=42, lo=-13,hi=3;
+    var x=function(v){return PL+(W-PL-PR)*(v-lo)/(hi-lo);};
+    var s='', rows=F.length, band=(H-PT-PB)/rows;
+    [-12,-9,-6,-3,0,3].forEach(function(gv){var xx=x(gv);
+      s+='<line class="gridline" x1="'+xx+'" y1="'+PT+'" x2="'+xx+'" y2="'+(H-PB)+'"'+(gv===0?' stroke-width="1.5"':'')+'/>'+
+         '<text class="axis" x="'+xx+'" y="'+(H-PB+16)+'" text-anchor="middle">'+gv+'</text>';});
+    s+='<text class="axis" x="'+x(0)+'" y="'+(H-10)+'" text-anchor="middle" style="fill:var(--ink)">mmHg change vs. control</text>';
+    s+='<text class="axis" x="'+PL+'" y="'+(H-PB+30)+'" text-anchor="start">← favours fasting</text>';
+    F.forEach(function(d,i){var cy=PT+band*(i+0.5);
+      s+='<text class="axis" x="'+(PL-12)+'" y="'+(cy+4)+'" text-anchor="end" style="fill:var(--ink);font-family:var(--d-sans);font-size:12.5px">'+d.n+'</text>';
+      s+='<line x1="'+x(d.lo)+'" y1="'+cy+'" x2="'+x(d.hi)+'" y2="'+cy+'" style="stroke:var(--accent);stroke-width:2.5"/>';
+      s+='<line x1="'+x(d.lo)+'" y1="'+(cy-5)+'" x2="'+x(d.lo)+'" y2="'+(cy+5)+'" style="stroke:var(--accent);stroke-width:2"/>';
+      s+='<line x1="'+x(d.hi)+'" y1="'+(cy-5)+'" x2="'+x(d.hi)+'" y2="'+(cy+5)+'" style="stroke:var(--accent);stroke-width:2"/>';
+      s+='<circle cx="'+x(d.est)+'" cy="'+cy+'" r="6" style="fill:var(--accent)"/>';
+      s+='<text class="axis" x="'+(x(d.hi)+8)+'" y="'+(cy+4)+'" style="fill:var(--ink-2)">'+d.est+'</text>';
     });
-    var w=document.createElement('div'); w.innerHTML=html;
-    host.parentNode.insertBefore(w,host); host.remove();
-  }
+    document.getElementById('forest').innerHTML=s;
+  })();
 
   // ---- geography ----
-  var geo=[['United States',4308],['China',2332],['Japan',1182],['United Kingdom',1045],
-    ['Italy',724],['Germany',719],['Netherlands',569],['Brazil',567]];
-  var gmax=geo[0][1], g=document.getElementById('geo'), gh='';
-  geo.forEach(function(r){gh+='<div class="georow"><span>'+r[0]+'</span>'+
-    '<span class="geobar" style="width:'+(r[1]/gmax*100).toFixed(1)+'%"></span>'+
-    '<span class="c">'+r[1].toLocaleString()+'</span></div>';});
-  if(g) g.innerHTML=gh;
+  var geo=[['United States',4308],['China',2332],['Japan',1182],['United Kingdom',1045],['Italy',724],['Germany',719],['Netherlands',569],['Brazil',567]];
+  var gmax=geo[0][1], gh='';
+  geo.forEach(function(r){gh+='<div class="georow"><span>'+r[0]+'</span><span class="geobar" style="width:'+(r[1]/gmax*100).toFixed(1)+'%"></span><span class="c">'+r[1].toLocaleString()+'</span></div>';});
+  document.getElementById('geo').innerHTML=gh;
 
-  // ---- trend (area + line, to scale) ----
+  // ---- trend ----
   var data=[[2017,468],[2018,493],[2019,671],[2020,830],[2021,860],[2022,893],[2023,1023],[2024,1112],[2025,1432]];
-  var W=720,H=260,PL=48,PR=18,PT=18,PB=34, ymax=1500;
-  var x=function(i){return PL+(W-PL-PR)*i/(data.length-1);};
-  var y=function(v){return PT+(H-PT-PB)*(1-v/ymax);};
-  var svg=document.getElementById('trend'); if(svg){
+  (function(){
+    var W=720,H=240,PL=48,PR=18,PT=18,PB=34, ymax=1500;
+    var x=function(i){return PL+(W-PL-PR)*i/(data.length-1);}, y=function(v){return PT+(H-PT-PB)*(1-v/ymax);};
     var s='';
     [0,500,1000,1500].forEach(function(gv){var yy=y(gv);
-      s+='<line class="gridline" x1="'+PL+'" y1="'+yy+'" x2="'+(W-PR)+'" y2="'+yy+'"/>'+
-         '<text class="axis" x="'+(PL-8)+'" y="'+(yy+4)+'" text-anchor="end">'+gv+'</text>';});
+      s+='<line class="gridline" x1="'+PL+'" y1="'+yy+'" x2="'+(W-PR)+'" y2="'+yy+'"/><text class="axis" x="'+(PL-8)+'" y="'+(yy+4)+'" text-anchor="end">'+gv+'</text>';});
     var line=data.map(function(d,i){return (i?'L':'M')+x(i).toFixed(1)+' '+y(d[1]).toFixed(1);}).join(' ');
     var area=line+' L'+x(data.length-1).toFixed(1)+' '+y(0)+' L'+x(0).toFixed(1)+' '+y(0)+' Z';
-    s+='<defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">'+
-       '<stop offset="0" style="stop-color:var(--accent);stop-opacity:0.26"/>'+
-       '<stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient></defs>';
-    s+='<path d="'+area+'" fill="url(#fill)"/>';
-    s+='<path d="'+line+'" style="fill:none;stroke:var(--accent);stroke-width:2.5" stroke-linejoin="round"/>';
+    s+='<defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:0.26"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient></defs>';
+    s+='<path d="'+area+'" fill="url(#fill)"/><path d="'+line+'" style="fill:none;stroke:var(--accent);stroke-width:2.5" stroke-linejoin="round"/>';
     data.forEach(function(d,i){
       s+='<text class="axis" x="'+x(i).toFixed(1)+'" y="'+(H-14)+'" text-anchor="middle">'+("'"+String(d[0]).slice(2))+'</text>';
-      if(i===0||i===data.length-1){
-        s+='<circle cx="'+x(i).toFixed(1)+'" cy="'+y(d[1]).toFixed(1)+'" r="4.5" style="fill:var(--accent)"/>';
-        s+='<text class="axis" x="'+x(i).toFixed(1)+'" y="'+(y(d[1])-10).toFixed(1)+'" text-anchor="'+(i?'end':'start')+'" style="fill:var(--ink);font-weight:600">'+d[1].toLocaleString()+'</text>';
-      }
+      if(i===0||i===data.length-1){s+='<circle cx="'+x(i).toFixed(1)+'" cy="'+y(d[1]).toFixed(1)+'" r="4.5" style="fill:var(--accent)"/>'+
+        '<text class="axis" x="'+x(i).toFixed(1)+'" y="'+(y(d[1])-10).toFixed(1)+'" text-anchor="'+(i?'end':'start')+'" style="fill:var(--ink);font-weight:600">'+d[1].toLocaleString()+'</text>';}
     });
-    svg.innerHTML=s;
-  }
+    document.getElementById('trend').innerHTML=s;
+  })();
 })();
 </script>
 </body>

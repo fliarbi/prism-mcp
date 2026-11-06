@@ -1,273 +1,61 @@
 {
- "_provenance": {
-  "topic": "intermittent fasting",
-  "angle_claim": "intermittent fasting improves glycemic control in type 2 diabetes",
-  "retrieved_at": "2026-11-06",
-  "source": "Prism public API — research.brief and research.evidence",
-  "coverage": {
-   "partial": false,
-   "note": "all data was available when this was captured"
+  "_provenance": {
+    "topic": "intermittent fasting",
+    "retrieved_at": "2026-11-06",
+    "source": "Prism public API — research.evidence (one call per angle) + research.brief",
+    "coverage": {"research_typed_pct": 107, "research_pct": 104.2, "pubmed_pct": 100, "strict_shard_read": true},
+    "note": "Counts/shares computed in ClickHouse. Effect sizes copied verbatim and verified against source. 'reading' is Prism's interpretation of the slice, not a verdict on truth. Thin claim lanes are reported inconclusive, not charted."
   },
-  "note": "Counts measured from Prism’s corpora. Quotes copied verbatim and verified against source. Orientation/stance are labels on each paper's own framing, not a verdict on the claim."
- },
- "volumes_topic": {
-  "research": {
-   "n": 964,
-   "window": "2017-2025"
-  },
-  "readable_papers": {
-   "n": 476,
-   "window": "1990-2025"
-  },
-  "biomedical": {
-   "n": 28237,
-   "window": "1990-2025"
-  },
-  "news": {
-   "n": 375,
-   "window": "2019-01-01..2026-06-01"
-  },
-  "patents": {
-   "n": 8,
-   "window": "2005-2024"
-  }
- },
- "claim_lane": {
-  "subject": 62557,
-  "outcome": 85592,
-  "intersection": 99,
-  "note": "99 papers cover both sides of this claim, out of 62,557 on the subject and 85,592 on the outcome."
- },
- "stance_over_claim_lane": {
-  "papers": 99,
-  "window": "2017-2025",
-  "contested_pct": 26.3,
-  "mean_stance": 0.18,
-  "sides": {
-   "supporting": 37,
-   "qualifying": 24,
-   "contradicting": 2,
-   "neutral": 36
-  },
-  "orientation": {
-   "promising": 35,
-   "descriptive": 27,
-   "cautionary": 12,
-   "problem_identifying": 12,
-   "comparative": 9,
-   "breakthrough": 2,
-   "critical": 2
-  },
-  "contribution": {
-   "empirical": 75,
-   "review": 19,
-   "position": 4,
-   "methodological": 1
-  }
- },
- "pooled_effects": {
-  "source": {
-   "authors": "Lu, Chen, Liou & Weng (2025)",
-   "venue": "Journal of Health, Population and Nutrition",
-   "tier": "meta_analysis",
-   "strength": "very_high",
-   "doi": "10.1186/s41043-025-01039-2"
-  },
-  "measures": [
-   {
-    "name": "Fasting blood glucose",
-    "unit": "mg/dL (WMD)",
-    "estimate": -3.34,
-    "ci": [
-     -6.24,
-     -0.45
+  "angles": [
+    {"claim": "intermittent fasting lowers blood pressure",
+     "both_sides": 54, "verdict": "well_supported", "mean_stance": 0.372,
+     "sides": {"supporting": 33, "qualifying": 8, "contradicting": 0, "neutral": 13},
+     "tally": {"supports": 6, "contradicts": 1, "qualifies": 1},
+     "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias"},
+    {"claim": "intermittent fasting improves non-alcoholic fatty liver disease",
+     "both_sides": 99, "verdict": "well_supported", "mean_stance": 0.359,
+     "sides": {"supporting": 61, "qualifying": 20, "contradicting": 1, "neutral": 17},
+     "tally": {"supports": 5, "contradicts": 0, "qualifies": 1},
+     "reading": "mostly positive framing, with a substantial cautionary minority"},
+    {"claim": "intermittent fasting improves glycemic control in type 2 diabetes",
+     "both_sides": 99, "verdict": "supported", "mean_stance": 0.18,
+     "sides": {"supporting": 37, "qualifying": 24, "contradicting": 2, "neutral": 36},
+     "tally": {"supports": 4, "contradicts": 0, "qualifies": 0},
+     "reading": "mostly positive framing, with a substantial cautionary minority"},
+    {"claim": "intermittent fasting outperforms continuous calorie restriction for weight loss",
+     "both_sides": 14, "lane": "thin", "verdict": "no_advantage", "mean_stance": 0.175,
+     "sides": {"supporting": 2, "qualifying": 3, "contradicting": 0, "neutral": 11},
+     "tally": {"supports": 1, "contradicts": 5, "qualifies": 0},
+     "lane_note": "only 14 papers cover both sides; evidence is about the subject alone and does not establish superiority",
+     "reading": "mixed framing with no dominant lean"},
+    {"claim": "intermittent fasting increases the risk of hypoglycaemia in type 2 diabetes",
+     "both_sides": "mixed", "verdict": "conflicting",
+     "tally": {"supports": 0, "contradicts": 1, "qualifies": 1},
+     "note": "automated lane over-resolved to the diabetes field; read from documents. Corley 2018 RCT: RR 2.05 (1.17-3.52); INTERFAST-2 (Obermayer 2023): no severe hypoglycemia; Ramadan review: conflicting results"},
+    {"claim": "intermittent fasting reduces cardiovascular disease risk",
+     "both_sides": 16, "lane": "thin", "verdict": "not_established", "mean_stance": 0.098,
+     "lane_note": "only 16 papers cover both sides; most matched papers are surrogate markers or animal studies",
+     "reading": "mostly positive framing, with a substantial cautionary minority"}
+  ],
+  "pooled_effects": {
+    "blood_pressure_mmHg": [
+      {"name": "Systolic BP", "estimate": -4.43, "ci": [-5.83, -3.03], "source": "Guo 2025, meta-analysis", "doi": "10.1038/s41366-025-01823-4"},
+      {"name": "Diastolic BP", "estimate": -2.00, "ci": [-3.23, -0.78], "source": "Guo 2025, meta-analysis", "doi": "10.1038/s41366-025-01823-4"},
+      {"name": "Systolic BP (modified alternate-day fasting)", "estimate": -7.24, "ci": [-11.90, -2.58], "source": "Kibret 2025, network meta-analysis", "doi": "10.1007/s13668-025-00684-7"}
     ],
-    "p": "0.024"
-   },
-   {
-    "name": "HbA1c",
-    "unit": "% (WMD)",
-    "estimate": -0.08,
-    "ci": [
-     -0.13,
-     -0.02
-    ],
-    "p": "0.005"
-   },
-   {
-    "name": "HOMA-IR",
-    "unit": "index (WMD)",
-    "estimate": -0.6,
-    "ci": [
-     -0.91,
-     -0.28
-    ],
-    "p": "<0.001"
-   },
-   {
-    "name": "LDL cholesterol",
-    "unit": "mg/dL (WMD)",
-    "estimate": -6.42,
-    "ci": [
-     -12.26,
-     -0.58
-    ],
-    "p": "0.031"
-   },
-   {
-    "name": "Interleukin-6",
-    "unit": "pg/mL (WMD)",
-    "estimate": -0.58,
-    "ci": [
-     -1.08,
-     -0.08
-    ],
-    "p": "0.022"
-   }
+    "other": [
+      {"name": "hepatic steatosis (NAFLD)", "unit": "CAP dB/m", "estimate": -33.22, "ci": [-50.72, -15.72], "source": "Saleh 2024, meta-analysis", "doi": "10.1016/j.clnesp.2023.11.009"},
+      {"name": "ALT (NAFLD)", "unit": "U/L", "estimate": -9.10, "ci": [-12.45, -5.75], "source": "Saleh 2024, meta-analysis", "doi": "10.1016/j.clnesp.2023.11.009"},
+      {"name": "HbA1c (T2D)", "unit": "%", "estimate": -0.08, "ci": [-0.13, -0.02], "source": "Lu 2025, meta-analysis", "doi": "10.1186/s41043-025-01039-2"},
+      {"name": "fasting blood glucose", "unit": "mg/dL", "estimate": -3.34, "ci": [-6.24, -0.45], "source": "Lu 2025, meta-analysis", "doi": "10.1186/s41043-025-01039-2"}
+    ]
+  },
+  "research_per_year": {
+    "what": "research-index papers mentioning intermittent fasting, by publication year, matched on Prism's live vocabulary",
+    "series": [[2017,468],[2018,493],[2019,671],[2020,830],[2021,860],[2022,893],[2023,1023],[2024,1112],[2025,1432]]
+  },
+  "geography_first_author_affiliation": [
+    ["United States",4308],["China",2332],["Japan",1182],["United Kingdom",1045],
+    ["Italy",724],["Germany",719],["Netherlands",569],["Brazil",567]
   ]
- },
- "verified_documents": [
-  {
-   "stance": "supports",
-   "tier": "meta_analysis",
-   "strength": "very_high",
-   "quote": "IF could improve patients' glycated hemoglobin, fasting plasma glucose, body weight, BMI, waist circumference, systolic blood pressure, diastolic blood pressure, low density lipoprotein, and cholesterol levels (p < 0.05).",
-   "source": "Huang, Huang & Wei (2025), Nutrición Hospitalaria",
-   "doi": "10.20960/nh.05521"
-  },
-  {
-   "stance": "supports",
-   "tier": "review",
-   "quote": "All fasting regimens revealed strong evidence to support intermittent fasting as a feasible diet to improve glycemia and body composition measures within 12-24 weeks.",
-   "source": "Vitale & Kim (2020), Metabolic Syndrome and Related Disorders",
-   "cited_by": 41,
-   "doi": "10.1089/met.2020.0048"
-  },
-  {
-   "stance": "contradicts",
-   "tier": "meta_analysis",
-   "strength": "very_high",
-   "quote": "IF had a similar effect on HBA1c reduction as control interventions (SMD: 0.36%; 95% CI; -0.37, 1.10; P = 0.33, I2 = 87%).",
-   "source": "Zaki et al. (2022), Cureus",
-   "doi": "10.7759/cureus.30879"
-  }
- ],
- "tally": {
-  "supports": 4,
-  "contradicts": 0,
-  "qualifies": 0,
-  "unrelated": 3,
-  "unread": 9,
-  "tier_weighted_supports": 18
- },
- "research_per_year": {
-  "what": "research-index papers mentioning intermittent fasting, by publication year, matched on the topic's own phrases",
-  "series": [
-   [
-    2017,
-    468
-   ],
-   [
-    2018,
-    493
-   ],
-   [
-    2019,
-    671
-   ],
-   [
-    2020,
-    830
-   ],
-   [
-    2021,
-    860
-   ],
-   [
-    2022,
-    893
-   ],
-   [
-    2023,
-    1023
-   ],
-   [
-    2024,
-    1112
-   ],
-   [
-    2025,
-    1432
-   ]
-  ]
- },
- "geography_first_author_affiliation": [
-  [
-   "United States",
-   4308
-  ],
-  [
-   "China",
-   2332
-  ],
-  [
-   "Japan",
-   1182
-  ],
-  [
-   "United Kingdom",
-   1045
-  ],
-  [
-   "Italy",
-   724
-  ],
-  [
-   "Germany",
-   719
-  ],
-  [
-   "Netherlands",
-   569
-  ],
-  [
-   "Brazil",
-   567
-  ],
-  [
-   "Australia",
-   566
-  ],
-  [
-   "South Korea",
-   561
-  ]
- ],
- "top_institutions_by_lift": [
-  [
-   "Grand Forks Human Nutrition Research Center",
-   9,
-   12378.3
-  ],
-  [
-   "Salk Institute for Biological Studies",
-   14,
-   1531.7
-  ],
-  [
-   "Fondazione IRCCS Istituto Nazionale dei Tumori",
-   7,
-   321.4
-  ],
-  [
-   "University of Alabama at Birmingham",
-   17,
-   145.2
-  ],
-  [
-   "University of Colorado Anschutz Medical Campus",
-   8,
-   109.5
-  ]
- ]
 }
