@@ -3,8 +3,8 @@
 > The method from the health and economics examples, on a **climate / energy** subject — one where,
 > unlike the others, *every* angle is deeply researched. That makes it the cleanest demonstration of
 > a different point: when the evidence is thick on all sides, the honesty model earns its keep by
-> separating the **solid core** from the **conditional caveats**. Every count is computed in
-> ClickHouse; every quoted finding is verbatim and verified.
+> separating the **solid core** from the **conditional caveats**. Every count is measured from
+> the data; every quoted finding is verbatim and verified.
 
 **Subject:** electric vehicles · **Retrieved:** 2026-11-06 · **Tool:** `find_evidence` ×5
 

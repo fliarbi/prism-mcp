@@ -1,54 +1,178 @@
 {
-  "_provenance": {
-    "subject": "electric vehicles (climate / energy)",
-    "retrieved_at": "2026-11-06",
-    "source": "Prism public API — research.evidence (one call per angle)",
-    "coverage": {"research_typed_pct": 107, "research_pct": 104.2, "strict_shard_read": true},
-    "note": "Counts/shares computed in ClickHouse. Quoted findings verbatim and verified. Every angle formed a real both-sides lane (122-2,391 papers) — no thin lanes here; the story is the verdict, not the depth. Note the mixed valence: 'battery cost' and 'grid strain' are caveat-claims, so a large supporting share there means the caveat is well-evidenced."
+ "_provenance": {
+  "subject": "electric vehicles (climate / energy)",
+  "retrieved_at": "2026-11-06",
+  "source": "Prism public API — research.evidence (one call per angle)",
+  "coverage": {
+   "research_typed_pct": 107,
+   "research_pct": 104.2
   },
-  "angles": [
-    {"claim": "electric vehicles reduce greenhouse gas emissions",
-     "both_sides": 2156, "lane": "intersection", "verdict": "well_supported", "mean_stance": 0.306, "contested_pct": 16.3,
-     "sides": {"supporting": 1046, "qualifying": 329, "contradicting": 22, "neutral": 759},
-     "tally": {"supports": 3, "contradicts": 0, "read": 3, "tier_weighted_supports": 9},
-     "reading": "mixed framing with no dominant lean",
-     "note": "the solid core — supporting outnumbers contradicting 48:1; lifecycle studies confirm the reduction across vehicle types",
-     "evidence": ["\"the transition from internal combustion engine vehicles ... to electric vehicles would reduce the greenhouse gas emission for passenger cars, two-wheelers, and buses\" (LCA, Malaysia, Sustainability 2022)", "\"BEVs have lower CO2 emissions\" vs conventional vehicles (Clean Technologies 2023)"]},
-    {"claim": "electric vehicle battery production has a high environmental cost",
-     "both_sides": 2391, "lane": "intersection", "verdict": "supported_caveat", "mean_stance": 0.282, "contested_pct": 24.5,
-     "sides": {"supporting": 1218, "qualifying": 569, "contradicting": 17, "neutral": 587},
-     "reading": "mostly positive framing, with a substantial cautionary minority",
-     "note": "a real, well-studied cost — but a partial offset, not a reversal; the landmark LCA puts the battery at ~15% of total e-mobility impact",
-     "evidence": ["\"The share of the total environmental impact of E-mobility caused by the battery ... is 15%\" (Notter, Environ. Sci. Technol. 2010)", "cradle-to-gate Global Warming Potential 67.1 kg CO2e/kWh for an Indian LFP pack (2025)"]},
-    {"claim": "electric vehicle adoption strains the electricity grid",
-     "both_sides": 679, "lane": "intersection", "verdict": "conditional", "mean_stance": 0.422, "contested_pct": 19.7,
-     "sides": {"supporting": 454, "qualifying": 132, "contradicting": 2, "neutral": 91},
-     "tally": {"supports": 1, "contradicts": 2, "read": 3, "tier_weighted_supports": 3, "tier_weighted_contradicts": 6},
-     "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
-     "note": "the one place framing and read-evidence diverge: 454 papers frame EVs as a grid strain, but the high-tier documents read lean CONTRADICT (6 vs 3) — smart charging keeps voltage within limits even at 90% penetration",
-     "evidence": ["\"voltage profiles maintained within safe operational limits, even under 90% EV penetration level\" (Glasgow, 2025)", "\"minimal impact on voltage profiles\" (Rwanda MV networks, 2020)", "counter: \"higher line loading, voltage fluctuations, and increased power losses\" (37-bus study, 2025)"]},
-    {"claim": "electric vehicles are cheaper to own than gasoline cars",
-     "both_sides": 148, "lane": "intersection", "verdict": "conditional", "mean_stance": 0.188, "contested_pct": 21.6,
-     "sides": {"supporting": 39, "qualifying": 32, "contradicting": 0, "neutral": 77},
-     "reading": "mostly positive framing, with a substantial cautionary minority",
-     "note": "conditional — no contradicting papers, but the reads say 'it depends': on segment, mileage, battery replacement and policy",
-     "evidence": ["\"the optimal vehicle drive technology depends strongly on the vehicle segment considered\" (Applied Energy 2025)", "\"EVs have a lower TCO ... if the battery replacement cost for EVs is not considered\" (Romania study, 2024)"]},
-    {"claim": "electric vehicles reduce urban air pollution",
-     "both_sides": 122, "lane": "intersection", "verdict": "conditional", "mean_stance": 0.116, "contested_pct": 36.1,
-     "sides": {"supporting": 36, "qualifying": 43, "contradicting": 1, "neutral": 42},
-     "tally": {"supports": 0, "contradicts": 1, "read": 1},
-     "reading": "mostly positive framing, with a substantial cautionary minority",
-     "note": "the only angle where qualifying (43) outnumbers supporting (36) — benefits depend on the grid mix and can even be regressive",
-     "evidence": ["\"people in census block groups with median income greater than about $65,000 receive positive environmental benefits while those below this threshold receive negative environmental benefits\" (Holland, JAERE 2018)", "support: heavy-duty electrification \"consistently improves air quality in terms of NO2 and fine particulate matter\" (China, 2020)"]}
-  ],
-  "stance_composition_pct": {
-    "what": "share of papers that support / qualify / contradict each stated claim (note mixed valence — two claims are caveats), normalised to 100%",
-    "rows": [
-      {"label": "Cuts GHG emissions", "n": 2156, "supporting": 48.5, "qualifying": 15.3, "contradicting": 1.0, "neutral": 35.2},
-      {"label": "Battery production cost high", "n": 2391, "supporting": 50.9, "qualifying": 23.8, "contradicting": 0.7, "neutral": 24.5},
-      {"label": "Strains the grid", "n": 679, "supporting": 66.9, "qualifying": 19.4, "contradicting": 0.3, "neutral": 13.4},
-      {"label": "Cheaper to own", "n": 148, "supporting": 26.4, "qualifying": 21.6, "contradicting": 0.0, "neutral": 52.0},
-      {"label": "Cuts urban air pollution", "n": 122, "supporting": 29.5, "qualifying": 35.2, "contradicting": 0.8, "neutral": 34.4}
-    ]
+  "note": "Counts and shares measured from the data. Quoted findings verbatim and verified. Every angle formed a real both-sides lane (122-2,391 papers) — no thin lanes here; the story is the verdict, not the depth. Note the mixed valence: 'battery cost' and 'grid strain' are caveat-claims, so a large supporting share there means the caveat is well-evidenced."
+ },
+ "angles": [
+  {
+   "claim": "electric vehicles reduce greenhouse gas emissions",
+   "both_sides": 2156,
+   "lane": "intersection",
+   "verdict": "well_supported",
+   "mean_stance": 0.306,
+   "contested_pct": 16.3,
+   "sides": {
+    "supporting": 1046,
+    "qualifying": 329,
+    "contradicting": 22,
+    "neutral": 759
+   },
+   "tally": {
+    "supports": 3,
+    "contradicts": 0,
+    "read": 3,
+    "tier_weighted_supports": 9
+   },
+   "reading": "mixed framing with no dominant lean",
+   "note": "the solid core — supporting outnumbers contradicting 48:1; lifecycle studies confirm the reduction across vehicle types",
+   "evidence": [
+    "\"the transition from internal combustion engine vehicles ... to electric vehicles would reduce the greenhouse gas emission for passenger cars, two-wheelers, and buses\" (LCA, Malaysia, Sustainability 2022)",
+    "\"BEVs have lower CO2 emissions\" vs conventional vehicles (Clean Technologies 2023)"
+   ]
+  },
+  {
+   "claim": "electric vehicle battery production has a high environmental cost",
+   "both_sides": 2391,
+   "lane": "intersection",
+   "verdict": "supported_caveat",
+   "mean_stance": 0.282,
+   "contested_pct": 24.5,
+   "sides": {
+    "supporting": 1218,
+    "qualifying": 569,
+    "contradicting": 17,
+    "neutral": 587
+   },
+   "reading": "mostly positive framing, with a substantial cautionary minority",
+   "note": "a real, well-studied cost — but a partial offset, not a reversal; the landmark LCA puts the battery at ~15% of total e-mobility impact",
+   "evidence": [
+    "\"The share of the total environmental impact of E-mobility caused by the battery ... is 15%\" (Notter, Environ. Sci. Technol. 2010)",
+    "cradle-to-gate Global Warming Potential 67.1 kg CO2e/kWh for an Indian LFP pack (2025)"
+   ]
+  },
+  {
+   "claim": "electric vehicle adoption strains the electricity grid",
+   "both_sides": 679,
+   "lane": "intersection",
+   "verdict": "conditional",
+   "mean_stance": 0.422,
+   "contested_pct": 19.7,
+   "sides": {
+    "supporting": 454,
+    "qualifying": 132,
+    "contradicting": 2,
+    "neutral": 91
+   },
+   "tally": {
+    "supports": 1,
+    "contradicts": 2,
+    "read": 3,
+    "tier_weighted_supports": 3,
+    "tier_weighted_contradicts": 6
+   },
+   "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
+   "note": "the one place framing and read-evidence diverge: 454 papers frame EVs as a grid strain, but the high-tier documents read lean CONTRADICT (6 vs 3) — smart charging keeps voltage within limits even at 90% penetration",
+   "evidence": [
+    "\"voltage profiles maintained within safe operational limits, even under 90% EV penetration level\" (Glasgow, 2025)",
+    "\"minimal impact on voltage profiles\" (Rwanda MV networks, 2020)",
+    "counter: \"higher line loading, voltage fluctuations, and increased power losses\" (37-bus study, 2025)"
+   ]
+  },
+  {
+   "claim": "electric vehicles are cheaper to own than gasoline cars",
+   "both_sides": 148,
+   "lane": "intersection",
+   "verdict": "conditional",
+   "mean_stance": 0.188,
+   "contested_pct": 21.6,
+   "sides": {
+    "supporting": 39,
+    "qualifying": 32,
+    "contradicting": 0,
+    "neutral": 77
+   },
+   "reading": "mostly positive framing, with a substantial cautionary minority",
+   "note": "conditional — no contradicting papers, but the reads say 'it depends': on segment, mileage, battery replacement and policy",
+   "evidence": [
+    "\"the optimal vehicle drive technology depends strongly on the vehicle segment considered\" (Applied Energy 2025)",
+    "\"EVs have a lower TCO ... if the battery replacement cost for EVs is not considered\" (Romania study, 2024)"
+   ]
+  },
+  {
+   "claim": "electric vehicles reduce urban air pollution",
+   "both_sides": 122,
+   "lane": "intersection",
+   "verdict": "conditional",
+   "mean_stance": 0.116,
+   "contested_pct": 36.1,
+   "sides": {
+    "supporting": 36,
+    "qualifying": 43,
+    "contradicting": 1,
+    "neutral": 42
+   },
+   "tally": {
+    "supports": 0,
+    "contradicts": 1,
+    "read": 1
+   },
+   "reading": "mostly positive framing, with a substantial cautionary minority",
+   "note": "the only angle where qualifying (43) outnumbers supporting (36) — benefits depend on the grid mix and can even be regressive",
+   "evidence": [
+    "\"people in census block groups with median income greater than about $65,000 receive positive environmental benefits while those below this threshold receive negative environmental benefits\" (Holland, JAERE 2018)",
+    "support: heavy-duty electrification \"consistently improves air quality in terms of NO2 and fine particulate matter\" (China, 2020)"
+   ]
   }
+ ],
+ "stance_composition_pct": {
+  "what": "share of papers that support / qualify / contradict each stated claim (note mixed valence — two claims are caveats), normalised to 100%",
+  "rows": [
+   {
+    "label": "Cuts GHG emissions",
+    "n": 2156,
+    "supporting": 48.5,
+    "qualifying": 15.3,
+    "contradicting": 1.0,
+    "neutral": 35.2
+   },
+   {
+    "label": "Battery production cost high",
+    "n": 2391,
+    "supporting": 50.9,
+    "qualifying": 23.8,
+    "contradicting": 0.7,
+    "neutral": 24.5
+   },
+   {
+    "label": "Strains the grid",
+    "n": 679,
+    "supporting": 66.9,
+    "qualifying": 19.4,
+    "contradicting": 0.3,
+    "neutral": 13.4
+   },
+   {
+    "label": "Cheaper to own",
+    "n": 148,
+    "supporting": 26.4,
+    "qualifying": 21.6,
+    "contradicting": 0.0,
+    "neutral": 52.0
+   },
+   {
+    "label": "Cuts urban air pollution",
+    "n": 122,
+    "supporting": 29.5,
+    "qualifying": 35.2,
+    "contradicting": 0.8,
+    "neutral": 34.4
+   }
+  ]
+ }
 }

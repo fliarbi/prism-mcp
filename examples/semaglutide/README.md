@@ -2,7 +2,7 @@
 
 > The same method as the [intermittent-fasting example](../intermittent-fasting-glycemic-control/),
 > on a very different subject — a blockbuster drug. Five claims measured from the corpus, ranked by
-> how the evidence leans and how much stands behind it. Every number is computed in ClickHouse over
+> how the evidence leans and how much stands behind it. Every number is measured over
 > Prism's corpora; every quoted finding is verbatim from the source and verified against it.
 
 **Subject:** semaglutide (Ozempic / Wegovy) · **Retrieved:** 2026-11-06

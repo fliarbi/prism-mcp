@@ -1,78 +1,263 @@
 {
-  "_provenance": {
-    "subject": "CRISPR gene editing",
-    "retrieved_at": "2026-11-06",
-    "source": "Prism public API — research.evidence (one call per angle)",
-    "coverage": {"research_typed_pct": 107, "research_pct": 104.2, "pubmed_pct": 100, "strict_shard_read": true},
-    "note": "Counts/shares computed in ClickHouse. Quoted findings verbatim and verified. Two angles fell to the subject lane (no clean both-sides intersection) and are reported that way, not charted by a both-sides count."
+ "_provenance": {
+  "subject": "CRISPR gene editing",
+  "retrieved_at": "2026-11-06",
+  "source": "Prism public API — research.evidence (one call per angle)",
+  "coverage": {
+   "research_typed_pct": 107,
+   "research_pct": 104.2,
+   "biomedical_pct": 100
   },
-  "angles": [
-    {"claim": "CRISPR gene editing can treat cancer",
-     "both_sides": 164, "lane": "intersection", "verdict": "well_supported", "mean_stance": 0.488, "contested_pct": 18.9,
-     "sides": {"supporting": 122, "qualifying": 22, "contradicting": 9, "neutral": 11},
-     "tally": {"supports": 1, "contradicts": 0, "qualifies": 0, "unrelated": 3, "tier_weighted_supports": 6},
-     "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
-     "note": "deepest lane, but concentrated in CAR-T immunotherapy and preclinical work; corpus_topics led by CAR-T cell therapy (46) and virus-based gene therapy (46)",
-     "evidence": ["CRISPR/Cas9-UCA1 knockdown significantly inhibited bladder-cancer cell proliferation, migration and invasion in vitro and in vivo (Oncotarget 2017, meta-analysis tier)"]},
-    {"claim": "CRISPR gene editing has significant off-target effects",
-     "both_sides": 107, "lane": "intersection", "verdict": "supported_contested", "mean_stance": 0.407, "contested_pct": 29.9,
-     "sides": {"supporting": 65, "qualifying": 28, "contradicting": 4, "neutral": 10},
-     "tally": {"supports": 0, "contradicts": 1, "qualifies": 0, "unread": 2, "tier_weighted_contradicts": 3},
-     "reading": "mostly positive framing, with a substantial cautionary minority",
-     "note": "the most contested CRISPR angle (29.9%) and the only one where the read document pushed back — newer methods report 'little or no' off-target editing",
-     "evidence": ["'resulting in little or no undesirable on- or off-target effects' — dual-conditional CRISPR-Cas9 in human stem cells (Mol Ther Nucleic Acids 2022)", "large deletions up to several thousand bases at Cas9 cut sites: HBB 11.7-35.4%, HBG 14.3%, BCL11A 13.2% (Sci Adv 2022)"]},
-    {"claim": "CRISPR gene editing cures sickle cell disease",
-     "both_sides": null, "lane": "subject", "verdict": "landmark_trial_claim_outpaces_design",
-     "health_evidence": {"claims": 223, "by_study_tier": {"preclinical": 106, "unspecified": 77, "review_meta": 28, "clinical": 8, "clinical_rct": 4}, "high_tier_share_pct": 17.9},
-     "note": "the outcome pole resolved to MeSH only (Anemia, Sickle Cell), so no both-sides intersection formed and Prism fell back to the subject lane; the extracted health-claim layer carried the real evidence instead",
-     "evidence": ["'both patients had ... transfusion independence, and (in the patient with SCD) elimination of vaso-occlusive episodes' — NEJM 2020, CRISPR-Cas9 for Sickle Cell Disease and β-Thalassemia (cited 1,856); single-arm, so the word 'cure' rests on uncontrolled data"]},
-    {"claim": "CRISPR gene editing improves crop yield",
-     "both_sides": 20, "lane": "intersection", "verdict": "not_established_thin",
-     "tally": {"supports": 0, "contradicts": 0, "all_unrelated": true},
-     "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
-     "lane_note": "only 20 papers cover both sides of the claim; most CRISPR-crop work targets traits (disease resistance, quality), not yield itself, so the yield claim is thin at the claim level"},
-    {"claim": "base editing is more precise than CRISPR-Cas9",
-     "both_sides": 3, "lane": "subject", "verdict": "not_established_unbenchmarked",
-     "tally": {"supports": 0, "contradicts": 0, "unrelated": 15},
-     "lane_note": "only 3 papers cover both sides of this comparison; the field describes base editing avoiding double-strand breaks and reporting 'no off-target mutations', but head-to-head precision benchmarks against CRISPR-Cas9 are almost absent — assumed, rarely demonstrated"}
-  ],
-  "stance_composition_pct": {
-    "what": "share of papers by stance toward the claim, normalised to 100%",
-    "rows": [
-      {"label": "CRISPR — whole corpus", "n": 96904, "supporting": 66.6, "qualifying": 13.0, "contradicting": 1.8, "neutral": 18.6},
-      {"label": "…treats cancer", "n": 164, "supporting": 74.4, "qualifying": 13.4, "contradicting": 5.5, "neutral": 6.7},
-      {"label": "…off-target effects", "n": 107, "supporting": 60.7, "qualifying": 26.2, "contradicting": 3.7, "neutral": 9.3}
-    ]
+  "note": "Counts and shares measured from the data. Quoted findings verbatim and verified. Two angles fell to the subject lane (no clean both-sides intersection) and are reported that way, not charted by a both-sides count."
+ },
+ "angles": [
+  {
+   "claim": "CRISPR gene editing can treat cancer",
+   "both_sides": 164,
+   "lane": "intersection",
+   "verdict": "well_supported",
+   "mean_stance": 0.488,
+   "contested_pct": 18.9,
+   "sides": {
+    "supporting": 122,
+    "qualifying": 22,
+    "contradicting": 9,
+    "neutral": 11
+   },
+   "tally": {
+    "supports": 1,
+    "contradicts": 0,
+    "qualifies": 0,
+    "unrelated": 3,
+    "tier_weighted_supports": 6
+   },
+   "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
+   "note": "deepest lane, but concentrated in CAR-T immunotherapy and preclinical work; corpus_topics led by CAR-T cell therapy (46) and virus-based gene therapy (46)",
+   "evidence": [
+    "CRISPR/Cas9-UCA1 knockdown significantly inhibited bladder-cancer cell proliferation, migration and invasion in vitro and in vivo (Oncotarget 2017, meta-analysis tier)"
+   ]
   },
-  "research_per_year": {
-    "what": "research-index papers whose title carries the phrase 'CRISPR gene editing', by publication year, matched on Prism's live vocabulary (the broad topic 'CRISPR and Genetic Engineering' holds ~96,900 papers; this is the narrow title-phrase slice)",
-    "series": [[2017,12],[2018,33],[2019,46],[2020,32],[2021,34],[2022,52],[2023,41],[2024,56],[2025,68]]
+  {
+   "claim": "CRISPR gene editing has significant off-target effects",
+   "both_sides": 107,
+   "lane": "intersection",
+   "verdict": "supported_contested",
+   "mean_stance": 0.407,
+   "contested_pct": 29.9,
+   "sides": {
+    "supporting": 65,
+    "qualifying": 28,
+    "contradicting": 4,
+    "neutral": 10
+   },
+   "tally": {
+    "supports": 0,
+    "contradicts": 1,
+    "qualifies": 0,
+    "unread": 2,
+    "tier_weighted_contradicts": 3
+   },
+   "reading": "mostly positive framing, with a substantial cautionary minority",
+   "note": "the most contested CRISPR angle (29.9%) and the only one where the read document pushed back — newer methods report 'little or no' off-target editing",
+   "evidence": [
+    "'resulting in little or no undesirable on- or off-target effects' — dual-conditional CRISPR-Cas9 in human stem cells (Mol Ther Nucleic Acids 2022)",
+    "large deletions up to several thousand bases at Cas9 cut sites: HBB 11.7-35.4%, HBG 14.3%, BCL11A 13.2% (Sci Adv 2022)"
+   ]
   },
-  "stance_trends": {
-    "tool": "research.stance_trends",
-    "what": "orientation framing of the CRISPR literature per year, 2017-2025; growth measured late-third vs early-third of the window",
-    "papers": 4422,
-    "framing_growth_ratio": {"breakthrough": 1.72, "problem_identifying": 1.68, "promising": 1.50, "cautionary": 1.43, "critical": 0.70},
-    "framing_growth_cagr_pct": {"promising": 10.8, "cautionary": 10.7, "descriptive": 7.7, "breakthrough": 7.2, "critical": "falling"},
-    "contested_pct_by_year": {"2017": 3.7, "2018": 2.8, "2019": 6.4, "2020": 5.0, "2021": 4.2, "2022": 4.8, "2023": 3.9, "2024": 3.9, "2025": 3.8},
-    "total_by_year": {"2017": 725, "2018": 777, "2019": 863, "2020": 1032, "2021": 1034, "2022": 1156, "2023": 1243, "2024": 1026, "2025": 1282},
-    "framing_shift": {"early_contested_pct": 4.4, "late_contested_pct": 3.9, "delta_pct_points": -0.5, "reading": "the balance of framing is broadly unchanged"}
+  {
+   "claim": "CRISPR gene editing cures sickle cell disease",
+   "both_sides": null,
+   "lane": "subject",
+   "verdict": "landmark_trial_claim_outpaces_design",
+   "health_evidence": {
+    "claims": 223,
+    "by_study_tier": {
+     "preclinical": 106,
+     "unspecified": 77,
+     "review_meta": 28,
+     "clinical": 8,
+     "clinical_rct": 4
+    },
+    "high_tier_share_pct": 17.9
+   },
+   "note": "the outcome pole matched biomedical subject headings only (Anemia, Sickle Cell), so no both-sides intersection formed and Prism fell back to the subject lane; the extracted health-claim layer carried the real evidence instead",
+   "evidence": [
+    "'both patients had ... transfusion independence, and (in the patient with SCD) elimination of vaso-occlusive episodes' — NEJM 2020, CRISPR-Cas9 for Sickle Cell Disease and β-Thalassemia (cited 1,856); single-arm, so the word 'cure' rests on uncontrolled data"
+   ]
   },
-  "news": {
-    "tool": "news.trends + news.geography",
-    "window": "2024-2026 (news ingest censored at 2026-06-01)",
-    "articles_total": 294,
-    "year_2025": {"articles": 161, "positive": 153, "negative": 8, "high_priority_pct": 92.5},
-    "note": "news on CRISPR is a thin, high-priority, almost-uniformly-positive stream; the qualifying/cautionary nuance lives in the research layer, not the news layer",
-    "geography_country_share_pct": {"united_states": 35.2, "united_kingdom": 11.0, "china": 4.8, "india": 4.8},
-    "geography_caveat": "the place an article is ABOUT, not where published; only 43.3% of articles place cleanly, and acronym collisions inflate some low-count rows — directional, not precise"
+  {
+   "claim": "CRISPR gene editing improves crop yield",
+   "both_sides": 20,
+   "lane": "intersection",
+   "verdict": "not_established_thin",
+   "tally": {
+    "supports": 0,
+    "contradicts": 0,
+    "all_unrelated": true
+   },
+   "reading": "overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias",
+   "lane_note": "only 20 papers cover both sides of the claim; most CRISPR-crop work targets traits (disease resistance, quality), not yield itself, so the yield claim is thin at the claim level"
   },
-  "research_gaps": {
-    "tool": "research.gaps",
-    "claim": "CRISPR gene editing has significant off-target effects",
-    "components_evidenced": 4,
-    "components_unevidenced": 0,
-    "components": ["off-target mutations occur", "off-target effects are significant", "off-target activity varies with guide-RNA design", "significant off-target effects raise safety concerns"],
-    "reading": "the safety claim is fully scaffolded — a real literature behind every sub-claim, not a gap"
+  {
+   "claim": "base editing is more precise than CRISPR-Cas9",
+   "both_sides": 3,
+   "lane": "subject",
+   "verdict": "not_established_unbenchmarked",
+   "tally": {
+    "supports": 0,
+    "contradicts": 0,
+    "unrelated": 15
+   },
+   "lane_note": "only 3 papers cover both sides of this comparison; the field describes base editing avoiding double-strand breaks and reporting 'no off-target mutations', but head-to-head precision benchmarks against CRISPR-Cas9 are almost absent — assumed, rarely demonstrated"
   }
+ ],
+ "stance_composition_pct": {
+  "what": "share of papers by stance toward the claim, normalised to 100%",
+  "rows": [
+   {
+    "label": "CRISPR — whole corpus",
+    "n": 96904,
+    "supporting": 66.6,
+    "qualifying": 13.0,
+    "contradicting": 1.8,
+    "neutral": 18.6
+   },
+   {
+    "label": "…treats cancer",
+    "n": 164,
+    "supporting": 74.4,
+    "qualifying": 13.4,
+    "contradicting": 5.5,
+    "neutral": 6.7
+   },
+   {
+    "label": "…off-target effects",
+    "n": 107,
+    "supporting": 60.7,
+    "qualifying": 26.2,
+    "contradicting": 3.7,
+    "neutral": 9.3
+   }
+  ]
+ },
+ "research_per_year": {
+  "what": "research-index papers whose title carries the phrase 'CRISPR gene editing', by publication year, matched on Prism's live vocabulary (the broad topic 'CRISPR and Genetic Engineering' holds ~96,900 papers; this is the narrow title-phrase slice)",
+  "series": [
+   [
+    2017,
+    12
+   ],
+   [
+    2018,
+    33
+   ],
+   [
+    2019,
+    46
+   ],
+   [
+    2020,
+    32
+   ],
+   [
+    2021,
+    34
+   ],
+   [
+    2022,
+    52
+   ],
+   [
+    2023,
+    41
+   ],
+   [
+    2024,
+    56
+   ],
+   [
+    2025,
+    68
+   ]
+  ]
+ },
+ "stance_trends": {
+  "tool": "research.stance_trends",
+  "what": "orientation framing of the CRISPR literature per year, 2017-2025; growth measured late-third vs early-third of the window",
+  "papers": 4422,
+  "framing_growth_ratio": {
+   "breakthrough": 1.72,
+   "problem_identifying": 1.68,
+   "promising": 1.5,
+   "cautionary": 1.43,
+   "critical": 0.7
+  },
+  "framing_growth_cagr_pct": {
+   "promising": 10.8,
+   "cautionary": 10.7,
+   "descriptive": 7.7,
+   "breakthrough": 7.2,
+   "critical": "falling"
+  },
+  "contested_pct_by_year": {
+   "2017": 3.7,
+   "2018": 2.8,
+   "2019": 6.4,
+   "2020": 5.0,
+   "2021": 4.2,
+   "2022": 4.8,
+   "2023": 3.9,
+   "2024": 3.9,
+   "2025": 3.8
+  },
+  "total_by_year": {
+   "2017": 725,
+   "2018": 777,
+   "2019": 863,
+   "2020": 1032,
+   "2021": 1034,
+   "2022": 1156,
+   "2023": 1243,
+   "2024": 1026,
+   "2025": 1282
+  },
+  "framing_shift": {
+   "early_contested_pct": 4.4,
+   "late_contested_pct": 3.9,
+   "delta_pct_points": -0.5,
+   "reading": "the balance of framing is broadly unchanged"
+  }
+ },
+ "news": {
+  "tool": "news.trends + news.geography",
+  "window": "2024-2026 (news ingest censored at 2026-06-01)",
+  "articles_total": 294,
+  "year_2025": {
+   "articles": 161,
+   "positive": 153,
+   "negative": 8,
+   "high_priority_pct": 92.5
+  },
+  "note": "news on CRISPR is a thin, high-priority, almost-uniformly-positive stream; the qualifying/cautionary nuance lives in the research layer, not the news layer",
+  "geography_country_share_pct": {
+   "united_states": 35.2,
+   "united_kingdom": 11.0,
+   "china": 4.8,
+   "india": 4.8
+  },
+  "geography_caveat": "the place an article is ABOUT, not where published; only 43.3% of articles place cleanly, and acronym collisions inflate some low-count rows — directional, not precise"
+ },
+ "research_gaps": {
+  "tool": "research.gaps",
+  "claim": "CRISPR gene editing has significant off-target effects",
+  "components_evidenced": 4,
+  "components_unevidenced": 0,
+  "components": [
+   "off-target mutations occur",
+   "off-target effects are significant",
+   "off-target activity varies with guide-RNA design",
+   "significant off-target effects raise safety concerns"
+  ],
+  "reading": "the safety claim is fully scaffolded — a real literature behind every sub-claim, not a gap"
+ }
 }

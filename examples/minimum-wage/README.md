@@ -3,8 +3,8 @@
 > The same method as the health examples ([fasting](../intermittent-fasting-glycemic-control/),
 > [semaglutide](../semaglutide/), [CRISPR](../crispr-gene-editing/)), now on **economics** — to show
 > the honesty model isn't a health trick. Five claims from the minimum-wage debate, measured from the
-> corpus and ranked by how much both-sides evidence stands behind each. Every count is computed in
-> ClickHouse; every quoted finding is verbatim from the source and verified against it.
+> corpus and ranked by how much both-sides evidence stands behind each. Every count is measured from
+> the data; every quoted finding is verbatim from the source and verified against it.
 
 **Subject:** minimum wage · **Retrieved:** 2026-11-06 · **Tool:** `find_evidence` ×5
 

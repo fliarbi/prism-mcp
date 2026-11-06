@@ -2,7 +2,7 @@
 
 > What a research literature actually says when you stop asking one question and map the whole
 > topic — six claims, each measured from the corpus, ranked by how the evidence leans, with the
-> thin lanes called out instead of guessed. Every number is computed in ClickHouse over Prism's
+> thin lanes called out instead of guessed. Every number is measured over Prism's
 > corpora; every quoted finding is copied verbatim from the source and verified against it.
 
 **Topic:** intermittent fasting · **Retrieved:** 2026-11-06 · **Interactive version:** <https://fliarbi.com/demo/prism-examples/intermittent-fasting/>
@@ -139,10 +139,10 @@ retrieved payload and [`index.html`](./index.html) for the interactive version.
 
 - **Lane** — a topic count and a claim count differ by orders of magnitude; a verdict is read from
   the claim lane, never from one pole. Thin lanes are reported inconclusive, not charted.
-- **Window** — each corpus is counted over its own window (typed research 2017–2025, PubMed
+- **Window** — each corpus is counted over its own window (typed research 2017–2025, biomedical index
   1990–2025); counts across corpora are never added.
-- **Coverage** — every number is computed under a strict shard read; a shard outage returns an
-  error, not a silent undercount.
+- **Coverage** — every number is computed under the coverage check; if part of the data is unavailable the answer
+  says so, never a silent undercount.
 - **Evidence vs. interpretation** — effect sizes are verbatim and verified; stance and "reading"
   label the corpus, not the truth of a claim.
 - **Units** — only like-with-like (the blood-pressure numbers) ever share an axis.

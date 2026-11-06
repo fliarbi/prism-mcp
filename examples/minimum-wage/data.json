@@ -1,49 +1,142 @@
 {
-  "_provenance": {
-    "subject": "minimum wage (economics / labour policy)",
-    "retrieved_at": "2026-11-06",
-    "source": "Prism public API — research.evidence (one call per angle)",
-    "coverage": {"research_typed_pct": 107, "research_pct": 104.2, "strict_shard_read": true},
-    "note": "Counts/shares computed in ClickHouse. Quoted findings verbatim and verified. Two angles fell to the subject lane (0 and 2 both-sides papers) and are reported that way, not charted as established."
+ "_provenance": {
+  "subject": "minimum wage (economics / labour policy)",
+  "retrieved_at": "2026-11-06",
+  "source": "Prism public API — research.evidence (one call per angle)",
+  "coverage": {
+   "research_typed_pct": 107,
+   "research_pct": 104.2
   },
-  "angles": [
-    {"claim": "raising the minimum wage increases consumer prices",
-     "both_sides": 101, "lane": "intersection", "verdict": "supported", "mean_stance": 0.116, "contested_pct": 41.6,
-     "sides": {"supporting": 36, "qualifying": 25, "contradicting": 17, "neutral": 23},
-     "tally": {"supports": 5, "contradicts": 0, "qualifies": 0, "read": 5, "tier_weighted_supports": 14},
-     "reading": "the literature on this is actively contested — a large share of papers frame it as a problem, a caution or a criticism",
-     "note": "framing is contested, but the high-tier documents actually read converge on yes — near-full price pass-through",
-     "evidence": ["\"we show that restaurant prices rise in response to minimum wage increases\" (Aaronson, J. Human Resources 2008)", "\"near-full price pass-through of minimum wages\" (Ashenfelter & Jurajda, McDonald's, J. Labor Econ 2022)", "\"nearly all of the minimum wage increase is passed through to consumers\" (Allegretto & Reich 2025)"]},
-    {"claim": "raising the minimum wage reduces employment",
-     "both_sides": 238, "lane": "intersection", "verdict": "conflicting", "mean_stance": 0.062, "contested_pct": 33.6,
-     "sides": {"supporting": 54, "qualifying": 61, "contradicting": 19, "neutral": 104},
-     "tally": {"supports": 0, "contradicts": 1, "read": 1, "tier_weighted_contradicts": 2},
-     "reading": "mostly positive framing, with a substantial cautionary minority",
-     "note": "the textbook claim — well studied, genuinely unsettled, lean near zero; the read document found no adverse effect",
-     "evidence": ["\"I find no evidence that these small, incremental increases ... have an adverse effect on hours worked or the job destruction rate\" (Bishop 2018)"]},
-    {"claim": "raising the minimum wage reduces poverty",
-     "both_sides": 1149, "lane": "intersection", "verdict": "conflicting", "mean_stance": 0.044, "contested_pct": 37.4,
-     "sides": {"supporting": 250, "qualifying": 351, "contradicting": 79, "neutral": 469},
-     "tally": {"supports": 1, "contradicts": 0, "read": 1, "tier_weighted_supports": 3},
-     "reading": "mostly positive framing, with a substantial cautionary minority",
-     "note": "the deepest lane, but qualifying papers (351) outnumber supporting (250) — heavily hedged, no net lean"},
-    {"claim": "raising the minimum wage reduces teenage employment",
-     "both_sides": 2, "lane": "subject", "verdict": "not_established_thin",
-     "tally": {"supports": 1, "contradicts": 1},
-     "lane_note": "only 2 papers cover both sides; the famous NYS study finds a −20% teen-employment effect, another finds well-off teens gain at the expense of poorer ones — but the both-sides title lane is almost empty",
-     "news_subject_lane": 3009},
-    {"claim": "raising the minimum wage causes small business closures",
-     "both_sides": 0, "lane": "subject", "verdict": "not_established_no_lane",
-     "tally": {"all_unrelated": true, "read": 0},
-     "lane_note": "zero papers cover both sides of this claim (the phrase 'small business closures' appears in one title) — the alarm has essentially no direct research lane, against ~2,959 news mentions",
-     "news_subject_lane": 2959}
-  ],
-  "stance_composition_pct": {
-    "what": "share of papers that support / qualify / contradict each claim, normalised to 100%",
-    "rows": [
-      {"label": "Employment falls", "n": 238, "supporting": 22.7, "qualifying": 25.6, "contradicting": 8.0, "neutral": 43.7},
-      {"label": "Poverty falls", "n": 1149, "supporting": 21.8, "qualifying": 30.5, "contradicting": 6.9, "neutral": 40.8},
-      {"label": "Consumer prices rise", "n": 101, "supporting": 35.6, "qualifying": 24.8, "contradicting": 16.8, "neutral": 22.8}
-    ]
+  "note": "Counts and shares measured from the data. Quoted findings verbatim and verified. Two angles fell to the subject lane (0 and 2 both-sides papers) and are reported that way, not charted as established."
+ },
+ "angles": [
+  {
+   "claim": "raising the minimum wage increases consumer prices",
+   "both_sides": 101,
+   "lane": "intersection",
+   "verdict": "supported",
+   "mean_stance": 0.116,
+   "contested_pct": 41.6,
+   "sides": {
+    "supporting": 36,
+    "qualifying": 25,
+    "contradicting": 17,
+    "neutral": 23
+   },
+   "tally": {
+    "supports": 5,
+    "contradicts": 0,
+    "qualifies": 0,
+    "read": 5,
+    "tier_weighted_supports": 14
+   },
+   "reading": "the literature on this is actively contested — a large share of papers frame it as a problem, a caution or a criticism",
+   "note": "framing is contested, but the high-tier documents actually read converge on yes — near-full price pass-through",
+   "evidence": [
+    "\"we show that restaurant prices rise in response to minimum wage increases\" (Aaronson, J. Human Resources 2008)",
+    "\"near-full price pass-through of minimum wages\" (Ashenfelter & Jurajda, McDonald's, J. Labor Econ 2022)",
+    "\"nearly all of the minimum wage increase is passed through to consumers\" (Allegretto & Reich 2025)"
+   ]
+  },
+  {
+   "claim": "raising the minimum wage reduces employment",
+   "both_sides": 238,
+   "lane": "intersection",
+   "verdict": "conflicting",
+   "mean_stance": 0.062,
+   "contested_pct": 33.6,
+   "sides": {
+    "supporting": 54,
+    "qualifying": 61,
+    "contradicting": 19,
+    "neutral": 104
+   },
+   "tally": {
+    "supports": 0,
+    "contradicts": 1,
+    "read": 1,
+    "tier_weighted_contradicts": 2
+   },
+   "reading": "mostly positive framing, with a substantial cautionary minority",
+   "note": "the textbook claim — well studied, genuinely unsettled, lean near zero; the read document found no adverse effect",
+   "evidence": [
+    "\"I find no evidence that these small, incremental increases ... have an adverse effect on hours worked or the job destruction rate\" (Bishop 2018)"
+   ]
+  },
+  {
+   "claim": "raising the minimum wage reduces poverty",
+   "both_sides": 1149,
+   "lane": "intersection",
+   "verdict": "conflicting",
+   "mean_stance": 0.044,
+   "contested_pct": 37.4,
+   "sides": {
+    "supporting": 250,
+    "qualifying": 351,
+    "contradicting": 79,
+    "neutral": 469
+   },
+   "tally": {
+    "supports": 1,
+    "contradicts": 0,
+    "read": 1,
+    "tier_weighted_supports": 3
+   },
+   "reading": "mostly positive framing, with a substantial cautionary minority",
+   "note": "the deepest lane, but qualifying papers (351) outnumber supporting (250) — heavily hedged, no net lean"
+  },
+  {
+   "claim": "raising the minimum wage reduces teenage employment",
+   "both_sides": 2,
+   "lane": "subject",
+   "verdict": "not_established_thin",
+   "tally": {
+    "supports": 1,
+    "contradicts": 1
+   },
+   "lane_note": "only 2 papers cover both sides; the famous NYS study finds a −20% teen-employment effect, another finds well-off teens gain at the expense of poorer ones — but the both-sides title lane is almost empty",
+   "news_subject_lane": 3009
+  },
+  {
+   "claim": "raising the minimum wage causes small business closures",
+   "both_sides": 0,
+   "lane": "subject",
+   "verdict": "not_established_no_lane",
+   "tally": {
+    "all_unrelated": true,
+    "read": 0
+   },
+   "lane_note": "zero papers cover both sides of this claim (the phrase 'small business closures' appears in one title) — the alarm has essentially no direct research lane, against ~2,959 news mentions",
+   "news_subject_lane": 2959
   }
+ ],
+ "stance_composition_pct": {
+  "what": "share of papers that support / qualify / contradict each claim, normalised to 100%",
+  "rows": [
+   {
+    "label": "Employment falls",
+    "n": 238,
+    "supporting": 22.7,
+    "qualifying": 25.6,
+    "contradicting": 8.0,
+    "neutral": 43.7
+   },
+   {
+    "label": "Poverty falls",
+    "n": 1149,
+    "supporting": 21.8,
+    "qualifying": 30.5,
+    "contradicting": 6.9,
+    "neutral": 40.8
+   },
+   {
+    "label": "Consumer prices rise",
+    "n": 101,
+    "supporting": 35.6,
+    "qualifying": 24.8,
+    "contradicting": 16.8,
+    "neutral": 22.8
+   }
+  ]
+ }
 }

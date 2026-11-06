@@ -4,7 +4,7 @@
 > *place* — eastern UP (Purvanchal) — and in doing so exercises a different half of Prism: the news
 > problem-space analytics and the extracted disease-claim layer, not title-matched research. It also
 > shows the honest boundary: where the academic corpus **can't** resolve a sub-national region, Prism
-> says so and routes around it. Every count is computed in ClickHouse; every quoted factor is
+> says so and routes around it. Every count is measured from the data; every quoted factor is
 > extracted and verified.
 
 **Subject:** eastern Uttar Pradesh (Purvanchal) · **Retrieved:** 2026-11-06 · **Tools:**

@@ -4,7 +4,7 @@
 > [semaglutide](../semaglutide/) examples, on a field everyone agrees is a breakthrough — which is
 > exactly why it's a good test. Five claims measured from the corpus, then four deeper passes
 > (framing-over-time, journals-vs-headlines, geography, gap analysis) that a single evidence lookup
-> can't give you. Every count is computed in ClickHouse over Prism's corpora; every quoted finding is
+> can't give you. Every count is measured over Prism's corpora; every quoted finding is
 > verbatim from the source and verified against it.
 
 **Subject:** CRISPR gene editing · **Retrieved:** 2026-11-06 · **Tools:** `find_evidence` ×5,
@@ -92,7 +92,7 @@ That is the entire reason every Prism payload ships the share next to the count.
 
 "CRISPR cures sickle cell disease" is CRISPR's most famous real-world win (the first approved
 CRISPR therapy). But when you ask for it as a *claim*, Prism is honest about a mechanical limit: the
-outcome pole resolved only to MeSH terms (`Anemia, Sickle Cell`), which didn't produce a clean
+outcome pole matched only biomedical subject headings (`Anemia, Sickle Cell`), which didn't produce a clean
 both-sides intersection against the typed research index — so the tool **fell back to the subject
 lane and said so**, rather than inventing a count. Then it surfaced the evidence a different way:
 
