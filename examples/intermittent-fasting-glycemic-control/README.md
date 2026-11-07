@@ -1,148 +1,138 @@
 # Intermittent fasting: a six-angle meta-analysis
 
-> What a research literature actually says when you stop asking one question and map the whole
-> topic — six claims, each measured from the corpus, ranked by how the evidence leans, with the
-> thin lanes called out instead of guessed. Every number is measured over Prism's
-> corpora; every quoted finding is copied verbatim from the source and verified against it.
+> Six claims about intermittent fasting tested against both sides of the published literature — 3 that the evidence settles, 2 it leaves genuinely contested, 1 with too thin a lane to call.
 
-**Topic:** intermittent fasting · **Retrieved:** 2026-11-06 · **Interactive version:** <https://fliarbi.com/demo/prism-examples/intermittent-fasting/>
+**▶ Interactive version** (same sections, light/dark): **<https://fliarbi.com/demo/prism-examples/intermittent-fasting-glycemic-control/>** — also committed here as [`index.html`](index.html).
+
+Every number below is **retrieved, not generated**. Each angle is a claim run against the research layer on **both sides** — the papers that affirm it and the papers that push back — so the verdict reflects how much evidence exists and which way it leans, not a single cherry-picked study. Effect sizes are quoted verbatim and verified; thin lanes are reported as inconclusive rather than charted as fact.
+
+| | |
+|---|---|
+| **Subject** | intermittent fasting |
+| **Retrieved** | 2026-11-06 |
+| **Coverage** | research typed 107% · research 104.2% · biomedical 100% |
+| **Source** | Prism public API — research.evidence (one call per angle) + research.brief |
+
+## How to read this
+
+Each section is one **claim**. The bar shows how the papers *framed* it — **supporting**, **qualifying** (yes, but…), **contradicting**, or **neutral** — and the verdict weighs that spread against how deep the evidence runs. A claim can be loudly discussed yet thinly evidenced; the brief says which.
+
+## Overview — evidence depth and framing
+
+Two cross-cutting views before the angle-by-angle read: how much both-sides evidence each claim has, and how the literature splits on framing.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/evidence-depth-dark.png"><img alt="Papers covering both sides of each intermittent fasting claim, coloured by verdict" src="assets/evidence-depth-light.png" width="100%"></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stance-composition-dark.png"><img alt="Share of papers supporting, qualifying, contradicting or staying neutral on each claim" src="assets/stance-composition-light.png" width="100%"></picture>
+
+## Angle 1 · Well supported — Intermittent fasting lowers blood pressure
+
+Overwhelmingly positive framing, which on a citation-weighted corpus can mean consensus or can mean publication bias.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-0-dark.png"><img alt="Framing of papers on: Intermittent fasting lowers blood pressure" src="assets/angle-0-light.png" width="100%"></picture>
+
+**Common findings**
+
+- Of **54 papers** on both sides: 33 support · 8 qualify · 0 contradict · 13 neutral.
+
+**Verdict:** Well supported · **both-sides papers:** 54 · **mean stance:** +0.37
+
+## Angle 2 · Well supported — Intermittent fasting improves non-alcoholic fatty liver disease
+
+Mostly positive framing, with a substantial cautionary minority.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-1-dark.png"><img alt="Framing of papers on: Intermittent fasting improves non-alcoholic fatty liver disease" src="assets/angle-1-light.png" width="100%"></picture>
+
+**Common findings**
+
+- Of **99 papers** on both sides: 61 support · 20 qualify · 1 contradict · 17 neutral.
+
+**Verdict:** Well supported · **both-sides papers:** 99 · **mean stance:** +0.36
+
+## Angle 3 · Supported — Intermittent fasting improves glycemic control in type 2 diabetes
+
+Mostly positive framing, with a substantial cautionary minority.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-2-dark.png"><img alt="Framing of papers on: Intermittent fasting improves glycemic control in type 2 diabetes" src="assets/angle-2-light.png" width="100%"></picture>
+
+**Common findings**
+
+- Of **99 papers** on both sides: 37 support · 24 qualify · 2 contradict · 36 neutral.
+
+**Verdict:** Supported · **both-sides papers:** 99 · **mean stance:** +0.18
+
+## Angle 4 · No advantage — Intermittent fasting outperforms continuous calorie restriction for weight loss
+
+Mixed framing with no dominant lean. Only 14 papers cover both sides; evidence is about the subject alone and does not establish superiority.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-3-dark.png"><img alt="Framing of papers on: Intermittent fasting outperforms continuous calorie restriction for weight loss" src="assets/angle-3-light.png" width="100%"></picture>
+
+**Common findings**
+
+- Of **14 papers** on both sides: 2 support · 3 qualify · 0 contradict · 11 neutral.
+
+**Verdict:** No advantage · **both-sides papers:** 14 · **mean stance:** +0.17
+
+## Angle 5 · Conflicting — Intermittent fasting increases the risk of hypoglycaemia in type 2 diabetes
+
+Automated lane over-resolved to the diabetes field; read from documents. Corley 2018 RCT: RR 2.05 (1.17-3.52); INTERFAST-2 (Obermayer 2023): no severe hypoglycemia; Ramadan review: conflicting results.
+
+> **Lane not cleanly resolved — read from the documents.** Not charted as established; the finding is reported from the individual studies.
+
+**Common findings**
+
+
+**Verdict:** Conflicting · **both-sides papers:** mixed
+
+## Angle 6 · Not established — Intermittent fasting reduces cardiovascular disease risk
+
+Mostly positive framing, with a substantial cautionary minority. Only 16 papers cover both sides; most matched papers are surrogate markers or animal studies.
+
+> **Thin lane — 16 papers cover both sides.** Not charted as established; reported as the boundary of the evidence.
+
+**Common findings**
+
+
+**Verdict:** Not established · **both-sides papers:** 16 · **mean stance:** +0.10
+
+## Research output by year
+
+The field's own tempo: research-index papers on this subject per year, from 468 in 2017 to 1,432 in 2025.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/research-trend-dark.png"><img alt="Research output per year" src="assets/research-trend-light.png" width="100%"></picture>
+
+## Pooled effects, with confidence intervals
+
+Where the settled angles carry pooled effect sizes, here they are verbatim — point estimate and 95% confidence interval, each verified against its source.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/pooled-bp-dark.png"><img alt="Pooled blood-pressure mean differences with confidence intervals" src="assets/pooled-bp-light.png" width="100%"></picture>
+
+**Common findings**
+
+- **Systolic BP: -4.43 mmHg** (95% CI -5.83–-3.03) (Guo 2025, meta-analysis) — [10.1038/s41366-025-01823-4](https://doi.org/10.1038/s41366-025-01823-4)
+- **Diastolic BP: -2 mmHg** (95% CI -3.23–-0.78) (Guo 2025, meta-analysis) — [10.1038/s41366-025-01823-4](https://doi.org/10.1038/s41366-025-01823-4)
+- **Systolic BP (modified alternate-day fasting): -7.24 mmHg** (95% CI -11.9–-2.58) (Kibret 2025, network meta-analysis) — [10.1007/s13668-025-00684-7](https://doi.org/10.1007/s13668-025-00684-7)
+- **hepatic steatosis (NAFLD): -33.22 CAP dB/m** (95% CI -50.72–-15.72) (Saleh 2024, meta-analysis) — [10.1016/j.clnesp.2023.11.009](https://doi.org/10.1016/j.clnesp.2023.11.009)
+- **ALT (NAFLD): -9.1 U/L** (95% CI -12.45–-5.75) (Saleh 2024, meta-analysis) — [10.1016/j.clnesp.2023.11.009](https://doi.org/10.1016/j.clnesp.2023.11.009)
+- **HbA1c (T2D): -0.08 %** (95% CI -0.13–-0.02) (Lu 2025, meta-analysis) — [10.1186/s41043-025-01039-2](https://doi.org/10.1186/s41043-025-01039-2)
+- **fasting blood glucose: -3.34 mg/dL** (95% CI -6.24–-0.45) (Lu 2025, meta-analysis) — [10.1186/s41043-025-01039-2](https://doi.org/10.1186/s41043-025-01039-2)
+
+## Where the research comes from
+
+First-author affiliation of the research-index papers — a read on who is producing the evidence.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/geography-dark.png"><img alt="Research papers by first-author country" src="assets/geography-light.png" width="100%"></picture>
+
+**Common findings**
+
+- Led by **United States** (4,308), **China** (2,332), **Japan** (1,182).
+
+## Method & limits
+
+Counts and shares measured from the data. Effect sizes copied verbatim and verified against source. 'reading' is Prism's interpretation of the slice, not a verdict on truth. Thin claim lanes are reported inconclusive, not charted.
+
+Each angle is one call against the research-evidence layer: the claim is posed, both sides of the literature are retrieved, and the framing tally is computed from the returned papers. Thin lanes are named, not inflated — the point of the exercise is to show where the evidence is deep, where it is contested, and where it barely exists.
 
 ---
 
-## The finding in one chart
-
-The single most useful thing a cross-angle view surfaces is the **gap between what fasting is
-promoted for and where the evidence actually is.** The two angles fasting is most *marketed*
-for — rapid weight loss and heart-disease prevention — are exactly the two with the **thinnest,
-least conclusive** evidence. The angles where the evidence is **deep and positive** are the
-quieter metabolic ones: blood pressure, liver fat, and blood glucose.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/belief-vs-evidence-dark.png">
-  <img alt="Scatter of six fasting angles by evidence depth (papers covering both sides) versus how the evidence leans. Blood pressure, fatty liver and glycemic control sit top-right (deep and positive); weight-loss-vs-dieting, hypoglycaemia and cardiovascular disease sit in the thin left region." src="./assets/belief-vs-evidence-light.png" width="100%">
-</picture>
-
-A claim with too few papers covering **both** sides can't be read as evidence either way — Prism
-says so in its `lane_note` rather than reporting a confident number. That's why cardiovascular
-disease and the head-to-head vs. dieting sit in the "too thin to conclude" region, not as a verdict.
-
----
-
-## Ranked by how much evidence stands behind it
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/evidence-depth-dark.png">
-  <img alt="Horizontal bar chart of the six angles by number of papers covering both sides of the claim: glycemic control 99 (supported), fatty liver 99 (well supported), blood pressure 54 (well supported), hypoglycaemia ~19 (conflicting), cardiovascular 16 (not established), weight loss vs dieting 14 (no advantage)." src="./assets/evidence-depth-light.png" width="100%">
-</picture>
-
-| Angle | Both-sides papers | Verdict | Prism's reading of the slice | Pooled effect (verbatim) |
-|---|--:|---|---|---|
-| **Blood pressure** | 54 | Well supported | *"overwhelmingly positive framing — consensus or publication bias"* | SBP −4.43, DBP −2.00 mmHg |
-| **Fatty liver (NAFLD)** | 99 | Well supported | *"mostly positive, with a cautionary minority"* | steatosis −33.2 CAP dB/m, ALT −9.1 U/L |
-| **Glycemic control (T2D)** | 99 | Supported | *"mostly positive, with a cautionary minority"* | HbA1c −0.08 %, fasting glucose −3.34 mg/dL |
-| **Hypoglycaemia (safety)** | ~19\* | Conflicting | — | one RCT RR 2.05; another "no severe hypoglycemia" |
-| **Cardiovascular disease** | 16 | Not established | *"positive framing, cautionary minority"* | surrogate markers & animal studies only |
-| **Weight loss vs. dieting** | 14 | No advantage | *"mixed framing, no dominant lean"* | RCTs: "no significant difference" |
-
-<sub>\* the hypoglycaemia claim lane over-resolved to the broad diabetes field, so it is read from the specific documents rather than charted by count.</sub>
-
----
-
-## Pooled effect on blood pressure
-
-The one place three estimates share a unit (mmHg), so they share one axis — a real forest plot.
-All three favour fasting, and the confidence intervals clear zero.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/bp-forest-dark.png">
-  <img alt="Forest plot of blood-pressure reductions in mmHg versus control: systolic −4.43 (CI −5.83 to −3.03), diastolic −2.00 (CI −3.23 to −0.78), systolic under modified alternate-day fasting −7.24 (CI −11.90 to −2.58). All intervals favour fasting." src="./assets/bp-forest-light.png" width="100%">
-</picture>
-
-Other angles are measured in different units (HbA1c %, CAP dB/m, U/L) and are **never** put on a
-shared axis — each is read on its own scale in the table above.
-
----
-
-## What the documents said — the spread is the point
-
-- **Supports (fatty liver, meta-analysis):** *"IF regimens reduced steatosis scores (WMD −33.22 CAP dB/m, 95% CI −50.72 to −15.72) … as well as ALT (−9.10 U/L) … versus controls."* — Saleh et al. 2024
-- **Supports (blood pressure, meta-analysis):** *"IF significantly reduced systolic blood pressure (−4.43 mmHg) and diastolic blood pressure (−2.00 mmHg)."* — Guo et al. 2025
-- **Contradicts superiority (vs. dieting, RCT):** *"No significant difference between ICR and CCR regarding weight change at wk102 was observed (p = 0.63)."* — Pannen et al. 2021
-- **Conflicting (safety, two RCTs):** *"Fasting increased the rate of hypoglycaemia (RR 2.05, 95% CI 1.17 to 3.52)."* — Corley 2018, **versus** *"No severe hypoglycemia occurred."* — INTERFAST-2, Obermayer 2023
-
----
-
-## Direction of travel
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/trend-dark.png">
-  <img alt="Line chart of research output on intermittent fasting per year, rising from 468 papers in 2017 to 1,432 in 2025." src="./assets/trend-light.png" width="100%">
-</picture>
-
----
-
-## The cross-angle insights
-
-1. **Belief ≠ evidence.** Fasting's two most-marketed benefits — beating ordinary dieting for weight
-   loss, and preventing heart disease — are the two the corpus *least* supports. Its best-evidenced
-   effects are the unglamorous metabolic ones.
-2. **It moves intermediates, not (yet) outcomes.** Every well-supported angle is a metabolic
-   *marker* — blood pressure, liver enzymes, HbA1c, fasting glucose. The hard clinical *outcomes*
-   (cardiovascular events, superiority over calorie restriction) are exactly where the lane goes
-   thin. Fasting reliably shifts the dials; proof that the dials translate into events isn't in yet.
-3. **Depth sets confidence.** The three supported angles each rest on ≥54 both-sides papers and
-   very-high-strength meta-analyses; the three weak ones rest on ≤16, or on surrogate and animal
-   studies. Prism refuses to read a verdict from a thin lane — the honest "we can't tell yet."
-4. **Consistency varies.** Blood pressure is the least divided literature (≈15% contested) and the
-   cleanest consensus; cardiovascular disease is the most divided (≈30%) — which, with its thin
-   lane, is why it lands as *not established* rather than *null*.
-5. **The one safety flag is real but unsettled.** For people on glucose-lowering medication, one RCT
-   found twice the hypoglycaemia rate; others found none. The signal doesn't disappear — it depends
-   on medication management, and the report says so rather than averaging it away.
-
----
-
-## Reproduce it — one call per angle
-
-Each row is one `research.evidence` call. The subject stays fixed; the *claim* is the angle.
-Needs one Fliar API key.
-
-```bash
-for claim in \
-  "intermittent fasting lowers blood pressure" \
-  "intermittent fasting improves non-alcoholic fatty liver disease" \
-  "intermittent fasting improves glycemic control in type 2 diabetes" \
-  "intermittent fasting outperforms continuous calorie restriction for weight loss" \
-  "intermittent fasting increases the risk of hypoglycaemia in type 2 diabetes" \
-  "intermittent fasting reduces cardiovascular disease risk" ; do
-  curl -s https://radar-api.fliarbi.com/prism/v1/research.evidence \
-    -H "Authorization: Bearer $PRISM_KEY" -H "Content-Type: application/json" \
-    -d "{\"claim\":\"$claim\"}" \
-  | jq '{claim: .subject.claim,
-         both_sides: .data.lane_counts.intersection,     # is the evidence even there?
-         lean:       .data.corpus_stance.sides,           # supporting / qualifying / contradicting / neutral
-         reading:    .data.corpus_stance.reading,         # Prism's one-line read of the slice
-         verdict:    .data.tally.counts}'                 # how the read documents actually fall
-done
-```
-
-Over MCP (Claude Desktop, ChatGPT connector, Cursor, n8n) the same call is a tool:
-`find_evidence { "claim": "…" }`. To add an angle, add a claim; to compare two head to head in one
-call, use `compare_claims { "claim_a": "…", "claim_b": "…" }`.
-
-The charts above were generated from these responses — see [`data.json`](./data.json) for the full
-retrieved payload and [`index.html`](./index.html) for the interactive version.
-
----
-
-## How to read the numbers (the honesty model)
-
-- **Lane** — a topic count and a claim count differ by orders of magnitude; a verdict is read from
-  the claim lane, never from one pole. Thin lanes are reported inconclusive, not charted.
-- **Window** — each corpus is counted over its own window (typed research 2017–2025, biomedical index
-  1990–2025); counts across corpora are never added.
-- **Coverage** — every number is computed under the coverage check; if part of the data is unavailable the answer
-  says so, never a silent undercount.
-- **Evidence vs. interpretation** — effect sizes are verbatim and verified; stance and "reading"
-  label the corpus, not the truth of a claim.
-- **Units** — only like-with-like (the blood-pressure numbers) ever share an axis.
+*A Prism worked example. Charts are generated from the retrieved data; every quoted finding is verbatim and verified. [`data.json`](data.json) holds the underlying numbers.*

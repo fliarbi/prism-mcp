@@ -1,126 +1,100 @@
-# The minimum wage: a five-angle meta-analysis
+# Minimum wage (economics / labour policy): a five-angle meta-analysis
 
-> The same method as the health examples ([fasting](../intermittent-fasting-glycemic-control/),
-> [semaglutide](../semaglutide/), [CRISPR](../crispr-gene-editing/)), now on **economics** — to show
-> the honesty model isn't a health trick. Five claims from the minimum-wage debate, measured from the
-> corpus and ranked by how much both-sides evidence stands behind each. Every count is measured from
-> the data; every quoted finding is verbatim from the source and verified against it.
+> Five claims about minimum wage tested against both sides of the published literature — 1 that the evidence settles, 2 it leaves genuinely contested, 2 with too thin a lane to call.
 
-**Subject:** minimum wage · **Retrieved:** 2026-11-06 · **Tool:** `find_evidence` ×5
+**▶ Interactive version** (same sections, light/dark): **<https://fliarbi.com/demo/prism-examples/minimum-wage/>** — also committed here as [`index.html`](index.html).
 
----
+Every number below is **retrieved, not generated**. Each angle is a claim run against the research layer on **both sides** — the papers that affirm it and the papers that push back — so the verdict reflects how much evidence exists and which way it leans, not a single cherry-picked study. Effect sizes are quoted verbatim and verified; thin lanes are reported as inconclusive rather than charted as fact.
 
-## The finding in one chart
+| | |
+|---|---|
+| **Subject** | minimum wage (economics / labour policy) |
+| **Retrieved** | 2026-11-06 |
+| **Coverage** | research typed 107% · research 104.2% |
+| **Source** | Prism public API — research.evidence (one call per angle) |
 
-The minimum-wage debate is loud about **jobs** — teenagers priced out, small businesses shuttered.
-But those are exactly the claims the research corpus can *least* substantiate: "small-business
-closures" has **0** both-sides papers and "teen employment falls" has **2**, even though each draws
-roughly **3,000** news mentions. The effect the corpus actually pins down is the one nobody argues
-about: **prices rise.**
+## How to read this
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/belief-vs-evidence-dark.png">
-  <img alt="Scatter of five minimum-wage claims by evidence depth versus how the evidence leans. Poverty (1,149 papers) and employment (238) sit mid-height with near-zero lean; consumer prices (101) leans slightly positive; teen employment (2) and small-business closures (0) sit in the thin-evidence band at the left." src="./assets/belief-vs-evidence-light.png" width="100%">
-</picture>
+Each section is one **claim**. The bar shows how the papers *framed* it — **supporting**, **qualifying** (yes, but…), **contradicting**, or **neutral** — and the verdict weighs that spread against how deep the evidence runs. A claim can be loudly discussed yet thinly evidenced; the brief says which.
 
----
+## Overview — evidence depth and framing
 
-## Ranked by how much evidence stands behind it
+Two cross-cutting views before the angle-by-angle read: how much both-sides evidence each claim has, and how the literature splits on framing.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/evidence-depth-dark.png">
-  <img alt="Horizontal bars of five claims by both-sides papers: poverty falls 1,149 (conflicting), employment falls 238 (conflicting), consumer prices rise 101 (supported), teen employment falls 2 (thin), small-business closures 0 (thin)." src="./assets/evidence-depth-light.png" width="100%">
-</picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/evidence-depth-dark.png"><img alt="Papers covering both sides of each minimum wage claim, coloured by verdict" src="assets/evidence-depth-light.png" width="100%"></picture>
 
-| Angle | Both-sides papers | Verdict | Prism's reading | Evidence (verbatim) |
-|---|--:|---|---|---|
-| **Consumer prices rise** | 101 | Supported | *"actively contested"* framing — but reads converge | *"near-full price pass-through of minimum wages"* (McDonald's study); supports 5/0 |
-| **Employment falls** | 238 | Conflicting | *"mostly positive, cautionary minority"* | *"no evidence ... of an adverse effect on hours worked or the job destruction rate"* (Bishop 2018) |
-| **Poverty falls** | 1,149 | Conflicting | *"mostly positive, cautionary minority"* | deepest lane, but qualifying (351) **>** supporting (250) — heavily hedged |
-| **Teen employment falls** | 2 \* | Not established | — | NYS study: −20% teen employment; another: well-off teens *gain* — but the lane is 2 papers |
-| **Small-business closures** | 0 \* | Not established | — | **zero** both-sides papers; ~2,959 news mentions |
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stance-composition-dark.png"><img alt="Share of papers supporting, qualifying, contradicting or staying neutral on each claim" src="assets/stance-composition-light.png" width="100%"></picture>
 
-<sub>\* thin / empty claim lanes — the connection is not established at the stated count.</sub>
+## Angle 1 · Supported — Raising the minimum wage increases consumer prices
 
----
+The literature on this is actively contested — a large share of papers frame it as a problem, a caution or a criticism. Framing is contested, but the high-tier documents actually read converge on yes — near-full price pass-through.
 
-## Where the field is actually split
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-0-dark.png"><img alt="Framing of papers on: Raising the minimum wage increases consumer prices" src="assets/angle-0-light.png" width="100%"></picture>
 
-Normalising each lane's stance to 100% shows why "prices" is the resolved one and "jobs" isn't. The
-price claim has the **largest supporting slice** (36%) *and* the largest contradicting slice (17%) —
-polarised, but with a clear plurality and, crucially, convergent high-tier reads behind it.
-Employment and poverty are dominated by **neutral + qualifying** papers — the signature of a question
-the field has studied exhaustively without settling.
+**Common findings**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/stance-composition-dark.png">
-  <img alt="Three 100% stacked bars. Employment falls: 23% supporting, 26% qualifying, 8% contradicting, 44% neutral. Poverty falls: 22% supporting, 31% qualifying, 7% contradicting, 41% neutral. Consumer prices rise: 36% supporting, 25% qualifying, 17% contradicting, 23% neutral." src="./assets/stance-composition-light.png" width="100%">
-</picture>
+- Of **101 papers** on both sides: 36 support · 25 qualify · 17 contradict · 23 neutral.
+- "we show that restaurant prices rise in response to minimum wage increases" (Aaronson, J. Human Resources 2008)
+- "near-full price pass-through of minimum wages" (Ashenfelter & Jurajda, McDonald's, J. Labor Econ 2022)
+- "nearly all of the minimum wage increase is passed through to consumers" (Allegretto & Reich 2025)
 
----
+**Verdict:** Supported · **both-sides papers:** 101 · **mean stance:** +0.12 · **contested:** 41.6%
 
-## What the documents said
+## Angle 2 · Conflicting — Raising the minimum wage reduces employment
 
-- **Prices — the resolved effect.** Three independent studies, one mechanism: *"restaurant prices
-  rise in response to minimum wage increases"* (Aaronson 2008); *"near-full price pass-through"*
-  (Ashenfelter & Jurajda, McDonald's, 2022); *"nearly all of the minimum wage increase is passed
-  through to consumers"* (Allegretto & Reich 2025). When Prism read the actual documents, **5 of 5
-  supported** the claim — even though the corpus-wide *framing* reads "contested."
-- **Employment — the unsettled core.** The flagship read document finds *"no evidence ... of an
-  adverse effect on hours worked or the job destruction rate"* (Bishop 2018) — the modern empirical
-  result that broke the textbook consensus. 238 papers, lean ≈ 0: a genuine standoff.
-- **Teen employment — loud, but a 2-paper lane.** The classic New York State study reports a *"20.2%
-  to 21.8% reduction in the employment of less-skilled, less-educated workers, with the largest
-  effects on those aged 16 to 24"* — while another finds well-off teens *gain* employment at the
-  expense of poorer ones. Real findings, but the both-sides *title* lane is 2 papers: the corpus
-  can't carry the weight the debate puts on this claim.
-- **Small-business closures — the empty lane.** Zero papers title both "minimum wage" and
-  "closures." The research that exists studies profits and adjustment margins (*"the minimum wage
-  hike reduced profits ... adjusting their workforces more aggressively"*, Drucker 2019) — real
-  effects, but not the mass-closure claim the slogan asserts.
+Mostly positive framing, with a substantial cautionary minority. The textbook claim — well studied, genuinely unsettled, lean near zero; the read document found no adverse effect.
 
----
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-1-dark.png"><img alt="Framing of papers on: Raising the minimum wage reduces employment" src="assets/angle-1-light.png" width="100%"></picture>
 
-## The cross-angle insights
+**Common findings**
 
-1. **Volume of debate ≠ depth of evidence.** The two claims shouted loudest — teen layoffs, shuttered
-   small businesses — have the **least** both-sides research (2 and 0 papers), against ~3,000 news
-   mentions each. Prism puts the research lane and the news lane side by side so the gap is visible
-   instead of assumed.
-2. **The settled effect is the boring one.** Prices pass through — convergent, high-tier, 5/5 on the
-   read. It's also the effect no campaign is built around. The corpus resolves the quiet question and
-   leaves the loud ones open.
-3. **"Contested framing" is not "no answer."** The price claim reads 41.6% contested at the framing
-   level, yet the documents actually read converge. Prism separates how papers *frame* a claim from
-   what they *find* — and here they disagree, which is the whole point of reading the documents.
-4. **The mirror of the fasting example.** [Intermittent fasting](../intermittent-fasting-glycemic-control/)
-   is *marketed* for the things it least supports; the minimum wage is *debated* over the things the
-   corpus least covers. Same failure mode — belief outrunning evidence — in a different arena.
+- Of **238 papers** on both sides: 54 support · 61 qualify · 19 contradict · 104 neutral.
+- "I find no evidence that these small, incremental increases ... have an adverse effect on hours worked or the job destruction rate" (Bishop 2018)
+
+**Verdict:** Conflicting · **both-sides papers:** 238 · **mean stance:** +0.06 · **contested:** 33.6%
+
+## Angle 3 · Conflicting — Raising the minimum wage reduces poverty
+
+Mostly positive framing, with a substantial cautionary minority. The deepest lane, but qualifying papers (351) outnumber supporting (250) — heavily hedged, no net lean.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/angle-2-dark.png"><img alt="Framing of papers on: Raising the minimum wage reduces poverty" src="assets/angle-2-light.png" width="100%"></picture>
+
+**Common findings**
+
+- Of **1,149 papers** on both sides: 250 support · 351 qualify · 79 contradict · 469 neutral.
+
+**Verdict:** Conflicting · **both-sides papers:** 1,149 · **mean stance:** +0.04 · **contested:** 37.4%
+
+## Angle 4 · Not established — Raising the minimum wage reduces teenage employment
+
+Only 2 papers cover both sides; the famous NYS study finds a −20% teen-employment effect, another finds well-off teens gain at the expense of poorer ones — but the both-sides title lane is almost empty.
+
+> **Thin lane — 2 papers cover both sides.** Not charted as established; reported as the boundary of the evidence.
+
+**Common findings**
+
+- Discussed far more than it is studied — ~**3,009 news mentions** against this thin research lane.
+
+**Verdict:** Not established · **both-sides papers:** 2
+
+## Angle 5 · Not established — Raising the minimum wage causes small business closures
+
+Zero papers cover both sides of this claim (the phrase 'small business closures' appears in one title) — the alarm has essentially no direct research lane, against ~2,959 news mentions.
+
+> **Thin lane — 0 papers cover both sides.** Not charted as established; reported as the boundary of the evidence.
+
+**Common findings**
+
+- Discussed far more than it is studied — ~**2,959 news mentions** against this thin research lane.
+
+**Verdict:** Not established · **both-sides papers:** 0
+
+## Method & limits
+
+Counts and shares measured from the data. Quoted findings verbatim and verified. Two angles fell to the subject lane (0 and 2 both-sides papers) and are reported that way, not charted as established.
+
+Each angle is one call against the research-evidence layer: the claim is posed, both sides of the literature are retrieved, and the framing tally is computed from the returned papers. Thin lanes are named, not inflated — the point of the exercise is to show where the evidence is deep, where it is contested, and where it barely exists.
 
 ---
 
-## Reproduce it — one call per angle
-
-```bash
-for claim in \
-  "raising the minimum wage increases consumer prices" \
-  "raising the minimum wage reduces employment" \
-  "raising the minimum wage reduces poverty" \
-  "raising the minimum wage reduces teenage employment" \
-  "raising the minimum wage causes small business closures" ; do
-  curl -s https://radar-api.fliarbi.com/prism/v1/research.evidence \
-    -H "Authorization: Bearer $PRISM_KEY" -H "Content-Type: application/json" \
-    -d "{\"claim\":\"$claim\"}" \
-  | jq '{claim: .subject.claim,
-         lane: .data.lane_counts.lane // .data.query.lane,
-         both_sides: .data.lane_counts.intersection,
-         lean: .data.corpus_stance.sides, reading: .data.corpus_stance.reading,
-         verdict: .data.tally.counts, news: .data.volumes.news.n}'
-done
-```
-
-Over MCP it's `find_evidence { "claim": "…" }`. Watch the `lane` field: when `intersection` is `null`
-or small and the lane reads `subject`, the numbers describe the subject alone and **do not** establish
-the claim — that's the teen-employment and small-business-closures case above. See
-[`data.json`](./data.json) for the full payload. The honesty model is identical to the health
-examples; only the subject changed.
+*A Prism worked example. Charts are generated from the retrieved data; every quoted finding is verbatim and verified. [`data.json`](data.json) holds the underlying numbers.*
