@@ -10,7 +10,7 @@ prism compare "narendra modi" "donald trump"
 
 Prism is an intelligence API and MCP server for Claude, ChatGPT, Codex, Cursor and any agent: news
 intelligence, research evidence, health and clinical evidence, patents and innovation signals, geography,
-trend history and forecasting, citations and grounded writing, in **more than 50 tools** over MCP, REST and a command-line client. It sits on
+trend history and forecasting, citations and grounded writing, in **more than 80 tools** over MCP, REST and a command-line client. It sits on
 **more than a billion records**: global news, scientific journals and research papers, health literature,
 patents and social signals, indexed so an assistant can *count, compare, trace and cite* instead of recalling.
 
@@ -177,6 +177,7 @@ One report per disease with a view for each reader. **Policy makers:** research 
 | **Fact-checking** | every checkable claim in a draft, with its status and a safer wording | *Audit this health article before it goes out.* |
 | **Spreadsheet research** | one question across many rows, a value and a source per row, or an honest blank | *Energy density and cost for five battery chemistries.* |
 | **Citations and reading lists** | APA, Vancouver, BibTeX and more from stored metadata; what a reading list is missing | *What is my AI-ethics reading list missing?* |
+| **Structured insights** | counted statements, figure cards, figures over time, evidence (meta-analysis) tables with finding groups, cited summaries by year, charts from single documents | *EV sales share in India by year, and what studies found on adoption.* |
 | **Reports and dashboards** | HTML reports and dashboards built by the assistant, checked by `check_report` | *Build me a geo dashboard on air pollution in India.* |
 
 ## Who uses it
@@ -288,6 +289,9 @@ to Claude and ChatGPT with and without Prism, scored by a script that traces eve
 | **Spreadsheet research:** one question across many rows | `research.table` | [EV battery chemistries](docs/use-cases/energy-climate/ev-battery-table.md) |
 | **Trend history and scenarios:** a measured series, a backtested range | `analysis.history`, `analysis.scenarios` | [Vaccine hesitancy](docs/use-cases/public-health/vaccine-hesitancy-trend.md) |
 | **Geography of a topic:** where it is studied vs where it is reported | `research.geography`, `news.geography` | [Dengue](docs/use-cases/public-health/dengue-geography.md) |
+| **Structured insights:** statements, figure cards, figures over time | `research.insights`, `news.insights` (`cards`), `news.series`, `research.charts`, `news.charts` | [API index](https://radar-api.fliarbi.com/prism/v1) |
+| **Meta-analysis and summaries:** evidence tables, rows with their sources, summaries by year | `research.meta`, `news.meta`, `research.meta_row`, `research.summary`, `news.summary` (`by: "year"`), `research.figure_table` | [API index](https://radar-api.fliarbi.com/prism/v1) |
+| **Server datasets:** build a dataset once, then filter, count and analyse it | `workspace.*` | [API index](https://radar-api.fliarbi.com/prism/v1) |
 | **Grounded writing:** sections, titles, whole articles with sources | `compose.*`, `drive.*` | [API index](https://radar-api.fliarbi.com/prism/v1) |
 
 Deeper guides: **[Research analysis workflows](docs/RESEARCH_ANALYSIS.md)** (literature review, evidence
@@ -313,7 +317,7 @@ Three fields ride on every payload, because each one has produced a confidently 
 | 1 | [Fliar dashboard](https://fliarbi.com/radar/dashboard?tab=radarapi) → **API keys** → create a key with **All data** access | One `rdr_` key for Prism, Radar and Prism News |
 | 2 | On the same page, buy prepaid credits and set a monthly spending limit | Credits at US$0.01 (₹0.84) each, minimum 500 |
 | 3 | `curl -fsSL https://radar-api.fliarbi.com/prism/install.sh \| bash`, then `prism login` | The `prism` command, `PRISM_URL` set, your key saved owner-only |
-| 4 | Connect your assistant (below), call `$PRISM_URL/v1/<feature>`, or use the `prism` command | The same 52 public tools over MCP, REST and the CLI |
+| 4 | Connect your assistant (below), call `$PRISM_URL/v1/<feature>`, or use the `prism` command | The same 88 public tools over MCP, REST and the CLI |
 
 **Claude Code**
 ```bash
@@ -351,8 +355,11 @@ response carries the credits it used in the `X-Prism-Credits` header; the full t
 | --- | --- | ---: |
 | Quick counts and series | `news.trends`, `news.trending`, `analysis.history`, `analysis.scenarios`, `compose.report_check` | 1 |
 | Places, sources, tone | `news.geography`, `news.entities`, `news.sentiment`, `news.sources` | 2 |
+| Statements, figures over time | `research.insights`, `news.insights`, `news.series` | 3 to 5 |
 | Literature and geography lanes | `research.stance_trends`, `research.geography`, `research.statistics`, `research.counter_evidence`, `news.critical` | 5 |
 | Comparisons and browsing | `news.compare`, `research.browse`, `research.evidence_card` | 8 |
+| Summaries, charts, figure tables | `research.summary`, `news.summary`, `research.charts`, `news.charts`, `research.figure_table` | 8 |
+| Evidence (meta-analysis) tables | `news.meta`, `research.meta` | 10 to 15 |
 | Radars, rewrites, themes | `research.radar`, `research.improve`, `news.themes`, `news.recent` | 12 |
 | Evidence reading and briefs | `research.evidence`, `research.brief`, `research.audit`, `research.citations`, `news.overview` | 20 |
 | Tables across many rows | `research.table` | 30 |
